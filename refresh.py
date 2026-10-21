@@ -620,6 +620,8 @@ def main():
            "elapsedSec": round(time.time() - t0, 1), "groups": groups, "quotes": quotes, "news": news,
            "sec": {k: v for k, v in sec.items() if v}, "why": why, "ai": {"provider": (llm.provider() or {}).get("name"), "usageToday": llm.usage(CACHE), "caps": llm.CAPS, "errors": llm.STATE["errors"][-3:]}, "sentiment": sentiment, "sentimentMeta": {"method": "VADER lexicon + market-slang terms" if VADER else "unavailable (vaderSentiment not installed)", "reddit": RD_STATE["note"] or "ok", "x": "not implemented"}, "earnings": {"upcoming": upcoming, "recent": recent},
            "videos": videos, "sources": STATUS}
+    if cik_map():  # ticker -> SEC CIK, so the watchlist editor can look up a new ticker's industry (SIC) in the browser
+        json.dump(cik_map(), open(os.path.join(DATA, "tickers.json"), "w"), separators=(",", ":"))
     tmp = os.path.join(DATA, "feed.json.tmp")
     json.dump(out, open(tmp, "w")); os.replace(tmp, os.path.join(DATA, "feed.json"))
     log("wrote feed.json", round(time.time() - t0), json.dumps(STATUS))

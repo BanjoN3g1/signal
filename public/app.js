@@ -355,7 +355,11 @@ function renderFeed(p){
 function sheet(title,body,onClose){
  const bg=document.createElement('div');bg.className='sheet-bg';const s=document.createElement('div');s.className='sheet';
  s.innerHTML=`<div class="grab"></div><div class="hd"><b>${title}</b><button>Done</button></div><div class="bd">${body}</div>`;
- const close=()=>{bg.remove();s.remove();onClose&&onClose()};bg.onclick=close;s.querySelector('.hd button').onclick=close;
+ // iOS doesn't shrink fixed layers for the on-screen keyboard: lift the sheet above it and keep the focused field in view
+ const vv=window.visualViewport,fit=()=>{if(!vv)return;const kb=Math.max(0,innerHeight-vv.height-vv.offsetTop);s.style.bottom=kb>80?kb+'px':''};
+ vv&&vv.addEventListener('resize',fit);vv&&vv.addEventListener('scroll',fit);
+ s.addEventListener('focusin',e=>{if(e.target.matches('input,textarea,select'))setTimeout(()=>{fit();e.target.scrollIntoView({block:'center',behavior:'smooth'})},300)});
+ const close=()=>{if(document.activeElement&&s.contains(document.activeElement))document.activeElement.blur();vv&&vv.removeEventListener('resize',fit);vv&&vv.removeEventListener('scroll',fit);bg.remove();s.remove();onClose&&onClose()};bg.onclick=close;s.querySelector('.hd button').onclick=close;
  document.body.append(bg,s);return s;
 }
 function openDeep(t){
@@ -379,22 +383,58 @@ function openLesson(id){
  sheet('Lesson',`<div class="kicker" style="color:var(--sub);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em">${esc(L.tag)}</div><h3>${esc(L.title)}</h3><p>${esc(L.plain)}</p><h4 style="margin:18px 0 4px">In your seat</h4><p>${esc(L.banker)}</p>
   ${L.numbers.length?`<h4 style="margin:18px 0 4px">Walk me through the numbers</h4><ol>${L.numbers.map(x=>`<li>${esc(x)}</li>`).join('')}</ol><p class="note">Illustrative numbers to show the mechanics, not a real deal.</p>`:''}`);
 }
+// Industry auto-fill for new tickers: SEC's public EDGAR API (CORS-enabled) gives the SIC code; we map it to a group.
+let CIKS=null;
+const SICMAP=[ // [sic codes, regex for an existing group, fallback group name]
+ [[3674],/Semis · Other/,'Semis · Other'],
+ [[3559,3825,3829],/Equipment/,'Semis · Equipment (WFE)'],
+ [[3827,3661,3357],/Optics/,'Semis · Optics'],
+ [[3576,3663,3669],/networking/i,'Hardware · Networking'],
+ [[3571,3572,3575,3577],/servers|Hardware · Computers/i,'Hardware · Computers & storage'],
+ [[3670,3672,3677,3678,3679,3690],/Components/,'Hardware · Components'],
+ [[7370,7371,7372,7373,7374,7379,7389],/Software · Other/,'Software · Other'],
+];
+async function sicLookup(t){
+ if(!CIKS){try{const r=await fetch('data/tickers.json');CIKS=r.ok?await r.json():{}}catch(e){CIKS={}}}
+ const cik=CIKS[t]||CIKS[t.replace('.','-')];if(!cik)return null;
+ try{const r=await fetch(`https://data.sec.gov/submissions/CIK${String(cik).padStart(10,'0')}.json`);if(!r.ok)return null;const j=await r.json();
+  return {sic:+j.sic||0,desc:j.sicDescription||'',name:j.name||''}}catch(e){return null}
+}
+function groupForSic(t,info){
+ if(DATA?.quotes?.[t]?.group){const gi=WL.groups.findIndex(g=>g.name===DATA.quotes[t].group);if(gi>=0)return {gi}}
+ const sec=Math.floor(info.sic/100);
+ const row=SICMAP.find(r=>r[0].includes(info.sic))||(sec===73?SICMAP[6]:sec===36?SICMAP[5]:null);
+ const name=row?row[2]:'Other · '+(info.desc||'Unclassified').toLowerCase().replace(/(^|[\s,&])\w/g,m=>m.toUpperCase()).slice(0,40);
+ const gi=WL.groups.findIndex(g=>row?row[1].test(g.name):g.name===name);
+ return gi>=0?{gi}:{name};
+}
 function openWatchlist(){
- const draw=()=>`<p class="note">Your list is saved on this phone. Data is pulled for the tickers in the repo's <b>watchlist.json</b> (defaults to the list below) every ~10 minutes. To get data for a new ticker, add it there too — tap "Copy list" and paste it into watchlist.json on GitHub. US listings use Nasdaq data; IFX uses Google Finance (Xetra, EUR).</p>
+ let pending=null; // suggested new group name from the SIC lookup
+ const opts=()=>WL.groups.map((g,i)=>`<option value="${i}">${esc(g.name)}</option>`).join('')+(pending?`<option value="auto">${esc(pending)} (new)</option>`:'')+'<option value="new">+ New group…</option>';
+ const draw=()=>`<h4 style="margin:6px 0 4px">Add a ticker</h4>
+  <div class="addrow"><input id="nt" type="text" inputmode="text" enterkeyhint="done" placeholder="e.g. TXN" maxlength="10" autocapitalize="characters" autocomplete="off" autocorrect="off" spellcheck="false"><button class="btn" id="add">Add</button></div>
+  <div class="addrow"><select id="ng" aria-label="Group">${opts()}</select></div>
+  <p class="note" id="ind" style="margin:2px 0 0;min-height:20px">Type a ticker — its industry is filled in from SEC EDGAR. Change the group above if you like.</p>
   ${WL.groups.map((g,gi)=>`<div class="group"><div class="gname">${esc(g.name)}</div><div class="tchips">${g.tickers.map(t=>`<span class="tchip">${esc(t)}<button data-rm="${gi}:${esc(t)}" aria-label="Remove">×</button></span>`).join('')||'<span class="note">Empty</span>'}</div></div>`).join('')}
-  <h4 style="margin:18px 0 4px">Add a ticker</h4>
-  <div class="addrow"><input id="nt" placeholder="e.g. TXN" maxlength="10" autocapitalize="characters" autocomplete="off"><select id="ng">${WL.groups.map((g,i)=>`<option value="${i}">${esc(g.name)}</option>`).join('')}<option value="new">+ New group…</option></select></div>
-  <div class="addrow"><button class="btn" id="add" style="flex:1">Add</button><button class="btn ghost" id="sv" style="flex:1">Copy list</button></div>
-  <div class="addrow"><button class="btn ghost" id="reset" style="flex:1;font-size:14px">Reset to defaults</button></div>`;
+  <p class="note">Your list is saved on this phone. Data is pulled for the tickers in the repo's <b>watchlist.json</b> (defaults to the list above). To get data for a new ticker, add it there too — tap "Copy list" and paste it into watchlist.json on GitHub. US listings use Nasdaq data; IFX uses Google Finance (Xetra, EUR).</p>
+  <div class="addrow"><button class="btn ghost" id="sv" style="flex:1">Copy list</button><button class="btn ghost" id="reset" style="flex:1;font-size:14px">Reset to defaults</button></div>`;
  const s=sheet('Watchlist',draw(),()=>render());
  const bd=s.querySelector('.bd');
  const persist=()=>{WL.updatedAt=Date.now();saveLocalWL(WL)};
  const wire=()=>{
+  const nt=bd.querySelector('#nt'),ng=bd.querySelector('#ng'),ind=bd.querySelector('#ind');let seq=0,timer;
+  nt.oninput=()=>{clearTimeout(timer);const t=nt.value.trim().toUpperCase();if(!/^[A-Z][A-Z0-9.\-]{0,9}$/.test(t)){ind.textContent='';return}
+   timer=setTimeout(async()=>{const my=++seq;ind.textContent='Looking up '+t+'…';const info=await sicLookup(t);if(my!==seq)return;
+    if(!info||!info.sic){ind.textContent=info?`${info.name}: no industry code on file — pick a group.`:`${t} isn’t in SEC’s list (foreign listing?) — pick a group.`;return}
+    const g=groupForSic(t,info);pending=g.name||null;const v=ng.value;ng.innerHTML=opts();ng.value=g.gi!=null?String(g.gi):'auto';
+    ind.innerHTML=`<b>${esc(info.name)}</b> · ${esc(info.desc)} (SIC ${info.sic}) → ${esc(g.gi!=null?WL.groups[g.gi].name:g.name)}`},350)};
+  nt.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();bd.querySelector('#add').click()}};
   bd.querySelectorAll('[data-rm]').forEach(b=>b.onclick=()=>{const [gi,t]=b.dataset.rm.split(':');WL.groups[gi].tickers=WL.groups[gi].tickers.filter(x=>x!==t);persist(false);bd.innerHTML=draw();wire()});
-  bd.querySelector('#add').onclick=()=>{const t=bd.querySelector('#nt').value.trim().toUpperCase();if(!/^[A-Z][A-Z0-9.\-]{0,9}$/.test(t))return toast('Enter a ticker like TXN');
+  bd.querySelector('#add').onclick=()=>{const t=nt.value.trim().toUpperCase();if(!/^[A-Z][A-Z0-9.\-]{0,9}$/.test(t))return toast('Enter a ticker like TXN');
    if(wlTickers().includes(t))return toast(t+' is already on your list');
-   let gi=bd.querySelector('#ng').value;if(gi==='new'){const nm=prompt('Group name (e.g. "Semis · Analog")');if(!nm)return;WL.groups.splice(WL.groups.length-1,0,{name:nm.slice(0,60),tickers:[]});gi=WL.groups.length-2}
-   WL.groups[gi].tickers.push(t);persist(false);toast('Added '+t+' — add it to watchlist.json for data');bd.innerHTML=draw();wire()};
+   let gi=ng.value;const bench=WL.groups.findIndex(g=>g.name==='Benchmarks'),at=bench>=0?bench:WL.groups.length;
+   if(gi==='auto'||gi==='new'){const nm=gi==='auto'?pending:prompt('Group name (e.g. "Semis · Analog")');if(!nm)return;WL.groups.splice(at,0,{name:nm.slice(0,60),tickers:[]});gi=at}
+   WL.groups[gi].tickers.push(t);pending=null;persist(false);toast('Added '+t+' to '+WL.groups[gi].name.replace(/^.*· /,''));bd.innerHTML=draw();wire()};
   bd.querySelector('#sv').onclick=async()=>{const txt=JSON.stringify({groups:WL.groups},null,1);try{await navigator.clipboard.writeText(txt);toast('Copied — paste into watchlist.json on GitHub')}catch(e){prompt('Copy this into watchlist.json:',txt)}};
   bd.querySelector('#reset').onclick=async()=>{localStorage.removeItem('signal.wl');try{WL=await (await fetch('watchlist_default.json')).json()}catch(e){WL={groups:DATA.groups}}persist(false);bd.innerHTML=draw();wire()};
  };wire();
