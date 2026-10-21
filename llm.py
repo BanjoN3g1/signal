@@ -7,11 +7,12 @@ import requests
 
 PROVIDERS = [  # first one with a key wins; both are OpenAI-compatible chat endpoints
     {"name": "Gemini (free tier)", "env": "GEMINI_API_KEY", "url": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
-     "fast": os.environ.get("GEMINI_FAST_MODEL", "gemini-flash-lite-latest"), "deep": os.environ.get("GEMINI_DEEP_MODEL", "gemini-flash-latest")},
+     "fast": os.environ.get("GEMINI_FAST_MODEL", "gemini-3.5-flash-lite"), "deep": os.environ.get("GEMINI_DEEP_MODEL", "gemini-3.5-flash"),
+     "extra": {"reasoning_effort": "low"}, "min_tokens": 4000},  # thinking tokens count as output, so leave room
     {"name": "Groq (free tier)", "env": "GROQ_API_KEY", "url": "https://api.groq.com/openai/v1/chat/completions",
-     "fast": os.environ.get("GROQ_FAST_MODEL", "llama-3.1-8b-instant"), "deep": os.environ.get("GROQ_DEEP_MODEL", "llama-3.3-70b-versatile")},
+     "fast": os.environ.get("GROQ_FAST_MODEL", "llama-3.1-8b-instant"), "deep": os.environ.get("GROQ_DEEP_MODEL", "llama-3.3-70b-versatile"), "extra": {}, "min_tokens": 0},
 ]
-CAPS = {"fast": 15, "deep": 8, "pod": 10}  # calls per day per role, far under every free tier's daily cap
+CAPS = {"fast": 15, "deep": 8, "pod": 12}  # Gemini free tier: ~1,000+/day on Flash-Lite, lower on Flash  # calls per day per role, far under every free tier's daily cap
 STATE = {"calls": 0, "errors": [], "skipped": 0}
 
 def provider():
@@ -34,21 +35,26 @@ def call(role, system, user, cache, max_tokens=900):
     b = _budget(cache)
     if b["used"].get(role, 0) >= CAPS.get(role, 0): STATE["skipped"] += 1; return None
     b["used"][role] = b["used"].get(role, 0) + 1; json.dump(b, open(_budget_path(cache), "w"))  # count attempts, not just successes
-    model = p[role]
-    try:
-        r = requests.post(p["url"], timeout=120, headers={"Authorization": f"Bearer {os.environ[p['env']].strip()}", "Content-Type": "application/json"},
-                          json={"model": model, "temperature": 0.2, "max_tokens": max_tokens, "response_format": {"type": "json_object"},
-                                "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}]})
-        STATE["calls"] += 1
-        if r.status_code != 200 or "json" not in r.headers.get("content-type", ""):
-            STATE["errors"].append(f"{model} HTTP {r.status_code} {r.headers.get('content-type','')}: {r.text[:160]}"); return None
-        txt = r.json()["choices"][0]["message"]["content"] or ""
-        m = re.search(r"\{.*\}", txt, re.S)
-        out = json.loads(m.group(0) if m else txt)
-        if isinstance(out, dict): out["_model"] = model
-        return out
-    except Exception as e:
-        STATE["errors"].append(f"{model} {type(e).__name__}: {str(e)[:160]}"); return None
+    models = [p.get(role) or p["deep"]]
+    if models[0] != p["fast"]: models.append(p["fast"])  # fall back to the lighter model if the bigger one is overloaded
+    for model in models:
+        for attempt in range(2):
+            try:
+                r = requests.post(p["url"], timeout=180, headers={"Authorization": f"Bearer {os.environ[p['env']].strip()}", "Content-Type": "application/json"},
+                                  json={"model": model, "temperature": 0.2, "max_tokens": max(max_tokens, p.get("min_tokens", 0)), "response_format": {"type": "json_object"},
+                                        "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}], **p.get("extra", {})})
+                STATE["calls"] += 1
+                if r.status_code in (429, 500, 503) and attempt == 0: time.sleep(10); continue
+                if r.status_code != 200 or "json" not in r.headers.get("content-type", ""):
+                    STATE["errors"].append(f"{model} HTTP {r.status_code}: {r.text[:160]}"); break
+                txt = r.json()["choices"][0]["message"]["content"] or ""
+                m = re.search(r"\{.*\}", txt, re.S)
+                out = json.loads(m.group(0) if m else txt)
+                if isinstance(out, dict): out["_model"] = model; return out
+                break
+            except Exception as e:
+                STATE["errors"].append(f"{model} {type(e).__name__}: {str(e)[:160]}"); break
+    return None
 
 def usage(cache): return _budget(cache)["used"]
 

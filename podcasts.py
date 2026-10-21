@@ -3,7 +3,7 @@
 Transcript: publisher transcript (podcast:transcript tag) if present, else faster-whisper (CPU) on new episodes only.
 Summary: free-tier LLM if a key is set (see llm.py), else an extractive summary (quotes picked from the transcript).
 Everything is cached per episode in data/podcasts/ep_*.json, so each episode is processed once."""
-import json, os, re, sys, time, hashlib, html, subprocess, tempfile, datetime as dt
+import json, os, re, sys, time, hashlib, gzip, html, subprocess, tempfile, datetime as dt
 import email.utils, xml.etree.ElementTree as ET
 import requests
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -153,10 +153,16 @@ def main():
         for ep in eps:
             ep["showName"] = show["name"]
             cp = os.path.join(OUT, f"ep_{ep['key']}.json")
-            if os.path.exists(cp):
-                episodes.append(json.load(open(cp))); continue
-            text, src, stats = None, None, None
-            if ep["transcripts"]:
+            tp = os.path.join(OUT, f"tx_{ep['key']}.txt.gz")
+            prev = json.load(open(cp)) if os.path.exists(cp) else None
+            if prev and not (llm.provider() and (prev.get("summary") or {}).get("kind") == "extract"):
+                episodes.append(prev); continue
+            text, src, stats = None, (prev or {}).get("source"), None
+            if prev and os.path.exists(tp):
+                text = gzip.open(tp, "rt").read()
+            if prev and not text and (prev.get("source") or {}).get("kind") == "whisper" and whispered >= MAX_WHISPER:
+                episodes.append(prev); continue
+            if not text and ep["transcripts"]:
                 text, url = publisher_transcript(ep)
                 if text: src = {"kind": "publisher", "url": url}
             if not text and whispered < MAX_WHISPER:
@@ -164,10 +170,15 @@ def main():
                     text, stats = whisper(ep); whispered += 1
                     if text: src = {"kind": "whisper", **stats}
                 except Exception as e: errors.append(f"{ep['title'][:40]}: whisper {type(e).__name__}: {str(e)[:80]}")
+            if not text and prev: episodes.append(prev); continue
             if not text:
                 episodes.append({**{k: ep[k] for k in ("key", "show", "showName", "title", "date", "dur", "link", "desc")}, "pending": True}); continue
+            if not os.path.exists(tp):
+                with gzip.open(tp, "wt") as f: f.write(text)
+            summ = summarize(ep, text)
+            if prev and summ["kind"] != "ai": episodes.append(prev); continue  # AI not available right now; keep the old one
             rec = {**{k: ep[k] for k in ("key", "show", "showName", "title", "date", "dur", "link", "desc")}, "source": src, "words": len(text.split()),
-                   "summary": summarize(ep, text), "mentions": mentions(text), "at": dt.datetime.now().astimezone().isoformat(timespec="seconds")}
+                   "summary": summ, "mentions": mentions(text), "at": dt.datetime.now().astimezone().isoformat(timespec="seconds")}
             json.dump(rec, open(cp, "w")); episodes.append(rec)
     episodes.sort(key=lambda e: e["date"], reverse=True)
     out = {"generatedAt": dt.datetime.now().astimezone().isoformat(timespec="seconds"), "elapsedSec": round(time.time() - t0),
