@@ -41,14 +41,29 @@ async function loadData(){
  if(!WL){WL=loadLocalWL();if(!WL){try{WL=await (await fetch('watchlist_default.json')).json()}catch(e){WL=DATA?{groups:DATA.groups}:{groups:[]}}}}
 }
 const ago=iso=>{const m=Math.max(0,Math.round((Date.now()-new Date(iso))/6e4));return m<1?'just now':m<60?m+' min ago':m<1440?Math.round(m/60)+' hr ago':Math.round(m/1440)+' days ago'};
-async function doRefresh(btn){
- if(refreshing)return;refreshing=true;btn&&btn.classList.add('spin');
- const prev=DATA?.generatedAt;await loadData();
- refreshing=false;btn&&btn.classList.remove('spin');
- if(!DATA)return toast('Couldn\'t load data — check your connection');
- toast((DATA.generatedAt!==prev?'New data · ':'Latest data · ')+'updated '+ago(DATA.generatedAt));render();
+// ---------- refresh: no tokens in a public site, so open GitHub's "Run workflow" page and poll for new data ----------
+const WF={data:'https://github.com/BanjoN3g1/signal/actions/workflows/pages.yml',pods:'https://github.com/BanjoN3g1/signal/actions/workflows/podcasts.yml'};
+let poll=null;
+const isPods=()=>tab==='pods'&&route().world==='work';
+const stampOf=()=>isPods()?PODS?.generatedAt:DATA?.generatedAt;
+function paintRefresh(){const b=document.getElementById('rf');if(!b)return;const g=stampOf();
+ const old=g&&(Date.now()-new Date(g))>60*60*1000;
+ b.classList.toggle('stale',!!old&&!poll);b.classList.toggle('busy',!!poll);
+ b.innerHTML=`${I.refresh}<span>${poll?'Refreshing…':g?'Updated '+ago(g):'Refresh'}</span>`;
+ b.title=g?'Data from '+fmtPT(g)+(old?' — tap to refresh':''):'Refresh'}
+async function reloadCurrent(){if(isPods()){try{const r=await fetch('data/podcasts.json?t='+Date.now(),{cache:'no-store'});if(r.ok)PODS=await r.json()}catch(e){}}else await loadData()}
+function startRefresh(){
+ window.open(isPods()?WF.pods:WF.data,'_blank','noopener');
+ if(poll)return;const before=stampOf(),t0=Date.now(),pods=isPods();
+ toast('Tap “Run workflow” on GitHub — I’ll watch for new data');
+ const stop=msg=>{clearInterval(poll);poll=null;if(msg)toast(msg);paintRefresh()};
+ const check=async()=>{await reloadCurrent();const now=pods?PODS?.generatedAt:DATA?.generatedAt;
+  if(now&&now!==before){stop(null);toast('New data · updated just now');render();return}
+  if(Date.now()-t0>5*60*1000)stop('No new data yet — the run can take a few minutes; check back soon');else paintRefresh()};
+ poll=setInterval(check,20000);paintRefresh();setTimeout(check,3000);
 }
-setInterval(()=>{if(document.visibilityState==='visible')loadData().then(()=>{const st=document.querySelector('.stamp');if(st&&DATA)st.innerHTML='Updated<br>'+ago(DATA.generatedAt)})},5*60*1000);
+setInterval(()=>{if(document.visibilityState!=='visible')return;if(!poll)loadData().then(paintRefresh);else paintRefresh()},60*1000);
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')reloadCurrent().then(paintRefresh)});
 
 // ---------- router ----------
 window.addEventListener('hashchange',render);
@@ -107,15 +122,14 @@ function renderWork(){
  const titles={feed:'Feed',earnings:'Earnings',deals:'Deal Room',pods:'Podcasts',learn:'Learn'};
  app.innerHTML=`<div class="view">
   <div class="top"><button class="back" id="bk">${I.back}</button><div class="title">${titles[tab]||'Work'}</div>
-   <div class="stamp">${DATA?`Updated<br>${ago(DATA.generatedAt)}`:''}</div>
-   <button class="iconbtn" id="wl" aria-label="Edit watchlist">${I.list}</button>
-   <button class="iconbtn ${refreshing?'spin':''}" id="rf" aria-label="Refresh">${I.refresh}</button></div>
+   ${['feed','earnings'].includes(tab)?`<button class="iconbtn" id="wl" aria-label="Edit watchlist">${I.list}</button>`:''}
+   ${tab!=='deals'?`<button class="rbtn" id="rf" aria-label="Refresh data"></button>`:''}</div>
   <div class="pane" id="pane"></div>
   <nav class="tabs">${[['feed','Feed',I.feed],['earnings','Earnings',I.earn],['deals','Deal Room',I.deal],['pods','Podcasts',I.pod],['learn','Learn',I.learn]].map(([k,n,ic])=>`<button data-t="${k}" class="${tab===k?'on':''}">${ic}${n}</button>`).join('')}</nav>
  </div>`;
  $('#bk').onclick=()=>location.hash='#/';
- $('#rf').onclick=e=>doRefresh(e.currentTarget);
- $('#wl').onclick=openWatchlist;
+ const rf=$('#rf');if(rf){rf.onclick=startRefresh;paintRefresh()}
+ const wl=$('#wl');if(wl)wl.onclick=openWatchlist;
  app.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>location.hash='#/work/'+b.dataset.t);
  const p=$('#pane');
  if(tab==='deals')return renderDeals(p);
@@ -176,6 +190,7 @@ const dAgo=iso=>{const d=Math.round((Date.now()-new Date(iso))/864e5);return d<=
 function podLead(e){const s=e.summary;if(!s)return '';return s.kind==='ai'?(s.takeaways||[]).slice(0,2):(s.quotes||[]).slice(0,1).map(q=>'“'+q+'”')}
 async function renderPods(p){
  if(!PODS){p.innerHTML='<div class="empty"><p>Loading…</p></div>';try{const r=await fetch('data/podcasts.json?t='+Date.now(),{cache:'no-store'});if(r.ok)PODS=await r.json()}catch(e){}}
+ paintRefresh();
  if(!PODS){p.innerHTML='<div class="empty"><div class="big">🎙️</div><h2>Podcasts are on the way</h2><p>Episodes show up here after the next podcast refresh (every 3 hours).</p></div>';return}
  const eps=PODS.episodes.filter(e=>podShow==='all'||e.show===podShow);
  p.innerHTML=`<div class="scroll"><div class="pchips"><button class="pchip ${podShow==='all'?'on':''}" data-s="all">All</button>${PODS.shows.map(s=>`<button class="pchip ${podShow===s.id?'on':''}" data-s="${esc(s.id)}">${esc(s.name)}</button>`).join('')}</div>
