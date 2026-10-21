@@ -258,3 +258,15 @@ sup.cite{vertical-align:3px}
 .feed.reloading{opacity:.5;transition:opacity .2s}
 .endc{align-items:center;justify-content:center;text-align:center}.endc .big{font-size:44px;color:var(--green)}
 .ver{font-size:11px;color:var(--sub);opacity:.7;letter-spacing:.02em}
+/* Elections world */
+.escroll{overflow-y:auto;padding:4px 14px calc(var(--sab) + 24px)}
+.ehead h2{margin:2px 0 8px;font-size:28px}.eseg{margin-bottom:8px}
+.ectl{display:flex;gap:8px;margin:4px 0 10px}.ectlc{flex:1;background:#1c1c1e;border:0;border-radius:14px;padding:10px 12px;text-align:left;color:var(--txt);font:inherit;display:flex;flex-direction:column}.ectlc b{font-size:20px}
+.emapbox{position:relative;background:#111113;border-radius:18px;overflow:hidden;touch-action:none;margin:8px 0}
+.emap{display:block;width:100%;height:auto;touch-action:none;--sw:.6px}.emap .cty path{stroke:#111113;stroke-width:calc(var(--sw)*.4)}.emap .smesh{fill:none;stroke:#d1d1d6;stroke-opacity:.55;stroke-width:var(--sw);pointer-events:none}
+.ezoom{position:absolute;right:8px;bottom:8px;background:rgba(44,44,46,.85);color:var(--sub);border:0;border-radius:999px;font-size:12px;padding:4px 10px}
+.elg{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--sub)}.elg span{width:22px;height:8px;border-radius:3px;display:inline-block}
+.elive{background:rgba(191,90,242,.12);border-radius:14px;padding:10px 12px;font-size:13.5px;margin:10px 0;color:#d1d1d6}.elive b{color:#da8fff}
+.erace{background:#1c1c1e;border-radius:16px;padding:12px 14px;margin:8px 0}.erh{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}.erh b{font-size:16px}
+.ebar{display:grid;grid-template-columns:1fr auto;gap:2px 8px;margin:6px 0;font-size:14px}.ebar i{font-style:normal;font-size:11px;font-weight:700}.ebar .eb{grid-column:1/3;height:6px;background:#2c2c2e;border-radius:3px;overflow:hidden}.ebar .eb div{height:100%;border-radius:3px}
+.esrc a{color:var(--sub)}.epoll{border-top:1px solid #2c2c2e;margin-top:8px;padding-top:8px;font-size:14px}.epoll p{margin:2px 0}

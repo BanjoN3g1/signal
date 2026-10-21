@@ -30,3 +30,16 @@ headline, what happened (3-5), summary, key numbers (kept only if the figure app
 `data/cache/news_dev.json` by story id and regenerated only when distinct sources grow by 2+ (or 50%) or the cluster is split. At most 2 calls × 3 stories per refresh.
 Clustering also merges headlines naming the same single watchlist company plus the same event (earnings / deal), e.g. the LRCX earnings splits;
 absorbed ids go to `aliases`, so `data/x.json` keys keep matching. The feed shows Developing and X post cards; YouTube video cards were removed.
+
+## Elections world
+Generic engine: `elections.py` (run by `refresh.py` each refresh) turns every `data/elections/<election-id>.json` into
+`_site/data/elections/<id>.json` + `index.json`; `public/elections.js` renders whichever election is newest (map · races · polls).
+
+**Add an election** (primary, caucus, ballot measure, special, 2028…): copy `data/elections/midterms-2026.json`, set `id`, `name`,
+`date`, `baseline` (a file in `data/elections/baselines/`, schema `{label, metric, county:{fips:[marginRminusD, votes]}, state:{fips:[…]}}`),
+and list `races`: `{id, type: senate|house|governor|president|primary|caucus|ballot-measure|chamber, state, title, key, geography: state|county|district,
+markets: {polymarket: "<event slug>"|"auto", kalshi_event: "<EVENT>", kalshi_series: "<SERIES>"|"auto"}, polls: {wikipedia: "<page title>"}}`.
+`discover.polymarket_tag` auto-adds every other Senate/governor race Polymarket lists. Odds: Polymarket gamma API + Kalshi public API (no auth);
+polls: Wikipedia polling tables (avg of the 5 newest polls in the first table, cached 6h). Map: us-atlas `counties-albers-10m` (pre-projected) from jsDelivr.
+**Election night hook:** drop `data/elections/live/<id>.json` as `{updated, counties:{fips:{reporting, margin}}, states:{fips:{…}}}` (e.g. from a future
+results job); the map colors counties by live margin and shows "% in" automatically. No scraper yet.

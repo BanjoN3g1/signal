@@ -72,10 +72,12 @@ function render(){
  const r=route();
  if(!r.world)return renderHome();
  if(r.world==='work'){tab=r.tab;return renderWork()}
+ if(r.world==='elections'&&window.SignalElections)return window.SignalElections.render(app,{esc,sheet,back:I.back,ago});
  return renderSoon(r.world);
 }
 
 // ---------- home ----------
+const LIVEW=['work','elections'];
 const WORLDS=[
  {id:'work',name:'Work',sub:'Markets, earnings & deals for software + semis',glyph:'📈',c1:'#0a84ff',c2:'#5e5ce6',big:true},
  {id:'elections',name:'Elections',sub:'Maps, polls, odds & sentiment',glyph:'🗳️',c1:'#ff375f',c2:'#bf5af2'},
@@ -92,9 +94,9 @@ function renderHome(){
   <h1 id="greet">${greet}${localStorage.getItem('signal.name')?', '+esc(localStorage.getItem('signal.name')):''}</h1>
   <p class="lede">Pick a world.</p>
   <div class="grid">${WORLDS.map(w=>`
-   <button class="tile ${w.big?'big':''} ${w.id!=='work'?'dim':''}" data-w="${w.id}">
+   <button class="tile ${w.big?'big':''} ${!LIVEW.includes(w.id)?'dim':''}" data-w="${w.id}">
     <div class="bg" style="background:radial-gradient(120% 90% at 100% 0%,${w.c1}55,transparent 60%),radial-gradient(100% 80% at 0% 100%,${w.c2}33,transparent 60%)"></div>
-    ${w.id!=='work'?'<span class="soon">Coming soon</span>':''}
+    ${!LIVEW.includes(w.id)?'<span class="soon">Coming soon</span>':''}
     <div class="content"><div class="glyph" style="background:linear-gradient(135deg,${w.c1},${w.c2})">${w.glyph}</div></div>
     <div class="content"><h2>${w.name}</h2><p>${w.sub}</p>
      ${w.id==='work'&&s&&i?`<div class="pulse up"><span>Software <b class="${cls(i.pct)}">${pc(i.pct)}</b></span><span>Semis <b class="${cls(s.pct)}">${pc(s.pct)}</b></span><span>${(DATA.earnings?.upcoming||[]).filter(e=>daysTo(e.date)<=7&&daysTo(e.date)>=0).length} reporting this week</span></div>`:''}
@@ -400,7 +402,7 @@ function xCard(x){const h=String(x.handle||'').replace(/^@/,''),st=x.story;
   <div style="flex:1"></div>${tie}<a class="note xlink" href="${esc(x.url)}" target="_blank" rel="noopener">Open on X ↗</a></div></section>`}
 
 // ---------- Feed: Reels-style weighted shuffle of news, developing stories, X posts and movers ----------
-const VERSION='v16 · Oct 21';
+const VERSION='v17 · Oct 21';
 const JUNK=/\b(which (is|tech|stock)|better buy|should you buy|buy, sell,? or hold|prediction:|reasons to|stock quote price|top analyst reports|if i could only|savvy investors|invested in)\b/i;
 const hrs=iso=>(Date.now()-new Date(iso))/36e5;
 function feedNews(){return (DATA.today?.items||[]).filter(it=>hrs(it.last)<=36&&(it.dev?.summary||(it.score>=4.5&&!JUNK.test(it.title)))).slice(0,24)}

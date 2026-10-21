@@ -1,0 +1,316 @@
+{
+ "id": "midterms-2026",
+ "name": "2026 Midterms",
+ "date": "2026-11-03",
+ "status": "upcoming",
+ "baseline": "pres2024",
+ "discover": {
+  "polymarket_tag": "midterms",
+  "note": "every other Senate/Governor race with a Polymarket '<state>-senate-election-winner' / '<state>-governor-winner-2026' event is added automatically (key:false)"
+ },
+ "races": [
+  {
+   "id": "senate-control",
+   "type": "chamber",
+   "office": "senate",
+   "title": "Senate control",
+   "key": true,
+   "markets": {
+    "polymarket": "which-party-will-win-the-senate-in-2026",
+    "kalshi_event": "CONTROLS-2026"
+   }
+  },
+  {
+   "id": "house-control",
+   "type": "chamber",
+   "office": "house",
+   "title": "House control",
+   "key": true,
+   "markets": {
+    "polymarket": "which-party-will-win-the-house-in-2026",
+    "kalshi_event": "CONTROLH-2026"
+   }
+  },
+  {
+   "id": "GA-sen",
+   "type": "senate",
+   "state": "GA",
+   "title": "Georgia Senate",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   },
+   "polls": {
+    "wikipedia": "2026 United States Senate election in Georgia"
+   }
+  },
+  {
+   "id": "MI-sen",
+   "type": "senate",
+   "state": "MI",
+   "title": "Michigan Senate",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   },
+   "polls": {
+    "wikipedia": "2026 United States Senate election in Michigan"
+   }
+  },
+  {
+   "id": "NC-sen",
+   "type": "senate",
+   "state": "NC",
+   "title": "North Carolina Senate",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   },
+   "polls": {
+    "wikipedia": "2026 United States Senate election in North Carolina"
+   }
+  },
+  {
+   "id": "ME-sen",
+   "type": "senate",
+   "state": "ME",
+   "title": "Maine Senate",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   },
+   "polls": {
+    "wikipedia": "2026 United States Senate election in Maine"
+   }
+  },
+  {
+   "id": "NH-sen",
+   "type": "senate",
+   "state": "NH",
+   "title": "New Hampshire Senate",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   },
+   "polls": {
+    "wikipedia": "2026 United States Senate election in New Hampshire"
+   }
+  },
+  {
+   "id": "OH-sen",
+   "type": "senate",
+   "state": "OH",
+   "title": "Ohio Senate",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   },
+   "polls": {
+    "wikipedia": "2026 United States Senate election in Ohio"
+   }
+  },
+  {
+   "id": "TX-sen",
+   "type": "senate",
+   "state": "TX",
+   "title": "Texas Senate",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   },
+   "polls": {
+    "wikipedia": "2026 United States Senate election in Texas"
+   }
+  },
+  {
+   "id": "IA-sen",
+   "type": "senate",
+   "state": "IA",
+   "title": "Iowa Senate",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   },
+   "polls": {
+    "wikipedia": "2026 United States Senate election in Iowa"
+   }
+  },
+  {
+   "id": "AK-sen",
+   "type": "senate",
+   "state": "AK",
+   "title": "Alaska Senate",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   }
+  },
+  {
+   "id": "NE-sen",
+   "type": "senate",
+   "state": "NE",
+   "title": "Nebraska Senate",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   }
+  },
+  {
+   "id": "MN-sen",
+   "type": "senate",
+   "state": "MN",
+   "title": "Minnesota Senate",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   }
+  },
+  {
+   "id": "AZ-gov",
+   "type": "governor",
+   "state": "AZ",
+   "title": "Arizona Governor",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   }
+  },
+  {
+   "id": "GA-gov",
+   "type": "governor",
+   "state": "GA",
+   "title": "Georgia Governor",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   }
+  },
+  {
+   "id": "MI-gov",
+   "type": "governor",
+   "state": "MI",
+   "title": "Michigan Governor",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   }
+  },
+  {
+   "id": "WI-gov",
+   "type": "governor",
+   "state": "WI",
+   "title": "Wisconsin Governor",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   }
+  },
+  {
+   "id": "PA-gov",
+   "type": "governor",
+   "state": "PA",
+   "title": "Pennsylvania Governor",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   }
+  },
+  {
+   "id": "NV-gov",
+   "type": "governor",
+   "state": "NV",
+   "title": "Nevada Governor",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   }
+  },
+  {
+   "id": "KS-gov",
+   "type": "governor",
+   "state": "KS",
+   "title": "Kansas Governor",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   }
+  },
+  {
+   "id": "NY-gov",
+   "type": "governor",
+   "state": "NY",
+   "title": "New York Governor",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   }
+  },
+  {
+   "id": "OH-gov",
+   "type": "governor",
+   "state": "OH",
+   "title": "Ohio Governor",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   }
+  },
+  {
+   "id": "IA-gov",
+   "type": "governor",
+   "state": "IA",
+   "title": "Iowa Governor",
+   "key": true,
+   "geography": "county",
+   "markets": {
+    "polymarket": "auto",
+    "kalshi_series": "auto"
+   }
+  }
+ ],
+ "live": {
+  "provider": null,
+  "level": "county",
+  "note": "Election-night hook: a future job writes live/<election-id>.json as {updated, counties:{fips:{reporting, margin}}, states:{...}}; the map picks it up automatically."
+ }
+}
