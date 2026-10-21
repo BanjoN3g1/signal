@@ -162,7 +162,7 @@ function moverCard(q,i){
  const t=q.ticker,n=(DATA.news[t]||[]);const g=groupOf(t);const ne=nextEarn(t);const d=ne?daysTo(ne.date):null;
  return `<section class="slide"><div class="card">
   <div class="kicker"><span class="chip">${esc(g.replace(/^.*· /,''))}</span>${d!=null&&d>=0&&d<=14?`<span class="chip o">Earnings ${d===0?'today':d===1?'tomorrow':'in '+d+'d'}</span>`:''}</div>
-  <div class="tkr">${esc(t)}</div><div class="nm">${esc(q.name)}${q.exchange?` · ${esc(q.exchange)}`:''}</div>
+  <div class="tkr">${esc(t)}</div><div class="nm">${esc(q.name)}${q.exchange?` · ${esc(q.exchange)}`:''}${q.stale?` · last price ${esc(q.asOf||'')}`:''}</div>
   <div class="px up"><span class="p">${ccy(q)}${f2(q.price)}</span><span class="c ${cls(q.pct)}">${pc(q.pct)}</span></div>
   ${spark(q.hist,(q.r21??q.pct??0)>=0)}
   <div class="stats up">${q.r5!=null?`<div class="stat">5 days<b class="${cls(q.r5)}">${pc(q.r5)}</b></div>`:''}${q.r21!=null?`<div class="stat">1 month<b class="${cls(q.r21)}">${pc(q.r21)}</b></div>`:''}${(()=>{const B=benchFor(g);const b=B&&DATA.quotes[B];return b&&q.pct!=null?`<div class="stat">vs ${B}<b class="${cls(q.pct-b.pct)}">${(q.pct-b.pct>0?'+':'')+(q.pct-b.pct).toFixed(2)} pts</b></div>`:''})()}</div>

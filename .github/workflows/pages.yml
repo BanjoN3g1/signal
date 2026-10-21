@@ -33,7 +33,7 @@ jobs:
           restore-keys: signal-cache-
       - name: Pull data and build site
         env:
-          SEC_USER_AGENT: "Signal markets app (github.com/${{ github.repository }})"
+          SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}  # repo variable, e.g. "Signal Your Name you@example.com"
         run: ./build.sh
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

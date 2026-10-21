@@ -12,8 +12,10 @@ DATA = os.environ.get("OUT_DIR") or os.path.join(ROOT, "data")
 CACHE = os.environ.get("CACHE_DIR") or os.path.join(ROOT, "data", "cache")
 os.makedirs(CACHE, exist_ok=True)
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130 Safari/537.36"
-SEC_UA = os.environ.get("SEC_USER_AGENT") or "Signal markets app (open-source; github.com/" + os.environ.get("GITHUB_REPOSITORY", "signal") + ")"
-S = requests.Session(); S.headers.update({"User-Agent": UA})
+SEC_UA = os.environ.get("SEC_USER_AGENT", "").strip()  # SEC requires "Name contact@email"; unset -> SEC skipped
+S = requests.Session(); S.headers.update({"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"})
+S.cookies.set("CONSENT", "YES+cb", domain=".google.com"); S.cookies.set("SOCS", "CAI", domain=".google.com")
+S.cookies.set("CONSENT", "YES+cb", domain=".youtube.com"); S.cookies.set("SOCS", "CAI", domain=".youtube.com")
 STATUS = {}
 def log(*a): print(*a, file=sys.stderr, flush=True)
 
@@ -96,20 +98,28 @@ def clean_name(n):
 
 def gfin_quote(t):
     m = NON_US[t]
+    cp = os.path.join(CACHE, f"gf_{t}.json")
+    def stale():
+        mark("Google Finance (non-US)", False)
+        if os.path.exists(cp):
+            q = json.load(open(cp)); q["stale"] = True; return q
+        return None
     r = get(f"https://www.google.com/finance/quote/{m['gf']}")
-    if not r: mark("Google Finance (non-US)", False); return None
+    if not r: return stale()
     h = r.text
     hdr = re.search(re.escape('<div class="gO24Ff">'), h)
     seg = h[hdr.start(): hdr.start() + 3000] if hdr else ""
     txt = re.sub(r"\|+", "|", re.sub(r"<[^>]+>", "|", seg))
-    mm = re.search(r"\|[€$£]?([0-9][0-9.,]*)\|(-?[0-9.,]+)%\|\(\|([+\-]?[0-9.,]+)\|\) Today\|([^|]*?)(?:&nbsp;|\|)", txt)
-    if not mm: mark("Google Finance (non-US)", False); return None
+    mm = re.search(r"\|[€$£]?([0-9][0-9.,]*)\|(?:arrow_\w+\|)?([+\-]?[0-9.,]+)%\|\(\|([+\-]?[0-9.,]+)\|\) Today\|([^|]*?)(?:&nbsp;|\|)", txt)
+    if not mm: return stale()
     price, pct, chg = num(mm.group(1)), num(mm.group(2)), num(mm.group(3))
-    if chg is not None and chg < 0 and pct is not None: pct = -abs(pct)
+    if pct is not None and ((chg is not None and chg < 0) or "arrow_downward" in txt[: mm.end()]):
+        pct = -abs(pct); chg = -abs(chg) if chg is not None else chg
     stamp = mm.group(4).replace("\u202f", " ").strip()
     mark("Google Finance (non-US)", True)
-    return {"ticker": t, "name": m["name"], "price": price, "chg": chg, "pct": pct, "ccy": m["ccy"], "exchange": m["exch"],
+    q = {"ticker": t, "name": m["name"], "price": price, "chg": chg, "pct": pct, "ccy": m["ccy"], "exchange": m["exch"],
             "asOf": stamp, "src": f"https://www.google.com/finance/quote/{m['gf']}"}
+    json.dump(q, open(cp, "w")); return q
 
 # ---------- news ----------
 def gnews(q, n=4):
@@ -155,7 +165,7 @@ def reddit(t, name):
 SECH = {"User-Agent": SEC_UA, "Accept-Encoding": "gzip, deflate"}
 _cik = {}
 def cik_map():
-    if _cik: return _cik
+    if _cik or not SEC_UA: return _cik
     p = os.path.join(CACHE, "company_tickers.json")
     if not os.path.exists(p) or time.time() - os.path.getmtime(p) > 7 * 86400:
         r = get("https://www.sec.gov/files/company_tickers.json", SECH)
@@ -244,7 +254,17 @@ def earnings_calendar(tickers):
     return found
 
 # ---------- YouTube ----------
-def yt_search(q, n=3):
+def yt_search(q, n=3, key=None):
+    res = _yt_live(q, n)
+    cp = os.path.join(CACHE, f"yt_{key}.json")
+    if res:
+        if key: json.dump(res, open(cp, "w"))
+        return res
+    if key and os.path.exists(cp): return json.load(open(cp))
+    try: return json.load(open(os.path.join(ROOT, "seed", "videos.json"))).get(key, [])
+    except Exception: return []
+
+def _yt_live(q, n=3):
     r = get("https://www.youtube.com/results?search_query=" + requests.utils.quote(q) + "&sp=EgIQAQ%253D%253D")
     if not r: mark("YouTube search", False); return []
     m = re.search(r"var ytInitialData = (\{.*?\});</script>", r.text)
@@ -358,7 +378,7 @@ def main():
     for key, q in {"converts": "convertible bonds explained investment banking", "capped_call": "capped call convertible note explained",
                    "semis_cycle": "semiconductor cycle explained wafer fab equipment", "saas_valuation": "SaaS valuation rule of 40 explained",
                    "earnings": "earnings call explained guidance stock reaction", "market_today": "semiconductor stocks today"}.items():
-        videos[key] = yt_search(q, 3)
+        videos[key] = yt_search(q, 3, key)
     log("yt done", round(time.time() - t0))
 
     out = {"generatedAt": dt.datetime.now().astimezone().isoformat(timespec="seconds"),

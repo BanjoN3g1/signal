@@ -10,7 +10,7 @@ A phone-first PWA for following software and semiconductor stocks: a swipeable "
 
 **Refresh button** reloads the latest published JSON and shows how old it is. To force a new pull: Actions → "Refresh data & deploy" → Run workflow.
 
-**One-time setup.** Settings → Pages → Source: **GitHub Actions**.
+**One-time setup.** Settings → Pages → Source: **GitHub Actions**. For SEC filing links, add a repo variable `SEC_USER_AGENT` (Settings → Secrets and variables → Actions → Variables) like `Signal Your Name you@example.com` — the SEC requires a real contact; without it SEC links are skipped. YouTube cards fall back to `seed/videos.json` if YouTube blocks the runner.
 
 **Local test.** `./build.sh && python3 -m http.server -d _site 8000`, then open http://localhost:8000/.
 
