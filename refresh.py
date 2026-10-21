@@ -161,10 +161,11 @@ ALIAS = {"NVDA": "Nvidia", "AMD": "AMD", "INTC": "Intel", "AVGO": "Broadcom", "Q
 AMBIG = {"NOW", "NET", "ARM", "MU", "ON", "ALL", "SHOP", "SNOW", "COHR", "LITE", "KLAC"}  # tickers that are also words
 RD_UA = "python:signal-markets-pwa:1.0 (personal dashboard; https://github.com/BanjoN3g1/signal)"
 RD_SUBS = "wallstreetbets+stocks+investing+StockMarket+semiconductors+SecurityAnalysis+ValueInvesting+options"
-RD_TTL = 6 * 3600  # Reddit refresh at most every 6 h per ticker (runners get only a request or two before 429); cache shown in between
-RD_STATE = {"blocked": False, "note": "", "json": False}  # JSON search 403s from cloud IPs; RSS is tried directly (flip to True to try JSON first)
-RD_BUDGET = 10   # fresh Reddit lookups per run (~10 req/min unauthenticated limit); others use cache, oldest refreshed first
-RD_GAP = 6.5
+RD_TTL = 2 * 3600   # each ticker group is re-searched at most every 2 h; cache shown in between
+RD_MAX_REQ = 4      # Reddit requests per run. Unauthenticated RSS allows ~1 request per rate-limit window from a runner,
+RD_MAX_WAIT = 65    # so we wait out x-ratelimit-reset between requests (adds ~1 min per extra request)
+RD_GROUP = 9        # tickers per batched OR search (one request covers the whole group)
+RD_STATE = {"blocked": False, "note": "", "remaining": 1.0, "reset": 0.0}
 
 def alias(t, name): return ALIAS.get(t) or " ".join((name or t).split()[:2])
 
@@ -186,78 +187,86 @@ def summarize(items):
             "pos": sum(1 for x in sc if x >= 0.05), "neg": sum(1 for x in sc if x <= -0.05)}
 
 def _rd_get(url):
-    """Polite GET with backoff; returns (response|None, status)."""
+    """One polite GET that honors Reddit's x-ratelimit headers; returns (response|None, status)."""
+    if RD_STATE["remaining"] < 1:
+        wait = RD_STATE["reset"] - time.time() + 1
+        if wait > RD_MAX_WAIT: return None, "budget"
+        if wait > 0: time.sleep(wait)
     st = "err"
-    for i in range(3):
+    for i in range(2):
         try:
-            r = requests.get(url, headers={"User-Agent": RD_UA, "Accept": "application/json, application/atom+xml"}, timeout=12)
+            r = requests.get(url, headers={"User-Agent": RD_UA, "Accept": "application/atom+xml"}, timeout=15)
             st = r.status_code
-            if r.status_code == 200: return r, st
-            if r.status_code == 429:
-                ra = r.headers.get("Retry-After")
-                time.sleep(min(float(ra) if ra and ra.replace(".", "").isdigit() else 4 * (2 ** i), 20)); continue
-            return None, st  # 403 etc: blocked, don't hammer
+            try:
+                RD_STATE["remaining"] = float(r.headers.get("x-ratelimit-remaining", 1))
+                RD_STATE["reset"] = time.time() + float(r.headers.get("x-ratelimit-reset", 0))
+            except ValueError: pass
+            if r.status_code == 200 and "xml" in r.headers.get("content-type", ""): return r, st
+            if r.status_code == 429 and i == 0:
+                ra = r.headers.get("retry-after") or r.headers.get("x-ratelimit-reset") or "30"
+                try: time.sleep(min(float(ra) + 1, RD_MAX_WAIT))
+                except ValueError: time.sleep(30)
+                continue
+            return None, st
         except Exception:
             if i: break
             time.sleep(2)
     return None, st
 
-def rd_cached(t):
-    cp = os.path.join(CACHE, f"rd_{t}.json")
-    try: return json.load(open(cp))
-    except Exception: return None
+def rd_groups(tickers, quotes):
+    """Batch tickers into OR searches: one request returns up to 100 recent posts for the whole group."""
+    out = []
+    for i in range(0, len(tickers), RD_GROUP):
+        ts = tickers[i:i + RD_GROUP]; terms = []
+        for t in ts:
+            al = alias(t, (quotes.get(t) or {}).get("name"))
+            if t not in AMBIG: terms.append(t)
+            terms.append(f'"{al}"' if " " in al else al)
+        out.append({"key": "-".join(ts), "tickers": ts, "q": " OR ".join(dict.fromkeys(terms))})
+    return out
 
-def reddit_chatter(t, name, fetch=True):
-    al = alias(t, name); cp = os.path.join(CACHE, f"rd_{t}.json")
-    cached = rd_cached(t)
-    if cached and time.time() - cached.get("_ts", 0) < RD_TTL:
-        return {**cached, "cached": True}
-    if RD_STATE["blocked"] or not fetch:
-        if cached: return {**cached, "cached": True, "stale": True}
-        return {"status": "blocked", "note": RD_STATE["note"]} if RD_STATE["blocked"] else {"status": "pending", "note": "Queued for the next refresh"}
-    q = requests.utils.quote(f'{t} OR "{al}"' if t not in AMBIG else f'"{al}"')
-    items, src, r, st = [], None, None, "skip"
-    if RD_STATE["json"]: r, st = _rd_get(f"https://www.reddit.com/r/{RD_SUBS}/search.json?q={q}&restrict_sr=1&sort=new&t=week&limit=50&raw_json=1")
-    if r is not None:
-        try:
-            for c in r.json()["data"]["children"]:
-                d = c["data"]; txt = (d.get("title") or "") + ". " + (d.get("selftext") or "")[:500]
-                if not mentions(txt, t, al): continue
-                items.append({"title": d.get("title"), "url": "https://www.reddit.com" + d.get("permalink", ""), "sub": "r/" + d.get("subreddit", ""),
-                              "score": d.get("score"), "comments": d.get("num_comments"),
-                              "date": dt.datetime.fromtimestamp(d.get("created_utc", 0), dt.timezone.utc).isoformat(timespec="seconds"), "s": senti(txt)})
-            src = "json"
-        except Exception: r = None
-    if r is None:  # fall back to the RSS search feed
-        if RD_STATE["json"]: RD_STATE["json"] = False; time.sleep(RD_GAP)
-        r2, st2 = _rd_get(f"https://www.reddit.com/r/{RD_SUBS}/search.rss?q={q}&restrict_sr=on&sort=new&t=week&limit=50")
-        if r2 is not None:
-            try:
-                ns = {"a": "http://www.w3.org/2005/Atom"}
-                for e in ET.fromstring(r2.content).findall("a:entry", ns):
-                    title = e.findtext("a:title", namespaces=ns) or ""
-                    body = re.sub(r"<[^>]+>", " ", html.unescape(e.findtext("a:content", namespaces=ns) or ""))
-                    body = re.sub(r"submitted by.*$", "", re.sub(r"\s+", " ", body)).strip()
-                    txt = title + ". " + body[:500]
-                    if not mentions(txt, t, al): continue
-                    cat = e.find("a:category", ns)
-                    items.append({"title": title, "url": e.find("a:link", ns).get("href"), "sub": "r/" + (cat.get("term") if cat is not None else ""),
-                                  "date": e.findtext("a:updated", namespaces=ns), "s": senti(txt)})
-                src = "rss"
-            except Exception: r2 = None
-        if r2 is None:
-            stt = st2
-            RD_STATE["blocked"] = True  # stop asking this run; cached results (if any) are shown
-            RD_STATE["note"] = (f"Reddit returned HTTP {stt} to the data runner (it blocks or rate-limits cloud servers)" if stt in (403, 429)
-                                else "Reddit didn't respond to the data runner")
-            mark("Reddit chatter", False, RD_STATE["note"] or f"HTTP {stt}")
-            return {**cached, "cached": True, "stale": True} if cached else {"status": "blocked", "note": RD_STATE["note"]}
+def rd_fetch_group(g):
+    cp = os.path.join(CACHE, f"rdg_{g['key']}.json")
+    try: cached = json.load(open(cp))
+    except Exception: cached = None
+    if cached and time.time() - cached.get("_ts", 0) < RD_TTL: return cached, "cached"
+    if RD_STATE["blocked"] or RD_STATE["used"] >= RD_MAX_REQ: return cached, "stale" if cached else "pending"
+    RD_STATE["used"] += 1
+    r, st = _rd_get(f"https://www.reddit.com/r/{RD_SUBS}/search.rss?q={requests.utils.quote(g['q'])}&restrict_sr=on&sort=new&t=week&limit=100")
+    if r is None:
+        if st == "budget": return cached, "stale" if cached else "pending"
+        RD_STATE["blocked"] = True
+        RD_STATE["note"] = (f"Reddit returned HTTP {st} to the data runner (it rate-limits cloud servers)" if st in (403, 429)
+                            else "Reddit didn't respond to the data runner")
+        mark("Reddit chatter", False, RD_STATE["note"])
+        return cached, "stale" if cached else "blocked"
+    try:
+        ns = {"a": "http://www.w3.org/2005/Atom"}; posts = []
+        for e in ET.fromstring(r.content).findall("a:entry", ns):
+            title = e.findtext("a:title", namespaces=ns) or ""
+            body = re.sub(r"<[^>]+>", " ", html.unescape(e.findtext("a:content", namespaces=ns) or ""))
+            body = re.sub(r"submitted by.*$", "", re.sub(r"\s+", " ", body)).strip()
+            cat = e.find("a:category", ns)
+            posts.append({"title": title, "text": body[:500], "url": e.find("a:link", ns).get("href"),
+                          "sub": "r/" + (cat.get("term") if cat is not None else ""), "date": e.findtext("a:updated", namespaces=ns)})
+    except Exception:
+        mark("Reddit chatter", False, "Reddit returned something that wasn't a feed"); return cached, "stale" if cached else "blocked"
     mark("Reddit chatter", True)
-    top = sorted(items, key=lambda x: -(x.get("score") or 0) - (x.get("comments") or 0))[:3] if src == "json" else items[:3]
-    res = {"status": "ok", "via": src, "window": "7d", "sampled": 50, **summarize(items), "top": top,
-           "asOf": dt.datetime.now().astimezone().isoformat(timespec="seconds"), "_ts": time.time()}
+    res = {"_ts": time.time(), "asOf": dt.datetime.now().astimezone().isoformat(timespec="seconds"), "posts": posts}
     json.dump(res, open(cp, "w"))
-    return res
+    return res, "fresh"
+
+def reddit_for(t, name, grp, how):
+    if not grp:
+        return {"status": "blocked", "note": RD_STATE["note"]} if how == "blocked" else {"status": "pending", "note": "Queued for the next refresh"}
+    al = alias(t, name); items = []
+    for p in grp["posts"]:
+        txt = p["title"] + ". " + p["text"]
+        if mentions(txt, t, al): items.append({k: p[k] for k in ("title", "url", "sub", "date")} | {"s": senti(txt)})
+    dates = sorted(p["date"] for p in grp["posts"] if p.get("date"))
+    full = len(grp["posts"]) >= 95  # hit the 100-post cap: window is shorter than 7 days
+    return {"status": "ok", "via": "rss", **summarize(items), "top": items[:3], "asOf": grp["asOf"], "stale": how == "stale",
+            "window": "7d" if not full or not dates else "since", "since": dates[0] if full and dates else None}
 
 def _views(v):
     m = re.match(r"([\d.,]+)\s*([KMB]?)", v or "")
@@ -301,12 +310,14 @@ def chatter(tickers, quotes):
     def yt(t): return t, youtube_chatter(t, (quotes.get(t) or {}).get("name"))
     with cf.ThreadPoolExecutor(4) as ex:
         ytr = dict(ex.map(yt, tickers))
-    order = sorted(tickers, key=lambda t: (rd_cached(t) or {}).get("_ts", 0))  # oldest first
-    rds, used = {}, 0
-    for t in order:
-        rd = reddit_chatter(t, (quotes.get(t) or {}).get("name"), fetch=used < RD_BUDGET)
-        if not rd.get("cached") and rd.get("status") == "ok": used += 1; time.sleep(RD_GAP)
-        rd.pop("_ts", None); rds[t] = rd
+    RD_STATE["used"] = 0; rds = {}
+    groups = rd_groups(tickers, quotes)
+    def age(g):
+        try: return json.load(open(os.path.join(CACHE, f"rdg_{g['key']}.json"))).get("_ts", 0)
+        except Exception: return 0
+    for g in sorted(groups, key=age):  # stalest group first
+        grp, how = rd_fetch_group(g)
+        for t in g["tickers"]: rds[t] = reddit_for(t, (quotes.get(t) or {}).get("name"), grp, how)
     for t in tickers:
         rd = rds[t]
         out[t] = {"reddit": rd, "youtube": ytr[t], "x": None}
@@ -444,7 +455,7 @@ def _yt_live(q, n=3):
 
 # ---------- main ----------
 def main():
-    STATUS.clear(); RD_STATE.update(blocked=False, note="", json=False)
+    STATUS.clear(); RD_STATE.update(blocked=False, note="", remaining=1.0, reset=0.0, used=0)
     t0 = time.time()
     wl = load_watchlist()
     groups = wl["groups"]
