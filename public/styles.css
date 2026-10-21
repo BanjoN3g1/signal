@@ -163,3 +163,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
 .gauge i{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid #1c1c1f;transform:translate(-50%,-50%)}
 .gl{display:flex;justify-content:space-between;font-size:11px;color:var(--mute);margin-bottom:4px}
 .chat .hl{font-size:14px}.dot{font-size:10px;vertical-align:1px}
+
+/* AI */
+.chip.ai{background:rgba(100,210,255,.14);color:var(--teal);text-transform:none;letter-spacing:0;vertical-align:1px;margin-left:4px}
+.cite{display:inline-grid;place-items:center;min-width:16px;height:16px;padding:0 4px;border-radius:5px;background:rgba(100,210,255,.18);color:var(--teal);font-size:10.5px;font-weight:700;vertical-align:2px;margin:0 1px;text-decoration:none}
+sup.cite{vertical-align:3px}
+.srcs .hl{font-size:14px}

@@ -152,6 +152,21 @@ function chatterHTML(t){
   <div class="chat"><div class="ch1"><b>X</b><span class="chip">Coming later</span></div></div>
   <p class="note">Score = average VADER sentiment (a free word-list method, −100 to +100) over post titles and text, with market slang added (“calls”, “tank”, “downgrade”). It reads tone, not facts, and misses sarcasm. YouTube uses titles and descriptions; reading comments would need a YouTube API key.</p>`}
 
+// ---------- AI summaries (GitHub Models, generated in the data refresh) ----------
+function aiWhy(t){const w=DATA.why?.[t];const q=DATA.quotes?.[t];if(!w||!q||q.pct==null)return null;return Math.abs((w.pct??q.pct)-q.pct)<2.5?w:null}
+function cite(w,links){return esc(w.why).replace(/\[(\d+)\]/g,(m,n)=>{const s=(w.sources||[]).find(x=>x.n==n);return s&&links?`<a class="cite" href="${esc(s.url)}" target="_blank" rel="noopener">${n}</a>`:`<sup class="cite">${n}</sup>`})}
+function whySources(t){const w=DATA.why[t];return `<div class="srcs">${(w.sources||[]).map(s=>`<a class="hl" href="${esc(s.url)}" target="_blank" rel="noopener"><span class="cite">${s.n}</span> ${esc(s.title)}<small>${esc(s.source)}${s.date?' · '+esc(/^\d{4}-/.test(s.date)?s.date:fmtPT(s.date)):''}${(w.cited||[]).includes(s.n)?' · cited':''}</small></a>`).join('')}</div>
+ <p class="note">Written by ${esc(w.model)} (GitHub Models) from these headlines and filings only${w.confidence?` · confidence: ${esc(w.confidence)}`:''} · ${esc(fmtPT(w.at))}. Headlines suggest causes; they don't prove them.</p>`}
+function deepHTML(e){const d=e.deep,li=a=>(a||[]).length?`<ul class="dl">${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'';
+ return `<div class="kicker" style="margin-top:14px"><span class="chip ai">AI deep dive · from the press release</span></div>
+  ${d.headline?`<p style="font-size:17px;font-weight:600;margin:8px 0 4px">${esc(d.headline)}</p>`:''}
+  <h4 class="dh">Takeaways</h4>${li(d.takeaways)}
+  <h4 class="dh">What the filing says</h4>${li(d.filing_says)}
+  ${d.guidance?`<h4 class="dh">Guidance</h4><p>${esc(d.guidance)}</p>`:''}
+  <h4 class="dh">For a software / semis banker</h4>${li(d.banker)}
+  ${(d.questions||[]).length?`<h4 class="dh">Questions to ask</h4>${li(d.questions)}`:''}
+  <p class="note">Written by ${esc(d.model)} (GitHub Models) from the 8-K press release (exhibit 99.1) only, so there are no call remarks. Check numbers against the filing. ${esc(fmtPT(d.at))}.</p>`}
+
 // ---------- sparkline ----------
 function spark(h,up){
  if(!h||h.length<3)return '';
@@ -196,7 +211,7 @@ function moverCard(q,i){
   ${spark(q.hist,(q.r21??q.pct??0)>=0)}
   <div class="stats up">${q.r5!=null?`<div class="stat">5 days<b class="${cls(q.r5)}">${pc(q.r5)}</b></div>`:''}${q.r21!=null?`<div class="stat">1 month<b class="${cls(q.r21)}">${pc(q.r21)}</b></div>`:''}${(()=>{const B=benchFor(g);const b=B&&DATA.quotes[B];return b&&q.pct!=null?`<div class="stat">vs ${B}<b class="${cls(q.pct-b.pct)}">${(q.pct-b.pct>0?'+':'')+(q.pct-b.pct).toFixed(2)} pts</b></div>`:''})()}${chatStat(t)}</div>
   <div class="fade">
-   <div class="sect"><h4>Why it moved</h4><p>${esc(whyMoved(q))}</p></div>
+   <div class="sect"><h4>Why it moved${aiWhy(t)?' <span class="chip ai">AI · sourced</span>':''}</h4><p>${aiWhy(t)?cite(aiWhy(t)):esc(whyMoved(q))}</p></div>
    ${n[0]?`<div class="sect"><h4>In the headlines</h4>${n.slice(0,1).map(h=>`<a class="hl" href="${esc(h.url)}" target="_blank" rel="noopener">${esc(h.title)}<small>${esc(h.source)} · ${esc(fmtPT(h.date))}</small></a>`).join('')}</div>`:''}
    <div class="sect"><h4>Why it matters for you</h4><p>${esc(PROFILES[t]||'')} ${esc(bankerAngle(q))}</p></div>
   </div>
@@ -268,7 +283,7 @@ function openDeep(t){
  const filings=(sec?.filings||[]).filter(f=>['8-K','10-Q','10-K','6-K','20-F','S-3ASR','424B2','424B5'].includes(f.form)).slice(0,6);
  sheet(esc(t),`
   <h3>${esc(q.name)}</h3><p class="note">${esc(groupOf(t))} · ${ccy(q)}${f2(q.price)} <span class="${cls(q.pct)}">${pc(q.pct)}</span> · as of ${esc(q.asOf||'')}</p>
-  <p>${esc(whyMoved(q))}</p>
+  ${aiWhy(t)?`<div class="kicker" style="margin-top:6px"><span class="chip ai">AI summary of the sources below</span></div><p>${cite(aiWhy(t),true)}</p>${whySources(t)}<p class="note">The numbers: ${esc(whyMoved(q))}</p>`:`<p>${esc(whyMoved(q))}</p>`}
   <p class="note">How to read this: compare the move to the sector ETF first. If the stock moved with the group, the cause is usually macro or sector news (rates, AI capex, export controls). If it diverged, look for a company headline, an analyst call, or a filing below. Matching cause to move is a judgment call — open the sources to check.</p>
   <h4 style="margin:18px 0 4px">Why it matters for you</h4><p>${esc(PROFILES[t]||'')} ${esc(bankerAngle(q))}</p>
   ${le?`<h4 style="margin:18px 0 4px">Last earnings · ${dshort(le.date)}</h4><p>${le.eps!=null?`EPS $${f2(le.eps)} vs $${f2(le.epsForecast)} consensus (${le.result})`:'EPS not available'}${le.reaction!=null?`; stock moved <span class="${cls(le.reaction)}">${pc(le.reaction)}</span> on the report and ${pc(le.sinceReport)} since.`:'.'}</p>`:''}
@@ -330,7 +345,7 @@ function renderEarnings(p){
   body+=`<p class="note">Dates and consensus from Nasdaq (Zacks). Dates far out may be estimated until the company confirms. Infineon (IFX) isn't covered by this calendar.</p>`;
  }else{
   rc.forEach((e,i)=>{body+=`<button class="row" data-r="${i}"><div class="r1">${logo(e.ticker)}<div class="mid"><b>${esc(e.ticker)}</b><div>${dshort(e.date)} · ${esc(e.fq||'')}</div></div><div class="rt">${e.reaction!=null?`<b class="${cls(e.reaction)}">${pc(e.reaction)}</b>on report`:''}</div></div>
-   <div class="r2">${e.result?`<span class="chip ${e.result==='beat'?'g':e.result==='miss'?'r':''}">${e.result==='beat'?'Beat':e.result==='miss'?'Miss':'In line'}</span>`:''}${e.eps!=null?`<span class="chip">EPS $${f2(e.eps)} vs $${f2(e.epsForecast)}</span>`:''}${e.surprise!=null?`<span class="chip">${e.surprise>0?'+':''}${e.surprise}% surprise</span>`:''}${e.sinceReport!=null?`<span class="chip">${pc(e.sinceReport)} since</span>`:''}</div>
+   <div class="r2">${e.result?`<span class="chip ${e.result==='beat'?'g':e.result==='miss'?'r':''}">${e.result==='beat'?'Beat':e.result==='miss'?'Miss':'In line'}</span>`:''}${e.eps!=null?`<span class="chip">EPS $${f2(e.eps)} vs $${f2(e.epsForecast)}</span>`:''}${e.surprise!=null?`<span class="chip">${e.surprise>0?'+':''}${e.surprise}% surprise</span>`:''}${e.sinceReport!=null?`<span class="chip">${pc(e.sinceReport)} since</span>`:''}${e.deep?'<span class="chip ai">AI deep dive</span>':''}</div>
    <p style="margin:10px 0 0;font-size:14px;color:#d1d1d6">${esc(earnWhat(e))}</p></button>`});
   body+=`<p class="note">EPS is adjusted (non-GAAP) per Nasdaq/Zacks. Reaction = close before the report to the first close after it. Last ~75 days.</p>`;
  }
@@ -345,7 +360,8 @@ function renderEarnings(p){
  p.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{const e=rc[b.dataset.r];const pr=e.pr||{};
   sheet(esc(e.ticker),`<h3>${esc(e.name)} · ${dshort(e.date)}</h3>
    <p class="note">${esc(e.fq||'')} · ${e.eps!=null?`EPS $${f2(e.eps)} vs $${f2(e.epsForecast)} consensus`:''}${e.surprise!=null?` (${e.surprise>0?'+':''}${e.surprise}%)`:''}${e.reaction!=null?` · reaction <span class="${cls(e.reaction)}">${pc(e.reaction)}</span> (${esc(e.reactionWindow)}) · ${pc(e.sinceReport)} since`:''}</p>
-   <h4 style="margin:18px 0 4px">What it means for your work</h4><p>${esc(earnWhat(e))}</p>
+   ${e.deep?deepHTML(e):''}
+   <h4 style="margin:18px 0 4px">${e.deep?'The stock reaction':'What it means for your work'}</h4><p>${esc(earnWhat(e))}</p>
    ${(pr.highlights||[]).length?`<h4 style="margin:18px 0 4px">From the press release</h4>${pr.highlights.map(x=>`<div class="quote">${esc(x)}</div>`).join('')}`:''}
    ${(pr.outlook||[]).length?`<h4 style="margin:18px 0 4px">Outlook / guidance language</h4>${pr.outlook.map(x=>`<div class="quote">${esc(x)}</div>`).join('')}`:''}
    ${!(pr.highlights||[]).length&&!(pr.outlook||[]).length?`<p class="note">I couldn't pull clean quotes from the filing automatically — open it below.</p>`:''}

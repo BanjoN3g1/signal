@@ -6,6 +6,7 @@ Rule: never invent numbers. If a source fails, the field is omitted."""
 import json, os, re, sys, time, html, datetime as dt, concurrent.futures as cf
 import xml.etree.ElementTree as ET
 import requests
+import llm
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.environ.get("OUT_DIR") or os.path.join(ROOT, "data")
@@ -385,7 +386,7 @@ def press_release(cik, acc):
                     outlook.append(s.strip())
                 elif re.search(r"(revenue|total revenue|subscription revenue|rpo|remaining performance obligation)s? (was|were|of|grew|increased|rose|decreased|up)", sl) and re.search(r"\$|\d+%", s) and len(hl) < 3:
                     hl.append(s.strip())
-        return {"url": url, "highlights": hl, "outlook": outlook}
+        return {"url": url, "highlights": hl, "outlook": outlook, "_text": txt}
     except Exception as e:
         log("PR err", e); return None
 
@@ -452,6 +453,71 @@ def _yt_live(q, n=3):
     walk(json.loads(m.group(1)))
     mark("YouTube search", True)
     return out[:n]
+
+
+# ---------- AI summaries (GitHub Models free tier; cached; template fallback in the app) ----------
+def bench_of(group):
+    g = group or ""
+    return "SOXX" if g.startswith("Semis") else "IGV" if g.startswith("Software") else None
+
+def build_why(quotes, news, sec):
+    from zoneinfo import ZoneInfo
+    day = dt.datetime.now(ZoneInfo("America/New_York")).date().isoformat()  # market date
+    cp = os.path.join(CACHE, f"why_{day}.json")
+    try: done = json.load(open(cp))
+    except Exception: done = {}
+    cands = []
+    for t, q in quotes.items():
+        if not q or t in ETFS or q.get("pct") is None: continue
+        b = bench_of(q.get("group")); bq = quotes.get(b) if b else None
+        div = q["pct"] - bq["pct"] if bq and bq.get("pct") is not None else None
+        if abs(q["pct"]) < 2 and (div is None or abs(div) < 1.5): continue
+        prev = done.get(t)
+        if prev and abs(prev.get("pct", 0) - q["pct"]) < 2.5: continue  # cached for today unless the move changed a lot
+        srcs = [{"n": i + 1, "title": h["title"], "source": h.get("source") or "News", "date": h.get("date") or "", "url": h["url"]} for i, h in enumerate((news.get(t) or [])[:4])]
+        for f in ((sec.get(t) or {}).get("filings") or []):
+            try: recent = (dt.date.today() - dt.date.fromisoformat(f["date"])).days <= 3
+            except Exception: recent = False
+            if recent and f["form"] in ("8-K", "6-K", "10-Q", "10-K", "S-3ASR", "424B2", "424B5", "SC 13D") and len(srcs) < 6:
+                srcs.append({"n": len(srcs) + 1, "title": f"SEC {f['form']} filed {f['date']}" + (f" (items {f['items']})" if f.get("items") else "") + (f" — {f['desc']}" if f.get("desc") else ""),
+                             "source": "SEC EDGAR", "date": f["date"], "url": f["url"]})
+        cands.append({"ticker": t, "name": q.get("name") or t, "pct": q["pct"], "bench": b, "benchPct": bq.get("pct") if bq else None, "r5": q.get("r5"), "sources": srcs})
+    cands.sort(key=lambda c: -abs(c["pct"]))
+    for i in range(0, min(len(cands), 6), 3):  # at most 2 batched calls per run
+        batch = cands[i:i + 3]
+        res = llm.why_batch(batch, CACHE)
+        if not isinstance(res, dict): break
+        for c in batch:
+            r = res.get(c["ticker"]) or {}
+            if not isinstance(r, dict) or not r.get("why"): continue
+            nums = {s["n"] for s in c["sources"]}
+            used = [n for n in (r.get("sources") or []) if isinstance(n, int) and n in nums]
+            done[c["ticker"]] = {"why": str(r["why"])[:700], "confidence": r.get("confidence"), "pct": c["pct"],
+                                 "sources": c["sources"], "cited": used, "model": "gpt-4.1-mini",
+                                 "at": dt.datetime.now().astimezone().isoformat(timespec="seconds")}
+        json.dump(done, open(cp, "w"))
+    return done
+
+def pr_text_for_llm(txt):
+    t = txt or ""
+    m = re.search(r"(forward[- ]looking statements|safe harbor|about [A-Z][\w&.,' ]{2,40}\s)", t[4000:], re.I)
+    if m: t = t[:4000 + m.start()]
+    return t[:20000]
+
+def build_deep(recent):
+    for e in recent:  # newest first
+        f = e.get("filing") or {}; pr = e.get("pr") or {}
+        if not f.get("acc") or not pr.get("_text"): continue
+        cp = os.path.join(CACHE, f"deep_{f['acc']}.json")
+        try: d = json.load(open(cp))
+        except Exception: d = None
+        if not d:
+            res = llm.earnings_deep(e["ticker"], e.get("name") or e["ticker"], e.get("fq") or "", pr_text_for_llm(pr["_text"]), CACHE)
+            if not isinstance(res, dict) or not res.get("takeaways"): continue
+            d = {k: res.get(k) for k in ("headline", "takeaways", "filing_says", "guidance", "banker", "questions")}
+            d.update(model="gpt-4.1", at=dt.datetime.now().astimezone().isoformat(timespec="seconds"), acc=f["acc"])
+            json.dump(d, open(cp, "w"))
+        e["deep"] = d
 
 # ---------- main ----------
 def main():
@@ -536,6 +602,12 @@ def main():
             q10 = [f for f in s["filings"] if f["form"] in ("10-Q", "10-K") and f["date"] >= e["date"]]
             if q10: e["periodic"] = q10[-1]
     log("earnings done", round(time.time() - t0))
+    llm.STATE.update(calls=0, errors=[], skipped=0)
+    build_deep(recent)
+    for e in recent:
+        if e.get("pr"): e["pr"].pop("_text", None)
+    why = build_why(quotes, news, sec)
+    log("ai done", round(time.time() - t0), llm.STATE, llm.usage(CACHE))
 
     videos = {}
     for key, q in {"converts": "convertible bonds explained investment banking", "capped_call": "capped call convertible note explained",
@@ -546,7 +618,7 @@ def main():
 
     out = {"generatedAt": dt.datetime.now().astimezone().isoformat(timespec="seconds"),
            "elapsedSec": round(time.time() - t0, 1), "groups": groups, "quotes": quotes, "news": news,
-           "sec": {k: v for k, v in sec.items() if v}, "sentiment": sentiment, "sentimentMeta": {"method": "VADER lexicon + market-slang terms" if VADER else "unavailable (vaderSentiment not installed)", "reddit": RD_STATE["note"] or "ok", "x": "not implemented"}, "earnings": {"upcoming": upcoming, "recent": recent},
+           "sec": {k: v for k, v in sec.items() if v}, "why": why, "ai": {"provider": "GitHub Models (free tier)", "usageToday": llm.usage(CACHE), "caps": llm.CAPS, "errors": llm.STATE["errors"][-3:]}, "sentiment": sentiment, "sentimentMeta": {"method": "VADER lexicon + market-slang terms" if VADER else "unavailable (vaderSentiment not installed)", "reddit": RD_STATE["note"] or "ok", "x": "not implemented"}, "earnings": {"upcoming": upcoming, "recent": recent},
            "videos": videos, "sources": STATUS}
     tmp = os.path.join(DATA, "feed.json.tmp")
     json.dump(out, open(tmp, "w")); os.replace(tmp, os.path.join(DATA, "feed.json"))

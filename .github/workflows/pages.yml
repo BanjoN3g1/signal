@@ -1,7 +1,8 @@
 name: Refresh data & deploy
 on:
   schedule:
-    - cron: "*/10 * * * *"   # GitHub may delay or skip scheduled runs under load
+    # Off the top of the hour (GitHub drops/delays scheduled runs most at :00). Best effort; see README.
+    - cron: "7,17,27,37,47,57 * * * *"
   workflow_dispatch:
   push:
     branches: [main]
@@ -9,8 +10,9 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  models: read          # GitHub Models free tier for AI summaries (GITHUB_TOKEN, no extra secret)
 concurrency:
-  group: pages
+  group: pages          # one run at a time; a newer pending run replaces an older pending one
   cancel-in-progress: false
 jobs:
   build-deploy:
@@ -25,7 +27,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Restore data cache (earnings calendar, SEC ticker map)
+      - name: Restore data cache (earnings calendar, SEC ticker map, Reddit, AI summaries)
         uses: actions/cache@v4
         with:
           path: data/cache
@@ -34,10 +36,20 @@ jobs:
       - name: Pull data and build site
         env:
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}  # repo variable, e.g. "Signal Your Name you@example.com"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ./build.sh
+      # Guard against the stale-run race: a run that started on an older commit must not overwrite a newer deploy.
+      - name: Check this run is still on the latest main
+        id: fresh
+        run: |
+          head=$(git ls-remote origin refs/heads/main | cut -f1)
+          if [ "$head" != "$GITHUB_SHA" ]; then echo "Skipping deploy: built $GITHUB_SHA but main is now $head"; echo "stale=1" >> "$GITHUB_OUTPUT"; fi
       - uses: actions/configure-pages@v5
+        if: steps.fresh.outputs.stale != '1'
       - uses: actions/upload-pages-artifact@v3
+        if: steps.fresh.outputs.stale != '1'
         with:
           path: _site
       - id: deploy
+        if: steps.fresh.outputs.stale != '1'
         uses: actions/deploy-pages@v4
