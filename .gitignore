@@ -1,0 +1,12 @@
+data/
+_site/
+.access_key
+*.env
+.env*
+__pycache__/
+*.pyc
+tools/
+node_modules/
+screenshots/
+*.log
+shots.py

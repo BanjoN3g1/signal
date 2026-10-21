@@ -1,0 +1,43 @@
+name: Refresh data & deploy
+on:
+  schedule:
+    - cron: "*/10 * * * *"   # GitHub may delay or skip scheduled runs under load
+  workflow_dispatch:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Restore data cache (earnings calendar, SEC ticker map)
+        uses: actions/cache@v4
+        with:
+          path: data/cache
+          key: signal-cache-${{ github.run_id }}
+          restore-keys: signal-cache-
+      - name: Pull data and build site
+        env:
+          SEC_USER_AGENT: "Signal markets app (github.com/${{ github.repository }})"
+        run: ./build.sh
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4

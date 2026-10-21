@@ -1,0 +1,16 @@
+{"groups": [
+ {"name": "Semis · Compute & GPUs", "tickers": ["NVDA", "AMD", "INTC", "ARM"]},
+ {"name": "Semis · Custom silicon & networking", "tickers": ["AVGO", "MRVL", "ANET"]},
+ {"name": "Semis · Memory", "tickers": ["MU"]},
+ {"name": "Semis · Foundry", "tickers": ["TSM"]},
+ {"name": "Semis · Equipment (WFE)", "tickers": ["ASML", "AMAT", "LRCX", "KLAC"]},
+ {"name": "Semis · Optics", "tickers": ["COHR", "LITE"]},
+ {"name": "Semis · Mobile, analog & auto", "tickers": ["QCOM", "IFX"]},
+ {"name": "Semis · AI servers", "tickers": ["SMCI"]},
+ {"name": "Software · Hyperscale & database", "tickers": ["MSFT", "ORCL"]},
+ {"name": "Software · Enterprise apps", "tickers": ["CRM", "NOW", "ADBE", "INTU", "WDAY", "SHOP"]},
+ {"name": "Software · Data & infrastructure", "tickers": ["SNOW", "DDOG", "MDB", "NET"]},
+ {"name": "Software · Cybersecurity", "tickers": ["CRWD", "PANW"]},
+ {"name": "Software · AI & analytics", "tickers": ["PLTR"]},
+ {"name": "Benchmarks", "tickers": ["IGV", "SOXX"]}
+]}
