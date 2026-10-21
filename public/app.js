@@ -138,7 +138,7 @@ const sNum=n=>n==null?'':(n>0?'+':'')+n;
 function chatStat(t){const o=DATA.sentiment?.[t]?.overall;if(!o||o.n<3)return '';return `<div class="stat">Chatter<b class="${sCls(o.label)}">${sLab(o.label)} ${sNum(o.score)}</b></div>`}
 function srcBlock(name,s,kind){
  if(!s)return '';
- if(s.status!=='ok')return `<div class="chat"><div class="ch1"><b>${name}</b><span class="chip">${s.status==='pending'?'Queued':'Unavailable'}</span></div><p class="note" style="margin:6px 0 0">${esc(s.status==='pending'?'Reddit is checked a few tickers at a time to stay polite — this one shows up within ~30 min.':(s.note||'Source unavailable')+'. Showing nothing rather than guessing.')}</p></div>`;
+ if(s.status!=='ok')return `<div class="chat"><div class="ch1"><b>${name}</b><span class="chip">${s.status==='pending'?'Queued':'Unavailable'}</span></div><p class="note" style="margin:6px 0 0">${esc(s.status==='pending'?'Reddit only allows a request or two per refresh from the data server, so tickers are checked in rotation — this one fills in over the next few hours.':(s.note||'Source unavailable')+'. Showing nothing rather than guessing.')}</p></div>`;
  const few=s.n<3,pct=s.score==null?50:Math.max(0,Math.min(100,(s.score+100)/2));
  return `<div class="chat"><div class="ch1"><b>${name}</b>${few?'<span class="chip">Too few posts</span>':`<span class="chip ${s.label==='bullish'?'g':s.label==='bearish'?'r':''}">${sLab(s.label)} ${sNum(s.score)}</span>`}<span class="note" style="margin-left:auto">${s.n} ${kind}${s.n===1?'':'s'} · 7d</span></div>
   ${few?'':`<div class="gauge"><i style="left:${pct}%"></i></div><div class="gl"><span>Bearish</span><span>${s.pos??0} positive · ${s.neg??0} negative</span><span>Bullish</span></div>`}

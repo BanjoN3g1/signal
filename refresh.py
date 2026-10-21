@@ -161,8 +161,8 @@ ALIAS = {"NVDA": "Nvidia", "AMD": "AMD", "INTC": "Intel", "AVGO": "Broadcom", "Q
 AMBIG = {"NOW", "NET", "ARM", "MU", "ON", "ALL", "SHOP", "SNOW", "COHR", "LITE", "KLAC"}  # tickers that are also words
 RD_UA = "python:signal-markets-pwa:1.0 (personal dashboard; https://github.com/BanjoN3g1/signal)"
 RD_SUBS = "wallstreetbets+stocks+investing+StockMarket+semiconductors+SecurityAnalysis+ValueInvesting+options"
-RD_TTL = 30 * 60  # Reddit refresh at most every 30 min per ticker; cached result is shown in between
-RD_STATE = {"blocked": False, "note": "", "json": True}
+RD_TTL = 6 * 3600  # Reddit refresh at most every 6 h per ticker (runners get only a request or two before 429); cache shown in between
+RD_STATE = {"blocked": False, "note": "", "json": False}  # JSON search 403s from cloud IPs; RSS is tried directly (flip to True to try JSON first)
 RD_BUDGET = 10   # fresh Reddit lookups per run (~10 req/min unauthenticated limit); others use cache, oldest refreshed first
 RD_GAP = 6.5
 
@@ -444,7 +444,7 @@ def _yt_live(q, n=3):
 
 # ---------- main ----------
 def main():
-    STATUS.clear(); RD_STATE.update(blocked=False, note="", json=True)
+    STATUS.clear(); RD_STATE.update(blocked=False, note="", json=False)
     t0 = time.time()
     wl = load_watchlist()
     groups = wl["groups"]
