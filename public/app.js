@@ -237,13 +237,17 @@ async function openDig(e,it,kind){
    return `<p class="${on?'hl':''}">${timed?`<span class="tt">${ts(b.s)}</span>`:''}${on?markQ(b.t,it.q):esc(b.t)}</p>`}).join('')
    +(lo>0||hi<B.length-1?`<button class="more" id="more">Show more context</button>`:'');
   const m=box.querySelector('#more');if(m)m.onclick=()=>{ctx+=60;draw()};
-  const h=box.querySelector('.hl');if(h&&ctx===60)h.scrollIntoView({block:'center'})};
+  const h=box.querySelector('.hl');if(h&&ctx===60)box.scrollTop=Math.max(0,h.offsetTop-(box.clientHeight-h.offsetHeight)/2)};
  draw();
  const pl=sh.querySelector('#play');
  if(timed&&e.audio){const t0=Math.max(0,Math.floor(B[p].s)-2);
-  pl.innerHTML=`<button class="playfrom" id="pf"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>Play from ${ts(t0)}</button><audio id="au" controls preload="none" src="${esc(e.audio)}#t=${t0}"></audio><p class="note">Times come from the transcript; shows that insert different ads per listener can drift by up to a minute.</p>`;
-  const au=pl.querySelector('#au');pl.querySelector('#pf').onclick=()=>{const go=()=>{au.currentTime=t0};au.readyState>=1?go():au.addEventListener('loadedmetadata',go,{once:true});au.play().catch(()=>{})};
-  const done=sh.querySelector('.hd button'),bg=sh.previousElementSibling;const stop=()=>au.pause();done.addEventListener('click',stop);bg&&bg.addEventListener('click',stop)}
+  pl.innerHTML=`<button class="playfrom" id="pf"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>Play from ${ts(t0)}</button><div id="aw"></div><p class="note">Times come from the transcript; shows that insert different ads per listener can drift by up to a minute.</p>`;
+  let au=null;const stop=()=>au&&au.pause();
+  pl.querySelector('#pf').onclick=()=>{ // the player is created on tap (keeps the sheet light; play() stays inside the user gesture for iOS)
+   if(!au){au=document.createElement('audio');au.id='au';au.controls=true;au.preload='metadata';au.src=e.audio+'#t='+t0;pl.querySelector('#aw').append(au);au.addEventListener('loadedmetadata',()=>{if(au.currentTime<t0-1)au.currentTime=t0},{once:true})}
+   else au.currentTime=t0;
+   au.play().catch(()=>{})};
+  const done=sh.querySelector('.hd button'),bg=sh.previousElementSibling;done.addEventListener('click',stop);bg&&bg.addEventListener('click',stop)}
  else pl.innerHTML=`<p class="note">${timed?'No audio link in the feed for this episode.':'This publisher transcript has no timestamps, so “play from here” isn’t available.'}</p>`;
 }
 

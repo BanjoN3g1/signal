@@ -200,7 +200,7 @@ sup.cite{vertical-align:3px}
 .digin svg{width:13px;height:13px}
 .kicker{color:var(--sub);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-top:4px}
 .digt{font-size:19px!important;font-weight:600;line-height:1.35!important;color:#fff!important;margin:6px 0 4px}
-.tx{background:#1c1c1e;border-radius:14px;padding:6px 14px;max-height:46vh;overflow-y:auto}
+.tx{position:relative;background:#1c1c1e;border-radius:14px;padding:6px 14px;max-height:46vh;overflow-y:auto}
 .tx p{font-size:15px!important;line-height:1.55!important;color:#8e8e93!important;margin:10px 0}
 .tx p.hl{color:#f2f2f7!important;background:rgba(10,132,255,.12);border-left:3px solid var(--blue);margin:10px -14px;padding:6px 14px 6px 11px}
 .tx mark{background:rgba(10,132,255,.38);color:#fff;border-radius:4px;padding:0 2px}
