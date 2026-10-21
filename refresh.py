@@ -181,8 +181,8 @@ def senti(text):
 def summarize(items):
     sc = [i["s"] for i in items if i.get("s") is not None]
     if not sc: return {"n": len(items), "score": None, "label": None}
-    avg = sum(sc) / len(sc)
-    return {"n": len(items), "score": round(avg * 100), "label": "bullish" if avg >= 0.15 else "bearish" if avg <= -0.15 else "neutral",
+    score = round(sum(sc) / len(sc) * 100)  # label from the rounded score so chips and totals always agree
+    return {"n": len(items), "score": score, "label": "bullish" if score >= 15 else "bearish" if score <= -15 else "neutral",
             "pos": sum(1 for x in sc if x >= 0.05), "neg": sum(1 for x in sc if x <= -0.05)}
 
 def _rd_get(url):
