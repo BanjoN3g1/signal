@@ -274,7 +274,7 @@ def develop(cands, cache, max_calls=2, per_call=3):
     except Exception: done = {}
     def stale(c):
         d = done.get(c["id"]); n = distinct(c)
-        return not d or n >= d.get("n", 0) + 2 or n >= 1.5 * d.get("n", 1)
+        return not d or n < d.get("n", 0) or n >= d.get("n", 0) + 2 or n >= 1.5 * d.get("n", 1)  # shrink = cluster was split
     todo = [c for c in cands if stale(c)][: max_calls * per_call]; calls = 0
     while todo and p and calls < max_calls and llm.remaining("news", cache) > 0:
         batch, todo = todo[:per_call], todo[per_call:]; lines = []

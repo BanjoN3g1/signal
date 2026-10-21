@@ -27,6 +27,6 @@ the survivor keeps its id and lists absorbed ids in `aliases` (x.json may key by
 ### Developing stories
 Clusters with 2+ distinct sources (or alive for 3+ refreshes with a high score) get a structured brief from Gemini Flash-Lite (role `news`, existing caps):
 headline, what happened (3-5), summary, key numbers (kept only if the figure appears in the source text), implications. Cached in
-`data/cache/news_dev.json` by story id and regenerated only when distinct sources grow by 2+ (or 50%). At most 2 calls × 3 stories per refresh.
+`data/cache/news_dev.json` by story id and regenerated only when distinct sources grow by 2+ (or 50%) or the cluster is split. At most 2 calls × 3 stories per refresh.
 Clustering also merges headlines naming the same single watchlist company plus the same event (earnings / deal), e.g. the LRCX earnings splits;
 absorbed ids go to `aliases`, so `data/x.json` keys keep matching. The feed shows Developing and X post cards; YouTube video cards were removed.
