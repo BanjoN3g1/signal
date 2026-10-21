@@ -1,0 +1,48 @@
+name: Watchlist sync (from the phone)
+# The site is public and can't hold a token, so the phone opens a prefilled GitHub issue ("Watchlist sync") and Sal taps Create.
+# Only issues opened by the repo owner are applied; the list is validated, committed to watchlist.json, and the data refresh is dispatched.
+on:
+  issues:
+    types: [opened]
+permissions:
+  contents: write
+  issues: write
+  actions: write
+concurrency:
+  group: watchlist-sync
+  cancel-in-progress: false
+jobs:
+  sync:
+    if: github.event.issue.user.login == github.repository_owner && startsWith(github.event.issue.title, 'Watchlist sync')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate and write watchlist.json
+        id: apply
+        run: python3 .github/scripts/apply_watchlist.py "$GITHUB_EVENT_PATH"
+      - name: Commit
+        if: steps.apply.outputs.changed == 'true'
+        env:
+          N: ${{ github.event.issue.number }}
+          SUMMARY: ${{ steps.apply.outputs.summary }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898099+github-actions[bot]@users.noreply.github.com"
+          git add watchlist.json
+          git commit -m "Watchlist sync from phone (#$N): $SUMMARY"
+          git pull --rebase -q origin main && git push -q origin HEAD:main
+      - name: Refresh data, close the issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          N: ${{ github.event.issue.number }}
+          OK: ${{ steps.apply.outcome }}
+          SUMMARY: ${{ steps.apply.outputs.summary }}
+        run: |
+          if [ "$OK" = "success" ]; then
+            gh workflow run pages.yml --ref main
+            gh issue close "$N" --comment "Applied: ${SUMMARY:-no changes}. The data refresh is running; new names show up in Signal in about 3 minutes."
+          else
+            gh issue comment "$N" --body "Couldn't apply this list (validation failed) — see the workflow log. Nothing was changed."
+          fi

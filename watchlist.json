@@ -12,5 +12,6 @@
  {"name": "Software · Data & infrastructure", "tickers": ["SNOW", "DDOG", "MDB", "NET"]},
  {"name": "Software · Cybersecurity", "tickers": ["CRWD", "PANW"]},
  {"name": "Software · AI & analytics", "tickers": ["PLTR"]},
+ {"name": "Software · Other", "tickers": ["SPCX"]},
  {"name": "Benchmarks", "tickers": ["IGV", "SOXX"]}
 ]}

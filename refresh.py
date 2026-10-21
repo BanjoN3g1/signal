@@ -525,9 +525,12 @@ def main():
     t0 = time.time()
     wl = load_watchlist()
     groups = wl["groups"]
-    g_of = {}
+    g_of, private = {}, []
     for g in groups:
-        for t in g["tickers"]: g_of.setdefault(t, g["name"])
+        for t in g["tickers"]:
+            if g["name"].lower().startswith("private"):  # private companies: news-only tracking (no quotes/filings)
+                if t not in private: private.append(t)
+            else: g_of.setdefault(t, g["name"])
     tickers = list(g_of)
     log("tickers", len(tickers))
 
@@ -609,6 +612,20 @@ def main():
     why = build_why(quotes, news, sec)
     log("ai done", round(time.time() - t0), llm.STATE, llm.usage(CACHE))
 
+    priv = {}
+    for nm in private[:15]:
+        priv[nm] = {"name": nm, "news": gnews(f'"{nm}"', 6)}
+    short = lambda s: re.sub(r"\b(Inc|Corp|Corporation|Holdings|Technologies|Technology|Ltd|plc|N\.?V|S\.?A|Co|Company|Group|Class [A-Z]|Common Stock|Ordinary Shares|American Depositary Shares?)\b\.?,?", "", s or "").split(" - ")[0].strip(" ,.")
+    names = {t: short((q or {}).get("name")) for t, q in quotes.items() if t not in ETFS}
+    names.update({nm: nm for nm in private})
+    try:
+        import news as newsmod
+        today = newsmod.build([t for t in tickers if t not in ETFS], {**news, **{k: v["news"] for k, v in priv.items()}}, sec, names, CACHE)
+        mark("News stream (RSS)", any(today["sources"].values()))
+    except Exception as e:
+        log("news stream failed", type(e).__name__, e); today = None
+    log("news stream done", round(time.time() - t0), llm.usage(CACHE))
+
     videos = {}
     for key, q in {"converts": "convertible bonds explained investment banking", "capped_call": "capped call convertible note explained",
                    "semis_cycle": "semiconductor cycle explained wafer fab equipment", "saas_valuation": "SaaS valuation rule of 40 explained",
@@ -619,9 +636,11 @@ def main():
     out = {"generatedAt": dt.datetime.now().astimezone().isoformat(timespec="seconds"),
            "elapsedSec": round(time.time() - t0, 1), "groups": groups, "quotes": quotes, "news": news,
            "sec": {k: v for k, v in sec.items() if v}, "why": why, "ai": {"provider": (llm.provider() or {}).get("name"), "usageToday": llm.usage(CACHE), "caps": llm.CAPS, "errors": llm.STATE["errors"][-3:]}, "sentiment": sentiment, "sentimentMeta": {"method": "VADER lexicon + market-slang terms" if VADER else "unavailable (vaderSentiment not installed)", "reddit": RD_STATE["note"] or "ok", "x": "not implemented"}, "earnings": {"upcoming": upcoming, "recent": recent},
-           "videos": videos, "sources": STATUS}
+           "videos": videos, "today": today, "private": priv, "sources": STATUS}
     if cik_map():  # ticker -> SEC CIK, so the watchlist editor can look up a new ticker's industry (SIC) in the browser
-        json.dump(cik_map(), open(os.path.join(DATA, "tickers.json"), "w"), separators=(",", ":"))
+        try: titles = {v["ticker"].upper(): v["title"] for v in json.load(open(os.path.join(CACHE, "company_tickers.json"))).values()}
+        except Exception: titles = {}
+        json.dump({t: [c, titles.get(t, "")] for t, c in cik_map().items()}, open(os.path.join(DATA, "tickers.json"), "w"), separators=(",", ":"))
     tmp = os.path.join(DATA, "feed.json.tmp")
     json.dump(out, open(tmp, "w")); os.replace(tmp, os.path.join(DATA, "feed.json"))
     log("wrote feed.json", round(time.time() - t0), json.dumps(STATUS))

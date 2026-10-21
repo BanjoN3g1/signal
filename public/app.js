@@ -38,7 +38,7 @@ function groupOf(t){for(const g of WL?.groups||[])if(g.tickers.includes(t))retur
 // ---------- data ----------
 async function loadData(){
  try{const r=await fetch('data/feed.json?t='+Date.now(),{cache:'no-store'});if(r.ok)DATA=await r.json()}catch(e){}
- if(!WL){WL=loadLocalWL();if(!WL){try{WL=await (await fetch('watchlist_default.json')).json()}catch(e){WL=DATA?{groups:DATA.groups}:{groups:[]}}}}
+ if(!WL){WL=loadLocalWL();if(!WL){try{WL=await (await fetch('watchlist_default.json')).json()}catch(e){WL=DATA?{groups:DATA.groups}:{groups:[]}}}migrateWL()}
 }
 const ago=iso=>{const m=Math.max(0,Math.round((Date.now()-new Date(iso))/6e4));return m<1?'just now':m<60?m+' min ago':m<1440?Math.round(m/60)+' hr ago':Math.round(m/1440)+' days ago'};
 // ---------- refresh: no tokens in a public site, so open GitHub's "Run workflow" page and poll for new data ----------
@@ -336,20 +336,71 @@ function videoCard(v,topic){
    <a href="https://www.youtube.com/watch?v=${esc(v.id)}" target="_blank" rel="noopener" class="note">Open on YouTube ↗</a></div>
  </div></section>`;
 }
-function pendingCard(t){return `<section class="slide"><div class="card"><div class="kicker"><span class="chip">${esc(groupOf(t).replace(/^.*· /,''))}</span></div><div class="tkr">${esc(t)}</div><div class="nm">Added to your watchlist</div><div class="empty" style="height:auto;flex:1"><p>No data for ${esc(t)} yet. Add it to <b>watchlist.json</b> in the repo and it shows up within ~10 minutes.</p></div></div></section>`}
+function pendingCard(t){const synced=repoTickers().has(t);
+ return `<section class="slide"><div class="card"><div class="kicker"><span class="chip">${esc(groupOf(t).replace(/^.*· /,''))}</span><span class="chip o">New</span></div><div class="tkr">${esc(t)}</div><div class="nm" data-pn="${esc(t)}">Added to your watchlist</div>
+  <div class="sect" data-pf="${esc(t)}"><h4>From SEC EDGAR (on this phone)</h4><p class="note">Loading recent filings…</p></div>
+  <div style="flex:1"></div>
+  ${synced?`<p class="note">In the pipeline — prices, news and AI notes arrive with the next data refresh (hourly, or tap Refresh up top).</p>`:`<p class="note">Prices, news and AI notes start once it’s in the data pipeline. One tap sends your list; then tap “Create” on GitHub.</p><button class="btn" data-sync style="margin-top:8px">Sync watchlist</button>`}
+ </div></section>`}
+const K8={'1.01':'agreement','2.01':'acquisition','2.02':'earnings','2.03':'new debt','3.02':'equity sale','5.02':'exec change','7.01':'Reg FD','8.01':'event'};
+async function fillPending(p){
+ const els=[...p.querySelectorAll('[data-pf]')];if(!els.length)return;await loadCiks();
+ for(const el of els){const t=el.dataset.pf,cik=cikOf(t);if(!cik){el.innerHTML='<p class="note">Not an SEC-registered ticker — check the symbol in the watchlist.</p>';continue}
+  try{const j=await (await fetch(`https://data.sec.gov/submissions/CIK${String(cik).padStart(10,'0')}.json`)).json();const f=j.filings.recent,rows=[];
+   for(let i=0;i<f.form.length&&rows.length<4;i++)if(['8-K','10-Q','10-K','S-1','424B4','6-K','20-F'].includes(f.form[i]))rows.push(`<a class="mv up" href="https://www.sec.gov/Archives/edgar/data/${cik}/${f.accessionNumber[i].replace(/-/g,'')}/${f.primaryDocument[i]}" target="_blank" rel="noopener"><span>${esc(f.form[i])}${f.items?.[i]?' · '+esc(f.items[i].split(',').map(x=>K8[x.trim()]).filter(Boolean).join(', ')||f.items[i]):''}</span><span class="note">${esc(dshort(f.filingDate[i]))}</span></a>`);
+   const nm=p.querySelector(`[data-pn="${CSS.escape(t)}"]`);if(nm)nm.textContent=`${j.name}${j.sicDescription?' · '+j.sicDescription:''}`;
+   el.innerHTML=`<h4>Latest SEC filings</h4>${rows.join('')||'<p class="note">No recent filings.</p>'}`}catch(e){el.innerHTML='<p class="note">SEC EDGAR unavailable right now.</p>'}}
+}
+function privateCard(nm){const d=DATA.private?.[nm],n=d?.news||[];
+ return `<section class="slide"><div class="card"><div class="kicker"><span class="chip">Private</span><span class="chip">News only</span></div><div class="tkr" style="font-size:34px">${esc(nm)}</div><div class="nm">Not publicly traded — no quote or SEC filings; tracking headlines.</div>
+  <div class="sect"><h4>Latest news</h4>${n.length?n.slice(0,5).map(x=>`<a class="nrow" href="${esc(x.url)}" target="_blank" rel="noopener"><b>${esc(x.title)}</b><span class="note">${esc(x.source||'')}</span></a>`).join(''):`<p class="note">${repoTickers().has(nm)?'Headlines arrive with the next data refresh.':'Sync your watchlist to start tracking headlines.'}</p>`}</div>
+  <div style="flex:1"></div>${repoTickers().has(nm)?'':'<button class="btn" data-sync>Sync watchlist</button>'}</div></section>`}
+// ---------- Today: live news stream ----------
+const hAgo=iso=>{const m=Math.max(0,Math.round((Date.now()-new Date(iso))/6e4));return m<60?m+'m':m<1440?Math.round(m/60)+'h':Math.round(m/1440)+'d'};
+const NTAGS=['Watchlist','M&A','IPO/ECM','Earnings','Fed/rates','AI capex'];
+function nRow(it,i){const src=new Set(it.sources.map(s=>s.source)).size;
+ return `<button class="nitem" data-n="${esc(it.id)}"><div class="nmeta">${it.tags[0]?`<span class="chip b">${esc(it.tags[0])}</span>`:''}${it.tickers.slice(0,3).map(t=>`<span class="chip">${esc(t)}</span>`).join('')}<span class="note">${hAgo(it.last)} · ${src} source${src>1?'s':''}${it.paywalled.length&&!it.freeCoverage?' · 🔒':''}</span></div><b>${esc(it.title)}</b>${it.sum?`<p>${esc(it.sum)}</p>`:''}</button>`}
+function todayCard(){const T=DATA.today;if(!T||!T.items?.length)return '';const top=T.items.slice(0,3);
+ return `<section class="slide"><div class="card todayc"><div class="kicker">Today · ${esc(T.items.length)} stories · updated ${esc(ago(T.asOf))}</div>
+  <h3 style="margin:8px 0 4px">What tech bankers are reading</h3>
+  <div class="nlist">${top.map(nRow).join('')}</div><div style="flex:1"></div>
+  <button class="btn" id="allnews" style="margin-top:10px">All ${T.items.length} stories</button></div></section>`}
+function openNewsList(f){f=f||'All';const T=DATA.today,W=wlTickers();
+ const its=T.items.filter(it=>f==='All'||(f==='Watchlist'?it.tickers.some(t=>W.includes(t)):it.tags.includes(f)));
+ const s=sheet('Today',`<div class="pchips">${['All',...NTAGS].map(t=>`<button class="pchip ${t===f?'on':''}" data-f="${esc(t)}">${esc(t)}</button>`).join('')}</div>
+  <div class="nlist">${its.map(nRow).join('')||'<p class="note">Nothing in this bucket yet today.</p>'}</div>
+  <p class="note">Free sources only: CNBC, MarketWatch, Yahoo Finance, Techmeme and Google News RSS (Reuters, Bloomberg, WSJ headlines), Fed press releases and SEC 8-Ks for your names. Same-story headlines are grouped; ranked for software/semis banking (your names, M&A, IPO/ECM, earnings, Fed, AI capex). Updated ${esc(fmtPT(T.asOf))}.</p>`);
+ s.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{s.previousElementSibling.remove();s.remove();openNewsList(b.dataset.f)});
+ s.querySelectorAll('[data-n]').forEach(b=>b.onclick=()=>openNews(b.dataset.n));
+}
+function openNews(id){const it=DATA.today.items.find(x=>x.id===id);if(!it)return;const free=it.sources.filter(s=>!s.paywalled);
+ const pwNote=it.paywalled.length?(it.freeCoverage?`🔒 ${esc(it.paywalled.join(', '))} ${it.paywalled.length>1?'are':'is'} paywalled — summarized from free coverage (${esc([...new Set(free.map(s=>s.source))].slice(0,3).join(', '))}).`:`🔒 Paywalled (${esc(it.paywalled.join(', '))}) and no free coverage yet — summary is from the headline only.`):'';
+ sheet('Dig in',`<div class="kicker">${it.tags.map(esc).join(' · ')||'News'}${it.tickers.length?' · '+it.tickers.map(esc).join(', '):''}</div><h3>${esc(it.title)}</h3>
+  <p class="note">First seen ${esc(fmtPT(it.first))}${it.last!==it.first?' · latest '+esc(fmtPT(it.last)):''} · ${it.sources.length} headline${it.sources.length>1?'s':''}</p>
+  ${it.sum?`<p>${esc(it.sum)}</p>`:'<p class="note">AI summary pending — it’s added at the next refresh.</p>'}
+  ${it.why?`<div class="whybox"><b>Why it matters for a tech banker</b><p>${esc(it.why)}</p></div>`:''}
+  ${it.deep?.length?`<h4 class="dh">Deeper dive</h4><ul class="dl">${it.deep.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}
+  ${pwNote?`<p class="note">${pwNote}</p>`:''}
+  ${it.x?.length?`<h4 class="dh">On X</h4>${it.x.map(x=>`<a class="nrow" href="${esc(x.url)}" target="_blank" rel="noopener"><b>${esc(x.text||'')}</b><span class="note">${esc(x.author||'')}</span></a>`).join('')}`:''}
+  <h4 class="dh">All sources</h4>${it.sources.map(s=>`<a class="nrow" href="${esc(s.url)}" target="_blank" rel="noopener"><b>${s.paywalled?'🔒 ':''}${esc(s.title)}</b><span class="note">${esc(s.source)} · ${esc(fmtPT(s.date))}</span></a>`).join('')}
+  ${it.sum?`<p class="note">Summary by ${esc(it.model||'AI')} from headlines and RSS blurbs only — open the sources before relying on it.</p>`:''}`);
+}
 
 function renderFeed(p){
  const Q=DATA.quotes;const tick=wlTickers().filter(t=>!['IGV','SOXX'].includes(t));
  const have=tick.filter(t=>Q[t]),missing=tick.filter(t=>!Q[t]);
  const movers=have.map(t=>Q[t]).sort((a,b)=>Math.abs(b.pct??0)-Math.abs(a.pct??0));
  const vids=[['converts','Converts 101'],['semis_cycle','Semis cycle'],['saas_valuation','Software valuation'],['capped_call','Capped calls'],['earnings','Earnings'],['market_today','Semis today']].map(([k,n])=>[(DATA.videos?.[k]||[])[0],n]).filter(x=>x[0]);
- let html=pulseCard(),li=0,vi=0;
+ const fresh=missing.filter(t=>!(WL.groups.find(g=>g.tickers.includes(t))&&isPrivGroup(WL.groups.find(g=>g.tickers.includes(t))))),priv=missing.filter(t=>!fresh.includes(t));
+ let html=pulseCard()+todayCard()+fresh.map(pendingCard).join('')+priv.map(privateCard).join(''),li=0,vi=0;
  movers.forEach((q,i)=>{html+=moverCard(q,i);
   if(i%4===1&&LESSONS[li])html+=lessonCard(LESSONS[li++]);
   else if(i%4===3&&vids[vi]){const [v,n]=vids[vi++];html+=videoCard(v,n)}});
  while(LESSONS[li])html+=lessonCard(LESSONS[li++]);
- missing.forEach(t=>html+=pendingCard(t));
  p.innerHTML=`<div class="feed" id="feed">${html}</div>`;
+ fillPending(p);p.querySelectorAll('[data-sync]').forEach(b=>b.onclick=syncNow);
+ const an=p.querySelector('#allnews');if(an)an.onclick=()=>openNewsList();
+ p.querySelectorAll('.todayc [data-n]').forEach(b=>b.onclick=()=>openNews(b.dataset.n));
  p.querySelectorAll('[data-deep]').forEach(b=>b.onclick=()=>openDeep(b.dataset.deep));
  p.querySelectorAll('[data-lesson]').forEach(b=>b.onclick=()=>openLesson(b.dataset.lesson));
  p.querySelectorAll('[data-vid]').forEach(f=>f.onclick=()=>{f.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${f.dataset.vid}?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`});
@@ -398,9 +449,22 @@ const SICMAP=[ // [sic codes, regex for an existing group, fallback group name]
  [[3670,3672,3677,3678,3679,3690],/Components/,'Hardware · Components'],
  [[7370,7371,7372,7373,7374,7379,7389],/Software · Other/,'Software · Other'],
 ];
+async function loadCiks(){if(!CIKS){try{const r=await fetch('data/tickers.json');CIKS=r.ok?await r.json():{}}catch(e){CIKS={}}}return CIKS}
+const cikOf=t=>{const v=CIKS&&(CIKS[t]||CIKS[t.replace('.','-')]);return Array.isArray(v)?v[0]:v};
+// brand names that don't match the SEC legal name (SpaceX = Space Exploration Technologies Corp)
+const ALIAS={spacex:'SPCX',google:'GOOGL',alphabet:'GOOGL',facebook:'META',meta:'META',tsmc:'TSM','taiwan semi':'TSM',supermicro:'SMCI','super micro':'SMCI',amazon:'AMZN',aws:'AMZN',apple:'AAPL',tesla:'TSLA',nvidia:'NVDA',broadcom:'AVGO',arm:'ARM',coreweave:'CRWV',figma:'FIG',klarna:'KLAR',circle:'CRCL'};
+async function resolveCo(q){ // -> {ticker,title} | {cands:[...]} | null
+ await loadCiks();const raw=q.trim(),up=raw.toUpperCase(),k=raw.toLowerCase().replace(/[^a-z0-9 ]/g,'').trim();
+ if(ALIAS[k.replace(/ /g,'')]||ALIAS[k]){const t=ALIAS[k.replace(/ /g,'')]||ALIAS[k];return {ticker:t,title:(CIKS[t]||[])[1]||t,alias:true}}
+ if(/^[A-Z][A-Z0-9.\-]{0,9}$/.test(up)&&cikOf(up))return {ticker:up,title:(CIKS[up]||[])[1]||up};
+ if(k.length<3)return null;
+ const n=s=>s.toLowerCase().replace(/[^a-z0-9]/g,''),kk=n(k),c=[];
+ for(const [t,v] of Object.entries(CIKS)){const ti=Array.isArray(v)?v[1]:'';if(ti&&n(ti).startsWith(kk))c.push({ticker:t,title:ti});if(c.length>40)break}
+ c.sort((x,y)=>x.ticker.length-y.ticker.length);
+ return c.length?{cands:c.slice(0,3)}:null;
+}
 async function sicLookup(t){
- if(!CIKS){try{const r=await fetch('data/tickers.json');CIKS=r.ok?await r.json():{}}catch(e){CIKS={}}}
- const cik=CIKS[t]||CIKS[t.replace('.','-')];if(!cik)return null;
+ await loadCiks();const cik=cikOf(t);if(!cik)return null;
  try{const r=await fetch(`https://data.sec.gov/submissions/CIK${String(cik).padStart(10,'0')}.json`);if(!r.ok)return null;const j=await r.json();
   return {sic:+j.sic||0,desc:j.sicDescription||'',name:j.name||''}}catch(e){return null}
 }
@@ -412,37 +476,62 @@ function groupForSic(t,info){
  const gi=WL.groups.findIndex(g=>row?row[1].test(g.name):g.name===name);
  return gi>=0?{gi}:{name};
 }
+const PRIV='Private · News only';
+const isPrivGroup=g=>/^private/i.test(g.name);
+function repoTickers(){const s=new Set();(DATA?.groups||[]).forEach(g=>g.tickers.forEach(t=>s.add(t)));return s}
+function unsynced(){const r=repoTickers();const mine=wlTickers();return {add:mine.filter(t=>!r.has(t)),rm:[...r].filter(t=>!mine.includes(t))}}
+const SYNC_URL=()=>{const body='Sent from Signal on my phone. The **watchlist-sync** workflow copies this list into `watchlist.json`, closes this issue and refreshes the data (about 3 minutes).\n\n```json\n'+JSON.stringify({groups:WL.groups.map(g=>({name:g.name,tickers:g.tickers}))})+'\n```\n';
+ return 'https://github.com/BanjoN3g1/signal/issues/new?title='+encodeURIComponent('Watchlist sync')+'&labels=watchlist-sync&body='+encodeURIComponent(body)};
+function syncNow(){window.open(SYNC_URL(),'_blank','noopener');toast('Tap “Create” on GitHub — data for new names arrives in ~3 min')}
+function syncBanner(){const u=unsynced();if(!u.add.length&&!u.rm.length)return '';
+ return `<div class="syncb"><div><b>${u.add.length?esc(u.add.slice(0,4).join(', '))+(u.add.length>4?'…':'')+' not in the data pipeline yet':'Removals not synced yet'}</b><p class="note">Your list lives on this phone; the hourly data pull reads the repo. One tap sends it (then tap “Create” on GitHub).</p></div><button class="btn" data-sync>Sync</button></div>`}
 function openWatchlist(){
- let pending=null; // suggested new group name from the SIC lookup
- const opts=()=>WL.groups.map((g,i)=>`<option value="${i}">${esc(g.name)}</option>`).join('')+(pending?`<option value="auto">${esc(pending)} (new)</option>`:'')+'<option value="new">+ New group…</option>';
- const draw=()=>`<h4 style="margin:6px 0 4px">Add a ticker</h4>
-  <div class="addrow"><input id="nt" type="text" inputmode="text" enterkeyhint="done" placeholder="e.g. TXN" maxlength="10" autocapitalize="characters" autocomplete="off" autocorrect="off" spellcheck="false"><button class="btn" id="add">Add</button></div>
+ let pending=null,pick=null; // pending: suggested new group name; pick: resolved {ticker,title} or {private:name}
+ const opts=()=>WL.groups.map((g,i)=>`<option value="${i}">${esc(g.name)}</option>`).join('')+(pending&&!WL.groups.some(g=>g.name===pending)?`<option value="auto">${esc(pending)} (new)</option>`:'')+'<option value="new">+ New group…</option>';
+ const draw=()=>`${syncBanner()}<h4 style="margin:6px 0 4px">Add a company</h4>
+  <div class="addrow"><input id="nt" type="text" inputmode="text" enterkeyhint="done" placeholder="Ticker or name, e.g. TXN or SpaceX" maxlength="40" autocapitalize="words" autocomplete="off" autocorrect="off" spellcheck="false"><button class="btn" id="add">Add</button></div>
+  <div id="cands"></div>
   <div class="addrow"><select id="ng" aria-label="Group">${opts()}</select></div>
-  <p class="note" id="ind" style="margin:2px 0 0;min-height:20px">Type a ticker — its industry is filled in from SEC EDGAR. Change the group above if you like.</p>
+  <p class="note" id="ind" style="margin:2px 0 0;min-height:20px">Type a ticker or company name — the industry is filled in from SEC EDGAR. Private companies are tracked news-only.</p>
   ${WL.groups.map((g,gi)=>`<div class="group"><div class="gname">${esc(g.name)}</div><div class="tchips">${g.tickers.map(t=>`<span class="tchip">${esc(t)}<button data-rm="${gi}:${esc(t)}" aria-label="Remove">×</button></span>`).join('')||'<span class="note">Empty</span>'}</div></div>`).join('')}
-  <p class="note">Your list is saved on this phone. Data is pulled for the tickers in the repo's <b>watchlist.json</b> (defaults to the list above). To get data for a new ticker, add it there too — tap "Copy list" and paste it into watchlist.json on GitHub. US listings use Nasdaq data; IFX uses Google Finance (Xetra, EUR).</p>
+  <p class="note">Your list is saved on this phone. The data pipeline reads <b>watchlist.json</b> in the repo — the Sync button sends your list there in one tap (you confirm on GitHub). US listings use Nasdaq data; IFX uses Google Finance (Xetra, EUR).</p>
   <div class="addrow"><button class="btn ghost" id="sv" style="flex:1">Copy list</button><button class="btn ghost" id="reset" style="flex:1;font-size:14px">Reset to defaults</button></div>`;
  const s=sheet('Watchlist',draw(),()=>render());
  const bd=s.querySelector('.bd');
  const persist=()=>{WL.updatedAt=Date.now();saveLocalWL(WL)};
  const wire=()=>{
-  const nt=bd.querySelector('#nt'),ng=bd.querySelector('#ng'),ind=bd.querySelector('#ind');let seq=0,timer;
-  nt.oninput=()=>{clearTimeout(timer);const t=nt.value.trim().toUpperCase();if(!/^[A-Z][A-Z0-9.\-]{0,9}$/.test(t)){ind.textContent='';return}
-   timer=setTimeout(async()=>{const my=++seq;ind.textContent='Looking up '+t+'…';const info=await sicLookup(t);if(my!==seq)return;
-    if(!info||!info.sic){ind.textContent=info?`${info.name}: no industry code on file — pick a group.`:`${t} isn’t in SEC’s list (foreign listing?) — pick a group.`;return}
-    const g=groupForSic(t,info);pending=g.name||null;const v=ng.value;ng.innerHTML=opts();ng.value=g.gi!=null?String(g.gi):'auto';
-    ind.innerHTML=`<b>${esc(info.name)}</b> · ${esc(info.desc)} (SIC ${info.sic}) → ${esc(g.gi!=null?WL.groups[g.gi].name:g.name)}`},350)};
+  const nt=bd.querySelector('#nt'),ng=bd.querySelector('#ng'),ind=bd.querySelector('#ind'),cd=bd.querySelector('#cands');let seq=0,timer;
+  const choose=async(r,my)=>{pick=r;cd.innerHTML='';ind.textContent='Looking up '+r.ticker+'…';const info=await sicLookup(r.ticker);if(my!==seq)return;
+   if(!info||!info.sic){pending=null;ng.innerHTML=opts();ind.innerHTML=`<b>${esc(r.ticker)}</b> · ${esc(r.title)} — no industry code on file, pick a group.`;return}
+   const g=groupForSic(r.ticker,info);pending=g.name||null;ng.innerHTML=opts();ng.value=g.gi!=null?String(g.gi):'auto';
+   ind.innerHTML=`<b>${esc(r.ticker)}</b> · ${esc(info.name)} · ${esc(info.desc)} (SIC ${info.sic}) → ${esc(g.gi!=null?WL.groups[g.gi].name:g.name)}${r.alias?'':''}`};
+  nt.oninput=()=>{clearTimeout(timer);pick=null;cd.innerHTML='';const q=nt.value.trim();if(q.length<2){ind.textContent='';return}
+   timer=setTimeout(async()=>{const my=++seq;const r=await resolveCo(q);if(my!==seq)return;
+    if(r&&r.ticker)return choose(r,my);
+    const privBtn=`<button class="cand priv" data-priv="1"><b>Track “${esc(q)}” as private</b><span>News only — no stock quote or filings</span></button>`;
+    if(r&&r.cands){cd.innerHTML=r.cands.map((c,k)=>`<button class="cand" data-k="${k}"><b>${esc(c.ticker)}</b><span>${esc(c.title)}</span></button>`).join('')+privBtn;ind.textContent='Did you mean one of these?'}
+    else{cd.innerHTML=privBtn;ind.textContent='Not found among SEC-registered companies — likely private or listed abroad.'}
+    cd.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{const c=r.cands[+b.dataset.k];nt.value=c.ticker;choose(c,++seq)});
+    const pb=cd.querySelector('[data-priv]');pb.onclick=()=>{pick={private:q.slice(0,40)};pending=PRIV;ng.innerHTML=opts();const gi=WL.groups.findIndex(isPrivGroup);ng.value=gi>=0?String(gi):'auto';cd.innerHTML='';ind.innerHTML=`<b>${esc(q)}</b> → ${esc(PRIV)}: tracked via news headlines only.`};
+   },350)};
   nt.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();bd.querySelector('#add').click()}};
-  bd.querySelectorAll('[data-rm]').forEach(b=>b.onclick=()=>{const [gi,t]=b.dataset.rm.split(':');WL.groups[gi].tickers=WL.groups[gi].tickers.filter(x=>x!==t);persist(false);bd.innerHTML=draw();wire()});
-  bd.querySelector('#add').onclick=()=>{const t=nt.value.trim().toUpperCase();if(!/^[A-Z][A-Z0-9.\-]{0,9}$/.test(t))return toast('Enter a ticker like TXN');
+  bd.querySelectorAll('[data-rm]').forEach(b=>b.onclick=()=>{const [gi,t]=b.dataset.rm.split(':');WL.groups[gi].tickers=WL.groups[gi].tickers.filter(x=>x!==t);WL.groups=WL.groups.filter(g=>g.tickers.length||!/^(Private|Other|Software · Other|Semis · Other)/.test(g.name));persist(false);bd.innerHTML=draw();wire()});
+  bd.querySelector('#add').onclick=async()=>{
+   if(!pick){const q=nt.value.trim();if(!q)return toast('Type a ticker or company name');const r=await resolveCo(q);if(r&&r.ticker)pick=r;else return toast('Pick a match below, or track it as private')}
+   const t=pick.private||pick.ticker;
    if(wlTickers().includes(t))return toast(t+' is already on your list');
    let gi=ng.value;const bench=WL.groups.findIndex(g=>g.name==='Benchmarks'),at=bench>=0?bench:WL.groups.length;
-   if(gi==='auto'||gi==='new'){const nm=gi==='auto'?pending:prompt('Group name (e.g. "Semis · Analog")');if(!nm)return;WL.groups.splice(at,0,{name:nm.slice(0,60),tickers:[]});gi=at}
-   WL.groups[gi].tickers.push(t);pending=null;persist(false);toast('Added '+t+' to '+WL.groups[gi].name.replace(/^.*· /,''));bd.innerHTML=draw();wire()};
+   if(pick.private&&gi!=='auto'&&!isPrivGroup(WL.groups[gi]||{name:''})){gi='auto';pending=PRIV}
+   if(gi==='auto'||gi==='new'){const nm=gi==='auto'?pending:prompt('Group name (e.g. "Semis · Analog")');if(!nm)return;const ex=WL.groups.findIndex(g=>g.name===nm);if(ex>=0)gi=ex;else{WL.groups.splice(at,0,{name:nm.slice(0,60),tickers:[]});gi=at}}
+   WL.groups[gi].tickers.push(t);pending=null;pick=null;persist(false);bd.innerHTML=draw();wire();
+   toast('Added '+t+' — tap Sync to send it to the data pipeline')};
+  const sb=bd.querySelector('[data-sync]');if(sb)sb.onclick=syncNow;
   bd.querySelector('#sv').onclick=async()=>{const txt=JSON.stringify({groups:WL.groups},null,1);try{await navigator.clipboard.writeText(txt);toast('Copied — paste into watchlist.json on GitHub')}catch(e){prompt('Copy this into watchlist.json:',txt)}};
   bd.querySelector('#reset').onclick=async()=>{localStorage.removeItem('signal.wl');try{WL=await (await fetch('watchlist_default.json')).json()}catch(e){WL={groups:DATA.groups}}persist(false);bd.innerHTML=draw();wire()};
  };wire();
 }
+// one-time fix for names typed as tickers before name search existed (e.g. "SPACEX" -> SPCX)
+function migrateWL(){if(!WL)return;let ch=false;WL.groups.forEach(g=>{g.tickers=g.tickers.map(t=>{const k=t.toLowerCase().replace(/[^a-z0-9]/g,'');if(ALIAS[k]&&ALIAS[k]!==t&&!(DATA?.quotes?.[t])){ch=true;return ALIAS[k]}return t}).filter((t,i,arr)=>arr.indexOf(t)===i)});if(ch)saveLocalWL(WL)}
 
 // ---------- earnings ----------
 function earnWhat(e){

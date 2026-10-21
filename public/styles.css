@@ -214,3 +214,22 @@ sup.cite{vertical-align:3px}
 .xpl>div{padding:10px 0;border-bottom:.5px solid #2c2c2e}.xpl>div:last-child{border:0}
 .xpl b{font-size:13px;color:var(--sub);font-weight:600}.xpl p{margin:3px 0 0;font-size:15px!important}
 .addrow select{background-image:linear-gradient(45deg,transparent 50%,#8e8e93 50%),linear-gradient(135deg,#8e8e93 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat;padding-right:30px}
+
+/* Today news stream */
+.todayc h3{font-size:24px;letter-spacing:-.02em;line-height:1.15}
+.nlist{display:flex;flex-direction:column}
+.nitem{display:block;text-align:left;width:100%;padding:11px 0;border-bottom:.5px solid var(--line)}
+.nitem:last-child{border-bottom:0}.nitem:active{opacity:.6}
+.nitem b{display:block;font-size:15.5px;line-height:1.3;color:var(--txt);font-weight:600}
+.nitem p{margin:3px 0 0;font-size:13.5px!important;line-height:1.4!important;color:var(--sub)!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.nmeta{display:flex;gap:5px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+.todayc .nitem p{-webkit-line-clamp:1}
+.whybox{background:rgba(10,132,255,.12);border-radius:14px;padding:10px 14px;margin:12px 0}
+.whybox b{font-size:13px;color:var(--teal)}.whybox p{margin:3px 0 0;font-size:15px!important}
+.nrow{display:flex;flex-direction:column;gap:2px;padding:10px 0;border-bottom:.5px solid var(--line);color:var(--txt)}
+.nrow b{font-size:14.5px;font-weight:600;line-height:1.35}
+/* watchlist: matches, sync */
+.cand{display:flex;flex-direction:column;align-items:flex-start;width:100%;text-align:left;background:#1c1c1e;border-radius:12px;padding:10px 12px;margin:6px 0}
+.cand b{font-size:15px}.cand span{font-size:13px;color:var(--sub)}.cand.priv{border:1px dashed #48484a}
+.syncb{display:flex;gap:12px;align-items:center;background:rgba(255,159,10,.12);border-radius:14px;padding:12px 14px;margin:4px 0 10px}
+.syncb b{font-size:14.5px}.syncb p{margin:3px 0 0}.syncb .btn{flex:none}
