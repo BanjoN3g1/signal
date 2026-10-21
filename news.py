@@ -114,13 +114,33 @@ def tickers_in(text, names):
         elif nm and re.search(r"\b" + re.escape(nm) + r"\b", text, re.I): found.append(t)
     return sorted(set(found))
 
+EVENT = {"earn": re.compile(r"\b(earnings|results|reports?|quarter|q[1-4]|beats?|tops|miss(es)?|guidance|forecast|outlook|8-K: earnings)\b", re.I),
+         "deal": re.compile(r"\b(acquir\w*|to buy|buyout|merger|deal for|takeover|take-private)\b", re.I)}
+def ekeys(title, names):
+    """Event keys like 'LRCX:earn': headlines naming exactly one watchlist company plus an event word are the same story."""
+    tk = tickers_in(title, names)
+    if len(tk) != 1: return set()
+    return {f"{tk[0]}:{k}" for k, rx in EVENT.items() if rx.search(title)}
+
+def merge_into(d, s):
+    d["sources"] += [x for x in s["sources"] if x["url"] not in {y["url"] for y in d["sources"]}]
+    d["first"], d["last"] = min(d["first"], s["first"]), max(d["last"], s["last"])
+    d["toks"] = sorted(set(d.get("toks") or d.get("_t") or []) | set(s.get("toks") or s.get("_t") or []))[:80]
+    d["tickers"] = sorted(set(d.get("tickers", [])) | set(s.get("tickers", [])))
+    d["ekeys"] = sorted(set(d.get("ekeys", [])) | set(s.get("ekeys", [])))
+    d["runs"] = max(d.get("runs", 0), s.get("runs", 0))
+    d["aliases"] = sorted(set(d.get("aliases", [])) | {s["id"]} | set(s.get("aliases", [])))  # old ids keep matching data/x.json
+
 def cluster(items, state, names):
     """Greedy clustering on headline token overlap; clusters persist across runs (stable ids for caching)."""
     now = dt.datetime.now(dt.timezone.utc)
     cl = {cid: c for cid, c in state.items() if (now - dt.datetime.fromisoformat(c["last"])).total_seconds() < WINDOW_H * 3600}
-    for c in cl.values(): c["_t"] = set(c["toks"]); c["_tk"] = c.get("tickers") or []
+    for c in cl.values():
+        c["_t"] = set(c["toks"]); c["_tk"] = c.get("tickers") or []
+        c["ekeys"] = sorted(set(c.get("ekeys", [])).union(*[ekeys(s["title"], names) for s in c["sources"]]))
+        c["runs"] = c.get("runs", 0) + 1  # refreshes this story has survived (persistence signal)
     for it in sorted(items, key=lambda x: x["date"]):
-        tk = toks(it["title"]); best, bs = None, 0
+        tk = toks(it["title"]); best, bs = None, 0; ek = ekeys(it["title"], names)
         for cid, c in cl.items():
             if any(s["url"] == it["url"] or s["title"] == it["title"] for s in c["sources"]): best = None; bs = -1; break
             inter = len(tk & c["_t"]); 
@@ -128,16 +148,25 @@ def cluster(items, state, names):
             j = inter / len(tk | c["_t"]); m = inter / max(1, min(len(tk), len(c["_t"])))
             sc = max(j, m * 0.8 if inter >= 4 else 0)
             if inter >= 3 and set(it.get("tickers") or tickers_in(it["title"], names)) & set(c.get("_tk") or []): sc = max(sc, m * 0.9)  # same company + overlapping words
+            if ek & set(c["ekeys"]): sc = max(sc, 0.6)  # same company, same event (e.g. LRCX earnings)
             if sc > bs: best, bs = cid, sc
         if bs == -1: continue
         if best and bs >= 0.45:
             c = cl[best]; c["sources"].append(it); c["last"] = max(c["last"], it["date"]); c["_t"] |= tk
-            c["_tk"] = sorted(set(c.get("_tk") or []) | set(tickers_in(it["title"], names)))
+            c["_tk"] = sorted(set(c.get("_tk") or []) | set(tickers_in(it["title"], names))); c["ekeys"] = sorted(set(c["ekeys"]) | ek)
         else:
             cid = hashlib.sha1((it["url"] or it["title"]).encode()).hexdigest()[:12]
-            cl[cid] = {"id": cid, "first": it["date"], "last": it["date"], "sources": [it], "_t": tk, "_tk": tickers_in(it["title"], names)}
+            cl[cid] = {"id": cid, "first": it["date"], "last": it["date"], "sources": [it], "_t": tk, "_tk": tickers_in(it["title"], names), "ekeys": sorted(ek), "runs": 1}
+    # fold together older clusters that turn out to be the same company event (oldest id survives, others become aliases)
+    by = {}
+    for c in sorted(cl.values(), key=lambda c: c["first"]):
+        for k in c["ekeys"]: by.setdefault(k, []).append(c["id"])
+    for k, ids in by.items():
+        ids = [i for i in ids if i in cl]
+        for i in ids[1:]:
+            if i in cl and ids[0] in cl and i != ids[0]: merge_into(cl[ids[0]], cl.pop(i)); cl[ids[0]]["_t"] = set(cl[ids[0]]["toks"])
     for c in cl.values():
-        c["toks"] = sorted(c.pop("_t"))[:80]; c.pop("_tk", None)
+        c["toks"] = sorted(c.pop("_t", set()) | set(c.get("toks", [])))[:80]; c.pop("_tk", None)
         txt = " ".join(s["title"] + " " + s.get("desc", "") for s in c["sources"])
         c["tickers"] = sorted(set(tickers_in(txt, names)) | {t for s in c["sources"] for t in s.get("tickers", [])})
     return cl
@@ -165,7 +194,7 @@ Return JSON: {"<id>": {"sum": "1-2 plain-English sentences on what happened", "w
 "deep": ["3 short bullets: context, what to watch next, read-across to peers or deal activity"],
 "dup": "<id of an EARLIER-listed story in this batch that covers the same event, else null>"}} for every id."""
 
-def summarize(cands, cache, max_calls=2, per_call=15):
+def summarize(cands, cache, max_calls=1, per_call=18):
     p = llm.provider()
     cp = os.path.join(cache, "news_ai.json")
     try: done = json.load(open(cp))
@@ -192,6 +221,49 @@ def summarize(cands, cache, max_calls=2, per_call=15):
     json.dump(done, open(cp, "w"))
     return done
 
+DEV_SYS = """You write 'developing story' briefs for a junior investment banker covering software and semiconductors.
+Each numbered story has several headlines (with source names) and RSS snippets from free outlets. Use ONLY that text: never invent
+facts, numbers, people or quotes; if sources disagree, say so; paywalled sources give you a headline only.
+Return JSON {"<id>": {"headline": "neutral, specific headline (<= 90 chars)",
+ "happened": ["3-5 key news items, each one short factual sentence, most important first"],
+ "summary": "2-3 sentence plain-English summary",
+ "numbers": [{"figure": "exact figure as written in the sources, e.g. $5.66B or 161%", "context": "what it measures (<= 12 words)"}],
+ "implications": [{"area": "M&A|ECM|Valuation|Sector|Markets", "text": "1 sentence for a tech banker"}]}}.
+Give 0-4 numbers (only figures that appear in the text) and 2-3 implications. Every id must be present."""
+
+def distinct(c): return len({s["source"] for s in c["sources"]})
+
+def develop(cands, cache, max_calls=2, per_call=3):
+    """Structured briefs for multi-source / persistent stories. Cached by story id; regenerated only when enough new sources join."""
+    p = llm.provider(); cp = os.path.join(cache, "news_dev.json")
+    try: done = json.load(open(cp))
+    except Exception: done = {}
+    def stale(c):
+        d = done.get(c["id"]); n = distinct(c)
+        return not d or n >= d.get("n", 0) + 2 or n >= 1.5 * d.get("n", 1)
+    todo = [c for c in cands if stale(c)][: max_calls * per_call]; calls = 0
+    while todo and p and calls < max_calls and llm.remaining("news", cache) > 0:
+        batch, todo = todo[:per_call], todo[per_call:]; lines = []
+        for c in batch:
+            lines.append(f"## {c['id']}" + (f" (companies: {', '.join(c['tickers'][:6])})" if c["tickers"] else ""))
+            for s in sorted(c["sources"], key=lambda s: s["date"])[:10]:
+                pw = bool(PAYWALL.search(s["source"] or ""))
+                lines.append(f"- {s['source']}{' [paywalled: headline only]' if pw else ''} ({s['date'][:16]}Z): {s['title']}" + (f" — {s['desc'][:400]}" if s.get("desc") and not pw else ""))
+        res = llm.call("news", DEV_SYS, "\n".join(lines), cache, max_tokens=700 * len(batch)); calls += 1
+        if isinstance(res, dict):
+            for c in batch:
+                r = res.get(c["id"])
+                if not isinstance(r, dict) or not r.get("summary"): continue
+                nums = [{"figure": str(x.get("figure", ""))[:40], "context": str(x.get("context", ""))[:90]} for x in (r.get("numbers") or []) if isinstance(x, dict) and x.get("figure")]
+                txt = " ".join(s["title"] + " " + (s.get("desc") or "") for s in c["sources"])
+                nums = [x for x in nums if re.sub(r"[^\d.]", "", x["figure"]) and re.sub(r"[^\d.]", "", x["figure"]).rstrip(".") in re.sub(r"[^\d. ]", "", txt.replace(",", ""))][:4]  # keep figures that really appear
+                done[c["id"]] = {"headline": str(r.get("headline") or "")[:120], "happened": [str(x)[:220] for x in (r.get("happened") or [])][:5],
+                                 "summary": str(r["summary"])[:700], "numbers": nums,
+                                 "implications": [{"area": str(x.get("area", ""))[:20], "text": str(x.get("text", ""))[:260]} for x in (r.get("implications") or []) if isinstance(x, dict)][:3],
+                                 "n": distinct(c), "model": res.get("_model"), "at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")}
+    json.dump(done, open(cp, "w"))
+    return done
+
 def build(watch, news_by_ticker, sec, names, cache):
     t0 = time.time(); now = dt.datetime.now(dt.timezone.utc)
     items, status = collect(watch, news_by_ticker, sec, names)
@@ -212,14 +284,12 @@ def build(watch, news_by_ticker, sec, names, cache):
     for src, dst in list(dups.items()):
         while dst in dups and dups[dst] != src: dst = dups[dst]
         if src in cl and dst in cl and src != dst:
-            d = cl[dst]; s = cl.pop(src)
-            d["sources"] += [x for x in s["sources"] if x["url"] not in {y["url"] for y in d["sources"]}]
-            d["first"], d["last"] = min(d["first"], s["first"]), max(d["last"], s["last"])
-            d["toks"] = sorted(set(d["toks"]) | set(s["toks"]))[:80]; d["tickers"] = sorted(set(d["tickers"]) | set(s["tickers"]))
-            d["aliases"] = sorted(set(d.get("aliases", [])) | {src} | set(s.get("aliases", [])))  # old ids keep matching data/x.json
+            merge_into(cl[dst], cl.pop(src))
     json.dump(cl, open(sp, "w"))
     ranked = sorted(((*score(c, now), c) for c in cl.values()), key=lambda x: -x[0])
     ranked = [r for r in ranked if r[0] > 1][:40]
+    dev_c = [c for sc, _, c in ranked if distinct(c) >= 2 or (c.get("runs", 0) >= 3 and sc >= 5)][:8]
+    dev = develop(dev_c, cache)
     out = []
     for sc, tags, c in ranked:
         srcs = sorted(c["sources"], key=lambda s: (bool(PAYWALL.search(s["source"] or "")), s["date"]))
@@ -230,6 +300,7 @@ def build(watch, news_by_ticker, sec, names, cache):
         out.append({"id": c["id"], "aliases": c.get("aliases", []), "title": lead["title"], "first": c["first"], "last": c["last"], "score": sc, "tags": tags, "tickers": c["tickers"],
                     "sum": a.get("sum"), "why": a.get("why"), "deep": a.get("deep") or [], "model": a.get("model"),
                     "paywalled": sorted(set(pay)), "freeCoverage": bool(free), "sources": [{k: s.get(k) for k in ("source", "title", "url", "date")} | {"paywalled": bool(PAYWALL.search(s["source"] or ""))} for s in srcs[:12]],
+                    "nSources": distinct(c), "runs": c.get("runs", 1), "dev": dev.get(c["id"]) if c in dev_c or c["id"] in dev else None,
                     "x": []})  # slot for X posts, filled later by a separate job
     log(f"{len(items)} items -> {len(cl)} clusters -> {len(out)} shown; ai {sum(1 for o in out if o['sum'])}; {round(time.time() - t0)}s")
     return {"asOf": now.astimezone().isoformat(timespec="seconds"), "items": out, "sources": status, "windowHours": WINDOW_H,

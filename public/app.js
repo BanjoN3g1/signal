@@ -327,15 +327,6 @@ function lessonCard(L){
   <button class="more" data-lesson="${L.id}">${L.numbers.length?'Walk me through the numbers':'Read the full lesson'}</button>
  </div></section>`;
 }
-function videoCard(v,topic){
- return `<section class="slide"><div class="card vid">
-  <div class="frame" data-vid="${esc(v.id)}"><img src="https://i.ytimg.com/vi/${esc(v.id)}/hqdefault.jpg" alt="" loading="lazy"><div class="play">${I.play}</div></div>
-  <div class="meta"><div class="kicker"><span class="chip r">Video</span><span class="chip">${esc(topic)}</span></div>
-   <h3 style="font-size:21px">${esc(v.title)}</h3>
-   <p class="note">${esc(v.channel||'')}${v.length?' · '+esc(v.length):''}${v.views?' · '+esc(v.views):''}${v.age?' · '+esc(v.age):''}</p>
-   <a href="https://www.youtube.com/watch?v=${esc(v.id)}" target="_blank" rel="noopener" class="note">Open on YouTube ↗</a></div>
- </div></section>`;
-}
 function pendingCard(t){const synced=repoTickers().has(t);
  return `<section class="slide"><div class="card"><div class="kicker"><span class="chip">${esc(groupOf(t).replace(/^.*· /,''))}</span><span class="chip o">New</span></div><div class="tkr">${esc(t)}</div><div class="nm" data-pn="${esc(t)}">Added to your watchlist</div>
   <div class="sect" data-pf="${esc(t)}"><h4>From SEC EDGAR (on this phone)</h4><p class="note">Loading recent filings…</p></div>
@@ -377,33 +368,63 @@ function openNews(id){const it=DATA.today.items.find(x=>x.id===id);if(!it)return
  const pwNote=it.paywalled.length?(it.freeCoverage?`🔒 ${esc(it.paywalled.join(', '))} ${it.paywalled.length>1?'are':'is'} paywalled — summarized from free coverage (${esc([...new Set(free.map(s=>s.source))].slice(0,3).join(', '))}).`:`🔒 Paywalled (${esc(it.paywalled.join(', '))}) and no free coverage yet — summary is from the headline only.`):'';
  sheet('Dig in',`<div class="kicker">${it.tags.map(esc).join(' · ')||'News'}${it.tickers.length?' · '+it.tickers.map(esc).join(', '):''}</div><h3>${esc(it.title)}</h3>
   <p class="note">First seen ${esc(fmtPT(it.first))}${it.last!==it.first?' · latest '+esc(fmtPT(it.last)):''} · ${it.sources.length} headline${it.sources.length>1?'s':''}</p>
-  ${it.sum?`<p>${esc(it.sum)}</p>`:'<p class="note">AI summary pending — it’s added at the next refresh.</p>'}
-  ${it.why?`<div class="whybox"><b>Why it matters for a tech banker</b><p>${esc(it.why)}</p></div>`:''}
-  ${it.deep?.length?`<h4 class="dh">Deeper dive</h4><ul class="dl">${it.deep.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}
+  ${it.dev?`<div class="kicker"><span class="chip o"><i class="live"></i>Developing</span><span class="note">${it.nSources||''} sources</span></div>${it.dev.headline?`<p><b>${esc(it.dev.headline)}</b></p>`:''}
+   <h4 class="dh">What happened</h4><ul class="dl">${(it.dev.happened||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+   <h4 class="dh">Summary</h4><p>${esc(it.dev.summary)}</p>
+   ${it.dev.numbers?.length?`<h4 class="dh">Key numbers</h4><div class="nums">${it.dev.numbers.map(x=>`<div><b>${esc(x.figure)}</b><span>${esc(x.context)}</span></div>`).join('')}</div>`:''}
+   ${it.dev.implications?.length?`<div class="whybox"><b>Implications</b>${it.dev.implications.map(x=>`<p><b>${esc(x.area)}:</b> ${esc(x.text)}</p>`).join('')}</div>`:''}`
+  :it.sum?`<p>${esc(it.sum)}</p>`:'<p class="note">AI summary pending — it’s added at the next refresh.</p>'}
+  ${!it.dev&&it.why?`<div class="whybox"><b>Why it matters for a tech banker</b><p>${esc(it.why)}</p></div>`:''}
+  ${!it.dev&&it.deep?.length?`<h4 class="dh">Deeper dive</h4><ul class="dl">${it.deep.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}
   ${pwNote?`<p class="note">${pwNote}</p>`:''}
   ${xHTML(it.x)}
   <h4 class="dh">All sources</h4>${it.sources.map(s=>`<a class="nrow" href="${esc(s.url)}" target="_blank" rel="noopener"><b>${s.paywalled?'🔒 ':''}${esc(s.title)}</b><span class="note">${esc(s.source)} · ${esc(fmtPT(s.date))}</span></a>`).join('')}
-  ${it.sum?`<p class="note">Summary by ${esc(it.model||'AI')} from headlines and RSS blurbs only — open the sources before relying on it.</p>`:''}`);
+  ${it.sum||it.dev?`<p class="note">Summary by ${esc(it.dev?.model||it.model||'AI')} from headlines and RSS blurbs only — open the sources before relying on it.</p>`:''}`);
 }
+
+// ---------- Developing stories + X posts in the feed ----------
+const devStories=()=>(DATA.today?.items||[]).filter(it=>it.dev?.summary);
+function xFeed(){const seen=new Set(),out=[],T=DATA.today?.items||[];
+ T.forEach(it=>(it.x||[]).forEach(x=>out.push({...x,story:it})));
+ Object.entries(DATA.xTickers||{}).forEach(([t,ps])=>(ps||[]).forEach(x=>out.push({...x,tkr:t})));
+ return out.filter(x=>x.url&&!seen.has(x.url)&&seen.add(x.url)).sort((a,b)=>((b.likes||0)+3*(b.reposts||0))-((a.likes||0)+3*(a.reposts||0)))
+  .filter((x,i,arr)=>arr.findIndex(y=>y.handle===x.handle)===i)}
+function devCard(it){const d=it.dev,n=it.nSources||new Set(it.sources.map(s=>s.source)).size;
+ return `<section class="slide"><div class="card devc"><div class="kicker"><span class="chip o"><i class="live"></i>Developing</span>${it.tickers.slice(0,2).map(t=>`<span class="chip">${esc(t)}</span>`).join('')}<span class="note">${n} sources · ${hAgo(it.last)} ago</span></div>
+  <h3 class="devh">${esc(d.headline||it.title)}</h3><p class="devs">${esc(d.summary)}</p>
+  ${d.numbers?.length?`<div class="nums">${d.numbers.slice(0,3).map(x=>`<div><b>${esc(x.figure)}</b><span>${esc(x.context)}</span></div>`).join('')}</div>`:''}
+  ${d.happened?.length?`<ul class="dl">${d.happened.slice(0,3).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}
+  <div style="flex:1"></div><button class="btn" data-n="${esc(it.id)}">Learn more</button></div></section>`}
+function xCard(x){const h=String(x.handle||'').replace(/^@/,''),st=x.story;
+ const tie=st?`<button class="xtie" data-n="${esc(st.id)}"><span class="note">Tied story</span><b>${esc((st.dev?.headline||st.title).slice(0,110))}</b><span class="note">Dig in ›</span></button>`
+  :`<button class="xtie" data-deep="${esc(x.tkr)}"><span class="note">Tied ticker</span><b>${esc(x.tkr)}${DATA.quotes?.[x.tkr]?.pct!=null?` · ${DATA.quotes[x.tkr].pct>0?'+':''}${DATA.quotes[x.tkr].pct.toFixed(2)}%`:''}</b><span class="note">Dig in ›</span></button>`;
+ return `<section class="slide"><div class="card xcard"><div class="kicker"><span class="chip">𝕏 On X</span>${st?st.tickers.slice(0,2).map(t=>`<span class="chip">${esc(t)}</span>`).join(''):`<span class="chip">${esc(x.tkr)}</span>`}</div>
+  <div class="xh"><b>${esc(x.name||h)}</b>${h?`<span>@${esc(h)}</span>`:''}${x.ts?`<span>· ${esc(hAgo(x.ts))}</span>`:''}</div>
+  <p class="xt">${esc(x.text||'')}</p>
+  <div class="xs">${x.likes!=null?`♥ ${kfmt(x.likes)}`:''}${x.reposts!=null?` · ↻ ${kfmt(x.reposts)}`:''}${x.note?` · ${esc(x.note)}`:''}</div>
+  <div style="flex:1"></div>${tie}<a class="note xlink" href="${esc(x.url)}" target="_blank" rel="noopener">Open on X ↗</a></div></section>`}
 
 function renderFeed(p){
  const Q=DATA.quotes;const tick=wlTickers().filter(t=>!['IGV','SOXX'].includes(t));
  const have=tick.filter(t=>Q[t]),missing=tick.filter(t=>!Q[t]);
  const movers=have.map(t=>Q[t]).sort((a,b)=>Math.abs(b.pct??0)-Math.abs(a.pct??0));
- const vids=[['converts','Converts 101'],['semis_cycle','Semis cycle'],['saas_valuation','Software valuation'],['capped_call','Capped calls'],['earnings','Earnings'],['market_today','Semis today']].map(([k,n])=>[(DATA.videos?.[k]||[])[0],n]).filter(x=>x[0]);
+ const devs=devStories().slice(0,6),xs=xFeed().slice(0,10);
  const fresh=missing.filter(t=>!(WL.groups.find(g=>g.tickers.includes(t))&&isPrivGroup(WL.groups.find(g=>g.tickers.includes(t))))),priv=missing.filter(t=>!fresh.includes(t));
- let html=pulseCard()+todayCard()+fresh.map(pendingCard).join('')+priv.map(privateCard).join(''),li=0,vi=0;
+ let html=pulseCard()+todayCard()+fresh.map(pendingCard).join('')+priv.map(privateCard).join(''),li=0,di=0,xi=0;
+ if(devs[di])html+=devCard(devs[di++]);if(xs[xi])html+=xCard(xs[xi++]);
+ // Reels rhythm: mover · developing story · mover · X post · lesson …
  movers.forEach((q,i)=>{html+=moverCard(q,i);
-  if(i%4===1&&LESSONS[li])html+=lessonCard(LESSONS[li++]);
-  else if(i%4===3&&vids[vi]){const [v,n]=vids[vi++];html+=videoCard(v,n)}});
- while(LESSONS[li])html+=lessonCard(LESSONS[li++]);
+  if(i%3===0&&devs[di])html+=devCard(devs[di++]);
+  else if(i%3===1&&xs[xi])html+=xCard(xs[xi++]);
+  else if(i%3===2&&LESSONS[li])html+=lessonCard(LESSONS[li++]);
+  if(i%3===2&&xs[xi])html+=xCard(xs[xi++])});
+ while(devs[di]||xs[xi]||LESSONS[li]){if(devs[di])html+=devCard(devs[di++]);if(xs[xi])html+=xCard(xs[xi++]);if(LESSONS[li])html+=lessonCard(LESSONS[li++])}
  p.innerHTML=`<div class="feed" id="feed">${html}</div>`;
  fillPending(p);p.querySelectorAll('[data-sync]').forEach(b=>b.onclick=syncNow);
  const an=p.querySelector('#allnews');if(an)an.onclick=()=>openNewsList();
- p.querySelectorAll('.todayc [data-n]').forEach(b=>b.onclick=()=>openNews(b.dataset.n));
+ p.querySelectorAll('.todayc [data-n],.devc [data-n],.xcard [data-n]').forEach(b=>b.onclick=()=>openNews(b.dataset.n));
  p.querySelectorAll('[data-deep]').forEach(b=>b.onclick=()=>openDeep(b.dataset.deep));
  p.querySelectorAll('[data-lesson]').forEach(b=>b.onclick=()=>openLesson(b.dataset.lesson));
- p.querySelectorAll('[data-vid]').forEach(f=>f.onclick=()=>{f.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${f.dataset.vid}?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`});
 }
 
 // ---------- sheets ----------

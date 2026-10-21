@@ -23,3 +23,10 @@ Written by a separate weekday-morning job; `refresh.py` merges it on every refre
 **Story ids** come from `feed.json` → `today.items[].id`: the first 12 hex chars of sha1(URL of the first headline seen for the
 story, or its title if no URL). Stories persist in the cache for 36 h, so ids are stable across refreshes; when duplicates are merged
 the survivor keeps its id and lists absorbed ids in `aliases` (x.json may key by either). An empty `{}` is fine.
+
+### Developing stories
+Clusters with 2+ distinct sources (or alive for 3+ refreshes with a high score) get a structured brief from Gemini Flash-Lite (role `news`, existing caps):
+headline, what happened (3-5), summary, key numbers (kept only if the figure appears in the source text), implications. Cached in
+`data/cache/news_dev.json` by story id and regenerated only when distinct sources grow by 2+ (or 50%). At most 2 calls × 3 stories per refresh.
+Clustering also merges headlines naming the same single watchlist company plus the same event (earnings / deal), e.g. the LRCX earnings splits;
+absorbed ids go to `aliases`, so `data/x.json` keys keep matching. The feed shows Developing and X post cards; YouTube video cards were removed.

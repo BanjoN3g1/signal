@@ -236,3 +236,18 @@ sup.cite{vertical-align:3px}
 .xpost{display:block;background:#1c1c1e;border-radius:14px;padding:10px 12px;margin:6px 0;color:var(--txt)}
 .xpost .xh{display:flex;gap:5px;align-items:baseline;font-size:13.5px;flex-wrap:wrap}.xpost .xh span{color:var(--sub)}
 .xpost p{margin:4px 0 0;font-size:14.5px!important;line-height:1.4!important}.xpost .xs{font-size:12px;color:var(--sub);margin-top:5px}
+/* Developing story + X post feed cards */
+.devc{background:linear-gradient(160deg,#2a1d08 0%,#1c1c1e 45%)}
+.chip .live{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--orange);margin-right:5px;vertical-align:1px;animation:lv 1.6s infinite}
+@keyframes lv{50%{opacity:.25}}
+.devh{font-size:23px;line-height:1.2;margin:10px 0 6px}
+.devs{font-size:15.5px;line-height:1.45;color:#e5e5ea;margin:0 0 8px;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:8px;margin:8px 0}
+.nums div{background:rgba(255,255,255,.06);border-radius:12px;padding:8px 10px}
+.nums b{display:block;font-size:19px;color:var(--orange)}.nums span{font-size:12px;color:var(--sub);line-height:1.3;display:block}
+.devc ul.dl{padding-left:18px;margin:4px 0;font-size:14px;color:#d1d1d6}.devc ul.dl li{margin:4px 0;line-height:1.38}
+.xcard .xh{display:flex;gap:6px;align-items:baseline;flex-wrap:wrap;margin-top:14px;font-size:16px}.xcard .xh span{color:var(--sub);font-size:14px}
+.xcard .xt{font-size:19px;line-height:1.42;margin:10px 0;white-space:pre-line;display:-webkit-box;-webkit-line-clamp:10;-webkit-box-orient:vertical;overflow:hidden}
+.xcard .xs{font-size:14px;color:var(--sub)}
+.xtie{display:flex;flex-direction:column;gap:2px;text-align:left;width:100%;background:rgba(255,255,255,.07);border:0;border-radius:14px;padding:10px 12px;color:var(--txt);font:inherit;margin-top:10px}
+.xtie b{font-size:15px;line-height:1.3}.xlink{display:block;text-align:center;margin-top:10px}

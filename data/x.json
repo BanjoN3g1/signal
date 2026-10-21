@@ -1,1 +1,420 @@
-{}
+{
+ "stories": {
+  "3fccf913600c": [
+   {
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: Elon Musk says SpaceX, $SPCX, and Tesla, $TSLA, have formed special committees to discuss a potential merger between the two companies.\n\n\"I do think there’s a lot of merit to combining the companies as we are pretty much in the superintelligence singularity, and there’s",
+    "url": "https://x.com/KobeissiLetter/status/2112660666624483511",
+    "likes": 6804,
+    "reposts": 462,
+    "ts": "2026-10-20T21:42:08.000Z",
+    "note": "2.7M followers"
+   },
+   {
+    "handle": "DeItaone",
+    "name": "*Walter Bloomberg",
+    "text": "$SPCX - JPMORGAN DOUBLES SPACEX PRICE TARGET TO $500\n\nJPMorgan raised its SpaceX price target from $240 to $500, maintaining an Overweight rating.\n\nThe bank now forecasts $254 billion in 2027 revenue and 10 GW of computing capacity by year-end, more than doubling its 2027–2028",
+    "url": "https://x.com/DeItaone/status/2112863117516390700",
+    "likes": 2589,
+    "reposts": 268,
+    "ts": "2026-10-21T11:06:36.000Z",
+    "note": "2.0M followers"
+   },
+   {
+    "handle": "SawyerMerritt",
+    "name": "Sawyer Merritt",
+    "text": "Brad Gerstner on a potential Tesla-SpaceX merger:\n\n\"If I'm on the special committee of Tesla, I have a unique fiduciary duty because he's (Elon) involved with both companies, in order to make sure this is fair for Tesla shareholders. I think you'll see between $420 and",
+    "url": "https://x.com/SawyerMerritt/status/2112912959009702276",
+    "likes": 2639,
+    "reposts": 209,
+    "ts": "2026-10-21T14:24:40.000Z",
+    "note": "1.2M followers"
+   },
+   {
+    "handle": "StockMKTNewz",
+    "name": "Evan",
+    "text": "Elon Musk just said that Tesla  $TSLA and SpaceX $SPCX have formed special committees to discuss a merger",
+    "url": "https://x.com/StockMKTNewz/status/2112659609915724197",
+    "likes": 631,
+    "reposts": 45,
+    "ts": "2026-10-20T21:37:56.000Z",
+    "note": "1.2M followers"
+   }
+  ],
+  "cbbc11c302c0": [
+   {
+    "handle": "Polymarket",
+    "name": "Polymarket",
+    "text": "JUST IN: Anthropic recorded a staggering $80,000,000,000.00 net loss in the first half of 2026.",
+    "url": "https://x.com/Polymarket/status/2112634886070919426",
+    "likes": 30368,
+    "reposts": 2287,
+    "ts": "2026-10-20T19:59:42.000Z",
+    "note": "2.0M followers"
+   },
+   {
+    "handle": "YahooFinance",
+    "name": "Yahoo Finance",
+    "text": "A new Anthropic S-1 leak has dropped. 👀\n\nAccording to a draft seen by the Wall Street Journal, Anthropic recorded an $80.7 billion net loss for the first half of this year. Last year, it saw a net loss of $13 billion during the same period.\n\nThe company continues to signal it's",
+    "url": "https://x.com/YahooFinance/status/2112647431611433160",
+    "likes": 749,
+    "reposts": 168,
+    "ts": "2026-10-20T20:49:33.000Z",
+    "note": "2.1M followers"
+   },
+   {
+    "handle": "TechCrunch",
+    "name": "TechCrunch",
+    "text": "Anthropic is reportedly struggling to secure enough compute from cloud providers that increasingly view it as a competitor, even as its infrastructure spending balloons ahead of a planned November IPO.",
+    "url": "https://x.com/TechCrunch/status/2112657380064268409",
+    "likes": 123,
+    "reposts": 14,
+    "ts": "2026-10-20T21:29:05.000Z",
+    "note": "11.1M followers"
+   },
+   {
+    "handle": "business",
+    "name": "Bloomberg",
+    "text": "Anthropic could spend $750 billion on additional computing power in the coming years, according to a Wall Street Journal report, as the company prepares for an IPO",
+    "url": "https://x.com/business/status/2112684065790820452",
+    "likes": 62,
+    "reposts": 13,
+    "ts": "2026-10-20T23:15:07.000Z",
+    "note": "10.5M followers"
+   }
+  ],
+  "857b61bdc6be": [
+   {
+    "handle": "business",
+    "name": "Bloomberg",
+    "text": "Salesforce has agreed to buy Braze, an AI-powered platform for marketers, for almost $5.7 billion in enterprise value",
+    "url": "https://x.com/business/status/2112558232489099437",
+    "likes": 91,
+    "reposts": 16,
+    "ts": "2026-10-20T14:55:06.000Z",
+    "note": "10.5M followers"
+   },
+   {
+    "handle": "CNBC",
+    "name": "CNBC",
+    "text": "Salesforce to acquire Braze in a $5.66 billion deal",
+    "url": "https://x.com/CNBC/status/2112523617053352209",
+    "likes": 24,
+    "reposts": 1,
+    "ts": "2026-10-20T12:37:33.000Z",
+    "note": "6.3M followers"
+   },
+   {
+    "handle": "DeItaone",
+    "name": "*Walter Bloomberg",
+    "text": "SALESFORCE TO ACQUIRE BRAZE FOR ABOUT $5.66 BILLION ENTERPRISE VALUE \n$CRM  $BRZE",
+    "url": "https://x.com/DeItaone/status/2112515009318392302",
+    "likes": 152,
+    "reposts": 16,
+    "ts": "2026-10-20T12:03:21.000Z",
+    "note": "2.0M followers"
+   },
+   {
+    "handle": "YahooFinance",
+    "name": "Yahoo Finance",
+    "text": "Braze stock is up about 50% after Salesforce agreed to pay $47.50 a share in cash.",
+    "url": "https://x.com/YahooFinance/status/2112583165726355831",
+    "likes": 63,
+    "reposts": 13,
+    "ts": "2026-10-20T16:34:11.000Z",
+    "note": "2.1M followers"
+   }
+  ],
+  "4951d17a18e4": [
+   {
+    "handle": "CNBC",
+    "name": "CNBC",
+    "text": "Stocks making the biggest moves after hours: Meta Platforms, Tesla, Lam Research, IBM & more",
+    "url": "https://x.com/CNBC/status/2113015232226332900",
+    "likes": 6,
+    "reposts": 3,
+    "ts": "2026-10-21T21:11:03.000Z",
+    "note": "6.3M followers"
+   },
+   {
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "LAM RESEARCH $LRCX Q1’27 EARNINGS HIGHLIGHTS\n\n🔹 Revenue: $8.2B (Est. $8.15B) 🟢\n🔹 Adj. EPS: $2.20 (Est. $2.18) 🟢\n🔹 GAAP EPS: $2.19; +77% YoY\n🔹 Adj. Gross Margin: 52.4%\n\nQ2 FY27 Guide:\n🔹 Revenue: $8.20B-$9.00B (Est. $8.53B) 🟡\n🔹 Adj. EPS: $2.18-$2.48 (Est. $2.31) 🟡\n🔹 Adj.",
+    "url": "https://x.com/wallstengine/status/2112998864508604631",
+    "likes": 105,
+    "reposts": 19,
+    "ts": "2026-10-21T20:06:01.000Z",
+    "note": "204K followers"
+   },
+   {
+    "handle": "FirstSquawk",
+    "name": "First Squawk",
+    "text": "LAM RESEARCH Q1 2027 REVENUE $8.22 BLN, ABOVE ESTIMATE OF $8.13 BLN, WITH ADJUSTED EPS $2.20, ROUGHLY IN LINE WITH ESTIMATE OF $2.19",
+    "url": "https://x.com/FirstSquawk/status/2113003380830539793",
+    "likes": 10,
+    "reposts": 0,
+    "ts": "2026-10-21T20:23:58.000Z",
+    "note": "574K followers"
+   },
+   {
+    "handle": "LiveSquawk",
+    "name": "LiveSquawk",
+    "text": "$LRCX  | Lam Research Q1 27 Earnings:\n\n• Rev: $8.22B (est $8.13B)\n• Adj EPS: $2.20 (est $2.19)\n• Sees Q2 Rev: $8.20B To $9.00B (est $8.60B)\n• Sees Q2 Adj EPS: $2.18 To $2.48 (est $2.34)",
+    "url": "https://x.com/LiveSquawk/status/2113001846172209585",
+    "likes": 10,
+    "reposts": 0,
+    "ts": "2026-10-21T20:17:52.000Z",
+    "note": "506K followers"
+   }
+  ],
+  "88156363be24": [
+   {
+    "handle": "Sam_Badawi",
+    "name": "Sam Badawi",
+    "text": "NVIDIA $NVDA is reportedly in talks to invest at least $500M in Australian AI cloud provider Firmus after its planned $44B IPO collapsed.\n\nFirmus is now seeking $3B in private funding after investors raised concerns over its valuation and limited operating history.\n\nNVIDIA",
+    "url": "https://x.com/Sam_Badawi/status/2112726124019245110",
+    "likes": 55,
+    "reposts": 7,
+    "ts": "2026-10-21T02:02:15.000Z",
+    "note": "56K followers"
+   },
+   {
+    "handle": "AIStockSavvy",
+    "name": "Hardik Shah",
+    "text": "📢 𝐉𝐔𝐒𝐓 𝐈𝐍: $NVDA Nvidia Is in Talks to Invest Hundreds of Millions of Dollars in Australian AI Cloud Provider Firmus - The Information  - $NBIS $CRWV $CIFR $IREN",
+    "url": "https://x.com/AIStockSavvy/status/2112692847166058859",
+    "likes": 51,
+    "reposts": 0,
+    "ts": "2026-10-20T23:50:01.000Z",
+    "note": "43K followers"
+   },
+   {
+    "handle": "tenet_research",
+    "name": "TENET RESEARCH",
+    "text": "$NVDA - NVDA IN TALKS TO INVEST HUNDREDS OF MILLIONS IN FIRMUS AFTER FAILED $5B IPO PUSH\n\n▶️ Nvidia is reportedly considering another major investment in Australian AI cloud provider Firmus, which recently withdrew its planned public listing amid market volatility and investor",
+    "url": "https://x.com/tenet_research/status/2112840411412840714",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-10-21T09:36:23.000Z",
+    "note": "461K followers"
+   }
+  ],
+  "23f5a43e35fa": [
+   {
+    "handle": "StockSavvyShay",
+    "name": "Shay Boloor",
+    "text": "$SMCI PRELIMINARY Q1 EARNINGS\n\n• Revenue $19.1B vs Est. $15.2B\n• Gross Margin 12% vs. Est. 11%",
+    "url": "https://x.com/StockSavvyShay/status/2112643862711976226",
+    "likes": 682,
+    "reposts": 50,
+    "ts": "2026-10-20T20:35:22.000Z",
+    "note": "459K followers"
+   },
+   {
+    "handle": "business",
+    "name": "Bloomberg",
+    "text": "Super Micro jumped in late trading after reporting preliminary quarterly results that topped analysts’ estimates.",
+    "url": "https://x.com/business/status/2112686575595188661",
+    "likes": 18,
+    "reposts": 5,
+    "ts": "2026-10-20T23:25:06.000Z",
+    "note": "10.5M followers"
+   },
+   {
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "Supermicro $SMCI RAISES its fiscal Q1 revenue outlook to $18.5B-$19.5B (prior: $14.5B-$15.5B), citing stronger AI demand.\n\nGross margin now seen at 12%-12.5% (prior: 10.4%-10.8%).\n\nFigures are preliminary, with final earnings due Nov. 3.",
+    "url": "https://x.com/wallstengine/status/2112643573107793936",
+    "likes": 330,
+    "reposts": 55,
+    "ts": "2026-10-20T20:34:13.000Z",
+    "note": "204K followers"
+   }
+  ],
+  "2ff622bcefe0": [
+   {
+    "handle": "StockSavvyShay",
+    "name": "Shay Boloor",
+    "text": "$SMCI PRELIMINARY Q1 EARNINGS\n\n• Revenue $19.1B vs Est. $15.2B\n• Gross Margin 12% vs. Est. 11%",
+    "url": "https://x.com/StockSavvyShay/status/2112643862711976226",
+    "likes": 682,
+    "reposts": 50,
+    "ts": "2026-10-20T20:35:22.000Z",
+    "note": "459K followers"
+   },
+   {
+    "handle": "business",
+    "name": "Bloomberg",
+    "text": "Super Micro jumped in late trading after reporting preliminary quarterly results that topped analysts’ estimates.",
+    "url": "https://x.com/business/status/2112686575595188661",
+    "likes": 18,
+    "reposts": 5,
+    "ts": "2026-10-20T23:25:06.000Z",
+    "note": "10.5M followers"
+   }
+  ]
+ },
+ "tickers": {
+  "LRCX": [
+   {
+    "handle": "CNBC",
+    "name": "CNBC",
+    "text": "Stocks making the biggest moves after hours: Meta Platforms, Tesla, Lam Research, IBM & more",
+    "url": "https://x.com/CNBC/status/2113015232226332900",
+    "likes": 6,
+    "reposts": 3,
+    "ts": "2026-10-21T21:11:03.000Z",
+    "note": "6.3M followers"
+   },
+   {
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "LAM RESEARCH $LRCX Q1’27 EARNINGS HIGHLIGHTS\n\n🔹 Revenue: $8.2B (Est. $8.15B) 🟢\n🔹 Adj. EPS: $2.20 (Est. $2.18) 🟢\n🔹 GAAP EPS: $2.19; +77% YoY\n🔹 Adj. Gross Margin: 52.4%\n\nQ2 FY27 Guide:\n🔹 Revenue: $8.20B-$9.00B (Est. $8.53B) 🟡\n🔹 Adj. EPS: $2.18-$2.48 (Est. $2.31) 🟡\n🔹 Adj.",
+    "url": "https://x.com/wallstengine/status/2112998864508604631",
+    "likes": 105,
+    "reposts": 19,
+    "ts": "2026-10-21T20:06:01.000Z",
+    "note": "204K followers"
+   },
+   {
+    "handle": "FirstSquawk",
+    "name": "First Squawk",
+    "text": "LAM RESEARCH Q1 2027 REVENUE $8.22 BLN, ABOVE ESTIMATE OF $8.13 BLN, WITH ADJUSTED EPS $2.20, ROUGHLY IN LINE WITH ESTIMATE OF $2.19",
+    "url": "https://x.com/FirstSquawk/status/2113003380830539793",
+    "likes": 10,
+    "reposts": 0,
+    "ts": "2026-10-21T20:23:58.000Z",
+    "note": "574K followers"
+   },
+   {
+    "handle": "LiveSquawk",
+    "name": "LiveSquawk",
+    "text": "$LRCX  | Lam Research Q1 27 Earnings:\n\n• Rev: $8.22B (est $8.13B)\n• Adj EPS: $2.20 (est $2.19)\n• Sees Q2 Rev: $8.20B To $9.00B (est $8.60B)\n• Sees Q2 Adj EPS: $2.18 To $2.48 (est $2.34)",
+    "url": "https://x.com/LiveSquawk/status/2113001846172209585",
+    "likes": 10,
+    "reposts": 0,
+    "ts": "2026-10-21T20:17:52.000Z",
+    "note": "506K followers"
+   }
+  ],
+  "SMCI": [
+   {
+    "handle": "StockSavvyShay",
+    "name": "Shay Boloor",
+    "text": "$SMCI PRELIMINARY Q1 EARNINGS\n\n• Revenue $19.1B vs Est. $15.2B\n• Gross Margin 12% vs. Est. 11%",
+    "url": "https://x.com/StockSavvyShay/status/2112643862711976226",
+    "likes": 682,
+    "reposts": 50,
+    "ts": "2026-10-20T20:35:22.000Z",
+    "note": "459K followers"
+   },
+   {
+    "handle": "business",
+    "name": "Bloomberg",
+    "text": "Super Micro jumped in late trading after reporting preliminary quarterly results that topped analysts’ estimates.",
+    "url": "https://x.com/business/status/2112686575595188661",
+    "likes": 18,
+    "reposts": 5,
+    "ts": "2026-10-20T23:25:06.000Z",
+    "note": "10.5M followers"
+   },
+   {
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "Supermicro $SMCI RAISES its fiscal Q1 revenue outlook to $18.5B-$19.5B (prior: $14.5B-$15.5B), citing stronger AI demand.\n\nGross margin now seen at 12%-12.5% (prior: 10.4%-10.8%).\n\nFigures are preliminary, with final earnings due Nov. 3.",
+    "url": "https://x.com/wallstengine/status/2112643573107793936",
+    "likes": 330,
+    "reposts": 55,
+    "ts": "2026-10-20T20:34:13.000Z",
+    "note": "204K followers"
+   }
+  ],
+  "SPCX": [
+   {
+    "handle": "unusual_whales",
+    "name": "unusual_whales",
+    "text": "BREAKING: JPMorgan doubled its price target on SpaceX, $SPCX, to $500, from $240.\n\nIt kept its Overweight rating.",
+    "url": "https://x.com/unusual_whales/status/2112921096349790542",
+    "likes": 2472,
+    "reposts": 105,
+    "ts": "2026-10-21T14:57:00.000Z",
+    "note": "5.4M followers"
+   },
+   {
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "SPACEX $SPCX Q3’26 EARNINGS HIGHLIGHTS\n\n🔹 Revenue: $14.6B; +161% YoY\n🔹 EPS: $0.35\n🔹 Net Income: $4.4B\n🔹 Adjusted EBITDA: $8.8B; +306% YoY\n\nCapital Expenditures:\n🔹 Total: $19.6B\n🔹 Operating Cash Flow: $13.1B\n\nSegment Revenue:\n🔹 Space: $1.8B; +6% YoY\n🔹 Connectivity: $5.2B;",
+    "url": "https://x.com/wallstengine/status/2112635907060773129",
+    "likes": 621,
+    "reposts": 117,
+    "ts": "2026-10-20T20:03:45.000Z",
+    "note": "204K followers"
+   },
+   {
+    "handle": "DeItaone",
+    "name": "*Walter Bloomberg",
+    "text": "$SPCX  - WALL STREET RAISES SPACEX TARGETS AFTER EARNINGS\n\nAnalysts are turning more bullish on SpaceX, with several banks lifting their price targets:\n\n🔸 Morgan Stanley: $300 — Overweight\n🔸 Wells Fargo: $274, up from $214\n🔸 Citi: $240, up from $200\n🔸 UBS: $230, up from $210",
+    "url": "https://x.com/DeItaone/status/2112856976807899506",
+    "likes": 568,
+    "reposts": 81,
+    "ts": "2026-10-21T10:42:12.000Z",
+    "note": "2.0M followers"
+   },
+   {
+    "handle": "StockMKTNewz",
+    "name": "Evan",
+    "text": "SPACEX $SPCX JUST REPORTED EARNINGS\n\nEPS of $0.35 beating expectations of $0.16🟢\nRevenue of $14.6B beating expectations of $12.9B🟢",
+    "url": "https://x.com/StockMKTNewz/status/2112635776026714445",
+    "likes": 538,
+    "reposts": 62,
+    "ts": "2026-10-20T20:03:14.000Z",
+    "note": "1.2M followers"
+   }
+  ],
+  "CRM": [
+   {
+    "handle": "business",
+    "name": "Bloomberg",
+    "text": "Salesforce has agreed to buy Braze, an AI-powered platform for marketers, for almost $5.7 billion in enterprise value",
+    "url": "https://x.com/business/status/2112558232489099437",
+    "likes": 91,
+    "reposts": 16,
+    "ts": "2026-10-20T14:55:06.000Z",
+    "note": "10.5M followers"
+   },
+   {
+    "handle": "CNBC",
+    "name": "CNBC",
+    "text": "Salesforce to acquire Braze in a $5.66 billion deal",
+    "url": "https://x.com/CNBC/status/2112523617053352209",
+    "likes": 24,
+    "reposts": 1,
+    "ts": "2026-10-20T12:37:33.000Z",
+    "note": "6.3M followers"
+   }
+  ],
+  "NVDA": [
+   {
+    "handle": "Sam_Badawi",
+    "name": "Sam Badawi",
+    "text": "NVIDIA $NVDA is reportedly in talks to invest at least $500M in Australian AI cloud provider Firmus after its planned $44B IPO collapsed.\n\nFirmus is now seeking $3B in private funding after investors raised concerns over its valuation and limited operating history.\n\nNVIDIA",
+    "url": "https://x.com/Sam_Badawi/status/2112726124019245110",
+    "likes": 55,
+    "reposts": 7,
+    "ts": "2026-10-21T02:02:15.000Z",
+    "note": "56K followers"
+   },
+   {
+    "handle": "AIStockSavvy",
+    "name": "Hardik Shah",
+    "text": "📢 𝐉𝐔𝐒𝐓 𝐈𝐍: $NVDA Nvidia Is in Talks to Invest Hundreds of Millions of Dollars in Australian AI Cloud Provider Firmus - The Information  - $NBIS $CRWV $CIFR $IREN",
+    "url": "https://x.com/AIStockSavvy/status/2112692847166058859",
+    "likes": 51,
+    "reposts": 0,
+    "ts": "2026-10-20T23:50:01.000Z",
+    "note": "43K followers"
+   }
+  ]
+ }
+}
