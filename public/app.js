@@ -117,10 +117,18 @@ function renderWork(){
  $('#wl').onclick=openWatchlist;
  app.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>location.hash='#/work/'+b.dataset.t);
  const p=$('#pane');
+ if(tab==='deals')return renderDeals(p);
  if(!DATA){p.innerHTML='<div class="empty"><h2>No data yet</h2><p>Tap refresh to pull the first snapshot.</p></div>';return}
  if(tab==='feed')renderFeed(p);else if(tab==='earnings')renderEarnings(p);
- else if(tab==='deals')p.innerHTML=`<div class="empty"><div class="big">💼</div><h2>Deal Room — coming next</h2><p>A short form for an anonymized deal (public or private): sector, sub-sector, rough size, deal type, your notes.</p><ul><li>Strategic rationale & the story bankers tell</li><li>Real public comps & precedent deals</li><li>Questions your VP / MD will ask</li><li>Option to talk it through with me</li></ul></div>`;
  else p.innerHTML=`<div class="empty"><div class="big">🎓</div><h2>Learn — coming next</h2><p>Bite-size lessons with optional “walk me through the numbers” and quick-check questions. A few lessons already live in your Feed.</p></div>`;
+}
+
+// ---------- deal room (logic in deals.js) ----------
+function renderDeals(p){
+ const tickers=new Set(),names=new Set();
+ Object.values(DATA?.quotes||{}).forEach(q=>{if(!q)return;tickers.add(q.ticker);const w=(q.name||'').split(/[\s,.]+/)[0];if(w&&w.length>2)names.add(w.toLowerCase())});
+ wlTickers().forEach(t=>tickers.add(t));
+ DEALROOM.render(p,{esc,sheet,toast,known:{tickers,names}});
 }
 
 // ---------- sparkline ----------

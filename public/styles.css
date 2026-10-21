@@ -135,3 +135,23 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
 .empty p{max-width:300px;margin:0 auto 6px;font-size:15px}
 .empty ul{text-align:left;max-width:300px;font-size:14px;color:var(--sub);padding-left:18px}
 .toast{position:fixed;left:50%;bottom:calc(var(--tab) + var(--sab) + 20px);transform:translateX(-50%);background:#2c2c2e;color:var(--txt);padding:10px 16px;border-radius:99px;font-size:14px;z-index:40;animation:fade .2s;white-space:nowrap}
+
+/* Deal Room */
+.mnpi{background:rgba(255,159,10,.12);border:1px solid rgba(255,159,10,.35);color:#ffd8a0;border-radius:16px;padding:12px 14px;font-size:13.5px;line-height:1.45;margin:4px 0 12px}
+.mnpi b{color:var(--orange)}
+.dform{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.dform label{display:flex;flex-direction:column;gap:5px;font-size:12px;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.05em}
+.dform label .note{text-transform:none;letter-spacing:0;font-weight:500}
+.dform select,.dform textarea{background:#2c2c2e;border:0;border-radius:12px;color:var(--txt);font:inherit;font-size:16px;padding:11px 12px;text-transform:none;letter-spacing:0;font-weight:400;-webkit-appearance:none;appearance:none;width:100%}
+.dform select{background-image:linear-gradient(45deg,transparent 50%,#8e8e93 50%),linear-gradient(135deg,#8e8e93 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat;padding-right:30px}
+.dform textarea{resize:none}
+.dwarn{background:rgba(255,69,58,.14);color:#ff9f97;border-radius:12px;padding:10px 12px;font-size:13.5px}
+.drow{display:flex;align-items:center;gap:8px;padding:10px 10px 10px 14px}
+.dopen{flex:1;text-align:left;min-width:0}.dopen b{font-size:15px}.dopen .note{margin-top:2px}
+.drm{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.08);color:var(--sub);font-size:17px;flex:none}
+.dh{margin:18px 0 4px;font-size:12px;color:var(--sub);text-transform:uppercase;letter-spacing:.06em}
+.sheet ul.dl{padding-left:18px;margin:4px 0}.sheet ul.dl li{margin:5px 0;line-height:1.45;color:#e5e5ea}
+.qa{background:var(--card2);border-radius:12px;padding:11px 13px;margin:8px 0}
+.qa summary{font-weight:600;cursor:pointer;list-style:none}.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:'+';float:right;color:var(--sub)}.qa[open] summary::after{content:'–'}
+.qa p{margin:8px 0 0;font-size:15px}
