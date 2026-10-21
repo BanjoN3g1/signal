@@ -10,7 +10,6 @@ permissions:
   contents: read
   pages: write
   id-token: write
-  models: read          # GitHub Models free tier for AI summaries (GITHUB_TOKEN, no extra secret)
 concurrency:
   group: pages          # one run at a time; a newer pending run replaces an older pending one
   cancel-in-progress: false
@@ -36,7 +35,9 @@ jobs:
       - name: Pull data and build site
         env:
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}  # repo variable, e.g. "Signal Your Name you@example.com"
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Optional free AI keys (GitHub Models was retired 2026-07-30). Unset -> template text, no calls.
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: ./build.sh
       # Guard against the stale-run race: a run that started on an older commit must not overwrite a newer deploy.
       - name: Check this run is still on the latest main

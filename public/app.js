@@ -152,11 +152,11 @@ function chatterHTML(t){
   <div class="chat"><div class="ch1"><b>X</b><span class="chip">Coming later</span></div></div>
   <p class="note">Score = average VADER sentiment (a free word-list method, −100 to +100) over post titles and text, with market slang added (“calls”, “tank”, “downgrade”). It reads tone, not facts, and misses sarcasm. YouTube uses titles and descriptions; reading comments would need a YouTube API key.</p>`}
 
-// ---------- AI summaries (GitHub Models, generated in the data refresh) ----------
+// ---------- AI summaries (free-tier LLM, generated in the data refresh; absent -> templates) ----------
 function aiWhy(t){const w=DATA.why?.[t];const q=DATA.quotes?.[t];if(!w||!q||q.pct==null)return null;return Math.abs((w.pct??q.pct)-q.pct)<2.5?w:null}
 function cite(w,links){return esc(w.why).replace(/\[(\d+)\]/g,(m,n)=>{const s=(w.sources||[]).find(x=>x.n==n);return s&&links?`<a class="cite" href="${esc(s.url)}" target="_blank" rel="noopener">${n}</a>`:`<sup class="cite">${n}</sup>`})}
 function whySources(t){const w=DATA.why[t];return `<div class="srcs">${(w.sources||[]).map(s=>`<a class="hl" href="${esc(s.url)}" target="_blank" rel="noopener"><span class="cite">${s.n}</span> ${esc(s.title)}<small>${esc(s.source)}${s.date?' · '+esc(/^\d{4}-/.test(s.date)?s.date:fmtPT(s.date)):''}${(w.cited||[]).includes(s.n)?' · cited':''}</small></a>`).join('')}</div>
- <p class="note">Written by ${esc(w.model)} (GitHub Models) from these headlines and filings only${w.confidence?` · confidence: ${esc(w.confidence)}`:''} · ${esc(fmtPT(w.at))}. Headlines suggest causes; they don't prove them.</p>`}
+ <p class="note">Written by ${esc(w.model)} (free tier) from these headlines and filings only${w.confidence?` · confidence: ${esc(w.confidence)}`:''} · ${esc(fmtPT(w.at))}. Headlines suggest causes; they don't prove them.</p>`}
 function deepHTML(e){const d=e.deep,li=a=>(a||[]).length?`<ul class="dl">${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'';
  return `<div class="kicker" style="margin-top:14px"><span class="chip ai">AI deep dive · from the press release</span></div>
   ${d.headline?`<p style="font-size:17px;font-weight:600;margin:8px 0 4px">${esc(d.headline)}</p>`:''}
@@ -165,7 +165,7 @@ function deepHTML(e){const d=e.deep,li=a=>(a||[]).length?`<ul class="dl">${a.map
   ${d.guidance?`<h4 class="dh">Guidance</h4><p>${esc(d.guidance)}</p>`:''}
   <h4 class="dh">For a software / semis banker</h4>${li(d.banker)}
   ${(d.questions||[]).length?`<h4 class="dh">Questions to ask</h4>${li(d.questions)}`:''}
-  <p class="note">Written by ${esc(d.model)} (GitHub Models) from the 8-K press release (exhibit 99.1) only, so there are no call remarks. Check numbers against the filing. ${esc(fmtPT(d.at))}.</p>`}
+  <p class="note">Written by ${esc(d.model)} (free tier) from the 8-K press release (exhibit 99.1) only, so there are no call remarks. Check numbers against the filing. ${esc(fmtPT(d.at))}.</p>`}
 
 // ---------- sparkline ----------
 function spark(h,up){

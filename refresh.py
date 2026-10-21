@@ -455,7 +455,7 @@ def _yt_live(q, n=3):
     return out[:n]
 
 
-# ---------- AI summaries (GitHub Models free tier; cached; template fallback in the app) ----------
+# ---------- AI summaries (free-tier key if set: Gemini or Groq; cached; template fallback in the app) ----------
 def bench_of(group):
     g = group or ""
     return "SOXX" if g.startswith("Semis") else "IGV" if g.startswith("Software") else None
@@ -493,7 +493,7 @@ def build_why(quotes, news, sec):
             nums = {s["n"] for s in c["sources"]}
             used = [n for n in (r.get("sources") or []) if isinstance(n, int) and n in nums]
             done[c["ticker"]] = {"why": str(r["why"])[:700], "confidence": r.get("confidence"), "pct": c["pct"],
-                                 "sources": c["sources"], "cited": used, "model": "gpt-4.1-mini",
+                                 "sources": c["sources"], "cited": used, "model": res.get("_model", "AI"),
                                  "at": dt.datetime.now().astimezone().isoformat(timespec="seconds")}
         json.dump(done, open(cp, "w"))
     return done
@@ -515,7 +515,7 @@ def build_deep(recent):
             res = llm.earnings_deep(e["ticker"], e.get("name") or e["ticker"], e.get("fq") or "", pr_text_for_llm(pr["_text"]), CACHE)
             if not isinstance(res, dict) or not res.get("takeaways"): continue
             d = {k: res.get(k) for k in ("headline", "takeaways", "filing_says", "guidance", "banker", "questions")}
-            d.update(model="gpt-4.1", at=dt.datetime.now().astimezone().isoformat(timespec="seconds"), acc=f["acc"])
+            d.update(model=res.get("_model", "AI"), at=dt.datetime.now().astimezone().isoformat(timespec="seconds"), acc=f["acc"])
             json.dump(d, open(cp, "w"))
         e["deep"] = d
 
@@ -618,7 +618,7 @@ def main():
 
     out = {"generatedAt": dt.datetime.now().astimezone().isoformat(timespec="seconds"),
            "elapsedSec": round(time.time() - t0, 1), "groups": groups, "quotes": quotes, "news": news,
-           "sec": {k: v for k, v in sec.items() if v}, "why": why, "ai": {"provider": "GitHub Models (free tier)", "usageToday": llm.usage(CACHE), "caps": llm.CAPS, "errors": llm.STATE["errors"][-3:]}, "sentiment": sentiment, "sentimentMeta": {"method": "VADER lexicon + market-slang terms" if VADER else "unavailable (vaderSentiment not installed)", "reddit": RD_STATE["note"] or "ok", "x": "not implemented"}, "earnings": {"upcoming": upcoming, "recent": recent},
+           "sec": {k: v for k, v in sec.items() if v}, "why": why, "ai": {"provider": (llm.provider() or {}).get("name"), "usageToday": llm.usage(CACHE), "caps": llm.CAPS, "errors": llm.STATE["errors"][-3:]}, "sentiment": sentiment, "sentimentMeta": {"method": "VADER lexicon + market-slang terms" if VADER else "unavailable (vaderSentiment not installed)", "reddit": RD_STATE["note"] or "ok", "x": "not implemented"}, "earnings": {"upcoming": upcoming, "recent": recent},
            "videos": videos, "sources": STATUS}
     tmp = os.path.join(DATA, "feed.json.tmp")
     json.dump(out, open(tmp, "w")); os.replace(tmp, os.path.join(DATA, "feed.json"))
