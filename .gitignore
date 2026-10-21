@@ -1,4 +1,5 @@
-data/
+data/*
+!data/x.json
 _site/
 .access_key
 *.env

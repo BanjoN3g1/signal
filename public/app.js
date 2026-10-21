@@ -381,7 +381,7 @@ function openNews(id){const it=DATA.today.items.find(x=>x.id===id);if(!it)return
   ${it.why?`<div class="whybox"><b>Why it matters for a tech banker</b><p>${esc(it.why)}</p></div>`:''}
   ${it.deep?.length?`<h4 class="dh">Deeper dive</h4><ul class="dl">${it.deep.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}
   ${pwNote?`<p class="note">${pwNote}</p>`:''}
-  ${it.x?.length?`<h4 class="dh">On X</h4>${it.x.map(x=>`<a class="nrow" href="${esc(x.url)}" target="_blank" rel="noopener"><b>${esc(x.text||'')}</b><span class="note">${esc(x.author||'')}</span></a>`).join('')}`:''}
+  ${xHTML(it.x)}
   <h4 class="dh">All sources</h4>${it.sources.map(s=>`<a class="nrow" href="${esc(s.url)}" target="_blank" rel="noopener"><b>${s.paywalled?'🔒 ':''}${esc(s.title)}</b><span class="note">${esc(s.source)} · ${esc(fmtPT(s.date))}</span></a>`).join('')}
   ${it.sum?`<p class="note">Summary by ${esc(it.model||'AI')} from headlines and RSS blurbs only — open the sources before relying on it.</p>`:''}`);
 }
@@ -417,6 +417,10 @@ function sheet(title,body,onClose){
  const close=()=>{if(document.activeElement&&s.contains(document.activeElement))document.activeElement.blur();vv&&vv.removeEventListener('resize',fit);vv&&vv.removeEventListener('scroll',fit);bg.remove();s.remove();onClose&&onClose()};bg.onclick=close;s.querySelector('.hd button').onclick=close;
  document.body.append(bg,s);return s;
 }
+// 'On X' posts from data/x.json (separate job); hidden when there are none
+const kfmt=n=>n==null?'':n>=1e6?(n/1e6).toFixed(1)+'M':n>=1e3?(n/1e3).toFixed(n>=1e4?0:1)+'K':String(n);
+function xHTML(posts){if(!posts?.length)return '';
+ return `<h4 class="dh">On X</h4>${posts.slice(0,5).map(x=>`<a class="xpost" href="${esc(x.url)}" target="_blank" rel="noopener"><div class="xh"><b>${esc(x.name||x.handle||'')}</b>${x.handle?`<span>@${esc(String(x.handle).replace(/^@/,''))}</span>`:''}${x.ts?`<span>· ${esc(hAgo(x.ts))}</span>`:''}</div><p>${esc(x.text||'')}</p>${x.likes!=null||x.reposts!=null||x.note?`<div class="xs">${x.likes!=null?`♥ ${kfmt(x.likes)}`:''}${x.reposts!=null?` · ↻ ${kfmt(x.reposts)}`:''}${x.note?` · ${esc(x.note)}`:''}</div>`:''}</a>`).join('')}`}
 function openDeep(t){
  const q=DATA.quotes[t];const n=DATA.news[t]||[];const sec=DATA.sec[t];const le=lastEarn(t),ne=nextEarn(t);
  const filings=(sec?.filings||[]).filter(f=>['8-K','10-Q','10-K','6-K','20-F','S-3ASR','424B2','424B5'].includes(f.form)).slice(0,6);
@@ -430,6 +434,7 @@ function openDeep(t){
   ${n.length?`<h4 style="margin:18px 0 0">Headlines (last 3 days)</h4>${n.map(h=>`<a class="hl" href="${esc(h.url)}" target="_blank" rel="noopener">${esc(h.title)}<small>${esc(h.source)} · ${esc(fmtPT(h.date))}</small></a>`).join('')}`:''}
   ${filings.length?`<h4 style="margin:18px 0 0">SEC filings</h4>${filings.map(f=>`<a class="hl" href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.form)}${f.items?` · items ${esc(f.items)}`:''}<small>Filed ${esc(f.date)}${f.desc?' · '+esc(f.desc):''}</small></a>`).join('')}<div class="links"><a href="${esc(sec.browse)}" target="_blank" rel="noopener">All filings on EDGAR ↗</a></div>`:''}
   ${chatterHTML(t)}
+  ${xHTML(DATA.xTickers?.[t])}
   ${q.src?`<div class="links"><a href="${esc(q.src)}" target="_blank">Quote source ↗</a></div>`:''}
   `);
 }

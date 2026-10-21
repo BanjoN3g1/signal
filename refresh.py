@@ -43,6 +43,22 @@ def num(s):
     except: return None
 
 # ---------- watchlist ----------
+def load_x():
+    """data/x.json -> ({story_id: [post]}, {TICKER: [post]}). Posts are sanitized; anything malformed is skipped."""
+    try: x = json.load(open(os.path.join(ROOT, "data", "x.json")))
+    except Exception: return {}, {}
+    def clean(posts):
+        out = []
+        for p in posts if isinstance(posts, list) else []:
+            if not isinstance(p, dict) or not re.match(r"^https://(x|twitter)\.com/", str(p.get("url", ""))): continue
+            out.append({k: (str(p[k])[:400] if k in ("text", "note") else str(p[k])[:80]) if k not in ("likes", "reposts") else (int(p[k]) if str(p[k]).isdigit() else None)
+                        for k in ("handle", "name", "text", "url", "likes", "reposts", "ts", "note") if p.get(k) is not None})
+            if len(out) >= 8: break
+        return out
+    st = {str(k): clean(v) for k, v in (x.get("stories") or {}).items()} if isinstance(x, dict) else {}
+    tk = {str(k).upper(): clean(v) for k, v in (x.get("tickers") or {}).items()} if isinstance(x, dict) else {}
+    return {k: v for k, v in st.items() if v}, {k: v for k, v in tk.items() if v}
+
 def load_watchlist():
     p = os.path.join(ROOT, "watchlist.json")  # repo-level list the scheduled pull uses
     env = os.environ.get("SIGNAL_WATCHLIST")
@@ -641,6 +657,11 @@ def main():
         try: titles = {v["ticker"].upper(): v["title"] for v in json.load(open(os.path.join(CACHE, "company_tickers.json"))).values()}
         except Exception: titles = {}
         json.dump({t: [c, titles.get(t, "")] for t, c in cik_map().items()}, open(os.path.join(DATA, "tickers.json"), "w"), separators=(",", ":"))
+    # X posts from the separate weekday-morning job (data/x.json, committed to the repo; schema in README)
+    xs, xt = load_x()
+    for it in (today or {}).get("items", []):
+        it["x"] = next((xs[k] for k in [it["id"], *it.get("aliases", [])] if xs.get(k)), [])
+    out["xTickers"] = {t: v for t, v in xt.items() if t in quotes or t in priv}
     tmp = os.path.join(DATA, "feed.json.tmp")
     json.dump(out, open(tmp, "w")); os.replace(tmp, os.path.join(DATA, "feed.json"))
     log("wrote feed.json", round(time.time() - t0), json.dumps(STATUS))

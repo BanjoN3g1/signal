@@ -1,4 +1,8 @@
-"""'Today' news stream for Signal: free RSS feeds -> dedupe/cluster -> relevance score for a software/semis banker
+"""'Today' news stream for Signal.
+Story ids (the keys data/x.json uses): id = first 12 hex chars of sha1(URL of the first headline seen for the story, or its title
+if it has no URL). Stories persist in the cache for 36h, so an id stays the same across refreshes while the story is live; when two
+stories are later merged as duplicates, the survivor keeps its id and lists the absorbed ids in "aliases" (x.json may use either).
+Free RSS feeds -> dedupe/cluster -> relevance score for a software/semis banker free RSS feeds -> dedupe/cluster -> relevance score for a software/semis banker
 -> batched Flash-Lite summaries (cached per cluster). No paywall bypassing: we only read public RSS headlines/blurbs;
 paywalled stories are summarized from free coverage of the same story (or the headline alone) and labeled."""
 import json, os, re, time, html, hashlib, email.utils, datetime as dt
@@ -212,6 +216,7 @@ def build(watch, news_by_ticker, sec, names, cache):
             d["sources"] += [x for x in s["sources"] if x["url"] not in {y["url"] for y in d["sources"]}]
             d["first"], d["last"] = min(d["first"], s["first"]), max(d["last"], s["last"])
             d["toks"] = sorted(set(d["toks"]) | set(s["toks"]))[:80]; d["tickers"] = sorted(set(d["tickers"]) | set(s["tickers"]))
+            d["aliases"] = sorted(set(d.get("aliases", [])) | {src} | set(s.get("aliases", [])))  # old ids keep matching data/x.json
     json.dump(cl, open(sp, "w"))
     ranked = sorted(((*score(c, now), c) for c in cl.values()), key=lambda x: -x[0])
     ranked = [r for r in ranked if r[0] > 1][:40]
@@ -222,7 +227,7 @@ def build(watch, news_by_ticker, sec, names, cache):
         pay = [s["source"] for s in srcs if PAYWALL.search(s["source"] or "")]
         lead = free[0] if free else srcs[0]
         a = ai.get(c["id"]) or {}
-        out.append({"id": c["id"], "title": lead["title"], "first": c["first"], "last": c["last"], "score": sc, "tags": tags, "tickers": c["tickers"],
+        out.append({"id": c["id"], "aliases": c.get("aliases", []), "title": lead["title"], "first": c["first"], "last": c["last"], "score": sc, "tags": tags, "tickers": c["tickers"],
                     "sum": a.get("sum"), "why": a.get("why"), "deep": a.get("deep") or [], "model": a.get("model"),
                     "paywalled": sorted(set(pay)), "freeCoverage": bool(free), "sources": [{k: s.get(k) for k in ("source", "title", "url", "date")} | {"paywalled": bool(PAYWALL.search(s["source"] or ""))} for s in srcs[:12]],
                     "x": []})  # slot for X posts, filled later by a separate job

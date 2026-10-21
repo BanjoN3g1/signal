@@ -15,3 +15,11 @@ A phone-first PWA for following software and semiconductor stocks: a swipeable "
 **Local test.** `./build.sh && python3 -m http.server -d _site 8000`, then open http://localhost:8000/.
 
 The data is public market info; the app explains it but isn't investment advice. Scheduled workflows in public repos are paused by GitHub after 60 days without repo activity; re-enable from the Actions tab.
+
+## X posts (`data/x.json`)
+Written by a separate weekday-morning job; `refresh.py` merges it on every refresh. Shape:
+`{"stories": {"<story id>": [post, ...]}, "tickers": {"NVDA": [post, ...]}}` where a post is
+`{"handle", "name", "text", "url" (https://x.com/...), "likes", "reposts", "ts" (ISO 8601), "note"}` (max 8 per key; extra fields ignored).
+**Story ids** come from `feed.json` → `today.items[].id`: the first 12 hex chars of sha1(URL of the first headline seen for the
+story, or its title if no URL). Stories persist in the cache for 36 h, so ids are stable across refreshes; when duplicates are merged
+the survivor keeps its id and lists absorbed ids in `aliases` (x.json may key by either). An empty `{}` is fine.

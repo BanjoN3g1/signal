@@ -1,4 +1,4 @@
-const C='signal-v13';const SHELL=['./','index.html','styles.css','app.js','content.js','deals.js','manifest.webmanifest','watchlist_default.json'];
+const C='signal-v14';const SHELL=['./','index.html','styles.css','app.js','content.js','deals.js','manifest.webmanifest','watchlist_default.json'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(SHELL)));self.skipWaiting()});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C).map(k=>caches.delete(k)))));self.clients.claim()});
 self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(e.request.method!=='GET'||u.origin!==location.origin)return;
