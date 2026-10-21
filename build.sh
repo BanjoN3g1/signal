@@ -6,5 +6,6 @@ rm -rf _site && mkdir -p _site/data
 OUT_DIR="$PWD/_site/data" python3 refresh.py
 cp -r public/. _site/
 cp watchlist.json _site/watchlist_default.json
+[ -f data/podcasts/podcasts.json ] && cp data/podcasts/podcasts.json _site/data/podcasts.json || true
 touch _site/.nojekyll
 echo "built _site ($(du -sh _site | cut -f1))"

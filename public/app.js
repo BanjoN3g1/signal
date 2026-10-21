@@ -11,6 +11,7 @@ const I={
  feed:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M9 8h6M9 12h6"/></svg>',
  earn:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',
  deal:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 8h16v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M9 8V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/></svg>',
+ pod:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>',
  learn:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/></svg>',
  play:'<svg viewBox="0 0 24 24" fill="#fff" style="width:30px;height:30px;margin-left:4px"><path d="M7 4l13 8-13 8z"/></svg>'
 };
@@ -103,14 +104,14 @@ function renderSoon(w){
 
 // ---------- work shell ----------
 function renderWork(){
- const titles={feed:'Feed',earnings:'Earnings',deals:'Deal Room',learn:'Learn'};
+ const titles={feed:'Feed',earnings:'Earnings',deals:'Deal Room',pods:'Podcasts',learn:'Learn'};
  app.innerHTML=`<div class="view">
   <div class="top"><button class="back" id="bk">${I.back}</button><div class="title">${titles[tab]||'Work'}</div>
    <div class="stamp">${DATA?`Updated<br>${ago(DATA.generatedAt)}`:''}</div>
    <button class="iconbtn" id="wl" aria-label="Edit watchlist">${I.list}</button>
    <button class="iconbtn ${refreshing?'spin':''}" id="rf" aria-label="Refresh">${I.refresh}</button></div>
   <div class="pane" id="pane"></div>
-  <nav class="tabs">${[['feed','Feed',I.feed],['earnings','Earnings',I.earn],['deals','Deal Room',I.deal],['learn','Learn',I.learn]].map(([k,n,ic])=>`<button data-t="${k}" class="${tab===k?'on':''}">${ic}${n}</button>`).join('')}</nav>
+  <nav class="tabs">${[['feed','Feed',I.feed],['earnings','Earnings',I.earn],['deals','Deal Room',I.deal],['pods','Podcasts',I.pod],['learn','Learn',I.learn]].map(([k,n,ic])=>`<button data-t="${k}" class="${tab===k?'on':''}">${ic}${n}</button>`).join('')}</nav>
  </div>`;
  $('#bk').onclick=()=>location.hash='#/';
  $('#rf').onclick=e=>doRefresh(e.currentTarget);
@@ -118,6 +119,7 @@ function renderWork(){
  app.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>location.hash='#/work/'+b.dataset.t);
  const p=$('#pane');
  if(tab==='deals')return renderDeals(p);
+ if(tab==='pods')return renderPods(p);
  if(!DATA){p.innerHTML='<div class="empty"><h2>No data yet</h2><p>Tap refresh to pull the first snapshot.</p></div>';return}
  if(tab==='feed')renderFeed(p);else if(tab==='earnings')renderEarnings(p);
  else p.innerHTML=`<div class="empty"><div class="big">🎓</div><h2>Learn — coming next</h2><p>Bite-size lessons with optional “walk me through the numbers” and quick-check questions. A few lessons already live in your Feed.</p></div>`;
@@ -166,6 +168,34 @@ function deepHTML(e){const d=e.deep,li=a=>(a||[]).length?`<ul class="dl">${a.map
   <h4 class="dh">For a software / semis banker</h4>${li(d.banker)}
   ${(d.questions||[]).length?`<h4 class="dh">Questions to ask</h4>${li(d.questions)}`:''}
   <p class="note">Written by ${esc(d.model)} (free tier) from the 8-K press release (exhibit 99.1) only, so there are no call remarks. Check numbers against the filing. ${esc(fmtPT(d.at))}.</p>`}
+
+// ---------- podcasts (data/podcasts.json, built by podcasts.yml) ----------
+let PODS=null,podShow='all';
+const mins=s=>s?Math.round(s/60)+' min':'';
+const dAgo=iso=>{const d=Math.round((Date.now()-new Date(iso))/864e5);return d<=0?'Today':d===1?'Yesterday':d+' days ago'};
+function podLead(e){const s=e.summary;if(!s)return '';return s.kind==='ai'?(s.takeaways||[]).slice(0,2):(s.quotes||[]).slice(0,1).map(q=>'“'+q+'”')}
+async function renderPods(p){
+ if(!PODS){p.innerHTML='<div class="empty"><p>Loading…</p></div>';try{const r=await fetch('data/podcasts.json?t='+Date.now(),{cache:'no-store'});if(r.ok)PODS=await r.json()}catch(e){}}
+ if(!PODS){p.innerHTML='<div class="empty"><div class="big">🎙️</div><h2>Podcasts are on the way</h2><p>Episodes show up here after the next podcast refresh (every 3 hours).</p></div>';return}
+ const eps=PODS.episodes.filter(e=>podShow==='all'||e.show===podShow);
+ p.innerHTML=`<div class="scroll"><div class="pchips"><button class="pchip ${podShow==='all'?'on':''}" data-s="all">All</button>${PODS.shows.map(s=>`<button class="pchip ${podShow===s.id?'on':''}" data-s="${esc(s.id)}">${esc(s.name)}</button>`).join('')}</div>
+  ${eps.map((e,i)=>`<button class="row pod" data-e="${esc(e.key)}"><div class="r1">${podArt(e.show)}<div class="mid"><div class="pshow">${esc(e.showName)}</div><b>${esc(e.title)}</b><div>${dAgo(e.date)}${e.dur?' · '+mins(e.dur):''}</div></div></div>
+   ${e.pending?`<p class="note" style="margin:10px 0 0">Transcribing soon — new episodes are processed a few at a time.</p>`:`<p class="plead">${podLead(e).map(esc).join('<br>')}</p><div class="r2">${e.summary.kind==='ai'?'<span class="chip ai">AI summary</span>':'<span class="chip">Key quotes</span>'}${Object.keys(e.mentions||{}).slice(0,4).map(t=>`<span class="chip b">${esc(t)}</span>`).join('')}</div>`}</button>`).join('')||'<p class="note">No recent episodes.</p>'}
+  <p class="note">Transcripts: Bloomberg publishes its own; other shows are transcribed by a free speech-to-text model (Whisper) on GitHub's servers, so expect some misheard words. ${PODS.ai?'Summaries by '+esc(PODS.ai)+'.':'Summaries are quotes picked from the transcript; AI takeaways switch on once a free AI key is added.'} Updated ${esc(fmtPT(PODS.generatedAt))}.</p></div>`;
+ p.querySelectorAll('.pchip').forEach(b=>b.onclick=()=>{podShow=b.dataset.s;renderPods(p)});
+ p.querySelectorAll('[data-e]').forEach(b=>b.onclick=()=>openPod(PODS.episodes.find(e=>e.key===b.dataset.e)));
+}
+function podArt(id){const s=PODS.shows.find(x=>x.id===id);return s?.art?`<img class="logo" src="${esc(s.art)}" alt="" loading="lazy">`:logo(id.toUpperCase())}
+function openPod(e){const s=e.summary||{},li=a=>(a||[]).length?`<ul class="dl">${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'';
+ const src=e.source||{};
+ sheet(esc(e.showName),`<h3>${esc(e.title)}</h3><p class="note">${esc(dshort(e.date.slice(0,10)))}${e.dur?' · '+mins(e.dur):''}${e.words?' · '+e.words.toLocaleString()+' words transcribed':''}</p>
+  ${e.pending?'<p>This episode hasn’t been transcribed yet. Check back after the next podcast refresh.</p>':s.kind==='ai'?`<h4 class="dh">Key takeaways</h4>${li(s.takeaways)}<h4 class="dh">Interesting tidbits</h4>${li(s.tidbits)}<h4 class="dh">For software / semis</h4>${li(s.implications)}`
+   :`<h4 class="dh">Key moments (quoted)</h4>${(s.quotes||[]).map(q=>`<div class="quote">${esc(q)}</div>`).join('')}${(s.numbers||[]).length?`<h4 class="dh">Numbers mentioned</h4>${(s.numbers||[]).map(q=>`<div class="quote">${esc(q)}</div>`).join('')}`:''}<p class="note">Picked automatically from the transcript, not written by AI.</p>`}
+  ${Object.keys(e.mentions||{}).length?`<h4 class="dh">Watchlist names mentioned</h4><div class="r2">${Object.entries(e.mentions).map(([t,c])=>`<span class="chip b">${esc(t)} ×${c}</span>`).join('')}</div>`:''}
+  ${e.desc?`<h4 class="dh">Show notes</h4><p class="note" style="font-size:14px">${esc(e.desc)}</p>`:''}
+  <div class="links"><a href="${esc(e.link)}" target="_blank" rel="noopener">Open episode ↗</a>${src.kind==='publisher'&&src.url?`<a href="${esc(src.url)}" target="_blank" rel="noopener">Publisher transcript ↗</a>`:''}</div>
+  <p class="note">${src.kind==='whisper'?`Transcribed by Whisper ${esc(src.model||'')} on a GitHub runner (${src.transcribe_s}s for ${mins(src.audio_s)} of audio).`:src.kind==='publisher'?'Transcript from the publisher’s feed.':''}${s.kind==='ai'?` Summary by ${esc(s.model||'AI')} from the transcript only.`:''}</p>`);
+}
 
 // ---------- sparkline ----------
 function spark(h,up){

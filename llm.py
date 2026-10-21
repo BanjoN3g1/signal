@@ -11,7 +11,7 @@ PROVIDERS = [  # first one with a key wins; both are OpenAI-compatible chat endp
     {"name": "Groq (free tier)", "env": "GROQ_API_KEY", "url": "https://api.groq.com/openai/v1/chat/completions",
      "fast": os.environ.get("GROQ_FAST_MODEL", "llama-3.1-8b-instant"), "deep": os.environ.get("GROQ_DEEP_MODEL", "llama-3.3-70b-versatile")},
 ]
-CAPS = {"fast": 15, "deep": 8}  # calls per day per role, far under every free tier's daily cap
+CAPS = {"fast": 15, "deep": 8, "pod": 10}  # calls per day per role, far under every free tier's daily cap
 STATE = {"calls": 0, "errors": [], "skipped": 0}
 
 def provider():

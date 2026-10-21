@@ -32,6 +32,12 @@ jobs:
           path: data/cache
           key: signal-cache-${{ github.run_id }}
           restore-keys: signal-cache-
+      - name: Restore podcast summaries (written by podcasts.yml)
+        uses: actions/cache/restore@v4
+        with:
+          path: data/podcasts
+          key: podcasts-latest
+          restore-keys: podcasts-
       - name: Pull data and build site
         env:
           SEC_USER_AGENT: ${{ vars.SEC_USER_AGENT }}  # repo variable, e.g. "Signal Your Name you@example.com"
