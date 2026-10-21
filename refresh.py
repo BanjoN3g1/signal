@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Pull real public data for Signal and write data/feed.json (OUT_DIR env overrides).
 Sources: Nasdaq quote+calendar API, Google Finance page (non-US e.g. IFX), SEC EDGAR,
-Google News RSS, Reddit RSS (best effort), YouTube search page.
+Google News RSS, Reddit JSON/RSS search (best effort), YouTube search page.
 Rule: never invent numbers. If a source fails, the field is omitted."""
 import json, os, re, sys, time, html, datetime as dt, concurrent.futures as cf
 import xml.etree.ElementTree as ET
@@ -138,28 +138,183 @@ def gnews(q, n=4):
     except Exception:
         mark("Google News RSS", False); return []
 
-# ---------- reddit (best effort) ----------
-REDDIT_BLOCKED = [False]
-def reddit(t, name):
-    if REDDIT_BLOCKED[0]: return []
-    url = f"https://www.reddit.com/r/stocks+investing+wallstreetbets+StockMarket+semiconductors+SecurityAnalysis/search.rss?q={t}&restrict_sr=on&sort=new&t=week"
-    try:
-        r = S.get(url, timeout=12)
-    except Exception: r = None
-    if not r or r.status_code != 200:
-        mark("Reddit RSS", False, f"HTTP {getattr(r,'status_code','err')} (Reddit rate-limits/blocks server IPs)")
-        if r is not None and r.status_code in (403, 429): REDDIT_BLOCKED[0] = True
-        return []
-    try:
-        ns = {"a": "http://www.w3.org/2005/Atom"}
-        root = ET.fromstring(r.content); out = []
-        for e in root.findall("a:entry", ns)[:4]:
-            cat = e.find("a:category", ns)
-            out.append({"title": e.findtext("a:title", namespaces=ns), "url": e.find("a:link", ns).get("href"),
-                        "sub": cat.get("label") if cat is not None else "", "date": e.findtext("a:updated", namespaces=ns)})
-        mark("Reddit RSS", True); return out
-    except Exception:
-        mark("Reddit RSS", False); return []
+# ---------- sentiment (Reddit + YouTube chatter, VADER lexicon; X slot reserved) ----------
+try:
+    from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+    VADER = SentimentIntensityAnalyzer()
+    VADER.lexicon.update({  # market slang VADER doesn't know (scale -4..+4)
+        "bullish": 2.5, "bearish": -2.5, "moon": 2.0, "mooning": 2.5, "rally": 1.8, "rallies": 1.8, "surge": 1.8, "surges": 1.8,
+        "soar": 2.0, "soars": 2.0, "beat": 1.2, "beats": 1.2, "upgrade": 1.8, "upgraded": 1.8, "outperform": 1.8, "buy": 0.8,
+        "calls": 0.8, "breakout": 1.5, "rebound": 1.2, "record": 1.0, "undervalued": 1.5, "squeeze": 0.8, "tendies": 1.5,
+        "puts": -0.8, "short": -0.6, "shorting": -1.2, "tank": -2.0, "tanks": -2.0, "tanking": -2.0, "plunge": -2.2, "plunges": -2.2,
+        "crash": -2.5, "crashes": -2.5, "dump": -1.8, "dumping": -1.8, "selloff": -1.8, "sell-off": -1.8, "downgrade": -1.8,
+        "downgraded": -1.8, "miss": -1.2, "misses": -1.2, "overvalued": -1.5, "bagholder": -1.8, "bagholding": -1.8, "bubble": -1.2,
+        "slump": -1.8, "slumps": -1.8, "underperform": -1.8, "weak": -1.2, "drop": -1.0, "drops": -1.0, "falls": -1.0})
+except Exception:
+    VADER = None
+ALIAS = {"NVDA": "Nvidia", "AMD": "AMD", "INTC": "Intel", "AVGO": "Broadcom", "QCOM": "Qualcomm", "MRVL": "Marvell", "ARM": "Arm Holdings",
+         "TSM": "TSMC", "ASML": "ASML", "AMAT": "Applied Materials", "LRCX": "Lam Research", "KLAC": "KLA Corp", "MU": "Micron",
+         "ANET": "Arista", "COHR": "Coherent Corp", "LITE": "Lumentum", "SMCI": "Supermicro", "IFX": "Infineon", "MSFT": "Microsoft",
+         "ORCL": "Oracle", "CRM": "Salesforce", "NOW": "ServiceNow", "ADBE": "Adobe", "INTU": "Intuit", "WDAY": "Workday",
+         "SNOW": "Snowflake", "DDOG": "Datadog", "MDB": "MongoDB", "NET": "Cloudflare", "CRWD": "CrowdStrike", "PANW": "Palo Alto Networks",
+         "PLTR": "Palantir", "SHOP": "Shopify"}
+AMBIG = {"NOW", "NET", "ARM", "MU", "ON", "ALL", "SHOP", "SNOW", "COHR", "LITE", "KLAC"}  # tickers that are also words
+RD_UA = "python:signal-markets-pwa:1.0 (personal dashboard; https://github.com/BanjoN3g1/signal)"
+RD_SUBS = "wallstreetbets+stocks+investing+StockMarket+semiconductors+SecurityAnalysis+ValueInvesting+options"
+RD_TTL = 30 * 60  # Reddit refresh at most every 30 min per ticker; cached result is shown in between
+RD_STATE = {"blocked": False, "note": "", "json": True}
+RD_BUDGET = 10   # fresh Reddit lookups per run (~10 req/min unauthenticated limit); others use cache, oldest refreshed first
+RD_GAP = 6.5
+
+def alias(t, name): return ALIAS.get(t) or " ".join((name or t).split()[:2])
+
+def mentions(text, t, al):
+    if not text: return False
+    if re.search(r"\$" + re.escape(t) + r"\b", text, re.I): return True
+    if t not in AMBIG and re.search(r"\b" + re.escape(t) + r"\b", text): return True
+    return bool(re.search(r"\b" + re.escape(al) + r"\b", text, re.I))
+
+def senti(text):
+    if not VADER or not text: return None
+    return round(VADER.polarity_scores(text[:600])["compound"], 3)
+
+def summarize(items):
+    sc = [i["s"] for i in items if i.get("s") is not None]
+    if not sc: return {"n": len(items), "score": None, "label": None}
+    avg = sum(sc) / len(sc)
+    return {"n": len(items), "score": round(avg * 100), "label": "bullish" if avg >= 0.15 else "bearish" if avg <= -0.15 else "neutral",
+            "pos": sum(1 for x in sc if x >= 0.05), "neg": sum(1 for x in sc if x <= -0.05)}
+
+def _rd_get(url):
+    """Polite GET with backoff; returns (response|None, status)."""
+    st = "err"
+    for i in range(3):
+        try:
+            r = requests.get(url, headers={"User-Agent": RD_UA, "Accept": "application/json, application/atom+xml"}, timeout=12)
+            st = r.status_code
+            if r.status_code == 200: return r, st
+            if r.status_code == 429:
+                ra = r.headers.get("Retry-After")
+                time.sleep(min(float(ra) if ra and ra.replace(".", "").isdigit() else 4 * (2 ** i), 20)); continue
+            return None, st  # 403 etc: blocked, don't hammer
+        except Exception:
+            if i: break
+            time.sleep(2)
+    return None, st
+
+def rd_cached(t):
+    cp = os.path.join(CACHE, f"rd_{t}.json")
+    try: return json.load(open(cp))
+    except Exception: return None
+
+def reddit_chatter(t, name, fetch=True):
+    al = alias(t, name); cp = os.path.join(CACHE, f"rd_{t}.json")
+    cached = rd_cached(t)
+    if cached and time.time() - cached.get("_ts", 0) < RD_TTL:
+        return {**cached, "cached": True}
+    if RD_STATE["blocked"] or not fetch:
+        if cached: return {**cached, "cached": True, "stale": True}
+        return {"status": "blocked", "note": RD_STATE["note"]} if RD_STATE["blocked"] else {"status": "pending", "note": "Queued for the next refresh"}
+    q = requests.utils.quote(f'{t} OR "{al}"' if t not in AMBIG else f'"{al}"')
+    items, src, r, st = [], None, None, "skip"
+    if RD_STATE["json"]: r, st = _rd_get(f"https://www.reddit.com/r/{RD_SUBS}/search.json?q={q}&restrict_sr=1&sort=new&t=week&limit=50&raw_json=1")
+    if r is not None:
+        try:
+            for c in r.json()["data"]["children"]:
+                d = c["data"]; txt = (d.get("title") or "") + ". " + (d.get("selftext") or "")[:500]
+                if not mentions(txt, t, al): continue
+                items.append({"title": d.get("title"), "url": "https://www.reddit.com" + d.get("permalink", ""), "sub": "r/" + d.get("subreddit", ""),
+                              "score": d.get("score"), "comments": d.get("num_comments"),
+                              "date": dt.datetime.fromtimestamp(d.get("created_utc", 0), dt.timezone.utc).isoformat(timespec="seconds"), "s": senti(txt)})
+            src = "json"
+        except Exception: r = None
+    if r is None:  # fall back to the RSS search feed
+        if RD_STATE["json"]: RD_STATE["json"] = False; time.sleep(RD_GAP)
+        r2, st2 = _rd_get(f"https://www.reddit.com/r/{RD_SUBS}/search.rss?q={q}&restrict_sr=on&sort=new&t=week&limit=50")
+        if r2 is not None:
+            try:
+                ns = {"a": "http://www.w3.org/2005/Atom"}
+                for e in ET.fromstring(r2.content).findall("a:entry", ns):
+                    title = e.findtext("a:title", namespaces=ns) or ""
+                    body = re.sub(r"<[^>]+>", " ", html.unescape(e.findtext("a:content", namespaces=ns) or ""))
+                    body = re.sub(r"submitted by.*$", "", re.sub(r"\s+", " ", body)).strip()
+                    txt = title + ". " + body[:500]
+                    if not mentions(txt, t, al): continue
+                    cat = e.find("a:category", ns)
+                    items.append({"title": title, "url": e.find("a:link", ns).get("href"), "sub": "r/" + (cat.get("term") if cat is not None else ""),
+                                  "date": e.findtext("a:updated", namespaces=ns), "s": senti(txt)})
+                src = "rss"
+            except Exception: r2 = None
+        if r2 is None:
+            stt = st2
+            RD_STATE["blocked"] = True  # stop asking this run; cached results (if any) are shown
+            RD_STATE["note"] = (f"Reddit returned HTTP {stt} to the data runner (it blocks or rate-limits cloud servers)" if stt in (403, 429)
+                                else "Reddit didn't respond to the data runner")
+            mark("Reddit chatter", False, RD_STATE["note"] or f"HTTP {stt}")
+            return {**cached, "cached": True, "stale": True} if cached else {"status": "blocked", "note": RD_STATE["note"]}
+    mark("Reddit chatter", True)
+    top = sorted(items, key=lambda x: -(x.get("score") or 0) - (x.get("comments") or 0))[:3] if src == "json" else items[:3]
+    res = {"status": "ok", "via": src, "window": "7d", "sampled": 50, **summarize(items), "top": top,
+           "asOf": dt.datetime.now().astimezone().isoformat(timespec="seconds"), "_ts": time.time()}
+    json.dump(res, open(cp, "w"))
+    return res
+
+def _views(v):
+    m = re.match(r"([\d.,]+)\s*([KMB]?)", v or "")
+    if not m: return 0
+    return float(m.group(1).replace(",", "")) * {"": 1, "K": 1e3, "M": 1e6, "B": 1e9}[m.group(2)]
+
+def youtube_chatter(t, name):
+    al = alias(t, name)
+    # search page, filter: uploaded this week + videos only. Comments need the YouTube Data API (key) -> not fetched.
+    r = get("https://www.youtube.com/results?search_query=" + requests.utils.quote(f"{al} stock") + "&sp=EgQIAxAB")
+    m = r and re.search(r"var ytInitialData = (\{.*?\});</script>", r.text)
+    if not m: mark("YouTube chatter", False); return {"status": "error", "note": "YouTube search page didn't load"}
+    vids = []
+    def walk(o):
+        if isinstance(o, dict):
+            if "videoRenderer" in o:
+                v = o["videoRenderer"]
+                try:
+                    snip = " ".join(x.get("text", "") for s in v.get("detailedMetadataSnippets", []) for x in s.get("snippetText", {}).get("runs", []))
+                    vids.append({"id": v["videoId"], "title": v["title"]["runs"][0]["text"], "snippet": snip[:300],
+                                 "channel": v.get("ownerText", {}).get("runs", [{}])[0].get("text"),
+                                 "age": v.get("publishedTimeText", {}).get("simpleText"), "views": v.get("shortViewCountText", {}).get("simpleText")})
+                except Exception: pass
+            for x in o.values(): walk(x)
+        elif isinstance(o, list):
+            for x in o: walk(x)
+    walk(json.loads(m.group(1)))
+    items = []
+    for v in vids:
+        txt = v["title"] + ". " + v["snippet"]
+        if not mentions(txt, t, al): continue
+        v["s"] = senti(txt); v["url"] = "https://www.youtube.com/watch?v=" + v["id"]; items.append(v)
+    mark("YouTube chatter", True)
+    top = sorted(items, key=lambda x: -_views(x.get("views")))[:3]
+    for x in top: x.pop("snippet", None)
+    return {"status": "ok", "via": "search", "window": "7d", **summarize(items), "top": top,
+            "note": "Titles and descriptions only; comments need a YouTube Data API key"}
+
+def chatter(tickers, quotes):
+    out = {}
+    def yt(t): return t, youtube_chatter(t, (quotes.get(t) or {}).get("name"))
+    with cf.ThreadPoolExecutor(4) as ex:
+        ytr = dict(ex.map(yt, tickers))
+    order = sorted(tickers, key=lambda t: (rd_cached(t) or {}).get("_ts", 0))  # oldest first
+    rds, used = {}, 0
+    for t in order:
+        rd = reddit_chatter(t, (quotes.get(t) or {}).get("name"), fetch=used < RD_BUDGET)
+        if not rd.get("cached") and rd.get("status") == "ok": used += 1; time.sleep(RD_GAP)
+        rd.pop("_ts", None); rds[t] = rd
+    for t in tickers:
+        rd = rds[t]
+        out[t] = {"reddit": rd, "youtube": ytr[t], "x": None}
+        parts = [s for s in (rd, ytr[t]) if s.get("score") is not None and s.get("n")]
+        if parts:
+            n = sum(p["n"] for p in parts); sc = round(sum(p["score"] * p["n"] for p in parts) / n)
+            out[t]["overall"] = {"score": sc, "n": n, "label": "bullish" if sc >= 15 else "bearish" if sc <= -15 else "neutral"}
+    return out
 
 # ---------- SEC ----------
 SECH = {"User-Agent": SEC_UA, "Accept-Encoding": "gzip, deflate"}
@@ -289,7 +444,7 @@ def _yt_live(q, n=3):
 
 # ---------- main ----------
 def main():
-    STATUS.clear(); REDDIT_BLOCKED[0] = False
+    STATUS.clear(); RD_STATE.update(blocked=False, note="", json=True)
     t0 = time.time()
     wl = load_watchlist()
     groups = wl["groups"]
@@ -324,12 +479,9 @@ def main():
         sec[t] = sec_filings(t)
     log("sec done", round(time.time() - t0))
 
-    # reddit only for the biggest movers to stay polite
-    movers = sorted([q for q in quotes.values() if q and q.get("pct") is not None and q["ticker"] not in ETFS], key=lambda q: -abs(q["pct"]))
-    red = {}
-    for q in movers[:8]:
-        red[q["ticker"]] = reddit(q["ticker"], q["name"]); time.sleep(1.2)
-    log("reddit done", round(time.time() - t0))
+    # per-ticker chatter: Reddit (cached 30 min, polite) + YouTube; X slot reserved (not implemented)
+    sentiment = chatter([t for t in tickers if t not in ETFS], quotes)
+    log("chatter done", round(time.time() - t0))
 
     cal = earnings_calendar(set(tickers))
     today = dt.date.today().isoformat()
@@ -383,7 +535,7 @@ def main():
 
     out = {"generatedAt": dt.datetime.now().astimezone().isoformat(timespec="seconds"),
            "elapsedSec": round(time.time() - t0, 1), "groups": groups, "quotes": quotes, "news": news,
-           "sec": {k: v for k, v in sec.items() if v}, "reddit": red, "earnings": {"upcoming": upcoming, "recent": recent},
+           "sec": {k: v for k, v in sec.items() if v}, "sentiment": sentiment, "sentimentMeta": {"method": "VADER lexicon + market-slang terms" if VADER else "unavailable (vaderSentiment not installed)", "reddit": RD_STATE["note"] or "ok", "x": "not implemented"}, "earnings": {"upcoming": upcoming, "recent": recent},
            "videos": videos, "sources": STATUS}
     tmp = os.path.join(DATA, "feed.json.tmp")
     json.dump(out, open(tmp, "w")); os.replace(tmp, os.path.join(DATA, "feed.json"))

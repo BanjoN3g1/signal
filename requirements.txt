@@ -1,1 +1,2 @@
 requests>=2.31
+vaderSentiment>=3.3

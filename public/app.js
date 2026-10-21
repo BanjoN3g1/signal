@@ -131,6 +131,27 @@ function renderDeals(p){
  DEALROOM.render(p,{esc,sheet,toast,known:{tickers,names}});
 }
 
+// ---------- chatter (Reddit + YouTube sentiment from data/feed.json) ----------
+const sLab=x=>x==='bullish'?'Bullish':x==='bearish'?'Bearish':'Neutral';
+const sCls=x=>x==='bullish'?'pos':x==='bearish'?'neg':'flat';
+const sNum=n=>n==null?'':(n>0?'+':'')+n;
+function chatStat(t){const o=DATA.sentiment?.[t]?.overall;if(!o||o.n<3)return '';return `<div class="stat">Chatter<b class="${sCls(o.label)}">${sLab(o.label)} ${sNum(o.score)}</b></div>`}
+function srcBlock(name,s,kind){
+ if(!s)return '';
+ if(s.status!=='ok')return `<div class="chat"><div class="ch1"><b>${name}</b><span class="chip">${s.status==='pending'?'Queued':'Unavailable'}</span></div><p class="note" style="margin:6px 0 0">${esc(s.status==='pending'?'Reddit is checked a few tickers at a time to stay polite — this one shows up within ~30 min.':(s.note||'Source unavailable')+'. Showing nothing rather than guessing.')}</p></div>`;
+ const few=s.n<3,pct=s.score==null?50:Math.max(0,Math.min(100,(s.score+100)/2));
+ return `<div class="chat"><div class="ch1"><b>${name}</b>${few?'<span class="chip">Too few posts</span>':`<span class="chip ${s.label==='bullish'?'g':s.label==='bearish'?'r':''}">${sLab(s.label)} ${sNum(s.score)}</span>`}<span class="note" style="margin-left:auto">${s.n} ${kind}${s.n===1?'':'s'} · 7d</span></div>
+  ${few?'':`<div class="gauge"><i style="left:${pct}%"></i></div><div class="gl"><span>Bearish</span><span>${s.pos??0} positive · ${s.neg??0} negative</span><span>Bullish</span></div>`}
+  ${(s.top||[]).map(x=>`<a class="hl" href="${esc(x.url)}" target="_blank" rel="noopener"><span class="dot ${x.s>=.05?'pos':x.s<=-.05?'neg':'flat'}">●</span> ${esc(x.title)}<small>${esc(x.sub||x.channel||'')}${x.score!=null?` · ${x.score} pts`:''}${x.comments!=null?` · ${x.comments} comments`:''}${x.views?' · '+esc(x.views):''}${x.age?' · '+esc(x.age):x.date?' · '+esc(fmtPT(x.date)):''}</small></a>`).join('')}
+  ${s.stale?`<p class="note" style="margin:6px 0 0">Last good read ${esc(fmtPT(s.asOf))} — ${esc(DATA.sentimentMeta?.reddit||'')}.</p>`:''}</div>`}
+function chatterHTML(t){
+ const c=DATA.sentiment?.[t];if(!c)return '';const o=c.overall;
+ return `<h4 style="margin:18px 0 4px">Chatter · last 7 days</h4>
+  ${o&&o.n>=3?`<p style="margin:0 0 6px">Overall <b class="${sCls(o.label)}">${sLab(o.label)} (${sNum(o.score)})</b> across ${o.n} posts and videos.</p>`:''}
+  ${srcBlock('Reddit',c.reddit,'post')}${srcBlock('YouTube',c.youtube,'video')}
+  <div class="chat"><div class="ch1"><b>X</b><span class="chip">Coming later</span></div></div>
+  <p class="note">Score = average VADER sentiment (a free word-list method, −100 to +100) over post titles and text, with market slang added (“calls”, “tank”, “downgrade”). It reads tone, not facts, and misses sarcasm. YouTube uses titles and descriptions; reading comments would need a YouTube API key.</p>`}
+
 // ---------- sparkline ----------
 function spark(h,up){
  if(!h||h.length<3)return '';
@@ -173,7 +194,7 @@ function moverCard(q,i){
   <div class="tkr">${esc(t)}</div><div class="nm">${esc(q.name)}${q.exchange?` · ${esc(q.exchange)}`:''}${q.stale?` · last price ${esc(q.asOf||'')}`:''}</div>
   <div class="px up"><span class="p">${ccy(q)}${f2(q.price)}</span><span class="c ${cls(q.pct)}">${pc(q.pct)}</span></div>
   ${spark(q.hist,(q.r21??q.pct??0)>=0)}
-  <div class="stats up">${q.r5!=null?`<div class="stat">5 days<b class="${cls(q.r5)}">${pc(q.r5)}</b></div>`:''}${q.r21!=null?`<div class="stat">1 month<b class="${cls(q.r21)}">${pc(q.r21)}</b></div>`:''}${(()=>{const B=benchFor(g);const b=B&&DATA.quotes[B];return b&&q.pct!=null?`<div class="stat">vs ${B}<b class="${cls(q.pct-b.pct)}">${(q.pct-b.pct>0?'+':'')+(q.pct-b.pct).toFixed(2)} pts</b></div>`:''})()}</div>
+  <div class="stats up">${q.r5!=null?`<div class="stat">5 days<b class="${cls(q.r5)}">${pc(q.r5)}</b></div>`:''}${q.r21!=null?`<div class="stat">1 month<b class="${cls(q.r21)}">${pc(q.r21)}</b></div>`:''}${(()=>{const B=benchFor(g);const b=B&&DATA.quotes[B];return b&&q.pct!=null?`<div class="stat">vs ${B}<b class="${cls(q.pct-b.pct)}">${(q.pct-b.pct>0?'+':'')+(q.pct-b.pct).toFixed(2)} pts</b></div>`:''})()}${chatStat(t)}</div>
   <div class="fade">
    <div class="sect"><h4>Why it moved</h4><p>${esc(whyMoved(q))}</p></div>
    ${n[0]?`<div class="sect"><h4>In the headlines</h4>${n.slice(0,1).map(h=>`<a class="hl" href="${esc(h.url)}" target="_blank" rel="noopener">${esc(h.title)}<small>${esc(h.source)} · ${esc(fmtPT(h.date))}</small></a>`).join('')}</div>`:''}
@@ -243,7 +264,7 @@ function sheet(title,body,onClose){
  document.body.append(bg,s);return s;
 }
 function openDeep(t){
- const q=DATA.quotes[t];const n=DATA.news[t]||[];const sec=DATA.sec[t];const red=DATA.reddit?.[t]||[];const le=lastEarn(t),ne=nextEarn(t);
+ const q=DATA.quotes[t];const n=DATA.news[t]||[];const sec=DATA.sec[t];const le=lastEarn(t),ne=nextEarn(t);
  const filings=(sec?.filings||[]).filter(f=>['8-K','10-Q','10-K','6-K','20-F','S-3ASR','424B2','424B5'].includes(f.form)).slice(0,6);
  sheet(esc(t),`
   <h3>${esc(q.name)}</h3><p class="note">${esc(groupOf(t))} · ${ccy(q)}${f2(q.price)} <span class="${cls(q.pct)}">${pc(q.pct)}</span> · as of ${esc(q.asOf||'')}</p>
@@ -254,9 +275,9 @@ function openDeep(t){
   ${ne?`<p class="note">Next report: ${dshort(ne.date)}${ne.time?` (${ne.time.replace('time-','').replace(/-/g,' ')})`:''}${ne.epsForecast!=null?` · consensus EPS $${f2(ne.epsForecast)}`:''} — date per Nasdaq/Zacks, may be estimated.</p>`:''}
   ${n.length?`<h4 style="margin:18px 0 0">Headlines (last 3 days)</h4>${n.map(h=>`<a class="hl" href="${esc(h.url)}" target="_blank" rel="noopener">${esc(h.title)}<small>${esc(h.source)} · ${esc(fmtPT(h.date))}</small></a>`).join('')}`:''}
   ${filings.length?`<h4 style="margin:18px 0 0">SEC filings</h4>${filings.map(f=>`<a class="hl" href="${esc(f.url)}" target="_blank" rel="noopener">${esc(f.form)}${f.items?` · items ${esc(f.items)}`:''}<small>Filed ${esc(f.date)}${f.desc?' · '+esc(f.desc):''}</small></a>`).join('')}<div class="links"><a href="${esc(sec.browse)}" target="_blank" rel="noopener">All filings on EDGAR ↗</a></div>`:''}
-  ${red.length?`<h4 style="margin:18px 0 0">On Reddit this week</h4>${red.map(r=>`<a class="hl" href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}<small>${esc(r.sub)}</small></a>`).join('')}`:''}
+  ${chatterHTML(t)}
   ${q.src?`<div class="links"><a href="${esc(q.src)}" target="_blank">Quote source ↗</a></div>`:''}
-  <p class="note" style="margin-top:20px">Sentiment from X and Reddit isn't wired in yet; Reddit often blocks automated requests.</p>`);
+  `);
 }
 function openLesson(id){
  const L=LESSONS.find(x=>x.id===id);

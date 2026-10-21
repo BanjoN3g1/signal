@@ -155,3 +155,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;paddin
 .qa summary{font-weight:600;cursor:pointer;list-style:none}.qa summary::-webkit-details-marker{display:none}
 .qa summary::after{content:'+';float:right;color:var(--sub)}.qa[open] summary::after{content:'–'}
 .qa p{margin:8px 0 0;font-size:15px}
+
+/* Chatter */
+.chat{background:var(--card2);border-radius:14px;padding:12px;margin:8px 0}
+.ch1{display:flex;align-items:center;gap:8px}.ch1 b{font-size:15px}
+.gauge{position:relative;height:6px;border-radius:3px;margin:12px 2px 4px;background:linear-gradient(90deg,var(--red),#48484a 50%,var(--green))}
+.gauge i{position:absolute;top:50%;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid #1c1c1f;transform:translate(-50%,-50%)}
+.gl{display:flex;justify-content:space-between;font-size:11px;color:var(--mute);margin-bottom:4px}
+.chat .hl{font-size:14px}.dot{font-size:10px;vertical-align:1px}
