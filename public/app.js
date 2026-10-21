@@ -187,7 +187,8 @@ function deepHTML(e){const d=e.deep,li=a=>(a||[]).length?`<ul class="dl">${a.map
 let PODS=null,podShow='all';
 const mins=s=>s?Math.round(s/60)+' min':'';
 const dAgo=iso=>{const d=Math.round((Date.now()-new Date(iso))/864e5);return d<=0?'Today':d===1?'Yesterday':d+' days ago'};
-function podLead(e){const s=e.summary;if(!s)return '';return s.kind==='ai'?(s.takeaways||[]).slice(0,2):(s.quotes||[]).slice(0,1).map(q=>'“'+q+'”')}
+const itx=x=>typeof x==='string'?x:(x&&x.t)||'';
+function podLead(e){const s=e.summary;if(!s)return [];return s.kind==='ai'?(s.takeaways||[]).slice(0,2).map(itx):(s.quotes||[]).slice(0,1).map(q=>'“'+itx(q)+'”')}
 async function renderPods(p){
  if(!PODS){p.innerHTML='<div class="empty"><p>Loading…</p></div>';try{const r=await fetch('data/podcasts.json?t='+Date.now(),{cache:'no-store'});if(r.ok)PODS=await r.json()}catch(e){}}
  paintRefresh();
@@ -201,15 +202,49 @@ async function renderPods(p){
  p.querySelectorAll('[data-e]').forEach(b=>b.onclick=()=>openPod(PODS.episodes.find(e=>e.key===b.dataset.e)));
 }
 function podArt(id){const s=PODS.shows.find(x=>x.id===id);return s?.art?`<img class="logo" src="${esc(s.art)}" alt="" loading="lazy">`:logo(id.toUpperCase())}
-function openPod(e){const s=e.summary||{},li=a=>(a||[]).length?`<ul class="dl">${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'';
- const src=e.source||{};
- sheet(esc(e.showName),`<h3>${esc(e.title)}</h3><p class="note">${esc(dshort(e.date.slice(0,10)))}${e.dur?' · '+mins(e.dur):''}${e.words?' · '+e.words.toLocaleString()+' words transcribed':''}</p>
-  ${e.pending?'<p>This episode hasn’t been transcribed yet. Check back after the next podcast refresh.</p>':s.kind==='ai'?`<h4 class="dh">Key takeaways</h4>${li(s.takeaways)}<h4 class="dh">Interesting tidbits</h4>${li(s.tidbits)}<h4 class="dh">For software / semis</h4>${li(s.implications)}`
-   :`<h4 class="dh">Key moments (quoted)</h4>${(s.quotes||[]).map(q=>`<div class="quote">${esc(q)}</div>`).join('')}${(s.numbers||[]).length?`<h4 class="dh">Numbers mentioned</h4>${(s.numbers||[]).map(q=>`<div class="quote">${esc(q)}</div>`).join('')}`:''}<p class="note">Picked automatically from the transcript, not written by AI.</p>`}
+function openPod(e){const s=e.summary||{},src=e.source||{};
+ const dig=x=>x&&typeof x==='object'&&(x.p!=null||x.x);
+ const li=(k,quote)=>{const a=s[k]||[];return a.length?`<ul class="dl dig">${a.map((x,i)=>`<li>${dig(x)?`<button class="digrow" data-k="${k}" data-i="${i}"><span>${quote?'“'+esc(itx(x))+'”':esc(itx(x))}</span><span class="digin">Dig in<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></span></button>`:quote?`<div class="quote">${esc(itx(x))}</div>`:esc(itx(x))}</li>`).join('')}</ul>`:''};
+ const sh=sheet(esc(e.showName),`<h3>${esc(e.title)}</h3><p class="note">${esc(dshort(e.date.slice(0,10)))}${e.dur?' · '+mins(e.dur):''}${e.words?' · '+e.words.toLocaleString()+' words transcribed':''}</p>
+  ${e.pending?'<p>This episode hasn’t been transcribed yet. Check back after the next podcast refresh.</p>':s.kind==='ai'?`<h4 class="dh">Key takeaways</h4>${li('takeaways')}<h4 class="dh">Interesting tidbits</h4>${li('tidbits')}${(s.quotes||[]).length?`<h4 class="dh">Quotes</h4>${li('quotes',1)}`:''}<h4 class="dh">For software / semis</h4>${li('implications')}`
+   :`<h4 class="dh">Key moments (quoted)</h4>${li('quotes',1)}${(s.numbers||[]).length?`<h4 class="dh">Numbers mentioned</h4>${(s.numbers||[]).map(q=>`<div class="quote">${esc(q)}</div>`).join('')}`:''}<p class="note">Picked automatically from the transcript, not written by AI.</p>`}
+  ${!e.pending&&s.v!==2?'<p class="note">Tap-to-dig-in (source passage, explainer, play from here) arrives for this episode at an upcoming refresh.</p>':''}
   ${Object.keys(e.mentions||{}).length?`<h4 class="dh">Watchlist names mentioned</h4><div class="r2">${Object.entries(e.mentions).map(([t,c])=>`<span class="chip b">${esc(t)} ×${c}</span>`).join('')}</div>`:''}
   ${e.desc?`<h4 class="dh">Show notes</h4><p class="note" style="font-size:14px">${esc(e.desc)}</p>`:''}
   <div class="links"><a href="${esc(e.link)}" target="_blank" rel="noopener">Open episode ↗</a>${src.kind==='publisher'&&src.url?`<a href="${esc(src.url)}" target="_blank" rel="noopener">Publisher transcript ↗</a>`:''}</div>
   <p class="note">${src.kind==='whisper'?`Transcribed by Whisper ${esc(src.model||'')} on a GitHub runner (${src.transcribe_s}s for ${mins(src.audio_s)} of audio).`:src.kind==='publisher'?'Transcript from the publisher’s feed.':''}${s.kind==='ai'?` Summary by ${esc(s.model||'AI')} from the transcript only.`:''}</p>`);
+ sh.querySelectorAll('.digrow').forEach(b=>b.onclick=()=>openDig(e,s[b.dataset.k][+b.dataset.i],b.dataset.k));
+}
+const SEGS={};
+const ts=x=>{x=Math.max(0,Math.floor(x));const h=Math.floor(x/3600),m=Math.floor(x/60)%60,s=String(x%60).padStart(2,'0');return h?`${h}:${String(m).padStart(2,'0')}:${s}`:`${m}:${s}`};
+function markQ(t,q){const h=esc(t);if(!q)return h;const k=h.toLowerCase().indexOf(esc(q).toLowerCase());return k<0?h:h.slice(0,k)+'<mark>'+h.slice(k,k+esc(q).length)+'</mark>'+h.slice(k+esc(q).length)}
+async function openDig(e,it,kind){
+ const lab={takeaways:'Takeaway',tidbits:'Tidbit',quotes:'Quote',implications:'For software / semis'}[kind]||'Dig in',x=it.x||{};
+ const sh=sheet('Dig in',`<div class="kicker">${esc(lab)} · ${esc(e.showName)}</div><p class="digt">${kind==='quotes'?'“'+esc(it.t)+'”':esc(it.t)}</p>
+  ${it.p!=null?'<h4 class="dh">From the transcript</h4><div class="tx" id="tx"><p class="note">Loading transcript…</p></div>':''}
+  <div id="play"></div>
+  ${x.bg||x.why||x.so?`<h4 class="dh">Explainer</h4><div class="xpl">${x.bg?`<div><b>Background</b><p>${esc(x.bg)}</p></div>`:''}${x.why?`<div><b>Why it matters</b><p>${esc(x.why)}</p></div>`:''}${x.so?`<div><b>In your seat</b><p>${esc(x.so)}</p></div>`:''}</div><p class="note">Explainer written by AI from this episode’s transcript — check before relying on it.</p>`:''}`);
+ if(it.p==null)return;
+ let B=SEGS[e.key];
+ if(!B){try{const r=await fetch(`data/pods/seg_${e.key}.json`);if(r.ok)B=SEGS[e.key]=await r.json()}catch(_){}}
+ const box=sh.querySelector('#tx');if(!B){box.innerHTML='<p class="note">Transcript unavailable offline.</p>';return}
+ const timed=B[0]&&B[0].s!=null,p=Math.min(it.p,B.length-1),p2=Math.min(Math.max(it.p2??p,p),B.length-1);
+ let ctx=60;
+ const draw=()=>{let lo=p,hi=p2;
+  if(timed){const a=B[p].s-ctx,z=B[p2].e+ctx;while(lo>0&&B[lo-1].e>a)lo--;while(hi<B.length-1&&B[hi+1].s<z)hi++}
+  else{const n=Math.ceil(ctx/32);lo=Math.max(0,p-n);hi=Math.min(B.length-1,p2+n)}
+  box.innerHTML=(lo>0?'<div class="txfade">…</div>':'')+B.slice(lo,hi+1).map((b,k)=>{const i=lo+k,on=i>=p&&i<=p2;
+   return `<p class="${on?'hl':''}">${timed?`<span class="tt">${ts(b.s)}</span>`:''}${on?markQ(b.t,it.q):esc(b.t)}</p>`}).join('')
+   +(lo>0||hi<B.length-1?`<button class="more" id="more">Show more context</button>`:'');
+  const m=box.querySelector('#more');if(m)m.onclick=()=>{ctx+=60;draw()};
+  const h=box.querySelector('.hl');if(h&&ctx===60)h.scrollIntoView({block:'center'})};
+ draw();
+ const pl=sh.querySelector('#play');
+ if(timed&&e.audio){const t0=Math.max(0,Math.floor(B[p].s)-2);
+  pl.innerHTML=`<button class="playfrom" id="pf"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>Play from ${ts(t0)}</button><audio id="au" controls preload="none" src="${esc(e.audio)}#t=${t0}"></audio><p class="note">Times come from the transcript; shows that insert different ads per listener can drift by up to a minute.</p>`;
+  const au=pl.querySelector('#au');pl.querySelector('#pf').onclick=()=>{const go=()=>{au.currentTime=t0};au.readyState>=1?go():au.addEventListener('loadedmetadata',go,{once:true});au.play().catch(()=>{})};
+  const done=sh.querySelector('.hd button'),bg=sh.previousElementSibling;const stop=()=>au.pause();done.addEventListener('click',stop);bg&&bg.addEventListener('click',stop)}
+ else pl.innerHTML=`<p class="note">${timed?'No audio link in the feed for this episode.':'This publisher transcript has no timestamps, so “play from here” isn’t available.'}</p>`;
 }
 
 // ---------- sparkline ----------

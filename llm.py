@@ -56,6 +56,8 @@ def call(role, system, user, cache, max_tokens=900):
                 STATE["errors"].append(f"{model} {type(e).__name__}: {str(e)[:160]}"); break
     return None
 
+def remaining(role, cache): return CAPS.get(role, 0) - _budget(cache)["used"].get(role, 0)
+
 def usage(cache): return _budget(cache)["used"]
 
 # ---------- why it moved ----------
