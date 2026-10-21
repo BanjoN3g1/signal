@@ -276,7 +276,7 @@ def main():
         json.dump(rec, open(cp, "w")); episodes.append(rec)
     episodes.sort(key=lambda e: e["date"], reverse=True)
     out = {"generatedAt": dt.datetime.now().astimezone().isoformat(timespec="seconds"), "elapsedSec": round(time.time() - t0),
-           "shows": shows, "episodes": episodes, "errors": errors + llm.STATE["errors"][-3:], "ai": (llm.provider() or {}).get("name")}
+           "shows": shows, "episodes": episodes, "errors": errors + llm.STATE["errors"][-3:], "aiLimits": sorted(set(llm.STATE["limits"])), "ai": (llm.provider() or {}).get("name")}
     json.dump(out, open(os.path.join(OUT, "podcasts.json"), "w"))
     log("podcasts done", round(time.time() - t0), "s; whispered", whispered, "errors", errors, "llm", llm.STATE)
 

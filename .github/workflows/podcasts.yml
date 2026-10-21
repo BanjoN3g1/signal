@@ -3,6 +3,10 @@ on:
   schedule:
     - cron: "23 */3 * * *"   # every 3 hours, off the top of the hour
   workflow_dispatch:
+    inputs:
+      max_whisper:
+        description: "Max episodes to (re)transcribe this run (backfill can go higher)"
+        default: "4"
 permissions:
   contents: read
   actions: write   # to dispatch the Pages workflow afterwards (documented GITHUB_TOKEN exception)
@@ -12,7 +16,7 @@ concurrency:
 jobs:
   podcasts:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -35,6 +39,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           CACHE_DIR: data/podcasts
+          PODCAST_MAX_WHISPER: ${{ inputs.max_whisper || '4' }}
         run: python podcasts.py
       - name: Save episode cache
         uses: actions/cache/save@v4
