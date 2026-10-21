@@ -106,12 +106,14 @@ def collect(watch, news_by_ticker, sec, names):
         seen.add(k); out.append(it)
     return out, status
 
+NICK = {"SPCX": r"\bSpaceX\b", "GOOGL": r"\bGoogle\b", "META": r"\bFacebook\b"}  # common names headlines use
 def tickers_in(text, names):
     found = []
     for t, nm in names.items():
         if re.search(r"(?<![A-Za-z])" + re.escape(t) + r"(?![A-Za-z])", text) and len(t) > 2 and t not in ("IGV", "SOXX", "ARM", "NOW", "NET"):
             found.append(t)
         elif nm and re.search(r"\b" + re.escape(nm) + r"\b", text, re.I): found.append(t)
+        elif t in NICK and re.search(NICK[t], text): found.append(t)
     return sorted(set(found))
 
 EVENT = {"earn": re.compile(r"\b(earnings|results|reports?|quarter|q[1-4]|beats?|tops|miss(es)?|guidance|forecast|outlook|8-K: earnings)\b", re.I),
@@ -131,13 +133,45 @@ def merge_into(d, s):
     d["runs"] = max(d.get("runs", 0), s.get("runs", 0))
     d["aliases"] = sorted(set(d.get("aliases", [])) | {s["id"]} | set(s.get("aliases", [])))  # old ids keep matching data/x.json
 
+def primary(c, names):
+    """The one event key most sources agree on (a cluster has at most one, so merges can't chain across companies)."""
+    cnt = {}
+    for s in c["sources"]:
+        for k in ekeys(s["title"], names): cnt[k] = cnt.get(k, 0) + 1
+    return [max(cnt, key=lambda k: (cnt[k], k))] if cnt else []
+
+def split_mixed(cl, names):
+    """Undo over-merges: a cluster whose single-company event headlines name 2+ companies is split per company.
+    Story ids are sha1(first URL)[:12], so each part gets back its original id when it still holds that headline."""
+    h = lambda s: hashlib.sha1((s["url"] or s["title"]).encode()).hexdigest()[:12]
+    for cid in list(cl):
+        c = cl[cid]; parts = {}
+        for s in c["sources"]:
+            t = sorted({k.split(":")[0] for k in ekeys(s["title"], names)})
+            parts.setdefault(t[0] if t else None, []).append(s)
+        if len([k for k in parts if k]) < 2: continue
+        ids = {cid, *c.get("aliases", [])}; main = None
+        for k, ss in parts.items():
+            if k and any(h(s) == cid for s in ss): main = k
+        if main is None: main = max((k for k in parts if k), key=lambda k: len(parts[k]))
+        parts[main] = parts[main] + parts.pop(None, [])
+        for k, ss in parts.items():
+            ss.sort(key=lambda s: s["date"])
+            nid = cid if k == main else next((h(s) for s in ss if h(s) in ids), h(ss[0]))
+            if nid in cl and nid != cid: continue
+            cl[nid] = {**c, "id": nid, "sources": ss, "first": ss[0]["date"], "last": ss[-1]["date"], "toks": sorted(set().union(*[toks(s["title"]) for s in ss]))[:80],
+                       "aliases": sorted(a for a in ids - {nid, cid} if any(h(s) == a for s in ss)) if k != main else []}
+        cl[cid]["aliases"] = sorted(a for a in ids - {cid} if not any(a == x["id"] or a in x.get("aliases", []) for x in cl.values() if x["id"] != cid))
+        log(f"split mixed cluster {cid} into {len(parts)}")
+
 def cluster(items, state, names):
     """Greedy clustering on headline token overlap; clusters persist across runs (stable ids for caching)."""
     now = dt.datetime.now(dt.timezone.utc)
     cl = {cid: c for cid, c in state.items() if (now - dt.datetime.fromisoformat(c["last"])).total_seconds() < WINDOW_H * 3600}
+    split_mixed(cl, names)
     for c in cl.values():
         c["_t"] = set(c["toks"]); c["_tk"] = c.get("tickers") or []
-        c["ekeys"] = sorted(set(c.get("ekeys", [])).union(*[ekeys(s["title"], names) for s in c["sources"]]))
+        c["ekeys"] = primary(c, names)
         c["runs"] = c.get("runs", 0) + 1  # refreshes this story has survived (persistence signal)
     for it in sorted(items, key=lambda x: x["date"]):
         tk = toks(it["title"]); best, bs = None, 0; ek = ekeys(it["title"], names)
@@ -153,7 +187,7 @@ def cluster(items, state, names):
         if bs == -1: continue
         if best and bs >= 0.45:
             c = cl[best]; c["sources"].append(it); c["last"] = max(c["last"], it["date"]); c["_t"] |= tk
-            c["_tk"] = sorted(set(c.get("_tk") or []) | set(tickers_in(it["title"], names))); c["ekeys"] = sorted(set(c["ekeys"]) | ek)
+            c["_tk"] = sorted(set(c.get("_tk") or []) | set(tickers_in(it["title"], names))); c["ekeys"] = primary(c, names)
         else:
             cid = hashlib.sha1((it["url"] or it["title"]).encode()).hexdigest()[:12]
             cl[cid] = {"id": cid, "first": it["date"], "last": it["date"], "sources": [it], "_t": tk, "_tk": tickers_in(it["title"], names), "ekeys": sorted(ek), "runs": 1}
