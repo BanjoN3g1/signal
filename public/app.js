@@ -100,7 +100,7 @@ function renderHome(){
      ${w.id==='work'&&s&&i?`<div class="pulse up"><span>Software <b class="${cls(i.pct)}">${pc(i.pct)}</b></span><span>Semis <b class="${cls(s.pct)}">${pc(s.pct)}</b></span><span>${(DATA.earnings?.upcoming||[]).filter(e=>daysTo(e.date)<=7&&daysTo(e.date)>=0).length} reporting this week</span></div>`:''}
     </div>
    </button>`).join('')}</div>
-  <p class="note" style="margin-top:18px;text-align:center">${DATA?`Data updated ${ago(DATA.generatedAt)} · ${fmtPT(DATA.generatedAt)}`:'Loading data…'}</p>
+  <p class="note" style="margin-top:18px;text-align:center">${DATA?`Data updated ${ago(DATA.generatedAt)} · ${fmtPT(DATA.generatedAt)}`:'Loading data…'}<br><span class="ver">Signal ${VERSION}</span></p>
  </div>`;
  $('#greet').onclick=()=>{const n=prompt('What should I call you?',localStorage.getItem('signal.name')||'');if(n!==null){localStorage.setItem('signal.name',n.trim().slice(0,30));renderHome()}};
  app.querySelectorAll('.tile').forEach(b=>b.onclick=()=>location.hash='#/'+b.dataset.w+(b.dataset.w==='work'?'/feed':''));
@@ -351,11 +351,6 @@ const hAgo=iso=>{const m=Math.max(0,Math.round((Date.now()-new Date(iso))/6e4));
 const NTAGS=['Watchlist','M&A','IPO/ECM','Earnings','Fed/rates','AI capex'];
 function nRow(it,i){const src=new Set(it.sources.map(s=>s.source)).size;
  return `<button class="nitem" data-n="${esc(it.id)}"><div class="nmeta">${it.tags[0]?`<span class="chip b">${esc(it.tags[0])}</span>`:''}${it.tickers.slice(0,3).map(t=>`<span class="chip">${esc(t)}</span>`).join('')}<span class="note">${hAgo(it.last)} · ${src} source${src>1?'s':''}${it.paywalled.length&&!it.freeCoverage?' · 🔒':''}</span></div><b>${esc(it.title)}</b>${it.sum?`<p>${esc(it.sum)}</p>`:''}</button>`}
-function todayCard(){const T=DATA.today;if(!T||!T.items?.length)return '';const top=T.items.slice(0,3);
- return `<section class="slide"><div class="card todayc"><div class="kicker">Today · ${esc(T.items.length)} stories · updated ${esc(ago(T.asOf))}</div>
-  <h3 style="margin:8px 0 4px">What tech bankers are reading</h3>
-  <div class="nlist">${top.map(nRow).join('')}</div><div style="flex:1"></div>
-  <button class="btn" id="allnews" style="margin-top:10px">All ${T.items.length} stories</button></div></section>`}
 function openNewsList(f){f=f||'All';const T=DATA.today,W=wlTickers();
  const its=T.items.filter(it=>f==='All'||(f==='Watchlist'?it.tickers.some(t=>W.includes(t)):it.tags.includes(f)));
  const s=sheet('Today',`<div class="pchips">${['All',...NTAGS].map(t=>`<button class="pchip ${t===f?'on':''}" data-f="${esc(t)}">${esc(t)}</button>`).join('')}</div>
@@ -404,27 +399,51 @@ function xCard(x){const h=String(x.handle||'').replace(/^@/,''),st=x.story;
   <div class="xs">${x.likes!=null?`♥ ${kfmt(x.likes)}`:''}${x.reposts!=null?` · ↻ ${kfmt(x.reposts)}`:''}${x.note?` · ${esc(x.note)}`:''}</div>
   <div style="flex:1"></div>${tie}<a class="note xlink" href="${esc(x.url)}" target="_blank" rel="noopener">Open on X ↗</a></div></section>`}
 
-function renderFeed(p){
+// ---------- Feed: Reels-style weighted shuffle of news, developing stories, X posts and movers ----------
+const VERSION='v16 · Oct 21';
+const JUNK=/\b(which (is|tech|stock)|better buy|should you buy|buy, sell,? or hold|prediction:|reasons to|stock quote price|top analyst reports|if i could only|savvy investors|invested in)\b/i;
+const hrs=iso=>(Date.now()-new Date(iso))/36e5;
+function feedNews(){return (DATA.today?.items||[]).filter(it=>hrs(it.last)<=36&&(it.dev?.summary||(it.score>=4.5&&!JUNK.test(it.title)))).slice(0,24)}
+function newsCard(it){const n=it.nSources||new Set(it.sources.map(s=>s.source)).size,t=it.tickers.find(x=>DATA.quotes?.[x]);const q=t&&DATA.quotes[t];
+ return `<section class="slide"><div class="card newsc"><div class="kicker">${it.tags[0]?`<span class="chip b">${esc(it.tags[0])}</span>`:'<span class="chip b">News</span>'}${it.tickers.slice(0,2).map(x=>`<span class="chip">${esc(x)}</span>`).join('')}<span class="note">${n} source${n>1?'s':''} · ${hAgo(it.last)} ago${it.paywalled.length&&!it.freeCoverage?' · 🔒':''}</span></div>
+  <h3 class="devh">${esc(it.title)}</h3>${it.sum?`<p class="devs">${esc(it.sum)}</p>`:''}
+  ${it.why?`<div class="whybox"><b>Why it matters</b><p>${esc(it.why)}</p></div>`:''}
+  ${q?`<div class="stats up"><div class="stat">${esc(t)}<b class="${cls(q.pct)}">${pc(q.pct)}</b></div>${q.r5!=null?`<div class="stat">5 days<b class="${cls(q.r5)}">${pc(q.r5)}</b></div>`:''}${chatStat(t)}</div>`:''}
+  <div style="flex:1"></div><button class="btn" data-n="${esc(it.id)}">Dig in</button></div></section>`}
+// weighted random order (Efraimidis–Spirakis): higher weight = more likely near the top, but never the same order twice
+const wshuffle=(arr,w)=>arr.map(x=>[Math.pow(Math.random(),1/Math.max(.01,w(x))),x]).sort((a,b)=>b[0]-a[0]).map(x=>x[1]);
+const fresh=iso=>Math.pow(.5,Math.max(0,hrs(iso))/8);  // half-life 8h
+function buildFeed(){
  const Q=DATA.quotes;const tick=wlTickers().filter(t=>!['IGV','SOXX'].includes(t));
- const have=tick.filter(t=>Q[t]),missing=tick.filter(t=>!Q[t]);
- const movers=have.map(t=>Q[t]).sort((a,b)=>Math.abs(b.pct??0)-Math.abs(a.pct??0));
- const devs=devStories().slice(0,6),xs=xFeed().slice(0,10);
- const fresh=missing.filter(t=>!(WL.groups.find(g=>g.tickers.includes(t))&&isPrivGroup(WL.groups.find(g=>g.tickers.includes(t))))),priv=missing.filter(t=>!fresh.includes(t));
- let html=pulseCard()+todayCard()+fresh.map(pendingCard).join('')+priv.map(privateCard).join(''),li=0,di=0,xi=0;
- if(devs[di])html+=devCard(devs[di++]);if(xs[xi])html+=xCard(xs[xi++]);
- // Reels rhythm: mover · developing story · mover · X post · lesson …
- movers.forEach((q,i)=>{html+=moverCard(q,i);
-  if(i%3===0&&devs[di])html+=devCard(devs[di++]);
-  else if(i%3===1&&xs[xi])html+=xCard(xs[xi++]);
-  else if(i%3===2&&LESSONS[li])html+=lessonCard(LESSONS[li++]);
-  if(i%3===2&&xs[xi])html+=xCard(xs[xi++])});
- while(devs[di]||xs[xi]||LESSONS[li]){if(devs[di])html+=devCard(devs[di++]);if(xs[xi])html+=xCard(xs[xi++]);if(LESSONS[li])html+=lessonCard(LESSONS[li++])}
- p.innerHTML=`<div class="feed" id="feed">${html}</div>`;
+ const missing=tick.filter(t=>!Q[t]);const pend=missing.filter(t=>!(WL.groups.find(g=>g.tickers.includes(t))&&isPrivGroup(WL.groups.find(g=>g.tickers.includes(t))))),priv=missing.filter(t=>!pend.includes(t));
+ const news=wshuffle(feedNews(),it=>(it.score/6)*(.35+fresh(it.last))*(it.dev?1.6:1)).map(it=>({k:'n:'+it.id,h:it.dev?.summary?devCard(it):newsCard(it)}));
+ const xs=wshuffle(xFeed().filter(x=>!x.ts||hrs(x.ts)<=48).slice(0,14),x=>Math.log10(10+(x.likes||0)+3*(x.reposts||0))*(.4+fresh(x.ts||new Date().toISOString()))).map(x=>({k:'x:'+x.url,h:xCard(x)}));
+ const mv=wshuffle(tick.filter(t=>Q[t]).map(t=>Q[t]),q=>.3+Math.abs(q.pct??0)).slice(0,14).map((q,i)=>({k:'m:'+q.ticker,h:moverCard(q,i)}));
+ const misc=[{k:'pulse',h:pulseCard()},...pend.map(t=>({k:'p:'+t,h:pendingCard(t)})),...priv.map(t=>({k:'v:'+t,h:privateCard(t)}))];
+ // rhythm: news, mover, news, X, news, mover, X …  (pulse/pending slot in after a few cards)
+ const pat=['n','m','n','x','n','m','x'],src={n:news,m:mv,x:xs},out=[];let i=0,guard=0;
+ while((news.length||mv.length||xs.length)&&guard++<200){const k=pat[i++%pat.length];const c=src[k].shift()||news.shift()||xs.shift()||mv.shift();if(c)out.push(c);if(out.length===3&&misc.length)out.push(...misc.splice(0))}
+ out.push(...misc);
+ const last=localStorage.getItem('signal.first');if(out.length>1&&out[0].k===last){const j=1+Math.floor(Math.random()*Math.min(4,out.length-1));[out[0],out[j]]=[out[j],out[0]]}
+ if(out[0])localStorage.setItem('signal.first',out[0].k);
+ return out.map(c=>c.h).join('')+`<section class="slide"><div class="card endc"><div class="big">✓</div><h3>You’re caught up</h3><p class="note">Scroll back to the top or pull down there for a fresh mix.</p><p class="ver">Signal ${VERSION} · data ${esc(ago(DATA.generatedAt))}</p></div></section>`;
+}
+let feedBusy=false;
+async function refreshFeed(p,fetchData){if(feedBusy)return;feedBusy=true;const f=p.querySelector('#feed');if(f)f.classList.add('reloading');
+ if(fetchData)await loadData();renderFeed(p);feedBusy=false;paintRefresh()}
+function renderFeed(p){
+ p.innerHTML=`<div class="ptr" id="ptr">↻ New mix</div><div class="feed" id="feed">${buildFeed()}</div>`;
+ const f=p.querySelector('#feed'),ptr=p.querySelector('#ptr');
  fillPending(p);p.querySelectorAll('[data-sync]').forEach(b=>b.onclick=syncNow);
- const an=p.querySelector('#allnews');if(an)an.onclick=()=>openNewsList();
- p.querySelectorAll('.todayc [data-n],.devc [data-n],.xcard [data-n]').forEach(b=>b.onclick=()=>openNews(b.dataset.n));
+ p.querySelectorAll('[data-n]').forEach(b=>b.onclick=()=>openNews(b.dataset.n));
  p.querySelectorAll('[data-deep]').forEach(b=>b.onclick=()=>openDeep(b.dataset.deep));
  p.querySelectorAll('[data-lesson]').forEach(b=>b.onclick=()=>openLesson(b.dataset.lesson));
+ // back at the top after going 2+ cards deep → refetch + reshuffle (TikTok-style)
+ let deep=false;f.addEventListener('scroll',()=>{const h=f.clientHeight||1;if(f.scrollTop>h*1.5)deep=true;else if(deep&&f.scrollTop<4){deep=false;refreshFeed(p,true)}},{passive:true});
+ // pull down past the first card
+ let y0=null;f.addEventListener('touchstart',e=>{y0=f.scrollTop<=0?e.touches[0].clientY:null},{passive:true});
+ f.addEventListener('touchmove',e=>{if(y0==null)return;const dy=e.touches[0].clientY-y0;ptr.style.opacity=Math.min(1,dy/80);ptr.classList.toggle('go',dy>80)},{passive:true});
+ f.addEventListener('touchend',()=>{if(y0!=null&&ptr.classList.contains('go'))refreshFeed(p,true);y0=null;ptr.style.opacity=0;ptr.classList.remove('go')},{passive:true});
 }
 
 // ---------- sheets ----------
@@ -609,7 +628,14 @@ function renderEarnings(p){
 }
 
 // ---------- boot ----------
-if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+if('serviceWorker' in navigator){
+ // a new SW takes over immediately (skipWaiting + clients.claim); reload once so the new app.js is running
+ const had=!!navigator.serviceWorker.controller;let reloaded=false;
+ navigator.serviceWorker.addEventListener('controllerchange',()=>{if(had&&!reloaded){reloaded=true;location.reload()}});
+ navigator.serviceWorker.register('sw.js',{updateViaCache:'none'}).then(r=>{r.update();let hid=0;
+  document.addEventListener('visibilitychange',()=>{if(document.hidden){hid=Date.now();return}r.update();
+   if(hid&&Date.now()-hid>10*60*1000&&route().world==='work'&&tab==='feed'){const p=$('#pane');if(p)refreshFeed(p,true)}})}).catch(()=>{});
+}
 app.innerHTML='<div class="empty"><p>Loading…</p></div>';
 loadData().then(render);
 })();
