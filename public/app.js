@@ -228,7 +228,7 @@ async function openDig(e,it,kind){
  const K=cxCtx('p:'+e.key,e.summary?.concepts,e.showName+' — '+e.title,4),M=t=>cxMark(t,K);
  const sh=sheet('Dig in',`<div class="kicker">${esc(lab)} · ${esc(e.showName)}</div><p class="digt">${kind==='quotes'?'“'+esc(it.t)+'”':M(it.t)}</p>
   ${it.p!=null?'<h4 class="dh">From the transcript</h4><div class="tx" id="tx"><p class="note">Loading transcript…</p></div>':''}
-  <div id="play"></div>
+  <div id="play"></div>${askBtn(askReg('d:'+e.key+':'+kind+(it.p??''),e.showName+' — '+e.title,[lab+': '+it.t,it.q?'Transcript phrase: '+it.q:'',x.bg,x.why,x.so].filter(Boolean).join('\n')),'wide')}
   ${x.bg||x.why||x.so?`<h4 class="dh">Explainer</h4><div class="xpl">${x.bg?`<div><b>Background</b><p>${M(x.bg)}</p></div>`:''}${x.why?`<div><b>Why it matters</b><p>${M(x.why)}</p></div>`:''}${x.so?`<div><b>In your seat</b><p>${M(x.so)}</p></div>`:''}</div><p class="note">Explainer written by AI from this episode’s transcript — check before relying on it.</p>`:''}`);
  if(it.p==null)return;
  let B=SEGS[e.key];
@@ -379,6 +379,7 @@ function openNews(id){const it=DATA.today.items.find(x=>x.id===id);if(!it)return
   ${!it.dev&&it.why?`<div class="whybox"><b>Why it matters for a tech banker</b><p>${M(it.why)}</p></div>`:''}
   ${!it.dev&&it.deep?.length?`<h4 class="dh">Deeper dive</h4><ul class="dl">${it.deep.map(x=>`<li>${M(x)}</li>`).join('')}</ul>`:''}
   ${pwNote?`<p class="note">${pwNote}</p>`:''}
+  ${askBtn(askReg('n:'+it.id,it.dev?.headline||it.title,[it.dev?.summary,...(it.dev?.happened||[]),it.sum,it.why,...(it.deep||[]),...it.sources.slice(0,8).map(s=>s.source+': '+s.title)].filter(Boolean).join('\n')),'wide')}
   ${xHTML(it.x)}
   <h4 class="dh">All sources</h4>${it.sources.map(s=>`<a class="nrow" href="${esc(s.url)}" target="_blank" rel="noopener"><b>${s.paywalled?'🔒 ':''}${esc(s.title)}</b><span class="note">${esc(s.source)} · ${esc(fmtPT(s.date))}</span></a>`).join('')}
   ${it.sum||it.dev?`<p class="note">Summary by ${esc(it.dev?.model||it.model||'AI')} from headlines and RSS blurbs only — open the sources before relying on it.</p>`:''}`);
@@ -396,7 +397,7 @@ function devCard(it){const d=it.dev,n=it.nSources||new Set(it.sources.map(s=>s.s
   ${(()=>{const k=cxCtx('n:'+it.id,(d.cx||[]).concat(it.cx||[]),d.headline||it.title);return `<h3 class="devh">${cxMark(d.headline||it.title,k)}</h3><p class="devs">${cxMark(d.summary,k)}</p>`})()}
   ${d.numbers?.length?`<div class="nums">${d.numbers.slice(0,3).map(x=>`<div><b>${esc(x.figure)}</b><span>${esc(x.context)}</span></div>`).join('')}</div>`:''}
   ${d.happened?.length?`<ul class="dl">${d.happened.slice(0,3).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}
-  <div style="flex:1"></div><button class="btn" data-n="${esc(it.id)}">Learn more</button></div></section>`}
+  <div style="flex:1"></div><div class="btnrow"><button class="btn" data-n="${esc(it.id)}">Learn more</button>${askBtn(askReg('n:'+it.id,d.headline||it.title,[d.summary,...(d.happened||[]),...(d.implications||[]).map(x=>x.area+': '+x.text),...it.sources.slice(0,8).map(s=>s.source+': '+s.title)].filter(Boolean).join('\n')),'sq')}</div></div></section>`}
 function xCard(x){const h=String(x.handle||'').replace(/^@/,''),st=x.story;
  const tie=st?`<button class="xtie" data-n="${esc(st.id)}"><span class="note">Tied story</span><b>${esc((st.dev?.headline||st.title).slice(0,110))}</b><span class="note">Dig in ›</span></button>`
   :`<button class="xtie" data-deep="${esc(x.tkr)}"><span class="note">Tied ticker</span><b>${esc(x.tkr)}${DATA.quotes?.[x.tkr]?.pct!=null?` · ${DATA.quotes[x.tkr].pct>0?'+':''}${DATA.quotes[x.tkr].pct.toFixed(2)}%`:''}</b><span class="note">Dig in ›</span></button>`;
@@ -453,6 +454,7 @@ function openConcept(id,key,sh){const k=CXC[key];const tmp=id[0]==='~';const c=t
   ${rel.length?`<h4 class="dh">Related</h4><div class="r2">${rel.map(([r,i])=>i?`<button class="chip cxchip" data-hop="${esc(i)}">${esc(CX[i].term)}</button>`:`<span class="chip">${esc(r)}</span>`).join('')}</div>`:''}
   ${where.length?`<h4 class="dh">Where it’s showing up</h4>${where.map(w=>w.k==='n'?`<button class="nrow cxw" data-n="${esc(w.it.id)}"><b>${esc(w.it.dev?.headline||w.it.title)}</b><span class="note">News · ${hAgo(w.it.last)} ago</span></button>`:`<button class="nrow cxw" data-pe="${esc(w.e.key)}"><b>${esc(w.e.title)}</b><span class="note">${esc(w.e.showName)} · podcast</span></button>`).join('')}`:''}
   ${!D&&c?.deeper?`<details class="cxd"><summary>Go deeper</summary><p>${esc(c.deeper)}</p></details>`:''}
+  ${c?askBtn(askReg('c:'+id,'Concept: '+c.term+(k?.title?' — seen in: '+k.title:''),[c.def,c.how,line?.here?'In this story: '+line.here:'',D?.works,D?.tech,D?.value].filter(Boolean).join('\n')),'wide'):''}
   <p class="note">${c?`Glossary entry written once by ${esc(c.model||'AI')} and reused everywhere. `:''}${line?'the “in this story” line comes from the same AI call that summarized this item. ':''}General education — verify before relying on it.</p>`;
  if(sh)sh.querySelector('.bd').innerHTML=body,sh.querySelector('.bd').scrollTop=0;else sh=sheet('Concept',body);
  const bd=sh.querySelector('.bd');
@@ -461,6 +463,43 @@ function openConcept(id,key,sh){const k=CXC[key];const tmp=id[0]==='~';const c=t
  bd.querySelectorAll('[data-n]').forEach(b=>b.onclick=()=>openNews(b.dataset.n));
  bd.querySelectorAll('[data-pe]').forEach(b=>b.onclick=()=>openPod(PODS.episodes.find(e=>e.key===b.dataset.pe)));}
 document.addEventListener('click',ev=>{const t=ev.target.closest&&ev.target.closest('.cx');if(!t)return;ev.preventDefault();ev.stopPropagation();openConcept(t.dataset.cx,t.dataset.k)},true);
+// ---------- Ask about this (Sal's own Claude key, stored only in this phone's localStorage; sent only to api.anthropic.com) ----------
+const ASKM='claude-sonnet-5-5',ASKC={};
+const askKey=()=>localStorage.getItem('signal.claudeKey')||'';
+function askReg(id,title,text){ASKC[id]={title:String(title||''),text:String(text||'').replace(/\s+\n/g,'\n').slice(0,7000)};return id}
+const askBtn=(id,cls='')=>`<button class="askb ${cls}" data-ask="${esc(id)}">✦ Ask about this</button>`;
+const ASKSYS="You are a sharp senior colleague helping a tech investment banking associate (software, semiconductors, AI, internet; M&A and ECM). Answer in plain English but in depth: explain the mechanics, the numbers that matter, who wins and loses, and the implications for deals, valuation and capital markets. Use the provided context first; if you add outside knowledge, say so, and never invent specific figures. Be concise and structured (short paragraphs or bullets). End with one line starting 'Follow-ups:' listing 2-3 short follow-up questions separated by ' | '.";
+function mdLite(t){return esc(t).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').split(/\n{2,}/).map(p=>/^\s*[-•*] /m.test(p)?`<ul class="dl">${p.split(/\n/).filter(Boolean).map(l=>`<li>${l.replace(/^\s*[-•*]\s+/,'')}</li>`).join('')}</ul>`:/^#+ /.test(p)?`<h4 class="dh">${p.replace(/^#+\s*/,'')}</h4>`:`<p>${p.replace(/\n/g,'<br>')}</p>`).join('')}
+function openKey(after){const k=askKey();
+ const sh=sheet('Claude key',`<p>“Ask about this” uses <b>your own</b> Anthropic API key. It’s stored only on this phone (localStorage) and sent only to <b>api.anthropic.com</b> — never to Signal, GitHub or anyone else. Each answer is a Claude Sonnet call billed to your Anthropic account (roughly a cent).</p>
+  ${k?`<p class="note">Key saved: ${esc(k.slice(0,10))}…${esc(k.slice(-4))}</p><button class="btn" id="kdel" style="background:#3a1d1d;color:var(--red)">Remove key</button>`:''}
+  <input class="cxs" id="kin" type="password" autocomplete="off" placeholder="sk-ant-…"><button class="btn" id="ksave">${k?'Replace key':'Save key'}</button>
+  <p class="note">Get a key at console.anthropic.com → API keys. Remove it here anytime; clearing site data also deletes it.</p>`);
+ sh.querySelector('#ksave').onclick=()=>{const v=sh.querySelector('#kin').value.trim();if(!/^sk-ant-/.test(v)){sh.querySelector('#kin').placeholder='Key should start with sk-ant-';return}localStorage.setItem('signal.claudeKey',v);sh.querySelector('.hd button').click();after&&after()};
+ const d=sh.querySelector('#kdel');if(d)d.onclick=()=>{localStorage.removeItem('signal.claudeKey');sh.querySelector('.hd button').click()}}
+function openAsk(id){const C=ASKC[id];if(!C)return;const msgs=[];
+ const sh=sheet('Ask about this',`<div class="kicker">Context</div><p class="note asktitle">${esc(C.title.slice(0,140))}</p><div id="aconv"></div>
+  <div class="pchips" id="asug">${['Explain this in depth','What does it mean for M&A / ECM?','Who are the winners and losers?','What should I ask a client about this?'].map(q=>`<button class="pchip">${q}</button>`).join('')}</div>
+  <div class="askrow"><textarea id="aq" rows="2" placeholder="Ask anything about this…"></textarea><button class="btn" id="ago">Ask</button></div>
+  <p class="note">Claude Sonnet via your own key (on this phone only) · <button class="lnk" id="akey">${askKey()?'Key settings':'Add your Claude key'}</button></p>`);
+ const conv=sh.querySelector('#aconv'),q=sh.querySelector('#aq'),go=sh.querySelector('#ago');
+ sh.querySelector('#akey').onclick=()=>openKey();
+ const send=async text=>{text=(text||'').trim();if(!text)return;if(!askKey()){openKey(()=>send(text));return}
+  msgs.push({role:'user',content:msgs.length?text:`Context (from my Signal app):\n${C.title}\n\n${C.text}\n\nQuestion: ${text}`});
+  conv.insertAdjacentHTML('beforeend',`<div class="askq">${esc(text)}</div><div class="aska"><p class="note">Thinking…</p></div>`);const box=conv.lastElementChild;q.value='';go.disabled=true;sh.querySelector('#asug').innerHTML='';
+  box.scrollIntoView({block:'nearest',behavior:'smooth'});
+  try{const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'x-api-key':askKey(),'anthropic-version':'2023-06-01','content-type':'application/json','anthropic-dangerous-direct-browser-access':'true'},
+    body:JSON.stringify({model:ASKM,max_tokens:800,system:ASKSYS,messages:msgs,thinking:{type:'between_tools'}})});
+   const j=await r.json().catch(()=>({}));
+   if(!r.ok){msgs.pop();box.innerHTML=`<p class="note">${r.status===401?'That key was rejected — check it in key settings.':r.status===429?'Rate-limited by Anthropic — try again in a moment.':'Claude error: '+esc(j?.error?.message||r.status)}</p>`;return}
+   let t=(j.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('\n').trim();msgs.push({role:'assistant',content:t});
+   let fu=[];const m=t.match(/\n?\s*Follow-ups?:\s*(.+)\s*$/i);if(m){fu=m[1].split(/\s*\|\s*/).filter(Boolean).slice(0,3);t=t.slice(0,m.index).trim()}
+   box.innerHTML=mdLite(t);sh.querySelector('#asug').innerHTML=fu.map(x=>`<button class="pchip">${esc(x)}</button>`).join('');wireSug()}
+  catch(e){msgs.pop();box.innerHTML='<p class="note">Couldn’t reach Claude (offline?). Try again.</p>'}finally{go.disabled=false}};
+ const wireSug=()=>sh.querySelectorAll('#asug .pchip').forEach(b=>b.onclick=()=>send(b.textContent));wireSug();
+ go.onclick=()=>send(q.value)}
+document.addEventListener('click',ev=>{const t=ev.target.closest&&ev.target.closest('[data-ask]');if(!t)return;ev.preventDefault();ev.stopPropagation();openAsk(t.dataset.ask)},true);
+
 let cxq='';
 function renderLearn(p){const S=cxSeen(),all=Object.entries(CX||{}).sort((a,b)=>a[1].term.localeCompare(b[1].term));
  const recent=Object.entries(S).sort((a,b)=>b[1]-a[1]).map(x=>x[0]).filter(i=>CX?.[i]).slice(0,6);
@@ -471,10 +510,11 @@ function renderLearn(p){const S=cxSeen(),all=Object.entries(CX||{}).sort((a,b)=>
   ${recent.length&&!cxq?`<div class="pchips">${recent.map(i=>`<button class="pchip on" data-c="${esc(i)}">${esc(CX[i].term)}</button>`).join('')}</div>`:''}
   <div id="cxl">${list()}</div>
   <h4 class="dh">Filings explained</h4><div class="pchips">${Object.entries(EXPL).map(([t,e])=>`<button class="pchip lrn" data-expl="${esc(t)}">📘 ${esc(e[0])}</button>`).join('')}</div>
+  <h4 class="dh">Ask about this</h4><button class="pstory" id="keyset"><b>${askKey()?'Claude key saved on this phone':'Add your Claude key'}</b><p>Powers “Ask about this” on cards, Developing stories, concepts and podcast Dig in. Stored only on this phone; sent only to Anthropic.</p></button>
   <p class="note">Tap any dotted-underlined term in the Feed, news and podcasts to open it. New terms flagged by the summarizers are added a few per refresh.</p></div>`;
  const wire=r=>r.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>openConcept(b.dataset.c,null));wire(p);
  p.querySelector('.cxs').oninput=e=>{cxq=e.target.value;const l=p.querySelector('#cxl');l.innerHTML=list();wire(l)};
- p.querySelectorAll('[data-expl]').forEach(b=>b.onclick=()=>openExplainer(b.dataset.expl))}
+ p.querySelectorAll('[data-expl]').forEach(b=>b.onclick=()=>openExplainer(b.dataset.expl));p.querySelector('#keyset').onclick=()=>openKey(()=>renderLearn(p))}
 
 // ---------- Filings & Deals ----------
 const FTYPE={'IPO':['IPO','g'],'Merger proxy':['Merger proxy','o'],'Merger (S-4)':['Merger S-4','o'],'Deal 8-K':['Deal 8-K','o'],'Private round':['Private round','p'],'Tender / secondary':['Tender','p'],'IPO (confidential)':['IPO (conf.)','g']};
@@ -532,7 +572,7 @@ function renderFilings(p){const F=FL?.filings||[],R=FL?.private||[];
  p.querySelectorAll('[data-ff]').forEach(b=>b.onclick=()=>{flf=b.dataset.ff;renderFilings(p)});wireFilings(p)}
 
 // ---------- Feed: Reels-style weighted shuffle of news, developing stories, X posts and movers ----------
-const VERSION='v21 · Oct 21';
+const VERSION='v22 · Oct 21';
 const JUNK=/\b(which (is|tech|stock)|better buy|should you buy|buy, sell,? or hold|prediction:|reasons to|stock quote price|top analyst reports|if i could only|savvy investors|invested in)\b/i;
 const hrs=iso=>(Date.now()-new Date(iso))/36e5;
 function feedNews(){return (DATA.today?.items||[]).filter(it=>hrs(it.last)<=36&&(it.dev?.summary||(it.score>=4.5&&!JUNK.test(it.title)))).slice(0,24)}
@@ -541,7 +581,7 @@ function newsCard(it){const n=it.nSources||new Set(it.sources.map(s=>s.source)).
   ${(()=>{const k=cxCtx('n:'+it.id,it.cx,it.title),m=t=>cxMark(t,k);return `<h3 class="devh">${m(it.title)}</h3>${it.sum?`<p class="devs">${m(it.sum)}</p>`:''}
   ${it.why?`<div class="whybox"><b>Why it matters</b><p>${m(it.why)}</p></div>`:''}`})()}
   ${q?`<div class="stats up"><div class="stat">${esc(t)}<b class="${cls(q.pct)}">${pc(q.pct)}</b></div>${q.r5!=null?`<div class="stat">5 days<b class="${cls(q.r5)}">${pc(q.r5)}</b></div>`:''}${chatStat(t)}</div>`:''}
-  <div style="flex:1"></div><button class="btn" data-n="${esc(it.id)}">Dig in</button></div></section>`}
+  <div style="flex:1"></div><div class="btnrow"><button class="btn" data-n="${esc(it.id)}">Dig in</button>${askBtn(askReg('n:'+it.id,it.title,[it.sum,it.why,...(it.deep||[]),...it.sources.slice(0,6).map(s=>s.source+': '+s.title)].filter(Boolean).join('\n')),'sq')}</div></div></section>`}
 // weighted random order (Efraimidis–Spirakis): higher weight = more likely near the top, but never the same order twice
 const wshuffle=(arr,w)=>arr.map(x=>[Math.pow(Math.random(),1/Math.max(.01,w(x))),x]).sort((a,b)=>b[0]-a[0]).map(x=>x[1]);
 const fresh=iso=>Math.pow(.5,Math.max(0,hrs(iso))/8);  // half-life 8h

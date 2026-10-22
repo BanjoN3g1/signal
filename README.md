@@ -93,3 +93,14 @@ Races, Polls, News, X, Models (forecasters + "polls vs markets vs models" explai
   `{"updated": ISO, "leans": {lean: label}, "accounts": [{"handle","name","lean","role"}], "posts": [{"handle","name","lean","role","text","url","likes","reposts","ts","race"}]}`
   where `lean` ∈ `left|right|center|analyst` (describes the account) and `race` is an optional race id from the election config (e.g. `GA-sen`,
   `senate-control`). URLs must be https://x.com/…; the app shows posts balanced (round-robin across leans) and on matching race pages.
+
+## Claude (paid, approved by Sal)
+- **Deep concept cards:** `concepts.py` calls Claude Sonnet (`claude-sonnet-5-5`, `ANTHROPIC_API_KEY` secret) first and falls back to Gemini if Claude errors.
+  The refresh job is capped at `CLAUDE_DAILY_CALLS` (default 2 calls/day, about 3 terms each), so ongoing cost stays at a few dollars a month at most.
+  Token usage and estimated cost are tracked in `data/cache/claude_usage.json` at $2 in / $10 out per MTok.
+  To regenerate the seed set offline: `python3 concepts.py seed`.
+- **Ask about this:** appears on Feed news and Developing cards, the news Dig in sheet, concept sheets and podcast Dig in.
+  It uses Sal's own key, entered in Learn → "Add your Claude key" (or from the Ask sheet). The key is stored only in the phone's localStorage and
+  is sent only to `api.anthropic.com`, as a direct browser call with `anthropic-dangerous-direct-browser-access`. The site itself ships no key.
+  Each call uses Sonnet with at most 800 output tokens, and follow-up questions continue in the same sheet.
+

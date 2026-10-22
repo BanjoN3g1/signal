@@ -149,3 +149,39 @@ Return JSON with keys:
 def earnings_deep(ticker, name, fq, text, cache):
     user = f"Company: {name} ({ticker}). Fiscal quarter ending: {fq}.\n\nPRESS RELEASE TEXT:\n{text}"
     return call("deep", EARN_SYS, user, cache, max_tokens=1100)
+
+# ---------- Claude (paid, approved by Sal for deep concept cards only) ----------
+CLAUDE_MODEL = os.environ.get("CLAUDE_MODEL", "claude-sonnet-5-5")
+CLAUDE_PRICE = (2.0, 10.0)  # $ per MTok in / out (Sonnet 5.5 list price)
+CLAUDE_DAILY = int(os.environ.get("CLAUDE_DAILY_CALLS", "2"))  # refresh job: a few new terms a day keeps cost to a few $/month
+
+def claude_usage(cache):
+    try: return json.load(open(os.path.join(cache, "claude_usage.json")))
+    except Exception: return {"total": {"calls": 0, "in": 0, "out": 0}}
+
+def claude(system, user, cache, max_tokens=4000, daily=None):
+    """Anthropic Messages API -> parsed JSON dict or None. Tracks tokens/cost in <cache>/claude_usage.json."""
+    key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+    if not key: return None
+    u = claude_usage(cache); today = _today(); d = u.setdefault(today, {"calls": 0, "in": 0, "out": 0})
+    if daily is not None and d["calls"] >= daily: return None
+    body = {"model": CLAUDE_MODEL, "max_tokens": max_tokens, "system": system, "messages": [{"role": "user", "content": user}], "thinking": {"type": "between_tools"}}
+    for attempt in range(3):
+        try:
+            r = requests.post("https://api.anthropic.com/v1/messages", timeout=300, json=body,
+                              headers={"x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"})
+            if r.status_code == 400 and "thinking" in r.text and "thinking" in body: body.pop("thinking"); continue
+            if r.status_code in (429, 500, 529) and attempt < 2: time.sleep(10 * (attempt + 1)); continue
+            if r.status_code != 200: STATE["errors"].append(f"claude HTTP {r.status_code}: {r.text[:160]}"); return None
+            j = r.json(); us = j.get("usage", {})
+            for k_, v in (("in", us.get("input_tokens", 0)), ("out", us.get("output_tokens", 0))): d[k_] += v; u["total"][k_] += v
+            d["calls"] += 1; u["total"]["calls"] += 1; json.dump(u, open(os.path.join(cache, "claude_usage.json"), "w"))
+            txt = "".join(b.get("text", "") for b in j.get("content", []) if b.get("type") == "text")
+            m = re.search(r"\{.*\}", txt, re.S); out = json.loads(m.group(0) if m else txt)
+            if isinstance(out, dict): out["_model"] = j.get("model", CLAUDE_MODEL); return out
+            return None
+        except Exception as e:
+            if attempt == 2: STATE["errors"].append(f"claude {type(e).__name__}: {e}"[:200]); return None
+            time.sleep(5)
+
+def claude_cost(u): return round(u["in"] / 1e6 * CLAUDE_PRICE[0] + u["out"] / 1e6 * CLAUDE_PRICE[1], 3)

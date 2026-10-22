@@ -77,12 +77,14 @@ def _clean(term, aliases, r, model):
             "players": [p["ticker"] or p["name"] for p in pl][:5], "related": [_s(x, 40) for x in (r.get("related") or [])][:6],
             "deep": deep if deep["works"] else None, "v": V if deep["works"] else 1, "model": model, "at": dt.date.today().isoformat()}
 
-def generate(terms, cache, role, fallback=True):
-    """terms: [(term, aliases)] -> {id: concept}; one call per PER_CALL terms."""
+def generate(terms, cache, role, fallback=True, claude_daily=None):
+    """terms: [(term, aliases)] -> {id: concept}; one call per PER_CALL terms. Claude Sonnet first (paid, approved), Gemini if it errors."""
     out = {}
     for i in range(0, len(terms), PER_CALL):
         batch = terms[i:i + PER_CALL]
-        res = llm.call(role, SYS, "Terms:\n" + "\n".join(f"- {t}" + (f" (also: {', '.join(a[:3])})" if a else "") for t, a in batch), cache, max_tokens=3200 * len(batch), fallback=fallback)
+        msg = "Terms:\n" + "\n".join(f"- {t}" + (f" (also: {', '.join(a[:3])})" if a else "") for t, a in batch)
+        res = llm.claude(SYS + "\nReturn only the JSON object.", msg, cache, max_tokens=3500 * len(batch), daily=claude_daily)
+        if not isinstance(res, dict): res = llm.call(role, SYS, msg, cache, max_tokens=3200 * len(batch), fallback=fallback)
         if not isinstance(res, dict): log("batch failed", [t for t, _ in batch]); break  # quota / outage: stop, retry next run
         low = {k.lower(): v for k, v in res.items() if isinstance(v, dict)}
         for t, a in batch:
@@ -123,14 +125,15 @@ def build(out_dir, cache, items=(), pods=None):
     if llm.available("concepts", cache): st.pop("flash_out_since", None)
     else: st.setdefault("flash_out_since", now.isoformat())
     lite_ok = bool(st.get("flash_out_since")) and (now - dt.datetime.fromisoformat(st["flash_out_since"])).total_seconds() > 86400
-    can = llm.available("concepts", cache) or lite_ok
+    claude_ok = bool(os.environ.get("ANTHROPIC_API_KEY")) and llm.claude_usage(cache).get(llm._today(), {}).get("calls", 0) < llm.CLAUDE_DAILY
+    can = claude_ok or llm.available("concepts", cache) or lite_ok
     if todo and can and llm.remaining("concepts", cache) > 0:
-        add = generate([(t, []) for t in todo], cache, "concepts", fallback=lite_ok)
+        add = generate([(t, []) for t in todo], cache, "concepts", fallback=lite_ok, claude_daily=llm.CLAUDE_DAILY)
         new.update(add); allc.update(add)
         log(f"added {len(add)}: {', '.join(c['term'] for c in add.values())}")
-    up = [(c["term"], c["aliases"]) for i, c in sorted(allc.items(), key=lambda kv: ORDER.get(kv[0], 999)) if c.get("v", 1) < V or ("lite" in str(c.get("model")) and llm.available("concepts", cache))][:UPGRADE_PER_RUN]
+    up = [(c["term"], c["aliases"]) for i, c in sorted(allc.items(), key=lambda kv: ORDER.get(kv[0], 999)) if c.get("v", 1) < V or ("lite" in str(c.get("model")) and (claude_ok or llm.available("concepts", cache)))][:UPGRADE_PER_RUN]
     if up and can and llm.remaining("concepts", cache) > 0:
-        got = generate(up, cache, "concepts", fallback=lite_ok)
+        got = generate(up, cache, "concepts", fallback=lite_ok, claude_daily=llm.CLAUDE_DAILY)
         for i, c in got.items():
             c["aliases"] = allc.get(i, {}).get("aliases", c["aliases"]); c["match"] = allc.get(i, {}).get("match", True)
         new.update(got); allc.update(got); log(f"upgraded {len(got)} to deep: {', '.join(c['term'] for c in got.values())}")
@@ -140,12 +143,13 @@ def build(out_dir, cache, items=(), pods=None):
     log(f"{len(allc)} concepts, {nd} deep, {len(allc) - nd} queued for deep; {len(cnt)} unknown flagged terms; flash {'ok' if llm.available('concepts', cache) else 'out'}")
 
 if __name__ == "__main__" and sys.argv[1:] == ["seed"]:
-    cur = load(SEED_PATH); todo = [(t, a) for t, a in SEED if cid(t) not in cur]
-    got = generate(todo, "/tmp/concepts_seed", "deep")
-    for t, a in SEED:  # aliases are curated here, so refresh them even on existing entries
-        if cid(t) in got: cur[cid(t)] = got[cid(t)]
-        elif cid(t) in cur: cur[cid(t)]["aliases"] = a
-    os.makedirs(os.path.dirname(SEED_PATH), exist_ok=True)
-    json.dump({"concepts": cur}, open(SEED_PATH, "w"), indent=1, ensure_ascii=False)
-    print(len(cur), "concepts;", len(todo) - len(got), "failed")
+    ORDER.update({cid(t): i for i, (t, _) in enumerate(SEED)})
+    cur = load(SEED_PATH); os.makedirs("/tmp/concepts_seed", exist_ok=True)
+    todo = [(t, cur.get(cid(t), {}).get("aliases", a)) for t, a in SEED if cur.get(cid(t), {}).get("v", 1) < V]
+    for i in range(0, len(todo), PER_CALL):  # save after every batch so an interruption loses nothing
+        got = generate(todo[i:i + PER_CALL], "/tmp/concepts_seed", "concepts", fallback=False)
+        for k, c in got.items(): cur[k] = {**c, "aliases": cur.get(k, {}).get("aliases", c["aliases"]), "match": cur.get(k, {}).get("match", True)}
+        json.dump({"concepts": cur}, open(SEED_PATH, "w"), indent=1, ensure_ascii=False)
+        u = llm.claude_usage("/tmp/concepts_seed")["total"]; print(i + len(got), "/", len(todo), {k: c["model"] for k, c in got.items()}, u, "est $", llm.claude_cost(u), flush=True)
+
 ORDER.update({cid(t): i for i, (t, _) in enumerate(SEED)})
