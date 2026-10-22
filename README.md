@@ -94,3 +94,20 @@ Races, Polls, News, X, Models (forecasters + "polls vs markets vs models" explai
   `{"updated": ISO, "leans": {lean: label}, "accounts": [{"handle","name","lean","role"}], "posts": [{"handle","name","lean","role","text","url","likes","reposts","ts","race"}]}`
   where `lean` ∈ `left|right|center|analyst` (describes the account) and `race` is an optional race id from the election config (e.g. `GA-sen`,
   `senate-control`). URLs must be https://x.com/…; the app shows posts balanced (round-robin across leans) and on matching race pages.
+
+## Politics world v3 (US focus)
+`#/elections` has a **US / International** switch (International is "coming soon") and tabs Overview · Races · Polls · Trackers · News · X.
+- **Map** (`public/elections.js`, us-atlas counties-albers-10m + topojson-client + d3@7 from jsdelivr): d3-zoom pinch/pan with momentum,
+  `touch-action:none`, custom tap + double-tap zoom, +/−/reset buttons. Semantic zoom: national (states, toss-up glow, odds) → mid (county 2024
+  margins, state labels) → deep (county names, 2024 margin, votes cast, shown only when the county is large enough on screen). State tap → bottom sheet
+  (races with Wikipedia photos or initials, odds bar, odds-over-time, poll trend, rater consensus, "why competitive"); county tap → mini card.
+  Haptics: iOS 18 `<input type=checkbox switch>` label trick, `navigator.vibrate` on Android, otherwise nothing.
+- **`uspol.py`** (called from `politics.py`, adds to `politics.json`):
+  `hist` (daily Polymarket price history from the public CLOB `prices-history` endpoint for chambers + key races, ≤16 series, 120 days, cached 6h),
+  `snaps` (generic ballot / approval / chamber odds / rater labels, one snapshot per 3h, kept 120 days in `data/cache/pol_snaps.json`),
+  `overview.changes` ("What changed this week": computed only from these diffs — 7-day odds moves ≥4 pts, generic-ballot change, rater label changes,
+  new polls), `overview.narrative` (Flash-Lite role `pol`, at most 1 call per refresh, cached by a hash of the facts; rejected if it contains a number not in
+  the facts), `photos` (Wikipedia pageimages, cached 14 days), `reddit` (public RSS top-of-week for r/fivethirtyeight, r/PoliticalDiscussion, r/YAPms,
+  r/Polymarket, paced, cached 3h; themes by Flash-Lite, cached by title hash).
+- Signals are cards (big number, sparkline, what it means, lean colour) with a drill-down (what it is, how to read it, history, source + date, odds link)
+  and a "How to put it together" explainer. Every number carries its source and date; nothing is estimated.

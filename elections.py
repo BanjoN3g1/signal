@@ -49,7 +49,9 @@ def pm_odds(e):
         if m.get("closed") or not m.get("groupItemTitle"): continue
         nm = m["groupItemTitle"].strip()
         mv = {k: round(float(m[f]), 3) for k, f in (("d1", "oneDayPriceChange"), ("d7", "oneWeekPriceChange")) if m.get(f) not in (None, "")}
-        out.append({**mv, "name": re.sub(r"\s*\((D|R|I|L|G)\)\s*$", "", nm).replace(" Party", ""), "party": party(nm) or ("D" if nm.startswith("Democrat") else "R" if nm.startswith("Republican") else None), "p": round(p, 3)})
+        try: tok = json.loads(m.get("clobTokenIds") or "[]")[0]
+        except Exception: tok = None
+        out.append({**mv, "tok": tok, "name": re.sub(r"\s*\((D|R|I|L|G)\)\s*$", "", nm).replace(" Party", ""), "party": party(nm) or ("D" if nm.startswith("Democrat") else "R" if nm.startswith("Republican") else None), "p": round(p, 3)})
     out = [o for o in out if o["p"] > 0.004 or len(out) <= 3]
     return {"src": "Polymarket", "url": f"https://polymarket.com/event/{e['slug']}", "volume": round(float(e.get("volume") or 0)), "vol24": round(sum(float(m.get("volume24hr") or 0) for m in e.get("markets") or [])), "outcomes": sorted(out, key=lambda o: -o["p"])[:4]} if out else None
 
@@ -113,7 +115,8 @@ def wiki_polls(page, want=()):
     names, polls = best
     recent = polls[:5] if True else polls  # Wikipedia lists newest first
     avg = [round(sum(p[k] for p in recent[:5]) / len(recent[:5]), 1) for k in ("a", "b")]
-    return {"src": "Wikipedia", "url": "https://en.wikipedia.org/wiki/" + page.replace(" ", "_") + "#Polling", "names": names, "avg": avg, "n": len(recent), "recent": recent[:3]}
+    return {"src": "Wikipedia", "url": "https://en.wikipedia.org/wiki/" + page.replace(" ", "_") + "#Polling", "names": names, "avg": avg, "n": len(recent), "recent": recent[:3],
+            "trend": [{"pollster": p["pollster"][:40], "dates": p["dates"], "a": p["a"], "b": p["b"]} for p in polls[:20]]}
 
 # ---------- Race ratings (Wikipedia "Predictions" tables aggregate Cook, Sabato, Inside Elections, Silver Bulletin, ...) ----------
 RSCORE = {"safe": 3, "solid": 3, "likely": 2, "lean": 1, "leans": 1, "tilt": .5, "tossup": 0, "toss-up": 0, "toss up": 0}
@@ -208,7 +211,7 @@ def build_one(cfg, cache, pm_cache):
             want = sorted({o["name"].split()[-1].lower() for od in r["odds"] for o in od["outcomes"][:2] if o["party"] in ("D", "R", "I") and o["name"].split()})[:2] if r["odds"] else []
             want = [w for w in want][:2]
             ck = r["id"] + ":" + ",".join(want); c = pc.get(ck)
-            if not c or time.time() - c.get("t", 0) > 6 * 3600:
+            if not c or time.time() - c.get("t", 0) > 6 * 3600 or (c.get("d") and "trend" not in c["d"]):  # v3 adds the poll trend
                 try: c = {"t": time.time(), "d": wiki_polls(pol, want)}
                 except Exception as e: c = {"t": time.time() - 5 * 3600, "d": None, "err": str(e)[:100]}  # retry in ~1h
                 pc[ck] = c

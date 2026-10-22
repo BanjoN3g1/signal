@@ -531,7 +531,7 @@ function renderFilings(p){const F=FL?.filings||[],R=FL?.private||[];
  p.querySelectorAll('[data-ff]').forEach(b=>b.onclick=()=>{flf=b.dataset.ff;renderFilings(p)});wireFilings(p)}
 
 // ---------- Feed: Reels-style weighted shuffle of news, developing stories, X posts and movers ----------
-const VERSION='v23 · Oct 21';
+const VERSION='v24 · Oct 21';
 const JUNK=/\b(which (is|tech|stock)|better buy|should you buy|buy, sell,? or hold|prediction:|reasons to|stock quote price|top analyst reports|if i could only|savvy investors|invested in)\b/i;
 const hrs=iso=>(Date.now()-new Date(iso))/36e5;
 function feedNews(){return (DATA.today?.items||[]).filter(it=>hrs(it.last)<=36&&(it.dev?.summary||(it.score>=4.5&&!JUNK.test(it.title)))).slice(0,24)}

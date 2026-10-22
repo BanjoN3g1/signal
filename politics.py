@@ -186,6 +186,9 @@ def build(out_dir, cache):
     except Exception as e: log("signals failed", e)
     try: out["stream"] = stream(cache)
     except Exception as e: log("stream failed", e)
+    try:
+        import uspol; uspol.enrich(out, E, cache)
+    except Exception as e: log("uspol failed", type(e).__name__, e)
     json.dump(out, open(os.path.join(out_dir, "politics.json"), "w"), separators=(",", ":"))
     log(f"{len(out['signals'])} signals, {len(out['stream'])} stories, {len(out['x']['posts'])} X posts; {round(time.time() - t0)}s")
 
