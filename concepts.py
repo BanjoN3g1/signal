@@ -8,8 +8,8 @@ import llm
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SEED_PATH = os.path.join(ROOT, "data", "concepts.json")
 NEW_PER_RUN = 3      # new terms per refresh (deep level)
-UPGRADE_PER_RUN = 5  # shallow v1 terms upgraded to deep v2 per refresh
-PER_CALL = 3
+UPGRADE_PER_RUN = 4  # shallow v1 terms upgraded to deep v2 per refresh (2 calls)
+PER_CALL = 2         # 2 terms per call keeps each answer long and specific
 V = 2
 def log(*a): print("[concepts]", *a, file=sys.stderr, flush=True)
 
@@ -41,22 +41,30 @@ SEED = [
  ("Stablecoin", ["stablecoins", "USDC", "USDT"]), ("Ad tech", ["programmatic advertising", "ad-tech", "CTV advertising"]),
 ]
 
-SYS = """You are building a deep personal glossary for a junior investment banker (tech: software, semiconductors, AI, internet; M&A and ECM).
-For each term return a JSON object keyed by the exact term with:
-"def": quick plain take, high-school level, 2-3 sentences (an analogy is welcome),
-"how": one-line simple mechanism,
-"why": {"job": 1 sentence for a tech banker, "industry": 1 sentence, "economy": 1 sentence},
-"related": [3-6 short concept names],
+SYS = """You write the deep glossary of a junior tech investment banker (coverage: software, semiconductors, AI, internet; products: M&A, IPOs/ECM, converts, leveraged finance).
+He is smart but new: he needs the quick plain take first, then real depth that a senior analyst would respect. Be specific: name real companies,
+real products, real mechanisms and real turning points. Avoid generic filler ("plays a crucial role", "is increasingly important").
+
+For each term return a JSON object keyed by the exact term:
+"def": the quick plain take, high-school level, 2-3 sentences, one concrete analogy,
+"how": a one-line mechanism,
+"why": {"job": "1 sentence: why it shows up in his deals or models", "industry": "1 sentence", "economy": "1 sentence"},
+"related": [4-6 short concept names],
 "deep": {
- "works": "what it is and how it actually works: more technical but clear, 4-7 sentences (components, mechanics, key trade-offs)",
- "tech": "why it matters for tech: what it enables, which products and business models depend on it (3-5 sentences)",
- "players": [6-10 {"name": company, "ticker": US ticker if public else null, "private": true/false, "role": "supplies|builds|buys|enables", "pos": "market positioning in <= 15 words"}] across the value chain,
- "history": "origins, key turning points, how we got here (3-6 sentences, approximate years ok)",
- "outlook": "3-5 year outlook: catalysts, open debates and risks (3-6 sentences)",
- "value": "value creation and destruction: winners vs losers, margin pools, disruption risk, valuation implications (3-6 sentences)",
- "banker": {"deals": "deal activity and themes: M&A, IPOs, financing (2-4 sentences)", "clients": ["2-3 things clients ask about"], "ask": ["2-3 sharp questions to ask a client or management"]},
- "metrics": [2-5 {"figure": "approximate, well-established number with '~' and a year, e.g. '~$500B (2025)'", "context": "what it measures"}]}.
-Be accurate and neutral. Only well-established facts; numbers must be approximate with a year; if unsure, omit rather than invent.
+ "works": "how it actually works, 5-8 sentences: the components, the mechanics step by step, the key technical trade-offs and constraints",
+ "tech": "what it enables, 4-6 sentences: which products and business models depend on it, and who pays whom",
+ "players": [8-12 entries across the value chain: {"name", "ticker": NYSE/Nasdaq ticker only, else null (e.g. Thales is Euronext-listed -> null, "private": false), "private": true/false, "role": "supplies|builds|buys|enables", "pos": "market position in <= 16 words: share, moat or niche"}], with at least 2 private companies where relevant,
+ "history": "origins -> key turning points -> today, 4-6 sentences with approximate years",
+ "outlook": "3-5 year view, 4-6 sentences: catalysts, the open debates (state both sides), the main risks",
+ "value": "value creation and destruction, 4-6 sentences: who captures the margin pool, who gets disrupted, what it does to growth, margins and valuation multiples",
+ "banker": {"deals": "2-4 sentences on recent deal themes (M&A, IPOs, financing) and why they happen", "clients": ["3 things clients ask about"], "ask": ["3 sharp questions to ask a client or management team"]},
+ "metrics": [3-5 {"figure": "approximate, well-established, with '~' and a year, e.g. '~$100B (2024)'", "context": "what it measures"}]}.
+
+Example of the depth expected (an excerpt for "HBM"; your answers should be at least this specific):
+"works": "HBM stacks 8-16 DRAM dies vertically, connects them with thousands of through-silicon vias, and places the stack next to the GPU on a silicon interposer, giving a 1,024-bit-wide interface instead of DDR's 64 bits. That width, not clock speed, delivers terabytes per second of bandwidth per stack. The hard parts are yield (one bad die can scrap a stack), thermal limits and bonding: SK hynix's MR-MUF versus the TC-NCF approach used by others, with hybrid bonding next. Because it is packaged with the accelerator via CoWoS-style packaging, HBM supply is tied to advanced-packaging capacity.",
+"value": "HBM turned DRAM, historically a commodity with brutal cycles, into a partly contracted, premium product: suppliers pre-sell capacity a year ahead and earn several times the margin of standard DRAM. SK hynix captured early share and re-rated, while laggards lost share at the most profitable node. The risk is the classic memory cycle: if capacity additions overshoot AI demand, pricing power could fade."
+
+Accuracy rules: only well-established facts; numbers must be approximate with '~' and a year; if unsure of a figure, leave it out rather than invent it.
 Return {"<term>": {...}, ...} for every term."""
 
 def cid(term): return re.sub(r"[^a-z0-9]+", "-", term.lower()).strip("-")
@@ -67,29 +75,38 @@ def _clean(term, aliases, r, model):
     w = r.get("why") if isinstance(r.get("why"), dict) else {}
     d = r.get("deep") if isinstance(r.get("deep"), dict) else {}
     b = d.get("banker") if isinstance(d.get("banker"), dict) else {}
-    pl = [{"name": _s(x.get("name"), 40), "ticker": _s(x.get("ticker"), 10) or None, "private": bool(x.get("private")), "role": _s(x.get("role"), 10).lower(), "pos": _s(x.get("pos"), 120)}
-          for x in (d.get("players") or []) if isinstance(x, dict) and x.get("name")][:10]
+    pl, seen = [], set()
+    for x in (d.get("players") or []):
+        if not isinstance(x, dict) or not x.get("name"): continue
+        nm = _s(x.get("name"), 40); k = re.split(r"[\s/(]", nm.lower())[0]
+        if k in seen: continue
+        seen.add(k); tk = _s(x.get("ticker"), 6).upper()
+        pl.append({"name": nm, "ticker": tk if re.fullmatch(r"[A-Z]{1,5}", tk) else None, "private": bool(x.get("private")),
+                   "role": _s(x.get("role"), 10).lower() if _s(x.get("role"), 10).lower() in ("supplies", "builds", "buys", "enables") else "", "pos": _s(x.get("pos"), 130)})
+    pl = pl[:12]
     deep = {"works": _s(d.get("works"), 1400), "tech": _s(d.get("tech"), 1000), "players": pl, "history": _s(d.get("history"), 1200), "outlook": _s(d.get("outlook"), 1200),
             "value": _s(d.get("value"), 1200), "banker": {"deals": _s(b.get("deals"), 900), "clients": [_s(x, 200) for x in (b.get("clients") or [])][:3], "ask": [_s(x, 200) for x in (b.get("ask") or [])][:3]},
             "metrics": [{"figure": _s(x.get("figure"), 40), "context": _s(x.get("context"), 100)} for x in (d.get("metrics") or []) if isinstance(x, dict) and x.get("figure") and "~" in str(x.get("figure")) + str(x.get("context"))][:5]}
+    ok = len(deep["works"]) >= 400 and len(deep["value"]) >= 250 and len(pl) >= 6 and len(deep["metrics"]) >= 2 and deep["history"] and deep["outlook"]
+    if not ok: log("depth gate failed", term, len(deep["works"]), len(deep["value"]), len(pl), len(deep["metrics"])); return None  # stays shallow, retried next run
     return {"term": term, "aliases": aliases, "def": _s(r.get("def"), 600), "how": _s(r.get("how"), 400),
             "why": {k: _s(w.get(k), 260) for k in ("job", "industry", "economy")},
             "players": [p["ticker"] or p["name"] for p in pl][:5], "related": [_s(x, 40) for x in (r.get("related") or [])][:6],
-            "deep": deep if deep["works"] else None, "v": V if deep["works"] else 1, "model": model, "at": dt.date.today().isoformat()}
+            "deep": deep, "v": V, "model": model, "at": dt.date.today().isoformat()}
 
-def generate(terms, cache, role, fallback=True, claude_daily=None):
-    """terms: [(term, aliases)] -> {id: concept}; one call per PER_CALL terms. Claude Sonnet first (paid, approved), Gemini if it errors."""
+def generate(terms, cache, role, fallback=True):
+    """terms: [(term, aliases)] -> {id: concept}; one Gemini call per PER_CALL terms."""
     out = {}
     for i in range(0, len(terms), PER_CALL):
         batch = terms[i:i + PER_CALL]
         msg = "Terms:\n" + "\n".join(f"- {t}" + (f" (also: {', '.join(a[:3])})" if a else "") for t, a in batch)
-        res = llm.claude(SYS + "\nReturn only the JSON object.", msg, cache, max_tokens=3500 * len(batch), daily=claude_daily)
-        if not isinstance(res, dict): res = llm.call(role, SYS, msg, cache, max_tokens=3200 * len(batch), fallback=fallback)
+        res = llm.call(role, SYS, msg, cache, max_tokens=3200 * len(batch), fallback=fallback)
         if not isinstance(res, dict): log("batch failed", [t for t, _ in batch]); break  # quota / outage: stop, retry next run
         low = {k.lower(): v for k, v in res.items() if isinstance(v, dict)}
         for t, a in batch:
             r = low.get(t.lower())
-            if r and r.get("def"): out[cid(t)] = _clean(t, a, r, res.get("_model"))
+            c = _clean(t, a, r, res.get("_model")) if r and r.get("def") else None
+            if c: out[cid(t)] = c
     return out
 
 ORDER = {}  # upgrade in seed order (the terms Sal named first)
@@ -125,15 +142,14 @@ def build(out_dir, cache, items=(), pods=None):
     if llm.available("concepts", cache): st.pop("flash_out_since", None)
     else: st.setdefault("flash_out_since", now.isoformat())
     lite_ok = bool(st.get("flash_out_since")) and (now - dt.datetime.fromisoformat(st["flash_out_since"])).total_seconds() > 86400
-    claude_ok = bool(os.environ.get("ANTHROPIC_API_KEY")) and llm.claude_usage(cache).get(llm._today(), {}).get("calls", 0) < llm.CLAUDE_DAILY
-    can = claude_ok or llm.available("concepts", cache) or lite_ok
+    can = llm.available("concepts", cache) or lite_ok
     if todo and can and llm.remaining("concepts", cache) > 0:
-        add = generate([(t, []) for t in todo], cache, "concepts", fallback=lite_ok, claude_daily=llm.CLAUDE_DAILY)
+        add = generate([(t, []) for t in todo], cache, "concepts", fallback=lite_ok)
         new.update(add); allc.update(add)
         log(f"added {len(add)}: {', '.join(c['term'] for c in add.values())}")
-    up = [(c["term"], c["aliases"]) for i, c in sorted(allc.items(), key=lambda kv: ORDER.get(kv[0], 999)) if c.get("v", 1) < V or ("lite" in str(c.get("model")) and (claude_ok or llm.available("concepts", cache)))][:UPGRADE_PER_RUN]
+    up = [(c["term"], c["aliases"]) for i, c in sorted(allc.items(), key=lambda kv: ORDER.get(kv[0], 999)) if c.get("v", 1) < V or ("lite" in str(c.get("model")) and llm.available("concepts", cache))][:UPGRADE_PER_RUN]
     if up and can and llm.remaining("concepts", cache) > 0:
-        got = generate(up, cache, "concepts", fallback=lite_ok, claude_daily=llm.CLAUDE_DAILY)
+        got = generate(up, cache, "concepts", fallback=lite_ok)
         for i, c in got.items():
             c["aliases"] = allc.get(i, {}).get("aliases", c["aliases"]); c["match"] = allc.get(i, {}).get("match", True)
         new.update(got); allc.update(got); log(f"upgraded {len(got)} to deep: {', '.join(c['term'] for c in got.values())}")
@@ -150,6 +166,6 @@ if __name__ == "__main__" and sys.argv[1:] == ["seed"]:
         got = generate(todo[i:i + PER_CALL], "/tmp/concepts_seed", "concepts", fallback=False)
         for k, c in got.items(): cur[k] = {**c, "aliases": cur.get(k, {}).get("aliases", c["aliases"]), "match": cur.get(k, {}).get("match", True)}
         json.dump({"concepts": cur}, open(SEED_PATH, "w"), indent=1, ensure_ascii=False)
-        u = llm.claude_usage("/tmp/concepts_seed")["total"]; print(i + len(got), "/", len(todo), {k: c["model"] for k, c in got.items()}, u, "est $", llm.claude_cost(u), flush=True)
+        print(i + len(got), "/", len(todo), {k: c["model"] for k, c in got.items()}, flush=True)
 
 ORDER.update({cid(t): i for i, (t, _) in enumerate(SEED)})

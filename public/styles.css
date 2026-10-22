@@ -317,12 +317,3 @@ button.chip{border:0;font:inherit;font-size:12.5px}
 .cxp{display:flex;gap:10px;align-items:flex-start;padding:6px 0;border-bottom:.5px solid var(--line)}.cxp:last-child{border-bottom:0}
 .cxp .chip{flex:none;min-width:44px;justify-content:center}.cxp div{display:flex;flex-direction:column}.cxpn{font-weight:600;font-size:14.5px}
 .cxsub{display:block;font-size:12px;color:var(--sub);text-transform:uppercase;letter-spacing:.05em;margin-top:8px}
-/* v21 ask */
-.btnrow{display:flex;gap:8px}.btnrow .btn{flex:1}
-.askb{border:0;font:inherit;font-weight:600;border-radius:14px;padding:12px 14px;background:rgba(191,90,242,.16);color:#da8fff;font-size:15px}
-.askb.sq{flex:none;padding:12px}.askb.wide{display:block;width:100%;margin:14px 0 6px}
-.askrow{display:flex;gap:8px;align-items:flex-end;margin:8px 0}.askrow textarea{flex:1;background:#1c1c1e;border:0;border-radius:12px;padding:10px 12px;color:var(--txt);font:inherit;font-size:16px;resize:none}
-.askrow .btn{flex:none;padding:10px 16px}
-.askq{background:#2c2c2e;border-radius:14px 14px 4px 14px;padding:8px 12px;margin:10px 0 6px auto;max-width:85%;width:fit-content;font-size:15px}
-.aska{font-size:15px;line-height:1.5}.aska p{margin:6px 0}
-.asktitle{margin:2px 0 6px}.lnk{background:none;border:0;color:var(--teal);font:inherit;padding:0}

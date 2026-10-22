@@ -8,140 +8,27 @@
     "GPU cloud",
     "GPU clouds"
    ],
-   "def": "A neocloud is a newer cloud company that rents out powerful AI chips (GPUs) instead of offering the full menu of services that Amazon, Microsoft and Google do. Think of a specialist rental shop for race cars versus a giant dealership that sells everything. Customers like AI labs rent huge clusters of chips by the hour or on multi-year contracts to train and run models.",
-   "how": "Raise debt and equity, buy tens of thousands of Nvidia GPUs, house them in leased data centers, and rent the compute to AI customers under long-term contracts.",
+   "def": "A neocloud is a specialized cloud computing provider built specifically to rent out massive clusters of high-powered GPUs rather than traditional CPUs. Think of it like renting a fleet of Formula 1 race cars for AI training instead of a fleet of standard delivery vans.",
+   "how": "They aggregate thousands of enterprise-grade AI accelerators with high-speed networking, allowing companies to lease massive compute power on-demand without buying expensive hardware.",
    "why": {
-    "job": "Neoclouds are a heavy source of capital-markets work: IPOs, high-yield and asset-backed debt, GPU-collateralized financing, and data center M&A.",
-    "industry": "They add GPU supply outside the hyperscalers, giving AI labs and enterprises more capacity and giving Nvidia additional strategic customers.",
-    "economy": "They channel large amounts of private credit and equity into AI infrastructure, adding to capex, power demand and construction activity."
+    "job": "Neoclouds drive heavy M&A, debt financing, and equipment leasing deals as they race to buy scarce GPUs and expand infrastructure.",
+    "industry": "They lower the barrier to entry for training frontier AI models, challenging traditional hyperscaler dominance.",
+    "economy": "They reflect surging capital expenditure in AI infrastructure, heavily impacting semiconductor demand and energy grids."
    },
    "players": [
     "CRWV",
-    "NBIS",
-    "Lambda",
-    "Crusoe",
-    "NVDA"
+    "MSFT",
+    "AMZN",
+    "GOOGL",
+    "ORCL"
    ],
    "related": [
-    "Hyperscaler",
     "GPU",
-    "AI training and inference",
-    "Take-or-pay contract",
-    "GPU-backed debt",
-    "Data center colocation"
+    "Inference vs training",
+    "TPU / custom ASIC"
    ],
-   "deep": {
-    "works": "A neocloud buys accelerators (mostly Nvidia H100/H200/Blackwell-class GPUs), installs them in leased or owned data centers with high-speed networking (InfiniBand or Ethernet), and sells access as bare-metal or managed clusters. Revenue typically comes from multi-year committed contracts with a few anchor customers, which lets operators raise debt against contracted cash flows and the GPUs themselves. Key economics are utilization, power cost and availability, GPU purchase price, depreciation schedule (commonly 4-6 years) and customer concentration. Software stack is thinner than hyperscalers, so competition is largely on speed of deployment, price per GPU-hour and cluster performance. The main trade-off is high leverage and fast-obsoleting hardware against a strong, contracted demand backlog.",
-    "tech": "Neoclouds supply the compute that frontier model developers, AI startups and enterprises need when hyperscaler capacity is constrained or expensive. They enable training of large language models and increasingly inference at scale. Business models of AI labs and application startups depend on access to flexible GPU capacity without building their own data centers. Hyperscalers themselves also rent from neoclouds to cover demand spikes.",
-    "players": [
-     {
-      "name": "CoreWeave",
-      "ticker": "CRWV",
-      "private": false,
-      "role": "builds",
-      "pos": "Largest pure-play neocloud; IPO'd 2025; anchored by Microsoft and OpenAI contracts."
-     },
-     {
-      "name": "Nebius Group",
-      "ticker": "NBIS",
-      "private": false,
-      "role": "builds",
-      "pos": "Amsterdam-based, ex-Yandex assets; full-stack AI cloud with Microsoft and Meta deals."
-     },
-     {
-      "name": "Lambda",
-      "ticker": null,
-      "private": true,
-      "role": "builds",
-      "pos": "GPU cloud popular with researchers; Nvidia-backed; has pursued IPO plans."
-     },
-     {
-      "name": "Crusoe",
-      "ticker": null,
-      "private": true,
-      "role": "builds",
-      "pos": "Energy-first AI data center developer; builds large campuses including Stargate site."
-     },
-     {
-      "name": "Nvidia",
-      "ticker": "NVDA",
-      "private": false,
-      "role": "supplies",
-      "pos": "Dominant GPU supplier; also investor in and customer of several neoclouds."
-     },
-     {
-      "name": "IREN",
-      "ticker": "IREN",
-      "private": false,
-      "role": "builds",
-      "pos": "Former bitcoin miner pivoting to AI cloud using owned power and sites."
-     },
-     {
-      "name": "Applied Digital",
-      "ticker": "APLD",
-      "private": false,
-      "role": "builds",
-      "pos": "Builds and leases AI-ready data center capacity, including to CoreWeave."
-     },
-     {
-      "name": "Microsoft",
-      "ticker": "MSFT",
-      "private": false,
-      "role": "buys",
-      "pos": "Major anchor customer of neoclouds to supplement Azure capacity."
-     },
-     {
-      "name": "OpenAI",
-      "ticker": null,
-      "private": true,
-      "role": "buys",
-      "pos": "Largest AI lab buyer; signed multi-billion contracts with CoreWeave and others."
-     },
-     {
-      "name": "Blackstone",
-      "ticker": "BX",
-      "private": false,
-      "role": "enables",
-      "pos": "Major investor in CoreWeave and data center infrastructure; large private credit capital provider."
-     }
-    ],
-    "history": "GPU rental clouds emerged in the late 2010s, with Lambda and CoreWeave (originally an Ethereum mining operation) pivoting to AI compute. The launch of ChatGPT in late 2022 triggered an acute GPU shortage, and neoclouds grew rapidly by securing Nvidia allocations and offering faster deployment than hyperscalers. CoreWeave raised large GPU-backed debt facilities in 2023-2024 and went public in March 2025, becoming the category bellwether. Nebius, IREN and former crypto miners also repurposed power-rich sites for AI. By 2025, multi-billion-dollar contracts with OpenAI, Meta and Microsoft cemented neoclouds as a distinct asset class.",
-    "outlook": "Catalysts include continued AI capex, inference demand growth, and new Nvidia generations that drive refresh cycles. Open debates center on customer concentration, financing sustainability, circular funding (Nvidia investing in customers that buy its chips), and whether hyperscalers eventually crowd them out. Risks include GPU price declines, faster-than-expected hardware obsolescence, power and permitting bottlenecks, and an AI demand slowdown that leaves highly levered operators exposed. Consolidation and a split between scaled winners and sub-scale players seem likely over 3-5 years.",
-    "value": "Value accrues most to Nvidia and to neoclouds with contracted, investment-grade-backed revenue and cheap, secured power. Margin pools are thinner than at hyperscalers because there is little software layering, and depreciation plus interest burden is heavy. Sub-scale operators with uncontracted capacity risk value destruction if GPU rental prices fall. Valuations hinge on contract backlog, cost of capital and perceived hardware residual value, making them highly sensitive to credit markets and AI sentiment.",
-    "banker": {
-     "deals": "Activity spans IPOs and follow-ons, convertible notes, high-yield and delayed-draw term loans secured by GPUs and contracts, and data center M&A and joint ventures. Crypto-miner-to-AI conversions, power-site acquisitions and sovereign AI partnerships are recurring themes.",
-     "clients": [
-      "How to finance GPU fleets at the lowest cost of capital",
-      "How to diversify away from one or two anchor customers",
-      "Public market valuation versus hyperscaler and data center REIT comps"
-     ],
-     "ask": [
-      "What share of contracted revenue comes from the top two customers and what are the termination and credit-support terms?",
-      "What residual value and depreciation life are you assuming on GPUs, and how does that compare to market rental price trends?",
-      "How much power is secured and energized versus just in pipeline?"
-     ]
-    },
-    "metrics": [
-     {
-      "figure": "~$5B revenue (CoreWeave, 2025E)",
-      "context": "Scale of the largest pure-play neocloud, up from ~$1.9B in 2024"
-     },
-     {
-      "figure": "~$25B+ (2025)",
-      "context": "Approximate cumulative contract backlog reported by CoreWeave"
-     },
-     {
-      "figure": "~$300-400B (2025)",
-      "context": "Combined annual AI-related capex by the largest hyperscalers, the context for neocloud demand"
-     },
-     {
-      "figure": "~4-6 years (2025)",
-      "context": "Typical GPU depreciation schedule used by operators"
-     }
-    ]
-   },
-   "v": 2,
-   "model": "claude-sonnet-5-5",
+   "deeper": "Neoclouds face a unique strategic risk: as legacy hyperscalers build out their own internal GPU capacity and lower prices, pure-play neoclouds must prove they can secure sticky enterprise software contracts or risk margin compression. Analysts debate whether they are durable standalone businesses or merely cyclical asset-rental plays subject to rapid hardware obsolescence.",
+   "model": "gemini-3.5-flash-lite",
    "at": "2026-10-21",
    "match": true
   },
@@ -153,12 +40,12 @@
     "qubit",
     "qubits"
    ],
-   "def": "Quantum computing uses the strange rules of physics at the tiniest scales to process information in a new way. Instead of ordinary bits that are either 0 or 1, it uses qubits that can be in combinations of both, a bit like a spinning coin that is neither heads nor tails until it lands. For certain special problems, this could be vastly faster than normal computers.",
-   "how": "Qubits are held in fragile quantum states and manipulated with precise pulses so that wrong answers cancel out and right answers are amplified, then measured.",
+   "def": "Quantum computing is a fundamentally new way of processing information by leveraging the bizarre rules of quantum mechanics instead of traditional computer bits. Imagine a regular computer as a coin that is strictly heads or tails, while a quantum computer is a spinning coin that represents both simultaneously.",
+   "how": "It uses quantum bits, or qubits, which can exist in multiple states at once, allowing the system to evaluate millions of possibilities in parallel.",
    "why": {
-    "job": "Quantum is a thematic growth sector with frequent SPACs, IPOs, PIPEs and strategic M&A, and bankers need to separate real technical milestones from hype.",
-    "industry": "It could eventually disrupt chemistry, materials, optimization and cryptography, and it already drives government funding and big-tech R&D.",
-    "economy": "Success would unlock advances in drug discovery, batteries and logistics, while also threatening current encryption, making it a national security priority."
+    "job": "Quantum startups frequently tap ECM for early-stage capital or go public via SPACs, though valuations are driven by long-term hype rather than near-term cash flow.",
+    "industry": "It threatens to completely break current cybersecurity encryption and revolutionize drug discovery and materials science.",
+    "economy": "Successful commercialization could eventually rewrite the cost curves of logistics, finance, and national defense."
    },
    "players": [
     "IBM",
@@ -168,125 +55,12 @@
     "QBTS"
    ],
    "related": [
-    "Qubit",
-    "Error correction",
-    "Superconducting qubits",
-    "Trapped ion",
-    "Quantum advantage",
-    "Post-quantum cryptography"
+    "Encryption",
+    "TPU / custom ASIC",
+    "GPU"
    ],
-   "deep": {
-    "works": "A qubit is a two-level quantum system that can exist in superposition, and multiple qubits can be entangled so their states are correlated. Algorithms apply sequences of gates that use interference to boost the probability of correct answers when measured. Qubits are physically built from superconducting circuits, trapped ions, neutral atoms, photons or spins in silicon, each with trade-offs in speed, fidelity, connectivity and scalability. The central challenge is noise: qubits lose coherence quickly, so useful machines require quantum error correction, which bundles many physical qubits into one reliable logical qubit. Superconducting systems must run near absolute zero in dilution refrigerators. Quantum computers are expected to complement classical systems, not replace them, excelling at specific tasks like simulating molecules and certain factoring or search problems.",
-    "tech": "Quantum could enable simulation of molecules for pharma and materials, optimization in finance and logistics, and breaking public-key cryptography via Shor's algorithm. Today most revenue comes from cloud access, research contracts and government programs rather than production workloads. Business models include full-stack hardware vendors, cloud quantum services, and software and middleware layers. Adjacent industries such as cryogenics, lasers and control electronics also benefit.",
-    "players": [
-     {
-      "name": "IBM",
-      "ticker": "IBM",
-      "private": false,
-      "role": "builds",
-      "pos": "Superconducting leader with public roadmap toward fault-tolerant systems by ~2029."
-     },
-     {
-      "name": "Alphabet (Google Quantum AI)",
-      "ticker": "GOOGL",
-      "private": false,
-      "role": "builds",
-      "pos": "Demonstrated error-correction progress with Willow chip in 2024."
-     },
-     {
-      "name": "IonQ",
-      "ticker": "IONQ",
-      "private": false,
-      "role": "builds",
-      "pos": "Public trapped-ion pure play; active acquirer of quantum and networking firms."
-     },
-     {
-      "name": "Rigetti Computing",
-      "ticker": "RGTI",
-      "private": false,
-      "role": "builds",
-      "pos": "Small-cap superconducting chip maker with full-stack approach."
-     },
-     {
-      "name": "D-Wave Quantum",
-      "ticker": "QBTS",
-      "private": false,
-      "role": "builds",
-      "pos": "Quantum annealing specialist focused on optimization use cases."
-     },
-     {
-      "name": "Quantinuum",
-      "ticker": null,
-      "private": true,
-      "role": "builds",
-      "pos": "Honeywell-backed trapped-ion leader with high-fidelity systems."
-     },
-     {
-      "name": "PsiQuantum",
-      "ticker": null,
-      "private": true,
-      "role": "builds",
-      "pos": "Photonic approach backed by very large venture funding to build utility-scale machine."
-     },
-     {
-      "name": "Microsoft",
-      "ticker": "MSFT",
-      "private": false,
-      "role": "builds",
-      "pos": "Pursuing topological qubits and offers Azure Quantum cloud access."
-     },
-     {
-      "name": "Nvidia",
-      "ticker": "NVDA",
-      "private": false,
-      "role": "enables",
-      "pos": "Provides GPU simulation and hybrid quantum-classical software and hardware links."
-     },
-     {
-      "name": "Amazon (AWS Braket)",
-      "ticker": "AMZN",
-      "private": false,
-      "role": "enables",
-      "pos": "Cloud marketplace offering access to multiple third-party quantum hardware types."
-     }
-    ],
-    "history": "Richard Feynman and others proposed quantum computers in the early 1980s, and Peter Shor's 1994 factoring algorithm showed a concrete threat to public-key cryptography. Early superconducting and ion-trap qubits were demonstrated in the late 1990s and 2000s. Google claimed quantum supremacy in 2019, and IBM and others published scaling roadmaps. 2021 saw a wave of SPACs for IonQ, Rigetti and D-Wave. Google's 2024 Willow result on error suppression and a 2024-2025 surge in public quantum stock prices renewed investor and government interest.",
-    "outlook": "Catalysts include logical-qubit demonstrations, error-correction milestones, and government programs such as the US National Quantum Initiative and similar efforts in China, the EU and Japan. The key debate is timing: whether commercially useful, fault-tolerant machines arrive within about five years or closer to a decade or more. Risks include technical setbacks, overpromising by public companies, cash burn at pre-revenue firms and competition between qubit modalities where no clear winner exists. Near-term value is likely to come from hybrid workflows, research contracts and quantum-safe security spending.",
-    "value": "Value is concentrated for now in big tech with deep balance sheets and a handful of pure plays valued on option value rather than earnings. Most pure plays have small revenue, large losses and rely on equity raises, which dilutes holders. Winners will likely be those that reach fault tolerance first or own critical enabling layers like control systems and software. Technological disruption risk is high because a breakthrough in one modality can strand investments in another, so valuations are very sensitive to sentiment and milestone news.",
-    "banker": {
-     "deals": "Themes include follow-on equity and ATM raises by public pure plays, PIPEs and venture rounds for private leaders, and consolidation as IonQ and others buy smaller players. Government funding and strategic corporate investments often shape deal structures.",
-     "clients": [
-      "How to fund multi-year R&D burn without excessive dilution",
-      "Which qubit modality is most likely to scale",
-      "How to position a quantum story credibly to public investors"
-     ],
-     "ask": [
-      "What is your roadmap to logical qubits and what error rates have you demonstrated today?",
-      "How much revenue is recurring commercial versus government or grant funding?",
-      "How many years of cash runway do you have and what are the next technical gating milestones?"
-     ]
-    },
-    "metrics": [
-     {
-      "figure": "~$1-2B (2025)",
-      "context": "Rough estimate of annual global quantum computing vendor revenue"
-     },
-     {
-      "figure": "~100-1,000+ physical qubits (2025)",
-      "context": "Typical size of leading gate-based machines, still far below fault-tolerance needs"
-     },
-     {
-      "figure": "~1M physical qubits (2025)",
-      "context": "Commonly cited scale needed for useful fault-tolerant machines running cryptographically relevant al"
-     },
-     {
-      "figure": "~$30B+ (2025)",
-      "context": "Approximate cumulative government quantum funding commitments worldwide"
-     }
-    ]
-   },
-   "v": 2,
-   "model": "claude-sonnet-5-5",
+   "deeper": "While the long-term disruptive potential is immense, junior analysts must separate near-term scientific milestones from commercial viability. The technology suffers from extreme error rates and requires cryogenic cooling, meaning widespread enterprise adoption is likely a decade or more away. Deal activity currently centers on government grants and speculative venture funding rather than profitable enterprise software sales.",
+   "model": "gemini-3.5-flash-lite",
    "at": "2026-10-21",
    "match": true
   },
@@ -297,136 +71,25 @@
     "end-to-end encryption",
     "post-quantum cryptography"
    ],
-   "def": "Encryption scrambles information so only someone with the right key can read it, like locking a message in a box that only your friend can open. It protects things like passwords, bank transfers and private messages from being read by hackers or eavesdroppers. End-to-end encryption goes further by making sure only the sender and recipient can read the message, not even the company running the service.",
-   "how": "Math algorithms turn readable data into scrambled ciphertext using a key; only holders of the correct key can reverse the process.",
+   "def": "Encryption is the mathematical scrambling of data so that only authorized parties with the correct digital key can read it. Think of it like mailing a letter inside a locked metal briefcase where only the recipient holds the physical key.",
+   "how": "It applies complex algorithms to plain text, transforming it into unreadable ciphertext that requires computational power to unlock.",
    "why": {
-    "job": "Security and encryption themes drive M&A and IPO activity in cybersecurity, and banking itself relies on encryption for confidential deal data and client trust.",
-    "industry": "Nearly every software, cloud, payments and messaging product depends on encryption for trust, compliance and customer adoption.",
-    "economy": "Encryption underpins e-commerce, online banking and data privacy regimes, making it foundational infrastructure for the digital economy."
+    "job": "Cybersecurity M&A is a constant deal driver as large software incumbents aggressively acquire encryption and data-privacy startups.",
+    "industry": "It underpins all digital trust, e-commerce, and cloud computing, dictating how safely software enterprises can handle sensitive data.",
+    "economy": "Data breaches and regulatory compliance fines create massive macroeconomic costs, making security spending non-discretionary."
    },
    "players": [
-    "Thales",
-    "Entrust",
-    "DigiCert",
+    "CRWD",
+    "PANW",
     "MSFT",
-    "AMZN"
+    "GOOGL",
+    "AAPL"
    ],
    "related": [
-    "Public-key cryptography",
-    "TLS/HTTPS",
-    "Key management / HSM",
-    "Zero trust",
-    "Post-quantum cryptography",
-    "Data privacy regulation"
+    "Quantum computing"
    ],
-   "deep": {
-    "works": "Symmetric encryption (such as AES) uses one shared key to encrypt and decrypt and is fast enough for bulk data. Asymmetric or public-key encryption (such as RSA and elliptic curve) uses a public key to encrypt and a private key to decrypt, and is used to exchange keys and create digital signatures. Protocols like TLS combine both to secure web traffic, while end-to-end encryption (as in Signal and WhatsApp) keeps keys only on user devices. Data is protected in transit, at rest and, with newer confidential computing and homomorphic techniques, even in use. Security depends not just on algorithms but on key management, often using hardware security modules and cloud key services. The main trade-offs are performance, usability, regulatory demands for lawful access and the risk of lost keys. Post-quantum cryptography uses new math problems believed to resist quantum attacks, with NIST standardizing algorithms such as ML-KEM and ML-DSA in 2024.",
-    "tech": "Encryption enables secure payments, cloud storage, SaaS multi-tenancy, messaging, VPNs and digital identity. Business models in cybersecurity, data protection, cloud key management and secure communications depend on it, and compliance regimes like GDPR, HIPAA and PCI-DSS effectively mandate it. Semiconductor makers embed hardware encryption and secure enclaves, and cloud providers offer encryption as a default feature. The coming transition to post-quantum standards creates a large migration and services opportunity.",
-    "players": [
-     {
-      "name": "Thales",
-      "ticker": null,
-      "private": false,
-      "role": "supplies",
-      "pos": "European leader in hardware security modules and data protection; Euronext-listed."
-     },
-     {
-      "name": "Entrust",
-      "ticker": null,
-      "private": true,
-      "role": "supplies",
-      "pos": "Digital identity and HSM provider with certificate and key management products."
-     },
-     {
-      "name": "DigiCert",
-      "ticker": null,
-      "private": true,
-      "role": "supplies",
-      "pos": "Leading certificate authority and PKI provider; private equity owned."
-     },
-     {
-      "name": "Microsoft",
-      "ticker": "MSFT",
-      "private": false,
-      "role": "enables",
-      "pos": "Embeds encryption and key management across Azure, Windows and Microsoft 365."
-     },
-     {
-      "name": "Amazon (AWS)",
-      "ticker": "AMZN",
-      "private": false,
-      "role": "enables",
-      "pos": "Offers KMS and CloudHSM, making encryption default across its cloud."
-     },
-     {
-      "name": "Cloudflare",
-      "ticker": "NET",
-      "private": false,
-      "role": "enables",
-      "pos": "Terminates and secures massive web traffic with TLS and early post-quantum rollout."
-     },
-     {
-      "name": "Palo Alto Networks",
-      "ticker": "PANW",
-      "private": false,
-      "role": "enables",
-      "pos": "Network and cloud security platform with encrypted traffic inspection."
-     },
-     {
-      "name": "Signal Foundation",
-      "ticker": null,
-      "private": true,
-      "role": "builds",
-      "pos": "Nonprofit behind the Signal protocol, the reference for end-to-end encrypted messaging."
-     },
-     {
-      "name": "Meta Platforms",
-      "ticker": "META",
-      "private": false,
-      "role": "builds",
-      "pos": "Deploys end-to-end encryption to billions via WhatsApp and Messenger."
-     },
-     {
-      "name": "PQShield",
-      "ticker": null,
-      "private": true,
-      "role": "supplies",
-      "pos": "Post-quantum cryptography IP and software vendor for chips and applications."
-     }
-    ],
-    "history": "Modern encryption traces to DES in the 1970s and the invention of public-key cryptography by Diffie, Hellman, Rivest, Shamir and Adleman around 1976-1977. The 1990s 'crypto wars' over export controls and government access ended with strong encryption becoming widely available, enabling SSL and e-commerce. AES was selected in 2001, and the Snowden disclosures in 2013 accelerated adoption of default HTTPS and end-to-end messaging. Shor's algorithm in 1994 flagged the quantum threat, leading NIST to start a post-quantum standardization process in 2016 that produced its first standards in 2024.",
-    "outlook": "The big catalyst is migration to post-quantum cryptography, with governments setting deadlines in the 2030-2035 range and 'harvest now, decrypt later' attacks pushing urgency. Open debates include lawful-access mandates in places like the UK and EU, AI-driven attacks and the practical cost of re-engineering legacy systems. Risks include implementation flaws, poor key hygiene and fragmentation of standards across jurisdictions. Crypto-agility, meaning the ability to swap algorithms without redesigning systems, is becoming a core enterprise requirement.",
-    "value": "Value accrues to platforms that bundle encryption into broader security or cloud offerings, and to specialized vendors of key management, PKI and hardware security with sticky, regulated customers. Standalone encryption features tend to be commoditized as cloud providers bundle them by default, pressuring pure-play margins. Winners in the PQC transition are likely to be vendors with cryptographic inventory and migration tooling. Valuation premiums go to recurring-revenue security platforms with strong net retention, while legacy point products face consolidation.",
-    "banker": {
-     "deals": "Cybersecurity M&A and PE take-privates frequently include data protection, identity and PKI assets, with strategics consolidating into platforms. Early PQC startups attract venture and growth capital, and certificate and HSM businesses have been targets for PE ownership and carve-outs.",
-     "clients": [
-      "How to build or buy a post-quantum readiness offering",
-      "How encryption assets fit into a broader security platform strategy",
-      "Regulatory exposure to lawful-access and data sovereignty rules"
-     ],
-     "ask": [
-      "Do you have a full cryptographic inventory and a plan for migration to PQC standards?",
-      "How much of your revenue is at risk of being bundled away by cloud providers' native encryption?",
-      "How do you manage key custody and what is your exposure to regulatory access demands?"
-     ]
-    },
-    "metrics": [
-     {
-      "figure": "~$200B+ (2025)",
-      "context": "Approximate global cybersecurity market size, of which encryption is a core component"
-     },
-     {
-      "figure": "~90%+ (2025)",
-      "context": "Share of web page loads in Chrome served over HTTPS"
-     },
-     {
-      "figure": "~256-bit (2025)",
-      "context": "Standard AES key length considered secure against quantum search attacks"
-     }
-    ]
-   },
-   "v": 2,
-   "model": "claude-sonnet-5-5",
+   "deeper": "The looming threat of quantum computing creates a specific M&A and R&D imperative known as 'harvest now, decrypt later,' where bad actors steal encrypted data today to unlock it once quantum computers mature. This is driving a nascent upgrade cycle toward post-quantum cryptography standards across financial services and government IT infrastructure.",
+   "model": "gemini-3.5-flash-lite",
    "at": "2026-10-21",
    "match": true
   },
