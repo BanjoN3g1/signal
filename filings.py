@@ -58,19 +58,26 @@ if something isn't in the text, omit it. Return JSON {"headline": "<= 90 chars, 
 "implications": "1-2 sentences for ECM / M&A (window, valuation read-across, sector)", "notable": true if the text shows a raise, valuation
 or deal of about $1B+ or a widely known company, else false, "size_usd_b": number or null (offering / deal size in $B if stated)}"""
 
-def analyze(item, cache, ai):
-    if item["acc"] in ai or not llm.provider() or llm.remaining("filings", cache) <= 0: return
+BIGNUM = re.compile(r"\$\s?\d[\d.,]*\s?billion|\b\d{1,3}(?:,\d{3}){3}\b|in thousands[\s\S]{0,20000}?\b\d{1,3},\d{3},\d{3}\b", re.I)
+
+def analyze(item, cache, ai, star=False):
+    """Returns True if an AI call was spent. Free pre-screen: unknown names whose excerpt never reaches $1B-scale figures are
+    marked not notable without calling the model (micro-cap S-1s are the bulk of EDGAR)."""
+    if item["acc"] in ai or not llm.provider() or llm.remaining("filings", cache) <= 0: return False
     try: txt = doc_text(item["doc"])
-    except Exception as e: log("doc fail", item["acc"], e); return
+    except Exception as e: log("doc fail", item["acc"], e); return False
     ex = excerpt(txt, item["type"])
-    if len(ex) < 400: return
+    if not star and not BIGNUM.search(ex):
+        ai[item["acc"]] = {"screened": True, "notable": False}; return False
+    if len(ex) < 400: return False
     res = llm.call("filings", SYS, f"Company: {item['company']} · Form {item['form']} filed {item['date']}\n\n{ex}", cache, max_tokens=900)
-    if not isinstance(res, dict) or not res.get("what"): return
+    if not isinstance(res, dict) or not res.get("what"): return True
     flat = re.sub(r"[^\d. ]", "", ex.replace(",", ""))
     fin = [f for f in (res.get("financials") or []) if isinstance(f, dict) and f.get("figure") and (re.sub(r"[^\d.]", "", str(f["figure"])).rstrip(".") or "x") in flat][:6]
     ai[item["acc"]] = {"headline": str(res.get("headline") or "")[:120], "what": str(res["what"])[:400], "financials": [{"figure": str(f["figure"])[:40], "context": str(f.get("context", ""))[:90]} for f in fin],
                        "terms": str(res.get("terms") or "")[:500], "risks": [str(x)[:200] for x in (res.get("risks") or [])][:4], "comps": [str(x)[:40] for x in (res.get("comps") or [])][:4],
                        "implications": str(res.get("implications") or "")[:400], "notable": bool(res.get("notable")), "size": res.get("size_usd_b") if isinstance(res.get("size_usd_b"), (int, float)) else None, "model": res.get("_model")}
+    return True
 
 # ---------- private raises / tenders (news RSS) ----------
 GN = "https://news.google.com/rss/search?hl=en-US&gl=US&ceid=US:en&q="
@@ -162,16 +169,16 @@ def build(out_dir, cache, watch=(), names=None):
     try: ai = json.load(open(ap))
     except Exception: ai = {}
     pri = lambda e: (bool(re.search(NOTABLE, e["company"], re.I)) or e["ticker"] in watch, e["type"] == "IPO", e["type"].startswith("Merger"), e["date"])
-    calls = 0  # <= 3 breakdowns per refresh, cached forever by accession
-    for e in sorted(items, key=pri, reverse=True)[:12]:
+    calls = 0  # <= 3 breakdowns per refresh, cached forever by accession; screening is free, so walk up to 30 candidates
+    for e in sorted(items, key=pri, reverse=True)[:30]:
         if calls >= 3 or llm.remaining("filings", cache) <= 0: break
-        if not ai.get(e["acc"]): analyze(e, cache, ai); calls += 1
+        if not ai.get(e["acc"]): calls += bool(analyze(e, cache, ai, pri(e)[0]))
     json.dump(ai, open(ap, "w"))
     xs = load_x(); keep = []
     for e in items:
         a = ai.get(e["acc"]); notable = bool(re.search(NOTABLE, e["company"], re.I)) or e["ticker"] in watch or bool(a and a.get("notable"))
-        if not notable and not (a is None and e["type"] == "IPO" and e["ticker"]): continue  # small / unanalyzed deals drop
-        e["ai"] = a; e["notable"] = notable; e["x"] = xs.get(e["acc"], []); e["link"] = e.pop("doc"); keep.append(e)
+        if not notable: continue  # small or not-yet-screened filings stay out (target: the big ones, not every S-1)
+        e["ai"] = a if a and a.get("what") else None; e["notable"] = notable; e["x"] = xs.get(e["acc"], []); e["link"] = e.pop("doc"); keep.append(e)
     out["filings"] = keep[:40]
     try: out["private"] = private_rounds(cache)
     except Exception as ex: log("private failed", ex)
