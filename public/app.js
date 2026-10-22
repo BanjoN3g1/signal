@@ -465,10 +465,9 @@ let cxq='';
 function renderLearn(p){const S=cxSeen(),all=Object.entries(CX||{}).sort((a,b)=>a[1].term.localeCompare(b[1].term));
  const recent=Object.entries(S).sort((a,b)=>b[1]-a[1]).map(x=>x[0]).filter(i=>CX?.[i]).slice(0,6);
  const list=()=>{const q=cxNorm(cxq);const L=all.filter(([i,c])=>!q||cxNorm([c.term,...(c.aliases||[]),c.def].join(' ')).includes(q));
-  return L.length?L.map(([i,c])=>`<button class="pstory cxrow" data-c="${esc(i)}"><div class="nmeta"><b>${esc(c.term)}</b>${S[i]?'<span class="chip b">Seen</span>':''}</div><p>${esc(c.def.split(/(?<=\.)\s/)[0])}</p></button>`).join(''):'<p class="note">No match.</p>'};
+  return L.length?L.map(([i,c])=>`<button class="pstory cxrow" data-c="${esc(i)}"><div class="nmeta"><b>${esc(c.term)}</b></div><p>${esc(c.def.split(/(?<=\.)\s/)[0])}</p></button>`).join(''):'<p class="note">No match.</p>'};
  p.innerHTML=`<div class="escroll" style="height:100%;padding-bottom:calc(var(--tab) + var(--sab) + 20px)">
   <h4 class="dh">Concepts · your glossary</h4><input class="cxs" type="search" placeholder="Search ${all.length} concepts" value="${esc(cxq)}">
-  ${recent.length&&!cxq?`<div class="pchips">${recent.map(i=>`<button class="pchip on" data-c="${esc(i)}">${esc(CX[i].term)}</button>`).join('')}</div>`:''}
   <div id="cxl">${list()}</div>
   <h4 class="dh">Filings explained</h4><div class="pchips">${Object.entries(EXPL).map(([t,e])=>`<button class="pchip lrn" data-expl="${esc(t)}">📘 ${esc(e[0])}</button>`).join('')}</div>
   <p class="note">Tap any dotted-underlined term in the Feed, news and podcasts to open it. New terms flagged by the summarizers are added a few per refresh.</p></div>`;
