@@ -670,7 +670,9 @@ def main():
     log("wrote feed.json", round(time.time() - t0), json.dumps(STATUS))
     try:  # Elections world (data/elections/*.json configs -> odds, polls, baselines); isolated so it can't break the feed
         import elections; elections.build(DATA, CACHE)
-        import politics; politics.build(DATA, CACHE)
+        import politics, threading  # time-boxed: a stalled upstream (FEC / Wikipedia) must not hold the deploy hostage
+        th = threading.Thread(target=politics.build, args=(DATA, CACHE), daemon=True); th.start(); th.join(240)
+        if th.is_alive(): log("politics timed out after 240s; skipped this run")
     except Exception as e: log("elections/politics failed", e)
     try:  # weekly "What you might have missed" digest from everything above (no AI)
         import weekly; weekly.build(DATA, CACHE)

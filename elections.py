@@ -23,7 +23,7 @@ def get(url, **kw):
             if w > 0: time.sleep(w)
             _LASTW[0] = time.time()
         r = requests.get(url, headers=UA, timeout=20, **kw)
-        if r.status_code == 429 and i < 2: time.sleep(int(r.headers.get("Retry-After", "0") or 0) or 5 * (i + 1)); continue
+        if r.status_code == 429 and i < 2: time.sleep(min(20, int(r.headers.get("Retry-After", "0") or 0) if str(r.headers.get("Retry-After", "0")).isdigit() else 0) or 5 * (i + 1)); continue  # cap: a long Retry-After once stalled the whole refresh
         r.raise_for_status(); return r.json()
 
 def party(label):
