@@ -13,3 +13,4 @@ screenshots/
 *.log
 shots.py
 !data/elections/
+!data/concepts.json

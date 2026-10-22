@@ -232,7 +232,12 @@ For each numbered story you get headlines (with source names) and short blurbs f
 names or details; hedge when only a headline is available. Some sources are marked [paywalled]: you have only their headline.
 Return JSON: {"<id>": {"sum": "1-2 plain-English sentences on what happened", "why": "1 sentence: why it matters for a tech banker (deal flow, comps, financing windows, read-across)",
 "deep": ["3 short bullets: context, what to watch next, read-across to peers or deal activity"],
-"dup": "<id of an EARLIER-listed story in this batch that covers the same event, else null>"}} for every id."""
+"dup": "<id of an EARLIER-listed story in this batch that covers the same event, else null>",
+"cx": [0-2 jargon terms from the story a smart newcomer may not know (tech or finance concepts like "HBM", "neocloud", "take-private"; not company names), each {"term": "short concept name", "here": "1 sentence: what it means in THIS story"}]}} for every id."""
+
+def cxs(r, n=3):
+    """Context lines ('tap to understand'): [{term, here}] returned by the same summary call, no extra AI."""
+    return [{"term": str(x["term"]).strip()[:40], "here": str(x.get("here") or "").strip()[:240]} for x in (r.get("cx") or []) if isinstance(x, dict) and x.get("term")][:n]
 
 def summarize(cands, cache, max_calls=1, per_call=18):
     p = llm.provider()
@@ -249,7 +254,7 @@ def summarize(cands, cache, max_calls=1, per_call=18):
             for s in c["sources"][:6]:
                 pw = bool(PAYWALL.search(s["source"] or ""))
                 lines.append(f"- {s['source']}{' [paywalled]' if pw else ''}: {s['title']}" + (f" — {s['desc'][:280]}" if s.get("desc") and not pw else ""))
-        res = llm.call("news", NEWS_SYS, "\n".join(lines), cache, max_tokens=220 * len(batch)); calls += 1
+        res = llm.call("news", NEWS_SYS, "\n".join(lines), cache, max_tokens=280 * len(batch)); calls += 1
         if isinstance(res, dict):
             for c in batch:
                 r = res.get(c["id"])
@@ -257,7 +262,7 @@ def summarize(cands, cache, max_calls=1, per_call=18):
                     done.setdefault("_dups", {})[c["id"]] = r["dup"]
                 if isinstance(r, dict) and r.get("sum"):
                     done[c["id"]] = {"sum": str(r["sum"]).strip(), "why": str(r.get("why") or "").strip(),
-                                     "deep": [str(x).strip() for x in (r.get("deep") or [])][:4], "model": res.get("_model"), "n": len(c["sources"])}
+                                     "deep": [str(x).strip() for x in (r.get("deep") or [])][:4], "model": res.get("_model"), "n": len(c["sources"]), "cx": cxs(r)}
     json.dump(done, open(cp, "w"))
     return done
 
@@ -269,6 +274,7 @@ Return JSON {"<id>": {"headline": "neutral, specific headline (<= 90 chars)",
  "summary": "2-3 sentence plain-English summary",
  "numbers": [{"figure": "exact figure as written in the sources, e.g. $5.66B or 161%", "context": "what it measures (<= 12 words)"}],
  "implications": [{"area": "M&A|ECM|Valuation|Sector|Markets", "text": "1 sentence for a tech banker"}]}}.
+Also "cx": [0-3 jargon terms from the story a smart newcomer may not know (tech or finance concepts like "HBM", "neocloud", "take-private"; not company names), each {"term": "short concept name", "here": "1 sentence: what it means in THIS story"}].
 Give 0-4 numbers (only figures that appear in the text) and 2-3 implications. Every id must be present."""
 
 def distinct(c): return len({s["source"] for s in c["sources"]})
@@ -300,7 +306,7 @@ def develop(cands, cache, max_calls=2, per_call=3):
                 done[c["id"]] = {"headline": str(r.get("headline") or "")[:120], "happened": [str(x)[:220] for x in (r.get("happened") or [])][:5],
                                  "summary": str(r["summary"])[:700], "numbers": nums,
                                  "implications": [{"area": str(x.get("area", ""))[:20], "text": str(x.get("text", ""))[:260]} for x in (r.get("implications") or []) if isinstance(x, dict)][:3],
-                                 "n": distinct(c), "model": res.get("_model"), "at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")}
+                                 "n": distinct(c), "cx": cxs(r), "model": res.get("_model"), "at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")}
     json.dump(done, open(cp, "w"))
     return done
 
@@ -338,7 +344,7 @@ def build(watch, news_by_ticker, sec, names, cache):
         lead = free[0] if free else srcs[0]
         a = ai.get(c["id"]) or {}
         out.append({"id": c["id"], "aliases": c.get("aliases", []), "title": lead["title"], "first": c["first"], "last": c["last"], "score": sc, "tags": tags, "tickers": c["tickers"],
-                    "sum": a.get("sum"), "why": a.get("why"), "deep": a.get("deep") or [], "model": a.get("model"),
+                    "sum": a.get("sum"), "why": a.get("why"), "deep": a.get("deep") or [], "model": a.get("model"), "cx": a.get("cx") or [],
                     "paywalled": sorted(set(pay)), "freeCoverage": bool(free), "sources": [{k: s.get(k) for k in ("source", "title", "url", "date")} | {"paywalled": bool(PAYWALL.search(s["source"] or ""))} for s in srcs[:12]],
                     "nSources": distinct(c), "runs": c.get("runs", 1), "dev": dev.get(c["id"]) if c in dev_c or c["id"] in dev else None,
                     "x": []})  # slot for X posts, filled later by a separate job

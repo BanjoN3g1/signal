@@ -40,6 +40,15 @@ Each filing type links to a Learn explainer (How to read an S-1, merger proxies,
 "What you might have missed": a rolling 7-day log (`data/cache/weekly_log.json`) of the top items per lane (News, Filings & Deals, Earnings,
 Politics, Podcasts) from existing outputs. No AI calls.
 
+## Concepts ('tap to understand', `concepts.py` → `data/concepts.json`)
+A glossary generated once per term and reused everywhere. `data/concepts.json` (committed) has the seed set: 50 terms made offline in
+7 batched calls with `python3 concepts.py seed`. For each term it holds a plain definition, how it works, why it matters (job, industry, economy),
+key players, related concepts and a go-deeper paragraph. Aliases are curated in `SEED`. Context lines come from the SAME summary calls
+(news `cx`, Developing `cx`, podcast `concepts`: `{term, here}`), so no extra calls. Each refresh writes up to 4 flagged terms that the glossary
+lacks into `data/cache/concepts_new.json`, using 1 Flash-Lite call (role `concepts`, cap 4/day). The client matches terms and aliases in cards,
+Developing summaries, Dig in and podcast takeaways, underlining at most 3 per card. Tapping one opens a sheet with what it is, what it means here,
+why you'd care, related concepts, where it's showing up, and a go-deeper section. Learn → Concepts lists everything, with search and recently-seen terms.
+
 ## Coverage universe
 Software, semis, AI **and internet** (platforms & ads, marketplaces & e-commerce, fintech). Internet groups are in `watchlist.json` and
 are added once to existing phone watchlists; news relevance has an "Internet" tag. Podcasts include The Journal (WSJ & Spotify) via its public RSS.

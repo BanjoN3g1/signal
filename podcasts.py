@@ -167,7 +167,8 @@ Every item must point to the passage(s) that support it: "p" = first passage num
 and "q" = a short phrase copied word-for-word from that passage (6-15 words) so it can be highlighted.
 Each item also gets "x", a short explainer for the banker: {"bg": background a newcomer needs (1 sentence), "why": why it matters (1 sentence), "so": implication for software/semis banking, e.g. M&A, ECM, comps (1 sentence)}.
 Return JSON: {"takeaways": [3-5 items], "tidbits": [2-3 surprising or memorable specifics], "quotes": [2 notable verbatim quotes, "t" is the quote itself],
-"implications": [2-3 items on what it means for software/semis markets, M&A or capital markets; if nothing relevant, one item saying "Not much for software/semis"]}
+"implications": [2-3 items on what it means for software/semis markets, M&A or capital markets; if nothing relevant, one item saying "Not much for software/semis"],
+"concepts": [up to 5 jargon terms discussed that a smart newcomer may not know (tech/finance concepts like "neocloud", "HBM", "tender offer"; not names), each {"term": "short concept name", "here": "1 sentence: what it means in THIS conversation"}]}
 where every item is {"t": text, "p": int, "p2": int, "q": str, "x": {"bg": str, "why": str, "so": str}}."""
 SUMMARY_V = 2  # v2 = items carry passage refs + explainers (drill-down)
 
@@ -217,6 +218,7 @@ def summarize(ep, text, blocks):
             out = {"kind": "ai", "v": SUMMARY_V, "model": res.get("_model"), "timed": timed}
             for k in ("takeaways", "tidbits", "quotes", "implications"):
                 out[k] = [x for x in (anchor(i, blocks) for i in (res.get(k) or [])) if x]
+            out["concepts"] = [{"term": str(x["term"]).strip()[:40], "here": str(x.get("here") or "").strip()[:240]} for x in (res.get("concepts") or []) if isinstance(x, dict) and x.get("term")][:5]
             return out
     key, nums = extractive(text)
     return {"kind": "extract", "v": SUMMARY_V, "timed": timed, "quotes": [x for x in (anchor({"t": q, "q": q}, blocks or []) for q in key) if x], "numbers": nums}

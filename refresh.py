@@ -675,6 +675,12 @@ def main():
     try:  # weekly "What you might have missed" digest from everything above (no AI)
         import weekly; weekly.build(DATA, CACHE)
     except Exception as e: log("weekly failed", e)
+    try:  # concept glossary: seed + at most 4 new terms per run that the summarizers flagged
+        import concepts
+        try: pods = json.load(open(os.path.join(ROOT, "data", "podcasts", "podcasts.json")))
+        except Exception: pods = None
+        concepts.build(DATA, CACHE, (today or {}).get("items", []), pods)
+    except Exception as e: log("concepts failed", e)
 
 if __name__ == "__main__":
     main()

@@ -2,7 +2,7 @@
 const $=(s,r=document)=>r.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const app=$('#app');
-let FL=null,WK=null,DATA=null, WL=null, refreshing=false, tab='feed', earnSeg='upcoming';
+let FL=null,WK=null,CX=null,DATA=null, WL=null, refreshing=false, tab='feed', earnSeg='upcoming';
 
 const I={
  file:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>',
@@ -39,7 +39,7 @@ function groupOf(t){for(const g of WL?.groups||[])if(g.tickers.includes(t))retur
 // ---------- data ----------
 async function loadData(){
  const gj=async u=>{try{const r=await fetch(u+'?t='+Date.now(),{cache:'no-store'});return r.ok?await r.json():null}catch(e){return null}};
- const [d,f,w]=await Promise.all([gj('data/feed.json'),gj('data/filings.json'),gj('data/weekly.json')]);if(d)DATA=d;if(f)FL=f;if(w)WK=w;
+ const [d,f,w,c]=await Promise.all([gj('data/feed.json'),gj('data/filings.json'),gj('data/weekly.json'),CX?null:gj('data/concepts.json')]);if(d)DATA=d;if(f)FL=f;if(w)WK=w;if(c)cxInit(c);
  if(!WL){WL=loadLocalWL();if(!WL){try{WL=await (await fetch('watchlist_default.json')).json()}catch(e){WL=DATA?{groups:DATA.groups}:{groups:[]}}}migrateWL()}
 }
 const ago=iso=>{const m=Math.max(0,Math.round((Date.now()-new Date(iso))/6e4));return m<1?'just now':m<60?m+' min ago':m<1440?Math.round(m/60)+' hr ago':Math.round(m/1440)+' days ago'};
@@ -141,7 +141,7 @@ function renderWork(){
  if(tab==='filings')return renderFilings(p);
  if(!DATA){p.innerHTML='<div class="empty"><h2>No data yet</h2><p>Tap refresh to pull the first snapshot.</p></div>';return}
  if(tab==='feed')renderFeed(p);else if(tab==='earnings')renderEarnings(p);
- else p.innerHTML=`<div class="empty"><div class="big">🎓</div><h2>Learn — coming next</h2><p>Bite-size lessons with optional “walk me through the numbers” and quick-check questions. A few lessons already live in your Feed.</p></div>`;
+ else renderLearn(p);
 }
 
 // ---------- deal room (logic in deals.js) ----------
@@ -207,9 +207,9 @@ async function renderPods(p){
  p.querySelectorAll('[data-e]').forEach(b=>b.onclick=()=>openPod(PODS.episodes.find(e=>e.key===b.dataset.e)));
 }
 function podArt(id){const s=PODS.shows.find(x=>x.id===id);return s?.art?`<img class="logo" src="${esc(s.art)}" alt="" loading="lazy">`:logo(id.toUpperCase())}
-function openPod(e){const s=e.summary||{},src=e.source||{};
+function openPod(e){const s=e.summary||{},src=e.source||{};const K=cxCtx('p:'+e.key,s.concepts,e.showName+' — '+e.title,6),M=t=>cxMark(t,K);
  const dig=x=>x&&typeof x==='object'&&(x.p!=null||x.x);
- const li=(k,quote)=>{const a=s[k]||[];return a.length?`<ul class="dl dig">${a.map((x,i)=>`<li>${dig(x)?`<button class="digrow" data-k="${k}" data-i="${i}"><span>${quote?'“'+esc(itx(x))+'”':esc(itx(x))}</span><span class="digin">Dig in<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></span></button>`:quote?`<div class="quote">${esc(itx(x))}</div>`:esc(itx(x))}</li>`).join('')}</ul>`:''};
+ const li=(k,quote)=>{const a=s[k]||[];return a.length?`<ul class="dl dig">${a.map((x,i)=>`<li>${dig(x)?`<button class="digrow" data-k="${k}" data-i="${i}"><span>${quote?'“'+esc(itx(x))+'”':M(itx(x))}</span><span class="digin">Dig in<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></span></button>`:quote?`<div class="quote">${esc(itx(x))}</div>`:M(itx(x))}</li>`).join('')}</ul>`:''};
  const sh=sheet(esc(e.showName),`<h3>${esc(e.title)}</h3><p class="note">${esc(dshort(e.date.slice(0,10)))}${e.dur?' · '+mins(e.dur):''}${e.words?' · '+e.words.toLocaleString()+' words transcribed':''}</p>
   ${e.pending?'<p>This episode hasn’t been transcribed yet. Check back after the next podcast refresh.</p>':s.kind==='ai'?`<h4 class="dh">Key takeaways</h4>${li('takeaways')}<h4 class="dh">Interesting tidbits</h4>${li('tidbits')}${(s.quotes||[]).length?`<h4 class="dh">Quotes</h4>${li('quotes',1)}`:''}<h4 class="dh">For software / semis</h4>${li('implications')}`
    :`<h4 class="dh">Key moments (quoted)</h4>${li('quotes',1)}${(s.numbers||[]).length?`<h4 class="dh">Numbers mentioned</h4>${(s.numbers||[]).map(q=>`<div class="quote">${esc(q)}</div>`).join('')}`:''}<p class="note">Picked automatically from the transcript, not written by AI.</p>`}
@@ -225,10 +225,11 @@ const ts=x=>{x=Math.max(0,Math.floor(x));const h=Math.floor(x/3600),m=Math.floor
 function markQ(t,q){const h=esc(t);if(!q)return h;const k=h.toLowerCase().indexOf(esc(q).toLowerCase());return k<0?h:h.slice(0,k)+'<mark>'+h.slice(k,k+esc(q).length)+'</mark>'+h.slice(k+esc(q).length)}
 async function openDig(e,it,kind){
  const lab={takeaways:'Takeaway',tidbits:'Tidbit',quotes:'Quote',implications:'For software / semis'}[kind]||'Dig in',x=it.x||{};
- const sh=sheet('Dig in',`<div class="kicker">${esc(lab)} · ${esc(e.showName)}</div><p class="digt">${kind==='quotes'?'“'+esc(it.t)+'”':esc(it.t)}</p>
+ const K=cxCtx('p:'+e.key,e.summary?.concepts,e.showName+' — '+e.title,4),M=t=>cxMark(t,K);
+ const sh=sheet('Dig in',`<div class="kicker">${esc(lab)} · ${esc(e.showName)}</div><p class="digt">${kind==='quotes'?'“'+esc(it.t)+'”':M(it.t)}</p>
   ${it.p!=null?'<h4 class="dh">From the transcript</h4><div class="tx" id="tx"><p class="note">Loading transcript…</p></div>':''}
   <div id="play"></div>
-  ${x.bg||x.why||x.so?`<h4 class="dh">Explainer</h4><div class="xpl">${x.bg?`<div><b>Background</b><p>${esc(x.bg)}</p></div>`:''}${x.why?`<div><b>Why it matters</b><p>${esc(x.why)}</p></div>`:''}${x.so?`<div><b>In your seat</b><p>${esc(x.so)}</p></div>`:''}</div><p class="note">Explainer written by AI from this episode’s transcript — check before relying on it.</p>`:''}`);
+  ${x.bg||x.why||x.so?`<h4 class="dh">Explainer</h4><div class="xpl">${x.bg?`<div><b>Background</b><p>${M(x.bg)}</p></div>`:''}${x.why?`<div><b>Why it matters</b><p>${M(x.why)}</p></div>`:''}${x.so?`<div><b>In your seat</b><p>${M(x.so)}</p></div>`:''}</div><p class="note">Explainer written by AI from this episode’s transcript — check before relying on it.</p>`:''}`);
  if(it.p==null)return;
  let B=SEGS[e.key];
  if(!B){try{const r=await fetch(`data/pods/seg_${e.key}.json`);if(r.ok)B=SEGS[e.key]=await r.json()}catch(_){}}
@@ -365,17 +366,18 @@ function openNewsList(f){f=f||'All';const T=DATA.today,W=wlTickers();
  s.querySelectorAll('[data-n]').forEach(b=>b.onclick=()=>openNews(b.dataset.n));
 }
 function openNews(id){const it=DATA.today.items.find(x=>x.id===id);if(!it)return;const free=it.sources.filter(s=>!s.paywalled);
+ const K=cxCtx('n:'+it.id,(it.dev?.cx||[]).concat(it.cx||[]),it.dev?.headline||it.title,5),M=t=>cxMark(t,K);
  const pwNote=it.paywalled.length?(it.freeCoverage?`🔒 ${esc(it.paywalled.join(', '))} ${it.paywalled.length>1?'are':'is'} paywalled — summarized from free coverage (${esc([...new Set(free.map(s=>s.source))].slice(0,3).join(', '))}).`:`🔒 Paywalled (${esc(it.paywalled.join(', '))}) and no free coverage yet — summary is from the headline only.`):'';
  sheet('Dig in',`<div class="kicker">${it.tags.map(esc).join(' · ')||'News'}${it.tickers.length?' · '+it.tickers.map(esc).join(', '):''}</div><h3>${esc(it.title)}</h3>
   <p class="note">First seen ${esc(fmtPT(it.first))}${it.last!==it.first?' · latest '+esc(fmtPT(it.last)):''} · ${it.sources.length} headline${it.sources.length>1?'s':''}</p>
   ${it.dev?`<div class="kicker"><span class="chip o"><i class="live"></i>Developing</span><span class="note">${it.nSources||''} sources</span></div>${it.dev.headline?`<p><b>${esc(it.dev.headline)}</b></p>`:''}
-   <h4 class="dh">What happened</h4><ul class="dl">${(it.dev.happened||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
-   <h4 class="dh">Summary</h4><p>${esc(it.dev.summary)}</p>
+   <h4 class="dh">What happened</h4><ul class="dl">${(it.dev.happened||[]).map(x=>`<li>${M(x)}</li>`).join('')}</ul>
+   <h4 class="dh">Summary</h4><p>${M(it.dev.summary)}</p>
    ${it.dev.numbers?.length?`<h4 class="dh">Key numbers</h4><div class="nums">${it.dev.numbers.map(x=>`<div><b>${esc(x.figure)}</b><span>${esc(x.context)}</span></div>`).join('')}</div>`:''}
    ${it.dev.implications?.length?`<div class="whybox"><b>Implications</b>${it.dev.implications.map(x=>`<p><b>${esc(x.area)}:</b> ${esc(x.text)}</p>`).join('')}</div>`:''}`
-  :it.sum?`<p>${esc(it.sum)}</p>`:'<p class="note">AI summary pending — it’s added at the next refresh.</p>'}
-  ${!it.dev&&it.why?`<div class="whybox"><b>Why it matters for a tech banker</b><p>${esc(it.why)}</p></div>`:''}
-  ${!it.dev&&it.deep?.length?`<h4 class="dh">Deeper dive</h4><ul class="dl">${it.deep.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}
+  :it.sum?`<p>${M(it.sum)}</p>`:'<p class="note">AI summary pending — it’s added at the next refresh.</p>'}
+  ${!it.dev&&it.why?`<div class="whybox"><b>Why it matters for a tech banker</b><p>${M(it.why)}</p></div>`:''}
+  ${!it.dev&&it.deep?.length?`<h4 class="dh">Deeper dive</h4><ul class="dl">${it.deep.map(x=>`<li>${M(x)}</li>`).join('')}</ul>`:''}
   ${pwNote?`<p class="note">${pwNote}</p>`:''}
   ${xHTML(it.x)}
   <h4 class="dh">All sources</h4>${it.sources.map(s=>`<a class="nrow" href="${esc(s.url)}" target="_blank" rel="noopener"><b>${s.paywalled?'🔒 ':''}${esc(s.title)}</b><span class="note">${esc(s.source)} · ${esc(fmtPT(s.date))}</span></a>`).join('')}
@@ -391,7 +393,7 @@ function xFeed(){const seen=new Set(),out=[],T=DATA.today?.items||[];
   .filter((x,i,arr)=>arr.findIndex(y=>y.handle===x.handle)===i)}
 function devCard(it){const d=it.dev,n=it.nSources||new Set(it.sources.map(s=>s.source)).size;
  return `<section class="slide"><div class="card devc"><div class="kicker"><span class="chip o"><i class="live"></i>Developing</span>${it.tickers.slice(0,2).map(t=>`<span class="chip">${esc(t)}</span>`).join('')}<span class="note">${n} sources · ${hAgo(it.last)} ago</span></div>
-  <h3 class="devh">${esc(d.headline||it.title)}</h3><p class="devs">${esc(d.summary)}</p>
+  ${(()=>{const k=cxCtx('n:'+it.id,(d.cx||[]).concat(it.cx||[]),d.headline||it.title);return `<h3 class="devh">${cxMark(d.headline||it.title,k)}</h3><p class="devs">${cxMark(d.summary,k)}</p>`})()}
   ${d.numbers?.length?`<div class="nums">${d.numbers.slice(0,3).map(x=>`<div><b>${esc(x.figure)}</b><span>${esc(x.context)}</span></div>`).join('')}</div>`:''}
   ${d.happened?.length?`<ul class="dl">${d.happened.slice(0,3).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}
   <div style="flex:1"></div><button class="btn" data-n="${esc(it.id)}">Learn more</button></div></section>`}
@@ -403,6 +405,65 @@ function xCard(x){const h=String(x.handle||'').replace(/^@/,''),st=x.story;
   <p class="xt">${esc(x.text||'')}</p>
   <div class="xs">${x.likes!=null?`♥ ${kfmt(x.likes)}`:''}${x.reposts!=null?` · ↻ ${kfmt(x.reposts)}`:''}${x.note?` · ${esc(x.note)}`:''}</div>
   <div style="flex:1"></div>${tie}<a class="note xlink" href="${esc(x.url)}" target="_blank" rel="noopener">Open on X ↗</a></div></section>`}
+
+// ---------- Concepts: 'tap to understand' (data/concepts.json, generated once per term and reused everywhere) ----------
+let CXL=[],CXRX=null;const CXC={};
+const cxNorm=s=>String(s||'').toLowerCase().replace(/[’']/g,"'").replace(/\s+/g,' ').trim();
+const reEsc=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+function cxInit(c){CX=c.concepts||{};CXL=[];
+ Object.entries(CX).forEach(([id,x])=>[x.term,...(x.aliases||[])].forEach(a=>{if(a&&a.length>1)CXL.push([a,id,/^[A-Z0-9\-\/]+$/.test(a.replace(/s$/,''))])}));
+ CXL.sort((a,b)=>b[0].length-a[0].length);CXRX=CXL.length?new RegExp('(^|[^\\w-])('+CXL.map(x=>reEsc(x[0])).join('|')+')(?![\\w-])','gi'):null}
+function cxId(term){if(!CX)return null;const t=cxNorm(term);if(CX[t.replace(/[^a-z0-9]+/g,'-')])return t.replace(/[^a-z0-9]+/g,'-');
+ const h=CXL.find(x=>cxNorm(x[0])===t||cxNorm(x[0])===t.replace(/s$/,''));return h?h[1]:null}
+// a context = the item a term was tapped in: its AI context lines ({term, here}), title, and a per-card underline budget
+function cxCtx(key,lines,title,max=3){const L=(lines||[]).filter(x=>x&&x.term);CXC[key]={key,lines:L,title,max,used:new Set()};return CXC[key]}
+function cxMark(text,k){let h=esc(text||'');if(!k||!text||k.used.size>=k.max)return h;
+ const extra=k.lines.filter(l=>!cxId(l.term)&&l.term.length>2);  // terms the AI flagged that the glossary doesn't have yet
+ const rx=extra.length?new RegExp('(^|[^\\w-])('+[...extra.map(l=>reEsc(esc(l.term))),...CXL.map(x=>reEsc(x[0]))].join('|')+')(?![\\w-])','gi'):CXRX;if(!rx)return h;
+ return h.replace(rx,(m,pre,w)=>{if(k.used.size>=k.max)return m;
+  let id=null;const hit=CXL.find(x=>x[0].toLowerCase()===w.toLowerCase());
+  if(hit){if(hit[2]&&hit[0]!==w&&hit[0]+'s'!==w)return m;id=hit[1]}else{const l=extra.find(l=>esc(l.term).toLowerCase()===w.toLowerCase());if(!l)return m;id='~'+l.term}
+  if(k.used.has(id))return m;k.used.add(id);return `${pre}<span class="cx" data-cx="${esc(id)}" data-k="${esc(k.key)}">${w}</span>`})}
+const cxSeen=()=>{try{return JSON.parse(localStorage.getItem('signal.cxseen')||'{}')}catch(e){return {}}};
+function cxRx(id){const c=CX?.[id];if(!c)return null;return new RegExp('(^|[^\\w-])('+[c.term,...(c.aliases||[])].map(reEsc).join('|')+')(?![\\w-])','i')}
+function cxWhere(id,skip){const rx=cxRx(id);if(!rx)return [];const out=[];
+ (DATA?.today?.items||[]).forEach(it=>{if('n:'+it.id===skip)return;if(rx.test([it.title,it.sum,it.dev?.summary].join(' '))||(it.cx||[]).concat(it.dev?.cx||[]).some(l=>cxId(l.term)===id))out.push({k:'n',it})});
+ (PODS?.episodes||[]).forEach(e=>{if('p:'+e.key===skip)return;const s=e.summary||{};if((s.concepts||[]).some(l=>cxId(l.term)===id)||rx.test((s.takeaways||[]).map(itx).join(' ')))out.push({k:'p',e})});
+ return out.slice(0,5)}
+function openConcept(id,key,sh){const k=CXC[key];const tmp=id[0]==='~';const c=tmp?null:CX?.[id];
+ const line=k?.lines.find(l=>tmp?l.term===id.slice(1):cxId(l.term)===id);
+ if(c){const S=cxSeen();S[id]=Date.now();localStorage.setItem('signal.cxseen',JSON.stringify(S))}
+ const rel=(c?.related||[]).map(r=>[r,cxId(r)]).filter(([r,i])=>i!==id),where=c?cxWhere(id,key):[];
+ const body=`<div class="kicker">Concept</div><h3 class="cxh">${esc(c?.term||id.slice(1))}</h3>
+  ${c?`<p class="cxdef">${esc(c.def)}</p>${c.how?`<p class="note cxhow">${esc(c.how)}</p>`:''}`:'<p class="note">Not in your glossary yet — a full explainer is written for it at an upcoming refresh.</p>'}
+  ${line?.here?`<div class="whybox"><b>In this ${key?.[0]==='p'?'conversation':'story'}</b><p>${esc(line.here)}</p>${k?.title?`<span class="note">${esc(k.title.slice(0,90))}</span>`:''}</div>`:''}
+  ${c?.why&&(c.why.job||c.why.industry)?`<h4 class="dh">Why you’d care</h4><div class="cxwhy">${[['Your job',c.why.job],['Industry',c.why.industry],['Economy',c.why.economy]].filter(x=>x[1]).map(([l,t])=>`<div><b>${l}</b><p>${esc(t)}</p></div>`).join('')}</div>`:''}
+  ${c?.players?.length?`<h4 class="dh">Key players</h4><div class="r2">${c.players.map(t=>DATA?.quotes?.[t]?`<button class="chip b" data-deep="${esc(t)}">${esc(t)}</button>`:`<span class="chip">${esc(t)}</span>`).join('')}</div>`:''}
+  ${rel.length?`<h4 class="dh">Related</h4><div class="r2">${rel.map(([r,i])=>i?`<button class="chip cxchip" data-hop="${esc(i)}">${esc(CX[i].term)}</button>`:`<span class="chip">${esc(r)}</span>`).join('')}</div>`:''}
+  ${where.length?`<h4 class="dh">Where it’s showing up</h4>${where.map(w=>w.k==='n'?`<button class="nrow cxw" data-n="${esc(w.it.id)}"><b>${esc(w.it.dev?.headline||w.it.title)}</b><span class="note">News · ${hAgo(w.it.last)} ago</span></button>`:`<button class="nrow cxw" data-pe="${esc(w.e.key)}"><b>${esc(w.e.title)}</b><span class="note">${esc(w.e.showName)} · podcast</span></button>`).join('')}`:''}
+  ${c?.deeper?`<details class="cxd"><summary>Go deeper</summary><p>${esc(c.deeper)}</p></details>`:''}
+  <p class="note">${c?`Glossary entry written once by ${esc(c.model||'AI')} and reused everywhere; `:''}${line?'the “in this story” line comes from the same AI call that summarized this item. ':''}General education — verify before relying on it.</p>`;
+ if(sh)sh.querySelector('.bd').innerHTML=body,sh.querySelector('.bd').scrollTop=0;else sh=sheet('Concept',body);
+ const bd=sh.querySelector('.bd');
+ bd.querySelectorAll('[data-hop]').forEach(b=>b.onclick=()=>openConcept(b.dataset.hop,null,sh));
+ bd.querySelectorAll('[data-deep]').forEach(b=>b.onclick=()=>openDeep(b.dataset.deep));
+ bd.querySelectorAll('[data-n]').forEach(b=>b.onclick=()=>openNews(b.dataset.n));
+ bd.querySelectorAll('[data-pe]').forEach(b=>b.onclick=()=>openPod(PODS.episodes.find(e=>e.key===b.dataset.pe)));}
+document.addEventListener('click',ev=>{const t=ev.target.closest&&ev.target.closest('.cx');if(!t)return;ev.preventDefault();ev.stopPropagation();openConcept(t.dataset.cx,t.dataset.k)},true);
+let cxq='';
+function renderLearn(p){const S=cxSeen(),all=Object.entries(CX||{}).sort((a,b)=>a[1].term.localeCompare(b[1].term));
+ const recent=Object.entries(S).sort((a,b)=>b[1]-a[1]).map(x=>x[0]).filter(i=>CX?.[i]).slice(0,6);
+ const list=()=>{const q=cxNorm(cxq);const L=all.filter(([i,c])=>!q||cxNorm([c.term,...(c.aliases||[]),c.def].join(' ')).includes(q));
+  return L.length?L.map(([i,c])=>`<button class="pstory cxrow" data-c="${esc(i)}"><div class="nmeta"><b>${esc(c.term)}</b>${S[i]?'<span class="chip b">Seen</span>':''}</div><p>${esc(c.def.split(/(?<=\.)\s/)[0])}</p></button>`).join(''):'<p class="note">No match.</p>'};
+ p.innerHTML=`<div class="escroll" style="height:100%;padding-bottom:calc(var(--tab) + var(--sab) + 20px)">
+  <h4 class="dh">Concepts · your glossary</h4><input class="cxs" type="search" placeholder="Search ${all.length} concepts" value="${esc(cxq)}">
+  ${recent.length&&!cxq?`<div class="pchips">${recent.map(i=>`<button class="pchip on" data-c="${esc(i)}">${esc(CX[i].term)}</button>`).join('')}</div>`:''}
+  <div id="cxl">${list()}</div>
+  <h4 class="dh">Filings explained</h4><div class="pchips">${Object.entries(EXPL).map(([t,e])=>`<button class="pchip lrn" data-expl="${esc(t)}">📘 ${esc(e[0])}</button>`).join('')}</div>
+  <p class="note">Tap any dotted-underlined term in the Feed, news and podcasts to open it. New terms flagged by the summarizers are added a few per refresh.</p></div>`;
+ const wire=r=>r.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>openConcept(b.dataset.c,null));wire(p);
+ p.querySelector('.cxs').oninput=e=>{cxq=e.target.value;const l=p.querySelector('#cxl');l.innerHTML=list();wire(l)};
+ p.querySelectorAll('[data-expl]').forEach(b=>b.onclick=()=>openExplainer(b.dataset.expl))}
 
 // ---------- Filings & Deals ----------
 const FTYPE={'IPO':['IPO','g'],'Merger proxy':['Merger proxy','o'],'Merger (S-4)':['Merger S-4','o'],'Deal 8-K':['Deal 8-K','o'],'Private round':['Private round','p'],'Tender / secondary':['Tender','p'],'IPO (confidential)':['IPO (conf.)','g']};
@@ -460,14 +521,14 @@ function renderFilings(p){const F=FL?.filings||[],R=FL?.private||[];
  p.querySelectorAll('[data-ff]').forEach(b=>b.onclick=()=>{flf=b.dataset.ff;renderFilings(p)});wireFilings(p)}
 
 // ---------- Feed: Reels-style weighted shuffle of news, developing stories, X posts and movers ----------
-const VERSION='v19 · Oct 21';
+const VERSION='v20 · Oct 21';
 const JUNK=/\b(which (is|tech|stock)|better buy|should you buy|buy, sell,? or hold|prediction:|reasons to|stock quote price|top analyst reports|if i could only|savvy investors|invested in)\b/i;
 const hrs=iso=>(Date.now()-new Date(iso))/36e5;
 function feedNews(){return (DATA.today?.items||[]).filter(it=>hrs(it.last)<=36&&(it.dev?.summary||(it.score>=4.5&&!JUNK.test(it.title)))).slice(0,24)}
 function newsCard(it){const n=it.nSources||new Set(it.sources.map(s=>s.source)).size,t=it.tickers.find(x=>DATA.quotes?.[x]);const q=t&&DATA.quotes[t];
  return `<section class="slide"><div class="card newsc"><div class="kicker">${it.tags[0]?`<span class="chip b">${esc(it.tags[0])}</span>`:'<span class="chip b">News</span>'}${it.tickers.slice(0,2).map(x=>`<span class="chip">${esc(x)}</span>`).join('')}<span class="note">${n} source${n>1?'s':''} · ${hAgo(it.last)} ago${it.paywalled.length&&!it.freeCoverage?' · 🔒':''}</span></div>
-  <h3 class="devh">${esc(it.title)}</h3>${it.sum?`<p class="devs">${esc(it.sum)}</p>`:''}
-  ${it.why?`<div class="whybox"><b>Why it matters</b><p>${esc(it.why)}</p></div>`:''}
+  ${(()=>{const k=cxCtx('n:'+it.id,it.cx,it.title),m=t=>cxMark(t,k);return `<h3 class="devh">${m(it.title)}</h3>${it.sum?`<p class="devs">${m(it.sum)}</p>`:''}
+  ${it.why?`<div class="whybox"><b>Why it matters</b><p>${m(it.why)}</p></div>`:''}`})()}
   ${q?`<div class="stats up"><div class="stat">${esc(t)}<b class="${cls(q.pct)}">${pc(q.pct)}</b></div>${q.r5!=null?`<div class="stat">5 days<b class="${cls(q.r5)}">${pc(q.r5)}</b></div>`:''}${chatStat(t)}</div>`:''}
   <div style="flex:1"></div><button class="btn" data-n="${esc(it.id)}">Dig in</button></div></section>`}
 // weighted random order (Efraimidis–Spirakis): higher weight = more likely near the top, but never the same order twice
