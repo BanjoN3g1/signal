@@ -15,8 +15,16 @@ STATES = {"AL":"Alabama","AK":"Alaska","AZ":"Arizona","AR":"Arkansas","CA":"Cali
 FIPS = {"AL":"01","AK":"02","AZ":"04","AR":"05","CA":"06","CO":"08","CT":"09","DE":"10","FL":"12","GA":"13","HI":"15","ID":"16","IL":"17","IN":"18","IA":"19","KS":"20","KY":"21","LA":"22","ME":"23","MD":"24","MA":"25","MI":"26","MN":"27","MS":"28","MO":"29","MT":"30","NE":"31","NV":"32","NH":"33","NJ":"34","NM":"35","NY":"36","NC":"37","ND":"38","OH":"39","OK":"40","OR":"41","PA":"42","RI":"44","SC":"45","SD":"46","TN":"47","TX":"48","UT":"49","VT":"50","VA":"51","WA":"53","WV":"54","WI":"55","WY":"56"}
 slugst = lambda st: STATES[st].lower().replace(" ", "-")
 def log(*a): print("[elections]", *a, flush=True)
+_LASTW = [0.0]
 def get(url, **kw):
-    r = requests.get(url, headers=UA, timeout=20, **kw); r.raise_for_status(); return r.json()
+    for i in range(3):
+        if "wikipedia.org" in url:  # be gentle: Wikipedia rate-limits shared CI IPs
+            w = 1.5 - (time.time() - _LASTW[0])
+            if w > 0: time.sleep(w)
+            _LASTW[0] = time.time()
+        r = requests.get(url, headers=UA, timeout=20, **kw)
+        if r.status_code == 429 and i < 2: time.sleep(int(r.headers.get("Retry-After", "0") or 0) or 5 * (i + 1)); continue
+        r.raise_for_status(); return r.json()
 
 def party(label):
     m = re.search(r"\((D|R|I|L|G)\)|\b(Democrat|Republican|Independent)", label or "", re.I)

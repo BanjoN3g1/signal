@@ -56,7 +56,8 @@ def approval():
 def fec_money(E):
     key = os.environ.get("FEC_API_KEY") or "DEMO_KEY"; out = {}
     for r in [r for r in E["races"] if r.get("key") and r["type"] == "senate"][:11]:
-        j = get("https://api.open.fec.gov/v1/candidates/totals/", params={"api_key": key, "office": "S", "state": r["state"], "election_year": 2026, "sort": "-receipts", "per_page": 6, "is_active_candidate": "true"})
+        try: j = get("https://api.open.fec.gov/v1/candidates/totals/", params={"api_key": key, "office": "S", "state": r["state"], "election_year": 2026, "sort": "-receipts", "per_page": 6, "is_active_candidate": "true"})
+        except Exception as e: log("fec", r["id"], e); break  # DEMO_KEY is shared and rate-limited: keep what we have
         res = j.get("results") or []; best = {}
         want = {o["name"].split()[-1].lower() for od in r.get("odds", []) for o in od["outcomes"] if o["name"].split()}
         res = sorted(res, key=lambda x: not any(w in (x.get("name") or "").lower() for w in want))  # the nominees the markets price, not primary losers
@@ -65,6 +66,7 @@ def fec_money(E):
             if pt not in best: best[pt] = {"name": x["name"].title(), "raised": round(x.get("receipts") or 0), "cash": round(float(x.get("cash_on_hand_end_period") or 0)), "asOf": (x.get("coverage_end_date") or "")[:10]}
         if best: out[r["id"]] = best
         time.sleep(1)
+    if not out: raise RuntimeError("FEC unavailable")
     return out
 
 def signals(E, cache):
