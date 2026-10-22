@@ -43,3 +43,17 @@ markets: {polymarket: "<event slug>"|"auto", kalshi_event: "<EVENT>", kalshi_ser
 polls: Wikipedia polling tables (avg of the 5 newest polls in the first table, cached 6h). Map: us-atlas `counties-albers-10m` (pre-projected) from jsDelivr.
 **Election night hook:** drop `data/elections/live/<id>.json` as `{updated, counties:{fips:{reporting, margin}}, states:{fips:{…}}}` (e.g. from a future
 results job); the map colors counties by live margin and shows "% in" automatically. No scraper yet.
+
+## Politics dashboard
+The Elections tile is now **Politics** (route `#/elections`): Dashboard (map with toss-up glow → Races to watch → Signals → Politics & markets → balanced X),
+Races, Polls, News, X, Models (forecasters + "polls vs markets vs models" explainer).
+- `elections.py` adds per race: Polymarket 24h/7d odds moves (`move1`/`move7`, toward D/I), Wikipedia "Predictions" table ratings with a consensus
+  (`ratings`: by rater, avg Safe=3…Toss-up=0, label, open seat), poll margin in D terms, and `watch` (close odds, big moves, poll-vs-market and
+  rater-vs-market gaps, each with plain reasons). Configure rating pages per election with `"ratings": {"senate": "<wiki page>", "governor": "…"}`.
+- `politics.py` → `politics.json`: `signals` (generic ballot and approval from Wikipedia aggregator tables, raters vs markets, market momentum + volume,
+  Senate fundraising from the FEC API — `FEC_API_KEY` secret if set, else `DEMO_KEY`, cached 24h — and open seats), `stream` (Politics & markets news:
+  POLITICO/The Hill/NPR + Google News topics, clustered by `news.cluster`, summarized by Flash-Lite role `pol`, cap 24/day), and `x`.
+- **`data/politics_x.json`** (committed; refreshed by the daily 7am routine via the X connector):
+  `{"updated": ISO, "leans": {lean: label}, "accounts": [{"handle","name","lean","role"}], "posts": [{"handle","name","lean","role","text","url","likes","reposts","ts","race"}]}`
+  where `lean` ∈ `left|right|center|analyst` (describes the account) and `race` is an optional race id from the election config (e.g. `GA-sen`,
+  `senate-control`). URLs must be https://x.com/…; the app shows posts balanced (round-robin across leans) and on matching race pages.

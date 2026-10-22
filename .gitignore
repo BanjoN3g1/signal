@@ -1,5 +1,6 @@
 data/*
 !data/x.json
+!data/politics_x.json
 _site/
 .access_key
 *.env

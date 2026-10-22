@@ -312,5 +312,9 @@
   "provider": null,
   "level": "county",
   "note": "Election-night hook: a future job writes live/<election-id>.json as {updated, counties:{fips:{reporting, margin}}, states:{...}}; the map picks it up automatically."
+ },
+ "ratings": {
+  "senate": "2026 United States Senate elections",
+  "governor": "2026 United States gubernatorial elections"
  }
 }

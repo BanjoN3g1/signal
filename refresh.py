@@ -667,6 +667,7 @@ def main():
     log("wrote feed.json", round(time.time() - t0), json.dumps(STATUS))
     try:  # Elections world (data/elections/*.json configs -> odds, polls, baselines); isolated so it can't break the feed
         import elections; elections.build(DATA, CACHE)
+        import politics; politics.build(DATA, CACHE)
     except Exception as e: log("elections failed", e)
 
 if __name__ == "__main__":

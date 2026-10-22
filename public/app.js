@@ -72,7 +72,7 @@ function render(){
  const r=route();
  if(!r.world)return renderHome();
  if(r.world==='work'){tab=r.tab;return renderWork()}
- if(r.world==='elections'&&window.SignalElections)return window.SignalElections.render(app,{esc,sheet,back:I.back,ago});
+ if(r.world==='elections'&&window.SignalElections)return window.SignalElections.render(app,{esc,sheet,back:I.back,ago,hAgo,kfmt});
  return renderSoon(r.world);
 }
 
@@ -80,7 +80,7 @@ function render(){
 const LIVEW=['work','elections'];
 const WORLDS=[
  {id:'work',name:'Work',sub:'Markets, earnings & deals for software + semis',glyph:'📈',c1:'#0a84ff',c2:'#5e5ce6',big:true},
- {id:'elections',name:'Elections',sub:'Maps, polls, odds & sentiment',glyph:'🗳️',c1:'#ff375f',c2:'#bf5af2'},
+ {id:'elections',name:'Politics',sub:'Midterms map, odds, signals & policy',glyph:'🗳️',c1:'#ff375f',c2:'#bf5af2'},
  {id:'news',name:'News',sub:'What happened, and why it matters',glyph:'🌍',c1:'#30d158',c2:'#64d2ff'},
  {id:'culture',name:'Pop Culture',sub:'Gaming, TV & the chatter',glyph:'🎮',c1:'#ff9f0a',c2:'#ff375f'},
  {id:'next',name:'Your call',sub:'A fifth world — you pick',glyph:'✨',c1:'#8e8e93',c2:'#48484a'}
@@ -402,7 +402,7 @@ function xCard(x){const h=String(x.handle||'').replace(/^@/,''),st=x.story;
   <div style="flex:1"></div>${tie}<a class="note xlink" href="${esc(x.url)}" target="_blank" rel="noopener">Open on X ↗</a></div></section>`}
 
 // ---------- Feed: Reels-style weighted shuffle of news, developing stories, X posts and movers ----------
-const VERSION='v17 · Oct 21';
+const VERSION='v18 · Oct 21';
 const JUNK=/\b(which (is|tech|stock)|better buy|should you buy|buy, sell,? or hold|prediction:|reasons to|stock quote price|top analyst reports|if i could only|savvy investors|invested in)\b/i;
 const hrs=iso=>(Date.now()-new Date(iso))/36e5;
 function feedNews(){return (DATA.today?.items||[]).filter(it=>hrs(it.last)<=36&&(it.dev?.summary||(it.score>=4.5&&!JUNK.test(it.title)))).slice(0,24)}

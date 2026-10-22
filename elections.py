@@ -39,9 +39,11 @@ def pm_odds(e):
         try: p = float(json.loads(m.get("outcomePrices") or "null")[0])
         except Exception: continue
         if m.get("closed") or not m.get("groupItemTitle"): continue
-        nm = m["groupItemTitle"].strip(); out.append({"name": re.sub(r"\s*\((D|R|I|L|G)\)\s*$", "", nm).replace(" Party", ""), "party": party(nm) or ("D" if nm.startswith("Democrat") else "R" if nm.startswith("Republican") else None), "p": round(p, 3)})
+        nm = m["groupItemTitle"].strip()
+        mv = {k: round(float(m[f]), 3) for k, f in (("d1", "oneDayPriceChange"), ("d7", "oneWeekPriceChange")) if m.get(f) not in (None, "")}
+        out.append({**mv, "name": re.sub(r"\s*\((D|R|I|L|G)\)\s*$", "", nm).replace(" Party", ""), "party": party(nm) or ("D" if nm.startswith("Democrat") else "R" if nm.startswith("Republican") else None), "p": round(p, 3)})
     out = [o for o in out if o["p"] > 0.004 or len(out) <= 3]
-    return {"src": "Polymarket", "url": f"https://polymarket.com/event/{e['slug']}", "volume": round(float(e.get("volume") or 0)), "outcomes": sorted(out, key=lambda o: -o["p"])[:4]} if out else None
+    return {"src": "Polymarket", "url": f"https://polymarket.com/event/{e['slug']}", "volume": round(float(e.get("volume") or 0)), "vol24": round(sum(float(m.get("volume24hr") or 0) for m in e.get("markets") or [])), "outcomes": sorted(out, key=lambda o: -o["p"])[:4]} if out else None
 
 # ---------- Kalshi ----------
 def ks_series(cache):
@@ -78,7 +80,8 @@ def ks_odds(event_ticker=None, series=None):
 
 # ---------- Polls (Wikipedia polling tables, best effort) ----------
 def strip(h): return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", re.sub(r"<sup.*?</sup>|<style.*?</style>", "", h, flags=re.S)))).strip()
-def wiki_polls(page):
+def wiki_polls(page, want=()):
+    """First polling table whose matchup columns include the market's top two candidates (general election, not primaries)."""
     j = get("https://en.wikipedia.org/w/api.php", params={"action": "parse", "page": page, "prop": "text", "format": "json", "formatversion": 2, "redirects": 1})
     doc = j.get("parse", {}).get("text", "")
     best = None
@@ -95,12 +98,43 @@ def wiki_polls(page):
             try: v = [float(re.sub(r"[^\d.]", "", cells[i])) for i in cand[:2]]
             except ValueError: continue
             polls.append({"pollster": cells[0][:60], "dates": cells[1][:40], "sample": cells[2][:20], "a": v[0], "b": v[1]})
-        if polls and not best: best = ([re.sub(r"\s*\(.*?\)", "", hdr[i]) for i in cand[:2]], polls)  # first table = main general-election matchup
+        names = [re.sub(r"\s*\(.*?\)", "", hdr[i]) for i in cand[:2]]
+        last = {n.split()[-1].lower() for n in names if n.split()}
+        if polls and not best and (not want or set(want) <= last): best = (names, polls)
     if not best: return None
     names, polls = best
     recent = polls[:5] if True else polls  # Wikipedia lists newest first
     avg = [round(sum(p[k] for p in recent[:5]) / len(recent[:5]), 1) for k in ("a", "b")]
     return {"src": "Wikipedia", "url": "https://en.wikipedia.org/wiki/" + page.replace(" ", "_") + "#Polling", "names": names, "avg": avg, "n": len(recent), "recent": recent[:3]}
+
+# ---------- Race ratings (Wikipedia "Predictions" tables aggregate Cook, Sabato, Inside Elections, Silver Bulletin, ...) ----------
+RSCORE = {"safe": 3, "solid": 3, "likely": 2, "lean": 1, "leans": 1, "tilt": .5, "tossup": 0, "toss-up": 0, "toss up": 0}
+def rscore(s):
+    m = re.match(r"(safe|solid|likely|leans?|tilt|toss-?\s?up)\s*([DRI])?", (s or "").strip(), re.I)
+    if not m: return None
+    v = RSCORE.get(m.group(1).lower().replace(" ", ""), RSCORE.get(m.group(1).lower(), 0))
+    return 0 if v == 0 else v * (1 if (m.group(2) or "").upper() in ("D", "I") else -1)
+def rlabel(x):
+    if x is None: return None
+    a = abs(x); s = "D" if x > 0 else "R"
+    return "Tossup" if a < .5 else f"Tilt {s}" if a < 1 else f"Lean {s}" if a < 1.75 else f"Likely {s}" if a < 2.5 else f"Safe {s}"
+def wiki_ratings(page):
+    doc = get("https://en.wikipedia.org/w/api.php", params={"action": "parse", "page": page, "prop": "text", "format": "json", "formatversion": 2, "redirects": 1}).get("parse", {}).get("text", "")
+    for t in re.findall(r'<table class="[^"]*wikitable[^"]*".*?</table>', doc, re.S):
+        if not re.search(r"Cook|Sabato", t[:4000]): continue
+        rows = [[strip(c) for c in re.findall(r"<t[dh][^>]*>.*?</t[dh]>", r, re.S)] for r in re.findall(r"<tr.*?</tr>", t, re.S)]
+        hi = next((i for i, r in enumerate(rows) if r and r[0] == "State"), None)
+        if hi is None: continue
+        hdr = rows[hi]; raters = {}
+        for i, h in enumerate(hdr[4:], 4):
+            m = re.match(r"([A-Za-z]+)\.?\s*(.*)", h); raters[i] = (m.group(1), m.group(2).strip()) if m else (h, "")
+        out = {}
+        for r in rows[hi + 1:]:
+            if len(r) != len(hdr): continue
+            by = {raters[i][0]: r[i].replace("(flip)", "").strip() for i in raters if r[i]}
+            out.setdefault(r[0], {"pvi": r[1], "incumbent": r[2], "last": r[3], "by": by})
+        return {"rows": out, "raters": {n: d for n, d in raters.values()}, "url": "https://en.wikipedia.org/wiki/" + page.replace(" ", "_") + "#Predictions"}
+    return None
 
 def build_one(cfg, cache, pm_cache):
     t0 = time.time(); out = {k: v for k, v in cfg.items() if k != "races"}; status = {}
@@ -118,6 +152,19 @@ def build_one(cfg, cache, pm_cache):
     pc_path = os.path.join(cache, "election_polls.json")
     try: pc = json.load(open(pc_path))
     except Exception: pc = {}
+    rc_path = os.path.join(cache, "election_ratings.json")
+    try: rc = json.load(open(rc_path))
+    except Exception: rc = {}
+    ratings = {}
+    for typ, page in (cfg.get("ratings") or {}).items():
+        c = rc.get(typ)
+        if not c or time.time() - c.get("t", 0) > 6 * 3600:
+            try: c = {"t": time.time(), "d": wiki_ratings(page)}
+            except Exception as e: c = {"t": time.time() - 5 * 3600, "d": (c or {}).get("d"), "err": str(e)[:100]}
+            rc[typ] = c
+        if c.get("d"): ratings[typ] = c["d"]
+    json.dump(rc, open(rc_path, "w"))
+    out["raters"] = {typ: {"raters": d["raters"], "url": d["url"]} for typ, d in ratings.items()}
     for r in races:
         mk = r.get("markets", {}); r["odds"] = []
         slug = mk.get("polymarket")
@@ -150,13 +197,60 @@ def build_one(cfg, cache, pm_cache):
         r["pD"] = round(sum(pd) / len(pd), 3) if pd else None
         pol = r.get("polls", {}).get("wikipedia")
         if pol:
-            c = pc.get(r["id"])
+            want = sorted({o["name"].split()[-1].lower() for od in r["odds"] for o in od["outcomes"][:2] if o["party"] in ("D", "R", "I") and o["name"].split()})[:2] if r["odds"] else []
+            want = [w for w in want][:2]
+            ck = r["id"] + ":" + ",".join(want); c = pc.get(ck)
             if not c or time.time() - c.get("t", 0) > 6 * 3600:
-                try: c = {"t": time.time(), "d": wiki_polls(pol)}
+                try: c = {"t": time.time(), "d": wiki_polls(pol, want)}
                 except Exception as e: c = {"t": time.time() - 5 * 3600, "d": None, "err": str(e)[:100]}  # retry in ~1h
-                pc[r["id"]] = c
+                pc[ck] = c
             r["pollData"] = c.get("d")
         if r.get("state"): r["fips"] = FIPS[r["state"]]
+        # momentum (Polymarket's own 24h / 7d price changes, so it works from the first run)
+        pmo = next((o for o in r["odds"] if o["src"] == "Polymarket"), None)
+        if pmo:
+            for k in ("d1", "d7"):
+                v = [o.get(k) for o in pmo["outcomes"] if o["party"] in ("D", "I") and o.get(k) is not None]
+                if v: r["move" + k[1:]] = round(sum(v), 3)
+            r["vol24"] = pmo.get("vol24")
+        # ratings consensus
+        rt = ratings.get(r["type"])
+        if rt and r.get("state"):
+            row = next((v for k, v in rt["rows"].items() if k == STATES[r["state"]] or k.startswith(STATES[r["state"]] + " ")), None)
+            if row:
+                sc = [x for x in (rscore(v) for v in row["by"].values()) if x is not None]
+                avg = round(sum(sc) / len(sc), 2) if sc else None
+                r["ratings"] = {"by": row["by"], "avg": avg, "label": rlabel(avg), "pvi": row["pvi"], "incumbent": row["incumbent"],
+                                "open": bool(re.search(r"retir|term-limited|resign|running for|lost renomination|defeated", row["incumbent"], re.I))}
+        # poll margin in D terms (names matched to market candidates by last name)
+        pdd = r.get("pollData")
+        if pdd:
+            pty = {o["name"].split()[-1].lower(): o["party"] for od in r["odds"] for o in od["outcomes"] if o["party"]}
+            ps = [pty.get(n.split()[-1].lower()) for n in pdd["names"]]
+            if "R" in ps and any(x in ("D", "I") for x in ps):
+                d, rr = (0, 1) if ps[0] in ("D", "I") else (1, 0); r["pollMarginD"] = round(pdd["avg"][d] - pdd["avg"][rr], 1)
+    # races to watch: close odds, big moves, poll-vs-market or ratings-vs-market gaps
+    watch = []
+    for r in races:
+        if r["type"] == "chamber" or r.get("pD") is None: continue
+        p, why, sc = r["pD"], [], 0
+        fav = lambda x: "D" if x >= .5 else "R"
+        close = .35 <= p <= .65
+        if close: sc += 3 - abs(p - .5) * 10; why.append(f"Toss-up in the markets ({fav(p)} {round(max(p, 1 - p) * 100)}%)")
+        m7, m1 = r.get("move7") or 0, r.get("move1") or 0
+        if abs(m7) >= .03: sc += abs(m7) * 25; why.append(f"Odds moved {int(abs(m7) * 100 + .5)} pts toward {'D' if m7 > 0 else 'R'} this week")
+        elif abs(m1) >= .02: sc += abs(m1) * 35; why.append(f"Odds moved {int(abs(m1) * 100 + .5)} pts toward {'D' if m1 > 0 else 'R'} in 24h")
+        pm = r.get("pollMarginD")
+        if pm is not None and ((pm > 0) != (p >= .5)) and abs(pm) >= .5:
+            sc += 2.5; why.append(f"Polls lean {'D' if pm > 0 else 'R'} +{abs(pm)} but markets favor {fav(p)}")
+        elif pm is not None and abs(pm) < 3 and abs(p - .5) > .2:
+            sc += 1.5; why.append(f"Polls within {abs(pm)} pts, markets {round(max(p, 1 - p) * 100)}% sure")
+        ra = (r.get("ratings") or {}).get("avg")
+        if ra is not None and ((ra > .5 and p < .45) or (ra < -.5 and p > .55)):
+            sc += 2; why.append(f"Raters say {r['ratings']['label']}, markets favor {fav(p)}")
+        if (r.get("ratings") or {}).get("open") and why: why.append("Open seat")
+        if why and sc >= 1.5: watch.append({"id": r["id"], "score": round(sc + (.5 if r.get("key") else 0), 2), "why": why[:3]})
+    out["watch"] = sorted(watch, key=lambda w: -w["score"])[:10]
     json.dump(pc, open(pc_path, "w"))
     out["races"] = sorted(races, key=lambda r: (not r.get("key"), r["type"] != "chamber", r["type"], r.get("state", "")))
     out["status"] = status; out["generatedAt"] = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")

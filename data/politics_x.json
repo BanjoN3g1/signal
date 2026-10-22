@@ -1,0 +1,585 @@
+{
+ "updated": "2026-10-21T18:10:00-07:00",
+ "note": "Curated, balanced accounts. Refreshed by the daily 7am routine via the X connector.",
+ "leans": {
+  "left": "Left / Democratic-leaning",
+  "right": "Right / Republican-leaning",
+  "center": "Nonpartisan news",
+  "analyst": "Election analysts & forecasters"
+ },
+ "accounts": [
+  {
+   "handle": "NateSilver538",
+   "name": "Nate Silver",
+   "lean": "analyst",
+   "role": "Silver Bulletin forecaster"
+  },
+  {
+   "handle": "gelliottmorris",
+   "name": "G. Elliott Morris",
+   "lean": "analyst",
+   "role": "Strength In Numbers / FiftyPlusOne"
+  },
+  {
+   "handle": "Redistrict",
+   "name": "Dave Wasserman",
+   "lean": "analyst",
+   "role": "Cook Political Report"
+  },
+  {
+   "handle": "CookPolitical",
+   "name": "Cook Political Report",
+   "lean": "analyst",
+   "role": "Race ratings"
+  },
+  {
+   "handle": "kkondik",
+   "name": "Kyle Kondik",
+   "lean": "analyst",
+   "role": "Sabato's Crystal Ball"
+  },
+  {
+   "handle": "InsideElections",
+   "name": "Inside Elections",
+   "lean": "analyst",
+   "role": "Race ratings"
+  },
+  {
+   "handle": "SplitTicket_",
+   "name": "Split Ticket",
+   "lean": "analyst",
+   "role": "Forecast model"
+  },
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "lean": "analyst",
+   "role": "Results & forecast"
+  },
+  {
+   "handle": "Nate_Cohn",
+   "name": "Nate Cohn",
+   "lean": "analyst",
+   "role": "NYT chief political analyst"
+  },
+  {
+   "handle": "SeanTrende",
+   "name": "Sean Trende",
+   "lean": "analyst",
+   "role": "RealClearPolitics analyst"
+  },
+  {
+   "handle": "jbouie",
+   "name": "Jamelle Bouie",
+   "lean": "left",
+   "role": "NYT columnist"
+  },
+  {
+   "handle": "ezraklein",
+   "name": "Ezra Klein",
+   "lean": "left",
+   "role": "NYT columnist"
+  },
+  {
+   "handle": "MattYglesias",
+   "name": "Matthew Yglesias",
+   "lean": "left",
+   "role": "Slow Boring, center-left"
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "lean": "left",
+   "role": "Public Notice"
+  },
+  {
+   "handle": "mehdirhasan",
+   "name": "Mehdi Hasan",
+   "lean": "left",
+   "role": "Zeteo"
+  },
+  {
+   "handle": "SimonWDC",
+   "name": "Simon Rosenberg",
+   "lean": "left",
+   "role": "Dem strategist"
+  },
+  {
+   "handle": "RichLowry",
+   "name": "Rich Lowry",
+   "lean": "right",
+   "role": "National Review"
+  },
+  {
+   "handle": "guypbenson",
+   "name": "Guy Benson",
+   "lean": "right",
+   "role": "Fox News"
+  },
+  {
+   "handle": "ByronYork",
+   "name": "Byron York",
+   "lean": "right",
+   "role": "Washington Examiner"
+  },
+  {
+   "handle": "EWErickson",
+   "name": "Erick Erickson",
+   "lean": "right",
+   "role": "Conservative commentator"
+  },
+  {
+   "handle": "KarlRove",
+   "name": "Karl Rove",
+   "lean": "right",
+   "role": "GOP strategist"
+  },
+  {
+   "handle": "MZHemingway",
+   "name": "Mollie Hemingway",
+   "lean": "right",
+   "role": "The Federalist"
+  },
+  {
+   "handle": "AP_Politics",
+   "name": "AP Politics",
+   "lean": "center",
+   "role": "Wire service"
+  },
+  {
+   "handle": "politico",
+   "name": "POLITICO",
+   "lean": "center",
+   "role": "Politics news"
+  },
+  {
+   "handle": "PunchbowlNews",
+   "name": "Punchbowl News",
+   "lean": "center",
+   "role": "Congress"
+  },
+  {
+   "handle": "axios",
+   "name": "Axios",
+   "lean": "center",
+   "role": "News"
+  },
+  {
+   "handle": "NBCPolitics",
+   "name": "NBC Politics",
+   "lean": "center",
+   "role": "News"
+  },
+  {
+   "handle": "CNNPolitics",
+   "name": "CNN Politics",
+   "lean": "center",
+   "role": "News"
+  }
+ ],
+ "posts": [
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "lean": "analyst",
+   "role": "Results & forecast",
+   "text": "DECISION DESK HQ RATINGS UPDATE (10/19): Senate\n\nDemocrats: 56%\nRepublicans: 44%\n\nDemocrats remain favored to flip the Senate. \n\nThey need to flip four seats to win control - our model currently forecasts Democrats to flip Alaska, Maine, North Carolina, and Texas.",
+   "url": "https://x.com/DecisionDeskHQ/status/2112204698820186239",
+   "likes": 785,
+   "reposts": 104,
+   "ts": "2026-10-19T15:30:17.000Z",
+   "race": "senate-control",
+   "followers": 446980
+  },
+  {
+   "handle": "NateSilver538",
+   "name": "Nate Silver",
+   "lean": "analyst",
+   "role": "Silver Bulletin forecaster",
+   "text": "I started following politics seriously in 2006 and since then there's only been one election cycle, 2012, that went well for the president's party. 2022 probably a distant second but closer to \"not badly\" than \"well\".",
+   "url": "https://x.com/NateSilver538/status/2111849993636024790",
+   "likes": 2701,
+   "reposts": 75,
+   "ts": "2026-10-18T16:00:49.000Z",
+   "race": null,
+   "followers": 3044958
+  },
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "lean": "analyst",
+   "role": "Results & forecast",
+   "text": "DDHQ FORECAST UPDATE (10/19)\n\nFL-22: Tossup -> Leans R\nGA-7: Likely R -> Safe R\nMI-10: Toss Up -> Leans D\n\nDemocrats now have a 77% probability of flipping the House.\n\nIn our latest forecast update, Democrats are favored in 235 seats; 218 seats are needed for a majority.",
+   "url": "https://x.com/DecisionDeskHQ/status/2112252597939904855",
+   "likes": 835,
+   "reposts": 112,
+   "ts": "2026-10-19T18:40:37.000Z",
+   "race": null,
+   "followers": 446980
+  },
+  {
+   "handle": "gelliottmorris",
+   "name": "G Elliott Morris",
+   "lean": "analyst",
+   "role": "Strength In Numbers / FiftyPlusOne",
+   "text": "Holy moly, look at the trend here (from the latest NBC poll)\n\nWould rather see (Dems, Reps) control Congress...\n\nFeb. '25: 54% Dems - 41% Reps\nSept. '25: 53 - 42\nOct. '26: 59 - 35",
+   "url": "https://x.com/gelliottmorris/status/2112212793050968497",
+   "likes": 508,
+   "reposts": 75,
+   "ts": "2026-10-19T16:02:27.000Z",
+   "race": null,
+   "followers": 120577
+  },
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "lean": "analyst",
+   "role": "Results & forecast",
+   "text": "DDHQ FORECAST UPDATE (10/19): Governor races\n\nPennsylvania: Likely Dem -> Safe Dem\n\nDemocrats remain favored in 21 of 36 races.\n\nForecasted flips:\nAlaska: 🟥>🟦 (56% D)\nGeorgia: 🟥>🟦 (55% D)\nIowa:🟥>🟦 (73% D)\nKansas:🟦>🟥(69% R)\nOhio: 🟥>🟦 (60% D)",
+   "url": "https://x.com/DecisionDeskHQ/status/2112194455654588424",
+   "likes": 388,
+   "reposts": 41,
+   "ts": "2026-10-19T14:49:35.000Z",
+   "race": null,
+   "followers": 446980
+  },
+  {
+   "handle": "gelliottmorris",
+   "name": "G Elliott Morris",
+   "lean": "analyst",
+   "role": "Strength In Numbers / FiftyPlusOne",
+   "text": "I wouldn't be that surprised at a double-digit Dem generic ballot result at this point.\n\nDo I think it's the median outcome? Not currently, though polls could trend that direction very quickly as low-info voters tune in.\n\nBut error happens",
+   "url": "https://x.com/gelliottmorris/status/2112317776270598292",
+   "likes": 295,
+   "reposts": 41,
+   "ts": "2026-10-19T22:59:37.000Z",
+   "race": null,
+   "followers": 120577
+  },
+  {
+   "handle": "CookPolitical",
+   "name": "Cook Political Report",
+   "lean": "analyst",
+   "role": "Race ratings",
+   "text": "The Cook Political Report moved eleven more House races towards Democrats. Half of our latest  changes are in Ohio, Nebraska and Kansas — three states that, for the same reasons, also have competitive Senate races.   \n\nRead this from @ercovey:",
+   "url": "https://x.com/CookPolitical/status/2111570449578811482",
+   "likes": 210,
+   "reposts": 57,
+   "ts": "2026-10-17T21:30:00.000Z",
+   "race": null,
+   "followers": 222555
+  },
+  {
+   "handle": "gelliottmorris",
+   "name": "G Elliott Morris",
+   "lean": "analyst",
+   "role": "Strength In Numbers / FiftyPlusOne",
+   "text": "New MRP estimates from the Strength In Numbers/Wave Polling and Research poll find more Republicans say they're financially worse off than better off in red states with close Senate races. These voters are 3x as likely as other Rs to vote Dem in Nov.",
+   "url": "https://x.com/gelliottmorris/status/2111808422798651665",
+   "likes": 158,
+   "reposts": 37,
+   "ts": "2026-10-18T13:15:38.000Z",
+   "race": null,
+   "followers": 120577
+  },
+  {
+   "handle": "CookPolitical",
+   "name": "Cook Political Report",
+   "lean": "analyst",
+   "role": "Race ratings",
+   "text": "Last week, The Cook Political Report moved four governors' races, all in Democrats' direction.   \n\n• Alaska: Toss Up to Lean Democrat  \n\n• Oklahoma, Nebraska and Vermont: Solid Republican to Likely Republican",
+   "url": "https://x.com/CookPolitical/status/2111812290375041237",
+   "likes": 123,
+   "reposts": 22,
+   "ts": "2026-10-18T13:31:00.000Z",
+   "race": null,
+   "followers": 222555
+  },
+  {
+   "handle": "kkondik",
+   "name": "Kyle Kondik",
+   "lean": "analyst",
+   "role": "Sabato's Crystal Ball",
+   "text": "Georgia cast about 4 million votes for governor in 2022, so perhaps up to a quarter or so of the vote has been cast",
+   "url": "https://x.com/kkondik/status/2112290181713666485",
+   "likes": 134,
+   "reposts": 13,
+   "ts": "2026-10-19T21:09:58.000Z",
+   "race": null,
+   "followers": 61672
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "lean": "left",
+   "role": "Public Notice",
+   "text": "Ossoff: \"What worries me right now is complacency about this race in Georgia, overconfidence about this race in Georgia. There's no such thing as a landslide victory in the state of Georgia. This remains the crucial battleground state.\"",
+   "url": "https://x.com/atrupar/status/2112322065244049780",
+   "likes": 2846,
+   "reposts": 680,
+   "ts": "2026-10-19T23:16:40.000Z",
+   "race": "GA-sen",
+   "followers": 1156856
+  },
+  {
+   "handle": "mattyglesias",
+   "name": "Matthew Yglesias",
+   "lean": "left",
+   "role": "Slow Boring, center-left",
+   "text": "Republicans: We hate Indian-Americans\n\nIndian-Americans: We’re not going to vote for you then\n\nRepublicans: See! See!",
+   "url": "https://x.com/mattyglesias/status/2112314215986053330",
+   "likes": 12608,
+   "reposts": 1201,
+   "ts": "2026-10-19T22:45:28.000Z",
+   "race": null,
+   "followers": 979653
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "lean": "left",
+   "role": "Public Notice",
+   "text": "I am late to this post from Trump, but my goodness.",
+   "url": "https://x.com/atrupar/status/2112272831786397897",
+   "likes": 8364,
+   "reposts": 679,
+   "ts": "2026-10-19T20:01:01.000Z",
+   "race": null,
+   "followers": 1156856
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "lean": "left",
+   "role": "Public Notice",
+   "text": "Trump repeatedly taps his thigh as he walks to board Marine One. You can then see Natalie Harp come into the shot to board the helicopter as well.",
+   "url": "https://x.com/atrupar/status/2112267811997245938",
+   "likes": 2545,
+   "reposts": 233,
+   "ts": "2026-10-19T19:41:05.000Z",
+   "race": null,
+   "followers": 1156856
+  },
+  {
+   "handle": "mattyglesias",
+   "name": "Matthew Yglesias",
+   "lean": "left",
+   "role": "Slow Boring, center-left",
+   "text": "Putin has managed to convince this White House to blame Ukraine for energy price dynamics that were unleashed by their attack on Iran, while obscuring their attention from the fact that Russia and Iran are allied.",
+   "url": "https://x.com/mattyglesias/status/2112283795424756174",
+   "likes": 1468,
+   "reposts": 169,
+   "ts": "2026-10-19T20:44:35.000Z",
+   "race": null,
+   "followers": 979653
+  },
+  {
+   "handle": "mattyglesias",
+   "name": "Matthew Yglesias",
+   "lean": "left",
+   "role": "Slow Boring, center-left",
+   "text": "What's crazy about Musk's spending on the midterms is that the amount involved is totally trivial relative to his net worth. \n\nThis is like a normal person sending $150 each to three candidates they like.",
+   "url": "https://x.com/mattyglesias/status/2111144512429203861",
+   "likes": 1182,
+   "reposts": 81,
+   "ts": "2026-10-16T17:17:29.000Z",
+   "race": null,
+   "followers": 979653
+  },
+  {
+   "handle": "EWErickson",
+   "name": "Erick Erickson",
+   "lean": "right",
+   "role": "Conservative commentator",
+   "text": "We keep being told we must surrender our decency to win and then we lament how indecent the country is becoming. Every candidate is a worse candidate, but from pastor to politician, we’re told we must hold our nose or else.  Now, we’re to defend the Vivek ad or else. Nope.",
+   "url": "https://x.com/EWErickson/status/2113030719773765826",
+   "likes": 1628,
+   "reposts": 202,
+   "ts": "2026-10-21T22:12:36.000Z",
+   "race": null,
+   "followers": 270415
+  },
+  {
+   "handle": "EWErickson",
+   "name": "Erick Erickson",
+   "lean": "right",
+   "role": "Conservative commentator",
+   "text": "Jimmy Carter never got a second term. Voters looked at the gas prices, the weakness abroad, and the economic mismanagement and decided four years was enough. With a midterm two weeks away, Republicans are about to learn whether voters feel the same way now. If Carter had gotten",
+   "url": "https://x.com/EWErickson/status/2112160186114650303",
+   "likes": 1058,
+   "reposts": 125,
+   "ts": "2026-10-19T12:33:25.000Z",
+   "race": null,
+   "followers": 270415
+  },
+  {
+   "handle": "ByronYork",
+   "name": "Byron York",
+   "lean": "right",
+   "role": "Washington Examiner",
+   "text": "New CBS Texas poll. Trump approval in TX: 45%. Senate: Talarico 51% Paxton 49%. Governor: Abbott 52% Hinojosa 48%.",
+   "url": "https://x.com/ByronYork/status/2111811954700427412",
+   "likes": 48,
+   "reposts": 5,
+   "ts": "2026-10-18T13:29:40.000Z",
+   "race": "TX-sen",
+   "followers": 581063
+  },
+  {
+   "handle": "MZHemingway",
+   "name": "Mollie",
+   "lean": "right",
+   "role": "The Federalist",
+   "text": "Trump: Americans Can Now Be Paid To Uncover Fraud In Their Communities",
+   "url": "https://x.com/MZHemingway/status/2112957920665362553",
+   "likes": 210,
+   "reposts": 39,
+   "ts": "2026-10-21T17:23:19.000Z",
+   "race": null,
+   "followers": 1505092
+  },
+  {
+   "handle": "guypbenson",
+   "name": "Guy Benson",
+   "lean": "right",
+   "role": "Fox News",
+   "text": "So you’re telling me that the actual threat to truth here was less AI, and more Dems lying to their media friends, who then credulously regurgitated the lies?",
+   "url": "https://x.com/guypbenson/status/2112955899048575056",
+   "likes": 217,
+   "reposts": 34,
+   "ts": "2026-10-21T17:15:17.000Z",
+   "race": null,
+   "followers": 466966
+  },
+  {
+   "handle": "EWErickson",
+   "name": "Erick Erickson",
+   "lean": "right",
+   "role": "Conservative commentator",
+   "text": "I am beginning to wonder if Trump wants a Republican wipe out so he will have a Democrat foil.",
+   "url": "https://x.com/EWErickson/status/2112168312310485289",
+   "likes": 245,
+   "reposts": 16,
+   "ts": "2026-10-19T13:05:42.000Z",
+   "race": null,
+   "followers": 270415
+  },
+  {
+   "handle": "politico",
+   "name": "POLITICO",
+   "lean": "center",
+   "role": "Politics news",
+   "text": "In the final weeks toward the midterms, can Michigan’s Abdul El-Sayed earn favor from some Black and Jewish voters who have felt skeptical of his campaign?\n\n🎧 Playbook Pod:",
+   "url": "https://x.com/politico/status/2111077793081483671",
+   "likes": 25,
+   "reposts": 4,
+   "ts": "2026-10-16T12:52:22.000Z",
+   "race": "MI-sen",
+   "followers": 5237765
+  },
+  {
+   "handle": "politico",
+   "name": "POLITICO",
+   "lean": "center",
+   "role": "Politics news",
+   "text": "Poll: Americans now view Big Tech money and CEOs as Republican",
+   "url": "https://x.com/politico/status/2112183024280338735",
+   "likes": 235,
+   "reposts": 51,
+   "ts": "2026-10-19T14:04:10.000Z",
+   "race": null,
+   "followers": 5237765
+  },
+  {
+   "handle": "politico",
+   "name": "POLITICO",
+   "lean": "center",
+   "role": "Politics news",
+   "text": "Russia launched covert influence campaign to undermine US candidates supportive of Ukraine, lawmakers say",
+   "url": "https://x.com/politico/status/2113026209596502357",
+   "likes": 100,
+   "reposts": 50,
+   "ts": "2026-10-21T21:54:41.000Z",
+   "race": null,
+   "followers": 5237764
+  },
+  {
+   "handle": "axios",
+   "name": "Axios",
+   "lean": "center",
+   "role": "News",
+   "text": "Democrats post \"mind-blowing\" numbers ahead of 2026 midterms",
+   "url": "https://x.com/axios/status/2111029884692631673",
+   "likes": 156,
+   "reposts": 31,
+   "ts": "2026-10-16T09:42:00.000Z",
+   "race": null,
+   "followers": 860666
+  },
+  {
+   "handle": "axios",
+   "name": "Axios",
+   "lean": "center",
+   "role": "News",
+   "text": "Democrats accuse Trump of using prosecution threats to pressure election officials",
+   "url": "https://x.com/axios/status/2113028464584388671",
+   "likes": 43,
+   "reposts": 11,
+   "ts": "2026-10-21T22:03:38.000Z",
+   "race": null,
+   "followers": 860666
+  },
+  {
+   "handle": "axios",
+   "name": "Axios",
+   "lean": "center",
+   "role": "News",
+   "text": "White House to Politico: retract stories or face 'consequences'",
+   "url": "https://x.com/axios/status/2113029591463875012",
+   "likes": 24,
+   "reposts": 9,
+   "ts": "2026-10-21T22:08:07.000Z",
+   "race": null,
+   "followers": 860666
+  },
+  {
+   "handle": "PunchbowlNews",
+   "name": "Punchbowl News",
+   "lean": "center",
+   "role": "Congress",
+   "text": "Sen. Mark Kelly (D-Ariz.) has spent the past year crisscrossing the country campaigning for Democrats in his efforts to flip the House and Senate. But as a state legislator introduced Kelly to the crowd, one supporter yelled out, “Future president!” Kelly smiled and continued his",
+   "url": "https://x.com/PunchbowlNews/status/2113019608726651048",
+   "likes": 7,
+   "reposts": 2,
+   "ts": "2026-10-21T21:28:27.000Z",
+   "race": null,
+   "followers": 147807
+  },
+  {
+   "handle": "PunchbowlNews",
+   "name": "Punchbowl News",
+   "lean": "center",
+   "role": "Congress",
+   "text": "Both parties are funneling millions of dollars into a trio of congressional districts in Virginia as House Republicans desperately try to cling to power.\n\n@em_luetkemeyer has the dispatch from the Old Dominion:",
+   "url": "https://x.com/PunchbowlNews/status/2113030064447394265",
+   "likes": 3,
+   "reposts": 3,
+   "ts": "2026-10-21T22:10:00.000Z",
+   "race": null,
+   "followers": 147807
+  },
+  {
+   "handle": "PunchbowlNews",
+   "name": "Punchbowl News",
+   "lean": "center",
+   "role": "Congress",
+   "text": "From 🦅 Defense: Sen. Mark Warner and Rep. Jim Himes are apoplectic about recent Trump administration moves favoring Russia and are unsure if they’ll get answers about communications disruptions in Ukraine.\n\n@AnthonyAdragna and @briana_reilly with the details:",
+   "url": "https://x.com/PunchbowlNews/status/2113035102393635004",
+   "likes": 2,
+   "reposts": 2,
+   "ts": "2026-10-21T22:30:01.000Z",
+   "race": null,
+   "followers": 147807
+  }
+ ]
+}
