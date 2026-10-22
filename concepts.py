@@ -7,7 +7,10 @@ import llm
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SEED_PATH = os.path.join(ROOT, "data", "concepts.json")
-NEW_PER_RUN = 4
+NEW_PER_RUN = 3      # new terms per refresh (deep level)
+UPGRADE_PER_RUN = 5  # shallow v1 terms upgraded to deep v2 per refresh
+PER_CALL = 3
+V = 2
 def log(*a): print("[concepts]", *a, file=sys.stderr, flush=True)
 
 # term, aliases (matched client-side, whole words; ALL-CAPS aliases are case-sensitive)
@@ -38,37 +41,56 @@ SEED = [
  ("Stablecoin", ["stablecoins", "USDC", "USDT"]), ("Ad tech", ["programmatic advertising", "ad-tech", "CTV advertising"]),
 ]
 
-SYS = """You are building a personal glossary for a junior investment banker (tech: software, semiconductors, AI, internet; M&A and ECM).
-For each term return a JSON object keyed by the exact term. Fields:
-"def": what it is, at a high-school level, 2-3 sentences (a simple analogy is welcome),
-"how": how it works, simply (1-2 sentences),
-"why": {"job": "why a tech banker cares: deal flow, valuation, comps, financing (1 sentence)", "industry": "what it changes for the tech industry (1 sentence)", "economy": "link to the wider economy or markets (1 sentence)"},
-"players": [up to 5 key companies, using a US ticker when listed, e.g. "NVDA", "TSM", or a name like "OpenAI"],
-"related": [3-5 other short concept names],
-"deeper": "a 'go deeper' paragraph, 3-5 sentences, with the nuance or debate a sharp analyst would add".
-Be accurate and neutral; do not cite specific recent numbers or dates you are unsure of. Return {"<term>": {...}, ...} for every term."""
+SYS = """You are building a deep personal glossary for a junior investment banker (tech: software, semiconductors, AI, internet; M&A and ECM).
+For each term return a JSON object keyed by the exact term with:
+"def": quick plain take, high-school level, 2-3 sentences (an analogy is welcome),
+"how": one-line simple mechanism,
+"why": {"job": 1 sentence for a tech banker, "industry": 1 sentence, "economy": 1 sentence},
+"related": [3-6 short concept names],
+"deep": {
+ "works": "what it is and how it actually works: more technical but clear, 4-7 sentences (components, mechanics, key trade-offs)",
+ "tech": "why it matters for tech: what it enables, which products and business models depend on it (3-5 sentences)",
+ "players": [6-10 {"name": company, "ticker": US ticker if public else null, "private": true/false, "role": "supplies|builds|buys|enables", "pos": "market positioning in <= 15 words"}] across the value chain,
+ "history": "origins, key turning points, how we got here (3-6 sentences, approximate years ok)",
+ "outlook": "3-5 year outlook: catalysts, open debates and risks (3-6 sentences)",
+ "value": "value creation and destruction: winners vs losers, margin pools, disruption risk, valuation implications (3-6 sentences)",
+ "banker": {"deals": "deal activity and themes: M&A, IPOs, financing (2-4 sentences)", "clients": ["2-3 things clients ask about"], "ask": ["2-3 sharp questions to ask a client or management"]},
+ "metrics": [2-5 {"figure": "approximate, well-established number with '~' and a year, e.g. '~$500B (2025)'", "context": "what it measures"}]}.
+Be accurate and neutral. Only well-established facts; numbers must be approximate with a year; if unsure, omit rather than invent.
+Return {"<term>": {...}, ...} for every term."""
 
 def cid(term): return re.sub(r"[^a-z0-9]+", "-", term.lower()).strip("-")
 
+def _s(x, n): return str(x or "").strip()[:n]
+
 def _clean(term, aliases, r, model):
     w = r.get("why") if isinstance(r.get("why"), dict) else {}
-    return {"term": term, "aliases": aliases, "def": str(r.get("def") or "")[:600], "how": str(r.get("how") or "")[:400],
-            "why": {k: str(w.get(k) or "")[:260] for k in ("job", "industry", "economy")},
-            "players": [str(x)[:30] for x in (r.get("players") or [])][:5], "related": [str(x)[:40] for x in (r.get("related") or [])][:5],
-            "deeper": str(r.get("deeper") or "")[:900], "model": model, "at": dt.date.today().isoformat()}
+    d = r.get("deep") if isinstance(r.get("deep"), dict) else {}
+    b = d.get("banker") if isinstance(d.get("banker"), dict) else {}
+    pl = [{"name": _s(x.get("name"), 40), "ticker": _s(x.get("ticker"), 10) or None, "private": bool(x.get("private")), "role": _s(x.get("role"), 10).lower(), "pos": _s(x.get("pos"), 120)}
+          for x in (d.get("players") or []) if isinstance(x, dict) and x.get("name")][:10]
+    deep = {"works": _s(d.get("works"), 1400), "tech": _s(d.get("tech"), 1000), "players": pl, "history": _s(d.get("history"), 1200), "outlook": _s(d.get("outlook"), 1200),
+            "value": _s(d.get("value"), 1200), "banker": {"deals": _s(b.get("deals"), 900), "clients": [_s(x, 200) for x in (b.get("clients") or [])][:3], "ask": [_s(x, 200) for x in (b.get("ask") or [])][:3]},
+            "metrics": [{"figure": _s(x.get("figure"), 40), "context": _s(x.get("context"), 100)} for x in (d.get("metrics") or []) if isinstance(x, dict) and x.get("figure") and "~" in str(x.get("figure")) + str(x.get("context"))][:5]}
+    return {"term": term, "aliases": aliases, "def": _s(r.get("def"), 600), "how": _s(r.get("how"), 400),
+            "why": {k: _s(w.get(k), 260) for k in ("job", "industry", "economy")},
+            "players": [p["ticker"] or p["name"] for p in pl][:5], "related": [_s(x, 40) for x in (r.get("related") or [])][:6],
+            "deep": deep if deep["works"] else None, "v": V if deep["works"] else 1, "model": model, "at": dt.date.today().isoformat()}
 
-def generate(terms, cache, role):
-    """terms: [(term, aliases)] -> {id: concept}; one call per <= 8 terms."""
+def generate(terms, cache, role, fallback=True):
+    """terms: [(term, aliases)] -> {id: concept}; one call per PER_CALL terms."""
     out = {}
-    for i in range(0, len(terms), 8):
-        batch = terms[i:i + 8]
-        res = llm.call(role, SYS, "Terms:\n" + "\n".join(f"- {t}" + (f" (also: {', '.join(a[:3])})" if a else "") for t, a in batch), cache, max_tokens=900 * len(batch))
-        if not isinstance(res, dict): log("batch failed", [t for t, _ in batch]); continue
+    for i in range(0, len(terms), PER_CALL):
+        batch = terms[i:i + PER_CALL]
+        res = llm.call(role, SYS, "Terms:\n" + "\n".join(f"- {t}" + (f" (also: {', '.join(a[:3])})" if a else "") for t, a in batch), cache, max_tokens=3200 * len(batch), fallback=fallback)
+        if not isinstance(res, dict): log("batch failed", [t for t, _ in batch]); break  # quota / outage: stop, retry next run
         low = {k.lower(): v for k, v in res.items() if isinstance(v, dict)}
         for t, a in batch:
             r = low.get(t.lower())
             if r and r.get("def"): out[cid(t)] = _clean(t, a, r, res.get("_model"))
     return out
+
+ORDER = {}  # upgrade in seed order (the terms Sal named first)
 
 def load(path):
     try: return json.load(open(path)).get("concepts", {})
@@ -81,7 +103,10 @@ def known(cs):
 
 def build(out_dir, cache, items=(), pods=None):
     seed = load(SEED_PATH); np_ = os.path.join(cache, "concepts_new.json"); new = load(np_)
-    allc = {**seed, **new}; have = known(allc)
+    allc = {**seed, **new}
+    for i, c in seed.items():  # curated aliases / match flags in the committed seed always win
+        allc[i] = {**allc[i], "aliases": c.get("aliases", []), "match": c.get("match", True)}
+    have = known(allc)
     # candidates = terms the summarizers flagged in context lines but the glossary lacks
     cnt = {}
     srcs = [x for it in items for x in (it.get("cx") or []) + ((it.get("dev") or {}).get("cx") or [])]
@@ -90,12 +115,29 @@ def build(out_dir, cache, items=(), pods=None):
         t = re.sub(r"\s+", " ", str(x.get("term") or "")).strip()
         if 2 <= len(t) <= 40 and t.lower() not in have and t.lower().rstrip("s") not in have: cnt[t] = cnt.get(t, 0) + 1
     todo = [t for t, _ in sorted(cnt.items(), key=lambda kv: -kv[1])][:NEW_PER_RUN]
-    if todo and llm.remaining("concepts", cache) > 0:
-        add = generate([(t, []) for t in todo], cache, "concepts")
-        new.update(add); json.dump({"concepts": new}, open(np_, "w")); allc.update(add)
+    # Flash only; Flash-Lite is allowed only once Flash has been unavailable for 24h+ (tracked in the cache)
+    sp = os.path.join(cache, "concepts_state.json")
+    try: st = json.load(open(sp))
+    except Exception: st = {}
+    now = dt.datetime.now(dt.timezone.utc)
+    if llm.available("concepts", cache): st.pop("flash_out_since", None)
+    else: st.setdefault("flash_out_since", now.isoformat())
+    lite_ok = bool(st.get("flash_out_since")) and (now - dt.datetime.fromisoformat(st["flash_out_since"])).total_seconds() > 86400
+    can = llm.available("concepts", cache) or lite_ok
+    if todo and can and llm.remaining("concepts", cache) > 0:
+        add = generate([(t, []) for t in todo], cache, "concepts", fallback=lite_ok)
+        new.update(add); allc.update(add)
         log(f"added {len(add)}: {', '.join(c['term'] for c in add.values())}")
+    up = [(c["term"], c["aliases"]) for i, c in sorted(allc.items(), key=lambda kv: ORDER.get(kv[0], 999)) if c.get("v", 1) < V or ("lite" in str(c.get("model")) and llm.available("concepts", cache))][:UPGRADE_PER_RUN]
+    if up and can and llm.remaining("concepts", cache) > 0:
+        got = generate(up, cache, "concepts", fallback=lite_ok)
+        for i, c in got.items():
+            c["aliases"] = allc.get(i, {}).get("aliases", c["aliases"]); c["match"] = allc.get(i, {}).get("match", True)
+        new.update(got); allc.update(got); log(f"upgraded {len(got)} to deep: {', '.join(c['term'] for c in got.values())}")
+    json.dump({"concepts": new}, open(np_, "w")); json.dump(st, open(sp, "w"))
     json.dump({"generatedAt": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"), "concepts": allc}, open(os.path.join(out_dir, "concepts.json"), "w"), separators=(",", ":"))
-    log(f"{len(allc)} concepts ({len(seed)} seed, {len(new)} added); {len(cnt)} unknown flagged terms")
+    nd = sum(1 for c in allc.values() if c.get("v", 1) >= V)
+    log(f"{len(allc)} concepts, {nd} deep, {len(allc) - nd} queued for deep; {len(cnt)} unknown flagged terms; flash {'ok' if llm.available('concepts', cache) else 'out'}")
 
 if __name__ == "__main__" and sys.argv[1:] == ["seed"]:
     cur = load(SEED_PATH); todo = [(t, a) for t, a in SEED if cid(t) not in cur]
@@ -106,3 +148,4 @@ if __name__ == "__main__" and sys.argv[1:] == ["seed"]:
     os.makedirs(os.path.dirname(SEED_PATH), exist_ok=True)
     json.dump({"concepts": cur}, open(SEED_PATH, "w"), indent=1, ensure_ascii=False)
     print(len(cur), "concepts;", len(todo) - len(got), "failed")
+ORDER.update({cid(t): i for i, (t, _) in enumerate(SEED)})

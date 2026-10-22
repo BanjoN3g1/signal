@@ -48,6 +48,13 @@ key players, related concepts and a go-deeper paragraph. Aliases are curated in 
 lacks into `data/cache/concepts_new.json`, using 1 Flash-Lite call (role `concepts`, cap 4/day). The client matches terms and aliases in cards,
 Developing summaries, Dig in and podcast takeaways, underlining at most 3 per card. Tapping one opens a sheet with what it is, what it means here,
 why you'd care, related concepts, where it's showing up, and a go-deeper section. Learn → Concepts lists everything, with search and recently-seen terms.
+**Deep v2 (current):** every entry also carries `deep`: how it works, why it matters for tech, players across the value chain (supplies, builds,
+buys; public tickers and private companies, with positioning), history, a 3-5 year outlook, value creation and destruction, the banker angle
+(deals, what clients ask, questions to ask), and approximate numbers with a year. Each refresh upgrades 5 shallow v1 terms (2 calls of 3 terms)
+in seed order and writes up to 3 new terms at the deep level. This uses Gemini Flash only (role `concepts`, cap 20/day). Flash-Lite is used only after Flash has been
+unavailable for 24h+, tracked in `data/cache/concepts_state.json`, and Lite-written entries are redone on Flash when it returns. Generic finance terms
+(`"match": false` in the seed, e.g. guidance, IPO, gross margin) stay in the glossary but are underlined only when a story's AI context line flags them.
+Underlines appear in podcast transcript excerpts too, with each concept underlined once per section.
 
 ## Coverage universe
 Software, semis, AI **and internet** (platforms & ads, marketplaces & e-commerce, fintech). Internet groups are in `watchlist.json` and

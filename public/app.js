@@ -236,11 +236,11 @@ async function openDig(e,it,kind){
  const box=sh.querySelector('#tx');if(!B){box.innerHTML='<p class="note">Transcript unavailable offline.</p>';return}
  const timed=B[0]&&B[0].s!=null,p=Math.min(it.p,B.length-1),p2=Math.min(Math.max(it.p2??p,p),B.length-1);
  let ctx=60;
- const draw=()=>{let lo=p,hi=p2;
+ const draw=()=>{let lo=p,hi=p2;const TK=cxCtx('t:'+e.key,e.summary?.concepts,e.showName+' — '+e.title,4);
   if(timed){const a=B[p].s-ctx,z=B[p2].e+ctx;while(lo>0&&B[lo-1].e>a)lo--;while(hi<B.length-1&&B[hi+1].s<z)hi++}
   else{const n=Math.ceil(ctx/32);lo=Math.max(0,p-n);hi=Math.min(B.length-1,p2+n)}
   box.innerHTML=(lo>0?'<div class="txfade">…</div>':'')+B.slice(lo,hi+1).map((b,k)=>{const i=lo+k,on=i>=p&&i<=p2;
-   return `<p class="${on?'hl':''}">${timed?`<span class="tt">${ts(b.s)}</span>`:''}${on?markQ(b.t,it.q):esc(b.t)}</p>`}).join('')
+   return `<p class="${on?'hl':''}">${timed?`<span class="tt">${ts(b.s)}</span>`:''}${cxMarkH(on?markQ(b.t,it.q):esc(b.t),TK)}</p>`}).join('')
    +(lo>0||hi<B.length-1?`<button class="more" id="more">Show more context</button>`:'');
   const m=box.querySelector('#more');if(m)m.onclick=()=>{ctx+=60;draw()};
   const h=box.querySelector('.hl');if(h&&ctx===60)box.scrollTop=Math.max(0,h.offsetTop-(box.clientHeight-h.offsetHeight)/2)};
@@ -411,19 +411,24 @@ let CXL=[],CXRX=null;const CXC={};
 const cxNorm=s=>String(s||'').toLowerCase().replace(/[’']/g,"'").replace(/\s+/g,' ').trim();
 const reEsc=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 function cxInit(c){CX=c.concepts||{};CXL=[];
- Object.entries(CX).forEach(([id,x])=>[x.term,...(x.aliases||[])].forEach(a=>{if(a&&a.length>1)CXL.push([a,id,/^[A-Z0-9\-\/]+$/.test(a.replace(/s$/,''))])}));
- CXL.sort((a,b)=>b[0].length-a[0].length);CXRX=CXL.length?new RegExp('(^|[^\\w-])('+CXL.map(x=>reEsc(x[0])).join('|')+')(?![\\w-])','gi'):null}
+ Object.entries(CX).forEach(([id,x])=>[x.term,...(x.aliases||[])].forEach(a=>{if(a&&a.length>1)CXL.push([a,id,/^[A-Z0-9\-\/]+$/.test(a.replace(/s$/,'')),x.match!==false])}));
+ CXL.sort((a,b)=>b[0].length-a[0].length);const M=CXL.filter(x=>x[3]);CXRX=M.length?new RegExp('(^|[^\\w-])('+M.map(x=>reEsc(x[0])).join('|')+')(?![\\w-])','gi'):null}
 function cxId(term){if(!CX)return null;const t=cxNorm(term);if(CX[t.replace(/[^a-z0-9]+/g,'-')])return t.replace(/[^a-z0-9]+/g,'-');
  const h=CXL.find(x=>cxNorm(x[0])===t||cxNorm(x[0])===t.replace(/s$/,''));return h?h[1]:null}
 // a context = the item a term was tapped in: its AI context lines ({term, here}), title, and a per-card underline budget
 function cxCtx(key,lines,title,max=3){const L=(lines||[]).filter(x=>x&&x.term);CXC[key]={key,lines:L,title,max,used:new Set()};return CXC[key]}
-function cxMark(text,k){let h=esc(text||'');if(!k||!text||k.used.size>=k.max)return h;
- const extra=k.lines.filter(l=>!cxId(l.term)&&l.term.length>2);  // terms the AI flagged that the glossary doesn't have yet
- const rx=extra.length?new RegExp('(^|[^\\w-])('+[...extra.map(l=>reEsc(esc(l.term))),...CXL.map(x=>reEsc(x[0]))].join('|')+')(?![\\w-])','gi'):CXRX;if(!rx)return h;
- return h.replace(rx,(m,pre,w)=>{if(k.used.size>=k.max)return m;
-  let id=null;const hit=CXL.find(x=>x[0].toLowerCase()===w.toLowerCase());
-  if(hit){if(hit[2]&&hit[0]!==w&&hit[0]+'s'!==w)return m;id=hit[1]}else{const l=extra.find(l=>esc(l.term).toLowerCase()===w.toLowerCase());if(!l)return m;id='~'+l.term}
-  if(k.used.has(id))return m;k.used.add(id);return `${pre}<span class="cx" data-cx="${esc(id)}" data-k="${esc(k.key)}">${w}</span>`})}
+function cxMark(text,k){return cxMarkH(esc(text||''),k)}
+// underline glossary terms in already-escaped HTML (text outside tags only); each concept once per context, at most k.max
+function cxMarkH(h,k){if(!k||!h||k.used.size>=k.max)return h;
+ const flag=new Set(k.lines.map(l=>cxId(l.term)).filter(Boolean));  // generic terms underline only when this item's AI flagged them
+ const extra=k.lines.filter(l=>l.term.length>2&&(!cxId(l.term)||CX[cxId(l.term)].match===false));
+ const words=[...extra.map(l=>esc(l.term)),...extra.map(l=>cxId(l.term)).filter(Boolean).flatMap(i=>[CX[i].term,...(CX[i].aliases||[])].map(esc))];
+ const rx=words.length?new RegExp('(^|[^\\w-])('+[...words.map(reEsc),...CXL.filter(x=>x[3]).map(x=>reEsc(x[0]))].join('|')+')(?![\\w-])','gi'):CXRX;if(!rx)return h;
+ return h.split(/(<[^>]+>)/).map(part=>part[0]==='<'?part:part.replace(rx,(m,pre,w)=>{if(k.used.size>=k.max)return m;
+  let id=null;const hit=CXL.find(x=>esc(x[0]).toLowerCase()===w.toLowerCase());
+  if(hit){if(hit[2]&&esc(hit[0])!==w&&esc(hit[0])+'s'!==w)return m;if(!hit[3]&&!flag.has(hit[1]))return m;id=hit[1]}
+  else{const l=extra.find(l=>esc(l.term).toLowerCase()===w.toLowerCase());if(!l)return m;id='~'+l.term}
+  if(k.used.has(id))return m;k.used.add(id);return `${pre}<span class="cx" data-cx="${esc(id)}" data-k="${esc(k.key)}">${w}</span>`})).join('')}
 const cxSeen=()=>{try{return JSON.parse(localStorage.getItem('signal.cxseen')||'{}')}catch(e){return {}}};
 function cxRx(id){const c=CX?.[id];if(!c)return null;return new RegExp('(^|[^\\w-])('+[c.term,...(c.aliases||[])].map(reEsc).join('|')+')(?![\\w-])','i')}
 function cxWhere(id,skip){const rx=cxRx(id);if(!rx)return [];const out=[];
@@ -433,16 +438,22 @@ function cxWhere(id,skip){const rx=cxRx(id);if(!rx)return [];const out=[];
 function openConcept(id,key,sh){const k=CXC[key];const tmp=id[0]==='~';const c=tmp?null:CX?.[id];
  const line=k?.lines.find(l=>tmp?l.term===id.slice(1):cxId(l.term)===id);
  if(c){const S=cxSeen();S[id]=Date.now();localStorage.setItem('signal.cxseen',JSON.stringify(S))}
- const rel=(c?.related||[]).map(r=>[r,cxId(r)]).filter(([r,i])=>i!==id),where=c?cxWhere(id,key):[];
+ const rel=(c?.related||[]).map(r=>[r,cxId(r)]).filter(([r,i])=>i!==id),where=c?cxWhere(id,(key||'').replace(/^t:/,'p:')):[],D=c?.deep;
+ const sec=(t,h,open)=>h?`<details class="cxd"${open?' open':''}><summary>${t}</summary>${h}</details>`:'';const P=t=>t?`<p>${esc(t)}</p>`:'';
+ const RL={supplies:'Supplies',builds:'Builds',buys:'Buys',enables:'Enables'};
+ const players=D?.players?.length?Object.keys(RL).concat(['']).map(r=>{const L=D.players.filter(x=>(RL[x.role]?x.role:'')===r);return L.length?`<div class="cxpg"><b>${RL[r]||'Other'}</b>${L.map(x=>`<div class="cxp">${x.ticker&&DATA?.quotes?.[x.ticker]?`<button class="chip b" data-deep="${esc(x.ticker)}">${esc(x.ticker)}</button>`:x.ticker?`<span class="chip">${esc(x.ticker)}</span>`:x.private?`<span class="chip p">Private</span>`:`<span class="chip">Listed</span>`}<div><span class="cxpn">${esc(x.name)}</span><span class="note">${esc(x.pos)}</span></div></div>`).join('')}</div>`:''}).join(''):'';
+ const bank=D?.banker?`${P(D.banker.deals)}${D.banker.clients?.length?`<b class="cxsub">Clients ask</b><ul class="dl">${D.banker.clients.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}${D.banker.ask?.length?`<b class="cxsub">Good questions to ask</b><ul class="dl">${D.banker.ask.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}`:'';
+ const deepHTML=D?`<h4 class="dh">Go deep</h4>${sec('How it actually works',P(D.works))}${sec('Why it matters for tech',P(D.tech))}${sec('Key players across the value chain',players)}${sec('History',P(D.history))}${sec('Where it’s going (3–5 years)',P(D.outlook))}${sec('Value creation & destruction',P(D.value))}${sec('For a tech banker',bank)}${sec('Numbers to know',D.metrics?.length?`<div class="nums">${D.metrics.map(x=>`<div><b>${esc(x.figure)}</b><span>${esc(x.context)}</span></div>`).join('')}</div><p class="note">Approximate, well-established figures with a year — check current data before using.</p>`:'')}`:'';
  const body=`<div class="kicker">Concept</div><h3 class="cxh">${esc(c?.term||id.slice(1))}</h3>
   ${c?`<p class="cxdef">${esc(c.def)}</p>${c.how?`<p class="note cxhow">${esc(c.how)}</p>`:''}`:'<p class="note">Not in your glossary yet — a full explainer is written for it at an upcoming refresh.</p>'}
-  ${line?.here?`<div class="whybox"><b>In this ${key?.[0]==='p'?'conversation':'story'}</b><p>${esc(line.here)}</p>${k?.title?`<span class="note">${esc(k.title.slice(0,90))}</span>`:''}</div>`:''}
+  ${line?.here?`<div class="whybox"><b>In this ${/^[pt]/.test(key||'')?'conversation':'story'}</b><p>${esc(line.here)}</p>${k?.title?`<span class="note">${esc(k.title.slice(0,90))}</span>`:''}</div>`:''}
   ${c?.why&&(c.why.job||c.why.industry)?`<h4 class="dh">Why you’d care</h4><div class="cxwhy">${[['Your job',c.why.job],['Industry',c.why.industry],['Economy',c.why.economy]].filter(x=>x[1]).map(([l,t])=>`<div><b>${l}</b><p>${esc(t)}</p></div>`).join('')}</div>`:''}
-  ${c?.players?.length?`<h4 class="dh">Key players</h4><div class="r2">${c.players.map(t=>DATA?.quotes?.[t]?`<button class="chip b" data-deep="${esc(t)}">${esc(t)}</button>`:`<span class="chip">${esc(t)}</span>`).join('')}</div>`:''}
+  ${deepHTML}${!D&&c?'<p class="note">A deeper version of this concept (how it works, players across the value chain, history, outlook, value creation, banker angle) is being written — a few terms upgrade per refresh.</p>':''}
+  ${!D&&c?.players?.length?`<h4 class="dh">Key players</h4><div class="r2">${c.players.map(t=>DATA?.quotes?.[t]?`<button class="chip b" data-deep="${esc(t)}">${esc(t)}</button>`:`<span class="chip">${esc(t)}</span>`).join('')}</div>`:''}
   ${rel.length?`<h4 class="dh">Related</h4><div class="r2">${rel.map(([r,i])=>i?`<button class="chip cxchip" data-hop="${esc(i)}">${esc(CX[i].term)}</button>`:`<span class="chip">${esc(r)}</span>`).join('')}</div>`:''}
   ${where.length?`<h4 class="dh">Where it’s showing up</h4>${where.map(w=>w.k==='n'?`<button class="nrow cxw" data-n="${esc(w.it.id)}"><b>${esc(w.it.dev?.headline||w.it.title)}</b><span class="note">News · ${hAgo(w.it.last)} ago</span></button>`:`<button class="nrow cxw" data-pe="${esc(w.e.key)}"><b>${esc(w.e.title)}</b><span class="note">${esc(w.e.showName)} · podcast</span></button>`).join('')}`:''}
-  ${c?.deeper?`<details class="cxd"><summary>Go deeper</summary><p>${esc(c.deeper)}</p></details>`:''}
-  <p class="note">${c?`Glossary entry written once by ${esc(c.model||'AI')} and reused everywhere; `:''}${line?'the “in this story” line comes from the same AI call that summarized this item. ':''}General education — verify before relying on it.</p>`;
+  ${!D&&c?.deeper?`<details class="cxd"><summary>Go deeper</summary><p>${esc(c.deeper)}</p></details>`:''}
+  <p class="note">${c?`Glossary entry written once by ${esc(c.model||'AI')} and reused everywhere. `:''}${line?'the “in this story” line comes from the same AI call that summarized this item. ':''}General education — verify before relying on it.</p>`;
  if(sh)sh.querySelector('.bd').innerHTML=body,sh.querySelector('.bd').scrollTop=0;else sh=sheet('Concept',body);
  const bd=sh.querySelector('.bd');
  bd.querySelectorAll('[data-hop]').forEach(b=>b.onclick=()=>openConcept(b.dataset.hop,null,sh));
@@ -521,7 +532,7 @@ function renderFilings(p){const F=FL?.filings||[],R=FL?.private||[];
  p.querySelectorAll('[data-ff]').forEach(b=>b.onclick=()=>{flf=b.dataset.ff;renderFilings(p)});wireFilings(p)}
 
 // ---------- Feed: Reels-style weighted shuffle of news, developing stories, X posts and movers ----------
-const VERSION='v20 · Oct 21';
+const VERSION='v21 · Oct 21';
 const JUNK=/\b(which (is|tech|stock)|better buy|should you buy|buy, sell,? or hold|prediction:|reasons to|stock quote price|top analyst reports|if i could only|savvy investors|invested in)\b/i;
 const hrs=iso=>(Date.now()-new Date(iso))/36e5;
 function feedNews(){return (DATA.today?.items||[]).filter(it=>hrs(it.last)<=36&&(it.dev?.summary||(it.score>=4.5&&!JUNK.test(it.title)))).slice(0,24)}

@@ -29,7 +29,8 @@
    ],
    "deeper": "Neoclouds face a unique strategic risk: as legacy hyperscalers build out their own internal GPU capacity and lower prices, pure-play neoclouds must prove they can secure sticky enterprise software contracts or risk margin compression. Analysts debate whether they are durable standalone businesses or merely cyclical asset-rental plays subject to rapid hardware obsolescence.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "quantum-computing": {
    "term": "Quantum computing",
@@ -60,7 +61,8 @@
    ],
    "deeper": "While the long-term disruptive potential is immense, junior analysts must separate near-term scientific milestones from commercial viability. The technology suffers from extreme error rates and requires cryogenic cooling, meaning widespread enterprise adoption is likely a decade or more away. Deal activity currently centers on government grants and speculative venture funding rather than profitable enterprise software sales.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "encryption": {
    "term": "Encryption",
@@ -88,7 +90,8 @@
    ],
    "deeper": "The looming threat of quantum computing creates a specific M&A and R&D imperative known as 'harvest now, decrypt later,' where bad actors steal encrypted data today to unlock it once quantum computers mature. This is driving a nascent upgrade cycle toward post-quantum cryptography standards across financial services and government IT infrastructure.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "hbm": {
    "term": "HBM",
@@ -118,7 +121,8 @@
    ],
    "deeper": "HBM manufacturing requires extreme precision and advanced packaging techniques, creating an oligopoly among a handful of memory makers. Bankers tracking this space watch yields and capacity allocation closely, as any miscalculation in HBM supply can choke off billions of dollars in downstream AI hardware sales.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "cowos": {
    "term": "CoWoS",
@@ -147,7 +151,8 @@
    ],
    "deeper": "CoWoS highlights the shift in semiconductors from pure silicon fabrication node shrinking to 2.5D and 3D packaging innovation. Because TSMC is the dominant provider of CoWoS capacity, any supply bottleneck here ripples across the entire tech ecosystem, making foundry relationships a critical valuation variable for fabless AI chip designers.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "inference-vs-training": {
    "term": "Inference vs training",
@@ -177,7 +182,8 @@
    ],
    "deeper": "The economics of AI are shifting: training requires massive upfront capital expenditure by hyperscalers, but inference represents the ongoing operational cost of serving users at scale. Analysts debate whether inference will ultimately run primarily in centralized cloud datacenters or migrate to edge devices like smartphones and PCs, altering hardware demand.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "tpu-custom-asic": {
    "term": "TPU / custom ASIC",
@@ -211,7 +217,8 @@
    ],
    "deeper": "Custom ASICs offer superior power efficiency and lower cost-per-query at scale compared to general-purpose GPUs, but they lack software ecosystem flexibility. While companies like Google and Amazon have successfully deployed custom silicon for internal workloads, convincing external enterprise developers to migrate away from proprietary GPU software platforms remains a major hurdle.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "gpu": {
    "term": "GPU",
@@ -241,7 +248,8 @@
    ],
    "deeper": "The GPU's dominance in AI is built as much on its proprietary software ecosystem as its raw silicon performance. While competitors can manufacture fast chips, duplicating the software moat presents a massive barrier to entry, ensuring high gross margins for incumbent market leaders despite rising competitive pressure.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": false
   },
   "hyperscaler-capex": {
    "term": "Hyperscaler capex",
@@ -273,7 +281,8 @@
    ],
    "deeper": "Analysts constantly debate whether this unprecedented capital expenditure will yield an adequate return on invested capital (ROIC) or result in severe overcapacity. While cloud providers view this spending as existential to capture the AI shift, equity markets frequently punish them if monetization lags hardware deployment. For junior bankers, tracking these capex trends is essential for forecasting semiconductor demand and sponsor-backed infrastructure exits.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "data-center-power": {
    "term": "Data center power",
@@ -304,7 +313,8 @@
    ],
    "deeper": "The traditional metric of rack density has exploded from kilowatts to megawatts per rack, rendering legacy data centers obsolete. Bankers must understand power purchase agreements (PPAs) and energy arbitrage because a lack of grid interconnects can kill a billion-dollar data center transaction overnight. Consequently, we see tech companies investing directly in nuclear fusion and fission startups to bypass grid delays.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "foundry": {
    "term": "Foundry",
@@ -334,7 +344,8 @@
    ],
    "deeper": "The foundry model has evolved from a commoditized manufacturing service to a vital strategic asset. The soaring cost of building leading-edge fabs has led to a duopoly or near-monopoly at the bleeding edge, raising antitrust and national security scrutiny. Bankers evaluating fabless semiconductor companies must always factor in foundry allocation risk and wafer pricing power.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "process-node": {
    "term": "Process node",
@@ -366,7 +377,8 @@
    ],
    "deeper": "The physics of shrinking nodes has grown so complex that traditional nanometer measurements no longer reflect physical gate lengths, becoming more of a marketing term for generational leaps. Transitioning to Gate-All-Around (GAA) transistors and backside power delivery requires unprecedented R&D budgets. Analysts must scrutinize whether a chip designer's migration to a new node will justify the massive mask and wafer costs.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "export-controls": {
    "term": "Export controls",
@@ -396,7 +408,8 @@
    ],
    "deeper": "Export controls represent the intersection of geopolitics and corporate valuation. When new restrictions drop, a banker's primary task is immediately stress-testing clients' revenue exposure to restricted jurisdictions. Furthermore, these rules incentivize gray markets and accelerated indigenous tech development in targeted countries, introducing long-term structural competition.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "large-language-model": {
    "term": "Large language model",
@@ -428,7 +441,8 @@
    ],
    "deeper": "The debate around LLMs centers on whether foundational model capabilities are hitting a data wall or if scaling laws will continue indefinitely. While training costs run into hundreds of millions of dollars, inference costs are rapidly dropping due to algorithmic efficiency. Bankers evaluating software targets must assess whether an asset has proprietary domain data or is merely a thin wrapper around a commodity LLM.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": false
   },
   "ai-agents": {
    "term": "AI agents",
@@ -458,7 +472,8 @@
    ],
    "deeper": "Agentic workflows dramatically increase computational demand because a single user request can trigger hundreds of automated background LLM calls. For tech bankers, this transition changes how software valuation is calculated; recurring seat-based revenue models may give way to usage-based metrics. Security, governance, and auditability of rogue agents are major technical hurdles facing early-stage enterprise adoption.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "tokens-ai": {
    "term": "Tokens (AI)",
@@ -487,7 +502,8 @@
    ],
    "deeper": "The unit economics of AI rely entirely on driving down the cost of generating tokens while increasing tokens per second. As algorithmic and hardware efficiencies improve, token prices experience severe deflation, forcing API providers to compete on speed, context window size, and reliability. Bankers must look closely at token gross margins when underwriting AI-first application startups.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "arr": {
    "term": "ARR",
@@ -518,7 +534,8 @@
    ],
    "deeper": "While ARR is the holy grail of SaaS metrics, analysts must scrutinize its exact definition, as companies sometimes conflate committed contract value with actual billed and collected revenue. True ARR excludes professional services and one-time setup fees, focusing purely on recurring software streams. Bankers often adjust raw ARR for churn and downgrades to arrive at a 'net new ARR' figure, which reveals the true growth velocity of the underlying business. Relying solely on headline ARR can mask underlying customer dissatisfaction if churn is quietly offsetting new sales.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "nrr": {
    "term": "NRR",
@@ -549,7 +566,8 @@
    ],
    "deeper": "An NRR above 120 percent is traditionally considered world-class, indicating that customer expansion drastically outpaces churn. However, sharp analysts look closely at gross retention versus net retention; a company could have a high NRR driven by massive upsells to a few whales while secretly bleeding smaller accounts. In macroeconomic downturns, NRR is often the first metric to compress as customers aggressively audit and downsize their software seats. Bankers use NRR trends to test management's long-term growth assumptions in discounted cash flow models.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "rule-of-40": {
    "term": "Rule of 40",
@@ -576,7 +594,8 @@
    ],
    "deeper": "While simple and widely used, the Rule of 40 treats growth percentage and margin percentage as exact equals, which mathematically ignores the reality that a dollar of high-growth revenue is usually valued much higher by public markets than a dollar of margin. Furthermore, companies can easily manipulate the metric in the short term by pulling back on R&D or sales and marketing to artificially inflate margins. Analysts must evaluate the quality of the growth and whether the underlying profit is generated organically or through accounting adjustments. In different interest rate environments, the market shifts its weighting, heavily favoring profitability over pure growth.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "rpo": {
    "term": "RPO",
@@ -606,7 +625,8 @@
    ],
    "deeper": "RPO is particularly critical for enterprise software and cloud infrastructure providers where deals span three to five years with complex billing schedules. cRPO is often preferred by analysts over total RPO because it strips away multi-year visibility that is inherently more uncertain and focuses strictly on the next twelve months. A sharp analyst compares RPO growth to billings and revenue growth to ensure the sales pipeline is genuinely expanding rather than just pulling forward future commitments through aggressive discounting.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "gross-margin": {
    "term": "Gross margin",
@@ -635,7 +655,8 @@
    ],
    "deeper": "Gross margin structures vary wildly across tech subsectors; pure SaaS companies often boast 70 to 80 percent margins, while hardware or AI infrastructure players face heavy infrastructure costs that compress margins. Analysts must carefully check what management includes in COGS versus operating expenses, as companies sometimes shift customer support or hosting costs around to artificially boost gross margins. In AI, massive compute and GPU depreciation costs are pressuring gross margins, forcing software firms to rethink their unit economics.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": false
   },
   "free-cash-flow": {
    "term": "Free cash flow",
@@ -665,7 +686,8 @@
    ],
    "deeper": "Tech companies often tout 'Adjusted FCF,' which routinely adds back stock-based compensation (SBC), a massive non-cash expense that dilutes public shareholders. A rigorous banker will always strip out SBC when calculating true cash flow, especially in tech where stock options make up a huge portion of employee pay. Furthermore, explosive capital expenditure cycles—like building out massive data centers for AI training—can temporarily crush FCF even for highly profitable tech giants.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": false
   },
   "ev-revenue-multiple": {
    "term": "EV/Revenue multiple",
@@ -697,7 +719,8 @@
    ],
    "deeper": "Valuing a company on revenue multiples can be deceptive because it completely ignores profitability and cost structures; a company with a 10x EV/Revenue multiple and 90 percent gross margins is drastically different from one with the same multiple and 30 percent gross margins. Bankers often use growth-adjusted multiples (such as EV/Revenue divided by NTM growth rate) to normalize comparisons across peers growing at different speeds. During tech market bubbles, multiples detach from fundamentals, only to violently mean-revert when liquidity dries up.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": false
   },
   "guidance": {
    "term": "Guidance",
@@ -727,7 +750,8 @@
    ],
    "deeper": "Management teams famously play a game of managing expectations, intentionally guiding low so they can consistently 'beat and raise' their numbers to keep the stock price inflated. A slight cut in guidance or even a conservative outlook can trigger a violent double-digit sell-off in high-multiple tech stocks. Sharp analysts look past the headline numbers to analyze management's tone, backlog coverage, and whether the beat was driven by true core operational strength or accounting quirks.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": false
   },
   "saas": {
    "term": "SaaS",
@@ -757,7 +781,8 @@
    ],
    "deeper": "While top-line growth was historically the sole metric for SaaS valuation, market corrections have forced a sharp pivot toward efficiency and profitability, making the 'Rule of 40' the baseline standard. Analysts must scrutinize Net Retention Rate (NRR) to distinguish between true organic expansion and mere customer acquisition masking churn. Furthermore, the rise of AI is threatening traditional seat-based SaaS models, forcing companies to experiment with outcome-based or consumption-based pricing alternatives.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": false
   },
   "seat-based-pricing": {
    "term": "Seat-based pricing",
@@ -788,7 +813,8 @@
    ],
    "deeper": "The fundamental flaw in seat-based pricing is that automation and AI reduce the need for human headcount, paradoxically punishing software vendors for making their customers more efficient. Consequently, many modern software companies are transitioning toward hybrid models or pure usage-based pricing tied to compute, data volume, or API calls. Analysts evaluating a SaaS target must carefully assess whether its pricing model aligns with secular AI tailwinds or exposes it to structural seat erosion.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "dual-class-shares": {
    "term": "Dual-class shares",
@@ -819,7 +845,8 @@
    ],
    "deeper": "While defenders argue that dual-class structures shield visionaries from short-term quarterly earnings pressure, critics view them as entrenching management and disenfranchising public investors. Institutional shareholder services and major index providers frequently push back against these structures, sometimes restricting inclusion in major indexes. For an M&A banker, a dual-class target means that board approval is effectively irrelevant if the controlling founder opposes a transaction, shifting deal dynamics entirely.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "tender-offer": {
    "term": "Tender offer",
@@ -848,7 +875,8 @@
    ],
    "deeper": "Private company tender offers have exploded in the tech ecosystem as startups stay private much longer, acting as a crucial retention tool to satisfy employee liquidity cravings without a public listing. Structuring these requires careful coordination regarding valuation caps, tax implications, and transfer restrictions imposed by the board. In public M&A, combining a tender offer with a back-end merger allows successful acquirers to squeeze out holdout shareholders quickly.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "secondary-sale": {
    "term": "Secondary sale",
@@ -879,7 +907,8 @@
    ],
    "deeper": "Secondary transactions often price at a discount to the company's last primary funding round, serving as a reality check on inflated unicorn valuations. For analysts, tracking the volume and pricing of these private block trades provides a crucial valuation benchmark when comps are scarce. However, companies often tightly control these sales through Right of First Refusal (ROFR) clauses to prevent unwanted interlopers from joining their cap table.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "convertible-notes": {
    "term": "Convertible notes",
@@ -910,7 +939,8 @@
    ],
    "deeper": "While convertibles avoid immediate equity dilution, a stack of heavily discounted notes with low valuation caps can create a painful 'valuation overhang' and severe dilution shock for founders during the Series A round. Analysts must carefully model 'conversion mechanics'—specifically how valuation caps, interest accumulation, and discounts interact—to understand who actually owns the company after the next round. SAFEs (Simple Agreements for Future Equity) have largely replaced convertibles in ultra-early seed rounds because SAFEs lack a maturity date and interest rate, treating the money strictly as equity-bound risk capital rather than debt.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "take-private": {
    "term": "Take-private",
@@ -941,7 +971,8 @@
    ],
    "deeper": "Take-private deals require complex financing packages, often relying on massive institutional debt (leveraged loans and high-yield bonds) that can strain under high-interest-rate environments. Bankers must run rigorous LBO models to ensure the target's cash flow can comfortably service the debt load post-acquisition. Furthermore, because management teams often partner with the PE sponsor, fairness opinions and special board committees are heavily scrutinized to prevent conflicts of interest and shareholder litigation.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "leveraged-buyout": {
    "term": "Leveraged buyout",
@@ -972,7 +1003,8 @@
    ],
    "deeper": "Tech LBOs differ from traditional industrial LBOs because software companies lack heavy physical assets to use as collateral, forcing lenders to underwrite deals based on recurring revenue streams and software stickiness rather than hard assets. The core returns in a tech LBO traditionally rely on three levers: EBITDA growth, multiple expansion upon exit, and rapid debt paydown. When interest rates rise, the math behind LBOs breaks down unless sponsors write much larger equity checks, forcing them to find software companies with exceptionally high free cash flow conversion margins.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "ipo": {
    "term": "IPO",
@@ -1003,7 +1035,8 @@
    ],
    "deeper": "While traditional IPOs allow companies to raise primary capital and carefully choose institutional investors via a roadshow, they often leave 'money on the left table' if the stock pops significantly on day one. Bankers spend weeks managing the book-building process to balance underpricing against maximizing proceeds for the issuer. In tech, market volatility can slam the IPO window shut overnight, forcing companies to delay listings or rely on private rounds.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": false
   },
   "direct-listing": {
    "term": "Direct listing",
@@ -1029,7 +1062,8 @@
    ],
    "deeper": "Without a traditional underwriting syndicate to stabilize the stock price and build a stable book of institutional long-only investors, direct listings can experience extreme volatility on day one. The reference price is set based on private market secondary trades, but public supply and demand dictate the opening price entirely. Consequently, this route is usually reserved for highly recognizable tech brands that do not need immediate cash infusions.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "spac": {
    "term": "SPAC",
@@ -1059,7 +1093,8 @@
    ],
    "deeper": "The de-SPAC process gained immense popularity during low-interest-rate environments due to the speed and the ability to use forward projections—something traditional IPOs heavily restrict. However, high redemption rates (where investors pull their cash out before the merger closes) often left the combined company underfunded, requiring toxic PIPE (Private Investment in Public Equity) financing. Analysts scrutinize sponsor promotes and dilution structures very carefully when evaluating these deals.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "s-1": {
    "term": "S-1",
@@ -1089,7 +1124,8 @@
    ],
    "deeper": "The S-1 process involves a delicate negotiation with the SEC through comment letters where regulators challenge accounting treatments, revenue recognition policies, or risk disclosures. For tech companies, the 'Management's Discussion and Analysis' (MD&A) section is critical because it explains gross margin trends, R&D spend efficiency, and customer acquisition costs. Analysts read these filings backward and forward to benchmark prospective targets against public comps.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": false
   },
   "lock-up-period": {
    "term": "Lock-up period",
@@ -1118,7 +1154,8 @@
    ],
    "deeper": "The expiration of a lock-up period is often a catalyst for high trading volume and downward price pressure, especially if early venture capital investors are eager to return capital to their limited partners. Sophisticated analysts look at 'early release' provisions, where a strong stock performance allows insiders to sell a portion of their shares even before the standard lock-up officially expires.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "merger-arbitrage": {
    "term": "Merger arbitrage",
@@ -1147,7 +1184,8 @@
    ],
    "deeper": "In tech M&A, merger arbitrage spreads can widen dramatically if regulatory bodies like the FTC or European Commission signal deep skepticism over anti-competitive behavior. Arbitrageurs do not just look at financial value; they act as probabilistic legal analysts, pricing in the likelihood of litigation, second requests, and political shifts. A collapsing deal spread signals to the deal team that the market believes the transaction is in serious jeopardy.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "antitrust-review": {
    "term": "Antitrust review",
@@ -1175,7 +1213,8 @@
    ],
    "deeper": "Modern antitrust review in tech has shifted from a traditional consumer-welfare standard (focused solely on consumer prices) to a broader ecosystem-harm approach, examining data accumulation, network effects, and 'killer acquisitions' of early-stage AI or software startups. Securing regulatory clearance can take over a year, forcing deal teams to include extensive ticking fees or covenants governing how the target operates while waiting for approval.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "termination-fee": {
    "term": "Termination fee",
@@ -1204,7 +1243,8 @@
    ],
    "deeper": "Reverse termination fees (paid by the buyer to the target) are particularly crucial in tech transactions involving heavy regulatory hurdles, such as cross-border semiconductor deals or mega-cap software acquisitions. If antitrust regulators block the transaction, a hefty reverse break fee acts as a form of insurance for the target, compensating them for disruption and lost market standing during the failed review process.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "accretion-dilution": {
    "term": "Accretion / dilution",
@@ -1235,7 +1275,8 @@
    ],
    "deeper": "While boards love accretive deals, sophisticated analysts know EPS accretion is an accounting metric that can mask poor strategic logic or expensive purchase multiples. A deal can be accretive simply because the buyer used cheap stock or high leverage, yet still destroy long-term shareholder value. Consequently, bankers must look beyond simple accretion/dilution models to return on invested capital (ROIC) and discounted cash flow (DCF) analyses.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "share-buyback": {
    "term": "Share buyback",
@@ -1266,7 +1307,8 @@
    ],
    "deeper": "Critics argue that buybacks are a form of financial engineering that enriches executives with stock-based compensation rather than investing in R&D or workforce expansion. However, for cash-generative tech giants with limited organic investment opportunities, buybacks are often the most tax-efficient way to return capital. Bankers evaluate buyback announcements as signals of management's confidence in their own valuation and cash flow visibility.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": false
   },
   "tariffs": {
    "term": "Tariffs",
@@ -1295,7 +1337,8 @@
    ],
    "deeper": "In tech, tariffs are rarely just about consumer electronics; they are geopolitical tools used to restrict access to advanced semiconductors and manufacturing equipment. For an M&A banker, assessing tariff exposure is a critical due diligence item, as sudden policy shifts can instantly render an overseas manufacturing footprint economically unviable. Companies are forced to nearshore or friendshore operations, incurring massive capital expenditures that alter their valuation multiples.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": false
   },
   "rate-cuts": {
    "term": "Rate cuts",
@@ -1327,7 +1370,8 @@
    ],
    "deeper": "The tech sector is uniquely sensitive to rate cuts because a massive portion of its theoretical value lies in cash flows far out in the future. When rates drop, the present value of those distant cash flows rises dramatically, inflating tech valuations. Conversely, rising rates crush unprofitable tech stocks by forcing investors to demand immediate profitability over distant promises.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": false
   },
   "10-year-treasury-yield": {
    "term": "10-year Treasury yield",
@@ -1358,7 +1402,8 @@
    ],
    "deeper": "Investment bankers live and die by the 10-year Treasury yield because it dictates the denominator in valuation models and the pricing of debt in leveraged buyouts. When the 10-year spikes, the equity risk premium shrinks, making high-risk growth stocks look much less attractive relative to holding safe government bonds. This dynamic can instantly shut down the IPO window for tech startups.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": false
   },
   "private-credit": {
    "term": "Private credit",
@@ -1388,7 +1433,8 @@
    ],
    "deeper": "Private credit has exploded because post-2008 banking regulations made traditional syndicated loans and high-yield bonds harder to execute for mid-market or sponsor-backed tech firms. While it offers execution certainty for dealmakers, the floating-rate nature of these loans means rising interest rates can quickly stress a software company's cash flow. Bankers must carefully evaluate debt service coverage ratios when structuring these facilities for leveraged buyouts.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "market-cap": {
    "term": "Market cap",
@@ -1417,7 +1463,8 @@
    ],
    "deeper": "Market cap only measures equity value, which can be misleading if a company has massive debt or cash piles; that is why bankers prefer Enterprise Value (EV) for comparing operational valuations. In tech M&A, a high market cap acts as a potent currency, allowing acquirers to buy smaller startups using inflated stock rather than scarce cash. However, market cap fluctuates wildly based on daily sentiment, making it a volatile baseline for long-term strategic planning.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": false
   },
   "valuation-private-round": {
    "term": "Valuation (private round)",
@@ -1451,7 +1498,8 @@
    ],
    "deeper": "Private valuations can often be an illusion because they are propped up by liquidation preferences, anti-dilution clauses, and participating preferred stock rather than pure common equity value. When a startup enters an IPO or a down-round M&A process, these hidden structural terms can severely wipe out common shareholders and early employees. Investment bankers must meticulously dissect the capitalization table to uncover the true economic rights behind a private valuation headline.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "stablecoin": {
    "term": "Stablecoin",
@@ -1482,7 +1530,8 @@
    ],
    "deeper": "While stablecoins promise instant, low-cost global settlements, they carry significant counterparty and regulatory risks regarding reserve transparency. Investment bankers look closely at the interest-rate-sensitive yield generation model of issuers, who profit by holding risk-free assets. As regulatory clarity improves, compliant onshore players are poised to capture market share from opaque offshore issuers, potentially driving sector consolidation.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   },
   "ad-tech": {
    "term": "Ad tech",
@@ -1514,7 +1563,8 @@
    ],
    "deeper": "The ad tech ecosystem is undergoing a structural shift driven by privacy regulations, the deprecation of third-party cookies, and the migration of budgets to connected TV (CTV). Analysts must evaluate how well target companies adapt to alternative identity resolution solutions and first-party data strategies. Valuation multiples heavily favor companies with proprietary data moats that can bypass intermediation and avoid the gravitational pull of dominant walled gardens.",
    "model": "gemini-3.5-flash-lite",
-   "at": "2026-10-21"
+   "at": "2026-10-21",
+   "match": true
   }
  }
 }
