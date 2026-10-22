@@ -7,16 +7,16 @@ import requests
 
 PROVIDERS = [  # first one with a key wins; both are OpenAI-compatible chat endpoints
     {"name": "Gemini (free tier)", "env": "GEMINI_API_KEY", "url": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
-     "fast": os.environ.get("GEMINI_FAST_MODEL", "gemini-3.5-flash-lite"), "news": os.environ.get("GEMINI_FAST_MODEL", "gemini-3.5-flash-lite"), "pol": os.environ.get("GEMINI_FAST_MODEL", "gemini-3.5-flash-lite"), "deep": os.environ.get("GEMINI_DEEP_MODEL", "gemini-3.5-flash"),
+     "fast": os.environ.get("GEMINI_FAST_MODEL", "gemini-3.5-flash-lite"), "news": os.environ.get("GEMINI_FAST_MODEL", "gemini-3.5-flash-lite"), "pol": os.environ.get("GEMINI_FAST_MODEL", "gemini-3.5-flash-lite"), "filings": os.environ.get("GEMINI_FAST_MODEL", "gemini-3.5-flash-lite"), "deep": os.environ.get("GEMINI_DEEP_MODEL", "gemini-3.5-flash"),
      "extra": {"reasoning_effort": "low"}, "min_tokens": 4000},  # thinking tokens count as output, so leave room
     {"name": "Groq (free tier)", "env": "GROQ_API_KEY", "url": "https://api.groq.com/openai/v1/chat/completions",
-     "fast": os.environ.get("GROQ_FAST_MODEL", "llama-3.1-8b-instant"), "news": os.environ.get("GROQ_FAST_MODEL", "llama-3.1-8b-instant"), "pol": os.environ.get("GROQ_FAST_MODEL", "llama-3.1-8b-instant"), "deep": os.environ.get("GROQ_DEEP_MODEL", "llama-3.3-70b-versatile"), "extra": {}, "min_tokens": 0},
+     "fast": os.environ.get("GROQ_FAST_MODEL", "llama-3.1-8b-instant"), "news": os.environ.get("GROQ_FAST_MODEL", "llama-3.1-8b-instant"), "pol": os.environ.get("GROQ_FAST_MODEL", "llama-3.1-8b-instant"), "filings": os.environ.get("GROQ_FAST_MODEL", "llama-3.1-8b-instant"), "deep": os.environ.get("GROQ_DEEP_MODEL", "llama-3.3-70b-versatile"), "extra": {}, "min_tokens": 0},
 ]
 # Our own daily caps (calls/day per role), set well under Gemini's free tier. Google no longer publishes free-tier
 # numbers; measured per project (and confirmed by our own 429 bodies): Flash 5 RPM / 20 RPD, Flash-Lite 15 RPM / 500 RPD.
 # 40 + 20 + 60 + 60 = 180/day max, about a third of Flash-Lite's daily allowance. Flash's 20/day is shared by every role,
 # so once it 429s we route straight to Flash-Lite for the rest of the (Pacific) day.
-CAPS = {"fast": 40, "deep": 20, "pod": 60, "news": 60, "pol": 24}  # pol = Politics & markets stream (Flash-Lite)
+CAPS = {"fast": 40, "deep": 20, "pod": 60, "news": 60, "pol": 24, "filings": 15}  # pol = Politics & markets stream (Flash-Lite)
 RPM = {"flash-lite": 15, "flash": 5}   # per-model requests/minute on the free tier; we pace a bit under these
 STATE = {"calls": 0, "errors": [], "skipped": 0, "fallbacks": 0, "limits": []}
 _LAST = {}

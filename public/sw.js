@@ -1,4 +1,4 @@
-const C='signal-v18';const SHELL=['./','index.html','styles.css','app.js','content.js','deals.js','elections.js','manifest.webmanifest','watchlist_default.json'];
+const C='signal-v19';const SHELL=['./','index.html','styles.css','app.js','content.js','deals.js','elections.js','manifest.webmanifest','watchlist_default.json'];
 // Install takes over at once (skipWaiting) and claims open pages; the page reloads itself once on controllerchange.
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(C).then(c=>c.addAll(SHELL.map(u=>new Request(u,{cache:'reload'})))).catch(()=>{}))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==C).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});

@@ -21,6 +21,7 @@ SHOWS = [
     {"id": "profg", "name": "Prof G Markets", "by": "Scott Galloway · Vox Media", "feed": "https://feeds.megaphone.fm/profgmarkets"},
     {"id": "bigtake", "name": "The Big Take", "by": "Bloomberg", "feed": "https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/825d4e29-b616-46f4-afd7-ae2b0013005c/8b1dd624-a026-43e9-8b57-ae2b00130066/podcast.rss"},
     {"id": "oddlots", "name": "Odd Lots", "by": "Bloomberg", "feed": "https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/8a94442e-5a74-4fa2-8b8d-ae27003a8d6b/982f5071-765c-403d-969d-ae27003a8d83/podcast.rss"},
+    {"id": "thejournal", "name": "The Journal.", "by": "The Wall Street Journal & Spotify Studios", "feed": "https://video-api.shdsvc.dowjones.io/api/podcasts/feed/the%20journal"},
     {"id": "gsx", "name": "Goldman Sachs Exchanges", "by": "Goldman Sachs", "feed": "https://feeds.megaphone.fm/GLD9218176758"},
 ]
 PER_SHOW = int(os.environ.get("PODCAST_PER_SHOW", 3))     # newest episodes kept per show

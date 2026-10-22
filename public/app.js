@@ -2,9 +2,10 @@
 const $=(s,r=document)=>r.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const app=$('#app');
-let DATA=null, WL=null, refreshing=false, tab='feed', earnSeg='upcoming';
+let FL=null,WK=null,DATA=null, WL=null, refreshing=false, tab='feed', earnSeg='upcoming';
 
 const I={
+ file:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>',
  back:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><path d="M15 18l-6-6 6-6"/></svg>',
  refresh:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/></svg>',
  list:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h10M4 17h7"/><path d="M18 14v6M15 17h6"/></svg>',
@@ -37,7 +38,8 @@ function groupOf(t){for(const g of WL?.groups||[])if(g.tickers.includes(t))retur
 
 // ---------- data ----------
 async function loadData(){
- try{const r=await fetch('data/feed.json?t='+Date.now(),{cache:'no-store'});if(r.ok)DATA=await r.json()}catch(e){}
+ const gj=async u=>{try{const r=await fetch(u+'?t='+Date.now(),{cache:'no-store'});return r.ok?await r.json():null}catch(e){return null}};
+ const [d,f,w]=await Promise.all([gj('data/feed.json'),gj('data/filings.json'),gj('data/weekly.json')]);if(d)DATA=d;if(f)FL=f;if(w)WK=w;
  if(!WL){WL=loadLocalWL();if(!WL){try{WL=await (await fetch('watchlist_default.json')).json()}catch(e){WL=DATA?{groups:DATA.groups}:{groups:[]}}}migrateWL()}
 }
 const ago=iso=>{const m=Math.max(0,Math.round((Date.now()-new Date(iso))/6e4));return m<1?'just now':m<60?m+' min ago':m<1440?Math.round(m/60)+' hr ago':Math.round(m/1440)+' days ago'};
@@ -121,13 +123,13 @@ function renderSoon(w){
 
 // ---------- work shell ----------
 function renderWork(){
- const titles={feed:'Feed',earnings:'Earnings',deals:'Deal Room',pods:'Podcasts',learn:'Learn'};
+ const titles={feed:'Feed',earnings:'Earnings',filings:'Filings & Deals',deals:'Deal Room',pods:'Podcasts',learn:'Learn'};
  app.innerHTML=`<div class="view">
   <div class="top"><button class="back" id="bk">${I.back}</button><div class="title">${titles[tab]||'Work'}</div>
    ${['feed','earnings'].includes(tab)?`<button class="iconbtn" id="wl" aria-label="Edit watchlist">${I.list}</button>`:''}
    ${tab!=='deals'?`<button class="rbtn" id="rf" aria-label="Refresh data"></button>`:''}</div>
   <div class="pane" id="pane"></div>
-  <nav class="tabs">${[['feed','Feed',I.feed],['earnings','Earnings',I.earn],['deals','Deal Room',I.deal],['pods','Podcasts',I.pod],['learn','Learn',I.learn]].map(([k,n,ic])=>`<button data-t="${k}" class="${tab===k?'on':''}">${ic}${n}</button>`).join('')}</nav>
+  <nav class="tabs">${[['feed','Feed',I.feed],['earnings','Earnings',I.earn],['filings','Filings',I.file],['deals','Deal Room',I.deal],['pods','Podcasts',I.pod],['learn','Learn',I.learn]].map(([k,n,ic])=>`<button data-t="${k}" class="${tab===k?'on':''}">${ic}${n}</button>`).join('')}</nav>
  </div>`;
  $('#bk').onclick=()=>location.hash='#/';
  const rf=$('#rf');if(rf){rf.onclick=startRefresh;paintRefresh()}
@@ -136,6 +138,7 @@ function renderWork(){
  const p=$('#pane');
  if(tab==='deals')return renderDeals(p);
  if(tab==='pods')return renderPods(p);
+ if(tab==='filings')return renderFilings(p);
  if(!DATA){p.innerHTML='<div class="empty"><h2>No data yet</h2><p>Tap refresh to pull the first snapshot.</p></div>';return}
  if(tab==='feed')renderFeed(p);else if(tab==='earnings')renderEarnings(p);
  else p.innerHTML=`<div class="empty"><div class="big">🎓</div><h2>Learn — coming next</h2><p>Bite-size lessons with optional “walk me through the numbers” and quick-check questions. A few lessons already live in your Feed.</p></div>`;
@@ -350,7 +353,7 @@ function privateCard(nm){const d=DATA.private?.[nm],n=d?.news||[];
   <div style="flex:1"></div>${repoTickers().has(nm)?'':'<button class="btn" data-sync>Sync watchlist</button>'}</div></section>`}
 // ---------- Today: live news stream ----------
 const hAgo=iso=>{const m=Math.max(0,Math.round((Date.now()-new Date(iso))/6e4));return m<60?m+'m':m<1440?Math.round(m/60)+'h':Math.round(m/1440)+'d'};
-const NTAGS=['Watchlist','M&A','IPO/ECM','Earnings','Fed/rates','AI capex'];
+const NTAGS=['Watchlist','M&A','IPO/ECM','Earnings','Fed/rates','AI capex','Internet'];
 function nRow(it,i){const src=new Set(it.sources.map(s=>s.source)).size;
  return `<button class="nitem" data-n="${esc(it.id)}"><div class="nmeta">${it.tags[0]?`<span class="chip b">${esc(it.tags[0])}</span>`:''}${it.tickers.slice(0,3).map(t=>`<span class="chip">${esc(t)}</span>`).join('')}<span class="note">${hAgo(it.last)} · ${src} source${src>1?'s':''}${it.paywalled.length&&!it.freeCoverage?' · 🔒':''}</span></div><b>${esc(it.title)}</b>${it.sum?`<p>${esc(it.sum)}</p>`:''}</button>`}
 function openNewsList(f){f=f||'All';const T=DATA.today,W=wlTickers();
@@ -401,8 +404,63 @@ function xCard(x){const h=String(x.handle||'').replace(/^@/,''),st=x.story;
   <div class="xs">${x.likes!=null?`♥ ${kfmt(x.likes)}`:''}${x.reposts!=null?` · ↻ ${kfmt(x.reposts)}`:''}${x.note?` · ${esc(x.note)}`:''}</div>
   <div style="flex:1"></div>${tie}<a class="note xlink" href="${esc(x.url)}" target="_blank" rel="noopener">Open on X ↗</a></div></section>`}
 
+// ---------- Filings & Deals ----------
+const FTYPE={'IPO':['IPO','g'],'Merger proxy':['Merger proxy','o'],'Merger (S-4)':['Merger S-4','o'],'Deal 8-K':['Deal 8-K','o'],'Private round':['Private round','p'],'Tender / secondary':['Tender','p'],'IPO (confidential)':['IPO (conf.)','g']};
+const EXPL={
+ 'IPO':['How to read an S-1 / F-1',['Start with the Prospectus Summary: business, market, and the “summary financial data” table — revenue, growth, gross margin, operating loss, free cash flow.','Use of Proceeds tells you if money goes to the company (primary) or to selling holders (secondary), and whether debt gets repaid.','Risk Factors are boilerplate except the specific ones: customer concentration, going-concern language, related parties, material weaknesses.','Capitalization & Dilution show pre-money shares; the first S-1/A with a price range lets you compute implied valuation (shares outstanding × midpoint).','Governance: dual/multi-class stock, “controlled company” status and lock-up terms matter for index inclusion and the float.','Banker lens: comps by growth + margin (Rule of 40), the size of the float, and what the pricing says about the ECM window.']],
+ 'IPO (confidential)':['Confidential IPO filings',['Companies can submit a draft registration statement (DRS) privately; the SEC reviews it before anything is public.','The public S-1 must appear at least 15 days before the roadshow — that is when real numbers become visible.','News of a confidential filing usually comes from the company or press; there is nothing on EDGAR to read yet.']],
+ 'Merger proxy':['What a merger proxy (DEFM14A / PREM14A) tells you',['Summary Term Sheet: price per share, cash vs stock, premium, expected closing and required approvals.','Background of the Merger: the full sale process — who else bid, at what prices, and when. The best free M&A case study there is.','Opinion of the financial advisor: the bankers’ DCF, trading comps and precedent-transaction ranges, plus their fees.','Projections: management’s forecasts given to bidders (often more optimistic than Street estimates).','Termination fees, go-shop windows and voting agreements show how locked-up the deal is.']],
+ 'Merger (S-4)':['What an S-4 tells you',['Filed when the buyer pays with its own stock — it registers the new shares.','Same content as a merger proxy (background, fairness opinions, projections) plus pro forma combined financials.','Watch the exchange ratio, collar (if any) and pro forma ownership split.']],
+ 'Deal 8-K':['Reading a deal 8-K (Items 1.01 / 2.01)',['Item 1.01 = signed a material definitive agreement (often the merger agreement); 2.01 = an acquisition or disposition closed.','The press release (Exhibit 99.1) has price, premium, financing and timing; the merger agreement (Exhibit 2.1) has fees and conditions.','8-Ks are due within four business days, so this is usually the first official document on a deal.']],
+ 'Private round':['Private rounds & valuations',['Headline valuations are post-money and often include structure (preferences, ratchets) that public comps don’t have.','Compare to the last round and to public comps on revenue run-rate multiples.','Big private rounds set marks for the next IPO window and for strategic M&A prices.']],
+ 'Tender / secondary':['Tenders & secondaries',['A tender offer lets employees and early holders sell existing shares — no new money goes to the company.','It sets a reference price ahead of an IPO and relieves pressure to list.','Pricing vs the last primary round shows whether demand is rising.']]};
+function openExplainer(t){const e=EXPL[t]||EXPL.IPO;sheet('Learn',`<h3>${esc(e[0])}</h3><ul class="dl">${e[1].map(x=>`<li>${esc(x)}</li>`).join('')}</ul><p class="note">General education, not advice; always read the filing itself.</p>`)}
+const fdate=d=>{d=String(d||'');return d.includes('T')?new Date(d).toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'}):dshort(d.slice(0,10))};
+function filingCard(f){const a=f.ai||{},T=FTYPE[f.type]||[f.type,''];
+ return `<section class="slide"><div class="card filc"><div class="kicker"><span class="chip ${T[1]}">${esc(T[0])}</span>${f.ticker?`<span class="chip">${esc(f.ticker)}</span>`:''}<span class="note">${esc(f.form)} · ${esc(fdate(f.date))}${f.amendments?` · ${f.amendments} amendment${f.amendments>1?'s':''}`:''}</span></div>
+  <div class="tkr" style="font-size:30px">${esc(f.company)}</div>${a.headline?`<h3 class="devh" style="font-size:19px">${esc(a.headline)}</h3>`:''}
+  ${a.what?`<p class="devs">${esc(a.what)}</p>`:'<p class="note">AI breakdown arrives with an upcoming refresh (a few filings per run).</p>'}
+  ${a.financials?.length?`<div class="nums">${a.financials.slice(0,3).map(x=>`<div><b>${esc(x.figure)}</b><span>${esc(x.context)}</span></div>`).join('')}</div>`:''}
+  <div style="flex:1"></div><button class="btn" data-fil="${esc(f.acc)}">Breakdown</button><button class="more" data-expl="${esc(f.type)}" style="margin-top:6px">${esc((EXPL[f.type]||EXPL.IPO)[0])}</button></div></section>`}
+function roundCard(x){const T=FTYPE[x.type]||[x.type,'p'];
+ return `<section class="slide"><div class="card filc"><div class="kicker"><span class="chip ${T[1]}">${esc(T[0])}</span>${x.size?`<span class="chip">${esc(x.size)}</span>`:''}<span class="note">${x.n} source${x.n>1?'s':''} · ${hAgo(x.date)} ago</span></div>
+  <h3 class="devh">${esc(x.title)}</h3><div class="nlist">${x.sources.slice(0,3).map(s=>`<a class="nrow" href="${esc(s.url)}" target="_blank" rel="noopener"><b>${s.paywalled?'🔒 ':''}${esc(s.title)}</b><span class="note">${esc(s.source)}</span></a>`).join('')}</div>
+  <div style="flex:1"></div><button class="more" data-expl="${esc(x.type)}">${esc((EXPL[x.type]||EXPL['Private round'])[0])}</button></div></section>`}
+function newsFor(name){const k=String(name||'').replace(/,?\s+(Inc\.?|Corp(oration)?\.?|Holdings?|Ltd\.?|PLC|N\.V\.|S\.A\.|Co\.?|Group|Technologies)\b.*$/i,'').trim();if(k.length<3)return [];const rx=new RegExp('\\b'+k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&').split(/\s+/).slice(0,2).join('\\s+'),'i');return (DATA?.today?.items||[]).filter(it=>rx.test(it.title)||it.sources.some(s=>rx.test(s.title)))}
+function openFiling(acc){const f=(FL?.filings||[]).find(x=>x.acc===acc);if(!f)return;const a=f.ai||{},rel=newsFor(f.company);
+ const s=sheet('Filing',`<div class="kicker">${esc(f.type)} · ${esc(f.form)} · filed ${esc(fdate(f.date))}${f.first!==f.date?` (first ${esc(fdate(f.first))})`:''}</div><h3>${esc(f.company)}${f.ticker?` (${esc(f.ticker)})`:''}</h3>
+  <p><a href="${esc(f.link)}" target="_blank" rel="noopener">Open the filing ↗</a> · <a href="${esc(f.index)}" target="_blank" rel="noopener">All documents ↗</a></p>
+  ${a.what?`<h4 class="dh">What they do</h4><p>${esc(a.what)}</p>`:'<p class="note">AI breakdown pending — it’s generated from the filing’s public text at an upcoming refresh.</p>'}
+  ${a.financials?.length?`<h4 class="dh">Key financials (as written in the filing)</h4><div class="nums">${a.financials.map(x=>`<div><b>${esc(x.figure)}</b><span>${esc(x.context)}</span></div>`).join('')}</div>`:''}
+  ${a.terms?`<h4 class="dh">${f.type==='IPO'?'Offering & use of proceeds':'Deal terms'}</h4><p>${esc(a.terms)}</p>`:''}
+  ${a.risks?.length?`<h4 class="dh">Risks & governance</h4><ul class="dl">${a.risks.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}
+  ${a.comps?.length?`<h4 class="dh">Comps</h4><p>${a.comps.map(esc).join(' · ')}</p>`:''}
+  ${a.implications?`<div class="whybox"><b>ECM / M&A implications</b><p>${esc(a.implications)}</p></div>`:''}
+  ${rel.length?`<h4 class="dh">In the news</h4>${rel.slice(0,4).map(nRow).join('')}`:''}${xHTML(f.x)}
+  <button class="more" data-expl="${esc(f.type)}">${esc((EXPL[f.type]||EXPL.IPO)[0])}</button>
+  ${a.what?`<p class="note">Breakdown by ${esc(a.model||'AI')} from excerpts of the filing; figures are kept only if they appear in the text. Verify in the document.</p>`:''}`);
+ s.querySelectorAll('[data-n]').forEach(b=>b.onclick=()=>openNews(b.dataset.n));s.querySelectorAll('[data-expl]').forEach(b=>b.onclick=()=>openExplainer(b.dataset.expl))}
+function wireFilings(p){p.querySelectorAll('[data-fil]').forEach(b=>b.onclick=()=>openFiling(b.dataset.fil));p.querySelectorAll('[data-expl]').forEach(b=>b.onclick=()=>openExplainer(b.dataset.expl));
+ p.querySelectorAll('[data-wk]').forEach(b=>b.onclick=()=>{const r=JSON.parse(b.dataset.wk);
+  if(r.kind==='news'&&DATA.today?.items?.some(x=>x.id===r.id||x.aliases?.includes(r.id)))openNews(DATA.today.items.find(x=>x.id===r.id||x.aliases?.includes(r.id)).id);
+  else if(r.kind==='filing'&&FL?.filings?.some(x=>x.acc===r.id))openFiling(r.id);else if(r.kind==='deep'&&DATA.quotes?.[r.id])openDeep(r.id);
+  else if(r.kind==='pod')location.hash='#/work/pods';else if(r.url)window.open(r.url,'_blank','noopener')})}
+function weeklyCard(){return `<section class="slide"><div class="card weekc"><div class="kicker">This week · since ${esc(fdate(WK.since))}</div><h3 style="margin:6px 0 4px">What you might have missed</h3>
+  <div class="wkl">${WK.lanes.map(l=>`<div class="wkg"><h4>${esc(l.lane)}</h4>${l.items.slice(0,2).map(i=>`<button class="wki" data-wk='${esc(JSON.stringify({kind:i.ref.kind,id:i.ref.id,url:i.ref.url}))}'><b>${esc(i.title)}</b><span class="note">${esc(i.sub||'')}${i.sub?' · ':''}${esc(fdate(i.date))}</span></button>`).join('')}</div>`).join('')}</div></div></section>`}
+let flf='All';
+function renderFilings(p){const F=FL?.filings||[],R=FL?.private||[];
+ const cats=[['All',()=>true],['IPOs',f=>/IPO/.test(f.type)],['M&A',f=>/Merger|Deal/.test(f.type)],['Private',()=>false]];
+ const list=flf==='Private'?[]:F.filter(cats.find(c=>c[0]===flf)[1]);const rs=flf==='All'||flf==='Private'?R:[];
+ p.innerHTML=`<div class="escroll" style="height:100%;padding-bottom:calc(var(--tab) + var(--sab) + 20px)"><div class="pchips">${cats.map(([c])=>`<button class="pchip ${flf===c?'on':''}" data-ff="${c}">${c}</button>`).join('')}</div>
+  <div class="pchips">${[['IPO','How to read an S-1'],['Merger proxy','Merger proxies'],['Merger (S-4)','S-4s'],['Deal 8-K','Deal 8-Ks'],['Private round','Private rounds'],['Tender / secondary','Tenders']].map(([t,l])=>`<button class="pchip lrn" data-expl="${esc(t)}">📘 ${l}</button>`).join('')}</div>
+  ${list.map(f=>{const a=f.ai||{},T=FTYPE[f.type]||[f.type,''];return `<button class="pstory" data-fil="${esc(f.acc)}"><div class="nmeta"><span class="chip ${T[1]}">${esc(T[0])}</span>${f.ticker?`<span class="chip">${esc(f.ticker)}</span>`:''}<span class="note">${esc(f.form)} · ${esc(fdate(f.date))}</span></div><b>${esc(a.headline||f.company)}</b>${a.what?`<p>${esc(a.what)}</p>`:`<p class="note">${esc(f.company)} · breakdown pending</p>`}</button>`}).join('')}
+  ${rs.length?`<h4 class="dh">Private rounds, tenders & confidential IPOs (news)</h4>${rs.map(x=>`<a class="pstory" href="${esc(x.sources[0].url)}" target="_blank" rel="noopener"><div class="nmeta"><span class="chip ${(FTYPE[x.type]||['','p'])[1]}">${esc((FTYPE[x.type]||[x.type])[0])}</span>${x.size?`<span class="chip">${esc(x.size)}</span>`:''}<span class="note">${x.n} source${x.n>1?'s':''} · ${hAgo(x.date)} ago</span></div><b>${esc(x.title)}</b></a>`).join('')}`:''}
+  ${!list.length&&!rs.length?'<p class="note">Nothing here yet — filings arrive with the next data refresh.</p>':''}
+  <p class="note">SEC EDGAR full-text search (S-1/F-1, DEFM14A/PREM14A, S-4, 8-K Items 1.01/2.01), filtered to tech, software, semis, AI and internet issuers that are notable (≈$1B+, well-known, or on your watchlist). Private rounds from news RSS. Updated ${FL?esc(ago(FL.generatedAt)):'—'}.</p></div>`;
+ p.querySelectorAll('[data-ff]').forEach(b=>b.onclick=()=>{flf=b.dataset.ff;renderFilings(p)});wireFilings(p)}
+
 // ---------- Feed: Reels-style weighted shuffle of news, developing stories, X posts and movers ----------
-const VERSION='v18 · Oct 21';
+const VERSION='v19 · Oct 21';
 const JUNK=/\b(which (is|tech|stock)|better buy|should you buy|buy, sell,? or hold|prediction:|reasons to|stock quote price|top analyst reports|if i could only|savvy investors|invested in)\b/i;
 const hrs=iso=>(Date.now()-new Date(iso))/36e5;
 function feedNews(){return (DATA.today?.items||[]).filter(it=>hrs(it.last)<=36&&(it.dev?.summary||(it.score>=4.5&&!JUNK.test(it.title)))).slice(0,24)}
@@ -421,7 +479,9 @@ function buildFeed(){
  const news=wshuffle(feedNews(),it=>(it.score/6)*(.35+fresh(it.last))*(it.dev?1.6:1)).map(it=>({k:'n:'+it.id,h:it.dev?.summary?devCard(it):newsCard(it)}));
  const xs=wshuffle(xFeed().filter(x=>!x.ts||hrs(x.ts)<=48).slice(0,14),x=>Math.log10(10+(x.likes||0)+3*(x.reposts||0))*(.4+fresh(x.ts||new Date().toISOString()))).map(x=>({k:'x:'+x.url,h:xCard(x)}));
  const mv=wshuffle(tick.filter(t=>Q[t]).map(t=>Q[t]),q=>.3+Math.abs(q.pct??0)).slice(0,14).map((q,i)=>({k:'m:'+q.ticker,h:moverCard(q,i)}));
- const misc=[{k:'pulse',h:pulseCard()},...pend.map(t=>({k:'p:'+t,h:pendingCard(t)})),...priv.map(t=>({k:'v:'+t,h:privateCard(t)}))];
+ const fl=(FL?.filings||[]).filter(f=>f.notable&&hrs(f.date+'T21:00:00Z')<=24*7).slice(0,4).map(f=>({k:'f:'+f.acc,h:filingCard(f)})).concat((FL?.private||[]).filter(x=>x.notable&&hrs(x.date)<=72).slice(0,2).map(x=>({k:'r:'+x.id,h:roundCard(x)})));
+ news.splice(Math.min(2,news.length),0,...wshuffle(fl,()=>1));
+ const misc=[{k:'pulse',h:pulseCard()},...(WK?.lanes?.length?[{k:'week',h:weeklyCard()}]:[]),...pend.map(t=>({k:'p:'+t,h:pendingCard(t)})),...priv.map(t=>({k:'v:'+t,h:privateCard(t)}))];
  // rhythm: news, mover, news, X, news, mover, X …  (pulse/pending slot in after a few cards)
  const pat=['n','m','n','x','n','m','x'],src={n:news,m:mv,x:xs},out=[];let i=0,guard=0;
  while((news.length||mv.length||xs.length)&&guard++<200){const k=pat[i++%pat.length];const c=src[k].shift()||news.shift()||xs.shift()||mv.shift();if(c)out.push(c);if(out.length===3&&misc.length)out.push(...misc.splice(0))}
@@ -439,7 +499,7 @@ function renderFeed(p){
  fillPending(p);p.querySelectorAll('[data-sync]').forEach(b=>b.onclick=syncNow);
  p.querySelectorAll('[data-n]').forEach(b=>b.onclick=()=>openNews(b.dataset.n));
  p.querySelectorAll('[data-deep]').forEach(b=>b.onclick=()=>openDeep(b.dataset.deep));
- p.querySelectorAll('[data-lesson]').forEach(b=>b.onclick=()=>openLesson(b.dataset.lesson));
+ p.querySelectorAll('[data-lesson]').forEach(b=>b.onclick=()=>openLesson(b.dataset.lesson));wireFilings(p);
  // back at the top after going 2+ cards deep → refetch + reshuffle (TikTok-style)
  let deep=false;f.addEventListener('scroll',()=>{const h=f.clientHeight||1;if(f.scrollTop>h*1.5)deep=true;else if(deep&&f.scrollTop<4){deep=false;refreshFeed(p,true)}},{passive:true});
  // pull down past the first card
@@ -494,6 +554,8 @@ const SICMAP=[ // [sic codes, regex for an existing group, fallback group name]
  [[3576,3663,3669],/networking/i,'Hardware · Networking'],
  [[3571,3572,3575,3577],/servers|Hardware · Computers/i,'Hardware · Computers & storage'],
  [[3670,3672,3677,3678,3679,3690],/Components/,'Hardware · Components'],
+ [[5961,5990,4899,7310,7311,7319],/Internet · Platforms/,'Internet · Platforms & ads'],
+ [[6199,6099,6141,6153],/Internet · Fintech/,'Internet · Fintech'],
  [[7370,7371,7372,7373,7374,7379,7389],/Software · Other/,'Software · Other'],
 ];
 async function loadCiks(){if(!CIKS){try{const r=await fetch('data/tickers.json');CIKS=r.ok?await r.json():{}}catch(e){CIKS={}}}return CIKS}
@@ -578,7 +640,9 @@ function openWatchlist(){
  };wire();
 }
 // one-time fix for names typed as tickers before name search existed (e.g. "SPACEX" -> SPCX)
-function migrateWL(){if(!WL)return;let ch=false;WL.groups.forEach(g=>{g.tickers=g.tickers.map(t=>{const k=t.toLowerCase().replace(/[^a-z0-9]/g,'');if(ALIAS[k]&&ALIAS[k]!==t&&!(DATA?.quotes?.[t])){ch=true;return ALIAS[k]}return t}).filter((t,i,arr)=>arr.indexOf(t)===i)});if(ch)saveLocalWL(WL)}
+const INET=[['Internet · Platforms & ads',['META','GOOGL','AMZN','NFLX','PINS','RDDT','TTD','APP']],['Internet · Marketplaces & e-commerce',['UBER','DASH','ABNB','MELI','SE','CPNG']],['Internet · Fintech',['PYPL','XYZ','COIN','HOOD','AFRM']]];
+function migrateWL(){if(!WL)return;let ch=false;
+ if(!localStorage.getItem('signal.mig.internet')){localStorage.setItem('signal.mig.internet','1');if(!WL.groups.some(g=>/^Internet/.test(g.name))){const have=new Set(WL.groups.flatMap(g=>g.tickers));const bi=WL.groups.findIndex(g=>g.name==='Benchmarks');WL.groups.splice(bi<0?WL.groups.length:bi,0,...INET.map(([n,t])=>({name:n,tickers:t.filter(x=>!have.has(x))})));ch=true}}WL.groups.forEach(g=>{g.tickers=g.tickers.map(t=>{const k=t.toLowerCase().replace(/[^a-z0-9]/g,'');if(ALIAS[k]&&ALIAS[k]!==t&&!(DATA?.quotes?.[t])){ch=true;return ALIAS[k]}return t}).filter((t,i,arr)=>arr.indexOf(t)===i)});if(ch)saveLocalWL(WL)}
 
 // ---------- earnings ----------
 function earnWhat(e){

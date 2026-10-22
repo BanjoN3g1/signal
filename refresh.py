@@ -636,6 +636,9 @@ def main():
     names.update({nm: nm for nm in private})
     try:
         import news as newsmod
+        try:  # Filings & Deals lane runs first so notable filings can cluster with press coverage in the news stream
+            import filings; filings.build(DATA, CACHE, set(tickers), names)
+        except Exception as e: log("filings failed", type(e).__name__, e)
         today = newsmod.build([t for t in tickers if t not in ETFS], {**news, **{k: v["news"] for k, v in priv.items()}}, sec, names, CACHE)
         mark("News stream (RSS)", any(today["sources"].values()))
     except Exception as e:
@@ -668,7 +671,10 @@ def main():
     try:  # Elections world (data/elections/*.json configs -> odds, polls, baselines); isolated so it can't break the feed
         import elections; elections.build(DATA, CACHE)
         import politics; politics.build(DATA, CACHE)
-    except Exception as e: log("elections failed", e)
+    except Exception as e: log("elections/politics failed", e)
+    try:  # weekly "What you might have missed" digest from everything above (no AI)
+        import weekly; weekly.build(DATA, CACHE)
+    except Exception as e: log("weekly failed", e)
 
 if __name__ == "__main__":
     main()

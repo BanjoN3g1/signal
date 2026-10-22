@@ -23,6 +23,26 @@ Written by a separate weekday-morning job; `refresh.py` merges it on every refre
 **Story ids** come from `feed.json` → `today.items[].id`: the first 12 hex chars of sha1(URL of the first headline seen for the
 story, or its title if no URL). Stories persist in the cache for 36 h, so ids are stable across refreshes; when duplicates are merged
 the survivor keeps its id and lists absorbed ids in `aliases` (x.json may key by either). An empty `{}` is fine.
+**Filings chatter:** add `"filings": {"<accession>": [post, ...]}` (same post shape). Accessions come from `data/filings.json` →
+`filings[].acc` (format `0001234567-26-000123`, the latest amendment shown). Posts appear in that filing's breakdown sheet.
+
+## Filings & Deals (`filings.py` → `data/filings.json`)
+SEC EDGAR full-text search (efts, `SEC_USER_AGENT` secret as User-Agent, ~0.3 s between calls; skipped if unset): S-1/F-1 (45 days),
+DEFM14A/PREM14A/S-4 (45 days), 8-K with Items 1.01/2.01 + "Agreement and Plan of Merger" (14 days). Kept only for tech/software/semis/AI/internet
+SIC codes (or known names), SPACs excluded, and only if notable (≈$1B+ per the AI read, a well-known name, or on the watchlist). One card per
+company & filing type (latest amendment + amendment count). Gemini Flash-Lite (role `filings`, ≤3 per run, cap 15/day) reads excerpts
+(summary, summary financials, use of proceeds / deal terms, risk summary, governance) and writes a breakdown cached by accession in
+`data/cache/filings_ai.json`; figures are kept only if they appear in the text. Private rounds, tenders and confidential IPO news come from
+Google News RSS (7 days, clustered). Notable filings are also injected into the news stream so big ones become Developing stories.
+Each filing type links to a Learn explainer (How to read an S-1, merger proxies, S-4s, deal 8-Ks, private rounds, tenders).
+
+## Weekly card (`weekly.py` → `data/weekly.json`)
+"What you might have missed": a rolling 7-day log (`data/cache/weekly_log.json`) of the top items per lane (News, Filings & Deals, Earnings,
+Politics, Podcasts) from existing outputs. No AI calls.
+
+## Coverage universe
+Software, semis, AI **and internet** (platforms & ads, marketplaces & e-commerce, fintech). Internet groups are in `watchlist.json` and
+are added once to existing phone watchlists; news relevance has an "Internet" tag. Podcasts include The Journal (WSJ & Spotify) via its public RSS.
 
 ### Developing stories
 Clusters with 2+ distinct sources (or alive for 3+ refreshes with a high score) get a structured brief from Gemini Flash-Lite (role `news`, existing caps):

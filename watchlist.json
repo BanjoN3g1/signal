@@ -1,17 +1,149 @@
-{"groups": [
- {"name": "Semis · Compute & GPUs", "tickers": ["NVDA", "AMD", "INTC", "ARM"]},
- {"name": "Semis · Custom silicon & networking", "tickers": ["AVGO", "MRVL", "ANET"]},
- {"name": "Semis · Memory", "tickers": ["MU"]},
- {"name": "Semis · Foundry", "tickers": ["TSM"]},
- {"name": "Semis · Equipment (WFE)", "tickers": ["ASML", "AMAT", "LRCX", "KLAC"]},
- {"name": "Semis · Optics", "tickers": ["COHR", "LITE"]},
- {"name": "Semis · Mobile, analog & auto", "tickers": ["QCOM", "IFX"]},
- {"name": "Semis · AI servers", "tickers": ["SMCI"]},
- {"name": "Software · Hyperscale & database", "tickers": ["MSFT", "ORCL"]},
- {"name": "Software · Enterprise apps", "tickers": ["CRM", "NOW", "ADBE", "INTU", "WDAY", "SHOP"]},
- {"name": "Software · Data & infrastructure", "tickers": ["SNOW", "DDOG", "MDB", "NET"]},
- {"name": "Software · Cybersecurity", "tickers": ["CRWD", "PANW"]},
- {"name": "Software · AI & analytics", "tickers": ["PLTR"]},
- {"name": "Software · Other", "tickers": ["SPCX"]},
- {"name": "Benchmarks", "tickers": ["IGV", "SOXX"]}
-]}
+{
+  "groups": [
+    {
+      "name": "Semis \u00b7 Compute & GPUs",
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "INTC",
+        "ARM"
+      ]
+    },
+    {
+      "name": "Semis \u00b7 Custom silicon & networking",
+      "tickers": [
+        "AVGO",
+        "MRVL",
+        "ANET"
+      ]
+    },
+    {
+      "name": "Semis \u00b7 Memory",
+      "tickers": [
+        "MU"
+      ]
+    },
+    {
+      "name": "Semis \u00b7 Foundry",
+      "tickers": [
+        "TSM"
+      ]
+    },
+    {
+      "name": "Semis \u00b7 Equipment (WFE)",
+      "tickers": [
+        "ASML",
+        "AMAT",
+        "LRCX",
+        "KLAC"
+      ]
+    },
+    {
+      "name": "Semis \u00b7 Optics",
+      "tickers": [
+        "COHR",
+        "LITE"
+      ]
+    },
+    {
+      "name": "Semis \u00b7 Mobile, analog & auto",
+      "tickers": [
+        "QCOM",
+        "IFX"
+      ]
+    },
+    {
+      "name": "Semis \u00b7 AI servers",
+      "tickers": [
+        "SMCI"
+      ]
+    },
+    {
+      "name": "Software \u00b7 Hyperscale & database",
+      "tickers": [
+        "MSFT",
+        "ORCL"
+      ]
+    },
+    {
+      "name": "Software \u00b7 Enterprise apps",
+      "tickers": [
+        "CRM",
+        "NOW",
+        "ADBE",
+        "INTU",
+        "WDAY",
+        "SHOP"
+      ]
+    },
+    {
+      "name": "Software \u00b7 Data & infrastructure",
+      "tickers": [
+        "SNOW",
+        "DDOG",
+        "MDB",
+        "NET"
+      ]
+    },
+    {
+      "name": "Software \u00b7 Cybersecurity",
+      "tickers": [
+        "CRWD",
+        "PANW"
+      ]
+    },
+    {
+      "name": "Software \u00b7 AI & analytics",
+      "tickers": [
+        "PLTR"
+      ]
+    },
+    {
+      "name": "Software \u00b7 Other",
+      "tickers": [
+        "SPCX"
+      ]
+    },
+    {
+      "name": "Internet \u00b7 Platforms & ads",
+      "tickers": [
+        "META",
+        "GOOGL",
+        "AMZN",
+        "NFLX",
+        "PINS",
+        "RDDT",
+        "TTD",
+        "APP"
+      ]
+    },
+    {
+      "name": "Internet \u00b7 Marketplaces & e-commerce",
+      "tickers": [
+        "UBER",
+        "DASH",
+        "ABNB",
+        "MELI",
+        "SE",
+        "CPNG"
+      ]
+    },
+    {
+      "name": "Internet \u00b7 Fintech",
+      "tickers": [
+        "PYPL",
+        "XYZ",
+        "COIN",
+        "HOOD",
+        "AFRM"
+      ]
+    },
+    {
+      "name": "Benchmarks",
+      "tickers": [
+        "IGV",
+        "SOXX"
+      ]
+    }
+  ]
+}

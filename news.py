@@ -26,15 +26,18 @@ TOPICS = {  # Google News RSS searches (free; covers Reuters/Bloomberg/WSJ headl
     "tech ECM": '(convertible notes OR "stock offering" OR "share sale") (tech OR software OR semiconductor)',
     "AI capex": '("data center" OR hyperscaler OR "AI spending") capex',
     "Reuters tech": 'site:reuters.com (technology OR semiconductors OR software)',
+    "internet": '(e-commerce OR marketplace OR "ad tech" OR fintech OR "consumer internet" OR streaming) (acquisition OR IPO OR earnings OR deal)',
+    "private raises": '(AI OR startup) (raises OR "funding round" OR "tender offer") valuation billion',
 }
 PAYWALL = re.compile(r"(wsj|wall street journal|bloomberg|financial times|\bft\b|barron|the information|economist|nikkei|business insider|seeking alpha|new york times|nytimes)", re.I)
 STOP = set("the a an and or but of to in on for with is are was were be been it its that this as at by from after over into amid says said will would could new than more up down out about how why what who us inc corp co ltd plc".split())
 KW = {  # tag: (regex, weight)
     "M&A": (r"\b(acquir\w*|merger|merge|buyout|take-?private|takeover|to buy|deal to|bid for|tie-up|combination)\b", 3),
-    "IPO/ECM": (r"\b(ipo|go(es|ing)? public|initial public offering|convertible|share sale|stock offering|follow-on|secondary offering|notes offering|raises? \$|debt offering|bond sale)\b", 3),
+    "IPO/ECM": (r"\b(ipo|go(es|ing)? public|initial public offering|convertible|share sale|stock offering|follow-on|secondary offering|notes offering|raises? \$|debt offering|bond sale|funding round|tender offer|at a valuation|valuation of)\b", 3),
     "Earnings": (r"\b(earnings|results|revenue|guidance|forecast|beats?|miss(es)?|quarter(ly)?|outlook|eps)\b", 2),
     "Fed/rates": (r"\b(fed|fomc|powell|rate (cut|hike)s?|interest rates?|treasury yields?|inflation|cpi|federal reserve)\b", 2),
     "AI capex": (r"\b(capex|capital expenditure|data cent(er|re)s?|gpus?|hyperscaler|ai spending|ai infrastructure|compute capacity)\b", 2),
+    "Internet": (r"\b(e-?commerce|marketplaces?|ad ?tech|digital (ad|advertising)|advertising revenue|streaming|social media|consumer internet|fintech|payments?|ride-?hailing|food delivery|online travel|creator economy|app store|search engine)\b", 1.5),
 }
 ITEMS_8K = {"1.01": "material agreement", "2.01": "completed acquisition/disposition", "2.02": "earnings release", "2.03": "new debt",
             "3.02": "unregistered equity sale", "5.02": "executive/board change", "7.01": "Reg FD disclosure", "8.01": "other event", "1.02": "terminated agreement"}
@@ -97,6 +100,9 @@ def collect(watch, news_by_ticker, sec, names):
             what = ", ".join(ITEMS_8K.get(x.strip(), "item " + x.strip()) for x in (f.get("items") or "").split(",") if x.strip()) or "current report"
             items.append({"title": f"{names.get(t, t)} ({t}) files 8-K: {what}", "url": f["url"], "source": "SEC EDGAR", "date": min(d, now).isoformat(), "desc": f.get("desc") or "", "tickers": [t]})
     status["SEC EDGAR 8-K"] = bool(sec)
+    try:  # notable IPO / merger filings and big private rounds from filings.py (same run), so they cluster with press coverage
+        items += json.load(open(os.path.join(os.environ.get("CACHE_DIR") or os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "cache"), "filings_news.json")))
+    except Exception: pass
     cutoff = now - dt.timedelta(hours=WINDOW_H)
     seen, out = set(), []
     for it in items:
