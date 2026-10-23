@@ -117,8 +117,10 @@ Turns the collected inputs into insight; no new data sources, every parameter in
 - **Expected margin**: 2024 presidential margin per state + national swing (generic-ballot average minus the 2024 national vote;
   governors ×0.8) + incumbency (2.5 Senate / 2 governor). **Candidate effect** = observed (poll avg, or market-implied margin if
   unpolled) minus that environment expectation; 4+ pts = candidate-driven.
-- **Model margin** = poll avg weighted n/(n+1.5) (cap 85%) blended with fundamentals. Never uses market prices, so model-vs-market
-  gaps are real disagreements.
+- **Prior** = fundamentals blended with the expert-rating consensus (Senate 50/50; governors 100% ratings, since the presidential
+  baseline misleads in candidate-driven governor races). Ratings map to margins Tilt 2.5 / Lean 6 / Likely 11 / Safe 18 pts.
+- **Model margin** = poll avg weighted n/(n+1.5) (cap 85%) blended with the prior. Never uses market prices, so model-vs-market
+  gaps are real disagreements. Takeaways and the disagreement list only consider competitive races (model or market 10–90%).
 - **Correlated Monte Carlo** (20k, seeded): shared national error σ3 + race error σ4.5–9. Senate: control odds, seat histogram,
   tipping point, pivotal %, **leverage** (pivotal and race within 2.5 pts), conditional odds, most common paths to 51. Seat holders
   for seat math: `holder` in the election config (auto-discovered races: ratings "last result", else held at status quo).

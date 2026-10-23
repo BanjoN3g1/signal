@@ -26,7 +26,10 @@ PARAMS = {
     "poll_cap": 0.85,
     "gap_flag": 0.10,        # flag model-vs-market gaps of 10+ pts
     "cand_flag": 4.0,        # call a race candidate-driven when it runs 4+ pts off the environment
-    "close": 2.5,            # leverage counts pivotal simulations where the race itself is within this many pts
+    "close": 2.5,
+    "rater_w": {"senate": 0.5, "governor": 1.0},     # prior = fundamentals blended with the expert-rating margin; governors
+                                                     # are candidate races, so the 2024-presidential baseline is dropped there
+    "sig_prior": {"senate": 6.0, "governor": 7.0},   # race error when the prior includes ratings but there are no polls            # leverage counts pivotal simulations where the race itself is within this many pts
 }
 SENATE = {"D": 47, "R": 53, "need_D": 51}   # current chamber; D needs 51 (VP breaks 50-50 ties for the R side)
 SEED = 20261103
@@ -50,13 +53,13 @@ def ninv(p):
     return (((((a[0]*r+a[1])*r+a[2])*r+a[3])*r+a[4])*r+a[5])*q / (((((b[0]*r+b[1])*r+b[2])*r+b[3])*r+b[4])*r+1)
 
 # rater consensus score (-3 Safe R .. +3 Safe D) -> implied margin, piecewise linear
-_RM = [(0, 0), (.5, 1.5), (1, 4), (2, 8), (3, 15)]
+_RM = [(0, 0), (.5, 2.5), (1, 6), (2, 11), (3, 18)]  # calibrated so Lean ≈ 80%, Likely ≈ 93%, Safe ≈ 99% (historical rater hit rates)
 def rater_margin(s):
     if s is None: return None
     a, sg = abs(s), (1 if s >= 0 else -1)
     for (x0, y0), (x1, y1) in zip(_RM, _RM[1:]):
         if a <= x1: return round(sg * (y0 + (y1 - y0) * (a - x0) / (x1 - x0)), 1)
-    return sg * 15.0
+    return sg * 18.0
 
 def cands(r):
     """Market candidates by party: {'D': name, 'R': name, 'I': name} (top-priced per party)."""
@@ -97,16 +100,20 @@ def race_inputs(r, base, swing):
     ip = incumbent_party(r, c); inc = 0.0
     if ip: inc = P["inc"][typ] * (1 if ip in ("D", "I") else -1)
     fund = round(env + inc, 1) if env is not None else None
+    ra = (r.get("ratings") or {}).get("avg"); rm = rater_margin(ra)
+    # prior: fundamentals, blended with what the expert ratings imply (raters see candidate quality; fundamentals don't)
+    rw = P["rater_w"][typ] if rm is not None else 0.0
+    prior = (rw * rm + (1 - rw) * fund) if fund is not None else rm
+    sig_prior = P["sig_prior"][typ] if rm is not None else P["sig_fund"][typ]
     pd = r.get("pollData"); poll = r.get("pollMarginD"); n = (pd or {}).get("n") or 0
     w = min(P["poll_cap"], n / (n + P["poll_k"])) if poll is not None and n else 0.0
-    if fund is None and poll is None: return None
-    if fund is None: mu, w = poll, 1.0
-    else: mu = w * poll + (1 - w) * fund if poll is not None else fund
-    sig = math.sqrt(w * P["sig_poll"] ** 2 + (1 - w) * P["sig_fund"][typ] ** 2)
+    if prior is None and poll is None: return None
+    if prior is None: mu, w = poll, 1.0
+    else: mu = w * poll + (1 - w) * prior if poll is not None else prior
+    sig = math.sqrt(w * P["sig_poll"] ** 2 + (1 - w) * sig_prior ** 2)
     tot = math.sqrt(sig ** 2 + P["sig_nat"] ** 2)
     mkt = r.get("pD")
     mkt_m = round(tot * ninv(mkt), 1) if mkt is not None else None
-    ra = (r.get("ratings") or {}).get("avg")
     # observed: what the race actually looks like (polls if we have them, else what the market price implies)
     obs, obs_src = (poll, "polls") if poll is not None else ((mkt_m, "market-implied") if mkt_m is not None else (None, None))
     over = round(obs - env, 1) if obs is not None and env is not None else None
@@ -115,9 +122,9 @@ def race_inputs(r, base, swing):
         side = ds if over > 0 else "R"; who = {"party": side, "name": c.get(side)}
     return {"id": r["id"], "type": typ, "state": r.get("state"), "title": r.get("title"), "dside": ds, "cands": c,
             "base": round(baseD, 1) if baseD is not None else None, "swing": round(el * swing, 1), "env": env,
-            "incParty": ip, "inc": inc, "fund": fund, "poll": poll, "nPolls": n, "w": round(w, 2),
+            "incParty": ip, "inc": inc, "fund": fund, "prior": round(prior, 1) if prior is not None else None, "raterW": rw, "poll": poll, "nPolls": n, "w": round(w, 2),
             "mu": round(mu, 2), "sigma": round(sig, 2), "mkt": mkt, "mktMargin": mkt_m,
-            "rater": ra, "raterLabel": (r.get("ratings") or {}).get("label"), "raterMargin": rater_margin(ra),
+            "rater": ra, "raterLabel": (r.get("ratings") or {}).get("label"), "raterMargin": rm,
             "obs": obs, "obsSrc": obs_src, "over": over, "overWho": who,
             "candidateDriven": over is not None and abs(over) >= P["cand_flag"], "fundOnly": w == 0,
             "holder": holder_of(r) if typ == "senate" else None}
@@ -203,7 +210,7 @@ def run(E, generic_d, base, cache):
     # disagreement index: model vs market, plus whether raters / polls side with either
     dis = []
     for x in R:
-        if x["gap"] is None: continue
+        if x["gap"] is None or not any(v is not None and .1 <= v <= .9 for v in (x["model"], x["mkt"])): continue
         sides = {"model": x["model"] >= .5, "market": x["mkt"] >= .5}
         if x["raterMargin"] is not None and abs(x["raterMargin"]) >= 1: sides["raters"] = x["raterMargin"] > 0
         if x["poll"] is not None and abs(x["poll"]) >= 1: sides["polls"] = x["poll"] > 0
@@ -236,13 +243,14 @@ def brief(R, S, swing, gd):
         if pv:
             tot = sum(x["leverage"] for x in pv) or 1
             b.append({"t": "Highest leverage: " + ", ".join(f"{_nm(x)} ({round(x['leverage'] / tot * 100)}%)" for x in pv[:3]) + f" of the map's leverage — simulations where the race is within {PARAMS['close']} pts and decides control on its own. That is where a marginal dollar or volunteer hour moves the chamber most.", "k": "pivotal"})
-    cd = sorted([x for x in R if x["candidateDriven"]], key=lambda x: -abs(x["over"]))
+    comp = lambda x: any(v is not None and .1 <= v <= .9 for v in (x["model"], x["mkt"]))
+    cd = sorted([x for x in R if x["candidateDriven"] and x["obsSrc"] == "polls" and comp(x)], key=lambda x: -abs(x["over"]))
     if cd:
         x = cd[0]; w = x["overWho"] or {}
         b.append({"t": f"Biggest candidate effect: {x['title']} — {w.get('name') or w.get('party')} ({w.get('party')}) is running {abs(x['over'])} pts ahead of what a {'D' if gd >= 0 else 'R'}+{abs(round(gd, 1))} national environment predicts ({x['obsSrc']}). Races like this hold up if the national mood shifts; tide-driven ones don't.", "race": x["id"], "k": "cand"})
-    dg = sorted([x for x in R if x["gap"] is not None], key=lambda x: -abs(x["gap"]) - (.1 if x["nPolls"] else 0))  # prefer polled races
+    dg = sorted([x for x in R if x["gap"] is not None and comp(x)], key=lambda x: -abs(x["gap"]) - (.1 if x["nPolls"] else 0))  # prefer polled races
     if dg and abs(dg[0]["gap"]) >= PARAMS["gap_flag"]:
-        x = dg[0]; b.append({"t": f"Biggest model-vs-market gap: {x['title']} — model {f(x['model'])}, markets {f(x['mkt'])} for the {x['dside']} side." + (" No public polls here, so the model is running on fundamentals alone — low confidence." if not x["nPolls"] else " Either the market knows something the polls don't, or it's mispriced."), "race": x["id"], "k": "gap"})
+        x = dg[0]; b.append({"t": f"Biggest model-vs-market gap: {x['title']} — model {f(x['model'])}, markets {f(x['mkt'])} for the {x['dside']} side." + (" No public polls here, so the model is running on fundamentals and expert ratings only — lower confidence." if not x["nPolls"] else " Either the market knows something the polls don't, or it's mispriced."), "race": x["id"], "k": "gap"})
     return b
 
 def track(R, S, cache):

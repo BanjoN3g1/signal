@@ -200,6 +200,14 @@ def build_one(cfg, cache, pm_cache):
                 if ko: r["odds"].append(ko)
             except Exception as e: status.setdefault("kalshi_errors", []).append(f"{r['id']}: {e}"[:100])
         known = {o["name"].split()[-1].lower(): o["party"] for od in r["odds"] for o in od["outcomes"] if o["party"]}
+        # untagged two-way market (e.g. Polymarket "Mary Peltola" / "Sen. Dan Sullivan") next to a tagged D/R market: match by price
+        tagged = next(({o["party"]: o["p"] for o in od["outcomes"] if o["party"] in ("D", "R")} for od in r["odds"] if sum(1 for o in od["outcomes"] if o["party"] in ("D", "R")) == 2), None)
+        for od in r["odds"]:
+            un = [o for o in od["outcomes"] if not o["party"] and not known.get(o["name"].split()[-1].lower() if o["name"].split() else "")]
+            if tagged and len(od["outcomes"]) == 2 and len(un) == 2 and abs(tagged["D"] - tagged["R"]) > .1:
+                hi, lo = sorted(un, key=lambda o: -o["p"])
+                hp = "D" if tagged["D"] > tagged["R"] else "R"
+                known[hi["name"].split()[-1].lower()] = hp; known[lo["name"].split()[-1].lower()] = "R" if hp == "D" else "D"
         for od in r["odds"]:
             for o in od["outcomes"]:
                 if not o["party"] and o["name"]: o["party"] = known.get(o["name"].split()[-1].lower())
@@ -208,7 +216,11 @@ def build_one(cfg, cache, pm_cache):
         r["pD"] = round(sum(pd) / len(pd), 3) if pd else None
         pol = r.get("polls", {}).get("wikipedia")
         if pol:
-            want = sorted({o["name"].split()[-1].lower() for od in r["odds"] for o in od["outcomes"][:2] if o["party"] in ("D", "R", "I") and o["name"].split()})[:2] if r["odds"] else []
+            GEN = {"democratic", "republican", "democrat", "independent", "other"}
+            want = sorted({o["name"].split()[-1].lower() for od in r["odds"] for o in od["outcomes"][:2] if o["party"] in ("D", "R", "I") and o["name"].split() and o["name"].split()[-1].lower() not in GEN})[:2] if r["odds"] else []
+            if len(want) < 2:  # markets that list candidates without party tags (e.g. "Sen. Dan Sullivan"): use the top-2 named outcomes
+                nm = next((od["outcomes"][:2] for od in r["odds"] if len(od["outcomes"]) >= 2 and not any(o["name"].split()[-1].lower() in GEN for o in od["outcomes"][:2])), None)
+                if nm: want = sorted(o["name"].split()[-1].lower() for o in nm)
             want = [w for w in want][:2]
             ck = r["id"] + ":" + ",".join(want); c = pc.get(ck)
             if not c or time.time() - c.get("t", 0) > 6 * 3600 or (c.get("d") and "trend" not in c["d"]):  # v3 adds the poll trend
