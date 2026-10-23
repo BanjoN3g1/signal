@@ -109,7 +109,7 @@ function raceBlock(r){const cs=cands(r),h=P?.hist?.[r.id];
   ${cs.map(x=>`<div class="u3cand">${avatar(x.name,x.party)}<div class="u3cn"><b>${H.esc(x.name)}</b> <i style="color:${PC[x.party]||'#8e8e93'}">${x.party||''}</i><div class="eb"><div style="width:${Math.round(x.p*100)}%;background:${PC[x.party]||'#8e8e93'}"></div></div></div><b class="u3cp">${pct(x.p)}</b></div>`).join('')||'<p class="note">No market yet.</p>'}
   <p class="note esrc">${(r.odds||[]).map(o=>`<a href="${H.esc(o.url)}" target="_blank" rel="noopener">${o.src} ↗</a>`).join(' · ')} · odds updated ${H.esc(H.ago(E.generatedAt))}${cs.some(x=>P?.photos?.[x.name])?' · photos: Wikipedia':''}</p>
   ${h?.pts?.length>2?`<div class="u3pch"><b>Odds over time</b>${src('Polymarket price, '+h.name,'daily')}</div>${lineChart([{pts:h.pts,color:PC[h.party]||PC.D,label:h.name.split(' ').pop()}],{mid:.5,h:100})}`:''}
-  ${pollChart(r)}${ratingsHTML(r,true)}${moneyHTML(r)}${xForRace(r)}</div>`}
+  ${modelBox(r)}${pollChart(r)}${ratingsHTML(r,true)}${moneyHTML(r)}${xForRace(r)}</div>`}
 function openRace(r){if(!r)return;haptic();H.sheet(H.esc(r.title),`${r.fips&&BASE?.state?.[r.fips]?`<p class="note">2024 president here: ${mTxt(BASE.state[r.fips][0])} · ${H.esc(BASE.label||'')}</p>`:''}${raceBlock(r)}`)}
 function openState(st){const f=GEO?.s.find(x=>x.id===st),rs=E.races.filter(r=>r.fips===st&&r.type!=='chamber'),b=BASE?.state?.[st];
  H.sheet(H.esc(f?.properties.name||st),`<div class="kicker">State</div>${b?`<div class="stats up"><div class="stat">2024 president<b style="color:${b[0]>0?PC.R:PC.D}">${mTxt(b[0])}</b></div><div class="stat">Votes cast<b>${b[1].toLocaleString()}</b></div></div><p class="note">${H.esc(BASE.label||'')} · ${H.esc(BASE.metric||'')}</p>`:''}
@@ -165,6 +165,70 @@ async function initMap(box){if(!window.d3)await loadS(D3);await geo();const d3=w
  box.querySelectorAll('[data-z]').forEach(b=>b.onclick=()=>{haptic();const t=svg.transition().duration(380);b.dataset.z==='in'?t.call(z.scaleBy,2):b.dataset.z==='out'?t.call(z.scaleBy,.5):t.call(z.transform,d3.zoomIdentity);mini.classList.remove('on')});
  svg.call(z.transform,d3.zoomIdentity);MS={svg,z}}
 const ST2={AL:'01',AK:'02',AZ:'04',AR:'05',CA:'06',CO:'08',CT:'09',DE:'10',DC:'11',FL:'12',GA:'13',HI:'15',ID:'16',IL:'17',IN:'18',IA:'19',KS:'20',KY:'21',LA:'22',ME:'23',MD:'24',MA:'25',MI:'26',MN:'27',MS:'28',MO:'29',MT:'30',NE:'31',NV:'32',NH:'33',NJ:'34',NM:'35',NY:'36',NC:'37',ND:'38',OH:'39',OK:'40',OR:'41',PA:'42',RI:'44',SC:'45',SD:'46',TN:'47',TX:'48',UT:'49',VT:'50',VA:'51',WA:'53',WV:'54',WI:'55',WY:'56'};
+// ---- v4: our model (forecast.py): expected margins, correlated seat simulation, disagreement index ----
+const MD=()=>P?.model;
+const pp=p=>p==null?'–':Math.round(p*100)+'%';
+const mrg=(m,s='D')=>m==null?'–':Math.abs(m)<.05?'Even':(m>=0?s+'+':'R+')+Math.abs(m).toFixed(1);   // D-terms margin -> label
+const gapTxt=g=>g==null?'–':Math.round(Math.abs(g)*100)===0?'0':`${g>0?'+':'−'}${Math.abs(Math.round(g*100))}`;
+const gapCol=g=>g==null||Math.abs(g)<.05?'#8e8e93':g>0?PC.D:PC.R;
+const shortT=x=>`${x.state} ${x.type==='senate'?'Sen':'Gov'}`;
+function seatHist(S){const h=S.hist||{},ks=Object.keys(h).map(Number).sort((a,b)=>a-b);if(!ks.length)return '';
+ const lo=Math.min(ks[0],S.p10-1),hi=Math.max(ks[ks.length-1],S.p90+1),n=hi-lo+1,w=340,hh=120,bw=(w-20)/n,mx=Math.max(...Object.values(h));
+ let bars='';for(let k=lo;k<=hi;k++){const v=h[k]||0,bh=v/mx*(hh-34),x=10+(k-lo)*bw,c=k>=51?PC.D:PC.R;
+  bars+=`<rect x="${(x+1).toFixed(1)}" y="${(hh-20-bh).toFixed(1)}" width="${(bw-2).toFixed(1)}" height="${bh.toFixed(1)}" rx="2" fill="${c}" opacity="${k>=S.p10&&k<=S.p90?.95:.45}"><title>${k} seats: ${(v*100).toFixed(1)}%</title></rect>`;
+  if(n<=14||k%2===0)bars+=`<text x="${(x+bw/2).toFixed(1)}" y="${hh-6}" text-anchor="middle" class="u3tick">${k}</text>`}
+ const lx=10+(51-lo)*bw;
+ return `<svg viewBox="0 0 ${w} ${hh}" class="u3chart">${bars}<line x1="${lx.toFixed(1)}" x2="${lx.toFixed(1)}" y1="4" y2="${hh-18}" class="u3mid"/><text x="${(lx+3).toFixed(1)}" y="12" class="u3tick">51 = D control</text></svg>
+  <p class="note">Democratic Senate seats across ${(MD().params.sims/1000)|0}k simulations (independents counted with Democrats). Bright bars = 80% range.</p>`}
+function briefHTML(n){const B=MD()?.brief||[];return B.length?`<ul class="u3chg m4b">${B.slice(0,n||9).map(b=>`<li${b.race?` data-r="${H.esc(b.race)}"`:''}><i style="background:${b.k==='gap'?'#ff9f0a':b.k==='cand'?'#bf5af2':b.k==='tip'||b.k==='pivotal'?'#64d2ff':'#8e8e93'}"></i><div>${H.esc(b.t)}</div></li>`).join('')}</ul>`:''}
+function modelCard(){const m=MD();if(!m?.senate)return '';const S=m.senate,tp=S.tipping?.[0],tx=tp&&m.races[tp.id];
+ return `<section class="u3stand m4"><div class="kicker">Our model · what it means</div>
+  <div class="u3kgrid"><div class="u3k"><span class="note">Senate · model</span><b style="color:${S.pControl>=.5?PC.D:PC.R}">D ${pp(S.pControl)}</b><span class="note">${S.seatsMean} seats avg · ${S.p10}–${S.p90}</span><span class="u3src">20k correlated simulations</span></div>
+  <div class="u3k"><span class="note">Model vs markets</span><b style="color:${gapCol(S.gap)}">${gapTxt(S.gap)} pts</b><span class="note">markets D ${pp(S.market)}</span><span class="u3src">${S.gap==null?'':S.gap>0?'model more bullish on D':'model less bullish on D'}</span></div></div>
+  ${tx?`<button class="m4tip" data-r="${H.esc(tx.id)}"><span class="note">Tipping point</span><b>${H.esc(tx.title)}</b><span class="note">decides control in ${pp(tp.p)} of simulations · model ${tx.dside} ${pp(tx.model)} vs mkt ${pp(tx.mkt)}</span></button>`:''}
+  ${briefHTML(4)}<button class="u3how" data-v2="model">Open the model: seat math, pivotal races, candidate effects, disagreements →</button></section>`}
+function modelBox(r){const x=MD()?.races?.[r.id];if(!x)return '';const ds=x.dside;
+ const row=(a,b,c)=>`<div class="m4row"><span>${a}</span><b${c?` style="color:${c}"`:''}>${b}</b></div>`;
+ const w=x.overWho;
+ return `<div class="m4box"><div class="u3pch"><b>Our model</b><span class="u3src">expected margin → simulation</span></div>
+  ${row('2024 president here',mrg(x.base,ds))}${row(`National swing since 2024 (×${MD().params.elast[x.type]})`,(x.swing>=0?'+':'')+x.swing+` toward ${x.swing>=0?ds:'R'}`)}
+  ${row('= Environment expectation',mrg(x.env,ds),x.env>=0?PC[ds]:PC.R)}${x.inc?row(`Incumbency (${x.incParty} on ballot)`,(x.inc>0?'+':'−')+Math.abs(x.inc)):''}
+  ${row('Fundamentals',mrg(x.fund,ds))}${row(x.poll!=null?`Poll average (${x.nPolls} polls, weight ${Math.round(x.w*100)}%)`:'Poll average','  '+(x.poll!=null?mrg(x.poll,ds):'none — fundamentals only'))}
+  ${row('Model margin ± race error',mrg(x.mu,ds)+' ± '+x.sigma)}
+  <div class="m4vs"><div><span class="note">Model</span><b style="color:${x.model>=.5?PC[ds]:PC.R}">${ds} ${pp(x.model)}</b></div><div><span class="note">Markets</span><b>${ds} ${pp(x.mkt)}</b></div><div><span class="note">Gap</span><b style="color:${gapCol(x.gap)}">${gapTxt(x.gap)}</b></div></div>
+  ${x.over!=null&&w?`<p class="m4p">${x.candidateDriven?'<b>Candidate-driven.</b> ':''}${H.esc(w.name||w.party)} (${w.party}) is running <b>${Math.abs(x.over)} pts ${Math.abs(x.over)<1?'—':'ahead of'}</b> the national environment (${H.esc(x.obsSrc)} ${mrg(x.obs,ds)} vs expected ${mrg(x.env,ds)}).${x.candidateDriven?' This race is about the candidates; it should hold up if the national mood shifts.':' Mostly riding the national tide: if the environment moves, this race moves with it.'}</p>`:''}
+  ${x.pivotal!=null?`<p class="m4p">Decides Senate control on its own in <b>${pp(x.pivotal)}</b> of simulations, and is also within ${MD().params.close} pts in <b>${(x.leverage*100).toFixed(1)}%</b> (the high-leverage cases)${x.tip?` · tipping point in ${pp(x.tip)}`:''}.${x.cond?` If ${ds} wins here, Democrats' Senate odds are <b>${pp(x.cond.ifD)}</b>; if R wins, <b>${pp(x.cond.ifR)}</b>.`:''}</p>`:''}
+  ${x.raterLabel?`<p class="note">Raters ${H.esc(x.raterLabel)} ≈ ${mrg(x.raterMargin,ds)} · market price implies ${mrg(x.mktMargin,ds)}</p>`:''}</div>`}
+function modelHTML(){const m=MD();if(!m)return '<p class="note" style="padding:20px">The model appears after the next data refresh (it needs the generic ballot and the 2024 baseline).</p>';
+ const S=m.senate,R=Object.values(m.races),sen=R.filter(x=>x.type==='senate'),gov=R.filter(x=>x.type==='governor'),e=m.env;
+ const tr=x=>`<tr data-r="${H.esc(x.id)}"><td><b>${H.esc(shortT(x))}</b>${x.fundOnly?' <i class="m4fo">no polls</i>':''}</td><td style="color:${x.model>=.5?PC[x.dside]:PC.R}">${x.dside} ${pp(x.model)}</td><td>${pp(x.mkt)}</td><td style="color:${gapCol(x.gap)}">${gapTxt(x.gap)}</td>`;
+ const piv=[...sen].sort((a,b)=>(b.leverage||0)-(a.leverage||0)),lt=sen.reduce((a,x)=>a+(x.leverage||0),0)||1;
+ const over=R.filter(x=>x.over!=null).sort((a,b)=>Math.abs(b.over)-Math.abs(a.over)),om=Math.max(10,...over.map(x=>Math.abs(x.over)));
+ const D=m.disagree||[],SD=[['model','Model'],['market','Mkt'],['raters','Raters'],['polls','Polls']];
+ return `${briefHTML()}
+  <h4 class="dh">The environment</h4><div class="u3kgrid"><div class="u3k"><span class="note">Generic ballot now</span><b style="color:${e.generic>=0?PC.D:PC.R}">${mrg(e.generic)}</b></div><div class="u3k"><span class="note">2024 national vote</span><b style="color:${e.natl2024>=0?PC.D:PC.R}">${mrg(e.natl2024)}</b></div></div>
+  <p class="note">Swing since 2024: <b>${e.swing>=0?'+':''}${e.swing} pts toward ${e.swing>=0?'D':'R'}</b>. Every race's expectation = its 2024 presidential margin shifted by this swing (governors inherit 80% of it: they're less nationalized).</p>
+  ${S?`<h4 class="dh">Senate seat math</h4><div class="m4vs big"><div><span class="note">Model</span><b style="color:${S.pControl>=.5?PC.D:PC.R}">D ${pp(S.pControl)}</b></div><div><span class="note">Markets</span><b>D ${pp(S.market)}</b></div><div><span class="note">Seats</span><b>${S.seatsMean}</b></div></div>${seatHist(S)}
+  <p class="note">Starting point: ${S.dFixed} D/I and ${S.rFixed} R seats not in the modeled races; Democrats need ${S.needD} of the ${S.modeled} modeled races for 51.</p>
+  <h4 class="dh">Where control is decided</h4><p class="note"><b>Leverage</b> = share of the map's simulations where this race is within ${MD().params.close} pts <i>and</i> single-handedly decides control: where a marginal dollar or volunteer hour moves the chamber most. <b>Tip pt</b> = how often it's the seat that delivers the majority.</p>
+  <table class="m4t"><tr><th>Race</th><th>Model</th><th>Mkt</th><th>Gap</th><th>Leverage</th><th>Tip pt</th></tr>${piv.map(x=>tr(x)+`<td><div class="m4bar"><i style="width:${Math.round((x.leverage||0)/Math.max(1e-4,piv[0].leverage||1e-4)*100)}%"></i><span>${pp((x.leverage||0)/lt)}</span></div></td><td>${pp(x.tip)}</td></tr>`).join('')}</table>
+  ${S.paths?.length?`<h4 class="dh">Most common paths to 51</h4>${S.paths.slice(0,5).map(p=>`<div class="m4path"><b>${pp(p.p)}</b><span>${p.flips.length?p.flips.map(i=>`<span class="chip b">flip ${H.esc(i.split('-')[0])}</span>`).join(' '):'<span class="note">no flips</span>'}</span></div>`).join('')}<p class="note">Exact combinations of seats changing hands in simulations where Democrats win control. Many paths are near-ties: the national error moves everything together.</p>`:''}`:''}
+  <h4 class="dh">Candidate effects</h4><p class="note">Observed margin (polls, or market-implied when unpolled) minus the environment expectation. Right = the anti-R side runs ahead; left = the Republican does.</p>
+  <div class="m4ov">${over.map(x=>{const v=x.over,wd=Math.abs(v)/om*50,c=v>=0?PC[x.dside]:PC.R;return `<button class="m4ovr" data-r="${H.esc(x.id)}"><span class="m4ovl">${H.esc(shortT(x))}</span><span class="m4ovb"><i style="left:${v>=0?50:50-wd}%;width:${wd}%;background:${c}${x.candidateDriven?'':';opacity:.55'}"></i><em></em></span><span class="m4ovv" style="color:${c}">${v>=0?'+':'−'}${Math.abs(v)}</span><span class="m4ovw">${H.esc(x.overWho?.name?.split(' ').pop()||'')}${x.obsSrc==='market-implied'?' · mkt':''}</span></button>`}).join('')}</div>
+  <p class="note">Solid bars = candidate-driven (${MD().params.cand_flag}+ pts off the environment). These hold up if the national mood shifts; tide-driven races don't.</p>
+  ${D.length?`<h4 class="dh">Disagreement index</h4><p class="note">Model vs markets, and who sides with whom (blue = favors the D/I side). A big gap is either an edge or a sign the market knows something polls don't.</p>
+  ${D.map(d=>{const x=m.races[d.id];return `<button class="m4dis" data-r="${H.esc(d.id)}"><div><b>${H.esc(x.title)}</b><span class="note">model ${pp(x.model)} · mkt ${pp(x.mkt)}${x.fundOnly?' · no polls, low confidence':''}</span></div><b style="color:${gapCol(d.gap)}">${gapTxt(d.gap)}</b><div class="m4sd">${SD.filter(([k])=>k in d.sides).map(([k,n])=>`<span style="background:${d.sides[k]?PC[x.dside]:PC.R}33;color:${d.sides[k]?PC[x.dside]:PC.R}">${n}</span>`).join('')}</div></button>`}).join('')}`:''}
+  ${gov.length?`<h4 class="dh">Governors</h4><table class="m4t"><tr><th>Race</th><th>Model</th><th>Mkt</th><th>Gap</th><th>vs env</th></tr>${gov.sort((a,b)=>Math.abs(a.model-.5)-Math.abs(b.model-.5)).map(x=>tr(x)+`<td style="color:${x.over==null?'#8e8e93':x.over>=0?PC[x.dside]:PC.R}">${x.over==null?'–':(x.over>=0?'+':'−')+Math.abs(x.over)}</td></tr>`).join('')}</table>`:''}
+  <h4 class="dh">House</h4><p class="note">Markets: D ${pp(m.house?.market)}. ${H.esc(m.house?.note||'')}</p>
+  <button class="u3how" data-mhow>How the model works (and what it can't see)</button>
+  <p class="note">Forecast logged daily since ${H.esc(m.track?.since||'today')} (${m.track?.days||1} day${(m.track?.days||1)>1?'s':''}) so model and markets can be Brier-scored against results after ${H.esc(E.date)}. Updated ${H.esc(H.ago(m.asof))}.</p>`}
+function openMHow(){const p=MD()?.params||{};H.sheet('How the model works',`<div class="u3steps">
+ <div><b>1 · Expected margin</b><p>Take the state's 2024 presidential margin and shift it by the national swing: today's generic-ballot average minus the 2024 national popular vote. Governors inherit ${Math.round((p.elast?.governor||.8)*100)}% of the swing. Add ${p.inc?.senate} pts (Senate) / ${p.inc?.governor} pts (governor) for an incumbent on the ballot. That's the fundamentals margin.</p></div>
+ <div><b>2 · Blend with polls</b><p>Poll average weight = n/(n+${p.poll_k}), capped at ${Math.round((p.poll_cap||.85)*100)}% (5 polls ≈ 77%). This late in the cycle polls dominate; unpolled races run on fundamentals alone and get a wider error.</p></div>
+ <div><b>3 · Correlated simulation</b><p>${(p.sims||20000).toLocaleString()} runs. Each run draws one national error (σ ${p.sig_nat} pts) shared by every race, plus a race error (σ ${p.sig_poll} pts well-polled, up to ${p.sig_fund?.senate}–${p.sig_fund?.governor} unpolled). The shared term is why races aren't independent coin flips: a polling miss hits them all at once.</p></div>
+ <div><b>4 · What comes out</b><p>Chamber odds and seat distribution; the tipping-point race (the seat that delivers the majority when races are sorted by margin); pivotal probability (how often flipping that race alone flips the chamber); leverage (pivotal <i>and</i> within ${p.close} pts, so a small push there actually moves control); conditional odds; and the most common paths to 51.</p></div>
+ <div><b>5 · Disagreement</b><p>The model never looks at market prices, so model-vs-market gaps are real disagreements. The market-implied margin converts a price to points using the race's total uncertainty.</p></div>
+ <div><b>Blind spots</b><p>Uniform swing is crude (it ignores realignment like Hispanic voters in South Texas); the generic ballot isn't a presidential margin; no pollster-quality or house-effect weighting yet (Wikipedia's last 5 polls); no money, early vote or special-election inputs; the House isn't modeled. Treat it as a disciplined second opinion, not an oracle.</p></div></div>`)}
 // ---- 'Where the US stands' ----
 function standsHTML(){const ctl=E.races.filter(r=>r.type==='chamber'),O=P?.overview||{},sig=id=>P?.signals?.find(s=>s.id===id),sn=(P?.snaps||[]);
  const gpts=sn.filter(s=>s.generic!=null).map(s=>[s.t,s.generic]),g=sig('generic'),a=sig('approval');
@@ -234,7 +298,7 @@ function body(p){if(world==='intl'){p.innerHTML=`<div class="u3soon"><div class=
  const key=E.races.filter(r=>r.key&&r.type!=='chamber'),other=E.races.filter(r=>!r.key&&r.type!=='chamber');
  if(view==='dash'){const ctl=E.races.filter(r=>r.type==='chamber').map(r=>P?.hist?.[r.id]&&{pts:P.hist[r.id].pts,color:r.id.startsWith('senate')?'#64d2ff':'#bf5af2',label:r.title.split(' ')[0]}).filter(Boolean);
   const kh=E.races.filter(r=>r.type!=='chamber'&&P?.hist?.[r.id]?.pts?.length>2).slice(0,6);
-  p.innerHTML=`${standsHTML()}<h4 class="dh">Map</h4>${mapBox()}${sigHTML()}${watchHTML()}
+  p.innerHTML=`${standsHTML()}${modelCard()}<h4 class="dh">Map</h4>${mapBox()}${sigHTML()}${watchHTML()}
    <h4 class="dh">Odds over time</h4><div class="u3pch"><b>Chamber control (D price)</b>${src('Polymarket','daily')}</div>${lineChart(ctl,{mid:.5})}
    <div class="u3mult">${kh.map(r=>{const h=P.hist[r.id];return `<button class="u3mc" data-r="${H.esc(r.id)}"><span class="note">${H.esc(r.title)}</span>${lineChart([{pts:h.pts,color:PC[h.party]||PC.D}],{w:160,h:70,mid:.5})}<span class="u3src">${H.esc(h.name)} · Polymarket</span></button>`}).join('')}</div>
    ${P?.stream?.length?`<h4 class="dh">Politics & markets</h4>${P.stream.slice(0,3).map(storyCard).join('')}<button class="btn" data-v2="news">All ${P.stream.length} stories</button>`:''}
@@ -247,6 +311,7 @@ function body(p){if(world==='intl'){p.innerHTML=`<div class="u3soon"><div class=
   p.innerHTML=`<div class="pchips">${[['bal','Balanced'],['left','Left'],['right','Right'],['center','Nonpartisan'],['analyst','Analysts']].map(([k,n])=>`<button class="pchip ${xf===k?'on':''}" data-xf="${k}">${n}</button>`).join('')}</div>${f.map(xPost).join('')||'<p class="note">No posts yet.</p>'}<p class="note">Curated, balanced account list in data/politics_x.json; updated ${H.esc(P?.x?.updated?H.ago(P.x.updated):'—')}. Lean labels describe the account, not the post.</p>`;
   p.querySelectorAll('[data-xf]').forEach(b=>b.onclick=()=>{xf=b.dataset.xf;body(p)})}
  else if(view==='trackers')p.innerHTML=trackersHTML();
+ else if(view==='model'){p.innerHTML=modelHTML();p.querySelector('[data-mhow]')?.addEventListener('click',openMHow)}
  else{const pr=E.races.filter(r=>r.pollData);p.innerHTML=`${pr.map(r=>`<div class="erace" data-r="${H.esc(r.id)}"><div class="erh"><b>${H.esc(r.title)}</b></div>${pollChart(r)||pollHTML(r,true)}</div>`).join('')||'<p class="note">No polls yet.</p>'}<p class="note">${pr.length} races with Wikipedia polling tables (main matchup table, up to 20 most recent polls).</p>`}
  p.querySelectorAll('[data-r]').forEach(b=>b.onclick=e=>{if(e.target.closest('a'))return;openRace(E.races.find(r=>r.id===b.dataset.r))});
  p.querySelectorAll('[data-sig]').forEach(b=>b.onclick=()=>openSig(b.dataset.sig));p.querySelectorAll('[data-st]').forEach(b=>b.onclick=()=>openStory(b.dataset.st));
@@ -257,9 +322,9 @@ async function render(app,helpers){H=helpers;
  try{const idx=await j('data/elections/index.json');const id=idx.elections[0].id;E=await j(`data/elections/${id}.json`);
   P=await j('data/politics.json').catch(()=>null);BASE=E.baseline?await j(`data/elections/baselines/${E.baseline}.json`).catch(()=>null):null;LIVE=await j(`data/elections/live/${id}.json`).catch(()=>null)}
  catch(e){p.innerHTML='<div class="empty"><h2>No election data yet</h2><p>It arrives with the next data refresh.</p></div>';return}
- if(!['dash','races','polls','trackers','news','x'].includes(view))view='dash';
+ if(!['dash','model','races','polls','trackers','news','x'].includes(view))view='dash';
  const head=()=>{p.innerHTML=`<div class="u3world">${[['us','🇺🇸 United States'],['intl','🌍 International']].map(([k,n])=>`<button class="${world===k?'on':''}" data-w="${k}">${n}</button>`).join('')}</div>
-  ${world==='us'?`<div class="ehead"><div><div class="kicker">${H.esc(E.date)} · ${days()} days</div><h2>${H.esc(E.name)}</h2></div></div><div class="pchips eseg">${[['dash','Overview'],['races','Races'],['polls','Polls'],['trackers','Trackers'],['news','News'],['x','X']].map(([k,n])=>`<button class="pchip ${view===k?'on':''}" data-v="${k}">${n}</button>`).join('')}</div>`:''}<div id="eb"></div>`;
+  ${world==='us'?`<div class="ehead"><div><div class="kicker">${H.esc(E.date)} · ${days()} days</div><h2>${H.esc(E.name)}</h2></div></div><div class="pchips eseg">${[['dash','Overview'],['model','Model'],['races','Races'],['polls','Polls'],['trackers','Trackers'],['news','News'],['x','X']].map(([k,n])=>`<button class="pchip ${view===k?'on':''}" data-v="${k}">${n}</button>`).join('')}</div>`:''}<div id="eb"></div>`;
   const eb=p.querySelector('#eb');p.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{haptic();world=b.dataset.w;head()});
   p.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>{haptic();view=b.dataset.v;p.querySelectorAll('[data-v]').forEach(x=>x.classList.toggle('on',x===b));body(eb)});body(eb)};head()}
 window.SignalElections={render};

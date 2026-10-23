@@ -189,6 +189,12 @@ def build(out_dir, cache):
     try:
         import uspol; uspol.enrich(out, E, cache)
     except Exception as e: log("uspol failed", type(e).__name__, e)
+    try:  # our own forecast layer (expected margins, correlated seat simulation, disagreement index)
+        import forecast
+        gb = cached(cache, "generic", 6, generic_ballot)
+        base = json.load(open(os.path.join(ROOT, "data", "elections", "baselines", (E.get("baseline") or "pres2024") + ".json")))
+        out["model"] = forecast.run(E, gb and gb.get("marginD"), base, cache)
+    except Exception as e: log("forecast failed", type(e).__name__, e)
     json.dump(out, open(os.path.join(out_dir, "politics.json"), "w"), separators=(",", ":"))
     log(f"{len(out['signals'])} signals, {len(out['stream'])} stories, {len(out['x']['posts'])} X posts; {round(time.time() - t0)}s")
 

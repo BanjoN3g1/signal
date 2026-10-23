@@ -111,3 +111,18 @@ Races, Polls, News, X, Models (forecasters + "polls vs markets vs models" explai
   r/Polymarket, paced, cached 3h; themes by Flash-Lite, cached by title hash).
 - Signals are cards (big number, sparkline, what it means, lean colour) with a drill-down (what it is, how to read it, history, source + date, odds link)
   and a "How to put it together" explainer. Every number carries its source and date; nothing is estimated.
+
+## Politics world v4: our model (`forecast.py` → `politics.json` `model`)
+Turns the collected inputs into insight; no new data sources, every parameter in `forecast.PARAMS` and shipped in the output.
+- **Expected margin**: 2024 presidential margin per state + national swing (generic-ballot average minus the 2024 national vote;
+  governors ×0.8) + incumbency (2.5 Senate / 2 governor). **Candidate effect** = observed (poll avg, or market-implied margin if
+  unpolled) minus that environment expectation; 4+ pts = candidate-driven.
+- **Model margin** = poll avg weighted n/(n+1.5) (cap 85%) blended with fundamentals. Never uses market prices, so model-vs-market
+  gaps are real disagreements.
+- **Correlated Monte Carlo** (20k, seeded): shared national error σ3 + race error σ4.5–9. Senate: control odds, seat histogram,
+  tipping point, pivotal %, **leverage** (pivotal and race within 2.5 pts), conditional odds, most common paths to 51. Seat holders
+  for seat math: `holder` in the election config (auto-discovered races: ratings "last result", else held at status quo).
+- **Disagreement index** (model vs market, with raters/polls sides) and a no-AI **brief** of 3–5 takeaways.
+- **Accountability**: one snapshot/day in `data/cache/forecast_log.json`; `forecast.score(path, {race_id: 1 if D/I won else 0})`
+  returns Brier scores for model vs markets after Election Day.
+- UI: Overview "Our model" card, a **Model** tab, and a model box (expected-margin waterfall, conditional odds) in every race sheet.

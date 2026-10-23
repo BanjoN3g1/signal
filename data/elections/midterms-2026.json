@@ -44,7 +44,8 @@
    },
    "polls": {
     "wikipedia": "2026 United States Senate election in Georgia"
-   }
+   },
+   "holder": "D"
   },
   {
    "id": "MI-sen",
@@ -59,7 +60,8 @@
    },
    "polls": {
     "wikipedia": "2026 United States Senate election in Michigan"
-   }
+   },
+   "holder": "D"
   },
   {
    "id": "NC-sen",
@@ -74,7 +76,8 @@
    },
    "polls": {
     "wikipedia": "2026 United States Senate election in North Carolina"
-   }
+   },
+   "holder": "R"
   },
   {
    "id": "ME-sen",
@@ -89,7 +92,8 @@
    },
    "polls": {
     "wikipedia": "2026 United States Senate election in Maine"
-   }
+   },
+   "holder": "R"
   },
   {
    "id": "NH-sen",
@@ -104,7 +108,8 @@
    },
    "polls": {
     "wikipedia": "2026 United States Senate election in New Hampshire"
-   }
+   },
+   "holder": "D"
   },
   {
    "id": "OH-sen",
@@ -119,7 +124,8 @@
    },
    "polls": {
     "wikipedia": "2026 United States Senate election in Ohio"
-   }
+   },
+   "holder": "R"
   },
   {
    "id": "TX-sen",
@@ -134,7 +140,8 @@
    },
    "polls": {
     "wikipedia": "2026 United States Senate election in Texas"
-   }
+   },
+   "holder": "R"
   },
   {
    "id": "IA-sen",
@@ -149,7 +156,8 @@
    },
    "polls": {
     "wikipedia": "2026 United States Senate election in Iowa"
-   }
+   },
+   "holder": "R"
   },
   {
    "id": "AK-sen",
@@ -161,7 +169,8 @@
    "markets": {
     "polymarket": "auto",
     "kalshi_series": "auto"
-   }
+   },
+   "holder": "R"
   },
   {
    "id": "NE-sen",
@@ -173,7 +182,8 @@
    "markets": {
     "polymarket": "auto",
     "kalshi_series": "auto"
-   }
+   },
+   "holder": "R"
   },
   {
    "id": "MN-sen",
@@ -185,7 +195,8 @@
    "markets": {
     "polymarket": "auto",
     "kalshi_series": "auto"
-   }
+   },
+   "holder": "D"
   },
   {
    "id": "AZ-gov",
@@ -316,5 +327,6 @@
  "ratings": {
   "senate": "2026 United States Senate elections",
   "governor": "2026 United States gubernatorial elections"
- }
+ },
+ "holder_note": "holder = party currently holding the Senate seat (used for seat math; auto-discovered races fall back to the ratings table's last result; unknown holders are held at the status quo)"
 }

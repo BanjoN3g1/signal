@@ -231,7 +231,7 @@ def build_one(cfg, cache, pm_cache):
             if row:
                 sc = [x for x in (rscore(v) for v in row["by"].values()) if x is not None]
                 avg = round(sum(sc) / len(sc), 2) if sc else None
-                r["ratings"] = {"by": row["by"], "avg": avg, "label": rlabel(avg), "pvi": row["pvi"], "incumbent": row["incumbent"],
+                r["ratings"] = {"by": row["by"], "avg": avg, "label": rlabel(avg), "pvi": row["pvi"], "incumbent": row["incumbent"], "last": row.get("last"),
                                 "open": bool(re.search(r"retir|term-limited|resign|running for|lost renomination|defeated", row["incumbent"], re.I))}
         # poll margin in D terms (names matched to market candidates by last name)
         pdd = r.get("pollData")
