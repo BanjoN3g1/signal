@@ -244,7 +244,7 @@ def brief(R, S, swing, gd):
             tot = sum(x["leverage"] for x in pv) or 1
             b.append({"t": "Highest leverage: " + ", ".join(f"{_nm(x)} ({round(x['leverage'] / tot * 100)}%)" for x in pv[:3]) + f" of the map's leverage — simulations where the race is within {PARAMS['close']} pts and decides control on its own. That is where a marginal dollar or volunteer hour moves the chamber most.", "k": "pivotal"})
     comp = lambda x: any(v is not None and .1 <= v <= .9 for v in (x["model"], x["mkt"]))
-    cd = sorted([x for x in R if x["candidateDriven"] and x["obsSrc"] == "polls" and comp(x)], key=lambda x: -abs(x["over"]))
+    cd = sorted([x for x in R if x["type"] == "senate" and x["candidateDriven"] and x["obsSrc"] == "polls" and comp(x)], key=lambda x: -abs(x["over"]))  # governors are candidate races by nature
     if cd:
         x = cd[0]; w = x["overWho"] or {}
         b.append({"t": f"Biggest candidate effect: {x['title']} — {w.get('name') or w.get('party')} ({w.get('party')}) is running {abs(x['over'])} pts ahead of what a {'D' if gd >= 0 else 'R'}+{abs(round(gd, 1))} national environment predicts ({x['obsSrc']}). Races like this hold up if the national mood shifts; tide-driven ones don't.", "race": x["id"], "k": "cand"})
