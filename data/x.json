@@ -201,6 +201,168 @@
     "ts": "2026-10-21T14:08:20Z",
     "note": "Valuation context: still cheap on forward P/E and sales."
    }
+  ],
+  "4951d17a18e4": [
+   {
+    "handle": "Joker__Capital",
+    "name": "Joker Capital",
+    "text": "Meta Q3 scorecard, expected vs actual: Revenue $63.3B → $64.6B (up 26% YoY). EPS ex-legal charge $6.54 → $7.40. 2026 capex $130–145B → $135–145B (high end unchanged). After hours briefly up more than 4%. Verdict: a beat.",
+    "url": "https://x.com/Joker__Capital/status/2113441694515646721",
+    "likes": 80,
+    "reposts": 1,
+    "ts": "2026-10-23T01:25:40Z",
+    "note": "The clean beat/miss scorecard; note the raised capex floor is what markets fixated on."
+   },
+   {
+    "handle": "GryphonIAB",
+    "name": "Gryphon Investment Advisors",
+    "text": "The AI capital-expenditure cycle has crossed from an equity debate into a credit question. Meta's first negative free cash flow since 2012, a capex floor lifted to $135bn and Jensen Huang's warning that AI cloud providers lack working capital drove the Philadelphia semis index lower.",
+    "url": "https://x.com/GryphonIAB/status/2113526294969237877",
+    "likes": 3,
+    "reposts": 0,
+    "ts": "2026-10-23T07:01:50Z",
+    "note": "Ties Meta's print to the semis selloff: negative FCF turns AI capex into a credit story."
+   }
+  ],
+  "c0f87efb8196": [
+   {
+    "handle": "bdinvestingg",
+    "name": "Bilaal - BD investing",
+    "text": "Bill Ackman extremely bullish on Netflix: calls it a super high-quality business, a “high-growth utility” nobody wants to cancel, trading around 18x earnings with 15–20% earnings growth expected for years.",
+    "url": "https://x.com/bdinvestingg/status/2113621950710849608",
+    "likes": 8,
+    "reposts": 0,
+    "ts": "2026-10-23T13:21:56Z",
+    "note": "A big-name long defending NFLX after the post-earnings derating."
+   },
+   {
+    "handle": "corp_nick14",
+    "name": "Daniel Brooks",
+    "text": "NFLX: an earnings beat isn't enough. Q3 revenue $12.87B and EPS $0.87, but weaker Q4 guidance and a reduced 2026 ad revenue outlook weighed on sentiment. Stock near the recent $64.10 low.",
+    "url": "https://x.com/corp_nick14/status/2113271995353964902",
+    "likes": 2,
+    "reposts": 0,
+    "ts": "2026-10-22T14:11:21Z",
+    "note": "Why the stock fell despite a beat: guide and ad-revenue cut."
+   },
+   {
+    "handle": "michaelskand",
+    "name": "Michael Sikand",
+    "text": "Seeing Netflix in the mid $60s at 17x earnings is kind of insane. I can't believe it trades for under 20x earnings.",
+    "url": "https://x.com/michaelskand/status/2113503154700480882",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-10-23T05:29:53Z",
+    "note": "Valuation take: NFLX now at a sub-20x multiple."
+   }
+  ],
+  "8d7c14a45da6": [
+   {
+    "handle": "Rebellionaire",
+    "name": "Rebellionaire",
+    "text": "SpaceX's earnings are inflecting now. Tesla's still depend on Robotaxi and Optimus. Tesla says Robotaxi probably becomes noticeable in its results in Q2 2027.",
+    "url": "https://x.com/Rebellionaire/status/2113623202127569150",
+    "likes": 12,
+    "reposts": 2,
+    "ts": "2026-10-23T13:26:55Z",
+    "note": "Contrasts SpaceX's profitable quarter with Tesla's longer-dated story ahead of the merger talk."
+   },
+   {
+    "handle": "RyanBLeslie",
+    "name": "Ryan B. Leslie",
+    "text": "SpaceX results this week: revenue $14.6B (up 161% YoY), net income $4.4B vs a ~$1.1B loss a year earlier, operating income ~$2.8B.",
+    "url": "https://x.com/RyanBLeslie/status/2113462500473926074",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-10-23T02:48:21Z",
+    "note": "Quick recap of SpaceX's headline Q3 numbers."
+   },
+   {
+    "handle": "zerohedge",
+    "name": "zerohedge",
+    "text": "Premarket movers: Mag 7 mixed. Tower companies gain and wireless carriers slide after SpaceX was said to be seeking access to cell sites for a wireless network.",
+    "url": "https://x.com/zerohedge/status/2113602675187110017",
+    "likes": 90,
+    "reposts": 8,
+    "ts": "2026-10-23T12:05:21Z",
+    "note": "Market read-through today: SpaceX's wireless push is moving towers and carriers."
+   }
+  ],
+  "b06d89a152c8": [
+   {
+    "handle": "intelfabs",
+    "name": "John Intel",
+    "text": "Why is the market worried? CoreWeave's unsecured debt came under heavy pressure, with yields around 15%, raising fears that financing for the broader AI buildout could be cracking. Why does Barclays think that's the wrong conclusion?",
+    "url": "https://x.com/intelfabs/status/2113435240530137354",
+    "likes": 18,
+    "reposts": 1,
+    "ts": "2026-10-23T01:00:01Z",
+    "note": "Both sides of the AI-credit scare: CoreWeave bonds near 15% vs Barclays' pushback."
+   },
+   {
+    "handle": "plevchen",
+    "name": "PL",
+    "text": "AI is profitable, it needs infra → infra needs capex → capex needs all of hyperscaler FCF and starts going into debt → debt affects credit → debt glut pushes corporate bond yields up → (we are here).",
+    "url": "https://x.com/plevchen/status/2113420317150326958",
+    "likes": 7,
+    "reposts": 0,
+    "ts": "2026-10-23T00:00:43Z",
+    "note": "Simple chain of how AI capex turns into a bond-market problem."
+   },
+   {
+    "handle": "GryphonIAB",
+    "name": "Gryphon Investment Advisors",
+    "text": "The AI capital-expenditure cycle has crossed from an equity debate into a credit question. Meta's first negative free cash flow since 2012, a capex floor lifted to $135bn and Jensen Huang's warning that AI cloud providers lack working capital drove the Philadelphia semis index lower.",
+    "url": "https://x.com/GryphonIAB/status/2113526294969237877",
+    "likes": 3,
+    "reposts": 0,
+    "ts": "2026-10-23T07:01:50Z",
+    "note": "Ties Meta's print to the semis selloff: negative FCF turns AI capex into a credit story."
+   }
+  ],
+  "5027d66e229c": [
+   {
+    "handle": "InvestmentGuru_",
+    "name": "InvestmentGuru",
+    "text": "GOOG at $315–320 is one of the cleanest bets into earnings next week. Alphabet reports Wednesday, Oct 28 after the close, and the stock has been sold for two straight weeks, not on its own numbers but on sector fear around AI.",
+    "url": "https://x.com/InvestmentGuru_/status/2113564430562705437",
+    "likes": 20,
+    "reposts": 3,
+    "ts": "2026-10-23T09:33:23Z",
+    "note": "Bull setup into the Oct 28 print after two weeks of sector-driven selling."
+   },
+   {
+    "handle": "YUKICAPITALen",
+    "name": "YUKI CAPITAL",
+    "text": "Alphabet fell about 2% after Sundar Pichai said on a podcast the company would prioritize compute for DeepMind, passing up some short-term cloud revenue. Cloud is what I'll watch in earnings.",
+    "url": "https://x.com/YUKICAPITALen/status/2113096989734764694",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-10-22T02:35:56Z",
+    "note": "The compute-allocation worry: DeepMind vs Google Cloud capacity."
+   }
+  ],
+  "3e3eb695599f": [
+   {
+    "handle": "CuriousPejjy",
+    "name": "Pejjy",
+    "text": "Now that I slept on TSLA's Q3 call: record new FSD subscriptions in a single quarter, 75% of new North American sales get FSD, Cybercab rolls out in Dallas next month.",
+    "url": "https://x.com/CuriousPejjy/status/2113234076517675298",
+    "likes": 418,
+    "reposts": 32,
+    "ts": "2026-10-22T11:40:40Z",
+    "note": "Most-engaged bull recap of Tesla's call despite the stock drop."
+   },
+   {
+    "handle": "Talkshawkvj",
+    "name": "Mamnoon",
+    "text": "Tesla's solid Q3 beat quickly faded as Musk tempered expectations on robotics, robotaxi and chipmaking; shares swung to a 3.1% after-hours drop.",
+    "url": "https://x.com/Talkshawkvj/status/2113159410805801318",
+    "likes": 11,
+    "reposts": 2,
+    "ts": "2026-10-22T06:43:58Z",
+    "note": "Why the stock fell: Musk cooled the AI and robot narrative."
+   }
   ]
  },
  "tickers": {
@@ -260,44 +422,34 @@
   ],
   "SPCX": [
    {
-    "handle": "unusual_whales",
-    "name": "unusual_whales",
-    "text": "BREAKING: JPMorgan doubled its price target on SpaceX, $SPCX, to $500, from $240.\n\nIt kept its Overweight rating.",
-    "url": "https://x.com/unusual_whales/status/2112921096349790542",
-    "likes": 2472,
-    "reposts": 105,
-    "ts": "2026-10-21T14:57:00.000Z",
-    "note": "5.4M followers"
+    "handle": "SPCX100T",
+    "name": "vincent",
+    "text": "SpaceX wants at least 80,000 cell sites across the US and is negotiating with Crown Castle, per Bloomberg. The goal is a 4th national wireless carrier alongside AT&T, Verizon and T-Mobile. SpaceX already locked in roughly $8 billion of low-band 800 MHz spectrum.",
+    "url": "https://x.com/SPCX100T/status/2113390290103050615",
+    "likes": 284,
+    "reposts": 30,
+    "ts": "2026-10-22T22:01:24Z",
+    "note": "The big SpaceX story today: a terrestrial wireless push on top of Starlink."
    },
    {
-    "handle": "wallstengine",
-    "name": "Wall St Engine",
-    "text": "SPACEX $SPCX Q3’26 EARNINGS HIGHLIGHTS\n\n🔹 Revenue: $14.6B; +161% YoY\n🔹 EPS: $0.35\n🔹 Net Income: $4.4B\n🔹 Adjusted EBITDA: $8.8B; +306% YoY\n\nCapital Expenditures:\n🔹 Total: $19.6B\n🔹 Operating Cash Flow: $13.1B\n\nSegment Revenue:\n🔹 Space: $1.8B; +6% YoY\n🔹 Connectivity: $5.2B;",
-    "url": "https://x.com/wallstengine/status/2112635907060773129",
-    "likes": 621,
-    "reposts": 117,
-    "ts": "2026-10-20T20:03:45.000Z",
-    "note": "204K followers"
+    "handle": "MrMasonJ",
+    "name": "Mason Jones",
+    "text": "There are about 158,500 cell towers in the country. SpaceX wants half of them. Satellites can reach your phone outside, not inside an office or garage, which is why SpaceX bought 800 MHz spectrum and is now shopping for towers.",
+    "url": "https://x.com/MrMasonJ/status/2113427514018124221",
+    "likes": 36,
+    "reposts": 0,
+    "ts": "2026-10-23T00:29:19Z",
+    "note": "Plain explanation of why SpaceX needs towers, not just satellites."
    },
    {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "$SPCX  - WALL STREET RAISES SPACEX TARGETS AFTER EARNINGS\n\nAnalysts are turning more bullish on SpaceX, with several banks lifting their price targets:\n\n🔸 Morgan Stanley: $300 — Overweight\n🔸 Wells Fargo: $274, up from $214\n🔸 Citi: $240, up from $200\n🔸 UBS: $230, up from $210",
-    "url": "https://x.com/DeItaone/status/2112856976807899506",
-    "likes": 568,
-    "reposts": 81,
-    "ts": "2026-10-21T10:42:12.000Z",
-    "note": "2.0M followers"
-   },
-   {
-    "handle": "StockMKTNewz",
-    "name": "Evan",
-    "text": "SPACEX $SPCX JUST REPORTED EARNINGS\n\nEPS of $0.35 beating expectations of $0.16🟢\nRevenue of $14.6B beating expectations of $12.9B🟢",
-    "url": "https://x.com/StockMKTNewz/status/2112635776026714445",
-    "likes": 538,
-    "reposts": 62,
-    "ts": "2026-10-20T20:03:14.000Z",
-    "note": "1.2M followers"
+    "handle": "zerohedge",
+    "name": "zerohedge",
+    "text": "Premarket movers: Mag 7 mixed. Tower companies gain and wireless carriers slide after SpaceX was said to be seeking access to cell sites for a wireless network.",
+    "url": "https://x.com/zerohedge/status/2113602675187110017",
+    "likes": 90,
+    "reposts": 8,
+    "ts": "2026-10-23T12:05:21Z",
+    "note": "Market read-through today: SpaceX's wireless push is moving towers and carriers."
    }
   ],
   "CRM": [
@@ -346,34 +498,136 @@
   ],
   "META": [
    {
-    "handle": "FactSet",
-    "name": "FactSet",
-    "text": "$META Street Takeaways - Meta Platforms Q3 Earnings. Revenue +26.1% y/y beat by 2.0%. EPS ex-items also ahead by 13.1%. OM ex-legal charge 340bps above consensus. CapEx $33.94B vs SA $40.95B…",
-    "url": "https://x.com/FactSet/status/2113247083037708548",
-    "likes": 3,
+    "handle": "Joker__Capital",
+    "name": "Joker Capital",
+    "text": "Meta Q3 scorecard, expected vs actual: Revenue $63.3B → $64.6B (up 26% YoY). EPS ex-legal charge $6.54 → $7.40. 2026 capex $130–145B → $135–145B (high end unchanged). After hours briefly up more than 4%. Verdict: a beat.",
+    "url": "https://x.com/Joker__Capital/status/2113441694515646721",
+    "likes": 80,
     "reposts": 1,
-    "ts": "2026-10-22T12:32:21Z",
-    "note": "Clean beat/miss scorecard vs consensus from FactSet."
+    "ts": "2026-10-23T01:25:40Z",
+    "note": "The clean beat/miss scorecard; note the raised capex floor is what markets fixated on."
    },
    {
-    "handle": "FT",
-    "name": "Financial Times",
-    "text": "Meta to create new non-voting share class",
-    "url": "https://x.com/FT/status/2113002260863074335",
-    "likes": 13,
+    "handle": "finchdaily",
+    "name": "FinchDaily",
+    "text": "Meta's credit risk hit a fresh record on AI capex plans, per Bloomberg. Bonds fell as debt issuance fears spiked.",
+    "url": "https://x.com/finchdaily/status/2113285064515572185",
+    "likes": 0,
     "reposts": 0,
-    "ts": "2026-10-21T20:19:31Z",
-    "note": "The capital-markets twist: a non-voting class to fund AI, M&A and pay."
+    "ts": "2026-10-22T15:03:16Z",
+    "note": "Credit angle: Meta CDS at records after the capex guide."
+   }
+  ],
+  "NFLX": [
+   {
+    "handle": "bdinvestingg",
+    "name": "Bilaal - BD investing",
+    "text": "Bill Ackman extremely bullish on Netflix: calls it a super high-quality business, a “high-growth utility” nobody wants to cancel, trading around 18x earnings with 15–20% earnings growth expected for years.",
+    "url": "https://x.com/bdinvestingg/status/2113621950710849608",
+    "likes": 8,
+    "reposts": 0,
+    "ts": "2026-10-23T13:21:56Z",
+    "note": "A big-name long defending NFLX after the post-earnings derating."
    },
    {
-    "handle": "_4lex_4",
-    "name": "4lex",
-    "text": "A great quarter/strong guide (w/ asterisk of heavy incoming share issuance to fund AI capex) from META = stock implodes. The market is telling the hyperscalers to slow their AI capex significantly.",
-    "url": "https://x.com/_4lex_4/status/2113268064225485021",
+    "handle": "corp_nick14",
+    "name": "Daniel Brooks",
+    "text": "NFLX: an earnings beat isn't enough. Q3 revenue $12.87B and EPS $0.87, but weaker Q4 guidance and a reduced 2026 ad revenue outlook weighed on sentiment. Stock near the recent $64.10 low.",
+    "url": "https://x.com/corp_nick14/status/2113271995353964902",
+    "likes": 2,
+    "reposts": 0,
+    "ts": "2026-10-22T14:11:21Z",
+    "note": "Why the stock fell despite a beat: guide and ad-revenue cut."
+   }
+  ],
+  "GOOGL": [
+   {
+    "handle": "InvestmentGuru_",
+    "name": "InvestmentGuru",
+    "text": "GOOG at $315–320 is one of the cleanest bets into earnings next week. Alphabet reports Wednesday, Oct 28 after the close, and the stock has been sold for two straight weeks, not on its own numbers but on sector fear around AI.",
+    "url": "https://x.com/InvestmentGuru_/status/2113564430562705437",
+    "likes": 20,
+    "reposts": 3,
+    "ts": "2026-10-23T09:33:23Z",
+    "note": "Bull setup into the Oct 28 print after two weeks of sector-driven selling."
+   },
+   {
+    "handle": "YUKICAPITALen",
+    "name": "YUKI CAPITAL",
+    "text": "Alphabet fell about 2% after Sundar Pichai said on a podcast the company would prioritize compute for DeepMind, passing up some short-term cloud revenue. Cloud is what I'll watch in earnings.",
+    "url": "https://x.com/YUKICAPITALen/status/2113096989734764694",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-10-22T02:35:56Z",
+    "note": "The compute-allocation worry: DeepMind vs Google Cloud capacity."
+   }
+  ],
+  "MU": [
+   {
+    "handle": "TheKenyanBull",
+    "name": "The Kenyan Bull",
+    "text": "Three AI stocks I'm bullish on: Micron at ~5x forward earnings while growing triple digits; Lumentum, triple-digit growth with networking a huge bottleneck; Broadcom, custom chips plus optics.",
+    "url": "https://x.com/TheKenyanBull/status/2113564371943100675",
     "likes": 1,
     "reposts": 0,
-    "ts": "2026-10-22T13:55:43Z",
-    "note": "Bear read: why a beat sold off, and what it signals for AI capex."
+    "ts": "2026-10-23T09:33:09Z",
+    "note": "Bull case on memory and optics names leading today's premarket."
+   },
+   {
+    "handle": "xiangwei36",
+    "name": "Tradenometry",
+    "text": "Who pays for the AI build-out, and what it takes for semis to rerate: chips sold off hard while most stocks rose. The market isn't questioning AI demand. It's asking whether the spending can be financed and whether supplier profits last.",
+    "url": "https://x.com/xiangwei36/status/2113391086182056178",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-10-22T22:04:34Z",
+    "note": "Frames the semis selloff as a financing question, not a demand one."
+   }
+  ],
+  "LITE": [
+   {
+    "handle": "TheKenyanBull",
+    "name": "The Kenyan Bull",
+    "text": "Three AI stocks I'm bullish on: Micron at ~5x forward earnings while growing triple digits; Lumentum, triple-digit growth with networking a huge bottleneck; Broadcom, custom chips plus optics.",
+    "url": "https://x.com/TheKenyanBull/status/2113564371943100675",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-10-23T09:33:09Z",
+    "note": "Bull case on memory and optics names leading today's premarket."
+   },
+   {
+    "handle": "xiangwei36",
+    "name": "Tradenometry",
+    "text": "Who pays for the AI build-out, and what it takes for semis to rerate: chips sold off hard while most stocks rose. The market isn't questioning AI demand. It's asking whether the spending can be financed and whether supplier profits last.",
+    "url": "https://x.com/xiangwei36/status/2113391086182056178",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-10-22T22:04:34Z",
+    "note": "Frames the semis selloff as a financing question, not a demand one."
+   }
+  ]
+ },
+ "filings": {
+  "0001437749-26-031534": [
+   {
+    "handle": "MLofranco79251",
+    "name": "Michael Lofranco",
+    "text": "Trump Media CEO Kevin McGurn still believes the TAE merger can close before year-end, while acknowledging completion could extend into early next year as the companies work through SEC review.",
+    "url": "https://x.com/MLofranco79251/status/2113427628220649608",
+    "likes": 3,
+    "reposts": 0,
+    "ts": "2026-10-23T00:29:46Z",
+    "note": "Timing update on the S-4 deal: SEC review could push closing into 2027."
+   },
+   {
+    "handle": "predyx_markets",
+    "name": "PREDYX",
+    "text": "Trump Media shares hit a record intraday low of $6.29, down over 50% in a year as its $6B TAE merger looms.",
+    "url": "https://x.com/predyx_markets/status/2112637274957778951",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-10-20T20:09:11Z",
+    "note": "Market reaction: the acquirer's stock is at lows during the merger process."
    }
   ]
  }
