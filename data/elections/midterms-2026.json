@@ -170,7 +170,10 @@
     "polymarket": "auto",
     "kalshi_series": "auto"
    },
-   "holder": "R"
+   "holder": "R",
+   "polls": {
+    "wikipedia": "2026 United States Senate election in Alaska"
+   }
   },
   {
    "id": "NE-sen",
@@ -183,7 +186,10 @@
     "polymarket": "auto",
     "kalshi_series": "auto"
    },
-   "holder": "R"
+   "holder": "R",
+   "polls": {
+    "wikipedia": "2026 United States Senate election in Nebraska"
+   }
   },
   {
    "id": "MN-sen",
@@ -196,7 +202,10 @@
     "polymarket": "auto",
     "kalshi_series": "auto"
    },
-   "holder": "D"
+   "holder": "D",
+   "polls": {
+    "wikipedia": "2026 United States Senate election in Minnesota"
+   }
   },
   {
    "id": "AZ-gov",
@@ -208,6 +217,9 @@
    "markets": {
     "polymarket": "auto",
     "kalshi_series": "auto"
+   },
+   "polls": {
+    "wikipedia": "2026 Arizona gubernatorial election"
    }
   },
   {
@@ -220,6 +232,9 @@
    "markets": {
     "polymarket": "auto",
     "kalshi_series": "auto"
+   },
+   "polls": {
+    "wikipedia": "2026 Georgia gubernatorial election"
    }
   },
   {
@@ -232,6 +247,9 @@
    "markets": {
     "polymarket": "auto",
     "kalshi_series": "auto"
+   },
+   "polls": {
+    "wikipedia": "2026 Michigan gubernatorial election"
    }
   },
   {
@@ -244,6 +262,9 @@
    "markets": {
     "polymarket": "auto",
     "kalshi_series": "auto"
+   },
+   "polls": {
+    "wikipedia": "2026 Wisconsin gubernatorial election"
    }
   },
   {
@@ -256,6 +277,9 @@
    "markets": {
     "polymarket": "auto",
     "kalshi_series": "auto"
+   },
+   "polls": {
+    "wikipedia": "2026 Pennsylvania gubernatorial election"
    }
   },
   {
@@ -268,6 +292,9 @@
    "markets": {
     "polymarket": "auto",
     "kalshi_series": "auto"
+   },
+   "polls": {
+    "wikipedia": "2026 Nevada gubernatorial election"
    }
   },
   {
@@ -280,6 +307,9 @@
    "markets": {
     "polymarket": "auto",
     "kalshi_series": "auto"
+   },
+   "polls": {
+    "wikipedia": "2026 Kansas gubernatorial election"
    }
   },
   {
@@ -292,6 +322,9 @@
    "markets": {
     "polymarket": "auto",
     "kalshi_series": "auto"
+   },
+   "polls": {
+    "wikipedia": "2026 New York gubernatorial election"
    }
   },
   {
@@ -304,6 +337,9 @@
    "markets": {
     "polymarket": "auto",
     "kalshi_series": "auto"
+   },
+   "polls": {
+    "wikipedia": "2026 Ohio gubernatorial election"
    }
   },
   {
@@ -316,6 +352,9 @@
    "markets": {
     "polymarket": "auto",
     "kalshi_series": "auto"
+   },
+   "polls": {
+    "wikipedia": "2026 Iowa gubernatorial election"
    }
   }
  ],

@@ -159,7 +159,8 @@ def build_one(cfg, cache, pm_cache):
         for typ, slug in (("senate", f"{slugst(st)}-senate-election-winner"), ("governor", f"{slugst(st)}-governor-winner-2026")):
             rid = f"{st}-{'sen' if typ == 'senate' else 'gov'}"
             if rid not in have and any(s == slug or s.startswith(slug + "-") for s in evs):
-                races.append({"id": rid, "type": typ, "state": st, "title": f"{STATES[st]} {'Senate' if typ == 'senate' else 'Governor'}", "key": False, "geography": "county", "markets": {"polymarket": "auto"}})
+                races.append({"id": rid, "type": typ, "state": st, "title": f"{STATES[st]} {'Senate' if typ == 'senate' else 'Governor'}", "key": False, "geography": "county", "markets": {"polymarket": "auto"},
+                              "polls": {"wikipedia": f"2026 United States Senate election in {STATES[st]}" if typ == "senate" else f"2026 {STATES[st]} gubernatorial election", "auto": True}})
     pc_path = os.path.join(cache, "election_polls.json")
     try: pc = json.load(open(pc_path))
     except Exception: pc = {}
@@ -215,6 +216,7 @@ def build_one(cfg, cache, pm_cache):
         pd = [sum(o["p"] for o in od["outcomes"] if o["party"] in ("D", "I")) / max(1e-9, sum(o["p"] for o in od["outcomes"] if o["party"] in ("D", "R", "I"))) for od in r["odds"] if any(o["party"] for o in od["outcomes"])]
         r["pD"] = round(sum(pd) / len(pd), 3) if pd else None
         pol = r.get("polls", {}).get("wikipedia")
+        if pol and r["polls"].get("auto") and not (r.get("pD") is not None and .1 <= r["pD"] <= .9): pol = None  # auto-found races: polls only when competitive
         if pol:
             GEN = {"democratic", "republican", "democrat", "independent", "other"}
             want = sorted({o["name"].split()[-1].lower() for od in r["odds"] for o in od["outcomes"][:2] if o["party"] in ("D", "R", "I") and o["name"].split() and o["name"].split()[-1].lower() not in GEN})[:2] if r["odds"] else []
