@@ -31,6 +31,18 @@ def next_cycle(d=None):
     """Next federal general-election year (the House generic-ballot page to read)."""
     d = d or dt.date.today(); y = d.year
     return y if y % 2 == 0 and (d.month, d.day) <= (11, 10) else y + (1 if y % 2 else 2)
+def generic_cached(cache):
+    """Generic ballot (6h cache). Refetches when the target page changes (new cycle); if a fetch fails, keeps the last good value."""
+    page = ENV.get("generic_page") or f"{next_cycle()} United States House of Representatives elections"
+    p = os.path.join(cache, "politics_cache.json")
+    try: c = json.load(open(p))
+    except Exception: c = {}
+    e = c.get("generic") or {}
+    if e.get("d") and (e["d"].get("page") in (None, page)) and time.time() - e.get("t", 0) < 6 * 3600: return e["d"]
+    try: d = generic_ballot()
+    except Exception as ex: log("generic failed", ex); d = None
+    if d: c["generic"] = {"t": time.time(), "d": d}; json.dump(c, open(p, "w")); return d
+    return e.get("d")   # stale but real beats nothing
 def generic_ballot():
     page = ENV.get("generic_page") or f"{next_cycle()} United States House of Representatives elections"
     for rows in tables(wiki(page)):
@@ -78,11 +90,11 @@ def fec_money(E):
 
 def signals(E, cache):
     S = []
-    gb = cached(cache, "generic:" + (ENV.get("generic_page") or str(next_cycle())), 6, generic_ballot)
+    gb = generic_cached(cache)
     if gb: S.append({"id": "generic", "title": "Generic ballot", "value": f"{'D' if gb['marginD'] > 0 else 'R'}+{abs(gb['marginD'])}", "lean": "D" if gb["marginD"] > 0 else "R",
                      "detail": " · ".join(f"{a['src']} {'D' if a['D'] > a['R'] else 'R'}+{abs(round(a['D'] - a['R'], 1))}" for a in gb["aggs"][:4]),
                      "why": "Which party voters prefer for Congress, averaged across aggregators — the best single read on the national House environment.", "url": gb["url"]})
-    ap = cached(cache, "approval:" + (ENV.get("approval_page") or ""), 6, approval)
+    ap = cached(cache, "approval", 6, approval)
     if ap:
         tr = ap.get("trend") or []
         S.append({"id": "approval", "title": "Presidential approval", "value": f"{ap['approve']}%", "lean": "R" if ap["approve"] >= ap["disapprove"] else "D",
@@ -202,9 +214,11 @@ def build(out_dir, cache):
     except Exception as e: log("uspol failed", type(e).__name__, e)
     try:  # our own forecast layer (expected margins, correlated seat simulation, disagreement index)
         import forecast
-        gb = cached(cache, "generic:" + (ENV.get("generic_page") or str(next_cycle())), 6, generic_ballot)
+        gb = generic_cached(cache)
         base = json.load(open(os.path.join(ROOT, "data", "elections", "baselines", (E.get("baseline") or "pres2024") + ".json")))
         nat = (E.get("environment") or {}).get("national_override")   # e.g. a presidential national polling margin once wired
+        if nat is None and not (gb and gb.get("marginD") is not None):   # last resort: our own latest generic-ballot snapshot
+            nat = next((x["generic"] for x in reversed(out.get("snaps") or []) if x.get("generic") is not None), None)
         out["model"] = forecast.run(E, nat if nat is not None else (gb and gb.get("marginD")), base, cache)
         try: out["scorecards"] = {k: v for k, v in ((f[15:-5], forecast.scorecard(json.load(open(os.path.join(out_dir, "elections", f[15:-5] + ".json"))), json.load(open(os.path.join(cache, f))), cache))
                                                     for f in os.listdir(cache) if f.startswith("forecast_final_") and f[15:-5] != E.get("id") and os.path.exists(os.path.join(out_dir, "elections", f[15:-5] + ".json"))) if v.get("resolved")}
