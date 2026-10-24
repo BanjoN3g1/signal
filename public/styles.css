@@ -407,3 +407,7 @@ button.chip{border:0;font:inherit;font-size:12.5px}
 .v5verdict{font-size:15px;font-weight:600;color:#e5e5ea;margin:2px 0 8px;line-height:1.4}
 .v5d{border-top:.5px solid var(--line);padding:2px 0}.v5d summary{list-style:none;cursor:pointer;padding:11px 0;font-weight:600;font-size:14.5px;display:flex;justify-content:space-between}
 .v5d summary::-webkit-details-marker{display:none}.v5d summary::after{content:'›';color:var(--mute);transition:transform .2s;font-size:18px;line-height:1}.v5d[open] summary::after{transform:rotate(90deg)}
+/* v6 election-night benchmarks */
+.v5live{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;background:rgba(48,209,88,.08);border-radius:12px;padding:9px 11px;margin:6px 0}.v5live b{font-size:22px}
+.v6t td .note{display:block;font-size:10.5px}.v6t th[colspan]{padding-top:10px;color:var(--sub)}.v6t td{font-size:12.5px}
+.v6lr{grid-template-columns:1fr 78px 62px}.v5rh.v6lr span:not(:first-child){text-align:right}

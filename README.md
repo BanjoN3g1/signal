@@ -150,3 +150,12 @@ Organized by question, not by source. Tabs: **Brief · Races · Under the hood �
 - **2028**: copy `data/elections/templates/general-2028.json` into `data/elections/`. Contests are declared per election:
   `president` (electoral votes, every state auto-modeled from the 2024 baseline, swing states with markets/polls), `senate`, `house`.
   Governor/Senate Polymarket discovery uses the election year. `environment.national_override` takes a presidential national margin once wired.
+
+## Election night: county benchmarks (v6, client-side in `public/elections.js`)
+- **50/50 line** per county = 2024 presidential county margin shifted uniformly so the state nets to a tie; **model line** = the same
+  shifted to our forecast margin. Shown in every race sheet ("Election night: county benchmarks": the 6 biggest counties + 3
+  bellwethers) and as the map's **50/50 lines** layer (key-race states).
+- **Live** (`data/elections/live/<id>.json`): `{updated, counties: {fips: {reporting, margin}}}` (margin = R minus D) applies to every race
+  in that state; per race use `{fips: {races: {"TX-sen": {reporting, margin}}}}`. The Brief then leads with a **live read**: each key race's
+  counties-in vs their lines → a uniform-swing statewide estimate, weighted by 2024 votes × % reporting, against the model.
+- No results feed is wired yet: a job (or a manual drop) must write the live file on election night.

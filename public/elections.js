@@ -106,17 +106,18 @@ function cands(r){const names={};(r.odds||[]).forEach(o=>o.outcomes.forEach(x=>{
  return Object.values(names).map(x=>({...x,p:x.ps.reduce((a,b)=>a+b,0)/x.ps.length})).sort((a,b)=>b.p-a.p).slice(0,3)}
 // ---- map (d3-zoom: pinch, pan with momentum, double-tap, semantic zoom) ----
 let MS=null;
-function mapBox(){const ty=new Set([...E.races,...Object.values(P?.model?.races||{})].map(r=>r.type));if(!['sen','gov','pres','base'].includes(layer)||(layer==='pres'&&!ty.has('president'))||(layer==='sen'&&!ty.has('senate')))layer=ty.has('president')?'pres':ty.has('senate')?'sen':'base';
- return `<div class="pchips">${[['pres','President','president'],['sen','Senate','senate'],['gov','Governor','governor'],['base','2024 result',null]].filter(x=>!x[2]||ty.has(x[2])).map(([k,n])=>`<button class="pchip ${layer===k?'on':''}" data-l="${k}">${n}</button>`).join('')}</div>
- <div class="u3map" id="mb"><svg viewBox="0 0 975 610" class="u3svg z1 ${layer==='base'?'base':''}"><g id="zg"><g class="u3st"></g><g class="u3cty"></g><path class="u3mesh"/><g class="u3glow"></g><g class="u3sl"></g><g class="u3cl"></g></g></svg>
+function mapBox(){const ty=new Set([...E.races,...Object.values(P?.model?.races||{})].map(r=>r.type));if(!['sen','gov','pres','base','bench'].includes(layer)||(layer==='pres'&&!ty.has('president'))||(layer==='sen'&&!ty.has('senate')))layer=ty.has('president')?'pres':ty.has('senate')?'sen':'base';
+ return `<div class="pchips">${[['pres','President','president'],['sen','Senate','senate'],['gov','Governor','governor'],['bench','50/50 lines','bench'],['base','2024 result',null]].filter(x=>!x[2]||ty.has(x[2])||(x[2]==='bench'&&benchRaces().length)).map(([k,n])=>`<button class="pchip ${layer===k?'on':''}" data-l="${k}">${n}</button>`).join('')}</div>
+ <div class="u3map" id="mb"><svg viewBox="0 0 975 610" class="u3svg z1 ${layer==='base'||layer==='bench'?'base':''}"><g id="zg"><g class="u3st"></g><g class="u3cty"></g><path class="u3mesh"/><g class="u3glow"></g><g class="u3sl"></g><g class="u3cl"></g></g></svg>
  <div class="u3ctl"><button data-z="in" aria-label="Zoom in">+</button><button data-z="out" aria-label="Zoom out">−</button><button data-z="reset" aria-label="Reset">⟲</button></div><div class="u3mini" id="mini"></div><div class="u3lvl" id="lvl">National</div></div>${legend()}
  <p class="note">Pinch to zoom for county margins · tap a state for its races · <span class="gdot"></span> glow = toss-up</p>`}
-function legend(){return layer==='base'?`<div class="elg">D+40 ${[-40,-20,-5,5,20,40].map(m=>`<span style="background:${mCol(m)}"></span>`).join('')} R+40</div><p class="note">${H.esc(BASE?.label||'')} margin by county · ${H.esc(BASE?.metric||'')}</p>`
+function legend(){if(layer==='bench')return LIVE?`<div class="elg">D ahead ${[-10,-5,-1,1,5,10].map(d=>`<span style="background:${devCol(d)}"></span>`).join('')} R ahead</div><p class="note">Live county margin vs its 50/50 line, for each state's key race. Grey = not reporting or no key race.</p>`:`<div class="elg">D+40 ${[-40,-20,-5,5,20,40].map(m=>`<span style="background:${mCol(m)}"></span>`).join('')} R+40</div><p class="note">Each county's 50/50 line: the margin it shows in a tied statewide race (key-race states only). Beat the line and you're ahead.</p>`;
+ return layer==='base'?`<div class="elg">D+40 ${[-40,-20,-5,5,20,40].map(m=>`<span style="background:${mCol(m)}"></span>`).join('')} R+40</div><p class="note">${H.esc(BASE?.label||'')} margin by county · ${H.esc(BASE?.metric||'')}</p>`
  :`<div class="elg">R likely ${[.05,.25,.45,.55,.75,.95].map(p=>`<span style="background:${pCol(p)}"></span>`).join('')} D/I likely</div><p class="note">State color = market odds (our model where there's no market); grey = no race.</p>`}
-async function initMap(box){if(!window.d3)await loadS(D3);await geo();const d3=window.d3,svg=d3.select(box.querySelector('svg')),zg=svg.select('#zg'),typ={gov:'governor',pres:'president'}[layer]||'senate',gp=d3.geoPath();
+async function initMap(box){const BR={};if(layer==='bench')GEO_ST().forEach(st=>{const x=benchRaceOf(st);if(x)BR[st]=x});if(!window.d3)await loadS(D3);await geo();const d3=window.d3,svg=d3.select(box.querySelector('svg')),zg=svg.select('#zg'),typ={gov:'governor',pres:'president'}[layer]||'senate',gp=d3.geoPath();
  if(!GEO.cent){GEO.cent={};GEO.s.forEach(f=>GEO.cent['s'+f.id]=gp.centroid(f));GEO.c.forEach(f=>{GEO.cent[f.id]=gp.centroid(f);f.area=gp.area(f)})}
- svg.select('.u3st').selectAll('path').data(GEO.s).join('path').attr('d',f=>pathOf(f.geometry)).attr('data-s',f=>f.id).attr('fill',f=>{if(layer==='base')return 'transparent';const r=raceFor(f.id,typ);return r?pCol(pOf(r)):'#232325'});
- svg.select('.u3cty').selectAll('path').data(GEO.c).join('path').attr('d',f=>pathOf(f.geometry)).attr('data-c',f=>f.id).attr('fill',f=>mCol(LIVE?.counties?.[f.id]?.margin??BASE?.county?.[f.id]?.[0]));
+ svg.select('.u3st').selectAll('path').data(GEO.s).join('path').attr('d',f=>pathOf(f.geometry)).attr('data-s',f=>f.id).attr('fill',f=>{if(layer==='base'||layer==='bench')return 'transparent';const r=raceFor(f.id,typ);return r?pCol(pOf(r)):'#232325'});
+ svg.select('.u3cty').selectAll('path').data(GEO.c).join('path').attr('d',f=>pathOf(f.geometry)).attr('data-c',f=>f.id).attr('fill',f=>{if(layer==='bench'){const x=BR[f.id.slice(0,2)],b=BASE?.county?.[f.id],s=BASE?.state?.[f.id.slice(0,2)];if(!x||!b||!s)return '#1a1a1c';const bn=b[0]-s[0],L=liveFor(x,f.id);return LIVE?(L?devCol(L.margin-bn):'#2c2c2e'):mCol(bn)}return mCol(LIVE?.counties?.[f.id]?.margin??BASE?.county?.[f.id]?.[0])});
  svg.select('.u3mesh').attr('d',GEO.mesh);
  const toss=GEO.s.filter(f=>[...E.races,...Object.values(P?.model?.races||{}).map(x=>({...x,fips:ST2[x.state]}))].some(r=>r.fips===f.id&&(layer==='base'?['senate','governor','president']:[typ]).includes(r.type)&&pOf(r)!=null&&pOf(r)>=.35&&pOf(r)<=.65));
  svg.select('.u3glow').selectAll('path').data(toss).join('path').attr('d',f=>pathOf(f.geometry));
@@ -149,8 +150,8 @@ async function initMap(box){if(!window.d3)await loadS(D3);await geo();const d3=w
   if(lastTap&&now-lastTap.t<320&&Math.hypot(e.clientX-lastTap.x,e.clientY-lastTap.y)<40){clearTimeout(tapT);lastTap=null;haptic();const r=node.getBoundingClientRect();svg.transition().duration(450).ease(d3.easeCubicOut).call(z.scaleBy,2.5,[(e.clientX-r.left)/r.width*975,(e.clientY-r.top)/r.height*610]);return}
   lastTap={t:now,x:e.clientX,y:e.clientY};clearTimeout(tapT);tapT=setTimeout(()=>{lastTap=null;pick(el)},260)});
  svg.on('dblclick.zoom',null);
- const pick=el=>{if(!el)return;if(el.dataset.c&&(lvl>1||layer==='base')){haptic();const f=GEO.c.find(x=>x.id===el.dataset.c),b=BASE?.county?.[f.id],lv=LIVE?.counties?.[f.id],st=f.id.slice(0,2);
-   mini.innerHTML=`<button class="u3x" aria-label="Close">×</button><b>${H.esc(f.properties.name)}</b><span class="note">${H.esc(GEO.s.find(x=>x.id===st)?.properties.name||'')}</span><div class="u3mrow"><span>${H.esc(BASE?.label||'2024')}</span><b style="color:${b?(b[0]>0?PC.R:PC.D):''}">${b?mTxt(b[0]):'–'}</b>${b?`<span>${b[1].toLocaleString()} votes</span>`:''}${lv?`<span>Live ${lv.reporting||0}% in: ${mTxt(lv.margin)}</span>`:''}</div><button class="u3go" data-st="${st}">State races ›</button>`;
+ const pick=el=>{if(!el)return;if(el.dataset.c&&(lvl>1||layer==='base'||layer==='bench')){haptic();const f=GEO.c.find(x=>x.id===el.dataset.c),b=BASE?.county?.[f.id],lv=LIVE?.counties?.[f.id],st=f.id.slice(0,2);
+   mini.innerHTML=`<button class="u3x" aria-label="Close">×</button><b>${H.esc(f.properties.name)}</b><span class="note">${H.esc(GEO.s.find(x=>x.id===st)?.properties.name||'')}</span><div class="u3mrow"><span>${H.esc(BASE?.label||'2024')}</span><b style="color:${b?(b[0]>0?PC.R:PC.D):''}">${b?mTxt(b[0]):'–'}</b>${b?`<span>${b[1].toLocaleString()} votes</span>`:''}${lv?`<span>Live ${lv.reporting||0}% in: ${mTxt(lv.margin)}</span>`:''}</div>${(()=>{const x=benchRaceOf(st),s=BASE?.state?.[st];if(!x||!b||!s)return '';const bn=b[0]-s[0];return `<div class="u3mrow"><span>${H.esc(x.title)}: 50/50 line</span><b>${mTxt(bn)}</b><span>model ${mTxt(bn-x.mu)}</span></div>`})()}<button class="u3go" data-st="${st}">State races ›</button>`;
    mini.classList.add('on');mini.querySelector('.u3x').onclick=e=>{e.stopPropagation();mini.classList.remove('on')};mini.querySelector('.u3go').onclick=e=>{e.stopPropagation();mini.classList.remove('on');openState(st)};return}
   const s=el.dataset.s||(el.dataset.c&&el.dataset.c.slice(0,2));if(!s)return;haptic();mini.classList.remove('on');const f=GEO.s.find(x=>x.id===s);if(lvl<2&&f)zoomTo(f,()=>openState(s));else openState(s)};
  box.querySelectorAll('[data-z]').forEach(b=>b.onclick=()=>{haptic();const t=svg.transition().duration(380);b.dataset.z==='in'?t.call(z.scaleBy,2):b.dataset.z==='out'?t.call(z.scaleBy,.5):t.call(z.transform,d3.zoomIdentity);mini.classList.remove('on')});
@@ -282,7 +283,7 @@ function scoreHTML(sc,name){if(!sc)return '';const cm=sc.competitive||{},mm=cm.m
   ${sc.misses?.length?`<h4 class="dh">Misses</h4>${sc.misses.map(x=>`<div class="m4row" data-r="${H.esc(x.id)}"><span>${H.esc(x.title||x.id)}</span><b>model ${pp(x.model)} · mkt ${pp(x.mkt)} → ${x.won?'D/I':'R'} won</b></div>`).join('')}`:''}</section>`}
 function calendarHTML(){const cal=IDX.calendar||[];return cal.length?`<h4 class="dh">On the calendar</h4>${cal.map(c=>`<div class="m4row"><span><b>${H.esc(c.name)}</b><br><span class="note">${H.esc(c.what||'')}</span></span><b>${H.esc(new Date(c.date+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}))}</b></div>`).join('')}`:''}
 function briefHTML(){const m=MD();
- if(phase==='night')return `<div class="elive"><b>Election night</b> · live results updated ${H.esc(H.ago(LIVE.updated))}</div><h4 class="dh">Live map</h4>${mapBox()}${topline()}${decidesHTML(6)}`;
+ if(phase==='night')return `<div class="elive"><b>Election night</b> · live results updated ${H.esc(H.ago(LIVE.updated))}</div>${liveReadHTML()}<h4 class="dh">Live map</h4>${mapBox()}${topline()}${decidesHTML(6)}`;
  if(phase==='results')return `${scoreHTML(m?.scorecard,E.name)}${topline()}${readHTML(m?.read,'What the final forecast said')}${envHTML()}`;
  if(phase==='between'){const last=Object.entries(P?.scorecards||{})[0];
   return `<p class="v5lede">${m?`Early read on ${H.esc(E.name)}: fundamentals and expert ratings, few polls. Expect large moves.`:'No election is close. The national environment is the thing to watch.'}</p>${envHTML()}${m&&!m.frozen?topline()+readHTML(m.read):''}
@@ -303,12 +304,14 @@ function raceSheet(r){const x=MX()[r.id],cs=cands(r),h=P?.hist?.[r.id],c=x?.cont
   ${cs.map(k=>`<div class="u3cand">${avatar(k.name,k.party)}<div class="u3cn"><b>${H.esc(k.name)}</b> <i style="color:${PC[k.party]||'#8e8e93'}">${k.party||''}</i><div class="eb"><div style="width:${Math.round(k.p*100)}%;background:${PC[k.party]||'#8e8e93'}"></div></div></div><b class="u3cp">${pct(k.p)}</b></div>`).join('')}
   ${x?`<div class="m4vs"><div><span class="note">Model</span><b style="color:${x.model>=.5?PC[ds]:PC.R}">${sideName(x,ds)} ${pp(x.model)}</b></div><div><span class="note">Markets</span><b>${pp(x.mkt)}</b></div><div><span class="note">Gap</span><b style="color:${gapCol(x.gap)}">${gapTxt(x.gap)}</b></div></div>`:''}
   ${x?.cond?`<p class="m4p"><b>What rides on it.</b> If ${H.esc(sideName(x,ds))} wins, Democrats' ${H.esc(ctLabel(c))} odds are <b>${pp(x.cond.ifD)}</b>; if ${H.esc(sideName(x,'R'))} wins, <b>${pp(x.cond.ifR)}</b>. Decides control on its own in ${pp(x.pivotal)} of simulations${x.tip?`; tipping point in ${pp(x.tip)}`:''}.</p>`:''}
-  ${det('Why the model says this',whyHTML(x))}${det(`Polls${r.pollData?.trend?' ('+r.pollData.trend.length+')':''}`,pollChart(r))}
+  ${det('Election night: county benchmarks',x?benchHTML(x):'',!!LIVE)}${det('Why the model says this',whyHTML(x))}${det(`Polls${r.pollData?.trend?' ('+r.pollData.trend.length+')':''}`,pollChart(r))}
   ${det('Odds over time',h?.pts?.length>2?lineChart([{pts:h.pts,color:PC[h.party]||PC.D,label:lastN(h.name)}],{mid:.5,h:100})+`<p class="note">${H.esc(h.name)} on Polymarket, daily.</p>`:'')}
   ${det('Expert ratings',ratingsHTML(r,true))}${det('Money',moneyHTML(r))}${det('On X',xForRace(r).replace(/<h4[^>]*>On X<\/h4>/,''))}
   <p class="note esrc">${(r.odds||[]).map(o=>`<a href="${H.esc(o.url)}" target="_blank" rel="noopener">${o.src} ↗</a>`).join(' · ')}${r.odds?.length?' · ':''}updated ${H.esc(H.ago(E.generatedAt))}</p>`}
 function wire(sh){sh.querySelectorAll('[data-r]').forEach(b=>b.onclick=e=>{if(e.target.closest('a,summary'))return;openRace(raceObj(b.dataset.r))})}
-function openRace(r){if(!r)return;haptic();const b=r.fips&&BASE?.state?.[r.fips];wire(H.sheet(H.esc(r.title||r.id),`<div class="kicker">${H.esc(TYP[r.type]||'')}${b?` · 2024 president ${mTxt(b[0])}`:''}</div>${raceSheet(r)}`))}
+function openRace(r){if(!r)return;haptic();const b=r.fips&&BASE?.state?.[r.fips];fillNames(wireR(H.sheet(H.esc(r.title||r.id),`<div class="kicker">${H.esc(TYP[r.type]||'')}${b?` · 2024 president ${mTxt(b[0])}`:''}</div>${raceSheet(r)}`)))}
+function wireR(sh){wire(sh);return sh}
+const GEO_ST=()=>[...new Set(Object.keys(BASE?.state||{}))];
 function openState(st){const f=GEO?.s.find(x=>x.id===st),b=BASE?.state?.[st],xs=Object.values(MX()).filter(x=>ST2[x.state]===st);
  const sh=H.sheet(H.esc(f?.properties.name||st),`${b?`<div class="stats up"><div class="stat">2024 president<b style="color:${b[0]>0?PC.R:PC.D}">${mTxt(b[0])}</b></div><div class="stat">Votes cast<b>${b[1].toLocaleString()}</b></div></div>`:''}
   ${xs.length?rowHead(false)+xs.map(x=>raceRow(x,1,false)).join(''):'<p class="note">No tracked race here this cycle.</p>'}`);wire(sh)}
@@ -376,6 +379,36 @@ function feedHTML(){const st=P?.stream||[],xs=P?.x?.posts||[],R=P?.reddit;
  return chips+`<h4 class="dh">News</h4>${news(5)}${st.length>5?`<button class="v5link" data-feed="news">All ${st.length} stories →</button>`:''}<h4 class="dh">On X · balanced</h4>${xx('bal',4)}<button class="v5link" data-feed="x">More posts →</button>
   ${R?.themes?.length?`<h4 class="dh">What trackers are discussing</h4><ul class="u3chg">${R.themes.slice(0,3).map(t=>`<li><i style="background:#ff9f0a"></i><div>${H.esc(t.t)}</div></li>`).join('')}</ul><button class="v5link" data-feed="reddit">Trackers →</button>`:''}`}
 
+// ---- v6: election-night county benchmarks ----
+// 50/50 line = the margin a county shows in a tied statewide race (2024 margin, shifted uniformly so the state nets to zero).
+// Model line = the same shift to our forecast margin. Live: counties in vs their lines -> a uniform-swing statewide read.
+const devCol=d=>d==null?'#2c2c2e':mix(d<0?[10,132,255]:[255,69,58],Math.min(1,.18+Math.abs(d)/14));   // d = R-minus-D vs line
+function benchFor(x){const st=ST2[x.state],s=BASE?.state?.[st];if(!s||!BASE?.county)return null;
+ const cs=Object.entries(BASE.county).filter(([f])=>f.slice(0,2)===st&&f.length===5);if(cs.length<2)return null;
+ const tot=cs.reduce((a,[,v])=>a+v[1],0)||1,mu=-(x.mu??0);
+ return {st,s24:s[0],tot,cs:cs.map(([f,v])=>({f,m24:v[0],v:v[1],sh:v[1]/tot,bench:v[0]-s[0],exp:v[0]-s[0]+mu})).sort((a,b)=>b.v-a.v)}}
+function liveFor(x,f){const L=LIVE?.counties?.[f];if(!L)return null;const r=L.races?L.races[x.id]:L;return r&&r.margin!=null?r:null}
+function projection(x,B){let w=0,d=0,n=0;for(const c of B.cs){const L=liveFor(x,c.f);if(!L)continue;const rp=Math.min(1,(L.reporting??100)/100),wt=c.v*rp;w+=wt;d+=wt*(L.margin-c.bench);n+=wt}
+ return w?{margin:d/w,inShare:n/B.tot}:null}
+function benchRaces(){const m=MD();if(!m)return [];const xs=Object.values(m.races).filter(x=>x.type!=='president'||comp(x));
+ return xs.filter(x=>comp(x)||x.leverage>.01).sort((a,b)=>(b.leverage||0)-(a.leverage||0)||Math.abs(a.model-.5)-Math.abs(b.model-.5))}
+function benchRaceOf(st){const xs=benchRaces().filter(x=>ST2[x.state]===st);return xs.find(x=>x.contest===MD().primary)||xs[0]}
+let CN=null;async function cnames(){if(CN)return CN;try{await geo();CN=Object.fromEntries(GEO.c.map(f=>[f.id,f.properties.name]))}catch(e){CN={}}return CN}
+function benchHTML(x){const B=benchFor(x);if(!B)return '';const ds=x.dside,dn=sideName(x,ds),pr=LIVE&&projection(x,B);
+ const big=B.cs.slice(0,6),bell=B.cs.filter(c=>c.sh>=.01&&!big.includes(c)).sort((a,b)=>Math.abs(a.bench)-Math.abs(b.bench)).slice(0,3);
+ const row=c=>{const L=liveFor(x,c.f),dv=L?L.margin-c.bench:null;
+  return `<tr><td><b data-cn="${c.f}">${c.f}</b><span class="note">${(c.sh*100).toFixed(c.sh<.1?1:0)}% of vote</span></td><td>${mTxt(c.m24)}</td><td><b>${mTxt(c.bench)}</b></td><td>${mTxt(c.exp)}</td>${LIVE?`<td style="color:${dv==null?'#8e8e93':dv<0?PC[ds]:PC.R}">${L?`${mTxt(L.margin)}<span class="note">${L.reporting??'–'}% in · ${Math.abs(dv)<.05?'on the line':`${dv<0?ds:'R'} +${Math.abs(dv).toFixed(1)}`}</span>`:'–'}</td>`:''}</tr>`};
+ const head=`<tr><th>County</th><th>2024</th><th>50/50</th><th>Model</th>${LIVE?'<th>Live</th>':''}</tr>`;
+ return `<p class="m4p">${H.esc(dn)} needs each county to beat its <b>50/50 line</b> (what it looks like in a tied race). The <b>model line</b> is what our forecast (${mrg(x.mu,ds)}) expects. Read early returns as distance from the line, not as wins and losses.</p>
+  ${pr?`<div class="v5live"><span class="note">Counties in so far point to</span><b style="color:${pr.margin<0?PC[ds]:PC.R}">${mTxt(pr.margin)}</b><span class="note">statewide (${Math.round(pr.inShare*100)}% of expected vote) · model ${mrg(x.mu,ds)}</span></div>
+   <p class="note">Uniform-swing read. Early counts are often one vote type (mail or Election Day), which leans one way and reverses later: trust it more as more counties pass 50% in.</p>`:''}
+  <table class="m4t v6t">${head}${big.map(row).join('')}${bell.length?`<tr><th colspan="${LIVE?5:4}">Bellwethers · voted like the state in 2024</th></tr>${bell.map(row).join('')}`:''}</table>
+  <p class="note">All margins R+/D+. 50/50 line = 2024 county margin shifted ${Math.abs(B.s24).toFixed(1)} pts toward ${B.s24>0?'D':'R'}, so ${H.esc(STNAME(B.st))} nets to a tie. Tap the map's "50/50 lines" layer to see every county.</p>`}
+const STNAME=st=>GEO?.s.find(f=>f.id===st)?.properties.name||STN[st]||st;
+async function fillNames(root){const n=await cnames();root.querySelectorAll('[data-cn]').forEach(e=>{e.textContent=n[e.dataset.cn]||e.dataset.cn})}
+function liveReadHTML(){if(!LIVE)return '';const rows=benchRaces().slice(0,8).map(x=>{const B=benchFor(x),pr=B&&projection(x,B);return pr?{x,pr}:null}).filter(Boolean);if(!rows.length)return '';
+ return `<h4 class="dh">Live read · vs the lines</h4><div class="v5rh v6lr"><span></span><span>Pointing to</span><span>vs model</span></div>${rows.map(({x,pr})=>{const ds=x.dside,d=-pr.margin;
+  return `<button class="v5row v6lr" data-r="${H.esc(x.id)}"><span class="v5t"><b>${H.esc(x.title)}</b><i>${Math.round(pr.inShare*100)}% in · model ${mrg(x.mu,ds)}</i></span><span class="v5n" style="color:${d>=0?PC[ds]:PC.R}">${mTxt(pr.margin)}</span><span class="v5g" style="color:${Math.abs(d-x.mu)<1?'#8e8e93':d-x.mu>0?PC[ds]:PC.R}">${d-x.mu>=0?'+':'−'}${Math.abs(d-x.mu).toFixed(1)}</span></button>`}).join('')}<p class="note">Pointing to = counties reporting, measured against their 50/50 lines (uniform swing). Last column = ahead (+) or behind (−) our forecast for the D/I side.</p>`}
 // ---- shell ----
 function body(p){
  if(view==='races')p.innerHTML=racesHTML();
@@ -400,10 +433,10 @@ async function render(app,helpers){H=helpers;
  try{IDX=await j('data/elections/index.json');const id=IDX.active||IDX.elections[0].id;E=await j(`data/elections/${id}.json`);
   P=await j('data/politics.json').catch(()=>null);BASE=E.baseline?await j(`data/elections/baselines/${E.baseline}.json`).catch(()=>null):null;LIVE=await j(`data/elections/live/${id}.json`).catch(()=>null)}
  catch(e){p.innerHTML='<div class="empty"><h2>No election data yet</h2><p>It arrives with the next data refresh.</p></div>';return}
- phase=LIVE?'night':(IDX.phase||'campaign');if(phase==='night')layer='base';
+ phase=LIVE?'night':(IDX.phase||'campaign');
  if(MD()&&MD().election&&MD().election!==E.id)P.model=null;   // model is for another election: don't mix
  if(!['brief','races','hood','feed'].includes(view))view='brief';
- if(!render.done){render.done=1;const pt=MD()?.contests?.[MD()?.primary];if(pt&&MD().races){const t=Object.values(MD().races).find(x=>x.contest===pt.id)?.type;layer=phase==='night'?'base':t==='president'?'pres':t==='governor'?'gov':'sen'}}
+ if(!render.done){render.done=1;const pt=MD()?.contests?.[MD()?.primary];if(pt&&MD().races){const t=Object.values(MD().races).find(x=>x.contest===pt.id)?.type;layer=phase==='night'?'bench':t==='president'?'pres':t==='governor'?'gov':'sen'}}
  p.innerHTML=`<div class="ehead"><div><div class="kicker">${H.esc(kicker())}</div><h2>${H.esc(E.name)}</h2></div></div>
   <div class="pchips eseg">${[['brief','Brief'],['races','Races'],['hood','Under the hood'],['feed','Feed']].map(([k,n])=>`<button class="pchip ${view===k?'on':''}" data-v="${k}">${n}</button>`).join('')}</div><div id="eb"></div>`;
  const eb=p.querySelector('#eb');p.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>{haptic();view=b.dataset.v;p.querySelectorAll('[data-v]').forEach(x=>x.classList.toggle('on',x===b));body(eb)});body(eb)}
