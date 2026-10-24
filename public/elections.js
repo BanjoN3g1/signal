@@ -98,7 +98,7 @@ function pollChart(r){const p=r.pollData;if(!p?.trend?.length)return '';const pt
   <text x="${w-50}" y="${Y(m*.7)}" class="u3tick" fill="${PC[pa]}">${H.esc(p.names[0].split(' ').pop())} ahead</text><text x="${w-50}" y="${Y(-m*.7)}" class="u3tick" fill="${PC[pb]}">${H.esc(p.names[1].split(' ').pop())} ahead</text>
   ${pts.map(x=>`<circle cx="${X(x[0]).toFixed(1)}" cy="${Y(x[1]).toFixed(1)}" r="3" fill="${x[1]>=0?PC[pa]:PC[pb]}" opacity=".55"><title>${H.esc(x[2].pollster)} ${H.esc(x[2].dates)}: ${x[2].a}–${x[2].b}</title></circle>`).join('')}
   <polyline points="${roll.map(x=>X(x[0]).toFixed(1)+','+Y(x[1]).toFixed(1)).join(' ')}" fill="none" stroke="#fff" stroke-width="1.6" opacity=".8"/></svg>
-  <p class="note">Dots = individual polls (margin, ${H.esc(p.names[0].split(' ').pop())} minus ${H.esc(p.names[1].split(' ').pop())}); line = rolling average of 5. Latest average: ${H.esc((last>=0?p.names[0]:p.names[1]).split(' ').pop())} +${Math.abs(last).toFixed(1)}.</p></div>`}
+  <p class="note">Dots = individual polls (margin, ${H.esc(p.names[0].split(' ').pop())} minus ${H.esc(p.names[1].split(' ').pop())}); line = rolling average of 5. Our quality-weighted average is above.</p></div>`}
 // ---- candidates & race blocks ----
 function avatar(name,party){const ph=P?.photos?.[name];const ini=H.esc(name.split(' ').filter(w=>/^[A-Z]/.test(w)).map(w=>w[0]).slice(0,2).join(''));const c=PC[party]||'#636366';
  return ph?.url?`<img class="u3av" src="${H.esc(ph.url)}" alt="" loading="lazy" style="border-color:${c}" onerror="this.outerHTML='<span class=&quot;u3av ini&quot; style=&quot;background:${c}&quot;>${ini}</span>'">`:`<span class="u3av ini" style="background:${c}">${ini}</span>`}
@@ -254,7 +254,7 @@ function topline(){const m=MD();if(!m)return chamberFallback();
    <span class="v5sub">${a?`Actual <b>${a.actual}</b> ${unitS(c)} · forecast ~${Math.round(c.seatsMean)} (${c.p10}–${c.p90}) ${a.inRange?'✓':'✗'}`:`~${Math.round(c.seatsMean)} ${unitS(c)} for D (${c.p10}–${c.p90})`}</span></div>`}).join('')}</div>`}
 function chamberFallback(){const ch=E.races.filter(r=>r.type==='chamber'&&r.pD!=null);if(!ch.length)return '';
  return `<div class="v5top">${ch.map(r=>`<div class="v5k"><span class="note">${H.esc(r.title)}</span><b style="color:${r.pD>=.5?PC.D:PC.R}">${r.pD>=.5?'D':'R'} ${pp(Math.max(r.pD,1-r.pD))}</b><span class="note">markets</span></div>`).join('')}</div>`}
-const KC={tip:'#64d2ff',week:'#30d158',fragile:'#ff9f0a',cand:'#bf5af2',gap:'#ff9f0a',pivotal:'#64d2ff'};
+const KC={tell:'#30d158',tip:'#64d2ff',week:'#30d158',fragile:'#ff9f0a',cand:'#bf5af2',gap:'#ff9f0a',pivotal:'#64d2ff'};
 function readHTML(items,title){return items?.length?`<h4 class="dh">${title||'The read'}</h4><ol class="v5read">${items.map(b=>`<li${b.race?` data-r="${H.esc(b.race)}"`:''}><i style="background:${KC[b.k]||'#8e8e93'}"></i><div>${H.esc(b.t)}</div></li>`).join('')}</ol>`:''}
 function decidesHTML(n=5){const m=MD();if(!m?.primary)return '';const c=m.contests[m.primary];
  const xs=Object.values(m.races).filter(x=>x.contest===m.primary&&(x.leverage>0||comp(x))).sort((a,b)=>(b.leverage||0)-(a.leverage||0)).slice(0,n);if(!xs.length)return '';
@@ -262,8 +262,8 @@ function decidesHTML(n=5){const m=MD();if(!m?.primary)return '';const c=m.contes
  return `<h4 class="dh">Decides ${H.esc(c.label.toLowerCase()==='president'?'the presidency':c.label+' control')}</h4>${rowHead(true)}${xs.map(x=>raceRow(x,top,true)).join('')}
   ${gov.length?`<button class="v5link" data-v2="races">Governors: ${gov.length} competitive · closest ${gov.slice(0,2).map(x=>`${x.state} (${x.model>=.5?x.dside:'R'} ${pp(Math.max(x.model,1-x.model))})`).join(', ')}</button>`:''}
   <button class="v5link" data-v2="races">All races and the map →</button>`}
-function weekHTML(){const m=MD(),seen=new Set(),items=[];
- for(const w of [...(m?.week||[]),...(P?.overview?.changes||[])]){const k=w.race||w.t||w.text;if(seen.has(k))continue;seen.add(k);items.push(w);if(items.length>=4)break}
+function weekHTML(){const m=MD(),seen=new Set((m?.read||[]).map(b=>b.t)),items=[];
+ for(const w of [...(m?.week||[]),...(P?.overview?.changes||[])]){const k=(w.race||'')+(w.src||'')+(w.race?'':(w.t||w.text));if(seen.has(k)||seen.has(w.t))continue;seen.add(k);items.push(w);if(items.length>=4)break}
  const young=(m?.track?.days||0)<5;
  return `<h4 class="dh">This week</h4>${items.length?`<ul class="u3chg">${items.map(c=>`<li${c.race?` data-r="${H.esc(c.race)}"`:''}><i style="background:${c.lean?PC[c.lean]:'#8e8e93'}"></i><div>${H.esc(c.t||c.text)}<span class="u3src">${H.esc(c.src||'')}</span></div></li>`).join('')}</ul>`
   :`<p class="note v5quiet">${young?`Nothing has crossed a threshold yet. Week-over-week moves need 5 days of history (tracking since ${H.esc(m?.track?.since||'today')}).`:'Nothing material moved this week. Odds, polls and ratings are all within normal noise.'}</p>`}`}
@@ -288,7 +288,7 @@ function briefHTML(){const m=MD();
  if(phase==='between'){const last=Object.entries(P?.scorecards||{})[0];
   return `<p class="v5lede">${m?`Early read on ${H.esc(E.name)}: fundamentals and expert ratings, few polls. Expect large moves.`:'No election is close. The national environment is the thing to watch.'}</p>${envHTML()}${m&&!m.frozen?topline()+readHTML(m.read):''}
    ${m?.frozen?scoreHTML(m.scorecard,E.name):''}${last?scoreHTML(last[1],(IDX.elections||[]).find(e=>e.id===last[0])?.name):''}${calendarHTML()}`}
- return `${topline()}${readHTML(m?.read)}${decidesHTML()}${weekHTML()}${envHTML()}`}
+ return `${topline()}${readHTML(m?.read)}${decidesHTML()}${weekHTML()}${stretchHTML()}${envHTML()}`}
 
 // ---- race sheet: verdict first, detail collapsed ----
 function det(t,body,open){return body?`<details class="v5d"${open?' open':''}><summary>${t}</summary>${body}</details>`:''}
@@ -304,9 +304,9 @@ function raceSheet(r){const x=MX()[r.id],cs=cands(r),h=P?.hist?.[r.id],c=x?.cont
   ${cs.map(k=>`<div class="u3cand">${avatar(k.name,k.party)}<div class="u3cn"><b>${H.esc(k.name)}</b> <i style="color:${PC[k.party]||'#8e8e93'}">${k.party||''}</i><div class="eb"><div style="width:${Math.round(k.p*100)}%;background:${PC[k.party]||'#8e8e93'}"></div></div></div><b class="u3cp">${pct(k.p)}</b></div>`).join('')}
   ${x?`<div class="m4vs"><div><span class="note">Model</span><b style="color:${x.model>=.5?PC[ds]:PC.R}">${sideName(x,ds)} ${pp(x.model)}</b></div><div><span class="note">Markets</span><b>${pp(x.mkt)}</b></div><div><span class="note">Gap</span><b style="color:${gapCol(x.gap)}">${gapTxt(x.gap)}</b></div></div>`:''}
   ${x?.cond?`<p class="m4p"><b>What rides on it.</b> If ${H.esc(sideName(x,ds))} wins, Democrats' ${H.esc(ctLabel(c))} odds are <b>${pp(x.cond.ifD)}</b>; if ${H.esc(sideName(x,'R'))} wins, <b>${pp(x.cond.ifR)}</b>. Decides control on its own in ${pp(x.pivotal)} of simulations${x.tip?`; tipping point in ${pp(x.tip)}`:''}.</p>`:''}
-  ${det('Election night: county benchmarks',x?benchHTML(x):'',!!LIVE)}${det('Why the model says this',whyHTML(x))}${det(`Polls${r.pollData?.trend?' ('+r.pollData.trend.length+')':''}`,pollChart(r))}
+  ${det('Election night: county benchmarks',x?benchHTML(x):'',!!LIVE)}${det('Why the model says this',whyHTML(x))}${det(`Polls${r.pollAvg?' · our average '+mrg(r.pollAvg.margin,ds):''}`,(pollAvgHTML(r)+pollChart(r))||'')}${det('Outside money',raceLMHTML(r))}${det('Early vote',stateEVHTML(x))}
   ${det('Odds over time',h?.pts?.length>2?lineChart([{pts:h.pts,color:PC[h.party]||PC.D,label:lastN(h.name)}],{mid:.5,h:100})+`<p class="note">${H.esc(h.name)} on Polymarket, daily.</p>`:'')}
-  ${det('Expert ratings',ratingsHTML(r,true))}${det('Money',moneyHTML(r))}${det('On X',xForRace(r).replace(/<h4[^>]*>On X<\/h4>/,''))}
+  ${det('Expert ratings',ratingsHTML(r,true))}${det('Fundraising',moneyHTML(r))}${det('On X',xForRace(r).replace(/<h4[^>]*>On X<\/h4>/,''))}
   <p class="note esrc">${(r.odds||[]).map(o=>`<a href="${H.esc(o.url)}" target="_blank" rel="noopener">${o.src} ↗</a>`).join(' · ')}${r.odds?.length?' · ':''}updated ${H.esc(H.ago(E.generatedAt))}</p>`}
 function wire(sh){sh.querySelectorAll('[data-r]').forEach(b=>b.onclick=e=>{if(e.target.closest('a,summary'))return;openRace(raceObj(b.dataset.r))})}
 function openRace(r){if(!r)return;haptic();const b=r.fips&&BASE?.state?.[r.fips];fillNames(wireR(H.sheet(H.esc(r.title||r.id),`<div class="kicker">${H.esc(TYP[r.type]||'')}${b?` · 2024 president ${mTxt(b[0])}`:''}</div>${raceSheet(r)}`)))}
@@ -357,12 +357,15 @@ function hoodHTML(){const m=MD();if(!m)return '<p class="note" style="padding:20
  if(sen.length)out+=`<h4 class="dh">Candidate effects · Senate</h4><p class="note">Observed margin minus the environment expectation. Right = the D/I side runs ahead; left = the Republican does. Solid = candidate-driven (${m.params.cand_flag}+ pts).</p>
   <div class="m4ov">${sen.map(x=>{const v=x.over,wd=Math.min(1,Math.abs(v)/om)*50,c=v>=0?PC[x.dside]:PC.R;return `<button class="m4ovr" data-r="${H.esc(x.id)}"><span class="m4ovl">${H.esc(shortT(x))}</span><span class="m4ovb"><i style="left:${v>=0?50:50-wd}%;width:${wd}%;background:${c}${x.candidateDriven?'':';opacity:.55'}"></i><em></em></span><span class="m4ovv" style="color:${c}">${v>=0?'+':'−'}${Math.abs(v)}</span><span class="m4ovw">${H.esc(lastN(x.overWho?.name))}${x.obsSrc==='market-implied'?' · mkt':''}</span></button>`}).join('')}</div>`;
  if(D.length)out+=`<h4 class="dh">Disagreement index</h4><p class="note">Model vs markets, and who sides with whom (blue = favors the D/I side).</p>${D.map(d=>{const x=m.races[d.id];return x?`<button class="m4dis" data-r="${H.esc(d.id)}"><div><b>${H.esc(x.title)}</b><span class="note">model ${pp(x.model)} · mkt ${pp(x.mkt)}${x.fundOnly?' · no polls, low confidence':''}</span></div><b style="color:${gapCol(d.gap)}">${gapTxt(d.gap)}</b><div class="m4sd">${SD.filter(([k])=>k in d.sides).map(([k,n])=>`<span style="background:${d.sides[k]?PC[x.dside]:PC.R}33;color:${d.sides[k]?PC[x.dside]:PC.R}">${n}</span>`).join('')}</div></button>`:''}).join('')}`;
+ const he=Object.entries(E.house_effects||{}).filter(([,v])=>Math.abs(v)>=.5).sort((a,b)=>Math.abs(b[1])-Math.abs(a[1])).slice(0,10);
+ if(he.length)out+=det('Pollster house effects',`<p class="note">How far each pollster has leaned vs other polls of the same races (pooled across races, shrunk toward zero). Removed before averaging.</p>${he.map(([k,v])=>`<div class="m4row"><span>${H.esc(k.replace(/\b\w/g,c=>c.toUpperCase()))}</span><b style="color:${v>0?PC.D:PC.R}">${v>0?'D':'R'}+${Math.abs(v)}</b></div>`).join('')}`);
  const sc=Object.entries(P?.scorecards||{});
  return out+`${sc.map(([id,s])=>scoreHTML(s,(IDX.elections||[]).find(e=>e.id===id)?.name)).join('')}<button class="u3how" data-mhow>How the model works (and what it can't see)</button>${det('Forecasters, raters and how to read them',modelsHTML())}
   <p class="note">Forecast logged daily since ${H.esc(m.track?.since||'today')} so model and markets get graded against results. Updated ${H.esc(H.ago(m.asof))}.</p>`}
 function openMHow(){const p=MD()?.params||{};H.sheet('How the model works',`<div class="u3steps">
  <div><b>1 · Expected margin</b><p>The state's 2024 presidential margin, shifted by the national swing (the national margin now minus the 2024 popular vote). Governors inherit ${Math.round((p.elast?.governor||.8)*100)}% of the swing. Incumbents on the ballot get ${p.inc?.senate} pts (Senate) / ${p.inc?.governor} (governor). The prior then blends in the expert-rating consensus (Senate ${Math.round((p.rater_w?.senate??.5)*100)}%, governors ${Math.round((p.rater_w?.governor??1)*100)}%, president ${Math.round((p.rater_w?.president??.3)*100)}%).</p></div>
- <div><b>2 · Blend with polls</b><p>Poll average weight = n/(n+${p.poll_k}), capped at ${Math.round((p.poll_cap||.85)*100)}%. Unpolled races run on the prior with a wider error.</p></div>
+ <div><b>2 · Blend with polls</b><p>Our polling average weights each poll by recency (14-day half-life), sample size, likely vs registered voters, and halves party-sponsored polls; each pollster's house lean, measured across every race we track, is removed; fabricators are excluded. It counts as n<sub>eff</sub>/(n<sub>eff</sub>+${p.poll_k}) of the margin, capped at ${Math.round((p.poll_cap||.85)*100)}%. Unpolled races run on the prior with a wider error.</p></div>
+ <div><b>Final-stretch tells</b><p>Early vote (UF Election Lab) and late outside money (FEC 24/48-hour reports) don't change the math; they surface in This week when they cross a threshold, weighted toward races that decide control.</p></div>
  <div><b>3 · Correlated simulation</b><p>${(p.sims||20000).toLocaleString()} runs, each with one national error (σ ${p.sig_nat} pts) shared by every race plus a race error. That's why races aren't independent coin flips: a polling miss hits them all at once. The fragility line reruns everything with a ${p.miss}-pt miss each way.</p></div>
  <div><b>4 · Any election</b><p>Each election declares its contests: Senate seats now, electoral votes in 2028 (every state modeled from the baseline, weighted by electoral votes). Same outputs: control odds, distribution, tipping point, leverage, conditional odds, paths.</p></div>
  <div><b>5 · Accountability</b><p>The model never sees market prices, so gaps are real disagreements. A snapshot is logged daily; after Election Day the last pre-election forecast is frozen and graded against results (Brier score, model vs markets).</p></div>
@@ -409,6 +412,40 @@ async function fillNames(root){const n=await cnames();root.querySelectorAll('[da
 function liveReadHTML(){if(!LIVE)return '';const rows=benchRaces().slice(0,8).map(x=>{const B=benchFor(x),pr=B&&projection(x,B);return pr?{x,pr}:null}).filter(Boolean);if(!rows.length)return '';
  return `<h4 class="dh">Live read · vs the lines</h4><div class="v5rh v6lr"><span></span><span>Pointing to</span><span>vs model</span></div>${rows.map(({x,pr})=>{const ds=x.dside,d=-pr.margin;
   return `<button class="v5row v6lr" data-r="${H.esc(x.id)}"><span class="v5t"><b>${H.esc(x.title)}</b><i>${Math.round(pr.inShare*100)}% in · model ${mrg(x.mu,ds)}</i></span><span class="v5n" style="color:${d>=0?PC[ds]:PC.R}">${mTxt(pr.margin)}</span><span class="v5g" style="color:${Math.abs(d-x.mu)<1?'#8e8e93':d-x.mu>0?PC[ds]:PC.R}">${d-x.mu>=0?'+':'−'}${Math.abs(d-x.mu).toFixed(1)}</span></button>`}).join('')}<p class="note">Pointing to = counties reporting, measured against their 50/50 lines (uniform swing). Last column = ahead (+) or behind (−) our forecast for the D/I side.</p>`}
+// ---- v7: polling average detail, early vote, late outside money ----
+const EVD=()=>P?.earlyVote,LMD=()=>P?.lateMoney;
+const stName=st=>((E.races.find(r=>r.state===st&&r.type!=='chamber')?.title)||st).replace(/ (Senate|Governor|\(president\))$/,'');
+const M$=v=>v>=1e6?'$'+(v/1e6).toFixed(v>=1e7?0:1)+'M':v>=1e3?'$'+Math.round(v/1e3)+'k':'$'+Math.round(v||0);
+const kfm=v=>v>=1e6?(v/1e6).toFixed(1)+'M':v>=1e3?Math.round(v/1e3)+'k':String(v||0);
+function pollAvgHTML(r){const a=r.pollAvg;if(!a)return '';const x=MX()[r.id],ds=x?.dside||'D';
+ return `<div class="v7pa"><div><span class="note">Our average</span><b>${mrg(a.margin,ds)}</b></div><div><span class="note">Simple avg (last 5)</span><b class="v7mute">${mrg(a.simple,ds)}</b></div><div><span class="note">Polls</span><b>${a.n}</b><span class="note">≈${a.neff} independent</span></div></div>
+  <table class="m4t v7pt"><tr><th>Pollster</th><th>Ended</th><th>Raw</th><th>Adj</th><th>Weight</th></tr>${a.polls.map(p=>`<tr><td><b>${H.esc(p.pollster)}</b><span class="note">${p.n?p.n.toLocaleString():'?'} ${H.esc(p.pop||'')}${p.party?` · ${p.party}-sponsored`:''}</span></td><td>${H.esc(p.end.slice(5).replace('-','/'))}</td><td>${mrg(p.raw,ds)}</td><td title="house effect ${p.house}">${mrg(p.adj,ds)}</td><td><div class="m4bar"><i style="width:${Math.round(p.share/Math.max(...a.polls.map(q=>q.share))*100)}%"></i><span>${Math.round(p.share*100)}%</span></div></td></tr>`).join('')}</table>
+  <p class="note">Weighted by recency (14-day half-life), sample size, likely voters over registered, half weight for party-sponsored polls; each pollster's house lean (measured across every race we track) is removed. Pollsters caught fabricating are excluded.${a.sd!=null?` Polls disagree by ±${a.sd} pts around the average.`:''}</p>`}
+function evRow(st,s,lab){return `<tr><td><b>${H.esc(lab||stName(st))}</b><span class="note">${H.esc(s.updated||'')}</span></td><td>${kfm(s.voted)}${s.d7!=null?`<span class="note">+${kfm(s.d7)} wk</span>`:s.d1!=null?`<span class="note">+${kfm(s.d1)} day</span>`:''}</td><td>${s.pct!=null?Math.round(s.pct*100)+'%':'–'}</td><td style="color:${s.lead==null?'#8e8e93':s.lead>=0?PC.D:PC.R}">${s.lead==null?'n/a':(s.lead>=0?'D+':'R+')+Math.abs(s.lead)}${s.lead7!=null&&Math.abs(s.lead7)>=.5?`<span class="note">${s.lead7>=0?'▲ D':'▼ R'} ${Math.abs(s.lead7)} wk</span>`:''}</td></tr>`}
+function evTable(sts){const E_=EVD();if(!E_)return '';const rows=sts.filter(st=>E_.states[st]);if(!rows.length)return '';
+ return `<table class="m4t v7ev"><tr><th>State</th><th>Cast</th><th>% of ${H.esc(E_.prevLabel||'last')}</th><th>Party (reg.)</th></tr>${rows.map(st=>evRow(st,E_.states[st])).join('')}</table>`}
+const keyStates=()=>[...new Set(benchRaces().filter(x=>x.leverage>.005||(x.type==='governor'&&Math.abs(x.model-.5)<.25)).map(x=>x.state))];
+function openEV(){const E_=EVD();if(!E_)return;haptic();const ks=keyStates(),rest=Object.keys(E_.states).filter(s=>!ks.includes(s)).sort((a,b)=>E_.states[b].voted-E_.states[a].voted);
+ wire(H.sheet('Early vote',`<div class="v5top"><div class="v5k"><span class="note">Ballots cast</span><b>${kfm(E_.nat.voted)}</b><span class="note">${Math.round((E_.nat.pct||0)*100)}% of ${H.esc(E_.prevLabel)} total turnout</span></div></div>
+  <h4 class="dh">Key states</h4>${evTable(ks)}
+  <p class="note"><b>How to read it.</b> "% of ${H.esc(E_.prevLabel)}" is pace: ballots already cast vs the state's whole ${H.esc(E_.prevLabel)} turnout. "Party (reg.)" is the registered-party split of ballots cast, only in states that register by party; it is not a vote count (independents and crossover voters decide races), so watch its direction week to week, not its level. Democrats usually lead early mail and trail on Election Day.</p>
+  ${det(`All states (${rest.length})`,evTable(rest))}<p class="note">Source: <a href="${H.esc(E_.url)}" target="_blank" rel="noopener">UF Election Lab</a> (${H.esc(E_.license)}), refreshed every 3 hours; week-over-week from our daily snapshots (${E_.history_days} day${E_.history_days>1?'s':''} so far).</p>`))}
+function lmBar(o){const d=o.d7,r=o.r7,t=d+r||1;return `<div class="v7mb"><i style="width:${d/t*100}%;background:${PC.D}"></i><i style="width:${r/t*100}%;background:${PC.R}"></i></div>`}
+function lmRow(id,o){const x=MX()[id],dp=o.dPrev/2,rp=o.rPrev/2,ch=(n,p)=>p>=2e5?`${n>=p?'▲':'▼'} ${Math.round(Math.abs(n/p-1)*100)}%`:'';
+ return `<button class="v7lm" data-r="${H.esc(id)}"><span class="v5t"><b>${H.esc(x?.title||id)}</b><i>D-side ${M$(o.d7)} ${ch(o.d7,dp)} · R-side ${M$(o.r7)} ${ch(o.r7,rp)}</i></span>${lmBar(o)}</button>`}
+function openLM(){const L=LMD();if(!L)return;haptic();const rs=Object.entries(L.races).sort((a,b)=>((MX()[b[0]]?.leverage||0)-(MX()[a[0]]?.leverage||0))||(b[1].d7+b[1].r7-a[1].d7-a[1].r7));
+ wire(H.sheet('Outside money',`<p class="note">Super PAC and party-committee spending in Senate races over the past 7 days, from the 24/48-hour reports groups must file. Arrows compare with the prior two weeks' weekly pace. A side going quiet in a close race is a tell: parties cut races their own polling says are lost.</p>
+  ${rs.map(([id,o])=>lmRow(id,o)).join('')}<p class="note">D-side = supporting the Democrat/independent or opposing the Republican; R-side the reverse. Largest ${L.items} notices since ${H.esc(new Date(Date.now()-L.windowDays*864e5).toISOString().slice(5,10).replace('-','/'))} (smallest included ${M$(L.minItem)}). Source: <a href="${H.esc(L.url)}" target="_blank" rel="noopener">FEC</a>, refreshed twice a day.</p>`))}
+function stretchHTML(){const E_=EVD(),L=LMD();if(!E_&&!L)return '';const ks=keyStates();
+ const evs=E_?ks.map(st=>E_.states[st]).filter(Boolean):[];const lm=L?Object.entries(L.races).filter(([id])=>MX()[id]?.leverage>.005):[];
+ const dS=lm.reduce((a,[,o])=>a+o.d7,0),rS=lm.reduce((a,[,o])=>a+o.r7,0);
+ return `<h4 class="dh">Final stretch</h4>${E_?`<button class="v5env" data-ev><span class="note">Early vote</span><span><b>${kfm(E_.nat.voted)}</b> ballots cast · ${Math.round((E_.nat.pct||0)*100)}% of ${H.esc(E_.prevLabel)} turnout${evs.length?` · key states ${Math.round(evs.reduce((a,s)=>a+s.voted,0)/Math.max(1,evs.reduce((a,s)=>a+s.prev,0))*100)}%`:''}</span><span class="v5chev">›</span></button>`:''}
+  ${L&&lm.length?`<button class="v5env" data-lm><span class="note">Outside money · 7 days</span><span>Races that decide control: D-side <b style="color:${PC.D}">${M$(dS)}</b> · R-side <b style="color:${PC.R}">${M$(rS)}</b></span><span class="v5chev">›</span></button>`:''}`}
+function stateEVHTML(x){const s=EVD()?.states?.[x?.state];if(!s)return '';const E_=EVD();
+ return `<table class="m4t v7ev"><tr><th>State</th><th>Cast</th><th>% of ${H.esc(E_.prevLabel)}</th><th>Party (reg.)</th></tr>${evRow(x.state,s)}</table>${s.retD!=null?`<p class="note">Mail ballots returned: ${Math.round(s.retD*100)}% of Democratic requests vs ${Math.round(s.retR*100)}% of Republican.</p>`:''}<p class="note">Registration split of ballots cast, not votes. Watch the week-over-week direction.</p>`}
+function raceLMHTML(r){const o=LMD()?.races?.[r.id];if(!o)return '';
+ return `${lmBar(o)}<div class="m4row"><span>Past 7 days</span><b><span style="color:${PC.D}">D-side ${M$(o.d7)}</span> · <span style="color:${PC.R}">R-side ${M$(o.r7)}</span></b></div><div class="m4row"><span>Prior 14 days</span><b>D-side ${M$(o.dPrev)} · R-side ${M$(o.rPrev)}</b></div>
+  ${o.top?.length?`<p class="note">Top spenders (3 weeks): ${o.top.map(t=>`${H.esc(t.com)} <b style="color:${PC[t.side]}">${M$(t.amt)}</b>`).join(' · ')}</p>`:''}`}
 // ---- shell ----
 function body(p){
  if(view==='races')p.innerHTML=racesHTML();
@@ -417,7 +454,7 @@ function body(p){
  else p.innerHTML=briefHTML();
  p.querySelectorAll('[data-r]').forEach(b=>b.onclick=e=>{if(e.target.closest('a,summary'))return;openRace(raceObj(b.dataset.r))});
  p.querySelectorAll('[data-st]').forEach(b=>b.onclick=()=>openStory(b.dataset.st));
- p.querySelectorAll('[data-env]').forEach(b=>b.onclick=openEnv);p.querySelector('[data-mhow]')?.addEventListener('click',openMHow);
+ p.querySelectorAll('[data-env]').forEach(b=>b.onclick=openEnv);p.querySelectorAll('[data-ev]').forEach(b=>b.onclick=openEV);p.querySelectorAll('[data-lm]').forEach(b=>b.onclick=openLM);p.querySelector('[data-mhow]')?.addEventListener('click',openMHow);
  p.querySelectorAll('[data-feed]').forEach(b=>b.onclick=()=>{haptic();feed=b.dataset.feed;body(p);p.closest('.escroll')?.scrollTo(0,0)});
  p.querySelectorAll('[data-xf]').forEach(b=>b.onclick=()=>{xf=b.dataset.xf;body(p)});
  p.querySelectorAll('[data-v2]').forEach(b=>b.onclick=()=>{haptic();view=b.dataset.v2;document.querySelectorAll('[data-v]').forEach(x=>x.classList.toggle('on',x.dataset.v===view));body(p);p.closest('.escroll')?.scrollTo(0,0)});

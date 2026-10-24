@@ -115,7 +115,7 @@ def race_inputs(r, base, swing):
     rw = P["rater_w"][typ] if rm is not None and fund is not None else (1.0 if rm is not None else 0.0)
     prior = (rw * rm + (1 - rw) * fund) if fund is not None and rm is not None else (fund if fund is not None else rm)
     sig_prior = P["sig_prior"][typ] if rm is not None else P["sig_fund"][typ]
-    poll = r.get("pollMarginD"); n = (r.get("pollData") or {}).get("n") or 0
+    poll = r.get("pollMarginD"); n = (r.get("pollAvg") or {}).get("neff") or (r.get("pollData") or {}).get("n") or 0
     w = min(P["poll_cap"], n / (n + P["poll_k"])) if poll is not None and n else 0.0
     if prior is None and poll is None: return None
     if prior is None: mu, w = poll, 1.0

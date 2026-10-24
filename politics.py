@@ -212,6 +212,14 @@ def build(out_dir, cache):
     try:
         import uspol; uspol.enrich(out, E, cache)
     except Exception as e: log("uspol failed", type(e).__name__, e)
+    ev = lm = None
+    try:   # final-stretch tells: early vote (UF Election Lab) and late outside money (FEC 24/48-hour notices)
+        import tells
+        dl = (dt.date.fromisoformat(E["date"]) - dt.date.today()).days if E.get("date") else 999
+        if -3 <= dl <= 45: ev = tells.early_vote(int(E["date"][:4]), cache)
+        if -3 <= dl <= 60: lm = tells.late_money(E, cache, os.environ.get("FEC_API_KEY") or "DEMO_KEY")
+        out["earlyVote"], out["lateMoney"] = ev, lm
+    except Exception as e: log("tells failed", type(e).__name__, e)
     try:  # our own forecast layer (expected margins, correlated seat simulation, disagreement index)
         import forecast
         gb = generic_cached(cache)
@@ -220,6 +228,13 @@ def build(out_dir, cache):
         if nat is None and not (gb and gb.get("marginD") is not None):   # last resort: our own latest generic-ballot snapshot
             nat = next((x["generic"] for x in reversed(out.get("snaps") or []) if x.get("generic") is not None), None)
         out["model"] = forecast.run(E, nat if nat is not None else (gb and gb.get("marginD")), base, cache)
+        m = out.get("model")
+        if m and not m.get("frozen") and (ev or lm):
+            tl = tells.tells(m, ev, lm, {r["id"]: r.get("title", r["id"]) for r in E.get("races", [])})
+            m["week"] = sorted(tl + (m.get("week") or []), key=lambda w: -w.get("mag", 0))[:4]
+            strong = [t for t in tl if t["mag"] >= .15]
+            if strong: m["read"] = ([m["read"][0]] if m.get("read") else []) + [{**strong[0], "k": "tell"}] + (m.get("read") or [])[1:]; m["read"] = m["read"][:3]
+            m["brief"] = (m.get("brief") or []) + [{**t, "k": "tell"} for t in tl]
         try: out["scorecards"] = {k: v for k, v in ((f[15:-5], forecast.scorecard(json.load(open(os.path.join(out_dir, "elections", f[15:-5] + ".json"))), json.load(open(os.path.join(cache, f))), cache))
                                                     for f in os.listdir(cache) if f.startswith("forecast_final_") and f[15:-5] != E.get("id") and os.path.exists(os.path.join(out_dir, "elections", f[15:-5] + ".json"))) if v.get("resolved")}
         except Exception as e: log("scorecards", e)

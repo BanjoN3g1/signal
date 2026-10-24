@@ -159,3 +159,16 @@ Organized by question, not by source. Tabs: **Brief · Races · Under the hood �
   in that state; per race use `{fips: {races: {"TX-sen": {reporting, margin}}}}`. The Brief then leads with a **live read**: each key race's
   counties-in vs their lines → a uniform-swing statewide estimate, weighted by 2024 votes × % reporting, against the model.
 - No results feed is wired yet: a job (or a manual drop) must write the live file on election night.
+
+## v7: better inputs for the final stretch
+- **Polling average** (`polls.py`, run inside `elections.build_one`): recency (14-day half-life), sample size, LV > RV > adults,
+  half weight for party-sponsored polls, √(polls per pollster) dampening, house effects pooled across all tracked races (shrunk),
+  banned fabricators (Wedgewood). Sets `pollMarginD` (what the model uses), `pollAvg` (every poll with weight and adjustment) and
+  `house_effects`. The model uses the effective number of polls.
+- **Early vote** (`tells.early_vote`): UF Election Lab `data-downloads/earlyvote/<year>/US.csv`, every 3 h, plus our daily snapshots
+  for week-over-week. Pace vs the prior cycle's turnout, registered-party split where available, mail return rates.
+- **Late outside money** (`tells.late_money`): FEC Schedule E 24/48-hour notices, Senate, last 21 days, largest first (≤8 keyset pages,
+  every 12 h). Per race D-side vs R-side, last 7 days vs prior 14, top spenders. Set a free `FEC_API_KEY` secret (api.data.gov) to
+  avoid the shared DEMO_KEY limit.
+- **Tells** (`tells.tells`): outspending ≥1.8:1, pullbacks (−60% vs prior pace), surges (2.5×), early-vote party-split moves ≥3 pts,
+  weighted toward races that decide control. They join "This week"; a strong one (in a pivotal race) enters the read.

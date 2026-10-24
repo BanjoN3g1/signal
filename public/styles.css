@@ -411,3 +411,8 @@ button.chip{border:0;font:inherit;font-size:12.5px}
 .v5live{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;background:rgba(48,209,88,.08);border-radius:12px;padding:9px 11px;margin:6px 0}.v5live b{font-size:22px}
 .v6t td .note{display:block;font-size:10.5px}.v6t th[colspan]{padding-top:10px;color:var(--sub)}.v6t td{font-size:12.5px}
 .v6lr{grid-template-columns:1fr 78px 62px}.v5rh.v6lr span:not(:first-child){text-align:right}
+/* v7 polls, early vote, late money */
+.v7pa{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:6px 0}.v7pa div{background:rgba(255,255,255,.04);border-radius:10px;padding:6px 9px;display:flex;flex-direction:column}.v7pa b{font-size:18px}.v7mute{color:var(--sub)}
+.v7pt td{font-size:12px}.v7pt td .note,.v7ev td .note{display:block;font-size:10.5px}.v7ev td{font-size:13px}
+.v7mb{display:flex;height:8px;border-radius:4px;overflow:hidden;background:rgba(255,255,255,.06);margin:6px 0}.v7mb i{display:block;height:100%}
+.v7lm{display:block;width:100%;background:none;border:0;border-top:.5px solid var(--line);color:var(--txt);font:inherit;text-align:left;padding:9px 0}.v7lm .v5t i{white-space:normal}

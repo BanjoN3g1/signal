@@ -116,7 +116,7 @@ def wiki_polls(page, want=()):
     recent = polls[:5] if True else polls  # Wikipedia lists newest first
     avg = [round(sum(p[k] for p in recent[:5]) / len(recent[:5]), 1) for k in ("a", "b")]
     return {"src": "Wikipedia", "url": "https://en.wikipedia.org/wiki/" + page.replace(" ", "_") + "#Polling", "names": names, "avg": avg, "n": len(recent), "recent": recent[:3],
-            "trend": [{"pollster": p["pollster"][:40], "dates": p["dates"], "a": p["a"], "b": p["b"]} for p in polls[:20]]}
+            "trend": [{"pollster": p["pollster"][:48], "dates": p["dates"], "sample": p["sample"], "a": p["a"], "b": p["b"]} for p in polls[:30]], "v": 2}
 
 # ---------- Race ratings (Wikipedia "Predictions" tables aggregate Cook, Sabato, Inside Elections, Silver Bulletin, ...) ----------
 RSCORE = {"safe": 3, "solid": 3, "likely": 2, "lean": 1, "leans": 1, "tilt": .5, "tossup": 0, "toss-up": 0, "toss up": 0}
@@ -226,7 +226,7 @@ def build_one(cfg, cache, pm_cache):
                 if nm: want = sorted(o["name"].split()[-1].lower() for o in nm)
             want = [w for w in want][:2]
             ck = r["id"] + ":" + ",".join(want); c = pc.get(ck)
-            if not c or time.time() - c.get("t", 0) > 6 * 3600 or (c.get("d") and "trend" not in c["d"]):  # v3 adds the poll trend
+            if not c or time.time() - c.get("t", 0) > 6 * 3600 or (c.get("d") and c["d"].get("v") != 2):  # v2: 30 polls with sample size
                 try: c = {"t": time.time(), "d": wiki_polls(pol, want)}
                 except Exception as e: c = {"t": time.time() - 5 * 3600, "d": None, "err": str(e)[:100]}  # retry in ~1h
                 pc[ck] = c
@@ -254,7 +254,11 @@ def build_one(cfg, cache, pm_cache):
             pty = {o["name"].split()[-1].lower(): o["party"] for od in r["odds"] for o in od["outcomes"] if o["party"]}
             ps = [pty.get(n.split()[-1].lower()) for n in pdd["names"]]
             if "R" in ps and any(x in ("D", "I") for x in ps):
-                d, rr = (0, 1) if ps[0] in ("D", "I") else (1, 0); r["pollMarginD"] = round(pdd["avg"][d] - pdd["avg"][rr], 1)
+                d, rr = (0, 1) if ps[0] in ("D", "I") else (1, 0); r["pollMarginD"] = round(pdd["avg"][d] - pdd["avg"][rr], 1); r["_pollD"] = d
+    try:   # quality-weighted, house-adjusted polling average (polls.py) replaces the simple last-5 average
+        import polls; out["house_effects"] = polls.average(races)
+    except Exception as e: log("poll average failed", e)
+    for r in races: r.pop("_pollD", None)
     # races to watch: close odds, big moves, poll-vs-market or ratings-vs-market gaps
     watch = []
     for r in races:
