@@ -246,6 +246,11 @@ def build(out_dir, cache):
         m = out.get("model") or {}
         cs = ", ".join(f"{v.get('label')} D {v.get('pControl')} mkt {v.get('market')}" for v in (m.get("contests") or {}).values())
         print(f"::notice title=Politics {idx.get('active')} ({idx.get('phase')})::" + (f"{cs} | read {len(m.get('read') or [])} | week {len(m.get('week') or [])} | log days {(m.get('track') or {}).get('days')} | signals {len(out['signals'])}" if m else "NO MODEL"), flush=True)
+    if os.environ.get("GITHUB_ACTIONS") and out.get("model"):
+        m = out["model"]
+        for i, b in enumerate((m.get("read") or []) + (m.get("week") or [])): print(f"::notice title={'Read' if i < len(m.get('read') or []) else 'Week'} {i + 1}::{b.get('t', '')[:300]}", flush=True)
+        if ev: print(f"::notice title=Early vote::{ev['nat']['voted']:,} cast, {round((ev['nat']['pct'] or 0) * 100)}% of {ev.get('prevLabel')} | " + ", ".join(f"{k} {v['voted']:,} ({round((v.get('pct') or 0) * 100)}%{', D' if (v.get('lead') or 0) >= 0 else ', R'}{'+' + str(abs(v['lead'])) if v.get('lead') is not None else ''})" for k, v in ev["states"].items() if k in ("TX", "MI", "OH", "IA", "ME", "NC", "AK", "KS", "NE", "GA")), flush=True)
+        if lm: print("::notice title=Outside money 7d::" + ", ".join(f"{k} D ${o['d7'] / 1e6:.1f}M / R ${o['r7'] / 1e6:.1f}M (prior 14d D ${o['dPrev'] / 1e6:.1f}M / R ${o['rPrev'] / 1e6:.1f}M)" for k, o in sorted(lm["races"].items(), key=lambda kv: -(kv[1]['d7'] + kv[1]['r7']))[:8]), flush=True)
     log(f"{len(out['signals'])} signals, {len(out['stream'])} stories, {len(out['x']['posts'])} X posts; {round(time.time() - t0)}s")
 
 if __name__ == "__main__":
