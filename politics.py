@@ -209,8 +209,14 @@ def build(out_dir, cache):
         try: out["scorecards"] = {k: v for k, v in ((f[15:-5], forecast.scorecard(json.load(open(os.path.join(out_dir, "elections", f[15:-5] + ".json"))), json.load(open(os.path.join(cache, f))), cache))
                                                     for f in os.listdir(cache) if f.startswith("forecast_final_") and f[15:-5] != E.get("id") and os.path.exists(os.path.join(out_dir, "elections", f[15:-5] + ".json"))) if v.get("resolved")}
         except Exception as e: log("scorecards", e)
-    except Exception as e: log("forecast failed", type(e).__name__, e)
+    except Exception as e:
+        log("forecast failed", type(e).__name__, e)
+        if os.environ.get("GITHUB_ACTIONS"): print(f"::warning title=Forecast failed::{type(e).__name__}: {e}", flush=True)
     json.dump(out, open(os.path.join(out_dir, "politics.json"), "w"), separators=(",", ":"))
+    if os.environ.get("GITHUB_ACTIONS"):   # one-line health check, visible in the run summary as an annotation
+        m = out.get("model") or {}
+        cs = ", ".join(f"{v.get('label')} D {v.get('pControl')} mkt {v.get('market')}" for v in (m.get("contests") or {}).values())
+        print(f"::notice title=Politics {idx.get('active')} ({idx.get('phase')})::" + (f"{cs} | read {len(m.get('read') or [])} | week {len(m.get('week') or [])} | log days {(m.get('track') or {}).get('days')} | signals {len(out['signals'])}" if m else "NO MODEL"), flush=True)
     log(f"{len(out['signals'])} signals, {len(out['stream'])} stories, {len(out['x']['posts'])} X posts; {round(time.time() - t0)}s")
 
 if __name__ == "__main__":
