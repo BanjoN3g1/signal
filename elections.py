@@ -156,7 +156,8 @@ def build_one(cfg, cache, pm_cache):
     except Exception as e: series = []; status["kalshi"] = f"error: {e}"[:120]
     races = [dict(r) for r in cfg["races"]]; have = {r["id"] for r in races}
     for st in STATES:  # auto-discover the rest of the map
-        for typ, slug in (("senate", f"{slugst(st)}-senate-election-winner"), ("governor", f"{slugst(st)}-governor-winner-2026")):
+        yr = (cfg.get("date") or "2026")[:4]
+        for typ, slug in (("senate", f"{slugst(st)}-senate-election-winner"), ("governor", f"{slugst(st)}-governor-winner-{yr}")):
             rid = f"{st}-{'sen' if typ == 'senate' else 'gov'}"
             if rid not in have and any(s == slug or s.startswith(slug + "-") for s in evs):
                 races.append({"id": rid, "type": typ, "state": st, "title": f"{STATES[st]} {'Senate' if typ == 'senate' else 'Governor'}", "key": False, "geography": "county", "markets": {"polymarket": "auto"},
@@ -181,7 +182,7 @@ def build_one(cfg, cache, pm_cache):
         mk = r.get("markets", {}); r["odds"] = []
         slug = mk.get("polymarket")
         if slug == "auto" and r.get("state"):
-            base = f"{slugst(r['state'])}-senate-election-winner" if r["type"] == "senate" else f"{slugst(r['state'])}-governor-winner-2026"
+            base = f"{slugst(r['state'])}-senate-election-winner" if r["type"] == "senate" else f"{slugst(r['state'])}-governor-winner-{(cfg.get('date') or '2026')[:4]}"
             slug = next((s for s in sorted(evs, key=len) if s == base or s.startswith(base + "-")), None)
         if slug:
             e = evs.get(slug)
@@ -282,19 +283,56 @@ def build_one(cfg, cache, pm_cache):
     log(f"{cfg['id']}: {len(races)} races, {sum(1 for r in races if r['odds'])} with odds, {sum(1 for r in races if r.get('pollData'))} with polls; {round(time.time() - t0)}s")
     return out
 
+def pick(idx, today=None):
+    """Which election the dashboard leads with, and its phase.
+    campaign: next election is <=150 days out · results: one ended <=45 days ago (and the next isn't within 30) ·
+    between: otherwise (lead with the next election if one is configured, else the last one). 'night' is decided client-side."""
+    today = today or dt.date.today()
+    d = lambda e: dt.date.fromisoformat(e["date"])
+    up = sorted([e for e in idx if e.get("date") and d(e) >= today], key=d)
+    past = sorted([e for e in idx if e.get("date") and d(e) < today], key=d, reverse=True)
+    if past and (today - d(past[0])).days <= 45 and not (up and (d(up[0]) - today).days <= 30): return past[0]["id"], "results", (up[0]["id"] if up else None)
+    if up and (d(up[0]) - today).days <= 150: return up[0]["id"], "campaign", (up[1]["id"] if len(up) > 1 else None)
+    if up: return up[0]["id"], "between", up[0]["id"]
+    return (past[0]["id"], "between", None) if past else (None, "between", None)
+
+def carry(data, cache):
+    """After Election Day markets close and drop out of the open-events feed: keep each race's last observed odds."""
+    p = os.path.join(cache, f"elections_last_{data['id']}.json")
+    try: prev = {r["id"]: r for r in json.load(open(p)).get("races", [])}
+    except Exception: prev = {}
+    if data.get("date") and dt.date.today() > dt.date.fromisoformat(data["date"]):
+        for r in data.get("races", []):
+            o = prev.get(r["id"])
+            if o and not r.get("odds") and o.get("odds"):
+                for k in ("odds", "pD", "pollData", "pollMarginD", "ratings"): r.setdefault(k, o.get(k)); r[k] = r.get(k) or o.get(k)
+                r["carried"] = True
+    try: json.dump(data, open(p, "w"), separators=(",", ":"))
+    except Exception: pass
+    return data
+
 def build(out_dir, cache):
     od = os.path.join(out_dir, "elections"); os.makedirs(os.path.join(od, "baselines"), exist_ok=True)
     idx = []
     for f in sorted(glob.glob(os.path.join(CFG, "*.json"))):
         cfg = json.load(open(f))
-        try: data = build_one(cfg, cache, None)
-        except Exception as e: log("failed", cfg.get("id"), e); data = {**cfg, "status": {"error": str(e)[:200]}}
+        arch = os.path.join(CFG, "archive", cfg["id"] + ".json")
+        if os.path.exists(arch): data = json.load(open(arch)); log(cfg["id"], "served from archive (frozen)")   # committed after results: never refetched
+        else:
+            try: data = carry(build_one(cfg, cache, None), cache)
+            except Exception as e: log("failed", cfg.get("id"), e); data = {**cfg, "status": {"error": str(e)[:200]}}
         json.dump(data, open(os.path.join(od, cfg["id"] + ".json"), "w"), separators=(",", ":"))
-        idx.append({k: cfg.get(k) for k in ("id", "name", "date", "status")})
+        idx.append({k: cfg.get(k) for k in ("id", "name", "date", "status", "kind")})
     for f in glob.glob(os.path.join(CFG, "baselines", "*.json")): shutil.copy(f, os.path.join(od, "baselines"))
     live = os.path.join(CFG, "live")
     if os.path.isdir(live): shutil.copytree(live, os.path.join(od, "live"), dirs_exist_ok=True)  # election-night hook
-    json.dump({"elections": sorted(idx, key=lambda x: x["date"] or "", reverse=True)}, open(os.path.join(od, "index.json"), "w"))
+    act, phase, nxt = pick(idx)
+    cal = []
+    try: cal = json.load(open(os.path.join(CFG, "calendar", "calendar.json"))).get("dates", [])
+    except Exception: pass
+    json.dump({"elections": sorted(idx, key=lambda x: x["date"] or "", reverse=True), "active": act, "phase": phase, "next": nxt,
+               "calendar": [c for c in cal if c.get("date", "") >= dt.date.today().isoformat()][:8]}, open(os.path.join(od, "index.json"), "w"))
+    return act
 
 if __name__ == "__main__":
     c = os.path.join(ROOT, "data", "cache"); os.makedirs(c, exist_ok=True)

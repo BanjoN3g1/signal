@@ -4,6 +4,35 @@
  "date": "2026-11-03",
  "status": "upcoming",
  "baseline": "pres2024",
+ "kind": "midterm",
+ "contests": [
+  {
+   "id": "senate",
+   "label": "Senate",
+   "type": "senate",
+   "total": 100,
+   "held": {
+    "D": 47,
+    "R": 53
+   },
+   "win_at": 51,
+   "market": "senate-control",
+   "unit": "seats",
+   "note": "Independents who caucus with Democrats count as D; VP Vance breaks a 50–50 tie for Republicans."
+  },
+  {
+   "id": "house",
+   "label": "House",
+   "market": "house-control",
+   "modeled": false,
+   "note": "Market-only: district-level inputs (new mid-decade lines) aren't wired in yet."
+  }
+ ],
+ "environment": {
+  "national": "generic",
+  "generic_page": "2026 United States House of Representatives elections",
+  "approval_page": "Opinion polling on the second Trump presidency"
+ },
  "discover": {
   "polymarket_tag": "midterms",
   "note": "every other Senate/Governor race with a Polymarket '<state>-senate-election-winner' / '<state>-governor-winner-2026' event is added automatically (key:false)"

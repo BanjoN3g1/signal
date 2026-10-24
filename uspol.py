@@ -178,8 +178,7 @@ def enrich(out, E, cache):
     ctl = {r["title"]: f"{'Democrats' if r['pD'] >= .5 else 'Republicans'} favored, {round(max(r['pD'], 1 - r['pD']) * 100)}% in prediction markets (Polymarket + Kalshi average)" for r in E["races"] if r["type"] == "chamber" and r.get("pD") is not None}
     facts = {"chamber_control_markets": ctl, "generic_ballot": sig.get("generic", {}).get("value"), "presidential_approval": sig.get("approval", {}).get("value"),
              "approval_detail": sig.get("approval", {}).get("detail"), "this_week": [c["text"] for c in ch]}
-    try: nar = narrative(facts, cache)
-    except Exception as e: log("narrative", e); nar = None
+    nar = None   # v5: the AI narrative is retired; the computed read (forecast.takeaways) replaces it
     out["overview"] = {"changes": ch, "narrative": nar, "facts": facts}
     try: out["photos"] = photos(E, cache)
     except Exception as e: log("photos failed", e); out["photos"] = {}

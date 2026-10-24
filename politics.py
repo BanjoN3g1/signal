@@ -26,17 +26,24 @@ def cached(cache, key, hours, fn):
         c[key] = e; json.dump(c, open(p, "w"))
     return e["d"]
 
+ENV = {}   # set by build() from the active election's "environment" block
+def next_cycle(d=None):
+    """Next federal general-election year (the House generic-ballot page to read)."""
+    d = d or dt.date.today(); y = d.year
+    return y if y % 2 == 0 and (d.month, d.day) <= (11, 10) else y + (1 if y % 2 else 2)
 def generic_ballot():
-    for rows in tables(wiki("2026 United States House of Representatives elections")):
+    page = ENV.get("generic_page") or f"{next_cycle()} United States House of Representatives elections"
+    for rows in tables(wiki(page)):
         if rows and rows[0][:1] == ["Source of poll aggregation"]:
             h = rows[0]; iR, iD = h.index("Republicans"), h.index("Democrats")
             ag = [{"src": r[0], "updated": r[2], "R": num(r[iR]), "D": num(r[iD])} for r in rows[1:] if len(r) == len(h)]
             ag = [a for a in ag if a["R"] == a["R"] and a["D"] == a["D"]]
             if ag: return {"aggs": ag, "marginD": round(sum(a["D"] - a["R"] for a in ag) / len(ag), 1),
-                           "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections#Opinion_polling"}
+                           "url": "https://en.wikipedia.org/wiki/" + page.replace(" ", "_") + "#Opinion_polling", "page": page}
 
 def approval():
-    doc = wiki("Opinion polling on the second Trump presidency"); agg, months = None, []
+    page = ENV.get("approval_page") or "Opinion polling on the second Trump presidency"
+    doc = wiki(page); agg, months = None, []
     for rows in tables(doc):
         if not rows: continue
         h = rows[0]
@@ -51,7 +58,7 @@ def approval():
             v = [x for x in v if x[0] == x[0] and x[1] == x[1]]
             if v:
                 mo = re.match(r"[A-Za-z]+", v[0][2]); months.append({"month": mo.group(0) if mo else "", "net": round(sum(x[0] - x[1] for x in v) / len(v), 1), "n": len(v)})
-    if agg: return {**agg, "trend": months, "url": "https://en.wikipedia.org/wiki/Opinion_polling_on_the_second_Trump_presidency"}
+    if agg: return {**agg, "trend": months, "url": "https://en.wikipedia.org/wiki/" + page.replace(" ", "_")}
 
 def fec_money(E):
     key = os.environ.get("FEC_API_KEY") or "DEMO_KEY"; out = {}
@@ -71,11 +78,11 @@ def fec_money(E):
 
 def signals(E, cache):
     S = []
-    gb = cached(cache, "generic", 6, generic_ballot)
+    gb = cached(cache, "generic:" + (ENV.get("generic_page") or str(next_cycle())), 6, generic_ballot)
     if gb: S.append({"id": "generic", "title": "Generic ballot", "value": f"{'D' if gb['marginD'] > 0 else 'R'}+{abs(gb['marginD'])}", "lean": "D" if gb["marginD"] > 0 else "R",
                      "detail": " · ".join(f"{a['src']} {'D' if a['D'] > a['R'] else 'R'}+{abs(round(a['D'] - a['R'], 1))}" for a in gb["aggs"][:4]),
                      "why": "Which party voters prefer for Congress, averaged across aggregators — the best single read on the national House environment.", "url": gb["url"]})
-    ap = cached(cache, "approval", 6, approval)
+    ap = cached(cache, "approval:" + (ENV.get("approval_page") or ""), 6, approval)
     if ap:
         tr = ap.get("trend") or []
         S.append({"id": "approval", "title": "Presidential approval", "value": f"{ap['approve']}%", "lean": "R" if ap["approve"] >= ap["disapprove"] else "D",
@@ -179,8 +186,12 @@ def load_x():
 
 def build(out_dir, cache):
     t0 = time.time()
-    try: E = json.load(open(os.path.join(out_dir, "elections", "midterms-2026.json")))
-    except Exception: E = {"races": []}
+    try:
+        idx = json.load(open(os.path.join(out_dir, "elections", "index.json")))
+        E = json.load(open(os.path.join(out_dir, "elections", (idx.get("active") or idx["elections"][0]["id"]) + ".json")))
+    except Exception: E, idx = {"races": []}, {}
+    ENV.clear(); ENV.update(E.get("environment") or {})
+    if idx.get("phase") in ("results", "between"): ENV.pop("generic_page", None)   # after an election: read the next cycle's page
     out = {"generatedAt": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"), "signals": [], "stream": [], "x": load_x()}
     try: out["signals"] = signals(E, cache)
     except Exception as e: log("signals failed", e)
@@ -191,9 +202,13 @@ def build(out_dir, cache):
     except Exception as e: log("uspol failed", type(e).__name__, e)
     try:  # our own forecast layer (expected margins, correlated seat simulation, disagreement index)
         import forecast
-        gb = cached(cache, "generic", 6, generic_ballot)
+        gb = cached(cache, "generic:" + (ENV.get("generic_page") or str(next_cycle())), 6, generic_ballot)
         base = json.load(open(os.path.join(ROOT, "data", "elections", "baselines", (E.get("baseline") or "pres2024") + ".json")))
-        out["model"] = forecast.run(E, gb and gb.get("marginD"), base, cache)
+        nat = (E.get("environment") or {}).get("national_override")   # e.g. a presidential national polling margin once wired
+        out["model"] = forecast.run(E, nat if nat is not None else (gb and gb.get("marginD")), base, cache)
+        try: out["scorecards"] = {k: v for k, v in ((f[15:-5], forecast.scorecard(json.load(open(os.path.join(out_dir, "elections", f[15:-5] + ".json"))), json.load(open(os.path.join(cache, f))), cache))
+                                                    for f in os.listdir(cache) if f.startswith("forecast_final_") and f[15:-5] != E.get("id") and os.path.exists(os.path.join(out_dir, "elections", f[15:-5] + ".json"))) if v.get("resolved")}
+        except Exception as e: log("scorecards", e)
     except Exception as e: log("forecast failed", type(e).__name__, e)
     json.dump(out, open(os.path.join(out_dir, "politics.json"), "w"), separators=(",", ":"))
     log(f"{len(out['signals'])} signals, {len(out['stream'])} stories, {len(out['x']['posts'])} X posts; {round(time.time() - t0)}s")

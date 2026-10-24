@@ -1,0 +1,9 @@
+{
+ "note": "Dates fixed by law (first Tuesday after the first Monday in November). Shown in the off-cycle view's 'On the calendar'. Add primaries and specials as they're scheduled.",
+ "dates": [
+  {"date": "2026-11-03", "name": "2026 midterms", "what": "House, 35 Senate seats, 36 governors"},
+  {"date": "2027-11-02", "name": "2027 off-year elections", "what": "Kentucky and Mississippi governor; Virginia and New Jersey legislatures (Louisiana governor votes in the fall)"},
+  {"date": "2028-11-07", "name": "2028 general election", "what": "President, House, a third of the Senate, governors"},
+  {"date": "2030-11-05", "name": "2030 midterms", "what": "House, a third of the Senate, 36 governors"}
+ ]
+}

@@ -128,3 +128,25 @@ Turns the collected inputs into insight; no new data sources, every parameter in
 - **Accountability**: one snapshot/day in `data/cache/forecast_log.json`; `forecast.score(path, {race_id: 1 if D/I won else 0})`
   returns Brier scores for model vs markets after Election Day.
 - UI: Overview "Our model" card, a **Model** tab, and a model box (expected-margin waterfall, conditional odds) in every race sheet.
+
+## Politics v5: one Brief, any election (`forecast.py`, `elections.pick`, `public/elections.js`)
+Organized by question, not by source. Tabs: **Brief · Races · Under the hood · Feed** (was 7 tabs).
+- **Brief**: topline per contest (model vs market, seat/EV range) → **the read** (≤3 ranked takeaways: tipping point vs markets,
+  what moved, fragility under a ±3 pt polling miss, candidate races, biggest gap) → **decides control** (top races by leverage) →
+  **this week** (only threshold-crossing moves; says so when nothing moved) → one **environment** line (tap for all signals).
+- **Race sheet**: one verdict line, model vs market, "what rides on it" (conditional odds), then collapsed detail
+  (why the model says this · polls · odds over time · ratings · money · X).
+- Cut: AI narrative, Signals grid on the home screen, races-to-watch strip, odds small multiples, Polls tab, International stub.
+  News + X + Trackers merged into Feed; forecaster explainer moved to Under the hood.
+
+**Lifecycle (automatic, from `data/elections/*.json` dates; `index.json` carries `active`, `phase`, `next`, `calendar`):**
+- `campaign` (next election ≤150 days out): the Brief above. `night`: when `data/elections/live/<id>.json` exists, the map leads.
+- `results` (≤45 days after): the model freezes on its last pre-election forecast (`forecast_final_<id>.json`) and a **scorecard**
+  grades model vs markets (hits, Brier, misses, seats vs forecast range) against `data/elections/results/<id>.json` or settled markets.
+  Closed markets keep their last odds (`elections_last_<id>.json`). To freeze an election permanently, commit its built JSON to
+  `data/elections/archive/<id>.json` (and `<id>-model.json` for the final forecast).
+- `between`: national environment (generic ballot switches to the next cycle's page automatically), last cycle's scorecard,
+  `data/elections/calendar/calendar.json`, and an early read of the next election if its config exists.
+- **2028**: copy `data/elections/templates/general-2028.json` into `data/elections/`. Contests are declared per election:
+  `president` (electoral votes, every state auto-modeled from the 2024 baseline, swing states with markets/polls), `senate`, `house`.
+  Governor/Senate Polymarket discovery uses the election year. `environment.national_override` takes a presidential national margin once wired.

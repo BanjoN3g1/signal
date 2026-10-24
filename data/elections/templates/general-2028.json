@@ -1,0 +1,178 @@
+{
+ "_how": "To switch the dashboard to 2028: copy this file to data/elections/general-2028.json (any time; it leads once it is the next election within 150 days, and shows as 'next' before that). Then: (1) set the Senate 'held' counts from the 2026 results; (2) list Senate/governor races (or rely on discover); (3) add swing-state president races with Polymarket/Kalshi slugs and Wikipedia polling pages; every other state is modeled automatically from the 2024 baseline + national swing; (4) once a presidential national polling average is wired, set environment.national_override from it (until then the generic ballot stands in).",
+ "id": "general-2028",
+ "name": "2028 Election",
+ "date": "2028-11-07",
+ "status": "upcoming",
+ "kind": "presidential",
+ "baseline": "pres2024",
+ "discover": {
+  "polymarket_tag": "elections"
+ },
+ "contests": [
+  {
+   "id": "president",
+   "label": "President",
+   "type": "president",
+   "weights": "ev",
+   "total": 538,
+   "win_at": 270,
+   "market": "president-control",
+   "unit": "electoral votes",
+   "note": "Maine and Nebraska congressional-district votes are treated statewide; a 269–269 tie goes to the House (counted as R)."
+  },
+  {
+   "id": "senate",
+   "label": "Senate",
+   "type": "senate",
+   "total": 100,
+   "held": {
+    "D": 0,
+    "R": 0
+   },
+   "win_at": 51,
+   "market": "senate-control",
+   "unit": "seats",
+   "note": "Fill 'held' from the 2026 results. The 2029 VP breaks ties: set win_at to 50 if the Democratic ticket wins the presidency."
+  },
+  {
+   "id": "house",
+   "label": "House",
+   "market": "house-control",
+   "modeled": false
+  }
+ ],
+ "environment": {
+  "national": "generic",
+  "generic_page": "2028 United States House of Representatives elections",
+  "approval_page": "Opinion polling on the second Trump presidency"
+ },
+ "ratings": {
+  "senate": "2028 United States Senate elections",
+  "governor": "2028 United States gubernatorial elections",
+  "president": "2028 United States presidential election"
+ },
+ "races": [
+  {
+   "id": "president-control",
+   "type": "chamber",
+   "office": "president",
+   "title": "Presidency",
+   "key": true,
+   "markets": {
+    "polymarket": "presidential-election-winner-2028"
+   }
+  },
+  {
+   "id": "senate-control",
+   "type": "chamber",
+   "office": "senate",
+   "title": "Senate control",
+   "key": true,
+   "markets": {
+    "polymarket": "auto"
+   }
+  },
+  {
+   "id": "house-control",
+   "type": "chamber",
+   "office": "house",
+   "title": "House control",
+   "key": true,
+   "markets": {
+    "polymarket": "auto"
+   }
+  },
+  {
+   "id": "PA-pres",
+   "type": "president",
+   "state": "PA",
+   "title": "Pennsylvania",
+   "key": true,
+   "markets": {
+    "polymarket": "pennsylvania-presidential-election-winner-2028"
+   },
+   "polls": {
+    "wikipedia": "2028 United States presidential election in Pennsylvania"
+   }
+  },
+  {
+   "id": "MI-pres",
+   "type": "president",
+   "state": "MI",
+   "title": "Michigan",
+   "key": true,
+   "markets": {
+    "polymarket": "michigan-presidential-election-winner-2028"
+   },
+   "polls": {
+    "wikipedia": "2028 United States presidential election in Michigan"
+   }
+  },
+  {
+   "id": "WI-pres",
+   "type": "president",
+   "state": "WI",
+   "title": "Wisconsin",
+   "key": true,
+   "markets": {
+    "polymarket": "wisconsin-presidential-election-winner-2028"
+   },
+   "polls": {
+    "wikipedia": "2028 United States presidential election in Wisconsin"
+   }
+  },
+  {
+   "id": "GA-pres",
+   "type": "president",
+   "state": "GA",
+   "title": "Georgia",
+   "key": true,
+   "markets": {
+    "polymarket": "georgia-presidential-election-winner-2028"
+   },
+   "polls": {
+    "wikipedia": "2028 United States presidential election in Georgia"
+   }
+  },
+  {
+   "id": "AZ-pres",
+   "type": "president",
+   "state": "AZ",
+   "title": "Arizona",
+   "key": true,
+   "markets": {
+    "polymarket": "arizona-presidential-election-winner-2028"
+   },
+   "polls": {
+    "wikipedia": "2028 United States presidential election in Arizona"
+   }
+  },
+  {
+   "id": "NV-pres",
+   "type": "president",
+   "state": "NV",
+   "title": "Nevada",
+   "key": true,
+   "markets": {
+    "polymarket": "nevada-presidential-election-winner-2028"
+   },
+   "polls": {
+    "wikipedia": "2028 United States presidential election in Nevada"
+   }
+  },
+  {
+   "id": "NC-pres",
+   "type": "president",
+   "state": "NC",
+   "title": "North Carolina",
+   "key": true,
+   "markets": {
+    "polymarket": "north-carolina-presidential-election-winner-2028"
+   },
+   "polls": {
+    "wikipedia": "2028 United States presidential election in North Carolina"
+   }
+  }
+ ]
+}
