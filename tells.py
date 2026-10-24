@@ -21,7 +21,7 @@ def _load(p, d=None):
 def _i(x):
     try: return int(float(x))
     except Exception: return 0
-def money_s(v): return f"${v / 1e6:.1f}M" if v >= 1e6 else f"${v / 1e3:.0f}k"
+def money_s(v): return f"${v / 1e6:.1f}M" if v >= 1e6 else f"${v / 1e3:.0f}k" if v >= 1e3 else "$0"
 
 # ---------- early vote ----------
 def early_vote(year, cache):
@@ -115,7 +115,11 @@ def tells(M, ev, lm, titles):
     out = []; R = (M or {}).get("races") or {}
     lev = lambda rid: (R.get(rid) or {}).get("leverage") or 0
     name = lambda rid: titles.get(rid, rid)
+    def live(rid):   # only races still in play: competitive in the model or markets, or able to decide control
+        x = R.get(rid) or {}
+        return lev(rid) > .005 or any(v is not None and .1 <= v <= .9 for v in (x.get("model"), x.get("mkt")))
     for rid, o in ((lm or {}).get("races") or {}).items():
+        if not live(rid): continue
         d7, r7, dp, rp = o["d7"], o["r7"], o["dPrev"], o["rPrev"]
         if d7 + r7 >= 1e6 and min(d7, r7) > 0 and max(d7, r7) / min(d7, r7) >= 1.8:
             hi = "R" if r7 > d7 else "D"
