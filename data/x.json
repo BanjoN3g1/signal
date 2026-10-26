@@ -1,633 +1,413 @@
 {
  "stories": {
+  "c2512a883f1d": [
+   {
+    "handle": "AimInvestments",
+    "name": "AIM Investments",
+    "text": "Meta raises $35 billion for its AI ambitions. The offering includes $22.5B in Class A common stock and $12.5B in preferred stock, which converts into common shares in 2029.",
+    "url": "https://x.com/AimInvestments/status/2114681249642221604",
+    "likes": 15,
+    "reposts": 2,
+    "ts": "2026-10-26T11:31:13Z",
+    "note": "Breaks down the deal: $22.5B common plus $12.5B mandatory convertible preferred"
+   },
+   {
+    "handle": "StefanSchippers",
+    "name": "Stefan Schippers",
+    "text": "Meta plans $95bn stock offering to bankroll AI expansion… backed by chipmakers Nvidia, AMD and Broadcom, who will act as cornerstone investors",
+    "url": "https://x.com/StefanSchippers/status/2114681748919591048",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-10-26T11:33:12Z",
+    "note": "Relays the FT report: $95B total program with NVDA, AMD and AVGO as cornerstones"
+   },
+   {
+    "handle": "NGLSHMUELI",
+    "name": "amitush",
+    "text": "$META just announced a dual capital raise: depositary shares representing Series A Mandatory Convertible Preferred Stock, plus a simultaneous Class A common stock offering via forward sale agreements.",
+    "url": "https://x.com/NGLSHMUELI/status/2114675597926367717",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-10-26T11:08:45Z",
+    "note": "ECM detail: the common piece is done via forward sales, which delays share issuance"
+   },
+   {
+    "handle": "tmoneydaily",
+    "name": "T$",
+    "text": "$META launched a $22.5B Class A share offering via forward sales plus mandatory convertible preferred shares. Stock fell as much as 2.3% premarket.",
+    "url": "https://x.com/tmoneydaily/status/2114674143861879150",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-10-26T11:02:59Z",
+    "note": "Premarket reaction to the dilution"
+   }
+  ],
+  "d7acdc244b1f": [
+   {
+    "handle": "elonmusk",
+    "name": "Elon Musk",
+    "text": "Pretty much. As of the past few weeks, debt markets have almost entirely shut off access to money for any company that doesn't have substantial revenue independent of AI data centers. SpaceX closed $40B of debt for GPUs, but we're investment grade and have Starlink & launch…",
+    "url": "https://x.com/elonmusk/status/2114434646914068862",
+    "likes": 38201,
+    "reposts": 3690,
+    "ts": "2026-10-25T19:11:18Z",
+    "note": "The source post: Musk says AI data center credit has dried up for pure-play neoclouds"
+   },
+   {
+    "handle": "elonmusk",
+    "name": "Elon Musk",
+    "text": "This is primarily callable debt for GPU purchases that will arrive in Q1 and Q2. Not a major factor this quarter.",
+    "url": "https://x.com/elonmusk/status/2114444535036321840",
+    "likes": 3920,
+    "reposts": 183,
+    "ts": "2026-10-25T19:50:36Z",
+    "note": "Musk on the structure: callable debt tied to GPU deliveries in Q1-Q2"
+   },
+   {
+    "handle": "elonmusk",
+    "name": "Elon Musk",
+    "text": "SpaceX is not buying any neoclouds. Pointless.",
+    "url": "https://x.com/elonmusk/status/2114462416721633501",
+    "likes": 4258,
+    "reposts": 288,
+    "ts": "2026-10-25T21:01:39Z",
+    "note": "Rules out SpaceX as a consolidator of distressed GPU clouds"
+   },
+   {
+    "handle": "Techmeme",
+    "name": "Techmeme",
+    "text": "Elon Musk says SpaceX closed $40B in GPU debt, debt markets have shut off credit for AI data center firms, and 200+ neoclouds face \"death and consolidation\"",
+    "url": "https://x.com/Techmeme/status/2114471102982594946",
+    "likes": 11,
+    "reposts": 2,
+    "ts": "2026-10-25T21:36:10Z",
+    "note": "Techmeme's framing of the story"
+   },
+   {
+    "handle": "bull_fool25952",
+    "name": "Bingo",
+    "text": "$CRWV Credit markets are drawing a hard line for AI data center operators. SpaceX locked $40B in GPU debt, but it's investment-grade, backed by Starlink + launch revenue. Lenders are shutting funding doors for pure GPU rental plays with no outside income.",
+    "url": "https://x.com/bull_fool25952/status/2114549882073870531",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-10-26T02:49:12Z",
+    "note": "Ties the comment to CoreWeave and other pure-play neoclouds"
+   }
+  ],
   "3fccf913600c": [
    {
-    "handle": "TeslaZoa",
-    "name": "TeslaZoa",
-    "text": "Elon Musk responded with “Interesting” to an analysis of a potential Tesla–SpaceX merger. Brett Winton of ARK Invest suggested that a roughly 30% acquisition premium for Tesla shares could equalize the expected benefits for both shareholder groups by 2031.",
-    "url": "https://x.com/TeslaZoa/status/2113173034630877185",
-    "likes": 6,
-    "reposts": 0,
-    "ts": "2026-10-22T07:38:06Z",
-    "note": "First stab at deal math: ARK frames the premium Tesla holders would need."
-   },
-   {
-    "handle": "MarketsWithVig",
-    "name": "Sandeep Vig",
-    "text": "Elon Musk called a potential Tesla–SpaceX merger “a good idea” on SpaceX’s earnings call. Both boards have formed special committees of independent directors, with Musk saying he is a “conflicted party”…",
-    "url": "https://x.com/MarketsWithVig/status/2113231395669901439",
+    "handle": "NewsGurus",
+    "name": "News Gurus",
+    "text": "$TSLA $SPCX: two sell-side calls this morning point to the same Tesla–SpaceX merger thesis. Dan Ives puts the odds of a merger by 2027 at 80%–90%. He has Outperform on SpaceX with a $225 target and says a deal could value Tesla above $500 a share.",
+    "url": "https://x.com/NewsGurus/status/2114703692662231236",
     "likes": 0,
     "reposts": 0,
-    "ts": "2026-10-22T11:30:01Z",
-    "note": "Process angle: independent special committees because Musk is conflicted on both sides."
+    "ts": "2026-10-26T13:00:24Z",
+    "note": "Sell-side read on deal odds and value"
    },
    {
-    "handle": "ByronYork",
-    "name": "Byron York",
-    "text": "From @politico: \"SpaceX is by far the dominant player in the rocket business and indispensable to the military, dwarfing competitors and accounting for 85% of U.S. launches in 2025.\"",
-    "url": "https://x.com/ByronYork/status/2113229700197728603",
-    "likes": 166,
-    "reposts": 25,
-    "ts": "2026-10-22T11:23:17Z",
-    "note": "Political lens on SpaceX's scale, relevant to any regulatory review of a combination."
-   }
-  ],
-  "857b61bdc6be": [
+    "handle": "amir53043206",
+    "name": "amir",
+    "text": "Musk backs a SpaceX-Tesla merger, but he can't be in the room where it's decided. Both boards formed special committees. No terms agreed, no guarantee, yet he's the biggest individual shareholder of both. Can independent directors really say no to Musk?",
+    "url": "https://x.com/amir53043206/status/2114060389679796314",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-10-24T18:24:08Z",
+    "note": "The governance question: conflicted controller and special committees"
+   },
    {
-    "handle": "bhasingagandeep",
-    "name": "Gagandeep Bhasin",
-    "text": "Salesforce pays ~6.8x revenue for Braze, vs ~3.1x for HubSpot and Klaviyo.",
-    "url": "https://x.com/bhasingagandeep/status/2113130065072640476",
+    "handle": "mikeryanbpn",
+    "name": "Mike Ryan",
+    "text": "In what could be the biggest merger ever, the buyer and the seller are effectively the same person. Both boards have formed special committees of independent directors to study it.",
+    "url": "https://x.com/mikeryanbpn/status/2114408938401915279",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-10-25T17:29:09Z",
+    "note": "Frames the related-party problem in one line"
+   },
+   {
+    "handle": "CementHead70",
+    "name": "Mike",
+    "text": "Tesla shareholders with 17M+ shares signed a petition in 48 hours urging a Tesla-SpaceX merger. Musk says independent board committees are exploring it.",
+    "url": "https://x.com/CementHead70/status/2114365614596952429",
     "likes": 1,
     "reposts": 0,
-    "ts": "2026-10-22T04:47:22Z",
-    "note": "Quick comps: the EV/revenue multiple vs public martech peers."
+    "ts": "2026-10-25T14:37:00Z",
+    "note": "Retail shareholder pressure for a deal"
+   }
+  ],
+  "00d70f725bbb": [
+   {
+    "handle": "puckrin",
+    "name": "Nic",
+    "text": "BIG week ahead! $10 trillion in tech earnings. Alphabet, Microsoft, Amazon. All expected to post strong revenue growth, but that's not what matters. The market wants to know one thing: how much are you burning on AI, and when does it show up in free cash flow?",
+    "url": "https://x.com/puckrin/status/2114356756692246737",
+    "likes": 98,
+    "reposts": 13,
+    "ts": "2026-10-25T14:01:48Z",
+    "note": "Most-engaged preview: capex vs free cash flow is the test"
    },
    {
-    "handle": "Damian_Goral_",
-    "name": "Damian Goral",
-    "text": "Benioff pays a 58% premium for Braze. $5.66B in cash. Braze closed Monday at $30.04. On Tuesday Salesforce offered $47.50 a share, in cash… Still below Braze’s 2021 IPO price of $65.",
-    "url": "https://x.com/Damian_Goral_/status/2113211998179594269",
+    "handle": "TheAlphaThought",
+    "name": "Alex | The Profit Zone",
+    "text": "Alphabet $GOOG and Microsoft $MSFT report Wednesday after close, just hours after the Fed's rate decision, with Amazon $AMZN following Thursday.",
+    "url": "https://x.com/TheAlphaThought/status/2114419641250418865",
+    "likes": 9,
+    "reposts": 0,
+    "ts": "2026-10-25T18:11:41Z",
+    "note": "Timing: GOOGL and MSFT print hours after the Fed"
+   },
+   {
+    "handle": "hungnmit",
+    "name": "Julie",
+    "text": "Hyperscalers are guiding roughly $700–750B in 2026 capex (Amazon ~$220B, Alphabet $195–205B, Microsoft ~$175B, Meta $135–145B).",
+    "url": "https://x.com/hungnmit/status/2114633935036780831",
     "likes": 0,
     "reposts": 0,
-    "ts": "2026-10-22T10:12:56Z",
-    "note": "Premium vs. IPO price: a take-under relative to 2021 even at 58% up."
+    "ts": "2026-10-26T08:23:12Z",
+    "note": "Capex scoreboard going into the prints (user figures, verify)"
    },
    {
-    "handle": "3FinanWolverine",
-    "name": "The Financial Wolverine",
-    "text": "If Salesforce is paying $47.50 cash for Braze, why won't the market pay $47.50 for it today? … Braze jumped 51.7% to $45.57",
-    "url": "https://x.com/3FinanWolverine/status/2113227478906896761",
+    "handle": "pmainardi",
+    "name": "Patricio Mainardi",
+    "text": "The AI trade just met its real constraint: not demand, but the cost of funding it. The 10-year Treasury ending near 4.99%.",
+    "url": "https://x.com/pmainardi/status/2114008778345517499",
     "likes": 2,
     "reposts": 0,
-    "ts": "2026-10-22T11:14:27Z",
-    "note": "Explains the merger-arb spread: time value plus deal-close risk."
+    "ts": "2026-10-24T14:59:03Z",
+    "note": "Funding cost angle, which links to Meta's equity raise and Musk's credit comment"
    }
   ],
-  "0ce87dd7f89e": [
+  "6deef4619555": [
    {
-    "handle": "FactSet",
-    "name": "FactSet",
-    "text": "$META Street Takeaways - Meta Platforms Q3 Earnings. Revenue +26.1% y/y beat by 2.0%. EPS ex-items also ahead by 13.1%. OM ex-legal charge 340bps above consensus. CapEx $33.94B vs SA $40.95B…",
-    "url": "https://x.com/FactSet/status/2113247083037708548",
-    "likes": 3,
-    "reposts": 1,
-    "ts": "2026-10-22T12:32:21Z",
-    "note": "Clean beat/miss scorecard vs consensus from FactSet."
-   },
-   {
-    "handle": "FT",
-    "name": "Financial Times",
-    "text": "Meta to create new non-voting share class",
-    "url": "https://x.com/FT/status/2113002260863074335",
-    "likes": 13,
+    "handle": "TheAlphaThought",
+    "name": "Alex | The Profit Zone",
+    "text": "Alphabet $GOOG and Microsoft $MSFT report Wednesday after close, just hours after the Fed's rate decision, with Amazon $AMZN following Thursday.",
+    "url": "https://x.com/TheAlphaThought/status/2114419641250418865",
+    "likes": 9,
     "reposts": 0,
-    "ts": "2026-10-21T20:19:31Z",
-    "note": "The capital-markets twist: a non-voting class to fund AI, M&A and pay."
+    "ts": "2026-10-25T18:11:41Z",
+    "note": "Timing: GOOGL and MSFT print hours after the Fed"
    },
    {
-    "handle": "AIStockSavvy",
-    "name": "Hardik Shah",
-    "text": "Meta raises 2026 capex to $135–145 bln, to issue non‑voting share class",
-    "url": "https://x.com/AIStockSavvy/status/2113003541812138051",
-    "likes": 31,
-    "reposts": 3,
-    "ts": "2026-10-21T20:24:36Z",
-    "note": "Capex guide raised again; most-shared headline post on the print."
-   },
-   {
-    "handle": "_4lex_4",
-    "name": "4lex",
-    "text": "A great quarter/strong guide (w/ asterisk of heavy incoming share issuance to fund AI capex) from META = stock implodes. The market is telling the hyperscalers to slow their AI capex significantly.",
-    "url": "https://x.com/_4lex_4/status/2113268064225485021",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-10-22T13:55:43Z",
-    "note": "Bear read: why a beat sold off, and what it signals for AI capex."
-   },
-   {
-    "handle": "optionskai",
-    "name": "Kai",
-    "text": "$META beat… despite a $9.9B legal charge. Revenue $64.6B vs $63.3B expected. Adjusted EPS $7.40, or $3.83 including the charge. Q4 guide $73B to $76B. Capex record $34.9B. Capex exceeded cash from operations",
-    "url": "https://x.com/optionskai/status/2113264543786811886",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-10-22T13:41:44Z",
-    "note": "Key numbers incl. the legal charge and capex above operating cash flow."
-   }
-  ],
-  "e8864f100131": [
-   {
-    "handle": "FT",
-    "name": "Financial Times",
-    "text": "Meta to create new non-voting share class",
-    "url": "https://x.com/FT/status/2113002260863074335",
-    "likes": 13,
-    "reposts": 0,
-    "ts": "2026-10-21T20:19:31Z",
-    "note": "The capital-markets twist: a non-voting class to fund AI, M&A and pay."
-   },
-   {
-    "handle": "FactSet",
-    "name": "FactSet",
-    "text": "$META Street Takeaways - Meta Platforms Q3 Earnings. Revenue +26.1% y/y beat by 2.0%. EPS ex-items also ahead by 13.1%. OM ex-legal charge 340bps above consensus. CapEx $33.94B vs SA $40.95B…",
-    "url": "https://x.com/FactSet/status/2113247083037708548",
-    "likes": 3,
-    "reposts": 1,
-    "ts": "2026-10-22T12:32:21Z",
-    "note": "Clean beat/miss scorecard vs consensus from FactSet."
-   },
-   {
-    "handle": "_4lex_4",
-    "name": "4lex",
-    "text": "A great quarter/strong guide (w/ asterisk of heavy incoming share issuance to fund AI capex) from META = stock implodes. The market is telling the hyperscalers to slow their AI capex significantly.",
-    "url": "https://x.com/_4lex_4/status/2113268064225485021",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-10-22T13:55:43Z",
-    "note": "Bear read: why a beat sold off, and what it signals for AI capex."
-   }
-  ],
-  "4064a0b8c647": [
-   {
-    "handle": "business",
-    "name": "Bloomberg",
-    "text": "Nvidia CEO Jensen Huang said he told UK-based neocloud Nscale to “work around the clock” to overcome challenges in bringing some of its data centers online",
-    "url": "https://x.com/business/status/2113226368771121271",
-    "likes": 28,
-    "reposts": 2,
-    "ts": "2026-10-22T11:10:02Z",
-    "note": "Original report."
-   },
-   {
-    "handle": "kakashiii111",
-    "name": "Kakashii",
-    "text": "Nscale, which filed its S-1 and is looking to start its roadshow soon, is a former lessor of data center infrastructure to crypto mining companies that de facto made the shift to AI by 2025…",
-    "url": "https://x.com/kakashiii111/status/2113006770469634359",
-    "likes": 73,
-    "reposts": 19,
-    "ts": "2026-10-21T20:37:26Z",
-    "note": "Skeptic's view on Nscale ahead of its IPO roadshow; widely shared."
-   },
-   {
-    "handle": "jiahanjimliu",
-    "name": "Jim Liu",
-    "text": "Why $CRWV isn't a NVDA DSX Partner. $NVDA listed four clouds $NBIS, $IREN, NScale and Lambda as DSX partners and why not CRWV?…",
-    "url": "https://x.com/jiahanjimliu/status/2113005856761806997",
-    "likes": 134,
-    "reposts": 9,
-    "ts": "2026-10-21T20:33:48Z",
-    "note": "Which neoclouds Nvidia is favoring, and what it means for CoreWeave."
+    "handle": "puckrin",
+    "name": "Nic",
+    "text": "BIG week ahead! $10 trillion in tech earnings. Alphabet, Microsoft, Amazon. All expected to post strong revenue growth, but that's not what matters. The market wants to know one thing: how much are you burning on AI, and when does it show up in free cash flow?",
+    "url": "https://x.com/puckrin/status/2114356756692246737",
+    "likes": 98,
+    "reposts": 13,
+    "ts": "2026-10-25T14:01:48Z",
+    "note": "Most-engaged preview: capex vs free cash flow is the test"
    }
   ],
   "2ff622bcefe0": [
    {
-    "handle": "WOLF_TradingX",
-    "name": "WOLF Trading",
-    "text": "Dell Technologies $DELL is up 4% today in sympathy with Super Micro $SMCI following its preliminary earnings update. Supermicro raised its quarterly revenue outlook to $18.5-19.5B from $14.5-15.5B, with gross margin guidance also increasing to 12-12.5%.",
-    "url": "https://x.com/WOLF_TradingX/status/2112946467317145793",
-    "likes": 6,
-    "reposts": 2,
-    "ts": "2026-10-21T16:37:49Z",
-    "note": "The raise in numbers, plus the read-across to Dell."
-   },
-   {
-    "handle": "deedeedombey",
-    "name": "Deedee",
-    "text": "$SMCI rose 12.4% to $36.51 after Super Micro raised its first-quarter sales estimate… Gross margin estimate 12.0% to 12.5%, was 10.4% to 10.8%. 6.7x forward earnings, 0.61x sales",
-    "url": "https://x.com/deedeedombey/status/2112908850479383019",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-10-21T14:08:20Z",
-    "note": "Valuation context: still cheap on forward P/E and sales."
-   }
-  ],
-  "4951d17a18e4": [
-   {
-    "handle": "Joker__Capital",
-    "name": "Joker Capital",
-    "text": "Meta Q3 scorecard, expected vs actual: Revenue $63.3B → $64.6B (up 26% YoY). EPS ex-legal charge $6.54 → $7.40. 2026 capex $130–145B → $135–145B (high end unchanged). After hours briefly up more than 4%. Verdict: a beat.",
-    "url": "https://x.com/Joker__Capital/status/2113441694515646721",
-    "likes": 80,
-    "reposts": 1,
-    "ts": "2026-10-23T01:25:40Z",
-    "note": "The clean beat/miss scorecard; note the raised capex floor is what markets fixated on."
-   },
-   {
-    "handle": "GryphonIAB",
-    "name": "Gryphon Investment Advisors",
-    "text": "The AI capital-expenditure cycle has crossed from an equity debate into a credit question. Meta's first negative free cash flow since 2012, a capex floor lifted to $135bn and Jensen Huang's warning that AI cloud providers lack working capital drove the Philadelphia semis index lower.",
-    "url": "https://x.com/GryphonIAB/status/2113526294969237877",
-    "likes": 3,
-    "reposts": 0,
-    "ts": "2026-10-23T07:01:50Z",
-    "note": "Ties Meta's print to the semis selloff: negative FCF turns AI capex into a credit story."
-   }
-  ],
-  "c0f87efb8196": [
-   {
-    "handle": "bdinvestingg",
-    "name": "Bilaal - BD investing",
-    "text": "Bill Ackman extremely bullish on Netflix: calls it a super high-quality business, a “high-growth utility” nobody wants to cancel, trading around 18x earnings with 15–20% earnings growth expected for years.",
-    "url": "https://x.com/bdinvestingg/status/2113621950710849608",
+    "handle": "OptionKing666",
+    "name": "456X",
+    "text": "Super Micro Computer ($SMCI) now expects fiscal Q1 2027 revenue of $18.5–19.5bn versus its previous $14.5–15.5bn guidance, citing stronger demand for AI platforms. Gross margin of 12–12.5%, versus prior guidance of 10.4–10.8%.",
+    "url": "https://x.com/OptionKing666/status/2114336874391380357",
     "likes": 8,
     "reposts": 0,
-    "ts": "2026-10-23T13:21:56Z",
-    "note": "A big-name long defending NFLX after the post-earnings derating."
+    "ts": "2026-10-25T12:42:47Z",
+    "note": "The prelim numbers: $4B revenue raise and higher margins"
    },
    {
-    "handle": "corp_nick14",
-    "name": "Daniel Brooks",
-    "text": "NFLX: an earnings beat isn't enough. Q3 revenue $12.87B and EPS $0.87, but weaker Q4 guidance and a reduced 2026 ad revenue outlook weighed on sentiment. Stock near the recent $64.10 low.",
-    "url": "https://x.com/corp_nick14/status/2113271995353964902",
-    "likes": 2,
-    "reposts": 0,
-    "ts": "2026-10-22T14:11:21Z",
-    "note": "Why the stock fell despite a beat: guide and ad-revenue cut."
-   },
-   {
-    "handle": "michaelskand",
-    "name": "Michael Sikand",
-    "text": "Seeing Netflix in the mid $60s at 17x earnings is kind of insane. I can't believe it trades for under 20x earnings.",
-    "url": "https://x.com/michaelskand/status/2113503154700480882",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-10-23T05:29:53Z",
-    "note": "Valuation take: NFLX now at a sub-20x multiple."
-   }
-  ],
-  "8d7c14a45da6": [
-   {
-    "handle": "Rebellionaire",
-    "name": "Rebellionaire",
-    "text": "SpaceX's earnings are inflecting now. Tesla's still depend on Robotaxi and Optimus. Tesla says Robotaxi probably becomes noticeable in its results in Q2 2027.",
-    "url": "https://x.com/Rebellionaire/status/2113623202127569150",
-    "likes": 12,
-    "reposts": 2,
-    "ts": "2026-10-23T13:26:55Z",
-    "note": "Contrasts SpaceX's profitable quarter with Tesla's longer-dated story ahead of the merger talk."
-   },
-   {
-    "handle": "RyanBLeslie",
-    "name": "Ryan B. Leslie",
-    "text": "SpaceX results this week: revenue $14.6B (up 161% YoY), net income $4.4B vs a ~$1.1B loss a year earlier, operating income ~$2.8B.",
-    "url": "https://x.com/RyanBLeslie/status/2113462500473926074",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-10-23T02:48:21Z",
-    "note": "Quick recap of SpaceX's headline Q3 numbers."
-   },
-   {
-    "handle": "zerohedge",
-    "name": "zerohedge",
-    "text": "Premarket movers: Mag 7 mixed. Tower companies gain and wireless carriers slide after SpaceX was said to be seeking access to cell sites for a wireless network.",
-    "url": "https://x.com/zerohedge/status/2113602675187110017",
-    "likes": 90,
-    "reposts": 8,
-    "ts": "2026-10-23T12:05:21Z",
-    "note": "Market read-through today: SpaceX's wireless push is moving towers and carriers."
-   }
-  ],
-  "b06d89a152c8": [
-   {
-    "handle": "intelfabs",
-    "name": "John Intel",
-    "text": "Why is the market worried? CoreWeave's unsecured debt came under heavy pressure, with yields around 15%, raising fears that financing for the broader AI buildout could be cracking. Why does Barclays think that's the wrong conclusion?",
-    "url": "https://x.com/intelfabs/status/2113435240530137354",
-    "likes": 18,
-    "reposts": 1,
-    "ts": "2026-10-23T01:00:01Z",
-    "note": "Both sides of the AI-credit scare: CoreWeave bonds near 15% vs Barclays' pushback."
-   },
-   {
-    "handle": "plevchen",
-    "name": "PL",
-    "text": "AI is profitable, it needs infra → infra needs capex → capex needs all of hyperscaler FCF and starts going into debt → debt affects credit → debt glut pushes corporate bond yields up → (we are here).",
-    "url": "https://x.com/plevchen/status/2113420317150326958",
-    "likes": 7,
-    "reposts": 0,
-    "ts": "2026-10-23T00:00:43Z",
-    "note": "Simple chain of how AI capex turns into a bond-market problem."
-   },
-   {
-    "handle": "GryphonIAB",
-    "name": "Gryphon Investment Advisors",
-    "text": "The AI capital-expenditure cycle has crossed from an equity debate into a credit question. Meta's first negative free cash flow since 2012, a capex floor lifted to $135bn and Jensen Huang's warning that AI cloud providers lack working capital drove the Philadelphia semis index lower.",
-    "url": "https://x.com/GryphonIAB/status/2113526294969237877",
-    "likes": 3,
-    "reposts": 0,
-    "ts": "2026-10-23T07:01:50Z",
-    "note": "Ties Meta's print to the semis selloff: negative FCF turns AI capex into a credit story."
-   }
-  ],
-  "5027d66e229c": [
-   {
-    "handle": "InvestmentGuru_",
-    "name": "InvestmentGuru",
-    "text": "GOOG at $315–320 is one of the cleanest bets into earnings next week. Alphabet reports Wednesday, Oct 28 after the close, and the stock has been sold for two straight weeks, not on its own numbers but on sector fear around AI.",
-    "url": "https://x.com/InvestmentGuru_/status/2113564430562705437",
-    "likes": 20,
-    "reposts": 3,
-    "ts": "2026-10-23T09:33:23Z",
-    "note": "Bull setup into the Oct 28 print after two weeks of sector-driven selling."
-   },
-   {
-    "handle": "YUKICAPITALen",
-    "name": "YUKI CAPITAL",
-    "text": "Alphabet fell about 2% after Sundar Pichai said on a podcast the company would prioritize compute for DeepMind, passing up some short-term cloud revenue. Cloud is what I'll watch in earnings.",
-    "url": "https://x.com/YUKICAPITALen/status/2113096989734764694",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-10-22T02:35:56Z",
-    "note": "The compute-allocation worry: DeepMind vs Google Cloud capacity."
-   }
-  ],
-  "3e3eb695599f": [
-   {
-    "handle": "CuriousPejjy",
-    "name": "Pejjy",
-    "text": "Now that I slept on TSLA's Q3 call: record new FSD subscriptions in a single quarter, 75% of new North American sales get FSD, Cybercab rolls out in Dallas next month.",
-    "url": "https://x.com/CuriousPejjy/status/2113234076517675298",
-    "likes": 418,
-    "reposts": 32,
-    "ts": "2026-10-22T11:40:40Z",
-    "note": "Most-engaged bull recap of Tesla's call despite the stock drop."
-   },
-   {
-    "handle": "Talkshawkvj",
-    "name": "Mamnoon",
-    "text": "Tesla's solid Q3 beat quickly faded as Musk tempered expectations on robotics, robotaxi and chipmaking; shares swung to a 3.1% after-hours drop.",
-    "url": "https://x.com/Talkshawkvj/status/2113159410805801318",
+    "handle": "GreenDarts88",
+    "name": "Green Darts",
+    "text": "Super Micro's $SMCI (Sep 2026) expected revenue is $18.5 billion to $19.5 billion, surpassing Cisco's revenue for the first time. Yet, Cisco's market cap of $420 billion is 19X…",
+    "url": "https://x.com/GreenDarts88/status/2113926137784987686",
     "likes": 11,
-    "reposts": 2,
-    "ts": "2026-10-22T06:43:58Z",
-    "note": "Why the stock fell: Musk cooled the AI and robot narrative."
+    "reposts": 0,
+    "ts": "2026-10-24T09:30:40Z",
+    "note": "Valuation comp: SMCI revenue now tops Cisco's"
+   },
+   {
+    "handle": "SeekingAlpha",
+    "name": "Seeking Alpha",
+    "text": "Super Micro Computer: The Valuation Is A Joke (Earnings Preview) $SMCI",
+    "url": "https://x.com/SeekingAlpha/status/2113807695195369535",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-10-24T01:40:01Z",
+    "note": "Bear-ish preview ahead of the full print"
    }
   ]
  },
  "tickers": {
-  "LRCX": [
+  "META": [
    {
-    "handle": "tradfi",
-    "name": "tradfi news",
-    "text": "*LAM RESEARCH 1Q REV. $8.22B, EST. $8.13B *LAM RESEARCH 1Q ADJ EPS $2.20, EST. $2.19",
-    "url": "https://x.com/tradfi/status/2112998648841953566",
-    "likes": 13,
-    "reposts": 0,
-    "ts": "2026-10-21T20:05:10Z",
-    "note": "The headline print: a small beat."
-   },
-   {
-    "handle": "SergeyCYW",
-    "name": "Sergey",
-    "text": "Lam Research: Revenue Surges 54%, Operating Margin Hits 40%. Semiconductor Spending Could Exceed $200B in 2027.",
-    "url": "https://x.com/SergeyCYW/status/2113269902455042186",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-10-22T14:03:02Z",
-    "note": "Bull case: record margins and a bigger 2027 WFE outlook."
-   },
-   {
-    "handle": "StockFlashAI",
-    "name": "StockFlash",
-    "text": "Lam Research reports current-quarter guidance that missed elevated expectations. Shares fell nearly 9%… CFO Doug Bettinger said near-term supply constraints limited the outlook.",
-    "url": "https://x.com/StockFlashAI/status/2113254571292139697",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-10-22T13:02:06Z",
-    "note": "Why it's down: the guide, capped by supply constraints, not demand."
-   }
-  ],
-  "SMCI": [
-   {
-    "handle": "WOLF_TradingX",
-    "name": "WOLF Trading",
-    "text": "Dell Technologies $DELL is up 4% today in sympathy with Super Micro $SMCI following its preliminary earnings update. Supermicro raised its quarterly revenue outlook to $18.5-19.5B from $14.5-15.5B, with gross margin guidance also increasing to 12-12.5%.",
-    "url": "https://x.com/WOLF_TradingX/status/2112946467317145793",
-    "likes": 6,
+    "handle": "AimInvestments",
+    "name": "AIM Investments",
+    "text": "Meta raises $35 billion for its AI ambitions. The offering includes $22.5B in Class A common stock and $12.5B in preferred stock, which converts into common shares in 2029.",
+    "url": "https://x.com/AimInvestments/status/2114681249642221604",
+    "likes": 15,
     "reposts": 2,
-    "ts": "2026-10-21T16:37:49Z",
-    "note": "The raise in numbers, plus the read-across to Dell."
+    "ts": "2026-10-26T11:31:13Z",
+    "note": "Breaks down the deal: $22.5B common plus $12.5B mandatory convertible preferred"
    },
    {
-    "handle": "deedeedombey",
-    "name": "Deedee",
-    "text": "$SMCI rose 12.4% to $36.51 after Super Micro raised its first-quarter sales estimate… Gross margin estimate 12.0% to 12.5%, was 10.4% to 10.8%. 6.7x forward earnings, 0.61x sales",
-    "url": "https://x.com/deedeedombey/status/2112908850479383019",
+    "handle": "StefanSchippers",
+    "name": "Stefan Schippers",
+    "text": "Meta plans $95bn stock offering to bankroll AI expansion… backed by chipmakers Nvidia, AMD and Broadcom, who will act as cornerstone investors",
+    "url": "https://x.com/StefanSchippers/status/2114681748919591048",
     "likes": 0,
     "reposts": 0,
-    "ts": "2026-10-21T14:08:20Z",
-    "note": "Valuation context: still cheap on forward P/E and sales."
+    "ts": "2026-10-26T11:33:12Z",
+    "note": "Relays the FT report: $95B total program with NVDA, AMD and AVGO as cornerstones"
+   },
+   {
+    "handle": "tmoneydaily",
+    "name": "T$",
+    "text": "$META launched a $22.5B Class A share offering via forward sales plus mandatory convertible preferred shares. Stock fell as much as 2.3% premarket.",
+    "url": "https://x.com/tmoneydaily/status/2114674143861879150",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-10-26T11:02:59Z",
+    "note": "Premarket reaction to the dilution"
    }
   ],
   "SPCX": [
    {
-    "handle": "SPCX100T",
-    "name": "vincent",
-    "text": "SpaceX wants at least 80,000 cell sites across the US and is negotiating with Crown Castle, per Bloomberg. The goal is a 4th national wireless carrier alongside AT&T, Verizon and T-Mobile. SpaceX already locked in roughly $8 billion of low-band 800 MHz spectrum.",
-    "url": "https://x.com/SPCX100T/status/2113390290103050615",
-    "likes": 284,
-    "reposts": 30,
-    "ts": "2026-10-22T22:01:24Z",
-    "note": "The big SpaceX story today: a terrestrial wireless push on top of Starlink."
+    "handle": "elonmusk",
+    "name": "Elon Musk",
+    "text": "Pretty much. As of the past few weeks, debt markets have almost entirely shut off access to money for any company that doesn't have substantial revenue independent of AI data centers. SpaceX closed $40B of debt for GPUs, but we're investment grade and have Starlink & launch…",
+    "url": "https://x.com/elonmusk/status/2114434646914068862",
+    "likes": 38201,
+    "reposts": 3690,
+    "ts": "2026-10-25T19:11:18Z",
+    "note": "The source post: Musk says AI data center credit has dried up for pure-play neoclouds"
    },
    {
-    "handle": "MrMasonJ",
-    "name": "Mason Jones",
-    "text": "There are about 158,500 cell towers in the country. SpaceX wants half of them. Satellites can reach your phone outside, not inside an office or garage, which is why SpaceX bought 800 MHz spectrum and is now shopping for towers.",
-    "url": "https://x.com/MrMasonJ/status/2113427514018124221",
-    "likes": 36,
-    "reposts": 0,
-    "ts": "2026-10-23T00:29:19Z",
-    "note": "Plain explanation of why SpaceX needs towers, not just satellites."
-   },
-   {
-    "handle": "zerohedge",
-    "name": "zerohedge",
-    "text": "Premarket movers: Mag 7 mixed. Tower companies gain and wireless carriers slide after SpaceX was said to be seeking access to cell sites for a wireless network.",
-    "url": "https://x.com/zerohedge/status/2113602675187110017",
-    "likes": 90,
-    "reposts": 8,
-    "ts": "2026-10-23T12:05:21Z",
-    "note": "Market read-through today: SpaceX's wireless push is moving towers and carriers."
-   }
-  ],
-  "CRM": [
-   {
-    "handle": "bhasingagandeep",
-    "name": "Gagandeep Bhasin",
-    "text": "Salesforce pays ~6.8x revenue for Braze, vs ~3.1x for HubSpot and Klaviyo.",
-    "url": "https://x.com/bhasingagandeep/status/2113130065072640476",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-10-22T04:47:22Z",
-    "note": "Quick comps: the EV/revenue multiple vs public martech peers."
-   },
-   {
-    "handle": "Damian_Goral_",
-    "name": "Damian Goral",
-    "text": "Benioff pays a 58% premium for Braze. $5.66B in cash. Braze closed Monday at $30.04. On Tuesday Salesforce offered $47.50 a share, in cash… Still below Braze’s 2021 IPO price of $65.",
-    "url": "https://x.com/Damian_Goral_/status/2113211998179594269",
+    "handle": "NewsGurus",
+    "name": "News Gurus",
+    "text": "$TSLA $SPCX: two sell-side calls this morning point to the same Tesla–SpaceX merger thesis. Dan Ives puts the odds of a merger by 2027 at 80%–90%. He has Outperform on SpaceX with a $225 target and says a deal could value Tesla above $500 a share.",
+    "url": "https://x.com/NewsGurus/status/2114703692662231236",
     "likes": 0,
     "reposts": 0,
-    "ts": "2026-10-22T10:12:56Z",
-    "note": "Premium vs. IPO price: a take-under relative to 2021 even at 58% up."
-   }
-  ],
-  "NVDA": [
-   {
-    "handle": "business",
-    "name": "Bloomberg",
-    "text": "Nvidia CEO Jensen Huang said he told UK-based neocloud Nscale to “work around the clock” to overcome challenges in bringing some of its data centers online",
-    "url": "https://x.com/business/status/2113226368771121271",
-    "likes": 28,
-    "reposts": 2,
-    "ts": "2026-10-22T11:10:02Z",
-    "note": "Original report."
+    "ts": "2026-10-26T13:00:24Z",
+    "note": "Sell-side read on deal odds and value"
    },
    {
-    "handle": "jiahanjimliu",
-    "name": "Jim Liu",
-    "text": "Why $CRWV isn't a NVDA DSX Partner. $NVDA listed four clouds $NBIS, $IREN, NScale and Lambda as DSX partners and why not CRWV?…",
-    "url": "https://x.com/jiahanjimliu/status/2113005856761806997",
-    "likes": 134,
-    "reposts": 9,
-    "ts": "2026-10-21T20:33:48Z",
-    "note": "Which neoclouds Nvidia is favoring, and what it means for CoreWeave."
+    "handle": "elonmusk",
+    "name": "Elon Musk",
+    "text": "This is primarily callable debt for GPU purchases that will arrive in Q1 and Q2. Not a major factor this quarter.",
+    "url": "https://x.com/elonmusk/status/2114444535036321840",
+    "likes": 3920,
+    "reposts": 183,
+    "ts": "2026-10-25T19:50:36Z",
+    "note": "Musk on the structure: callable debt tied to GPU deliveries in Q1-Q2"
    }
   ],
-  "META": [
+  "SMCI": [
    {
-    "handle": "Joker__Capital",
-    "name": "Joker Capital",
-    "text": "Meta Q3 scorecard, expected vs actual: Revenue $63.3B → $64.6B (up 26% YoY). EPS ex-legal charge $6.54 → $7.40. 2026 capex $130–145B → $135–145B (high end unchanged). After hours briefly up more than 4%. Verdict: a beat.",
-    "url": "https://x.com/Joker__Capital/status/2113441694515646721",
-    "likes": 80,
-    "reposts": 1,
-    "ts": "2026-10-23T01:25:40Z",
-    "note": "The clean beat/miss scorecard; note the raised capex floor is what markets fixated on."
-   },
-   {
-    "handle": "finchdaily",
-    "name": "FinchDaily",
-    "text": "Meta's credit risk hit a fresh record on AI capex plans, per Bloomberg. Bonds fell as debt issuance fears spiked.",
-    "url": "https://x.com/finchdaily/status/2113285064515572185",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-10-22T15:03:16Z",
-    "note": "Credit angle: Meta CDS at records after the capex guide."
-   }
-  ],
-  "NFLX": [
-   {
-    "handle": "bdinvestingg",
-    "name": "Bilaal - BD investing",
-    "text": "Bill Ackman extremely bullish on Netflix: calls it a super high-quality business, a “high-growth utility” nobody wants to cancel, trading around 18x earnings with 15–20% earnings growth expected for years.",
-    "url": "https://x.com/bdinvestingg/status/2113621950710849608",
+    "handle": "OptionKing666",
+    "name": "456X",
+    "text": "Super Micro Computer ($SMCI) now expects fiscal Q1 2027 revenue of $18.5–19.5bn versus its previous $14.5–15.5bn guidance, citing stronger demand for AI platforms. Gross margin of 12–12.5%, versus prior guidance of 10.4–10.8%.",
+    "url": "https://x.com/OptionKing666/status/2114336874391380357",
     "likes": 8,
     "reposts": 0,
-    "ts": "2026-10-23T13:21:56Z",
-    "note": "A big-name long defending NFLX after the post-earnings derating."
+    "ts": "2026-10-25T12:42:47Z",
+    "note": "The prelim numbers: $4B revenue raise and higher margins"
    },
    {
-    "handle": "corp_nick14",
-    "name": "Daniel Brooks",
-    "text": "NFLX: an earnings beat isn't enough. Q3 revenue $12.87B and EPS $0.87, but weaker Q4 guidance and a reduced 2026 ad revenue outlook weighed on sentiment. Stock near the recent $64.10 low.",
-    "url": "https://x.com/corp_nick14/status/2113271995353964902",
-    "likes": 2,
+    "handle": "GreenDarts88",
+    "name": "Green Darts",
+    "text": "Super Micro's $SMCI (Sep 2026) expected revenue is $18.5 billion to $19.5 billion, surpassing Cisco's revenue for the first time. Yet, Cisco's market cap of $420 billion is 19X…",
+    "url": "https://x.com/GreenDarts88/status/2113926137784987686",
+    "likes": 11,
     "reposts": 0,
-    "ts": "2026-10-22T14:11:21Z",
-    "note": "Why the stock fell despite a beat: guide and ad-revenue cut."
+    "ts": "2026-10-24T09:30:40Z",
+    "note": "Valuation comp: SMCI revenue now tops Cisco's"
+   }
+  ],
+  "MSFT": [
+   {
+    "handle": "TheAlphaThought",
+    "name": "Alex | The Profit Zone",
+    "text": "Alphabet $GOOG and Microsoft $MSFT report Wednesday after close, just hours after the Fed's rate decision, with Amazon $AMZN following Thursday.",
+    "url": "https://x.com/TheAlphaThought/status/2114419641250418865",
+    "likes": 9,
+    "reposts": 0,
+    "ts": "2026-10-25T18:11:41Z",
+    "note": "Timing: GOOGL and MSFT print hours after the Fed"
+   },
+   {
+    "handle": "puckrin",
+    "name": "Nic",
+    "text": "BIG week ahead! $10 trillion in tech earnings. Alphabet, Microsoft, Amazon. All expected to post strong revenue growth, but that's not what matters. The market wants to know one thing: how much are you burning on AI, and when does it show up in free cash flow?",
+    "url": "https://x.com/puckrin/status/2114356756692246737",
+    "likes": 98,
+    "reposts": 13,
+    "ts": "2026-10-25T14:01:48Z",
+    "note": "Most-engaged preview: capex vs free cash flow is the test"
    }
   ],
   "GOOGL": [
    {
-    "handle": "InvestmentGuru_",
-    "name": "InvestmentGuru",
-    "text": "GOOG at $315–320 is one of the cleanest bets into earnings next week. Alphabet reports Wednesday, Oct 28 after the close, and the stock has been sold for two straight weeks, not on its own numbers but on sector fear around AI.",
-    "url": "https://x.com/InvestmentGuru_/status/2113564430562705437",
-    "likes": 20,
-    "reposts": 3,
-    "ts": "2026-10-23T09:33:23Z",
-    "note": "Bull setup into the Oct 28 print after two weeks of sector-driven selling."
+    "handle": "TheAlphaThought",
+    "name": "Alex | The Profit Zone",
+    "text": "Alphabet $GOOG and Microsoft $MSFT report Wednesday after close, just hours after the Fed's rate decision, with Amazon $AMZN following Thursday.",
+    "url": "https://x.com/TheAlphaThought/status/2114419641250418865",
+    "likes": 9,
+    "reposts": 0,
+    "ts": "2026-10-25T18:11:41Z",
+    "note": "Timing: GOOGL and MSFT print hours after the Fed"
    },
    {
-    "handle": "YUKICAPITALen",
-    "name": "YUKI CAPITAL",
-    "text": "Alphabet fell about 2% after Sundar Pichai said on a podcast the company would prioritize compute for DeepMind, passing up some short-term cloud revenue. Cloud is what I'll watch in earnings.",
-    "url": "https://x.com/YUKICAPITALen/status/2113096989734764694",
+    "handle": "puckrin",
+    "name": "Nic",
+    "text": "BIG week ahead! $10 trillion in tech earnings. Alphabet, Microsoft, Amazon. All expected to post strong revenue growth, but that's not what matters. The market wants to know one thing: how much are you burning on AI, and when does it show up in free cash flow?",
+    "url": "https://x.com/puckrin/status/2114356756692246737",
+    "likes": 98,
+    "reposts": 13,
+    "ts": "2026-10-25T14:01:48Z",
+    "note": "Most-engaged preview: capex vs free cash flow is the test"
+   }
+  ],
+  "NVDA": [
+   {
+    "handle": "StefanSchippers",
+    "name": "Stefan Schippers",
+    "text": "Meta plans $95bn stock offering to bankroll AI expansion… backed by chipmakers Nvidia, AMD and Broadcom, who will act as cornerstone investors",
+    "url": "https://x.com/StefanSchippers/status/2114681748919591048",
     "likes": 0,
     "reposts": 0,
-    "ts": "2026-10-22T02:35:56Z",
-    "note": "The compute-allocation worry: DeepMind vs Google Cloud capacity."
-   }
-  ],
-  "MU": [
-   {
-    "handle": "TheKenyanBull",
-    "name": "The Kenyan Bull",
-    "text": "Three AI stocks I'm bullish on: Micron at ~5x forward earnings while growing triple digits; Lumentum, triple-digit growth with networking a huge bottleneck; Broadcom, custom chips plus optics.",
-    "url": "https://x.com/TheKenyanBull/status/2113564371943100675",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-10-23T09:33:09Z",
-    "note": "Bull case on memory and optics names leading today's premarket."
-   },
-   {
-    "handle": "xiangwei36",
-    "name": "Tradenometry",
-    "text": "Who pays for the AI build-out, and what it takes for semis to rerate: chips sold off hard while most stocks rose. The market isn't questioning AI demand. It's asking whether the spending can be financed and whether supplier profits last.",
-    "url": "https://x.com/xiangwei36/status/2113391086182056178",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-10-22T22:04:34Z",
-    "note": "Frames the semis selloff as a financing question, not a demand one."
-   }
-  ],
-  "LITE": [
-   {
-    "handle": "TheKenyanBull",
-    "name": "The Kenyan Bull",
-    "text": "Three AI stocks I'm bullish on: Micron at ~5x forward earnings while growing triple digits; Lumentum, triple-digit growth with networking a huge bottleneck; Broadcom, custom chips plus optics.",
-    "url": "https://x.com/TheKenyanBull/status/2113564371943100675",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-10-23T09:33:09Z",
-    "note": "Bull case on memory and optics names leading today's premarket."
-   },
-   {
-    "handle": "xiangwei36",
-    "name": "Tradenometry",
-    "text": "Who pays for the AI build-out, and what it takes for semis to rerate: chips sold off hard while most stocks rose. The market isn't questioning AI demand. It's asking whether the spending can be financed and whether supplier profits last.",
-    "url": "https://x.com/xiangwei36/status/2113391086182056178",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-10-22T22:04:34Z",
-    "note": "Frames the semis selloff as a financing question, not a demand one."
+    "ts": "2026-10-26T11:33:12Z",
+    "note": "Relays the FT report: $95B total program with NVDA, AMD and AVGO as cornerstones"
    }
   ]
  },
  "filings": {
   "0001437749-26-031534": [
    {
-    "handle": "MLofranco79251",
-    "name": "Michael Lofranco",
-    "text": "Trump Media CEO Kevin McGurn still believes the TAE merger can close before year-end, while acknowledging completion could extend into early next year as the companies work through SEC review.",
-    "url": "https://x.com/MLofranco79251/status/2113427628220649608",
-    "likes": 3,
+    "handle": "LoganCarter962",
+    "name": "Logan Carter",
+    "text": "$DJT: Trump Media & Technology Group is pressing ahead with its all-stock merger plan with TAE Technologies, a company focused on fusion energy. The filing of the Form S-4 registration statement has advanced this process.",
+    "url": "https://x.com/LoganCarter962/status/2110344928400425057",
+    "likes": 8,
     "reposts": 0,
-    "ts": "2026-10-23T00:29:46Z",
-    "note": "Timing update on the S-4 deal: SEC review could push closing into 2027."
+    "ts": "2026-10-14T12:20:13Z",
+    "note": "What the S-4 is for: the all-stock TAE fusion merger"
    },
    {
-    "handle": "predyx_markets",
-    "name": "PREDYX",
-    "text": "Trump Media shares hit a record intraday low of $6.29, down over 50% in a year as its $6B TAE merger looms.",
-    "url": "https://x.com/predyx_markets/status/2112637274957778951",
-    "likes": 1,
+    "handle": "56Whitey",
+    "name": "DragonsBreath",
+    "text": "$DJT Trump Media CEO Kevin McGurn defends the company's nuclear fusion merger.",
+    "url": "https://x.com/56Whitey/status/2113435041221275760",
+    "likes": 8,
     "reposts": 0,
-    "ts": "2026-10-20T20:09:11Z",
-    "note": "Market reaction: the acquirer's stock is at lows during the merger process."
+    "ts": "2026-10-23T00:59:14Z",
+    "note": "Management pushback on deal skeptics"
+   },
+   {
+    "handle": "FuturesWire",
+    "name": "Futures Wire",
+    "text": "Trump Media Stock Hits 52-Week Low… S-4 filing submitted for the all-stock merger with TAE",
+    "url": "https://x.com/FuturesWire/status/2112438958793588989",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-10-20T07:01:09Z",
+    "note": "Stock reaction: DJT at a 52-week low while the deal advances"
    }
   ]
  }
