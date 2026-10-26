@@ -249,6 +249,10 @@ def build(out_dir, cache):
     if os.environ.get("GITHUB_ACTIONS") and out.get("model"):
         m = out["model"]
         for i, b in enumerate((m.get("read") or []) + (m.get("week") or [])): print(f"::notice title={'Read' if i < len(m.get('read') or []) else 'Week'} {i + 1}::{b.get('t', '')[:300]}", flush=True)
+        w = ((m.get("why") or {}).get("day") or (m.get("why") or {}).get("week") or {}).get("contests", {}).get(m.get("primary") or "", {})
+        if w: print(f"::notice title=Why it moved::{w.get('text', '')[:300]}", flush=True)
+        bk = (m.get("book") or {}).get("summary")
+        if bk: print(f"::notice title=Paper book::{bk['positions']} positions, {bk['open']} open; markets moved toward us on {bk['clvPositive']}, against on {bk['clvNegative']}; MTM ${bk['mtm']:+.0f} on ${bk['staked']:.0f} | " + "; ".join(f"{p['title']} {p['side']} @{round(p['entry'] * 100)}→{round((p.get('now') or 0) * 100)}" for p in (m['book']['positions'] or [])[:10]), flush=True)
         if ev: print(f"::notice title=Early vote::{ev['nat']['voted']:,} cast, {round((ev['nat']['pct'] or 0) * 100)}% of {ev.get('prevLabel')} | " + ", ".join(f"{k} {v['voted']:,} ({round((v.get('pct') or 0) * 100)}%{(', D' if v['lead'] >= 0 else ', R') + '+' + str(abs(v['lead'])) if v.get('lead') is not None else ''})" for k, v in ev["states"].items() if k in ("TX", "MI", "OH", "IA", "ME", "NC", "AK", "KS", "NE", "GA")), flush=True)
         if lm: print("::notice title=Outside money 7d::" + ", ".join(f"{k} D ${o['d7'] / 1e6:.1f}M / R ${o['r7'] / 1e6:.1f}M (prior 14d D ${o['dPrev'] / 1e6:.1f}M / R ${o['rPrev'] / 1e6:.1f}M)" for k, o in sorted(lm["races"].items(), key=lambda kv: -(kv[1]['d7'] + kv[1]['r7']))[:8]), flush=True)
     log(f"{len(out['signals'])} signals, {len(out['stream'])} stories, {len(out['x']['posts'])} X posts; {round(time.time() - t0)}s")

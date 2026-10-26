@@ -288,7 +288,7 @@ function briefHTML(){const m=MD();
  if(phase==='between'){const last=Object.entries(P?.scorecards||{})[0];
   return `<p class="v5lede">${m?`Early read on ${H.esc(E.name)}: fundamentals and expert ratings, few polls. Expect large moves.`:'No election is close. The national environment is the thing to watch.'}</p>${envHTML()}${m&&!m.frozen?topline()+readHTML(m.read):''}
    ${m?.frozen?scoreHTML(m.scorecard,E.name):''}${last?scoreHTML(last[1],(IDX.elections||[]).find(e=>e.id===last[0])?.name):''}${calendarHTML()}`}
- return `${topline()}${readHTML(m?.read)}${decidesHTML()}${weekHTML()}${stretchHTML()}${envHTML()}`}
+ return `${topline()}${whyLine()}${readHTML(m?.read)}${decidesHTML()}${weekHTML()}${stretchHTML()}${bookLine()}${envHTML()}`}
 
 // ---- race sheet: verdict first, detail collapsed ----
 function det(t,body,open){return body?`<details class="v5d"${open?' open':''}><summary>${t}</summary>${body}</details>`:''}
@@ -343,7 +343,7 @@ function seatHist(S){const h=S.hist||{},ks=Object.keys(h).map(Number).sort((a,b)
 function hoodHTML(){const m=MD();if(!m)return '<p class="note" style="padding:20px">The model appears after the next data refresh (it needs the national environment and the 2024 baseline).</p>';
  const R=Object.values(m.races),e=m.env,D=m.disagree||[],SD=[['model','Model'],['market','Mkt'],['raters','Raters'],['polls','Polls']];
  const tr=x=>`<tr data-r="${H.esc(x.id)}"><td><b>${H.esc(shortT(x))}</b>${x.fundOnly?' <i class="m4fo">no polls</i>':''}</td><td style="color:${x.model>=.5?PC[x.dside]:PC.R}">${x.dside} ${pp(x.model)}</td><td>${pp(x.mkt)}</td><td style="color:${gapCol(x.gap)}">${gapTxt(x.gap)}</td>`;
- let out=`${m.frozen?`<p class="note v5quiet">Frozen: this is the final pre-election forecast (${H.esc((m.asof||'').slice(0,10))}).</p>`:''}${readHTML(m.brief,'All takeaways')}
+ let out=`${m.frozen?`<p class="note v5quiet">Frozen: this is the final pre-election forecast (${H.esc((m.asof||'').slice(0,10))}).</p>`:''}${readHTML(m.brief,'All takeaways')}${m.book?.positions?.length?`<h4 class="dh">Paper book · model vs markets</h4>${bookHTML(true)}`:''}${m.why?.day||m.why?.week?whyBlock(m.why.week||m.why.day,m.why.week?'What moved the forecast this week':'What moved the forecast since yesterday'):''}
   <h4 class="dh">The environment</h4><div class="u3kgrid"><div class="u3k"><span class="note">National now (${H.esc(e.source==='generic'?'generic ballot':e.source)})</span><b style="color:${e.national>=0?PC.D:PC.R}">${mrg(e.national)}</b></div><div class="u3k"><span class="note">2024 national vote</span><b style="color:${e.natl2024>=0?PC.D:PC.R}">${mrg(e.natl2024)}</b></div></div>
   <p class="note">Swing since 2024: <b>${e.swing>=0?'+':''}${e.swing} pts toward ${e.swing>=0?'D':'R'}</b>. Every race's expectation = its 2024 presidential margin shifted by this swing.</p><button class="u3how" data-env>All environment signals →</button>`;
  for(const id of m.order||[]){const S=m.contests[id];if(!S||S.pControl==null)continue;const xs=R.filter(x=>x.contest===id&&(x.leverage>0||comp(x))).sort((a,b)=>(b.leverage||0)-(a.leverage||0)).slice(0,14),lt=R.filter(x=>x.contest===id).reduce((a,x)=>a+(x.leverage||0),0)||1;
@@ -365,6 +365,7 @@ function hoodHTML(){const m=MD();if(!m)return '<p class="note" style="padding:20
 function openMHow(){const p=MD()?.params||{};H.sheet('How the model works',`<div class="u3steps">
  <div><b>1 · Expected margin</b><p>The state's 2024 presidential margin, shifted by the national swing (the national margin now minus the 2024 popular vote). Governors inherit ${Math.round((p.elast?.governor||.8)*100)}% of the swing. Incumbents on the ballot get ${p.inc?.senate} pts (Senate) / ${p.inc?.governor} (governor). The prior then blends in the expert-rating consensus (Senate ${Math.round((p.rater_w?.senate??.5)*100)}%, governors ${Math.round((p.rater_w?.governor??1)*100)}%, president ${Math.round((p.rater_w?.president??.3)*100)}%).</p></div>
  <div><b>2 · Blend with polls</b><p>Our polling average weights each poll by recency (14-day half-life), sample size, likely vs registered voters, and halves party-sponsored polls; each pollster's house lean, measured across every race we track, is removed; fabricators are excluded. It counts as n<sub>eff</sub>/(n<sub>eff</sub>+${p.poll_k}) of the margin, capped at ${Math.round((p.poll_cap||.85)*100)}%. Unpolled races run on the prior with a wider error.</p></div>
+ <div><b>Why it moved · paper book</b><p>Daily attribution swaps inputs in one at a time (national → ratings → polls) and weights each race by how much it moves control. The paper book buys $100 of the model's side whenever model and market disagree by 10+ pts and tracks closing-line value and P&amp;L: the model has to earn its keep against the market.</p></div>
  <div><b>Final-stretch tells</b><p>Early vote (UF Election Lab) and late outside money (FEC 24/48-hour reports) don't change the math; they surface in This week when they cross a threshold, weighted toward races that decide control.</p></div>
  <div><b>3 · Correlated simulation</b><p>${(p.sims||20000).toLocaleString()} runs, each with one national error (σ ${p.sig_nat} pts) shared by every race plus a race error. That's why races aren't independent coin flips: a polling miss hits them all at once. The fragility line reruns everything with a ${p.miss}-pt miss each way.</p></div>
  <div><b>4 · Any election</b><p>Each election declares its contests: Senate seats now, electoral votes in 2028 (every state modeled from the baseline, weighted by electoral votes). Same outputs: control odds, distribution, tipping point, leverage, conditional odds, paths.</p></div>
@@ -446,6 +447,31 @@ function stateEVHTML(x){const s=EVD()?.states?.[x?.state];if(!s)return '';const 
 function raceLMHTML(r){const o=LMD()?.races?.[r.id];if(!o)return '';
  return `${lmBar(o)}<div class="m4row"><span>Past 7 days</span><b><span style="color:${PC.D}">D-side ${M$(o.d7)}</span> · <span style="color:${PC.R}">R-side ${M$(o.r7)}</span></b></div><div class="m4row"><span>Prior 14 days</span><b>D-side ${M$(o.dPrev)} · R-side ${M$(o.rPrev)}</b></div>
   ${o.top?.length?`<p class="note">Top spenders (3 weeks): ${o.top.map(t=>`${H.esc(t.com)} <b style="color:${PC[t.side]}">${M$(t.amt)}</b>`).join(' · ')}</p>`:''}`}
+// ---- v8: what moved the forecast, and the paper book ----
+const pts1=v=>`${v>=0?'+':'−'}${Math.abs(v*100).toFixed(1)}`;
+function whyLine(){const m=MD(),w=m?.why?.day||m?.why?.week,c=w?.contests?.[m.primary];if(!c)return '';
+ return `<button class="v8why" data-why><span>${H.esc(c.text)}</span><span class="v5chev">›</span></button>`}
+function factorBars(c){const F=[['polls','New polls'],['national','National environment'],['ratings','Expert ratings'],['other','Interactions / other']].map(([k,n])=>[n,k==='other'?c.other:c.factors[k]]).filter(([,v])=>Math.abs(v)>=.0005);
+ const mx=Math.max(.01,...F.map(([,v])=>Math.abs(v)));
+ return F.map(([n,v])=>`<div class="v8fb"><span>${n}</span><span class="v8bar"><i style="${v>=0?'left:50%':'right:50%'};width:${Math.abs(v)/mx*50}%;background:${v>=0?PC.D:PC.R}"></i><em></em></span><b style="color:${v>=0?PC.D:PC.R}">${pts1(v)}</b></div>`).join('')||'<p class="note">No material change.</p>'}
+function whyBlock(w,lab){const m=MD(),c=w?.contests?.[m.primary];if(!c)return '';
+ return `<h4 class="dh">${lab}</h4><p class="m4p">${H.esc(c.text)}</p>${factorBars(c)}
+  ${c.races.length?`<table class="m4t"><tr><th>Race</th><th>Win prob</th><th>Effect on control</th></tr>${c.races.map(r=>{const big=Object.entries(r.parts).sort((a,b)=>Math.abs(b[1])-Math.abs(a[1]))[0];
+   return `<tr data-r="${H.esc(r.id)}"><td><b>${H.esc(r.title)}</b><span class="note">${big&&Math.abs(big[1])>=.05?`${{polls:'polls',national:'national',ratings:'ratings'}[big[0]]} moved the margin ${big[1]>=0?'+':'−'}${Math.abs(big[1]).toFixed(1)} pts`:'small input changes'}</span></td><td style="color:${r.dp>=0?PC.D:PC.R}">${pts1(r.dp)}</td><td style="color:${r.contrib>=0?PC.D:PC.R}"><b>${pts1(r.contrib)}</b></td></tr>`}).join('')}</table>`:''}`}
+function openWhy(){haptic();const m=MD();const sh=H.sheet('What moved the forecast',`<p class="note">Each race's margin change is split into new polls, the national environment and expert ratings (swapped in one at a time), then weighted by how much that race matters for control. Figures are Democratic ${H.esc(ctLabel(m.contests[m.primary]))} odds, in points.</p>
+  ${whyBlock(m.why?.day,'Since the previous day')}${whyBlock(m.why?.week,'Over the past week')}${!m.why?.day&&!m.why?.week?'<p class="note">Attribution starts once two daily snapshots exist.</p>':''}`);wire(sh)}
+const sideLbl=p=>{if(p.id.startsWith('ctl:'))return p.side==='D'?'Democrats':'Republicans';const x=MX()[p.id];return x?sideName(x,p.side==='D'?x.dside:'R'):p.side};
+function bookHTML(full){const b=MD()?.book;if(!b?.positions?.length)return full?'<p class="note">No positions yet: the model and markets haven\'t disagreed by 10+ pts.</p>':'';const S=b.summary;
+ const tiles=`<div class="m4vs"><div><span class="note">Positions</span><b>${S.positions}</b><span class="note">${S.open} open${S.settled?` · ${S.settled} settled`:''}</span></div>
+  <div><span class="note">Markets moved</span><b><span style="color:${PC.D}">${S.clvPositive}</span> / <span style="color:${PC.R}">${S.clvNegative}</span></b><span class="note">toward / against us</span></div>
+  <div><span class="note">${S.settled?'Realized':'Mark-to-market'}</span><b style="color:${(S.settled?S.realized:S.mtm)>=0?'#30d158':'#ff453a'}">${(S.settled?S.realized:S.mtm)>=0?'+':'−'}$${Math.abs(S.settled?S.realized:S.mtm).toFixed(0)}</b><span class="note">on $${S.staked.toFixed(0)} staked</span></div></div>`;
+ if(!full)return tiles;
+ return `${tiles}<table class="m4t v8bk"><tr><th>Position</th><th>Entry</th><th>Now</th><th>CLV</th><th>P&L</th></tr>${b.positions.map(p=>`<tr${p.id.startsWith('ctl:')?'':` data-r="${H.esc(p.id)}"`}><td><b>${H.esc(p.title)}</b><span class="note">${H.esc(sideLbl(p))} · since ${H.esc(p.opened.slice(5).replace('-','/'))} · model ${pp(p.modelNow??p.modelAtEntry)}</span></td>
+  <td>${pp(p.entry)}</td><td>${p.status==='settled'?(p.won?'Won':'Lost'):pp(p.now)}</td><td style="color:${(p.clv||0)>.005?'#30d158':(p.clv||0)<-.005?'#ff453a':'#8e8e93'}">${p.clv==null?'–':Math.abs(p.clv)<.005?'0':(p.clv>=0?'+':'−')+Math.abs(p.clv*100).toFixed(0)}</td><td style="color:${(p.pnl||0)>=0?'#30d158':'#ff453a'}">${p.pnl==null?'–':(p.pnl>=0?'+':'−')+'$'+Math.abs(p.pnl).toFixed(0)}</td></tr>`).join('')}</table>
+  <p class="note"><b>Rule:</b> ${H.esc(S.rule)} <b>CLV</b> (closing-line value) = how far the market has moved toward our side since entry, in points: the best early read on whether the model has an edge, long before races resolve. Hypothetical only: no fees, slippage or limits, and not a suggestion to trade (check your firm's policy on prediction markets).</p>`}
+function openBook(){haptic();wire(H.sheet('Paper book',bookHTML(true)))}
+function bookLine(){const b=MD()?.book;if(!b?.positions?.length)return '';const S=b.summary,v=S.settled?S.realized:S.mtm;
+ return `<button class="v5env" data-book><span class="note">Paper book</span><span>${S.open} open bets vs markets · moved our way on <b style="color:${PC.D}">${S.clvPositive}</b>, against on <b style="color:${PC.R}">${S.clvNegative}</b> · <b style="color:${v>=0?'#30d158':'#ff453a'}">${v>=0?'+':'−'}$${Math.abs(v).toFixed(0)}</b></span><span class="v5chev">›</span></button>`}
 // ---- shell ----
 function body(p){
  if(view==='races')p.innerHTML=racesHTML();
@@ -454,7 +480,7 @@ function body(p){
  else p.innerHTML=briefHTML();
  p.querySelectorAll('[data-r]').forEach(b=>b.onclick=e=>{if(e.target.closest('a,summary'))return;openRace(raceObj(b.dataset.r))});
  p.querySelectorAll('[data-st]').forEach(b=>b.onclick=()=>openStory(b.dataset.st));
- p.querySelectorAll('[data-env]').forEach(b=>b.onclick=openEnv);p.querySelectorAll('[data-ev]').forEach(b=>b.onclick=openEV);p.querySelectorAll('[data-lm]').forEach(b=>b.onclick=openLM);p.querySelector('[data-mhow]')?.addEventListener('click',openMHow);
+ p.querySelectorAll('[data-env]').forEach(b=>b.onclick=openEnv);p.querySelectorAll('[data-ev]').forEach(b=>b.onclick=openEV);p.querySelectorAll('[data-why]').forEach(b=>b.onclick=openWhy);p.querySelectorAll('[data-book]').forEach(b=>b.onclick=openBook);p.querySelectorAll('[data-lm]').forEach(b=>b.onclick=openLM);p.querySelector('[data-mhow]')?.addEventListener('click',openMHow);
  p.querySelectorAll('[data-feed]').forEach(b=>b.onclick=()=>{haptic();feed=b.dataset.feed;body(p);p.closest('.escroll')?.scrollTo(0,0)});
  p.querySelectorAll('[data-xf]').forEach(b=>b.onclick=()=>{xf=b.dataset.xf;body(p)});
  p.querySelectorAll('[data-v2]').forEach(b=>b.onclick=()=>{haptic();view=b.dataset.v2;document.querySelectorAll('[data-v]').forEach(x=>x.classList.toggle('on',x.dataset.v===view));body(p);p.closest('.escroll')?.scrollTo(0,0)});

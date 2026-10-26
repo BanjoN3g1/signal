@@ -416,3 +416,9 @@ button.chip{border:0;font:inherit;font-size:12.5px}
 .v7pt td{font-size:12px}.v7pt td .note,.v7ev td .note{display:block;font-size:10.5px}.v7ev td{font-size:13px}
 .v7mb{display:flex;height:8px;border-radius:4px;overflow:hidden;background:rgba(255,255,255,.06);margin:6px 0}.v7mb i{display:block;height:100%}
 .v7lm{display:block;width:100%;background:none;border:0;border-top:.5px solid var(--line);color:var(--txt);font:inherit;text-align:left;padding:9px 0}.v7lm .v5t i{white-space:normal}
+/* v8 why + paper book */
+.v8why{display:flex;align-items:center;gap:8px;width:100%;background:rgba(100,210,255,.07);border:0;border-radius:12px;padding:9px 12px;color:#d1d1d6;font:inherit;font-size:13.5px;line-height:1.4;text-align:left;margin:4px 0 2px}.v8why span:first-child{flex:1}
+.v8fb{display:grid;grid-template-columns:132px 1fr 48px;gap:8px;align-items:center;font-size:13px;padding:4px 0}.v8fb b{text-align:right;font-variant-numeric:tabular-nums}
+.v8bar{position:relative;height:10px;background:rgba(255,255,255,.04);border-radius:3px}.v8bar i{position:absolute;top:0;bottom:0;border-radius:3px}.v8bar em{position:absolute;left:50%;top:-2px;bottom:-2px;width:1px;background:#636366}
+.v8bk td{font-size:12.5px}.v8bk td .note{display:block;font-size:10.5px}
+.m4t td .note{display:block;font-size:10.5px}

@@ -223,6 +223,11 @@ def run(E, nat_d, base, cache):
         fin = _load(os.path.join(cache, f"forecast_final_{eid}.json")) or _load(os.path.join(ROOT, "data", "elections", "archive", f"{eid}-model.json"))
         if fin:
             fin["frozen"] = True; fin["scorecard"] = scorecard(E, fin, cache)
+            try:
+                import why
+                res, _ = results_for(E, cache)
+                fin["book"] = why.book(_load(os.path.join(cache, f"forecast_log_{eid}.json")) or {}, fin, res, {k: v["dControl"] for k, v in fin["scorecard"].get("contests", {}).items()})
+            except Exception as e: log("book (final) failed", e)
             log(f"{eid}: election over; serving final forecast from {fin.get('asof')} + scorecard"); return fin
     if nat_d is None or not base: log("missing national margin or baseline; skipped"); return None
     st = base.get("state") or {}; tv = sum(v[1] for v in st.values()) or 1
@@ -258,6 +263,12 @@ def run(E, nat_d, base, cache):
     out["house"] = C.get("house")
     out["read"], out["brief"] = takeaways(out)
     out["track"] = lg
+    try:   # what moved the forecast (attribution) and the paper book (model vs markets, graded)
+        import why
+        S, day = why.snapshot(eid, out, PARAMS, cache)
+        out["why"] = {"day": why.attribute(S, day, out, 1), "week": why.attribute(S, day, out, 7)}
+        out["book"] = why.book(_load(os.path.join(cache, f"forecast_log_{eid}.json")) or {}, out)
+    except Exception as e: log("why/book failed", type(e).__name__, e)
     if edate and today() <= edate:
         try: json.dump(out, open(os.path.join(cache, f"forecast_final_{eid}.json"), "w"))
         except Exception as e: log("final write failed", e)

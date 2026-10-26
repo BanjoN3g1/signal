@@ -172,3 +172,10 @@ Organized by question, not by source. Tabs: **Brief · Races · Under the hood �
   avoid the shared DEMO_KEY limit.
 - **Tells** (`tells.tells`): outspending ≥1.8:1, pullbacks (−60% vs prior pace), surges (2.5×), early-vote party-split moves ≥3 pts,
   weighted toward races that decide control. They join "This week"; a strong one (in a pivotal race) enters the read.
+
+## v8: why it moved · paper book (`why.py`, called from `forecast.run`)
+- **Attribution**: latest-of-day input snapshots (`inputs_<id>.json`). Each race's margin change is split by swapping inputs in one at a
+  time (national → ratings → polls), then mapped to control via (P(ctl|D wins) − P(ctl|R wins)) × Δ win prob, rescaled to the actual
+  move. Brief line under the topline; full sheet with factor bars and race rows; "since the previous day" and "this week".
+- **Paper book**: rebuilt from the daily forecast log each run. Buy $100 of the model's side when |model − market| ≥ 10 pts (daily close),
+  one position per instrument and side, hold to resolution; mark to market, closing-line value (CLV), settle on results. Hypothetical.
