@@ -2,552 +2,452 @@
  "stories": {
   "c2512a883f1d": [
    {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "META RAISES $35 BILLION TO FUND AI EXPANSION\n\nMeta ($META ) launched a $35B equity offering to finance AI infrastructure, including $22.5B in common stock and $12.5B in convertible preferred shares.\n\n$NVDA, $AMD and $AVGO have expressed interest in investing up to $5B combined.",
-    "url": "https://x.com/DeItaone/status/2114673499650371710",
-    "likes": 511,
-    "reposts": 80,
-    "ts": "2026-10-26T11:00:25Z",
-    "note": "Deal terms: $22.5B common plus $12.5B mandatory convertible preferred"
-   },
-   {
-    "handle": "KobeissiLetter",
-    "name": "The Kobeissi Letter",
-    "text": "BREAKING: Meta, $META, will raise up to $95 billion through a series of stock offerings in order to fund the development of AI.\n\nThe financing plan comes just days after Meta said it would spend up to $145 billion in CapEx this year.",
-    "url": "https://x.com/KobeissiLetter/status/2114691296950698462",
-    "likes": 2311,
-    "reposts": 141,
-    "ts": "2026-10-26T12:11:08Z",
-    "note": "Viral framing: up to $95B in total raises on top of up to $145B capex"
-   },
-   {
-    "handle": "amitisinvesting",
-    "name": "amit",
-    "text": "$META\n\nMETA OFFICIALLY ENTERS THE CAPITAL RAISING GAME THROUGH SELLING MORE OF THEIR STOCK.\n\nMeta announced plans to raise approximately $35 billion through two equity offerings:\n\n- $22.5B in Class A common stock through forward sale agreements.\n\n- $12.5B in depositary shares https://t.co/9y66TbMOUb",
-    "url": "https://x.com/amitisinvesting/status/2114691255040950663",
-    "likes": 1121,
-    "reposts": 49,
-    "ts": "2026-10-26T12:10:58Z",
-    "note": "Walks through the forward-sale structure and the planned ATM program"
-   },
-   {
-    "handle": "FirstSquawk",
-    "name": "First Squawk",
-    "text": "NVIDIA, AMD, BROADCOM INTERESTED TO BUY UP TO $5B OF META STOCK",
-    "url": "https://x.com/FirstSquawk/status/2114675342858490288",
-    "likes": 93,
-    "reposts": 3,
-    "ts": "2026-10-26T11:07:45Z",
-    "note": "Suppliers buying in: Nvidia, AMD and Broadcom indicated up to $5B"
-   }
-  ],
-  "d7acdc244b1f": [
-   {
-    "handle": "elonmusk",
-    "name": "Elon Musk",
-    "text": "Pretty much. As of the past few weeks, debt markets have almost entirely shut off access to money for any company that doesn't have substantial revenue independent of AI data centers. SpaceX closed $40B of debt for GPUs, but we're investment grade and have Starlink & launch…",
-    "url": "https://x.com/elonmusk/status/2114434646914068862",
-    "likes": 38201,
-    "reposts": 3690,
-    "ts": "2026-10-25T19:11:18Z",
-    "note": "The source post: Musk says AI data center credit has dried up for pure-play neoclouds"
-   },
-   {
-    "handle": "elonmusk",
-    "name": "Elon Musk",
-    "text": "This is primarily callable debt for GPU purchases that will arrive in Q1 and Q2. Not a major factor this quarter.",
-    "url": "https://x.com/elonmusk/status/2114444535036321840",
-    "likes": 3920,
-    "reposts": 183,
-    "ts": "2026-10-25T19:50:36Z",
-    "note": "Musk on the structure: callable debt tied to GPU deliveries in Q1-Q2"
-   },
-   {
-    "handle": "elonmusk",
-    "name": "Elon Musk",
-    "text": "SpaceX is not buying any neoclouds. Pointless.",
-    "url": "https://x.com/elonmusk/status/2114462416721633501",
-    "likes": 4258,
-    "reposts": 288,
-    "ts": "2026-10-25T21:01:39Z",
-    "note": "Rules out SpaceX as a consolidator of distressed GPU clouds"
-   },
-   {
-    "handle": "Techmeme",
-    "name": "Techmeme",
-    "text": "Elon Musk says SpaceX closed $40B in GPU debt, debt markets have shut off credit for AI data center firms, and 200+ neoclouds face \"death and consolidation\"",
-    "url": "https://x.com/Techmeme/status/2114471102982594946",
-    "likes": 11,
-    "reposts": 2,
-    "ts": "2026-10-25T21:36:10Z",
-    "note": "Techmeme's framing of the story"
-   },
-   {
-    "handle": "bull_fool25952",
-    "name": "Bingo",
-    "text": "$CRWV Credit markets are drawing a hard line for AI data center operators. SpaceX locked $40B in GPU debt, but it's investment-grade, backed by Starlink + launch revenue. Lenders are shutting funding doors for pure GPU rental plays with no outside income.",
-    "url": "https://x.com/bull_fool25952/status/2114549882073870531",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-10-26T02:49:12Z",
-    "note": "Ties the comment to CoreWeave and other pure-play neoclouds"
-   }
-  ],
-  "3fccf913600c": [
-   {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "DAN IVES SEES 80%–90% ODDS OF SPACEX–TESLA MERGER\n\nDan Ives reiterated Outperform on SpaceX ($SPCX ) with a $225 price target, following its $40B GPU financing deal.\n\nHe sees an 80%–90% chance of a Tesla ($TSLA ) merger by 2027, potentially valuing Tesla above $500 per share.",
-    "url": "https://x.com/DeItaone/status/2114697346843828590",
-    "likes": 496,
-    "reposts": 56,
-    "ts": "2026-10-26T12:35:11Z",
-    "note": "Dan Ives puts 80-90% odds on a SpaceX-Tesla merger by 2027"
-   },
-   {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "$TSLA  $SPCX - BARCLAYS UPGRADES TESLA TO OVERWEIGHT, SEES SPACEX MERGER UPSIDE\n\nBarclays upgraded $TSLA to Overweight, raising its price target to $450 from $370.\n\nThe bank sees a potential SpaceX merger as a major bullish catalyst, alongside accelerating Robotaxi adoption,",
-    "url": "https://x.com/DeItaone/status/2114670677319995530",
-    "likes": 428,
-    "reposts": 52,
-    "ts": "2026-10-26T10:49:12Z",
-    "note": "Barclays upgrades Tesla to Overweight, citing merger upside"
-   },
-   {
-    "handle": "Pareto_Investor",
-    "name": "The Pareto Investor",
-    "text": "Musk on a SpaceX-Tesla merger: \"Do I think it would be a good idea? Yes.\"\n\nBoth boards formed special committees.\n\nBarclays: SpaceX buys Tesla in an all-stock deal, ~0.7 SpaceX shares per Tesla share, Musk ends up with ~56% of the vote.\n\n$TSLA $SPCX https://t.co/cIrQtCy88N",
-    "url": "https://x.com/Pareto_Investor/status/2114265708745851019",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-10-25T08:00:00Z",
-    "note": "Barclays math: all-stock, ~0.7 SpaceX shares per Tesla share"
-   },
-   {
-    "handle": "gall_quay",
-    "name": "The Jedi M@n 🧑‍🦯",
-    "text": "Elon Musk addresses discussions surrounding a potential SpaceX and Tesla merger, explaining why independent committees are reviewing the proposal while clarifying that a deal is not guaranteed:   \n\n\"Both SpaceX and Tesla have formed special committees to discuss this idea at the https://t.co/IEwxfWEyPA",
-    "url": "https://x.com/gall_quay/status/2115066699351224812",
-    "likes": 5,
-    "reposts": 3,
-    "ts": "2026-10-27T13:02:51Z",
-    "note": "Musk on why independent committees are reviewing and that a deal is not guaranteed"
-   }
-  ],
-  "00d70f725bbb": [
-   {
-    "handle": "TapeAndTicker",
-    "name": "Tape & Ticker",
-    "text": "Week ahead: Fed decision Wed 2pm ET, then Microsoft + Alphabet after the bell. Thursday brings Q3 GDP + September PCE at 8:30am and Amazon after the close.\n\nBiggest week of earnings season, and AI capex is on trial. Full rundown: https://t.co/ffFpOcPiY9",
-    "url": "https://x.com/TapeAndTicker/status/2114481957757485385",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-10-25T22:19:18Z",
-    "note": "The week’s sequence: Fed Wed, MSFT and GOOGL after close, AMZN Thu"
-   },
-   {
-    "handle": "WallStreet2Web3",
-    "name": "WallStreet2Web3",
-    "text": "This Week the Fed Meets While AI Capex Is Still the Question\n\nLast Thursday, the Nasdaq had its worst one-day drop since June. Not because of a Fed speech. Not because of a hot inflation print. \nBecause the market finally asked the question it had been avoiding for two years: who https://t.co/mAJT281U1x",
-    "url": "https://x.com/WallStreet2Web3/status/2114755183913951661",
-    "likes": 3,
-    "reposts": 0,
-    "ts": "2026-10-26T16:25:00Z",
-    "note": "Frames the week as AI capex on trial after last Thursday’s Nasdaq drop"
-   },
-   {
-    "handle": "charliebilello",
-    "name": "Charlie Bilello",
-    "text": "% Below All-Time High\nApple: -1%\nS&P 500: -3%\nMicrosoft: -5%\nPalantir: -8%\nNvidia: -13%\nAmazon: -14%\nMeta: -19%\nGoogle: -22%\nAMD: -22%\nTesla: -26%\nGold: -29%\nSpaceX: -35%\nBitcoin: -36%\nNetflix: -51%\nEthereum: -53%\nDogecoin: -90%\nFartcoin: -95%\nTrump Coin: -98%\nMelania Coin: -99%",
-    "url": "https://x.com/charliebilello/status/2114381203075961101",
-    "likes": 970,
-    "reposts": 123,
-    "ts": "2026-10-25T15:38:56Z",
-    "note": "Where megacaps sit vs all-time highs heading into prints"
-   },
-   {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "AI-LINKED STOCKS CLIMB AFTER ANTHROPIC FILES FOR IPO\n\nNVIDIA UP 3.1%\nMICROSOFT UP 1.1%\nAMAZON UP 1%\nBROADCOM UP 2.8%\nMICRON TECHNOLOGY UP 3.5%\nSPACEX UP 1.4%",
-    "url": "https://x.com/DeItaone/status/2114734528334090384",
-    "likes": 483,
-    "reposts": 42,
-    "ts": "2026-10-26T15:02:56Z",
-    "note": "AI names rallied on Anthropic’s IPO filing ahead of earnings"
-   }
-  ],
-  "6deef4619555": [
-   {
-    "handle": "TheAlphaThought",
-    "name": "Alex | The Profit Zone",
-    "text": "Alphabet $GOOG and Microsoft $MSFT report Wednesday after close, just hours after the Fed's rate decision, with Amazon $AMZN following Thursday.",
-    "url": "https://x.com/TheAlphaThought/status/2114419641250418865",
-    "likes": 9,
-    "reposts": 0,
-    "ts": "2026-10-25T18:11:41Z",
-    "note": "Timing: GOOGL and MSFT print hours after the Fed"
-   },
-   {
-    "handle": "puckrin",
-    "name": "Nic",
-    "text": "BIG week ahead! $10 trillion in tech earnings. Alphabet, Microsoft, Amazon. All expected to post strong revenue growth, but that's not what matters. The market wants to know one thing: how much are you burning on AI, and when does it show up in free cash flow?",
-    "url": "https://x.com/puckrin/status/2114356756692246737",
-    "likes": 98,
-    "reposts": 13,
-    "ts": "2026-10-25T14:01:48Z",
-    "note": "Most-engaged preview: capex vs free cash flow is the test"
-   }
-  ],
-  "2ff622bcefe0": [
-   {
-    "handle": "OptionKing666",
-    "name": "456X",
-    "text": "Super Micro Computer ($SMCI) now expects fiscal Q1 2027 revenue of $18.5–19.5bn versus its previous $14.5–15.5bn guidance, citing stronger demand for AI platforms. Gross margin of 12–12.5%, versus prior guidance of 10.4–10.8%.",
-    "url": "https://x.com/OptionKing666/status/2114336874391380357",
-    "likes": 8,
-    "reposts": 0,
-    "ts": "2026-10-25T12:42:47Z",
-    "note": "The prelim numbers: $4B revenue raise and higher margins"
-   },
-   {
-    "handle": "GreenDarts88",
-    "name": "Green Darts",
-    "text": "Super Micro's $SMCI (Sep 2026) expected revenue is $18.5 billion to $19.5 billion, surpassing Cisco's revenue for the first time. Yet, Cisco's market cap of $420 billion is 19X…",
-    "url": "https://x.com/GreenDarts88/status/2113926137784987686",
-    "likes": 11,
-    "reposts": 0,
-    "ts": "2026-10-24T09:30:40Z",
-    "note": "Valuation comp: SMCI revenue now tops Cisco's"
-   },
-   {
-    "handle": "SeekingAlpha",
-    "name": "Seeking Alpha",
-    "text": "Super Micro Computer: The Valuation Is A Joke (Earnings Preview) $SMCI",
-    "url": "https://x.com/SeekingAlpha/status/2113807695195369535",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-10-24T01:40:01Z",
-    "note": "Bear-ish preview ahead of the full print"
-   }
-  ],
-  "48726f9792b3": [
-   {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "$SPCX - SPACEX SIGNS $40 BILLION GPU FINANCING DEAL WITH APOLLO\n\nSpaceX has entered into a binding commitment for a master finance lease with Apollo Global Management ($APO ), according to an SEC filing.\n\nApollo will purchase GPU pods and related equipment and lease them to",
-    "url": "https://x.com/DeItaone/status/2114688952686805491",
-    "likes": 372,
-    "reposts": 42,
-    "ts": "2026-10-26T12:01:49Z",
-    "note": "The SEC-filed details: Apollo vehicle buys the GPUs and leases them to SpaceX"
-   },
-   {
     "handle": "StockMKTNewz",
     "name": "Evan",
-    "text": "SPACEX $SPCX JUST SIGNED A $40B LEASE DEAL WITH APOLLO $APO TO PAY FOR AI CHIPS\n\nThe money will help SpaceX buy Nvidia chips, per Bloomberg. The deal is structured as private bonds issued by a separate entity that stays off SpaceX's balance sheet.\n\nIt's expected to close before https://t.co/5AAAPw3s4Z",
-    "url": "https://x.com/StockMKTNewz/status/2114699344410521628",
-    "likes": 266,
-    "reposts": 26,
-    "ts": "2026-10-26T12:43:07Z",
-    "note": "Explains the structure: private bonds from a separate entity kept off SpaceX’s balance sheet"
+    "text": "NVIDIA $NVDA WILL INVEST $3B IN META $META'S NEW STOCK SALE\n\nThe two are also expanding their AI partnership, per WSJ. Meta plans to use more Nvidia hardware, including its Vera Rubin systems, to power its Muse AI agents.\n\nMeta also raised its common stock offering to $25B from https://t.co/s2foMqs37V",
+    "url": "https://x.com/StockMKTNewz/status/2115046396252312011",
+    "likes": 263,
+    "reposts": 17,
+    "ts": "2026-10-27T11:42:11.000Z",
+    "note": "Most-shared take: Nvidia anchoring $3B of Meta's equity raise, a vendor-financing loop worth watching."
    },
    {
-    "handle": "FirstSquawk",
-    "name": "First Squawk",
-    "text": "SPACEX PRICES BONDS AT UP TO 8.75% ON $40B CREDIT DEAL: SEMAFOR",
-    "url": "https://x.com/FirstSquawk/status/2114701319307235506",
-    "likes": 57,
-    "reposts": 4,
-    "ts": "2026-10-26T12:50:58Z",
-    "note": "Pricing tell: bonds at up to 8.75% shows what AI compute debt costs"
+    "handle": "MikeZaccardi",
+    "name": "Mike Zaccardi, CFA, CMT 🍖",
+    "text": "$META prices upsized $37.5B stock and depositary share offering\n$NVDA to invest $3B in Meta stock, expand AI collaboration on Muse models @seekingalpha",
+    "url": "https://x.com/MikeZaccardi/status/2115037919576494177",
+    "likes": 13,
+    "reposts": 2,
+    "ts": "2026-10-27T11:08:30.000Z",
+    "note": "Deal terms: upsized offering with Nvidia participating and a broader Muse AI tie-up."
    },
    {
-    "handle": "FirstSquawk",
-    "name": "First Squawk",
-    "text": "ANTHROPIC TO SPEND UP TO $120.58 ON SPACEX AI NVIDIA COMPUTE",
-    "url": "https://x.com/FirstSquawk/status/2114707483835220317",
-    "likes": 75,
-    "reposts": 5,
-    "ts": "2026-10-26T13:15:28Z",
-    "note": "Why the lease pencils: Anthropic committing up to ~$120B on SpaceX AI compute"
+    "handle": "kaidloscopes",
+    "name": "Kaidloscopes",
+    "text": "📊 $META ’s latest $25B stock offering reportedly attracted five times its available supply, reaching $125B in orders.\n\nWith shares priced at $625 and 70% allocated to the 15 largest investors, the deal highlights the scale of capital flowing into AI.\n\nAs Meta pursues nearly $98B",
+    "url": "https://x.com/kaidloscopes/status/2115258035874791503",
+    "likes": 3,
+    "reposts": 1,
+    "ts": "2026-10-28T01:43:10.000Z",
+    "note": "Book color: reported ~5x oversubscribed with most allocation to long-only holders, a sign of real demand."
    },
    {
-    "handle": "unusual_whales",
-    "name": "unusual_whales",
-    "text": "Elon Musk said SpaceX has closed a $40 billion debt deal to pay for the chips it needs to fuel its artificial intelligence ambitions",
-    "url": "https://x.com/unusual_whales/status/2114482486592020764",
-    "likes": 3128,
-    "reposts": 119,
-    "ts": "2026-10-25T22:21:24Z",
-    "note": "Most-shared take on Musk confirming the $40B close"
+    "handle": "FindleysFinance",
+    "name": "FindleysFinance",
+    "text": "$NVDA and $META just expanded their AI partnership around Muse, with NVIDIA agreeing to put $3B into Meta's stock offering.\n\nThe company selling Meta the chips is now buying Meta's stock. The AI trade is funding itself.\n\n$META is down in pre-market trading. https://t.co/Ga2pTEdA2L",
+    "url": "https://x.com/FindleysFinance/status/2115044338308653297",
+    "likes": 25,
+    "reposts": 1,
+    "ts": "2026-10-27T11:34:00.000Z",
+    "note": "Frames the circularity: the chip supplier is now buying its customer's stock."
    }
   ],
   "cc9190486b73": [
    {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "DoorDash in Advanced Talks to Buy Instacart, Sources Say \n\nDoorDash Deal for Instacart Could Be Finalized as Soon as This Week, Sources Say",
-    "url": "https://x.com/DeItaone/status/2114800634553884938",
-    "likes": 361,
-    "reposts": 29,
-    "ts": "2026-10-26T19:25:37Z",
-    "note": "The scoop via WSJ: advanced talks, could be finalized this week"
+    "handle": "EconomicTimes",
+    "name": "Economic Times",
+    "text": "DoorDash in talks to buy Instacart in roughly $17 billion deal https://t.co/iwNTEPXhsd",
+    "url": "https://x.com/EconomicTimes/status/2115360470571864277",
+    "likes": 1,
+    "reposts": 1,
+    "ts": "2026-10-28T08:30:12.000Z",
+    "note": "Headline numbers: roughly $17B for Instacart."
    },
    {
-    "handle": "ADODonoghue",
-    "name": "Andy O'Donoghue",
-    "text": "Exclusive from the WSJ: DoorDash Is in Advanced Talks to Acquire Delivery Rival Instacart\n\nThe deal could be completed as soon as this week and value Instacart at around $17 billion\n\nhttps://t.co/TBVm6TRuhp",
-    "url": "https://x.com/ADODonoghue/status/2115033752766189962",
+    "handle": "IshanTanna1",
+    "name": "Ishan Tanna 🇮🇳",
+    "text": "DoorDash with a market value of $73 billion, is in talks to acquire its rival Instacart which has a market value of around $17 billion.\n\nBe nice to the competition... they could become your employer! https://t.co/pRVeuZTWvR",
+    "url": "https://x.com/IshanTanna1/status/2115402691384057975",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-10-28T11:17:58.000Z",
+    "note": "Scale check: a ~$73B buyer taking out its closest grocery-delivery rival."
+   },
+   {
+    "handle": "edwardxb",
+    "name": "Edward Blackwell",
+    "text": "DoorDash is reportedly in advanced talks to acquire Instacart for about $17B. My read: own the target, not the buyer paying up for grocery reach.\n\nInstacart holders gained, DoorDash holders lost on the reported talks.\n\nThis is Who Pays #4. Follow the series.\n\n#DoorDash",
+    "url": "https://x.com/edwardxb/status/2115397841736569080",
     "likes": 0,
     "reposts": 0,
-    "ts": "2026-10-27T10:51:56Z",
-    "note": "Valuation context: Instacart at around $17B"
+    "ts": "2026-10-28T10:58:42.000Z",
+    "note": "Trader read: the target, not the buyer, usually captures the premium; antitrust is the open question."
+   }
+  ],
+  "3fccf913600c": [
+   {
+    "handle": "Amy787",
+    "name": "Amy",
+    "text": "TSLA SHAREHOLDERS ARE # 14!!!  \n\nWe did it!!!  Great work everyone!!\nThe Tesla Retail letter in support of a $TSLA/$SPCX merger now represents over $10.2 BILLION dollars in Tesla shares - to put it into context, that is  more shares than Baron Capital, Citigroup and ARK Invest https://t.co/cYjVwxtKmJ https://t.co/2FGS7uqHHd",
+    "url": "https://x.com/Amy787/status/2114754400610607264",
+    "likes": 1037,
+    "reposts": 150,
+    "ts": "2026-10-26T16:21:53.000Z",
+    "note": "Retail push: Tesla holders organizing a letter for a TSLA/SpaceX merger, with ~$10B of stock behind it."
    },
    {
-    "handle": "gurgavin",
-    "name": "GURGAVIN",
-    "text": "JUST IN : DOORDASH IS NOW IN ADVANCED TALLKS TO ACQUIRE INSTACART \n\n$CART $DASH https://t.co/wfXkwTEN3N",
-    "url": "https://x.com/gurgavin/status/2114802373834993819",
-    "likes": 145,
-    "reposts": 2,
-    "ts": "2026-10-26T19:32:31Z",
-    "note": "Most-shared alert on the DoorDash-Instacart talks"
-   },
-   {
-    "handle": "thefruitsnob",
-    "name": "The Fruit Snob",
-    "text": "DoorDash $DASH reporting to acquire InstaCart $CART. \n\nHere’s what we know so far;\n\nNot a done deal yet. DoorDash has held preliminary talks to acquire Instacart, reported Oct 23 by The Information.\n\nInstacart hired a bank to weigh a sale, and it also talked to Uber, though one",
-    "url": "https://x.com/thefruitsnob/status/2114810027936800824",
-    "likes": 0,
+    "handle": "MarwanMoftah",
+    "name": "Marwan Moftah",
+    "text": "Read both 10-Qs (Oct 22) behind the @Tesla x @SpaceX merger buzz.\n\n$TSLA: a deal needs its special committee + any shareholder vote.\nSpaceX: committee, board, and its \"controlling shareholder.\"\n\nQ3 Megapacks: Tesla booked $221M from SpaceX. SpaceX logged $151M. Why the gap? https://t.co/5064IrG1ej",
+    "url": "https://x.com/MarwanMoftah/status/2114839905725546749",
+    "likes": 1,
     "reposts": 0,
-    "ts": "2026-10-26T20:02:56Z",
-    "note": "Timeline: The Information first reported prelim talks Oct 23; Instacart hired a bank"
+    "ts": "2026-10-26T22:01:40.000Z",
+    "note": "Process read from the 10-Qs: any deal needs special-committee sign-off and likely a shareholder vote."
+   },
+   {
+    "handle": "DanielVincentA7",
+    "name": "Daniel Vincent Alvarado 🇺🇸",
+    "text": "9,697 Tesla shareholders just put a SpaceX merger request in writing.\n\nOrganizers say they own 25.7M shares, about $10B. The letter went to Tesla's board and merger committee Monday.\n\nWhy it matters: that's under 1% of Tesla. Musk says a deal needs 50% of ALL shares.\n\n(Teslarati) https://t.co/0NIbjgGHsr",
+    "url": "https://x.com/DanielVincentA7/status/2115141510689968181",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-10-27T18:00:08.000Z",
+    "note": "Context on the shareholder letter sent to Tesla's board and merger committee."
+   }
+  ],
+  "6deef4619555": [
+   {
+    "handle": "ubida_74",
+    "name": "UBIDA",
+    "text": "$MSFT earnings could be a big moment for the AI trade.\n\nBank of America expects Azure to grow 44.8% YoY in constant currency to $32.3B in fiscal Q1.\n\nwhat i'm watching:\n\n- ☁️ Azure cloud growth\n- 🤖 Copilot monetization\n- 🏗️ Returns on massive AI infrastructure spending\n\nBofA",
+    "url": "https://x.com/ubida_74/status/2114533739426668858",
+    "likes": 6,
+    "reposts": 0,
+    "ts": "2026-10-26T01:45:04.000Z",
+    "note": "What the Street is modeling: BofA expects Azure +44.8% cc to $32.3B."
+   },
+   {
+    "handle": "newsinvesting",
+    "name": "Investing.com News",
+    "text": "Oppenheimer raised its Microsoft $MSFT price target to $625 from $570 ahead of earnings, saying enterprise demand remains strong across Azure and Microsoft 365. The firm sees capacity — not demand — as the main constraint on Azure growth, but one spending risk still hangs over",
+    "url": "https://x.com/newsinvesting/status/2114689698975076387",
+    "likes": 3,
+    "reposts": 0,
+    "ts": "2026-10-26T12:04:47.000Z",
+    "note": "Sell-side positioning: Oppenheimer lifted its target to $625 into the print."
+   },
+   {
+    "handle": "samoelyfe",
+    "name": "SAMOE | MOETRADN 🦍📈",
+    "text": "💻 Microsoft reports after the close today. Its own guide: Azure up about 45% in constant currency and quarterly capex above $50B.\n\nAzure grew 43% last quarter.\n\nThe question isn't whether cloud grows. It's whether it accelerates.\n\n#NQ #Earnings",
+    "url": "https://x.com/samoelyfe/status/2115327975835201876",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-10-28T06:21:04.000Z",
+    "note": "Bar to clear: guide called for Azure ~45% cc and capex above $50B for the quarter."
+   },
+   {
+    "handle": "EmmaStockNotes",
+    "name": "Emma",
+    "text": "$MSFT Microsoft earnings after markets close. Azure demand still exceeds available capacity, but enormous AI infrastructure investment is putting pressure on margins.\n\nStock: up 9.9% YTD | up 2.9% over 1 month | up 14.7% at last earnings\n\nThe chart shows exceptional profitability https://t.co/UvThGAzBWJ",
+    "url": "https://x.com/EmmaStockNotes/status/2115430302344503352",
+    "likes": 5,
+    "reposts": 0,
+    "ts": "2026-10-28T13:07:41.000Z",
+    "note": "The tension: Azure demand still exceeds capacity, but AI capex is weighing on margins."
+   }
+  ],
+  "5027d66e229c": [
+   {
+    "handle": "FactSet",
+    "name": "FactSet",
+    "text": "🔍 StreetAccount Preview: $GOOGL Alphabet F3Q26 Earnings: Google Cloud and Search trends, AI agent effects, and capex in focus\n\n‣ Results and Outlook:\n\n• Alphabet reports F3Q26 results AMC on 28-Oct-26. The Street expects revenue of $127.942B, Google Cloud rev growth of +89.8%,",
+    "url": "https://x.com/FactSet/status/2115156876258062497",
+    "likes": 10,
+    "reposts": 1,
+    "ts": "2026-10-27T19:01:11.000Z",
+    "note": "FactSet StreetAccount preview: Cloud, Search trends, AI agent effects and capex are the focus."
+   },
+   {
+    "handle": "DGroup_Official",
+    "name": "DGroup Capital",
+    "text": "$200B. That’s roughly what @Google plans to spend on AI chips this year!\n\n- 2026 capex guidance: $195–205B\n- Cloud last quarter: $24.8B, up 82% YoY \n\nLast quarter, a capex raise sent the stock down 7.1% the next day. The market has feelings about big checks.\n\nEarnings nights are https://t.co/eNyyNsk6Yb",
+    "url": "https://x.com/DGroup_Official/status/2115240613771927899",
+    "likes": 83,
+    "reposts": 5,
+    "ts": "2026-10-28T00:33:56.000Z",
+    "note": "Capex framing: 2026 guide of $195-205B against Cloud growing 82% last quarter."
+   },
+   {
+    "handle": "Bitget_TradFi",
+    "name": "Bitget TradFi",
+    "text": "Alphabet $GOOGL reports Q3 earnings tomorrow.\n\nAll eyes are on Google Cloud growth, advertising resilience, AI infrastructure demand, and whether elevated capex is putting further pressure on free cash flow.\n\nCheck the key drivers 👇 https://t.co/89L8PjSpUM",
+    "url": "https://x.com/Bitget_TradFi/status/2115066119945900443",
+    "likes": 32,
+    "reposts": 5,
+    "ts": "2026-10-27T13:00:33.000Z",
+    "note": "Checklist for tonight: Cloud growth, ad resilience and whether capex is squeezing margins."
    }
   ],
   "2a9b6c2b7cc2": [
    {
-    "handle": "FirstSquawk",
-    "name": "First Squawk",
-    "text": "PayPal Q3 2026 Earnings\n\n- Net Rev: $8.58B (est $8.71B)\n\n- Adj EPS: $1.45 (est $1.31)\n\n- Adj Operating Income: $1.61B (est $1.42B)\n\n- Total Payment Volume: $487.14B (est $490.65B)\n\n- Sees Q4 Adj EPS: About $1.43 (est $1.35)\n\n- Sees FY Adj EPS: About $5.60, Previously About $5.38",
-    "url": "https://x.com/FirstSquawk/status/2115036963837542458",
-    "likes": 9,
-    "reposts": 3,
-    "ts": "2026-10-27T11:04:42Z",
-    "note": "Full print: revenue miss, EPS and Q4 guide above consensus, TPV slightly light"
+    "handle": "WOLF_Financial",
+    "name": "WOLF",
+    "text": "PAYPAL $PYPL JUST REPORTED Q3 EARNINGS\n\n- Revenue: $8.6B, missing expectations of $8.71B 🔴\n- Adj EPS: $1.45, beating expectations of $1.31 🟢\n- TM$: $4.0B (+2% YoY)\n- TPV: $487.1B (+6% YoY)\n\nQ4 Guidance:\n- Adj EPS: ~$1.43, above expectations of $1.35 🟢\n- GAAP EPS: ~$1.37\n\nFY26 https://t.co/Bk5usjJVhV",
+    "url": "https://x.com/WOLF_Financial/status/2115036751701922284",
+    "likes": 60,
+    "reposts": 8,
+    "ts": "2026-10-27T11:03:51.000Z",
+    "note": "The print in one card: revenue miss, EPS beat, guidance up."
    },
    {
-    "handle": "StockMKTNewz",
-    "name": "Evan",
-    "text": "PAYPAL $PYPL JUST REPORTED Q3 EARNINGS  \n\nRevenue of $8.6B, missing expectations of $8.71B 🔴 \nAdj EPS of $1.45, beating expectations of $1.31 🟢\n\nPayPal stock is initially about even in pre-hours following its earnings https://t.co/ub1cg2pjZQ https://t.co/V3YDs9U53L",
-    "url": "https://x.com/StockMKTNewz/status/2115038581882257841",
-    "likes": 57,
-    "reposts": 6,
-    "ts": "2026-10-27T11:11:08Z",
-    "note": "Quick read: top-line miss vs bottom-line beat, stock flat premarket"
+    "handle": "business",
+    "name": "Bloomberg",
+    "text": "PayPal raised its full-year earnings guidance amid promising growth in key business units as a takeover of the firm remains a possibility. https://t.co/ALnXmzlbwB",
+    "url": "https://x.com/business/status/2115084890722939296",
+    "likes": 15,
+    "reposts": 5,
+    "ts": "2026-10-27T14:15:08.000Z",
+    "note": "Bloomberg: guide raised while takeover speculation lingers."
    },
    {
-    "handle": "CrushlineCFD",
-    "name": "Crushline",
-    "text": "$PYPL reports tomorrow before the open.\n\nAverage next-day earnings move: 7.7% over 11 quarters, 9.0% over the last 4.\n\nhttps://t.co/5oa9ll6bdR\n#earnings #PayPal\n\nData only. Past moves do not predict future moves.",
-    "url": "https://x.com/CrushlineCFD/status/2114703603651011056",
-    "likes": 0,
+    "handle": "GlobalValueLens",
+    "name": "Global Value Lens",
+    "text": "PayPal $PYPL Q3’26 Earnings 📊\n\n🔹 Revenue: $8.6B (+2% YoY), slightly below estimates\n🔹 Adj. EPS: $1.45 vs. $1.31 expected\n🔹 TPV: $487.1B (+6% YoY), slightly below estimates\n🔹 Free cash flow: $1.4B (-17% YoY)\n\nFY26 Outlook:\n🔹 Adj. EPS raised to ~$5.60 from ~$5.38\n🔹 Q4 EPS",
+    "url": "https://x.com/GlobalValueLens/status/2115052847477690744",
+    "likes": 2,
     "reposts": 0,
-    "ts": "2026-10-26T13:00:03Z",
-    "note": "Context for the move: avg ~7.7% next-day swing on PYPL prints"
+    "ts": "2026-10-27T12:07:49.000Z",
+    "note": "Unit detail: TPV +6% to $487B, slightly light."
+   }
+  ],
+  "00d70f725bbb": [
+   {
+    "handle": "ubida_74",
+    "name": "UBIDA",
+    "text": "$MSFT earnings could be a big moment for the AI trade.\n\nBank of America expects Azure to grow 44.8% YoY in constant currency to $32.3B in fiscal Q1.\n\nwhat i'm watching:\n\n- ☁️ Azure cloud growth\n- 🤖 Copilot monetization\n- 🏗️ Returns on massive AI infrastructure spending\n\nBofA",
+    "url": "https://x.com/ubida_74/status/2114533739426668858",
+    "likes": 6,
+    "reposts": 0,
+    "ts": "2026-10-26T01:45:04.000Z",
+    "note": "What the Street is modeling: BofA expects Azure +44.8% cc to $32.3B."
+   },
+   {
+    "handle": "FactSet",
+    "name": "FactSet",
+    "text": "🔍 StreetAccount Preview: $GOOGL Alphabet F3Q26 Earnings: Google Cloud and Search trends, AI agent effects, and capex in focus\n\n‣ Results and Outlook:\n\n• Alphabet reports F3Q26 results AMC on 28-Oct-26. The Street expects revenue of $127.942B, Google Cloud rev growth of +89.8%,",
+    "url": "https://x.com/FactSet/status/2115156876258062497",
+    "likes": 10,
+    "reposts": 1,
+    "ts": "2026-10-27T19:01:11.000Z",
+    "note": "FactSet StreetAccount preview: Cloud, Search trends, AI agent effects and capex are the focus."
    }
   ]
  },
  "tickers": {
   "META": [
    {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "META RAISES $35 BILLION TO FUND AI EXPANSION\n\nMeta ($META ) launched a $35B equity offering to finance AI infrastructure, including $22.5B in common stock and $12.5B in convertible preferred shares.\n\n$NVDA, $AMD and $AVGO have expressed interest in investing up to $5B combined.",
-    "url": "https://x.com/DeItaone/status/2114673499650371710",
-    "likes": 511,
-    "reposts": 80,
-    "ts": "2026-10-26T11:00:25Z",
-    "note": "$35B equity raise to fund AI"
+    "handle": "StockMKTNewz",
+    "name": "Evan",
+    "text": "NVIDIA $NVDA WILL INVEST $3B IN META $META'S NEW STOCK SALE\n\nThe two are also expanding their AI partnership, per WSJ. Meta plans to use more Nvidia hardware, including its Vera Rubin systems, to power its Muse AI agents.\n\nMeta also raised its common stock offering to $25B from https://t.co/s2foMqs37V",
+    "url": "https://x.com/StockMKTNewz/status/2115046396252312011",
+    "likes": 263,
+    "reposts": 17,
+    "ts": "2026-10-27T11:42:11.000Z",
+    "note": "Most-shared take: Nvidia anchoring $3B of Meta's equity raise, a vendor-financing loop worth watching."
    },
    {
-    "handle": "KobeissiLetter",
-    "name": "The Kobeissi Letter",
-    "text": "BREAKING: Meta, $META, will raise up to $95 billion through a series of stock offerings in order to fund the development of AI.\n\nThe financing plan comes just days after Meta said it would spend up to $145 billion in CapEx this year.",
-    "url": "https://x.com/KobeissiLetter/status/2114691296950698462",
-    "likes": 2311,
-    "reposts": 141,
-    "ts": "2026-10-26T12:11:08Z",
-    "note": "Up to $95B in total planned stock sales"
-   }
-  ],
-  "SPCX": [
-   {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "$SPCX - SPACEX SIGNS $40 BILLION GPU FINANCING DEAL WITH APOLLO\n\nSpaceX has entered into a binding commitment for a master finance lease with Apollo Global Management ($APO ), according to an SEC filing.\n\nApollo will purchase GPU pods and related equipment and lease them to",
-    "url": "https://x.com/DeItaone/status/2114688952686805491",
-    "likes": 372,
-    "reposts": 42,
-    "ts": "2026-10-26T12:01:49Z",
-    "note": "$40B Apollo GPU finance lease disclosed in SEC filing"
+    "handle": "MikeZaccardi",
+    "name": "Mike Zaccardi, CFA, CMT 🍖",
+    "text": "$META prices upsized $37.5B stock and depositary share offering\n$NVDA to invest $3B in Meta stock, expand AI collaboration on Muse models @seekingalpha",
+    "url": "https://x.com/MikeZaccardi/status/2115037919576494177",
+    "likes": 13,
+    "reposts": 2,
+    "ts": "2026-10-27T11:08:30.000Z",
+    "note": "Deal terms: upsized offering with Nvidia participating and a broader Muse AI tie-up."
    },
    {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "DAN IVES SEES 80%–90% ODDS OF SPACEX–TESLA MERGER\n\nDan Ives reiterated Outperform on SpaceX ($SPCX ) with a $225 price target, following its $40B GPU financing deal.\n\nHe sees an 80%–90% chance of a Tesla ($TSLA ) merger by 2027, potentially valuing Tesla above $500 per share.",
-    "url": "https://x.com/DeItaone/status/2114697346843828590",
-    "likes": 496,
-    "reposts": 56,
-    "ts": "2026-10-26T12:35:11Z",
-    "note": "Ives: 80-90% odds of a Tesla merger by 2027"
-   }
-  ],
-  "SMCI": [
-   {
-    "handle": "OptionKing666",
-    "name": "456X",
-    "text": "Super Micro Computer ($SMCI) now expects fiscal Q1 2027 revenue of $18.5–19.5bn versus its previous $14.5–15.5bn guidance, citing stronger demand for AI platforms. Gross margin of 12–12.5%, versus prior guidance of 10.4–10.8%.",
-    "url": "https://x.com/OptionKing666/status/2114336874391380357",
-    "likes": 8,
-    "reposts": 0,
-    "ts": "2026-10-25T12:42:47Z",
-    "note": "The prelim numbers: $4B revenue raise and higher margins"
-   },
-   {
-    "handle": "GreenDarts88",
-    "name": "Green Darts",
-    "text": "Super Micro's $SMCI (Sep 2026) expected revenue is $18.5 billion to $19.5 billion, surpassing Cisco's revenue for the first time. Yet, Cisco's market cap of $420 billion is 19X…",
-    "url": "https://x.com/GreenDarts88/status/2113926137784987686",
-    "likes": 11,
-    "reposts": 0,
-    "ts": "2026-10-24T09:30:40Z",
-    "note": "Valuation comp: SMCI revenue now tops Cisco's"
-   }
-  ],
-  "MSFT": [
-   {
-    "handle": "TapeAndTicker",
-    "name": "Tape & Ticker",
-    "text": "Week ahead: Fed decision Wed 2pm ET, then Microsoft + Alphabet after the bell. Thursday brings Q3 GDP + September PCE at 8:30am and Amazon after the close.\n\nBiggest week of earnings season, and AI capex is on trial. Full rundown: https://t.co/ffFpOcPiY9",
-    "url": "https://x.com/TapeAndTicker/status/2114481957757485385",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-10-25T22:19:18Z",
-    "note": "Reports Wednesday after the Fed decision"
-   }
-  ],
-  "GOOGL": [
-   {
-    "handle": "TheAlphaThought",
-    "name": "Alex | The Profit Zone",
-    "text": "Alphabet $GOOG and Microsoft $MSFT report Wednesday after close, just hours after the Fed's rate decision, with Amazon $AMZN following Thursday.",
-    "url": "https://x.com/TheAlphaThought/status/2114419641250418865",
-    "likes": 9,
-    "reposts": 0,
-    "ts": "2026-10-25T18:11:41Z",
-    "note": "Timing: GOOGL and MSFT print hours after the Fed"
-   },
-   {
-    "handle": "puckrin",
-    "name": "Nic",
-    "text": "BIG week ahead! $10 trillion in tech earnings. Alphabet, Microsoft, Amazon. All expected to post strong revenue growth, but that's not what matters. The market wants to know one thing: how much are you burning on AI, and when does it show up in free cash flow?",
-    "url": "https://x.com/puckrin/status/2114356756692246737",
-    "likes": 98,
-    "reposts": 13,
-    "ts": "2026-10-25T14:01:48Z",
-    "note": "Most-engaged preview: capex vs free cash flow is the test"
+    "handle": "kaidloscopes",
+    "name": "Kaidloscopes",
+    "text": "📊 $META ’s latest $25B stock offering reportedly attracted five times its available supply, reaching $125B in orders.\n\nWith shares priced at $625 and 70% allocated to the 15 largest investors, the deal highlights the scale of capital flowing into AI.\n\nAs Meta pursues nearly $98B",
+    "url": "https://x.com/kaidloscopes/status/2115258035874791503",
+    "likes": 3,
+    "reposts": 1,
+    "ts": "2026-10-28T01:43:10.000Z",
+    "note": "Book color: reported ~5x oversubscribed with most allocation to long-only holders, a sign of real demand."
    }
   ],
   "NVDA": [
    {
-    "handle": "FirstSquawk",
-    "name": "First Squawk",
-    "text": "NVIDIA, AMD, BROADCOM INTERESTED TO BUY UP TO $5B OF META STOCK",
-    "url": "https://x.com/FirstSquawk/status/2114675342858490288",
-    "likes": 93,
-    "reposts": 3,
-    "ts": "2026-10-26T11:07:45Z",
-    "note": "Nvidia, AMD, Broadcom to buy up to $5B of Meta stock"
+    "handle": "StockMKTNewz",
+    "name": "Evan",
+    "text": "NVIDIA $NVDA WILL INVEST $3B IN META $META'S NEW STOCK SALE\n\nThe two are also expanding their AI partnership, per WSJ. Meta plans to use more Nvidia hardware, including its Vera Rubin systems, to power its Muse AI agents.\n\nMeta also raised its common stock offering to $25B from https://t.co/s2foMqs37V",
+    "url": "https://x.com/StockMKTNewz/status/2115046396252312011",
+    "likes": 263,
+    "reposts": 17,
+    "ts": "2026-10-27T11:42:11.000Z",
+    "note": "Most-shared take: Nvidia anchoring $3B of Meta's equity raise, a vendor-financing loop worth watching."
    },
    {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "$SPCX - SPACEX SIGNS $40 BILLION GPU FINANCING DEAL WITH APOLLO\n\nSpaceX has entered into a binding commitment for a master finance lease with Apollo Global Management ($APO ), according to an SEC filing.\n\nApollo will purchase GPU pods and related equipment and lease them to",
-    "url": "https://x.com/DeItaone/status/2114688952686805491",
-    "likes": 372,
-    "reposts": 42,
-    "ts": "2026-10-26T12:01:49Z",
-    "note": "SpaceX’s Apollo lease funds Nvidia Vera Rubin purchases"
+    "handle": "MikeZaccardi",
+    "name": "Mike Zaccardi, CFA, CMT 🍖",
+    "text": "$META prices upsized $37.5B stock and depositary share offering\n$NVDA to invest $3B in Meta stock, expand AI collaboration on Muse models @seekingalpha",
+    "url": "https://x.com/MikeZaccardi/status/2115037919576494177",
+    "likes": 13,
+    "reposts": 2,
+    "ts": "2026-10-27T11:08:30.000Z",
+    "note": "Deal terms: upsized offering with Nvidia participating and a broader Muse AI tie-up."
+   }
+  ],
+  "DASH": [
+   {
+    "handle": "EconomicTimes",
+    "name": "Economic Times",
+    "text": "DoorDash in talks to buy Instacart in roughly $17 billion deal https://t.co/iwNTEPXhsd",
+    "url": "https://x.com/EconomicTimes/status/2115360470571864277",
+    "likes": 1,
+    "reposts": 1,
+    "ts": "2026-10-28T08:30:12.000Z",
+    "note": "Headline numbers: roughly $17B for Instacart."
+   },
+   {
+    "handle": "IshanTanna1",
+    "name": "Ishan Tanna 🇮🇳",
+    "text": "DoorDash with a market value of $73 billion, is in talks to acquire its rival Instacart which has a market value of around $17 billion.\n\nBe nice to the competition... they could become your employer! https://t.co/pRVeuZTWvR",
+    "url": "https://x.com/IshanTanna1/status/2115402691384057975",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-10-28T11:17:58.000Z",
+    "note": "Scale check: a ~$73B buyer taking out its closest grocery-delivery rival."
+   },
+   {
+    "handle": "edwardxb",
+    "name": "Edward Blackwell",
+    "text": "DoorDash is reportedly in advanced talks to acquire Instacart for about $17B. My read: own the target, not the buyer paying up for grocery reach.\n\nInstacart holders gained, DoorDash holders lost on the reported talks.\n\nThis is Who Pays #4. Follow the series.\n\n#DoorDash",
+    "url": "https://x.com/edwardxb/status/2115397841736569080",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-10-28T10:58:42.000Z",
+    "note": "Trader read: the target, not the buyer, usually captures the premium; antitrust is the open question."
+   }
+  ],
+  "TSLA": [
+   {
+    "handle": "Amy787",
+    "name": "Amy",
+    "text": "TSLA SHAREHOLDERS ARE # 14!!!  \n\nWe did it!!!  Great work everyone!!\nThe Tesla Retail letter in support of a $TSLA/$SPCX merger now represents over $10.2 BILLION dollars in Tesla shares - to put it into context, that is  more shares than Baron Capital, Citigroup and ARK Invest https://t.co/cYjVwxtKmJ https://t.co/2FGS7uqHHd",
+    "url": "https://x.com/Amy787/status/2114754400610607264",
+    "likes": 1037,
+    "reposts": 150,
+    "ts": "2026-10-26T16:21:53.000Z",
+    "note": "Retail push: Tesla holders organizing a letter for a TSLA/SpaceX merger, with ~$10B of stock behind it."
+   },
+   {
+    "handle": "MarwanMoftah",
+    "name": "Marwan Moftah",
+    "text": "Read both 10-Qs (Oct 22) behind the @Tesla x @SpaceX merger buzz.\n\n$TSLA: a deal needs its special committee + any shareholder vote.\nSpaceX: committee, board, and its \"controlling shareholder.\"\n\nQ3 Megapacks: Tesla booked $221M from SpaceX. SpaceX logged $151M. Why the gap? https://t.co/5064IrG1ej",
+    "url": "https://x.com/MarwanMoftah/status/2114839905725546749",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-10-26T22:01:40.000Z",
+    "note": "Process read from the 10-Qs: any deal needs special-committee sign-off and likely a shareholder vote."
+   }
+  ],
+  "MSFT": [
+   {
+    "handle": "ubida_74",
+    "name": "UBIDA",
+    "text": "$MSFT earnings could be a big moment for the AI trade.\n\nBank of America expects Azure to grow 44.8% YoY in constant currency to $32.3B in fiscal Q1.\n\nwhat i'm watching:\n\n- ☁️ Azure cloud growth\n- 🤖 Copilot monetization\n- 🏗️ Returns on massive AI infrastructure spending\n\nBofA",
+    "url": "https://x.com/ubida_74/status/2114533739426668858",
+    "likes": 6,
+    "reposts": 0,
+    "ts": "2026-10-26T01:45:04.000Z",
+    "note": "What the Street is modeling: BofA expects Azure +44.8% cc to $32.3B."
+   },
+   {
+    "handle": "newsinvesting",
+    "name": "Investing.com News",
+    "text": "Oppenheimer raised its Microsoft $MSFT price target to $625 from $570 ahead of earnings, saying enterprise demand remains strong across Azure and Microsoft 365. The firm sees capacity — not demand — as the main constraint on Azure growth, but one spending risk still hangs over",
+    "url": "https://x.com/newsinvesting/status/2114689698975076387",
+    "likes": 3,
+    "reposts": 0,
+    "ts": "2026-10-26T12:04:47.000Z",
+    "note": "Sell-side positioning: Oppenheimer lifted its target to $625 into the print."
+   },
+   {
+    "handle": "samoelyfe",
+    "name": "SAMOE | MOETRADN 🦍📈",
+    "text": "💻 Microsoft reports after the close today. Its own guide: Azure up about 45% in constant currency and quarterly capex above $50B.\n\nAzure grew 43% last quarter.\n\nThe question isn't whether cloud grows. It's whether it accelerates.\n\n#NQ #Earnings",
+    "url": "https://x.com/samoelyfe/status/2115327975835201876",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-10-28T06:21:04.000Z",
+    "note": "Bar to clear: guide called for Azure ~45% cc and capex above $50B for the quarter."
+   },
+   {
+    "handle": "EmmaStockNotes",
+    "name": "Emma",
+    "text": "$MSFT Microsoft earnings after markets close. Azure demand still exceeds available capacity, but enormous AI infrastructure investment is putting pressure on margins.\n\nStock: up 9.9% YTD | up 2.9% over 1 month | up 14.7% at last earnings\n\nThe chart shows exceptional profitability https://t.co/UvThGAzBWJ",
+    "url": "https://x.com/EmmaStockNotes/status/2115430302344503352",
+    "likes": 5,
+    "reposts": 0,
+    "ts": "2026-10-28T13:07:41.000Z",
+    "note": "The tension: Azure demand still exceeds capacity, but AI capex is weighing on margins."
+   }
+  ],
+  "GOOGL": [
+   {
+    "handle": "FactSet",
+    "name": "FactSet",
+    "text": "🔍 StreetAccount Preview: $GOOGL Alphabet F3Q26 Earnings: Google Cloud and Search trends, AI agent effects, and capex in focus\n\n‣ Results and Outlook:\n\n• Alphabet reports F3Q26 results AMC on 28-Oct-26. The Street expects revenue of $127.942B, Google Cloud rev growth of +89.8%,",
+    "url": "https://x.com/FactSet/status/2115156876258062497",
+    "likes": 10,
+    "reposts": 1,
+    "ts": "2026-10-27T19:01:11.000Z",
+    "note": "FactSet StreetAccount preview: Cloud, Search trends, AI agent effects and capex are the focus."
+   },
+   {
+    "handle": "DGroup_Official",
+    "name": "DGroup Capital",
+    "text": "$200B. That’s roughly what @Google plans to spend on AI chips this year!\n\n- 2026 capex guidance: $195–205B\n- Cloud last quarter: $24.8B, up 82% YoY \n\nLast quarter, a capex raise sent the stock down 7.1% the next day. The market has feelings about big checks.\n\nEarnings nights are https://t.co/eNyyNsk6Yb",
+    "url": "https://x.com/DGroup_Official/status/2115240613771927899",
+    "likes": 83,
+    "reposts": 5,
+    "ts": "2026-10-28T00:33:56.000Z",
+    "note": "Capex framing: 2026 guide of $195-205B against Cloud growing 82% last quarter."
+   },
+   {
+    "handle": "Bitget_TradFi",
+    "name": "Bitget TradFi",
+    "text": "Alphabet $GOOGL reports Q3 earnings tomorrow.\n\nAll eyes are on Google Cloud growth, advertising resilience, AI infrastructure demand, and whether elevated capex is putting further pressure on free cash flow.\n\nCheck the key drivers 👇 https://t.co/89L8PjSpUM",
+    "url": "https://x.com/Bitget_TradFi/status/2115066119945900443",
+    "likes": 32,
+    "reposts": 5,
+    "ts": "2026-10-27T13:00:33.000Z",
+    "note": "Checklist for tonight: Cloud growth, ad resilience and whether capex is squeezing margins."
    }
   ],
   "PYPL": [
    {
-    "handle": "FirstSquawk",
-    "name": "First Squawk",
-    "text": "PayPal Q3 2026 Earnings\n\n- Net Rev: $8.58B (est $8.71B)\n\n- Adj EPS: $1.45 (est $1.31)\n\n- Adj Operating Income: $1.61B (est $1.42B)\n\n- Total Payment Volume: $487.14B (est $490.65B)\n\n- Sees Q4 Adj EPS: About $1.43 (est $1.35)\n\n- Sees FY Adj EPS: About $5.60, Previously About $5.38",
-    "url": "https://x.com/FirstSquawk/status/2115036963837542458",
-    "likes": 9,
-    "reposts": 3,
-    "ts": "2026-10-27T11:04:42Z",
-    "note": "Q3 print vs estimates, incl. Q4 EPS guide above consensus"
+    "handle": "WOLF_Financial",
+    "name": "WOLF",
+    "text": "PAYPAL $PYPL JUST REPORTED Q3 EARNINGS\n\n- Revenue: $8.6B, missing expectations of $8.71B 🔴\n- Adj EPS: $1.45, beating expectations of $1.31 🟢\n- TM$: $4.0B (+2% YoY)\n- TPV: $487.1B (+6% YoY)\n\nQ4 Guidance:\n- Adj EPS: ~$1.43, above expectations of $1.35 🟢\n- GAAP EPS: ~$1.37\n\nFY26 https://t.co/Bk5usjJVhV",
+    "url": "https://x.com/WOLF_Financial/status/2115036751701922284",
+    "likes": 60,
+    "reposts": 8,
+    "ts": "2026-10-27T11:03:51.000Z",
+    "note": "The print in one card: revenue miss, EPS beat, guidance up."
    },
    {
-    "handle": "CrushlineCFD",
-    "name": "Crushline",
-    "text": "$PYPL reports tomorrow before the open.\n\nAverage next-day earnings move: 7.7% over 11 quarters, 9.0% over the last 4.\n\nhttps://t.co/5oa9ll6bdR\n#earnings #PayPal\n\nData only. Past moves do not predict future moves.",
-    "url": "https://x.com/CrushlineCFD/status/2114703603651011056",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-10-26T13:00:03Z",
-    "note": "Implied move context for today"
-   }
-  ],
-  "HOOD": [
-   {
-    "handle": "NoahGEXTerminal",
-    "name": "Noah",
-    "text": "Big names reporting earnings tomorrow morning\nA day to watch how people spend, borrow and invest.\n\n☀️ Before the U.S. market opens:\nSoFi $SOFI • PayPal $PYPL • Coca-Cola $KO • UPS $UPS\n\n🌙 After the U.S. market closes:\nRobinhood $HOOD • Visa $V • Seagate $STX • Enphase https://t.co/S1UYT2FzFh",
-    "url": "https://x.com/NoahGEXTerminal/status/2114839117414470034",
-    "likes": 6,
-    "reposts": 1,
-    "ts": "2026-10-26T21:58:32Z",
-    "note": "Reports after today’s close alongside SoFi and PayPal earlier"
-   }
-  ],
-  "AVGO": [
-   {
-    "handle": "StockMKTNewz",
-    "name": "Evan",
-    "text": "BROADCOM $AVGO ARRANGED A $63B DEAL TO FINANCE AI CHIPS FOR ANTHROPIC\n\nA new special-purpose vehicle, funded by Bank of America, Blackstone, Citigroup, and Morgan Stanley, will buy Broadcom chips and lease them to Anthropic, per Bloomberg.\n\nBroadcom is backing part of the https://t.co/uCyzxGY05b",
-    "url": "https://x.com/StockMKTNewz/status/2114821611777900772",
-    "likes": 342,
-    "reposts": 32,
-    "ts": "2026-10-26T20:48:58Z",
-    "note": "$63B SPV financing Broadcom chips leased to Anthropic, a new AI chip financing template"
+    "handle": "business",
+    "name": "Bloomberg",
+    "text": "PayPal raised its full-year earnings guidance amid promising growth in key business units as a takeover of the firm remains a possibility. https://t.co/ALnXmzlbwB",
+    "url": "https://x.com/business/status/2115084890722939296",
+    "likes": 15,
+    "reposts": 5,
+    "ts": "2026-10-27T14:15:08.000Z",
+    "note": "Bloomberg: guide raised while takeover speculation lingers."
    },
    {
-    "handle": "FirstSquawk",
-    "name": "First Squawk",
-    "text": "META SAYS  NVIDIA, ADVANCED MICRO DEVICES, & BROADCOM INDICATED INTEREST IN PURCHASING UP TO AGGREGATE OF $5.0 BLN OF SHARES OF CLASS A COMMON STOCK",
-    "url": "https://x.com/FirstSquawk/status/2114677396603580661",
-    "likes": 35,
+    "handle": "GlobalValueLens",
+    "name": "Global Value Lens",
+    "text": "PayPal $PYPL Q3’26 Earnings 📊\n\n🔹 Revenue: $8.6B (+2% YoY), slightly below estimates\n🔹 Adj. EPS: $1.45 vs. $1.31 expected\n🔹 TPV: $487.1B (+6% YoY), slightly below estimates\n🔹 Free cash flow: $1.4B (-17% YoY)\n\nFY26 Outlook:\n🔹 Adj. EPS raised to ~$5.60 from ~$5.38\n🔹 Q4 EPS",
+    "url": "https://x.com/GlobalValueLens/status/2115052847477690744",
+    "likes": 2,
     "reposts": 0,
-    "ts": "2026-10-26T11:15:54Z",
-    "note": "Broadcom among suppliers indicating interest in buying Meta stock"
-   }
-  ],
-  "MU": [
-   {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "AI-LINKED STOCKS CLIMB AFTER ANTHROPIC FILES FOR IPO\n\nNVIDIA UP 3.1%\nMICROSOFT UP 1.1%\nAMAZON UP 1%\nBROADCOM UP 2.8%\nMICRON TECHNOLOGY UP 3.5%\nSPACEX UP 1.4%",
-    "url": "https://x.com/DeItaone/status/2114734528334090384",
-    "likes": 483,
-    "reposts": 42,
-    "ts": "2026-10-26T15:02:56Z",
-    "note": "Micron +3.5% as AI names climbed on Anthropic’s IPO filing"
+    "ts": "2026-10-27T12:07:49.000Z",
+    "note": "Unit detail: TPV +6% to $487B, slightly light."
    }
   ]
  },
