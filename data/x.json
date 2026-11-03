@@ -2,24 +2,34 @@
  "stories": {
   "3fccf913600c": [
    {
-    "handle": "wallstengine",
-    "name": "Wall St Engine",
-    "text": "SPACEX IN TALKS TO BUY BOOST MOBILE OR ACCESS ITS NETWORK: WAPO\n\nSpaceX $SPCX is reportedly in talks with EchoStar $ECHO over a potential acquisition of Boost Mobile or a deal to use its wireless network, as Elon Musk looks to launch a full-fledged U.S. cellphone service.\n\nMusk https://t.co/7FomL0rCwd",
-    "url": "https://x.com/wallstengine/status/2117200746869371285",
-    "likes": 733,
-    "reposts": 91,
-    "ts": "2026-11-02T10:22:48.000Z",
-    "note": "SpaceX keeps adding telecom assets (Boost Mobile talks) while Tesla merger committees study a deal."
+    "handle": "RocketTerminal",
+    "name": "Rocket Terminal",
+    "text": "A SpaceX / Tesla merger is now more likely than not, according to Piper Sandler. Both companies have formed special committees to explore a potential combination. Piper expects Musk to retain more than 70% voting control of the combined company in most scenarios.",
+    "url": "https://x.com/RocketTerminal/status/2117512098976530454",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T07:00:00Z",
+    "note": "Sell-side read on deal odds and the control math."
    },
    {
-    "handle": "dguevar1",
-    "name": "Dany",
-    "text": "Day 41: Who decides a Tesla-SpaceX merger?\n\nMusk votes 82.4% of SpaceX, 17.70% of Tesla.\nTesla needs a majority of all shares. Not voting counts as no.\n\nNo merger proposed, just special committees.\n\nDisclaimer: I own Tesla shares.\n\nSmall account. Please repost. https://t.co/uZaycKOYu4",
-    "url": "https://x.com/dguevar1/status/2116519814772531351",
+    "handle": "AIDropDaily",
+    "name": "AI Drop Daily",
+    "text": "Elon controls over 80% of SpaceX's votes. At Tesla, he holds about a fifth. That gap is the whole Tesla-SpaceX merger story. Committees formed on both sides: confirmed (Tesla 10-Q, Oct 22). Terms agreed: not yet.",
+    "url": "https://x.com/AIDropDaily/status/2117469693363605896",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T04:11:30Z",
+    "note": "Why special committees matter: a conflicted controller on both sides."
+   },
+   {
+    "handle": "DigitalAssetsUS",
+    "name": "DigitalAssetsUS",
+    "text": "SpaceX and Tesla have committees of independent directors studying a possible merger, with no terms yet. Barclays sees an all-stock deal as the likeliest route.",
+    "url": "https://x.com/DigitalAssetsUS/status/2116850538658619462",
     "likes": 1,
     "reposts": 0,
-    "ts": "2026-10-31T13:17:01.000Z",
-    "note": "Explains who actually decides a Tesla-SpaceX merger: Musk voting power and the majority-of-shares hurdle."
+    "ts": "2026-11-01T11:11:12Z",
+    "note": "Barclays view on structure (all-stock)."
    }
   ],
   "35d489695b45": [
@@ -56,66 +66,46 @@
   ],
   "d0702d927cda": [
    {
-    "handle": "Th3Seafox",
-    "name": "TheSeafox",
-    "text": "Friedberg pulls up Meta's 10-Q live and the All-In guys lose it.\n\n$82.4B cash + securities vs $84.0B of notes. Net cash: about -$1.5B.\n\nIt was +$22.6B in December. AI capex ate it in 9 months. Then Meta lined up ~$37B of new stock and preferred this week. \n\n$META  @theallinpod https://t.co/0ArEL0Wbad",
-    "url": "https://x.com/Th3Seafox/status/2116605460614971758",
-    "likes": 2,
-    "reposts": 0,
-    "ts": "2026-10-31T18:57:21.000Z",
-    "note": "All-In walked through the 10-Q: Meta went from about $22.6B net cash to slightly net debt in nine months."
+    "handle": "cnbcKaren",
+    "name": "Karen Tso",
+    "text": "What's the opposite of techtastic? This week everything mattered: negative free cash flow from Amazon, Alphabet, Meta; hyperscaler capex intensity; earnings misses; a death cross on Alphabet; a shrinking search moat.",
+    "url": "https://x.com/cnbcKaren/status/2116124254378901511",
+    "likes": 60,
+    "reposts": 1,
+    "ts": "2026-10-30T11:05:12Z",
+    "note": "CNBC anchor framing the capex-vs-free-cash-flow reckoning behind Meta's drop."
    },
    {
-    "handle": "Prof_Unhedged",
-    "name": "Professor.ai",
-    "text": "S&amp;P moved $Meta from AA− / Stable to AA− / Negative.\n\nNot because ads broke. Ad revenue +25.9% in Q3 (YoY). AI Capex broke the cash machine.\n\nS&amp;P's free cash flow path:\n1/ 2026: −$22bn\n2/ 2027 peak: −$71bn\n3/ 2028: still −$39bn\nS&amp;P's Capex path:\n1/ 2026: ~$140bn\n2/ 2027: https://t.co/hqJbJ8iyEp",
-    "url": "https://x.com/Prof_Unhedged/status/2116905980005073238",
-    "likes": 1,
+    "handle": "Stindur",
+    "name": "Stindur",
+    "text": "Meta spent $35B on capex last quarter. Free cash flow went negative. Same day they created a new share class with no voting rights. The AI story is being told to shareholders. The bill is being sent to them too.",
+    "url": "https://x.com/Stindur/status/2116628715945722298",
+    "likes": 3,
     "reposts": 0,
-    "ts": "2026-11-01T14:51:30.000Z",
-    "note": "S&P moved Meta to a negative outlook because AI capex is eating free cash flow, not because ads broke."
+    "ts": "2026-10-31T20:29:45Z",
+    "note": "Bear case: governance plus negative FCF, not just the EPS miss."
    },
    {
-    "handle": "BlockFlow_News",
-    "name": "BlockFlow",
-    "text": "Q3'26 FCF by company (Q3'25):\nAMZN -$34.8B (+$0.4B)\nGOOGL -$9.1B (+$24.5B)\nMETA -$1.2B (+$11.2B)\nMSFT +$18.6B (+$25.7B)\n\nCapex +$105B y/y, OCF +$17B. GOOGL and META bought back $0 stock in 9M'26.\nFCF = OCF minus cash capex. MSFT Jul-Sep fiscal qtr = calendar Q3.",
-    "url": "https://x.com/BlockFlow_News/status/2117225914757243283",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-02T12:02:48.000Z",
-    "note": "Q3 free cash flow across the hyperscalers side by side: capex up $105B year over year."
+    "handle": "milo_crypt01",
+    "name": "Milocrypt",
+    "text": "The world has a new largest company. Apple, $5.03T market cap. Nvidia fell to $4.93T. The Big Tech company spending the least on AI is now worth more than every one of them.",
+    "url": "https://x.com/milo_crypt01/status/2116880354552258669",
+    "likes": 15,
+    "reposts": 7,
+    "ts": "2026-11-01T13:09:40Z",
+    "note": "Widely seen take: the market is rewarding capex restraint."
    }
   ],
   "899f13b803e4": [
    {
-    "handle": "TheValueist",
-    "name": "TheValueist",
-    "text": "$EQIX KEY READ-THROUGHS FROM EQUINIX’S Q3 2026 EARNINGS CALL\n\nEquinix’s 10/28/26 call strengthens the case that the economic benefits of AI infrastructure spending are extending beyond hyperscale campuses into enterprise colocation, electrical equipment, cooling, and https://t.co/RXuWrDiJIV",
-    "url": "https://x.com/TheValueist/status/2116419340127908258",
-    "likes": 5,
-    "reposts": 0,
-    "ts": "2026-10-31T06:37:46.000Z",
-    "note": "Equinix call read-through: AI infrastructure benefits are spreading past hyperscalers to enterprise colocation."
-   },
-   {
-    "handle": "macrodailyco",
-    "name": "Macro Daily Co.",
-    "text": "Earnings Compass: Cloud is booming. Investors want the cash.\n\n- Big Tech capex hit $168.0B in Q3, up from $78.4B a year ago\n- 20 charts on cloud, AI capex, cash flow &amp; market reactions\n\n👉🏼 Follow @macrodailyco for Monday's Pre-Market Compass! https://t.co/JoQ6JPcLIL",
-    "url": "https://x.com/macrodailyco/status/2116141091594367313",
-    "likes": 5,
-    "reposts": 0,
-    "ts": "2026-10-30T12:12:06.000Z",
-    "note": "Big Tech capex hit $168B in Q3, more than double a year ago."
-   },
-   {
-    "handle": "BenBajarin",
-    "name": "Ben Bajarin",
-    "text": "On GPU availability, this is more the type of stuff we hear. https://t.co/U5uN1jgnfi",
-    "url": "https://x.com/BenBajarin/status/2117258641795682389",
-    "likes": 27,
-    "reposts": 0,
-    "ts": "2026-11-02T14:12:51.000Z",
-    "note": "Ben Bajarin (Creative Strategies) on what the industry is hearing about GPU availability."
+    "handle": "JesseCohenInv",
+    "name": "Jesse Cohen",
+    "text": "Get ready for Tuesday: Congressional elections. Earnings: AMD, Shopify, Pfizer, Super Micro, Arista Networks. Economic data: JOLTS, factory orders. Brace for volatility.",
+    "url": "https://x.com/JesseCohenInv/status/2117588498815316022",
+    "likes": 45,
+    "reposts": 4,
+    "ts": "2026-11-03T12:03:35Z",
+    "note": "Investing.com analyst: midterms plus an AI-hardware earnings gauntlet today."
    }
   ],
   "443634b91663": [
@@ -183,81 +173,135 @@
     "ts": "2026-11-02T14:39:36.000Z",
     "note": "Key numbers from the amended filing, including compute and infrastructure costs."
    }
+  ],
+  "d67c8f23c462": [
+   {
+    "handle": "CounterPointTR",
+    "name": "Counterpoint Research",
+    "text": "Marvell buys Lumentum to climb the AI laser wall: what the $115 billion deal means for the optics value chain.",
+    "url": "https://x.com/CounterPointTR/status/2117499775654482067",
+    "likes": 5,
+    "reposts": 2,
+    "ts": "2026-11-03T06:11:02Z",
+    "note": "Industry research firm on the optical interconnect value chain."
+   },
+   {
+    "handle": "tuccardesk",
+    "name": "Tüccar",
+    "text": "Marvell agreed to buy Lumentum at $1,132 a share. Lumentum closed Nov 2 at $684.40. The catch: Marvell pays in its own stock, and MRVL fell 26.68% in five sessions. China's regulator still has to sign off. Closing is due in 2028.",
+    "url": "https://x.com/tuccardesk/status/2117576620265357773",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T11:16:23Z",
+    "note": "The arb spread: why LITE trades far below the headline price."
+   },
+   {
+    "handle": "WeAreNoEqual",
+    "name": "TickerWhy",
+    "text": "Marvell is buying Lumentum (~$115B deal). So why did LITE drop 18.6% Monday? B. Riley downgraded Lumentum, TD Cowen cut Marvell's target in half. Marvell fell 12.7% too.",
+    "url": "https://x.com/WeAreNoEqual/status/2117606577553166584",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T13:15:25Z",
+    "note": "Street reaction: downgrades on both sides of the deal."
+   },
+   {
+    "handle": "cmani",
+    "name": "Mani",
+    "text": "Marvell has agreed to acquire Lumentum in a $115bn all-stock transaction. If completed, it would be the largest-ever tie-up between two listed tech companies.",
+    "url": "https://x.com/cmani/status/2117437132667310360",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-03T02:02:07Z",
+    "note": "Scale context for the deal."
+   }
+  ],
+  "589c0967e665": [
+   {
+    "handle": "amktparticipant",
+    "name": "Market Participant",
+    "text": "Shares of CrowdStrike are up this morning after an upgrade to Buy from Hold at Deutsche Bank. The market is \"still not fully appreciating the extent to which AI will expand the market for cybersecurity.\"",
+    "url": "https://x.com/amktparticipant/status/2117285609115119862",
+    "likes": 14,
+    "reposts": 1,
+    "ts": "2026-11-02T16:00:01Z",
+    "note": "The core thesis from Deutsche Bank's Brad Zelnick."
+   },
+   {
+    "handle": "Rekter",
+    "name": "Rekter",
+    "text": "A Deutsche Bank upgrade has CrowdStrike up 3% premarket on the idea that AI grows the security market. The tell is CHKP down almost 10% on a weak guide while PANW catches sympathy. Money is picking cyber winners.",
+    "url": "https://x.com/Rekter/status/2117254401853214921",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-02T13:56:00Z",
+    "note": "Dispersion inside cyber: CRWD up, Check Point down on guide."
+   },
+   {
+    "handle": "davidmoadel",
+    "name": "David Moadel",
+    "text": "CrowdStrike slides 3% despite Deutsche Bank upgrade and CoreWeave deal; Fortinet falls 3%, Palo Alto drops 2%.",
+    "url": "https://x.com/davidmoadel/status/2117271595798474792",
+    "likes": 2,
+    "reposts": 0,
+    "ts": "2026-11-02T15:04:20Z",
+    "note": "The upgrade pop faded as software sold off intraday."
+   }
   ]
  },
  "tickers": {
   "MRVL": [
    {
-    "handle": "unusual_whales",
-    "name": "unusual_whales",
-    "text": "BREAKING: Breaking: Marvell $MRVL agrees to buy Lumentum $LITE in a $115 billion deal\n\nIt would be one of the biggest chip deals ever, as Marvell bets on optical components that connect AI data centers.",
-    "url": "https://x.com/unusual_whales/status/2117252776736751638",
-    "likes": 277,
-    "reposts": 26,
-    "ts": "2026-11-02T13:49:33.000Z",
-    "note": "Marvell agrees to buy Lumentum for about $115B, one of the biggest chip deals ever, a bet on AI optics."
+    "handle": "CounterPointTR",
+    "name": "Counterpoint Research",
+    "text": "Marvell buys Lumentum to climb the AI laser wall: what the $115 billion deal means for the optics value chain.",
+    "url": "https://x.com/CounterPointTR/status/2117499775654482067",
+    "likes": 5,
+    "reposts": 2,
+    "ts": "2026-11-03T06:11:02Z",
+    "note": "Industry research firm on the optical interconnect value chain."
    },
    {
-    "handle": "BoringBiz_",
-    "name": "Boring_Business",
-    "text": "The Marvell and Lumentum M&amp;A transaction announced this morning is a bigger deal than people are giving it credit for\n\nLumentum holders will get 4.5 Marvell shares for each share of Lumentum and a 23.9% premium. Pro forma they own roughly 33% of the combined company\n\nMarvell is https://t.co/A79RTILOPX",
-    "url": "https://x.com/BoringBiz_/status/2117248668910645403",
-    "likes": 89,
-    "reposts": 9,
-    "ts": "2026-11-02T13:33:13.000Z",
-    "note": "Argues the deal is bigger than people think: 4.5 Marvell shares per Lumentum share."
-   },
-   {
-    "handle": "allday_stocks",
-    "name": "alldaystocks",
-    "text": "$MRVL Marvell &amp; $LITE Lumentum: Merger Agreement Includes Breakup Fees of Up to $5.8 Billion\n⠀\n• Marvell: Owes $3.2B if regulatory hurdles prevent closing or the deal misses its deadline.\n• Higher Termination Fee: Marvell owes $5.8B if its board withdraws support or pursues a",
-    "url": "https://x.com/allday_stocks/status/2117261958567075899",
+    "handle": "tuccardesk",
+    "name": "Tüccar",
+    "text": "Marvell agreed to buy Lumentum at $1,132 a share. Lumentum closed Nov 2 at $684.40. The catch: Marvell pays in its own stock, and MRVL fell 26.68% in five sessions. China's regulator still has to sign off. Closing is due in 2028.",
+    "url": "https://x.com/tuccardesk/status/2117576620265357773",
     "likes": 0,
-    "reposts": 1,
-    "ts": "2026-11-02T14:26:02.000Z",
-    "note": "Breakup fees of up to $5.8B, with Marvell owing $3.2B if regulators block it."
+    "reposts": 0,
+    "ts": "2026-11-03T11:16:23Z",
+    "note": "The arb spread: why LITE trades far below the headline price."
    },
    {
-    "handle": "StockMKTNewz",
-    "name": "Evan",
-    "text": "Lumentum $LITE CEO Michael Hurlston said this about its deal with Marvell\n\n“Joining Marvell creates a company uniquely positioned to capitalize on a market opportunity of $550 billion and generate significant, sustainable stockholder value”\n\n“Surging AI data traffic requires https://t.co/M2ITkQB0qi",
-    "url": "https://x.com/StockMKTNewz/status/2117261189793100248",
-    "likes": 45,
-    "reposts": 5,
-    "ts": "2026-11-02T14:22:59.000Z",
-    "note": "Lumentum CEO frames it as a $550B market opportunity."
+    "handle": "WeAreNoEqual",
+    "name": "TickerWhy",
+    "text": "Marvell is buying Lumentum (~$115B deal). So why did LITE drop 18.6% Monday? B. Riley downgraded Lumentum, TD Cowen cut Marvell's target in half. Marvell fell 12.7% too.",
+    "url": "https://x.com/WeAreNoEqual/status/2117606577553166584",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T13:15:25Z",
+    "note": "Street reaction: downgrades on both sides of the deal."
    }
   ],
   "LITE": [
    {
-    "handle": "Techmoneypress",
-    "name": "Tech And Money Press",
-    "text": "Marvell is buying Lumentum for $115B in stock 🔥\nBut the math already moved: the 4.5-for-1 ratio was set when $MRVL was ~$252. At ~$195 premarket, it's worth ~$878 per $LITE share, and LITE trades ~$835.\nOur Take on what traders should watch 👇 https://t.co/rew6jQPRR1\n#Marvell",
-    "url": "https://x.com/Techmoneypress/status/2117236229796196578",
-    "likes": 2,
-    "reposts": 1,
-    "ts": "2026-11-02T12:43:48.000Z",
-    "note": "Fixed-ratio math: the offer was set near $252 Marvell, so Marvell's premarket drop shrinks the implied price."
+    "handle": "tuccardesk",
+    "name": "Tüccar",
+    "text": "Marvell agreed to buy Lumentum at $1,132 a share. Lumentum closed Nov 2 at $684.40. The catch: Marvell pays in its own stock, and MRVL fell 26.68% in five sessions. China's regulator still has to sign off. Closing is due in 2028.",
+    "url": "https://x.com/tuccardesk/status/2117576620265357773",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T11:16:23Z",
+    "note": "The arb spread: why LITE trades far below the headline price."
    },
    {
-    "handle": "unusual_whales",
-    "name": "unusual_whales",
-    "text": "BREAKING: Breaking: Marvell $MRVL agrees to buy Lumentum $LITE in a $115 billion deal\n\nIt would be one of the biggest chip deals ever, as Marvell bets on optical components that connect AI data centers.",
-    "url": "https://x.com/unusual_whales/status/2117252776736751638",
-    "likes": 277,
-    "reposts": 26,
-    "ts": "2026-11-02T13:49:33.000Z",
-    "note": "The headline deal: Marvell buying Lumentum for about $115B in stock."
-   },
-   {
-    "handle": "StockMKTNewz",
-    "name": "Evan",
-    "text": "Both Lumentum $LITE and Marvell $MRVL stocks are moving lower this morning 🔴 https://t.co/J9zTeP5wjM https://t.co/r38rHlPfEZ",
-    "url": "https://x.com/StockMKTNewz/status/2117272183059931482",
-    "likes": 8,
-    "reposts": 1,
-    "ts": "2026-11-02T15:06:40.000Z",
-    "note": "Both stocks opened lower, a sign the market is skeptical of the price."
+    "handle": "WeAreNoEqual",
+    "name": "TickerWhy",
+    "text": "Marvell is buying Lumentum (~$115B deal). So why did LITE drop 18.6% Monday? B. Riley downgraded Lumentum, TD Cowen cut Marvell's target in half. Marvell fell 12.7% too.",
+    "url": "https://x.com/WeAreNoEqual/status/2117606577553166584",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T13:15:25Z",
+    "note": "Street reaction: downgrades on both sides of the deal."
    }
   ],
   "PLTR": [
@@ -294,24 +338,34 @@
   ],
   "AMD": [
    {
-    "handle": "stockswithtom",
-    "name": "Tom | Invests",
-    "text": "AMD $AMD reports earnings on Tuesday.\n\nWall Street expects:\n\nRevenue: $13.1B (+42% YoY)\nEPS: $1.94\n\nAfter what happened to semiconductor stocks this week, this could get interesting.\n\nAnyone holding $AMD through earnings? https://t.co/HjG5yktdNm",
-    "url": "https://x.com/stockswithtom/status/2116671545124991267",
-    "likes": 93,
-    "reposts": 3,
-    "ts": "2026-10-31T23:19:56.000Z",
-    "note": "Reports Tuesday; Street expects $13.1B revenue (+42%) and $1.94 EPS after a rough week for semis."
+    "handle": "Alphacoreinvest",
+    "name": "AlphaCore Invest",
+    "text": "AMD reports tonight, and Wall Street isn't in a forgiving mood. The AI trade is facing a reality check. Investors are looking for more than a strong earnings headline.",
+    "url": "https://x.com/Alphacoreinvest/status/2117563985671139398",
+    "likes": 15,
+    "reposts": 0,
+    "ts": "2026-11-03T10:26:11Z",
+    "note": "Sets up the bar: guidance matters more than the beat."
    },
    {
-    "handle": "JesseCohenInv",
-    "name": "Jesse Cohen",
-    "text": "🇺🇸🇺🇸 Key Events This Week:\n\n1. ISM Manufacturing PMI - Monday\n\n2. Apple $AAPL Earnings - Monday\n\n3. Palantir $PLTR Earnings - Monday\n\n4. US Midterm Elections - Tuesday\n\n5. JOLTS Job Openings - Tuesday\n\n6. AMD $AMD Earnings - Tuesday\n\n7. ADP Payrolls - Wednesday\n\n8. ISM Services https://t.co/sMPUfAWwFb",
-    "url": "https://x.com/JesseCohenInv/status/2116871937922134500",
-    "likes": 113,
-    "reposts": 29,
-    "ts": "2026-11-01T12:36:14.000Z",
-    "note": "Busy week: Palantir tonight, then midterms and AMD Tuesday."
+    "handle": "kashkingdiscord",
+    "name": "Kash King",
+    "text": "AMD fell 7.52% Monday, closing at $466.84. Tonight after the close it posts Q3: Wall Street expects revenue of $13.09 billion and EPS of $1.95, up from $1.20 a year ago.",
+    "url": "https://x.com/kashkingdiscord/status/2117598597130719256",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T12:43:43Z",
+    "note": "Consensus numbers and the pre-print selloff."
+   },
+   {
+    "handle": "timoassi",
+    "name": "Timothy",
+    "text": "AMD is crushing Nvidia in 2026! AMD reports earnings tonight. Does AMD stay ahead of Nvidia after earnings?",
+    "url": "https://x.com/timoassi/status/2117595201367581103",
+    "likes": 16,
+    "reposts": 3,
+    "ts": "2026-11-03T12:30:13Z",
+    "note": "Retail sentiment: AMD's YTD outperformance vs NVDA."
    }
   ],
   "ORCL": [
@@ -360,36 +414,124 @@
   ],
   "META": [
    {
-    "handle": "Th3Seafox",
-    "name": "TheSeafox",
-    "text": "Friedberg pulls up Meta's 10-Q live and the All-In guys lose it.\n\n$82.4B cash + securities vs $84.0B of notes. Net cash: about -$1.5B.\n\nIt was +$22.6B in December. AI capex ate it in 9 months. Then Meta lined up ~$37B of new stock and preferred this week. \n\n$META  @theallinpod https://t.co/0ArEL0Wbad",
-    "url": "https://x.com/Th3Seafox/status/2116605460614971758",
-    "likes": 2,
-    "reposts": 0,
-    "ts": "2026-10-31T18:57:21.000Z",
-    "note": "Meta flipped from net cash to slightly net debt in nine months of AI capex."
+    "handle": "cnbcKaren",
+    "name": "Karen Tso",
+    "text": "What's the opposite of techtastic? This week everything mattered: negative free cash flow from Amazon, Alphabet, Meta; hyperscaler capex intensity; earnings misses; a death cross on Alphabet; a shrinking search moat.",
+    "url": "https://x.com/cnbcKaren/status/2116124254378901511",
+    "likes": 60,
+    "reposts": 1,
+    "ts": "2026-10-30T11:05:12Z",
+    "note": "CNBC anchor framing the capex-vs-free-cash-flow reckoning behind Meta's drop."
    },
    {
-    "handle": "Prof_Unhedged",
-    "name": "Professor.ai",
-    "text": "S&amp;P moved $Meta from AA− / Stable to AA− / Negative.\n\nNot because ads broke. Ad revenue +25.9% in Q3 (YoY). AI Capex broke the cash machine.\n\nS&amp;P's free cash flow path:\n1/ 2026: −$22bn\n2/ 2027 peak: −$71bn\n3/ 2028: still −$39bn\nS&amp;P's Capex path:\n1/ 2026: ~$140bn\n2/ 2027: https://t.co/hqJbJ8iyEp",
-    "url": "https://x.com/Prof_Unhedged/status/2116905980005073238",
-    "likes": 1,
+    "handle": "Stindur",
+    "name": "Stindur",
+    "text": "Meta spent $35B on capex last quarter. Free cash flow went negative. Same day they created a new share class with no voting rights. The AI story is being told to shareholders. The bill is being sent to them too.",
+    "url": "https://x.com/Stindur/status/2116628715945722298",
+    "likes": 3,
     "reposts": 0,
-    "ts": "2026-11-01T14:51:30.000Z",
-    "note": "S&P moved its outlook to negative on cash burn from capex."
+    "ts": "2026-10-31T20:29:45Z",
+    "note": "Bear case: governance plus negative FCF, not just the EPS miss."
    }
   ],
   "SPCX": [
    {
-    "handle": "wallstengine",
-    "name": "Wall St Engine",
-    "text": "SPACEX IN TALKS TO BUY BOOST MOBILE OR ACCESS ITS NETWORK: WAPO\n\nSpaceX $SPCX is reportedly in talks with EchoStar $ECHO over a potential acquisition of Boost Mobile or a deal to use its wireless network, as Elon Musk looks to launch a full-fledged U.S. cellphone service.\n\nMusk https://t.co/7FomL0rCwd",
-    "url": "https://x.com/wallstengine/status/2117200746869371285",
-    "likes": 733,
-    "reposts": 91,
-    "ts": "2026-11-02T10:22:48.000Z",
-    "note": "Reportedly in talks to buy Boost Mobile or use its network."
+    "handle": "RocketTerminal",
+    "name": "Rocket Terminal",
+    "text": "A SpaceX / Tesla merger is now more likely than not, according to Piper Sandler. Both companies have formed special committees to explore a potential combination. Piper expects Musk to retain more than 70% voting control of the combined company in most scenarios.",
+    "url": "https://x.com/RocketTerminal/status/2117512098976530454",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T07:00:00Z",
+    "note": "Sell-side read on deal odds and the control math."
+   },
+   {
+    "handle": "AIDropDaily",
+    "name": "AI Drop Daily",
+    "text": "Elon controls over 80% of SpaceX's votes. At Tesla, he holds about a fifth. That gap is the whole Tesla-SpaceX merger story. Committees formed on both sides: confirmed (Tesla 10-Q, Oct 22). Terms agreed: not yet.",
+    "url": "https://x.com/AIDropDaily/status/2117469693363605896",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T04:11:30Z",
+    "note": "Why special committees matter: a conflicted controller on both sides."
+   }
+  ],
+  "CRWD": [
+   {
+    "handle": "amktparticipant",
+    "name": "Market Participant",
+    "text": "Shares of CrowdStrike are up this morning after an upgrade to Buy from Hold at Deutsche Bank. The market is \"still not fully appreciating the extent to which AI will expand the market for cybersecurity.\"",
+    "url": "https://x.com/amktparticipant/status/2117285609115119862",
+    "likes": 14,
+    "reposts": 1,
+    "ts": "2026-11-02T16:00:01Z",
+    "note": "The core thesis from Deutsche Bank's Brad Zelnick."
+   },
+   {
+    "handle": "Rekter",
+    "name": "Rekter",
+    "text": "A Deutsche Bank upgrade has CrowdStrike up 3% premarket on the idea that AI grows the security market. The tell is CHKP down almost 10% on a weak guide while PANW catches sympathy. Money is picking cyber winners.",
+    "url": "https://x.com/Rekter/status/2117254401853214921",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-02T13:56:00Z",
+    "note": "Dispersion inside cyber: CRWD up, Check Point down on guide."
+   }
+  ],
+  "ANET": [
+   {
+    "handle": "JesseCohenInv",
+    "name": "Jesse Cohen",
+    "text": "Get ready for Tuesday: Congressional elections. Earnings: AMD, Shopify, Pfizer, Super Micro, Arista Networks. Economic data: JOLTS, factory orders. Brace for volatility.",
+    "url": "https://x.com/JesseCohenInv/status/2117588498815316022",
+    "likes": 45,
+    "reposts": 4,
+    "ts": "2026-11-03T12:03:35Z",
+    "note": "Investing.com analyst: midterms plus an AI-hardware earnings gauntlet today."
+   },
+   {
+    "handle": "EmmanuelInvest",
+    "name": "Emmanuel",
+    "text": "Today is an important test for AI infrastructure, semiconductors, consumer spending and the U.S. economy. AMD, ANET, ALAB and SMCI are among my main earnings watchlist names.",
+    "url": "https://x.com/EmmanuelInvest/status/2117526417969684588",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T07:56:54Z",
+    "note": "AI networking names report after the close."
+   }
+  ],
+  "SMCI": [
+   {
+    "handle": "JesseCohenInv",
+    "name": "Jesse Cohen",
+    "text": "Get ready for Tuesday: Congressional elections. Earnings: AMD, Shopify, Pfizer, Super Micro, Arista Networks. Economic data: JOLTS, factory orders. Brace for volatility.",
+    "url": "https://x.com/JesseCohenInv/status/2117588498815316022",
+    "likes": 45,
+    "reposts": 4,
+    "ts": "2026-11-03T12:03:35Z",
+    "note": "Investing.com analyst: midterms plus an AI-hardware earnings gauntlet today."
+   }
+  ],
+  "SHOP": [
+   {
+    "handle": "marketsday",
+    "name": "Markets Today",
+    "text": "Shopify declined more than 16% in premarket trading following its earnings. Palantir fell approximately 6% in premarket trading following its earnings.",
+    "url": "https://x.com/marketsday/status/2117600557317910983",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T12:51:30Z",
+    "note": "Big premarket drop on the print."
+   },
+   {
+    "handle": "FINANCIERNEWS",
+    "name": "Financier.news",
+    "text": "Shopify earnings highlights: adj. EPS $0.49, GAAP EPS $0.36. Q4 guide: revenue growth low-thirties percent, gross profit high-twenties percent, opex 29% to 30% of revenue.",
+    "url": "https://x.com/FINANCIERNEWS/status/2117605924445540434",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T13:12:50Z",
+    "note": "The guide numbers behind the move."
    }
   ]
  },
@@ -436,6 +578,72 @@
     "reposts": 0,
     "ts": "2026-10-27T11:12:29.000Z",
     "note": "The 8-K headline for the closing."
+   }
+  ],
+  "0001193125-26-442717": [
+   {
+    "handle": "CounterPointTR",
+    "name": "Counterpoint Research",
+    "text": "Marvell buys Lumentum to climb the AI laser wall: what the $115 billion deal means for the optics value chain.",
+    "url": "https://x.com/CounterPointTR/status/2117499775654482067",
+    "likes": 5,
+    "reposts": 2,
+    "ts": "2026-11-03T06:11:02Z",
+    "note": "Industry research firm on the optical interconnect value chain."
+   },
+   {
+    "handle": "tuccardesk",
+    "name": "Tüccar",
+    "text": "Marvell agreed to buy Lumentum at $1,132 a share. Lumentum closed Nov 2 at $684.40. The catch: Marvell pays in its own stock, and MRVL fell 26.68% in five sessions. China's regulator still has to sign off. Closing is due in 2028.",
+    "url": "https://x.com/tuccardesk/status/2117576620265357773",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T11:16:23Z",
+    "note": "The arb spread: why LITE trades far below the headline price."
+   },
+   {
+    "handle": "WeAreNoEqual",
+    "name": "TickerWhy",
+    "text": "Marvell is buying Lumentum (~$115B deal). So why did LITE drop 18.6% Monday? B. Riley downgraded Lumentum, TD Cowen cut Marvell's target in half. Marvell fell 12.7% too.",
+    "url": "https://x.com/WeAreNoEqual/status/2117606577553166584",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T13:15:25Z",
+    "note": "Street reaction: downgrades on both sides of the deal."
+   }
+  ],
+  "0001193125-26-442758": [
+   {
+    "handle": "tuccardesk",
+    "name": "Tüccar",
+    "text": "Marvell agreed to buy Lumentum at $1,132 a share. Lumentum closed Nov 2 at $684.40. The catch: Marvell pays in its own stock, and MRVL fell 26.68% in five sessions. China's regulator still has to sign off. Closing is due in 2028.",
+    "url": "https://x.com/tuccardesk/status/2117576620265357773",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T11:16:23Z",
+    "note": "The arb spread: why LITE trades far below the headline price."
+   },
+   {
+    "handle": "CounterPointTR",
+    "name": "Counterpoint Research",
+    "text": "Marvell buys Lumentum to climb the AI laser wall: what the $115 billion deal means for the optics value chain.",
+    "url": "https://x.com/CounterPointTR/status/2117499775654482067",
+    "likes": 5,
+    "reposts": 2,
+    "ts": "2026-11-03T06:11:02Z",
+    "note": "Industry research firm on the optical interconnect value chain."
+   }
+  ],
+  "0001437749-26-034438": [
+   {
+    "handle": "Stimothyphd",
+    "name": "Stimothy Phd",
+    "text": "Trump Media group just posted the S-4 document of their merger, they are merging with TAE Technologies.",
+    "url": "https://x.com/Stimothyphd/status/2117622352674742510",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-03T14:18:07Z",
+    "note": "Chatter on the amended S-4 for the Trump Media / TAE Technologies (fusion) merger."
    }
   ]
  }
