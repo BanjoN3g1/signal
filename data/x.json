@@ -2,66 +2,56 @@
  "stories": {
   "3fccf913600c": [
    {
-    "handle": "RocketTerminal",
-    "name": "Rocket Terminal",
-    "text": "A SpaceX / Tesla merger is now more likely than not, according to Piper Sandler. Both companies have formed special committees to explore a potential combination. Piper expects Musk to retain more than 70% voting control of the combined company in most scenarios.",
-    "url": "https://x.com/RocketTerminal/status/2117512098976530454",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T07:00:00Z",
-    "note": "Sell-side read on deal odds and the control math."
+    "handle": "spcxGOD",
+    "name": "Panke",
+    "text": "Barclays ran the SpaceX x Tesla merger math. If SpaceX buys Tesla, Elon gets control of both. He'd own ~37% of the combined company but get ~56% of the votes. Why? His SpaceX shares get 10 votes each.",
+    "url": "https://x.com/spcxGOD/status/2117670399282454928",
+    "likes": 154,
+    "reposts": 16,
+    "ts": "2026-11-03T17:29:02Z",
+    "note": "Governance angle bankers will care about: dual-class votes would hand Musk control of the combined company."
    },
    {
-    "handle": "AIDropDaily",
-    "name": "AI Drop Daily",
-    "text": "Elon controls over 80% of SpaceX's votes. At Tesla, he holds about a fifth. That gap is the whole Tesla-SpaceX merger story. Committees formed on both sides: confirmed (Tesla 10-Q, Oct 22). Terms agreed: not yet.",
-    "url": "https://x.com/AIDropDaily/status/2117469693363605896",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T04:11:30Z",
-    "note": "Why special committees matter: a conflicted controller on both sides."
+    "handle": "Amy787",
+    "name": "Amy",
+    "text": "People ask what does SpaceX get out of a merger with Tesla. More than half of SpaceX's revenue is from leasing compute (supported by hundreds of Tesla Megapacks)...",
+    "url": "https://x.com/Amy787/status/2117663151877681236",
+    "likes": 239,
+    "reposts": 22,
+    "ts": "2026-11-03T17:00:14Z",
+    "note": "Bull-side strategic rationale: SpaceX's compute buildout needs Tesla's Megapack supply."
    },
    {
-    "handle": "DigitalAssetsUS",
-    "name": "DigitalAssetsUS",
-    "text": "SpaceX and Tesla have committees of independent directors studying a possible merger, with no terms yet. Barclays sees an all-stock deal as the likeliest route.",
-    "url": "https://x.com/DigitalAssetsUS/status/2116850538658619462",
-    "likes": 1,
+    "handle": "CaffeSatoshi",
+    "name": "Caffe' Satoshi",
+    "text": "Exceptions: SpaceX and Tesla DOWN HARD. Most tech stocks are up, with futures gaining around 1% today as markets begin to settle following the midterms...",
+    "url": "https://x.com/CaffeSatoshi/status/2117941658792669252",
+    "likes": 5,
     "reposts": 0,
-    "ts": "2026-11-01T11:11:12Z",
-    "note": "Barclays view on structure (all-stock)."
+    "ts": "2026-11-04T11:26:55Z",
+    "note": "Musk names lagging the post-midterm rally as Democrats take Congress."
    }
   ],
   "35d489695b45": [
    {
-    "handle": "KobeissiLetter",
-    "name": "The Kobeissi Letter",
-    "text": "BREAKING: OpenAI has slashed its funding target by -$10 billion and its valuation by -$150 billion amid this week's technology stock selloff, per FT.\n\nOpenAI is now seeking to raise $20 billion at a $1.25 trillion valuation, down from $30 billion at a $1.4 trillion valuation.",
-    "url": "https://x.com/KobeissiLetter/status/2116357848464601125",
-    "likes": 4306,
-    "reposts": 343,
-    "ts": "2026-10-31T02:33:25.000Z",
-    "note": "Most-shared take: the round was cut by $10B and the valuation by $150B after the AI selloff."
+    "handle": "JG_Nuke",
+    "name": "Nobody Special",
+    "text": "OpenAI Forced to lower valuation in latest funding round.",
+    "url": "https://x.com/JG_Nuke/status/2117270398563655830",
+    "likes": 234,
+    "reposts": 26,
+    "ts": "2026-11-02T14:59:34Z",
+    "note": "Most-shared take on the round: target cut from $30B to about $20B and valuation from $1.4T to $1.25T."
    },
    {
-    "handle": "StockMKTNewz",
-    "name": "Evan",
-    "text": "OPENAI JUST SIGNED A WAVE OF AI DEALS IN THE UAE 🇦🇪\n\nCEO Sam Altman met with Abu Dhabi's crown prince as OpenAI raises a new funding round co-led by UAE investors, per CNBC.\n\n- ADNOC and G42: deploying OpenAI's most advanced models\n- Mubadala and Inception42: using AI for https://t.co/6scS6BfBTk",
-    "url": "https://x.com/StockMKTNewz/status/2117268604068446375",
-    "likes": 42,
-    "reposts": 7,
-    "ts": "2026-11-02T14:52:26.000Z",
-    "note": "Same round now co-led by UAE investors, with a wave of Abu Dhabi AI deals signed today."
-   },
-   {
-    "handle": "axios",
-    "name": "Axios",
-    "text": "NEW: Right after Tuesday's midterms, OpenAIwill unleash a policy and PR blitz to try to get in sync with the new Washington, including an effort to rebrand data centers as \"AI compute campuses.\" https://t.co/2dirpieQm6",
-    "url": "https://x.com/axios/status/2116889969432150442",
-    "likes": 155,
-    "reposts": 65,
-    "ts": "2026-11-01T13:47:53.000Z",
-    "note": "OpenAI plans a post-midterm DC policy push, rebranding data centers as AI compute campuses."
+    "handle": "BroadwakeAI",
+    "name": "BroadwakeAI",
+    "text": "OpenAI cut its latest funding target to about $20B from $30B, at a $1.25T valuation, CNBC and the FT report. UAE investors are expected to lead the round alongside Coatue.",
+    "url": "https://x.com/BroadwakeAI/status/2117392371520303470",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-02T23:04:15Z",
+    "note": "Who's writing the check: UAE money plus Coatue, per CNBC and the FT."
    }
   ],
   "d0702d927cda": [
@@ -98,14 +88,24 @@
   ],
   "899f13b803e4": [
    {
-    "handle": "JesseCohenInv",
-    "name": "Jesse Cohen",
-    "text": "Get ready for Tuesday: Congressional elections. Earnings: AMD, Shopify, Pfizer, Super Micro, Arista Networks. Economic data: JOLTS, factory orders. Brace for volatility.",
-    "url": "https://x.com/JesseCohenInv/status/2117588498815316022",
-    "likes": 45,
-    "reposts": 4,
-    "ts": "2026-11-03T12:03:35Z",
-    "note": "Investing.com analyst: midterms plus an AI-hardware earnings gauntlet today."
+    "handle": "slava_invests",
+    "name": "Slava",
+    "text": "Everyone is watching $NVDA and $AMD. But look at $VRT and $ANET. Both companies are benefiting from the MASSIVE AI infrastructure buildout... $VRT Q3 2026 Revenue: $4.31B (+61% YoY)",
+    "url": "https://x.com/slava_invests/status/2117950235905314984",
+    "likes": 8,
+    "reposts": 1,
+    "ts": "2026-11-04T12:01:00Z",
+    "note": "Picks-and-shovels read: power and networking are growing as fast as compute."
+   },
+   {
+    "handle": "FIREDUpWealth",
+    "name": "FIRED Up Wealth",
+    "text": "Data center stocks crushed earnings tonight as $AMD, Astera Labs $ALAB, and Arista Networks $ANET all reported strong results driven by surging AI infrastructure demand. AMD delivered a record $13.4 billion in Q3 revenue, up 45% year-over-year...",
+    "url": "https://x.com/FIREDUpWealth/status/2117736920952480072",
+    "likes": 29,
+    "reposts": 1,
+    "ts": "2026-11-03T21:53:22Z",
+    "note": "AMD record quarter as part of a clean AI-infrastructure sweep."
    }
   ],
   "443634b91663": [
@@ -176,44 +176,14 @@
   ],
   "d67c8f23c462": [
    {
-    "handle": "CounterPointTR",
-    "name": "Counterpoint Research",
-    "text": "Marvell buys Lumentum to climb the AI laser wall: what the $115 billion deal means for the optics value chain.",
-    "url": "https://x.com/CounterPointTR/status/2117499775654482067",
-    "likes": 5,
-    "reposts": 2,
-    "ts": "2026-11-03T06:11:02Z",
-    "note": "Industry research firm on the optical interconnect value chain."
-   },
-   {
-    "handle": "tuccardesk",
-    "name": "Tüccar",
-    "text": "Marvell agreed to buy Lumentum at $1,132 a share. Lumentum closed Nov 2 at $684.40. The catch: Marvell pays in its own stock, and MRVL fell 26.68% in five sessions. China's regulator still has to sign off. Closing is due in 2028.",
-    "url": "https://x.com/tuccardesk/status/2117576620265357773",
+    "handle": "Investor_x1",
+    "name": "InvestorX",
+    "text": "Would love your thoughts on how SpaceX and Tesla merger can AVOID what happened with the Marvell and Lumentum merger, where they BOTH crashed post acquisition.",
+    "url": "https://x.com/Investor_x1/status/2117661585736978443",
     "likes": 0,
     "reposts": 0,
-    "ts": "2026-11-03T11:16:23Z",
-    "note": "The arb spread: why LITE trades far below the headline price."
-   },
-   {
-    "handle": "WeAreNoEqual",
-    "name": "TickerWhy",
-    "text": "Marvell is buying Lumentum (~$115B deal). So why did LITE drop 18.6% Monday? B. Riley downgraded Lumentum, TD Cowen cut Marvell's target in half. Marvell fell 12.7% too.",
-    "url": "https://x.com/WeAreNoEqual/status/2117606577553166584",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T13:15:25Z",
-    "note": "Street reaction: downgrades on both sides of the deal."
-   },
-   {
-    "handle": "cmani",
-    "name": "Mani",
-    "text": "Marvell has agreed to acquire Lumentum in a $115bn all-stock transaction. If completed, it would be the largest-ever tie-up between two listed tech companies.",
-    "url": "https://x.com/cmani/status/2117437132667310360",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-11-03T02:02:07Z",
-    "note": "Scale context for the deal."
+    "ts": "2026-11-03T16:54:00Z",
+    "note": "Retail is already using Marvell-Lumentum as the cautionary tale: both stocks fell on the announcement."
    }
   ],
   "589c0967e665": [
@@ -247,10 +217,64 @@
     "ts": "2026-11-02T15:04:20Z",
     "note": "The upgrade pop faded as software sold off intraday."
    }
+  ],
+  "047fc1ee0b62": [
+   {
+    "handle": "AlgoTradeAlert",
+    "name": "AlgoTradeAlert.com",
+    "text": "$UBER just delivered double-digit booking growth and stronger adjusted profits. The catch: its Q4 adjusted earnings outlook came in below analyst expectations. $LYFT $DASH $TSLA",
+    "url": "https://x.com/AlgoTradeAlert/status/2117967790501966246",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-04T13:10:45Z",
+    "note": "Uber's soft Q4 guide is the read-through for DoorDash, which reports after the close today."
+   },
+   {
+    "handle": "INVESTEDD",
+    "name": "INVESTEDD",
+    "text": "After the close: $QCOM (±9.9%), $ARM (±12.3%), $APP (±17.9%), $DASH (±7.0%).",
+    "url": "https://x.com/INVESTEDD/status/2117719407535538331",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T20:43:46Z",
+    "note": "Options-implied moves for tonight's prints, so you can tell later whether the reaction was outsized."
+   }
+  ],
+  "88d166c2d67a": [
+   {
+    "handle": "TheSFInvestor",
+    "name": "Shop Floor Investor",
+    "text": "Sentiment punished Alphabet for cash. Free cash flow was negative $9.1B because capex of $51.4B exceeded operating cash flow of $42.3B...",
+    "url": "https://x.com/TheSFInvestor/status/2117993398112248160",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-04T14:52:31Z",
+    "note": "The bear case in one line: capex now exceeds operating cash flow, so FCF went negative."
+   },
+   {
+    "handle": "jamescal202",
+    "name": "David Morgan",
+    "text": "$GOOGL: Google Cloud revenue grew 103% to $30.7B last quarter, and its backlog hit $561B. The Gemini app has passed 1 billion monthly users. The stock is down ~30% from its May high.",
+    "url": "https://x.com/jamescal202/status/2117719108879802831",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T20:42:35Z",
+    "note": "The bull case: Cloud growth and backlog are what that capex is buying."
+   }
   ]
  },
  "tickers": {
   "MRVL": [
+   {
+    "handle": "Investor_x1",
+    "name": "InvestorX",
+    "text": "Would love your thoughts on how SpaceX and Tesla merger can AVOID what happened with the Marvell and Lumentum merger, where they BOTH crashed post acquisition.",
+    "url": "https://x.com/Investor_x1/status/2117661585736978443",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T16:54:00Z",
+    "note": "Retail is already using Marvell-Lumentum as the cautionary tale: both stocks fell on the announcement."
+   },
    {
     "handle": "CounterPointTR",
     "name": "Counterpoint Research",
@@ -283,6 +307,16 @@
    }
   ],
   "LITE": [
+   {
+    "handle": "Investor_x1",
+    "name": "InvestorX",
+    "text": "Would love your thoughts on how SpaceX and Tesla merger can AVOID what happened with the Marvell and Lumentum merger, where they BOTH crashed post acquisition.",
+    "url": "https://x.com/Investor_x1/status/2117661585736978443",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T16:54:00Z",
+    "note": "Retail is already using Marvell-Lumentum as the cautionary tale: both stocks fell on the announcement."
+   },
    {
     "handle": "tuccardesk",
     "name": "Tüccar",
@@ -338,34 +372,34 @@
   ],
   "AMD": [
    {
-    "handle": "Alphacoreinvest",
-    "name": "AlphaCore Invest",
-    "text": "AMD reports tonight, and Wall Street isn't in a forgiving mood. The AI trade is facing a reality check. Investors are looking for more than a strong earnings headline.",
-    "url": "https://x.com/Alphacoreinvest/status/2117563985671139398",
-    "likes": 15,
-    "reposts": 0,
-    "ts": "2026-11-03T10:26:11Z",
-    "note": "Sets up the bar: guidance matters more than the beat."
+    "handle": "FIREDUpWealth",
+    "name": "FIRED Up Wealth",
+    "text": "Data center stocks crushed earnings tonight as $AMD, Astera Labs $ALAB, and Arista Networks $ANET all reported strong results driven by surging AI infrastructure demand. AMD delivered a record $13.4 billion in Q3 revenue, up 45% year-over-year...",
+    "url": "https://x.com/FIREDUpWealth/status/2117736920952480072",
+    "likes": 29,
+    "reposts": 1,
+    "ts": "2026-11-03T21:53:22Z",
+    "note": "AMD record quarter as part of a clean AI-infrastructure sweep."
    },
    {
-    "handle": "kashkingdiscord",
-    "name": "Kash King",
-    "text": "AMD fell 7.52% Monday, closing at $466.84. Tonight after the close it posts Q3: Wall Street expects revenue of $13.09 billion and EPS of $1.95, up from $1.20 a year ago.",
-    "url": "https://x.com/kashkingdiscord/status/2117598597130719256",
+    "handle": "Daniel_on_money",
+    "name": "Daniel On Money",
+    "text": "$AMD: Record $13.4B revenue, +45% YoY. Data Center +97% to a record $8.5B (EPYC + Instinct MI450). Non-GAAP EPS $2.09, +74%. Q4 guide: ~$17B",
+    "url": "https://x.com/Daniel_on_money/status/2117746775570469042",
     "likes": 0,
     "reposts": 0,
-    "ts": "2026-11-03T12:43:43Z",
-    "note": "Consensus numbers and the pre-print selloff."
+    "ts": "2026-11-03T22:32:31Z",
+    "note": "The numbers that matter: data center nearly doubled and the Q4 guide is about $17B."
    },
    {
-    "handle": "timoassi",
-    "name": "Timothy",
-    "text": "AMD is crushing Nvidia in 2026! AMD reports earnings tonight. Does AMD stay ahead of Nvidia after earnings?",
-    "url": "https://x.com/timoassi/status/2117595201367581103",
-    "likes": 16,
-    "reposts": 3,
-    "ts": "2026-11-03T12:30:13Z",
-    "note": "Retail sentiment: AMD's YTD outperformance vs NVDA."
+    "handle": "Sam_Badawi",
+    "name": "Sam Badawi",
+    "text": "The Nasdaq 100 ETF $QQQ dumped from up +0.8% after hours to down -0.8%, even after strong earnings from $AMD and Arista Network $ANET. What changed was midterm election results starting to come in...",
+    "url": "https://x.com/Sam_Badawi/status/2117785358821937259",
+    "likes": 29,
+    "reposts": 5,
+    "ts": "2026-11-04T01:05:50Z",
+    "note": "Why the after-hours pop faded overnight: election results, not the prints."
    }
   ],
   "ORCL": [
@@ -402,14 +436,24 @@
   ],
   "GOOGL": [
    {
-    "handle": "StockMKTNewz",
-    "name": "Evan",
-    "text": "GOOGLE $GOOGL SET TO RAISE ~$6.7 BILLION FROM EURO BOND SALE https://t.co/4Y6KBdO8O3",
-    "url": "https://x.com/StockMKTNewz/status/2117253243969393012",
-    "likes": 102,
-    "reposts": 8,
-    "ts": "2026-11-02T13:51:24.000Z",
-    "note": "Alphabet is set to raise about $6.7B from a euro bond sale to fund AI spend."
+    "handle": "TheSFInvestor",
+    "name": "Shop Floor Investor",
+    "text": "Sentiment punished Alphabet for cash. Free cash flow was negative $9.1B because capex of $51.4B exceeded operating cash flow of $42.3B...",
+    "url": "https://x.com/TheSFInvestor/status/2117993398112248160",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-04T14:52:31Z",
+    "note": "The bear case in one line: capex now exceeds operating cash flow, so FCF went negative."
+   },
+   {
+    "handle": "jamescal202",
+    "name": "David Morgan",
+    "text": "$GOOGL: Google Cloud revenue grew 103% to $30.7B last quarter, and its backlog hit $561B. The Gemini app has passed 1 billion monthly users. The stock is down ~30% from its May high.",
+    "url": "https://x.com/jamescal202/status/2117719108879802831",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T20:42:35Z",
+    "note": "The bull case: Cloud growth and backlog are what that capex is buying."
    }
   ],
   "META": [
@@ -436,24 +480,24 @@
   ],
   "SPCX": [
    {
-    "handle": "RocketTerminal",
-    "name": "Rocket Terminal",
-    "text": "A SpaceX / Tesla merger is now more likely than not, according to Piper Sandler. Both companies have formed special committees to explore a potential combination. Piper expects Musk to retain more than 70% voting control of the combined company in most scenarios.",
-    "url": "https://x.com/RocketTerminal/status/2117512098976530454",
-    "likes": 0,
+    "handle": "CaffeSatoshi",
+    "name": "Caffe' Satoshi",
+    "text": "Exceptions: SpaceX and Tesla DOWN HARD. Most tech stocks are up, with futures gaining around 1% today as markets begin to settle following the midterms...",
+    "url": "https://x.com/CaffeSatoshi/status/2117941658792669252",
+    "likes": 5,
     "reposts": 0,
-    "ts": "2026-11-03T07:00:00Z",
-    "note": "Sell-side read on deal odds and the control math."
+    "ts": "2026-11-04T11:26:55Z",
+    "note": "Musk names lagging the post-midterm rally as Democrats take Congress."
    },
    {
-    "handle": "AIDropDaily",
-    "name": "AI Drop Daily",
-    "text": "Elon controls over 80% of SpaceX's votes. At Tesla, he holds about a fifth. That gap is the whole Tesla-SpaceX merger story. Committees formed on both sides: confirmed (Tesla 10-Q, Oct 22). Terms agreed: not yet.",
-    "url": "https://x.com/AIDropDaily/status/2117469693363605896",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T04:11:30Z",
-    "note": "Why special committees matter: a conflicted controller on both sides."
+    "handle": "t3live",
+    "name": "T3 Live",
+    "text": "The Democrats won control of Congress in last night's elections. Solar stocks are up while Elon Musk's babies $TSLA & $SPCX are down big. $SMCI & $ANET beat and delivered very strong guidance. Both are up sharply...",
+    "url": "https://x.com/t3live/status/2117957750026043550",
+    "likes": 2,
+    "reposts": 2,
+    "ts": "2026-11-04T12:30:52Z",
+    "note": "Premarket desk read: SMCI and ANET up on guidance, Musk names down on the election."
    }
   ],
   "CRWD": [
@@ -480,36 +524,46 @@
   ],
   "ANET": [
    {
-    "handle": "JesseCohenInv",
-    "name": "Jesse Cohen",
-    "text": "Get ready for Tuesday: Congressional elections. Earnings: AMD, Shopify, Pfizer, Super Micro, Arista Networks. Economic data: JOLTS, factory orders. Brace for volatility.",
-    "url": "https://x.com/JesseCohenInv/status/2117588498815316022",
-    "likes": 45,
-    "reposts": 4,
-    "ts": "2026-11-03T12:03:35Z",
-    "note": "Investing.com analyst: midterms plus an AI-hardware earnings gauntlet today."
-   },
-   {
-    "handle": "EmmanuelInvest",
-    "name": "Emmanuel",
-    "text": "Today is an important test for AI infrastructure, semiconductors, consumer spending and the U.S. economy. AMD, ANET, ALAB and SMCI are among my main earnings watchlist names.",
-    "url": "https://x.com/EmmanuelInvest/status/2117526417969684588",
+    "handle": "getalphacharts",
+    "name": "Alpha Charts",
+    "text": "After hours vs the usual earnings move: $ANET +16.8% vs ±8%... Only Arista is moving more than usual. It went from +10% to +17% on the call: $18.5B of revenue for 2027, 39% above 2026.",
+    "url": "https://x.com/getalphacharts/status/2117737534105235737",
     "likes": 0,
     "reposts": 0,
-    "ts": "2026-11-03T07:56:54Z",
-    "note": "AI networking names report after the close."
+    "ts": "2026-11-03T21:55:48Z",
+    "note": "The 2027 target on the call, not the quarter, drove the outsized move."
+   },
+   {
+    "handle": "HunterDavisM",
+    "name": "Hunter Davis",
+    "text": "Arista Networks (ANET) reported Q3 revenue of $3.66 billion, up 58.5% year-over-year (the fastest growth since its IPO) and non-GAAP EPS of $1.20, easily topping forecasts...",
+    "url": "https://x.com/HunterDavisM/status/2117948620137738418",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-04T11:54:35Z",
+    "note": "Clean summary: fastest growth since the 2014 IPO, guide raised."
+   },
+   {
+    "handle": "Sam_Badawi",
+    "name": "Sam Badawi",
+    "text": "The Nasdaq 100 ETF $QQQ dumped from up +0.8% after hours to down -0.8%, even after strong earnings from $AMD and Arista Network $ANET. What changed was midterm election results starting to come in...",
+    "url": "https://x.com/Sam_Badawi/status/2117785358821937259",
+    "likes": 29,
+    "reposts": 5,
+    "ts": "2026-11-04T01:05:50Z",
+    "note": "Why the after-hours pop faded overnight: election results, not the prints."
    }
   ],
   "SMCI": [
    {
-    "handle": "JesseCohenInv",
-    "name": "Jesse Cohen",
-    "text": "Get ready for Tuesday: Congressional elections. Earnings: AMD, Shopify, Pfizer, Super Micro, Arista Networks. Economic data: JOLTS, factory orders. Brace for volatility.",
-    "url": "https://x.com/JesseCohenInv/status/2117588498815316022",
-    "likes": 45,
-    "reposts": 4,
-    "ts": "2026-11-03T12:03:35Z",
-    "note": "Investing.com analyst: midterms plus an AI-hardware earnings gauntlet today."
+    "handle": "t3live",
+    "name": "T3 Live",
+    "text": "The Democrats won control of Congress in last night's elections. Solar stocks are up while Elon Musk's babies $TSLA & $SPCX are down big. $SMCI & $ANET beat and delivered very strong guidance. Both are up sharply...",
+    "url": "https://x.com/t3live/status/2117957750026043550",
+    "likes": 2,
+    "reposts": 2,
+    "ts": "2026-11-04T12:30:52Z",
+    "note": "Premarket desk read: SMCI and ANET up on guidance, Musk names down on the election."
    }
   ],
   "SHOP": [
@@ -533,29 +587,65 @@
     "ts": "2026-11-03T13:12:50Z",
     "note": "The guide numbers behind the move."
    }
+  ],
+  "UBER": [
+   {
+    "handle": "AlgoTradeAlert",
+    "name": "AlgoTradeAlert.com",
+    "text": "$UBER just delivered double-digit booking growth and stronger adjusted profits. The catch: its Q4 adjusted earnings outlook came in below analyst expectations. $LYFT $DASH $TSLA",
+    "url": "https://x.com/AlgoTradeAlert/status/2117967790501966246",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-04T13:10:45Z",
+    "note": "Uber's soft Q4 guide is the read-through for DoorDash, which reports after the close today."
+   }
+  ],
+  "QCOM": [
+   {
+    "handle": "INVESTEDD",
+    "name": "INVESTEDD",
+    "text": "After the close: $QCOM (±9.9%), $ARM (±12.3%), $APP (±17.9%), $DASH (±7.0%).",
+    "url": "https://x.com/INVESTEDD/status/2117719407535538331",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T20:43:46Z",
+    "note": "Options-implied moves for tonight's prints, so you can tell later whether the reaction was outsized."
+   }
+  ],
+  "ARM": [
+   {
+    "handle": "INVESTEDD",
+    "name": "INVESTEDD",
+    "text": "After the close: $QCOM (±9.9%), $ARM (±12.3%), $APP (±17.9%), $DASH (±7.0%).",
+    "url": "https://x.com/INVESTEDD/status/2117719407535538331",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T20:43:46Z",
+    "note": "Options-implied moves for tonight's prints, so you can tell later whether the reaction was outsized."
+   }
   ]
  },
  "filings": {
   "0001140361-26-041111": [
    {
-    "handle": "jfineman",
-    "name": "Josh Fineman",
-    "text": "$CART $DASH Instacart cut to hold on risk/reward with DoorDash takeover https://t.co/inC9fBCaL4",
-    "url": "https://x.com/jfineman/status/2115516207533342887",
-    "likes": 3,
-    "reposts": 1,
-    "ts": "2026-10-28T18:49:02.000Z",
-    "note": "Street reaction: Instacart cut to hold since the takeover price caps upside."
+    "handle": "INVESTEDD",
+    "name": "INVESTEDD",
+    "text": "After the close: $QCOM (±9.9%), $ARM (±12.3%), $APP (±17.9%), $DASH (±7.0%).",
+    "url": "https://x.com/INVESTEDD/status/2117719407535538331",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T20:43:46Z",
+    "note": "Options-implied moves for tonight's prints, so you can tell later whether the reaction was outsized."
    },
    {
-    "handle": "maddbai",
-    "name": "MADDB.ai",
-    "text": "Today's top ad story from M.A.D.: @DoorDash is in advanced talks to acquire rival @Instacart, with a potential deal valuing Instacart at around $17 billion, per The Wall Street Journal. https://t.co/mbU6Bnciu7",
-    "url": "https://x.com/maddbai/status/2115413282928406536",
-    "likes": 1,
+    "handle": "AlgoTradeAlert",
+    "name": "AlgoTradeAlert.com",
+    "text": "$UBER just delivered double-digit booking growth and stronger adjusted profits. The catch: its Q4 adjusted earnings outlook came in below analyst expectations. $LYFT $DASH $TSLA",
+    "url": "https://x.com/AlgoTradeAlert/status/2117967790501966246",
+    "likes": 0,
     "reposts": 0,
-    "ts": "2026-10-28T12:00:03.000Z",
-    "note": "Deal context: about $17B for Instacart, per WSJ."
+    "ts": "2026-11-04T13:10:45Z",
+    "note": "Uber's soft Q4 guide is the read-through for DoorDash, which reports after the close today."
    }
   ],
   "0001628280-26-067393": [
@@ -581,6 +671,16 @@
    }
   ],
   "0001193125-26-442717": [
+   {
+    "handle": "Investor_x1",
+    "name": "InvestorX",
+    "text": "Would love your thoughts on how SpaceX and Tesla merger can AVOID what happened with the Marvell and Lumentum merger, where they BOTH crashed post acquisition.",
+    "url": "https://x.com/Investor_x1/status/2117661585736978443",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T16:54:00Z",
+    "note": "Retail is already using Marvell-Lumentum as the cautionary tale: both stocks fell on the announcement."
+   },
    {
     "handle": "CounterPointTR",
     "name": "Counterpoint Research",
@@ -613,6 +713,16 @@
    }
   ],
   "0001193125-26-442758": [
+   {
+    "handle": "Investor_x1",
+    "name": "InvestorX",
+    "text": "Would love your thoughts on how SpaceX and Tesla merger can AVOID what happened with the Marvell and Lumentum merger, where they BOTH crashed post acquisition.",
+    "url": "https://x.com/Investor_x1/status/2117661585736978443",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T16:54:00Z",
+    "note": "Retail is already using Marvell-Lumentum as the cautionary tale: both stocks fell on the announcement."
+   },
    {
     "handle": "tuccardesk",
     "name": "Tüccar",
