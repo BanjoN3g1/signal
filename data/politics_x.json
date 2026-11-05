@@ -1,355 +1,390 @@
 {
- "updated": "2026-11-04T15:15:00+00:00",
- "note": "Curated, balanced accounts. Refreshed by the daily 7am routine via the X connector.",
- "leans": {
-  "left": "Left / Democratic-leaning",
-  "right": "Right / Republican-leaning",
-  "center": "Nonpartisan news",
-  "analyst": "Election analysts & forecasters"
- },
- "accounts": [
-  {
-   "handle": "NateSilver538",
-   "name": "Nate Silver",
-   "lean": "analyst",
-   "role": "Silver Bulletin forecaster"
+  "updated": "2026-11-05T14:59:23Z",
+  "note": "Balanced curated X chatter for Politics world; lean describes the account.",
+  "leans": {
+    "left": "Left / Democratic-leaning",
+    "right": "Right / Republican-leaning",
+    "center": "Nonpartisan news",
+    "analyst": "Election analysts & forecasters"
   },
-  {
-   "handle": "gelliottmorris",
-   "name": "G. Elliott Morris",
-   "lean": "analyst",
-   "role": "Strength In Numbers / FiftyPlusOne"
-  },
-  {
-   "handle": "Redistrict",
-   "name": "Dave Wasserman",
-   "lean": "analyst",
-   "role": "Cook Political Report"
-  },
-  {
-   "handle": "CookPolitical",
-   "name": "Cook Political Report",
-   "lean": "analyst",
-   "role": "Race ratings"
-  },
-  {
-   "handle": "kkondik",
-   "name": "Kyle Kondik",
-   "lean": "analyst",
-   "role": "Sabato's Crystal Ball"
-  },
-  {
-   "handle": "InsideElections",
-   "name": "Inside Elections",
-   "lean": "analyst",
-   "role": "Race ratings"
-  },
-  {
-   "handle": "SplitTicket_",
-   "name": "Split Ticket",
-   "lean": "analyst",
-   "role": "Forecast model"
-  },
-  {
-   "handle": "DecisionDeskHQ",
-   "name": "Decision Desk HQ",
-   "lean": "analyst",
-   "role": "Results & forecast"
-  },
-  {
-   "handle": "Nate_Cohn",
-   "name": "Nate Cohn",
-   "lean": "analyst",
-   "role": "NYT chief political analyst"
-  },
-  {
-   "handle": "SeanTrende",
-   "name": "Sean Trende",
-   "lean": "analyst",
-   "role": "RealClearPolitics analyst"
-  },
-  {
-   "handle": "jbouie",
-   "name": "Jamelle Bouie",
-   "lean": "left",
-   "role": "NYT columnist"
-  },
-  {
-   "handle": "ezraklein",
-   "name": "Ezra Klein",
-   "lean": "left",
-   "role": "NYT columnist"
-  },
-  {
-   "handle": "MattYglesias",
-   "name": "Matthew Yglesias",
-   "lean": "left",
-   "role": "Slow Boring, center-left"
-  },
-  {
-   "handle": "atrupar",
-   "name": "Aaron Rupar",
-   "lean": "left",
-   "role": "Public Notice"
-  },
-  {
-   "handle": "mehdirhasan",
-   "name": "Mehdi Hasan",
-   "lean": "left",
-   "role": "Zeteo"
-  },
-  {
-   "handle": "SimonWDC",
-   "name": "Simon Rosenberg",
-   "lean": "left",
-   "role": "Dem strategist"
-  },
-  {
-   "handle": "RichLowry",
-   "name": "Rich Lowry",
-   "lean": "right",
-   "role": "National Review"
-  },
-  {
-   "handle": "guypbenson",
-   "name": "Guy Benson",
-   "lean": "right",
-   "role": "Fox News"
-  },
-  {
-   "handle": "ByronYork",
-   "name": "Byron York",
-   "lean": "right",
-   "role": "Washington Examiner"
-  },
-  {
-   "handle": "EWErickson",
-   "name": "Erick Erickson",
-   "lean": "right",
-   "role": "Conservative commentator"
-  },
-  {
-   "handle": "KarlRove",
-   "name": "Karl Rove",
-   "lean": "right",
-   "role": "GOP strategist"
-  },
-  {
-   "handle": "MZHemingway",
-   "name": "Mollie Hemingway",
-   "lean": "right",
-   "role": "The Federalist"
-  },
-  {
-   "handle": "AP_Politics",
-   "name": "AP Politics",
-   "lean": "center",
-   "role": "Wire service"
-  },
-  {
-   "handle": "politico",
-   "name": "POLITICO",
-   "lean": "center",
-   "role": "Politics news"
-  },
-  {
-   "handle": "PunchbowlNews",
-   "name": "Punchbowl News",
-   "lean": "center",
-   "role": "Congress"
-  },
-  {
-   "handle": "axios",
-   "name": "Axios",
-   "lean": "center",
-   "role": "News"
-  },
-  {
-   "handle": "NBCPolitics",
-   "name": "NBC Politics",
-   "lean": "center",
-   "role": "News"
-  },
-  {
-   "handle": "CNNPolitics",
-   "name": "CNN Politics",
-   "lean": "center",
-   "role": "News"
-  }
- ],
- "posts": [
-  {
-   "handle": "NateSilver538",
-   "name": "Nate Silver",
-   "lean": "analyst",
-   "role": "Silver Bulletin forecaster",
-   "text": "If the remaining results go as expected, Democrats will hold governorships in states totaling 392 electoral votes.",
-   "url": "https://x.com/NateSilver538/status/2117898400515449088",
-   "likes": 20218,
-   "reposts": 1997,
-   "ts": "2026-11-04T08:35:01Z"
-  },
-  {
-   "handle": "Nate_Cohn",
-   "name": "Nate Cohn",
-   "lean": "analyst",
-   "role": "NYT chief political analyst",
-   "text": "Our preliminary Times Voter Trends estimates for the results by demographic group",
-   "url": "https://x.com/Nate_Cohn/status/2117940167122014348",
-   "likes": 560,
-   "reposts": 85,
-   "ts": "2026-11-04T11:20:59Z",
-   "race": "house-control"
-  },
-  {
-   "handle": "gelliottmorris",
-   "name": "G. Elliott Morris",
-   "lean": "analyst",
-   "role": "Strength In Numbers / FiftyPlusOne",
-   "text": "Last night was a bad night for anyone who argued, at some point over the last 2 yrs, that Trump gains with Latino + young voters marked a durable realignment to the right, that higher turnout helps GOP... or that polls would overshoot Dems.",
-   "url": "https://x.com/gelliottmorris/status/2117993408447086880",
-   "likes": 110,
-   "reposts": 13,
-   "ts": "2026-11-04T14:52:33Z"
-  },
-  {
-   "handle": "kkondik",
-   "name": "Kyle Kondik",
-   "lean": "analyst",
-   "role": "Sabato's Crystal Ball",
-   "text": "We went big and should have gone bigger, but we got the main thrust right: Dems doing better than 2018 in the House and winning the Senate majority by more than just a sliver",
-   "url": "https://x.com/kkondik/status/2117997951150887265",
-   "likes": 0,
-   "reposts": 0,
-   "ts": "2026-11-04T15:10:36Z",
-   "race": "senate-control"
-  },
-  {
-   "handle": "DecisionDeskHQ",
-   "name": "Decision Desk HQ",
-   "lean": "analyst",
-   "role": "Results & forecast",
-   "text": "DDHQ Race Update (est. 68% in): Nevada Governor. Aaron Ford (D): 393,643 (51.6%). Joe Lombardo (R): 339,728 (44.5%)",
-   "url": "https://x.com/DecisionDeskHQ/status/2117894974553608231",
-   "likes": 162,
-   "reposts": 26,
-   "ts": "2026-11-04T08:21:25Z",
-   "race": "NV-gov"
-  },
-  {
-   "handle": "ezraklein",
-   "name": "Ezra Klein",
-   "lean": "left",
-   "role": "NYT columnist",
-   "text": "One of the more exciting parts of this election, among many, is the return of a religious left.",
-   "url": "https://x.com/ezraklein/status/2117979924724093270",
-   "likes": 1657,
-   "reposts": 176,
-   "ts": "2026-11-04T13:58:58Z"
-  },
-  {
-   "handle": "MattYglesias",
-   "name": "Matthew Yglesias",
-   "lean": "left",
-   "role": "Slow Boring, center-left",
-   "text": "I take the lesson that moderate Democrats like James Talarico, Josh Turek, and Annie Andrews who break with the establishment on key policy issues do better than establishmentarians.",
-   "url": "https://x.com/mattyglesias/status/2117987676288922025",
-   "likes": 423,
-   "reposts": 26,
-   "ts": "2026-11-04T14:29:46Z",
-   "race": "TX-sen"
-  },
-  {
-   "handle": "MattYglesias",
-   "name": "Matthew Yglesias",
-   "lean": "left",
-   "role": "Slow Boring, center-left",
-   "text": "Winning Michigan by seven is just a lot less impressive than winning NC by 20 or Ohio or Kansas (!) by 5 or Iowa and South Carolina by 4 or Texas (!) by 12...",
-   "url": "https://x.com/mattyglesias/status/2117966318267748705",
-   "likes": 792,
-   "reposts": 81,
-   "ts": "2026-11-04T13:04:54Z",
-   "race": "MI-sen"
-  },
-  {
-   "handle": "EWErickson",
-   "name": "Erick Erickson",
-   "lean": "right",
-   "role": "Conservative commentator",
-   "text": "Trump's second term will be the most impermanent in American history because almost everything he has done has been by executive action, which can all easily be undone.",
-   "url": "https://x.com/EWErickson/status/2117993900732223630",
-   "likes": 92,
-   "reposts": 13,
-   "ts": "2026-11-04T14:54:31Z"
-  },
-  {
-   "handle": "EWErickson",
-   "name": "Erick Erickson",
-   "lean": "right",
-   "role": "Conservative commentator",
-   "text": "Last night was necessary chemotherapy for a political party that started touching keyboards instead of grass.",
-   "url": "https://x.com/EWErickson/status/2117994679249883530",
-   "likes": 75,
-   "reposts": 4,
-   "ts": "2026-11-04T14:57:36Z"
-  },
-  {
-   "handle": "EWErickson",
-   "name": "Erick Erickson",
-   "lean": "right",
-   "role": "Conservative commentator",
-   "text": "A few years ago, Jon Ossoff launched a coup and purged the GA Democratic Party leadership. His take over of the party... had a huge night last night as the GOP is still fighting over 2020.",
-   "url": "https://x.com/EWErickson/status/2117983345434873893",
-   "likes": 184,
-   "reposts": 21,
-   "ts": "2026-11-04T14:12:34Z",
-   "race": "GA-sen"
-  },
-  {
-   "handle": "politico",
-   "name": "POLITICO",
-   "lean": "center",
-   "role": "Politics news",
-   "text": "BREAKING: Speaker Mike Johnson will step aside as the top House Republican leader after Tuesday's GOP defeat.",
-   "url": "https://x.com/politico/status/2117997623164408098",
-   "likes": 5,
-   "reposts": 2,
-   "ts": "2026-11-04T15:09:18Z",
-   "race": "house-control"
-  },
-  {
-   "handle": "politico",
-   "name": "POLITICO",
-   "lean": "center",
-   "role": "Politics news",
-   "text": "'AI earthquake': Democrats eye a Silicon Valley reckoning",
-   "url": "https://x.com/politico/status/2117997266212467179",
-   "likes": 0,
-   "reposts": 1,
-   "ts": "2026-11-04T15:07:53Z"
-  },
-  {
-   "handle": "axios",
-   "name": "Axios",
-   "lean": "center",
-   "role": "News",
-   "text": "Democrats win chance to take on energy costs",
-   "url": "https://x.com/axios/status/2117970622068277565",
-   "likes": 14,
-   "reposts": 4,
-   "ts": "2026-11-04T13:22:00Z"
-  },
-  {
-   "handle": "PunchbowlNews",
-   "name": "Punchbowl News",
-   "lean": "center",
-   "role": "Congress",
-   "text": "Jake Sherman and Andrew Desiderio recap the wins by Dems Tuesday night that secured them majorities in both chambers next Congress, plus what's next for House GOP leadership.",
-   "url": "https://x.com/PunchbowlNews/status/2117968857767796804",
-   "likes": 2,
-   "reposts": 0,
-   "ts": "2026-11-04T13:15:00Z",
-   "race": "senate-control"
-  }
- ]
+  "accounts": [
+    {
+      "handle": "NateSilver538",
+      "name": "Nate Silver",
+      "lean": "analyst",
+      "role": "Silver Bulletin forecaster"
+    },
+    {
+      "handle": "gelliottmorris",
+      "name": "G. Elliott Morris",
+      "lean": "analyst",
+      "role": "Strength In Numbers / FiftyPlusOne"
+    },
+    {
+      "handle": "Redistrict",
+      "name": "Dave Wasserman",
+      "lean": "analyst",
+      "role": "Cook Political Report"
+    },
+    {
+      "handle": "CookPolitical",
+      "name": "Cook Political Report",
+      "lean": "analyst",
+      "role": "Race ratings"
+    },
+    {
+      "handle": "kkondik",
+      "name": "Kyle Kondik",
+      "lean": "analyst",
+      "role": "Sabato's Crystal Ball"
+    },
+    {
+      "handle": "InsideElections",
+      "name": "Inside Elections",
+      "lean": "analyst",
+      "role": "Race ratings"
+    },
+    {
+      "handle": "SplitTicket_",
+      "name": "Split Ticket",
+      "lean": "analyst",
+      "role": "Forecast model"
+    },
+    {
+      "handle": "DecisionDeskHQ",
+      "name": "Decision Desk HQ",
+      "lean": "analyst",
+      "role": "Results & forecast"
+    },
+    {
+      "handle": "Nate_Cohn",
+      "name": "Nate Cohn",
+      "lean": "analyst",
+      "role": "NYT chief political analyst"
+    },
+    {
+      "handle": "SeanTrende",
+      "name": "Sean Trende",
+      "lean": "analyst",
+      "role": "RealClearPolitics analyst"
+    },
+    {
+      "handle": "jbouie",
+      "name": "Jamelle Bouie",
+      "lean": "left",
+      "role": "NYT columnist"
+    },
+    {
+      "handle": "ezraklein",
+      "name": "Ezra Klein",
+      "lean": "left",
+      "role": "NYT columnist"
+    },
+    {
+      "handle": "MattYglesias",
+      "name": "Matthew Yglesias",
+      "lean": "left",
+      "role": "Slow Boring, center-left"
+    },
+    {
+      "handle": "atrupar",
+      "name": "Aaron Rupar",
+      "lean": "left",
+      "role": "Public Notice"
+    },
+    {
+      "handle": "mehdirhasan",
+      "name": "Mehdi Hasan",
+      "lean": "left",
+      "role": "Zeteo"
+    },
+    {
+      "handle": "SimonWDC",
+      "name": "Simon Rosenberg",
+      "lean": "left",
+      "role": "Dem strategist"
+    },
+    {
+      "handle": "RichLowry",
+      "name": "Rich Lowry",
+      "lean": "right",
+      "role": "National Review"
+    },
+    {
+      "handle": "guypbenson",
+      "name": "Guy Benson",
+      "lean": "right",
+      "role": "Fox News"
+    },
+    {
+      "handle": "ByronYork",
+      "name": "Byron York",
+      "lean": "right",
+      "role": "Washington Examiner"
+    },
+    {
+      "handle": "EWErickson",
+      "name": "Erick Erickson",
+      "lean": "right",
+      "role": "Conservative commentator"
+    },
+    {
+      "handle": "KarlRove",
+      "name": "Karl Rove",
+      "lean": "right",
+      "role": "GOP strategist"
+    },
+    {
+      "handle": "MZHemingway",
+      "name": "Mollie Hemingway",
+      "lean": "right",
+      "role": "The Federalist"
+    },
+    {
+      "handle": "AP_Politics",
+      "name": "AP Politics",
+      "lean": "center",
+      "role": "Wire service"
+    },
+    {
+      "handle": "politico",
+      "name": "POLITICO",
+      "lean": "center",
+      "role": "Politics news"
+    },
+    {
+      "handle": "PunchbowlNews",
+      "name": "Punchbowl News",
+      "lean": "center",
+      "role": "Congress"
+    },
+    {
+      "handle": "axios",
+      "name": "Axios",
+      "lean": "center",
+      "role": "News"
+    },
+    {
+      "handle": "NBCPolitics",
+      "name": "NBC Politics",
+      "lean": "center",
+      "role": "News"
+    },
+    {
+      "handle": "CNNPolitics",
+      "name": "CNN Politics",
+      "lean": "center",
+      "role": "News"
+    }
+  ],
+  "posts": [
+    {
+      "handle": "DecisionDeskHQ",
+      "name": "Decision Desk HQ",
+      "lean": "analyst",
+      "role": "Results & forecast",
+      "text": "Last night was the largest blue wave in a generation. Democrats have been projected as winner in 54 Senate seats, flipping seven states and with a lead in two others (Alaska and Mississippi). In the House, Democrats have been projected in 249 seats - a net gain of 38 so far.",
+      "url": "https://x.com/DecisionDeskHQ/status/2118051109873025117",
+      "likes": 2189,
+      "reposts": 328,
+      "ts": "2026-11-04T18:41:50Z",
+      "race": "senate-control"
+    },
+    {
+      "handle": "DecisionDeskHQ",
+      "name": "Decision Desk HQ",
+      "lean": "analyst",
+      "role": "Results & forecast",
+      "text": "Sherrod Brown was projected the winner of Ohio's Senate race. Compared to the 2024 Senate contest, which Brown narrowly lost, every county in the state shifted left.",
+      "url": "https://x.com/DecisionDeskHQ/status/2118093887415992400",
+      "likes": 269,
+      "reposts": 33,
+      "ts": "2026-11-04T21:31:49Z",
+      "race": "OH-sen"
+    },
+    {
+      "handle": "NateSilver538",
+      "name": "Nate Silver",
+      "lean": "analyst",
+      "role": "Silver Bulletin forecaster",
+      "text": "OK, wrote about the models vs. prediction markets debate. Actually, the real stolen valor is from NYT/Siena. But prediction markets converged toward FLIPR/model prices, not the other way around, and the models got to the right answer sooner and more confidently.",
+      "url": "https://x.com/NateSilver538/status/2118345302767816730",
+      "likes": 371,
+      "reposts": 27,
+      "ts": "2026-11-05T14:10:51Z"
+    },
+    {
+      "handle": "SeanTrende",
+      "name": "Sean Trende",
+      "lean": "analyst",
+      "role": "RealClearPolitics analyst",
+      "text": "In the Trump era, Texas Republicans had been winning a game of chicken where either their support levels among Hispanics, suburbanites, or the overall political environment kept them afloat. On Tuesday all three factors went the other way.",
+      "url": "https://x.com/SeanTrende/status/2118315093997822158",
+      "likes": 87,
+      "reposts": 19,
+      "ts": "2026-11-05T12:10:49Z",
+      "race": "TX-sen"
+    },
+    {
+      "handle": "SeanTrende",
+      "name": "Sean Trende",
+      "lean": "analyst",
+      "role": "RealClearPolitics analyst",
+      "text": "I will probably write this up later without the GPT generated chart, and causation is always very difficult to prove but the intuition that the VRA redistricting supercharged Black turnout in the south seems to hold up reasonably well at first look.",
+      "url": "https://x.com/SeanTrende/status/2118322142492209520",
+      "likes": 136,
+      "reposts": 30,
+      "ts": "2026-11-05T12:38:49Z"
+    },
+    {
+      "handle": "MattYglesias",
+      "name": "Matthew Yglesias",
+      "lean": "left",
+      "role": "Slow Boring, center-left",
+      "text": "Conservative pundits reacting to Republicans fucking up the economy so badly that Democrats overcome a hideously biased senate map and brutal mid-Census House gerrymanders: \"Dumb libs sure were hysterical about the state of American democracy.\"",
+      "url": "https://x.com/mattyglesias/status/2118154890866290790",
+      "likes": 842,
+      "reposts": 64,
+      "ts": "2026-11-05T01:34:14Z",
+      "race": "senate-control"
+    },
+    {
+      "handle": "MattYglesias",
+      "name": "Matthew Yglesias",
+      "lean": "left",
+      "role": "Slow Boring, center-left",
+      "text": "2026 was the year AIPAC lost its clout in Democratic primaries, then pro-Israel groups tried to panic Jews everywhere into voting Republican, then JD Vance responded to the wipeout by assigning sole responsibility to the Iran policy they pushed for.",
+      "url": "https://x.com/mattyglesias/status/2118312158346059778",
+      "likes": 217,
+      "reposts": 30,
+      "ts": "2026-11-05T11:59:09Z"
+    },
+    {
+      "handle": "atrupar",
+      "name": "Aaron Rupar",
+      "lean": "left",
+      "role": "Public Notice",
+      "text": "New in PN: The only thing Democrats have to fear is fear itself — even though affordability was the top campaign issue, if Democrats take only a narrow lesson from the most sweeping midterm victory in half a century they will undershoot the moment.",
+      "url": "https://x.com/atrupar/status/2118327098796364010",
+      "likes": 165,
+      "reposts": 41,
+      "ts": "2026-11-05T12:58:31Z",
+      "race": "house-control"
+    },
+    {
+      "handle": "atrupar",
+      "name": "Aaron Rupar",
+      "lean": "left",
+      "role": "Public Notice",
+      "text": "El-Sayed: \"People have always seen Donald Trump as this big monster that's unbeatable. It turns out, you just stand up to him, and he can read the tea leaves. I'm willing to work with anyone ... it should never be about retribution. It's about enforcing the rule of law...\"",
+      "url": "https://x.com/atrupar/status/2118332536187207835",
+      "likes": 4043,
+      "reposts": 490,
+      "ts": "2026-11-05T13:20:07Z",
+      "race": "MI-sen"
+    },
+    {
+      "handle": "politico",
+      "name": "POLITICO",
+      "lean": "center",
+      "role": "Politics news",
+      "text": "Trump loyalists face off to lead a decimated House GOP",
+      "url": "https://x.com/politico/status/2118331345365594499",
+      "likes": 4,
+      "reposts": 0,
+      "ts": "2026-11-05T13:15:24Z",
+      "race": "house-control"
+    },
+    {
+      "handle": "PunchbowlNews",
+      "name": "Punchbowl News",
+      "lean": "center",
+      "role": "Congress",
+      "text": "Defense: @RepAdamSmith is poised to take back the House Armed Services Committee gavel in two months’ time. But he’s still figuring out exactly how he wants to wield it.",
+      "url": "https://x.com/PunchbowlNews/status/2118332755452825993",
+      "likes": 1,
+      "reposts": 0,
+      "ts": "2026-11-05T13:21:00Z",
+      "race": "house-control"
+    },
+    {
+      "handle": "axios",
+      "name": "Axios",
+      "lean": "center",
+      "role": "News",
+      "text": "Trump: Sen. Sullivan should get votes cast for Alaska's other Sullivan",
+      "url": "https://x.com/axios/status/2118342823900553422",
+      "likes": 5,
+      "reposts": 1,
+      "ts": "2026-11-05T14:01:00Z",
+      "race": "AK-sen"
+    },
+    {
+      "handle": "ByronYork",
+      "name": "Byron York",
+      "lean": "right",
+      "role": "Washington Examiner",
+      "text": "On Vance's statement that \"The reason we lost is the war.\" Looking at exit polls, the top three issues voters described as \"crucial or major\" factors were (1) \"government corruption,\" named by 90% of voters, which Democrats won with 56%; (2) \"cost...",
+      "url": "https://x.com/ByronYork/status/2118034939811627133",
+      "likes": 235,
+      "reposts": 42,
+      "ts": "2026-11-04T17:37:35Z"
+    },
+    {
+      "handle": "EWErickson",
+      "name": "Erick Erickson",
+      "lean": "right",
+      "role": "Conservative commentator",
+      "text": "Were I a ranking Republican in the House or Senate, I’d start taking the Trump family corruption seriously and cooperate in grown up investigations. 90% of voters said corruption was a determining factor in their vote and over 60% pointed not to Somali fraud or highspeed rail,",
+      "url": "https://x.com/EWErickson/status/2118316281539498241",
+      "likes": 570,
+      "reposts": 110,
+      "ts": "2026-11-05T12:15:32Z"
+    },
+    {
+      "handle": "EWErickson",
+      "name": "Erick Erickson",
+      "lean": "right",
+      "role": "Conservative commentator",
+      "text": "Two Senators tell me the Vice President is right that the GOP turned against the Iran war in the Senate GOP’s own polling. But they say what the VP leaves out is that the turn came after the VP negotiated a bad deal with the Iranian regime that repulsed the GOP.",
+      "url": "https://x.com/EWErickson/status/2118095251944710644",
+      "likes": 6783,
+      "reposts": 1060,
+      "ts": "2026-11-04T21:37:15Z"
+    },
+    {
+      "handle": "guypbenson",
+      "name": "Guy Benson",
+      "lean": "right",
+      "role": "Fox News",
+      "text": "A mystical feeling has washed over me in the last 24 hours that the institution of the United States Senate is no longer a pressing threat to democracy. These energies may again evolve circa 2032.",
+      "url": "https://x.com/guypbenson/status/2118146771033481276",
+      "likes": 621,
+      "reposts": 22,
+      "ts": "2026-11-05T01:01:58Z",
+      "race": "senate-control"
+    },
+    {
+      "handle": "RichLowry",
+      "name": "Rich Lowry",
+      "lean": "right",
+      "role": "National Review",
+      "text": "On the Iran war, of course, it hurt Republicans badly on Tuesday. The war was never popular, Trump hasn’t won it, and it increased fuel costs for everyone in the country. That’s not a formula for political success in the run-up to midterms.",
+      "url": "https://x.com/RichLowry/status/2118356917630173610",
+      "likes": 0,
+      "reposts": 0,
+      "ts": "2026-11-05T14:57:00Z"
+    },
+    {
+      "handle": "EWErickson",
+      "name": "Erick Erickson",
+      "lean": "right",
+      "role": "Conservative commentator",
+      "text": "Few things have inspired black voters to vote across the South more than Trump’s redistricting initiative to wipe out black voting districts. Even in states that didn’t do it, the threat of it mobilized black voters more than anything in recent decades.",
+      "url": "https://x.com/EWErickson/status/2118336977703448891",
+      "likes": 200,
+      "reposts": 23,
+      "ts": "2026-11-05T13:37:46Z"
+    }
+  ]
 }

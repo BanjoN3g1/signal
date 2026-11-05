@@ -1,760 +1,450 @@
 {
- "stories": {
-  "3fccf913600c": [
-   {
-    "handle": "spcxGOD",
-    "name": "Panke",
-    "text": "Barclays ran the SpaceX x Tesla merger math. If SpaceX buys Tesla, Elon gets control of both. He'd own ~37% of the combined company but get ~56% of the votes. Why? His SpaceX shares get 10 votes each.",
-    "url": "https://x.com/spcxGOD/status/2117670399282454928",
-    "likes": 154,
-    "reposts": 16,
-    "ts": "2026-11-03T17:29:02Z",
-    "note": "Governance angle bankers will care about: dual-class votes would hand Musk control of the combined company."
-   },
-   {
-    "handle": "Amy787",
-    "name": "Amy",
-    "text": "People ask what does SpaceX get out of a merger with Tesla. More than half of SpaceX's revenue is from leasing compute (supported by hundreds of Tesla Megapacks)...",
-    "url": "https://x.com/Amy787/status/2117663151877681236",
-    "likes": 239,
-    "reposts": 22,
-    "ts": "2026-11-03T17:00:14Z",
-    "note": "Bull-side strategic rationale: SpaceX's compute buildout needs Tesla's Megapack supply."
-   },
-   {
-    "handle": "CaffeSatoshi",
-    "name": "Caffe' Satoshi",
-    "text": "Exceptions: SpaceX and Tesla DOWN HARD. Most tech stocks are up, with futures gaining around 1% today as markets begin to settle following the midterms...",
-    "url": "https://x.com/CaffeSatoshi/status/2117941658792669252",
-    "likes": 5,
-    "reposts": 0,
-    "ts": "2026-11-04T11:26:55Z",
-    "note": "Musk names lagging the post-midterm rally as Democrats take Congress."
-   }
-  ],
-  "35d489695b45": [
-   {
-    "handle": "JG_Nuke",
-    "name": "Nobody Special",
-    "text": "OpenAI Forced to lower valuation in latest funding round.",
-    "url": "https://x.com/JG_Nuke/status/2117270398563655830",
-    "likes": 234,
-    "reposts": 26,
-    "ts": "2026-11-02T14:59:34Z",
-    "note": "Most-shared take on the round: target cut from $30B to about $20B and valuation from $1.4T to $1.25T."
-   },
-   {
-    "handle": "BroadwakeAI",
-    "name": "BroadwakeAI",
-    "text": "OpenAI cut its latest funding target to about $20B from $30B, at a $1.25T valuation, CNBC and the FT report. UAE investors are expected to lead the round alongside Coatue.",
-    "url": "https://x.com/BroadwakeAI/status/2117392371520303470",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-02T23:04:15Z",
-    "note": "Who's writing the check: UAE money plus Coatue, per CNBC and the FT."
-   }
-  ],
-  "d0702d927cda": [
-   {
-    "handle": "cnbcKaren",
-    "name": "Karen Tso",
-    "text": "What's the opposite of techtastic? This week everything mattered: negative free cash flow from Amazon, Alphabet, Meta; hyperscaler capex intensity; earnings misses; a death cross on Alphabet; a shrinking search moat.",
-    "url": "https://x.com/cnbcKaren/status/2116124254378901511",
-    "likes": 60,
-    "reposts": 1,
-    "ts": "2026-10-30T11:05:12Z",
-    "note": "CNBC anchor framing the capex-vs-free-cash-flow reckoning behind Meta's drop."
-   },
-   {
-    "handle": "Stindur",
-    "name": "Stindur",
-    "text": "Meta spent $35B on capex last quarter. Free cash flow went negative. Same day they created a new share class with no voting rights. The AI story is being told to shareholders. The bill is being sent to them too.",
-    "url": "https://x.com/Stindur/status/2116628715945722298",
-    "likes": 3,
-    "reposts": 0,
-    "ts": "2026-10-31T20:29:45Z",
-    "note": "Bear case: governance plus negative FCF, not just the EPS miss."
-   },
-   {
-    "handle": "milo_crypt01",
-    "name": "Milocrypt",
-    "text": "The world has a new largest company. Apple, $5.03T market cap. Nvidia fell to $4.93T. The Big Tech company spending the least on AI is now worth more than every one of them.",
-    "url": "https://x.com/milo_crypt01/status/2116880354552258669",
-    "likes": 15,
-    "reposts": 7,
-    "ts": "2026-11-01T13:09:40Z",
-    "note": "Widely seen take: the market is rewarding capex restraint."
-   }
-  ],
-  "899f13b803e4": [
-   {
-    "handle": "slava_invests",
-    "name": "Slava",
-    "text": "Everyone is watching $NVDA and $AMD. But look at $VRT and $ANET. Both companies are benefiting from the MASSIVE AI infrastructure buildout... $VRT Q3 2026 Revenue: $4.31B (+61% YoY)",
-    "url": "https://x.com/slava_invests/status/2117950235905314984",
-    "likes": 8,
-    "reposts": 1,
-    "ts": "2026-11-04T12:01:00Z",
-    "note": "Picks-and-shovels read: power and networking are growing as fast as compute."
-   },
-   {
-    "handle": "FIREDUpWealth",
-    "name": "FIRED Up Wealth",
-    "text": "Data center stocks crushed earnings tonight as $AMD, Astera Labs $ALAB, and Arista Networks $ANET all reported strong results driven by surging AI infrastructure demand. AMD delivered a record $13.4 billion in Q3 revenue, up 45% year-over-year...",
-    "url": "https://x.com/FIREDUpWealth/status/2117736920952480072",
-    "likes": 29,
-    "reposts": 1,
-    "ts": "2026-11-03T21:53:22Z",
-    "note": "AMD record quarter as part of a clean AI-infrastructure sweep."
-   }
-  ],
-  "443634b91663": [
-   {
-    "handle": "Insync_A",
-    "name": "InSync Analytics",
-    "text": "Five straight beats. 21% → 93% growth in nine quarters.\n\n$PLTR reports Monday Nov 2 after the close. Street expects 85% growth on $2.18B revenue.\n\nWill Palantir do it again?\n\n#Palantir #PLTR #Earnings https://t.co/Liemq7MGhD",
-    "url": "https://x.com/Insync_A/status/2116601152150323683",
-    "likes": 6,
-    "reposts": 0,
-    "ts": "2026-10-31T18:40:13.000Z",
-    "note": "Sets the bar for tonight: five straight beats, Street expects about 85% growth on $2.18B revenue."
-   },
-   {
-    "handle": "ScrooogeUncle",
-    "name": "Invest with Uncle Scrooge",
-    "text": "$PLTR earnings volatility range is ~14.8% which implies $157 to $211\n\n#superbowl #monday #palantir https://t.co/cPqzZ172Wm",
-    "url": "https://x.com/ScrooogeUncle/status/2116680438827610607",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-10-31T23:55:17.000Z",
-    "note": "Options imply roughly a 15% move on the print."
-   }
-  ],
-  "d848443f16f8": [
-   {
-    "handle": "KobeissiLetter",
-    "name": "The Kobeissi Letter",
-    "text": "BREAKING: Oracle stock, $ORCL, falls over -5% after announcing plans to raise $20 billion through equity and debt issuances to fund its AI buildout.\n\nThe stock is now down -54% from this year's high. https://t.co/oWJntBH8xS",
-    "url": "https://x.com/KobeissiLetter/status/2117264234811920846",
-    "likes": 846,
-    "reposts": 96,
-    "ts": "2026-11-02T14:35:05.000Z",
-    "note": "Oracle plans to raise $20B in equity and debt for its AI buildout; stock down 54% from its high."
-   },
-   {
-    "handle": "StockMKTNewz",
-    "name": "Evan",
-    "text": "ORACLE $ORCL ALSO FILES TO OFFER $10B OF COMMON STOCK https://t.co/4SgpjtJWy2",
-    "url": "https://x.com/StockMKTNewz/status/2117246145365692829",
-    "likes": 113,
-    "reposts": 15,
-    "ts": "2026-11-02T13:23:12.000Z",
-    "note": "Includes a $10B common stock offering, a rare big equity raise for a megacap."
-   }
-  ],
-  "45f6c3124bf3": [
-   {
-    "handle": "StockMKTNewz",
-    "name": "Evan",
-    "text": "Anthropic $ANT just confirmed that it brought in $17 Billion of revenue in Q3 2026 up 1,127% YoY https://t.co/URF4lA3B2J",
-    "url": "https://x.com/StockMKTNewz/status/2117262905070752201",
-    "likes": 97,
-    "reposts": 14,
-    "ts": "2026-11-02T14:29:48.000Z",
-    "note": "Anthropic's updated IPO filing confirms about $17B of Q3 revenue, up over 1,100% year over year."
-   },
-   {
-    "handle": "StockMKTNewz",
-    "name": "Evan",
-    "text": "HERE ARE SOME OF THE KEY NUMBERS FROM ANTHROPIC'S UPDATED IPO FILING\n\n- Q3 revenue: $16.96B vs $1.38B a year ago\n- Nine-month revenue: $33.2B vs $2.5B a year ago\n- Q3 compute and infrastructure costs: $9.86B\n- Q3 personnel costs: $1.71B vs $489M a year ago\n- Customers spending https://t.co/URF4lA33db",
-    "url": "https://x.com/StockMKTNewz/status/2117265371900031441",
-    "likes": 60,
-    "reposts": 9,
-    "ts": "2026-11-02T14:39:36.000Z",
-    "note": "Key numbers from the amended filing, including compute and infrastructure costs."
-   }
-  ],
-  "d67c8f23c462": [
-   {
-    "handle": "Investor_x1",
-    "name": "InvestorX",
-    "text": "Would love your thoughts on how SpaceX and Tesla merger can AVOID what happened with the Marvell and Lumentum merger, where they BOTH crashed post acquisition.",
-    "url": "https://x.com/Investor_x1/status/2117661585736978443",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T16:54:00Z",
-    "note": "Retail is already using Marvell-Lumentum as the cautionary tale: both stocks fell on the announcement."
-   }
-  ],
-  "589c0967e665": [
-   {
-    "handle": "amktparticipant",
-    "name": "Market Participant",
-    "text": "Shares of CrowdStrike are up this morning after an upgrade to Buy from Hold at Deutsche Bank. The market is \"still not fully appreciating the extent to which AI will expand the market for cybersecurity.\"",
-    "url": "https://x.com/amktparticipant/status/2117285609115119862",
-    "likes": 14,
-    "reposts": 1,
-    "ts": "2026-11-02T16:00:01Z",
-    "note": "The core thesis from Deutsche Bank's Brad Zelnick."
-   },
-   {
-    "handle": "Rekter",
-    "name": "Rekter",
-    "text": "A Deutsche Bank upgrade has CrowdStrike up 3% premarket on the idea that AI grows the security market. The tell is CHKP down almost 10% on a weak guide while PANW catches sympathy. Money is picking cyber winners.",
-    "url": "https://x.com/Rekter/status/2117254401853214921",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-02T13:56:00Z",
-    "note": "Dispersion inside cyber: CRWD up, Check Point down on guide."
-   },
-   {
-    "handle": "davidmoadel",
-    "name": "David Moadel",
-    "text": "CrowdStrike slides 3% despite Deutsche Bank upgrade and CoreWeave deal; Fortinet falls 3%, Palo Alto drops 2%.",
-    "url": "https://x.com/davidmoadel/status/2117271595798474792",
-    "likes": 2,
-    "reposts": 0,
-    "ts": "2026-11-02T15:04:20Z",
-    "note": "The upgrade pop faded as software sold off intraday."
-   }
-  ],
-  "047fc1ee0b62": [
-   {
-    "handle": "AlgoTradeAlert",
-    "name": "AlgoTradeAlert.com",
-    "text": "$UBER just delivered double-digit booking growth and stronger adjusted profits. The catch: its Q4 adjusted earnings outlook came in below analyst expectations. $LYFT $DASH $TSLA",
-    "url": "https://x.com/AlgoTradeAlert/status/2117967790501966246",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-04T13:10:45Z",
-    "note": "Uber's soft Q4 guide is the read-through for DoorDash, which reports after the close today."
-   },
-   {
-    "handle": "INVESTEDD",
-    "name": "INVESTEDD",
-    "text": "After the close: $QCOM (±9.9%), $ARM (±12.3%), $APP (±17.9%), $DASH (±7.0%).",
-    "url": "https://x.com/INVESTEDD/status/2117719407535538331",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T20:43:46Z",
-    "note": "Options-implied moves for tonight's prints, so you can tell later whether the reaction was outsized."
-   }
-  ],
-  "88d166c2d67a": [
-   {
-    "handle": "TheSFInvestor",
-    "name": "Shop Floor Investor",
-    "text": "Sentiment punished Alphabet for cash. Free cash flow was negative $9.1B because capex of $51.4B exceeded operating cash flow of $42.3B...",
-    "url": "https://x.com/TheSFInvestor/status/2117993398112248160",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-04T14:52:31Z",
-    "note": "The bear case in one line: capex now exceeds operating cash flow, so FCF went negative."
-   },
-   {
-    "handle": "jamescal202",
-    "name": "David Morgan",
-    "text": "$GOOGL: Google Cloud revenue grew 103% to $30.7B last quarter, and its backlog hit $561B. The Gemini app has passed 1 billion monthly users. The stock is down ~30% from its May high.",
-    "url": "https://x.com/jamescal202/status/2117719108879802831",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T20:42:35Z",
-    "note": "The bull case: Cloud growth and backlog are what that capex is buying."
-   }
-  ]
- },
- "tickers": {
-  "MRVL": [
-   {
-    "handle": "Investor_x1",
-    "name": "InvestorX",
-    "text": "Would love your thoughts on how SpaceX and Tesla merger can AVOID what happened with the Marvell and Lumentum merger, where they BOTH crashed post acquisition.",
-    "url": "https://x.com/Investor_x1/status/2117661585736978443",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T16:54:00Z",
-    "note": "Retail is already using Marvell-Lumentum as the cautionary tale: both stocks fell on the announcement."
-   },
-   {
-    "handle": "CounterPointTR",
-    "name": "Counterpoint Research",
-    "text": "Marvell buys Lumentum to climb the AI laser wall: what the $115 billion deal means for the optics value chain.",
-    "url": "https://x.com/CounterPointTR/status/2117499775654482067",
-    "likes": 5,
-    "reposts": 2,
-    "ts": "2026-11-03T06:11:02Z",
-    "note": "Industry research firm on the optical interconnect value chain."
-   },
-   {
-    "handle": "tuccardesk",
-    "name": "Tüccar",
-    "text": "Marvell agreed to buy Lumentum at $1,132 a share. Lumentum closed Nov 2 at $684.40. The catch: Marvell pays in its own stock, and MRVL fell 26.68% in five sessions. China's regulator still has to sign off. Closing is due in 2028.",
-    "url": "https://x.com/tuccardesk/status/2117576620265357773",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T11:16:23Z",
-    "note": "The arb spread: why LITE trades far below the headline price."
-   },
-   {
-    "handle": "WeAreNoEqual",
-    "name": "TickerWhy",
-    "text": "Marvell is buying Lumentum (~$115B deal). So why did LITE drop 18.6% Monday? B. Riley downgraded Lumentum, TD Cowen cut Marvell's target in half. Marvell fell 12.7% too.",
-    "url": "https://x.com/WeAreNoEqual/status/2117606577553166584",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T13:15:25Z",
-    "note": "Street reaction: downgrades on both sides of the deal."
-   }
-  ],
-  "LITE": [
-   {
-    "handle": "Investor_x1",
-    "name": "InvestorX",
-    "text": "Would love your thoughts on how SpaceX and Tesla merger can AVOID what happened with the Marvell and Lumentum merger, where they BOTH crashed post acquisition.",
-    "url": "https://x.com/Investor_x1/status/2117661585736978443",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T16:54:00Z",
-    "note": "Retail is already using Marvell-Lumentum as the cautionary tale: both stocks fell on the announcement."
-   },
-   {
-    "handle": "tuccardesk",
-    "name": "Tüccar",
-    "text": "Marvell agreed to buy Lumentum at $1,132 a share. Lumentum closed Nov 2 at $684.40. The catch: Marvell pays in its own stock, and MRVL fell 26.68% in five sessions. China's regulator still has to sign off. Closing is due in 2028.",
-    "url": "https://x.com/tuccardesk/status/2117576620265357773",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T11:16:23Z",
-    "note": "The arb spread: why LITE trades far below the headline price."
-   },
-   {
-    "handle": "WeAreNoEqual",
-    "name": "TickerWhy",
-    "text": "Marvell is buying Lumentum (~$115B deal). So why did LITE drop 18.6% Monday? B. Riley downgraded Lumentum, TD Cowen cut Marvell's target in half. Marvell fell 12.7% too.",
-    "url": "https://x.com/WeAreNoEqual/status/2117606577553166584",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T13:15:25Z",
-    "note": "Street reaction: downgrades on both sides of the deal."
-   }
-  ],
-  "PLTR": [
-   {
-    "handle": "Insync_A",
-    "name": "InSync Analytics",
-    "text": "Five straight beats. 21% → 93% growth in nine quarters.\n\n$PLTR reports Monday Nov 2 after the close. Street expects 85% growth on $2.18B revenue.\n\nWill Palantir do it again?\n\n#Palantir #PLTR #Earnings https://t.co/Liemq7MGhD",
-    "url": "https://x.com/Insync_A/status/2116601152150323683",
-    "likes": 6,
-    "reposts": 0,
-    "ts": "2026-10-31T18:40:13.000Z",
-    "note": "Reports after the close today; Street expects about 85% growth on $2.18B revenue."
-   },
-   {
-    "handle": "ScrooogeUncle",
-    "name": "Invest with Uncle Scrooge",
-    "text": "$PLTR earnings volatility range is ~14.8% which implies $157 to $211\n\n#superbowl #monday #palantir https://t.co/cPqzZ172Wm",
-    "url": "https://x.com/ScrooogeUncle/status/2116680438827610607",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-10-31T23:55:17.000Z",
-    "note": "Options imply about a 15% move."
-   },
-   {
-    "handle": "alphacharts365",
-    "name": "Jack",
-    "text": "$PLTR Palantir with earnings soon and failing at its pivot https://t.co/jKBKueIo09",
-    "url": "https://x.com/alphacharts365/status/2116540697432269199",
-    "likes": 42,
-    "reposts": 2,
-    "ts": "2026-10-31T14:40:00.000Z",
-    "note": "Chartist view: the stock is failing at a key level into the print."
-   }
-  ],
-  "AMD": [
-   {
-    "handle": "FIREDUpWealth",
-    "name": "FIRED Up Wealth",
-    "text": "Data center stocks crushed earnings tonight as $AMD, Astera Labs $ALAB, and Arista Networks $ANET all reported strong results driven by surging AI infrastructure demand. AMD delivered a record $13.4 billion in Q3 revenue, up 45% year-over-year...",
-    "url": "https://x.com/FIREDUpWealth/status/2117736920952480072",
-    "likes": 29,
-    "reposts": 1,
-    "ts": "2026-11-03T21:53:22Z",
-    "note": "AMD record quarter as part of a clean AI-infrastructure sweep."
-   },
-   {
-    "handle": "Daniel_on_money",
-    "name": "Daniel On Money",
-    "text": "$AMD: Record $13.4B revenue, +45% YoY. Data Center +97% to a record $8.5B (EPYC + Instinct MI450). Non-GAAP EPS $2.09, +74%. Q4 guide: ~$17B",
-    "url": "https://x.com/Daniel_on_money/status/2117746775570469042",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T22:32:31Z",
-    "note": "The numbers that matter: data center nearly doubled and the Q4 guide is about $17B."
-   },
-   {
-    "handle": "Sam_Badawi",
-    "name": "Sam Badawi",
-    "text": "The Nasdaq 100 ETF $QQQ dumped from up +0.8% after hours to down -0.8%, even after strong earnings from $AMD and Arista Network $ANET. What changed was midterm election results starting to come in...",
-    "url": "https://x.com/Sam_Badawi/status/2117785358821937259",
-    "likes": 29,
-    "reposts": 5,
-    "ts": "2026-11-04T01:05:50Z",
-    "note": "Why the after-hours pop faded overnight: election results, not the prints."
-   }
-  ],
-  "ORCL": [
-   {
-    "handle": "KobeissiLetter",
-    "name": "The Kobeissi Letter",
-    "text": "BREAKING: Oracle stock, $ORCL, falls over -5% after announcing plans to raise $20 billion through equity and debt issuances to fund its AI buildout.\n\nThe stock is now down -54% from this year's high. https://t.co/oWJntBH8xS",
-    "url": "https://x.com/KobeissiLetter/status/2117264234811920846",
-    "likes": 846,
-    "reposts": 96,
-    "ts": "2026-11-02T14:35:05.000Z",
-    "note": "Down over 5% after announcing a $20B equity and debt raise for AI capex."
-   },
-   {
-    "handle": "StockMKTNewz",
-    "name": "Evan",
-    "text": "ORACLE $ORCL ALSO FILES TO OFFER $10B OF COMMON STOCK https://t.co/4SgpjtJWy2",
-    "url": "https://x.com/StockMKTNewz/status/2117246145365692829",
-    "likes": 113,
-    "reposts": 15,
-    "ts": "2026-11-02T13:23:12.000Z",
-    "note": "Files a $10B common stock offering."
-   },
-   {
-    "handle": "StockMKTNewz",
-    "name": "Evan",
-    "text": "Oracle $ORCL stock is starting out trading today down by more than 6% 🔴 https://t.co/ZUlObh1UO3 https://t.co/BqZnlk6dRQ",
-    "url": "https://x.com/StockMKTNewz/status/2117271285021773993",
-    "likes": 18,
-    "reposts": 2,
-    "ts": "2026-11-02T15:03:06.000Z",
-    "note": "Opens down more than 6%."
-   }
-  ],
-  "GOOGL": [
-   {
-    "handle": "TheSFInvestor",
-    "name": "Shop Floor Investor",
-    "text": "Sentiment punished Alphabet for cash. Free cash flow was negative $9.1B because capex of $51.4B exceeded operating cash flow of $42.3B...",
-    "url": "https://x.com/TheSFInvestor/status/2117993398112248160",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-04T14:52:31Z",
-    "note": "The bear case in one line: capex now exceeds operating cash flow, so FCF went negative."
-   },
-   {
-    "handle": "jamescal202",
-    "name": "David Morgan",
-    "text": "$GOOGL: Google Cloud revenue grew 103% to $30.7B last quarter, and its backlog hit $561B. The Gemini app has passed 1 billion monthly users. The stock is down ~30% from its May high.",
-    "url": "https://x.com/jamescal202/status/2117719108879802831",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T20:42:35Z",
-    "note": "The bull case: Cloud growth and backlog are what that capex is buying."
-   }
-  ],
-  "META": [
-   {
-    "handle": "cnbcKaren",
-    "name": "Karen Tso",
-    "text": "What's the opposite of techtastic? This week everything mattered: negative free cash flow from Amazon, Alphabet, Meta; hyperscaler capex intensity; earnings misses; a death cross on Alphabet; a shrinking search moat.",
-    "url": "https://x.com/cnbcKaren/status/2116124254378901511",
-    "likes": 60,
-    "reposts": 1,
-    "ts": "2026-10-30T11:05:12Z",
-    "note": "CNBC anchor framing the capex-vs-free-cash-flow reckoning behind Meta's drop."
-   },
-   {
-    "handle": "Stindur",
-    "name": "Stindur",
-    "text": "Meta spent $35B on capex last quarter. Free cash flow went negative. Same day they created a new share class with no voting rights. The AI story is being told to shareholders. The bill is being sent to them too.",
-    "url": "https://x.com/Stindur/status/2116628715945722298",
-    "likes": 3,
-    "reposts": 0,
-    "ts": "2026-10-31T20:29:45Z",
-    "note": "Bear case: governance plus negative FCF, not just the EPS miss."
-   }
-  ],
-  "SPCX": [
-   {
-    "handle": "CaffeSatoshi",
-    "name": "Caffe' Satoshi",
-    "text": "Exceptions: SpaceX and Tesla DOWN HARD. Most tech stocks are up, with futures gaining around 1% today as markets begin to settle following the midterms...",
-    "url": "https://x.com/CaffeSatoshi/status/2117941658792669252",
-    "likes": 5,
-    "reposts": 0,
-    "ts": "2026-11-04T11:26:55Z",
-    "note": "Musk names lagging the post-midterm rally as Democrats take Congress."
-   },
-   {
-    "handle": "t3live",
-    "name": "T3 Live",
-    "text": "The Democrats won control of Congress in last night's elections. Solar stocks are up while Elon Musk's babies $TSLA & $SPCX are down big. $SMCI & $ANET beat and delivered very strong guidance. Both are up sharply...",
-    "url": "https://x.com/t3live/status/2117957750026043550",
-    "likes": 2,
-    "reposts": 2,
-    "ts": "2026-11-04T12:30:52Z",
-    "note": "Premarket desk read: SMCI and ANET up on guidance, Musk names down on the election."
-   }
-  ],
-  "CRWD": [
-   {
-    "handle": "amktparticipant",
-    "name": "Market Participant",
-    "text": "Shares of CrowdStrike are up this morning after an upgrade to Buy from Hold at Deutsche Bank. The market is \"still not fully appreciating the extent to which AI will expand the market for cybersecurity.\"",
-    "url": "https://x.com/amktparticipant/status/2117285609115119862",
-    "likes": 14,
-    "reposts": 1,
-    "ts": "2026-11-02T16:00:01Z",
-    "note": "The core thesis from Deutsche Bank's Brad Zelnick."
-   },
-   {
-    "handle": "Rekter",
-    "name": "Rekter",
-    "text": "A Deutsche Bank upgrade has CrowdStrike up 3% premarket on the idea that AI grows the security market. The tell is CHKP down almost 10% on a weak guide while PANW catches sympathy. Money is picking cyber winners.",
-    "url": "https://x.com/Rekter/status/2117254401853214921",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-02T13:56:00Z",
-    "note": "Dispersion inside cyber: CRWD up, Check Point down on guide."
-   }
-  ],
-  "ANET": [
-   {
-    "handle": "getalphacharts",
-    "name": "Alpha Charts",
-    "text": "After hours vs the usual earnings move: $ANET +16.8% vs ±8%... Only Arista is moving more than usual. It went from +10% to +17% on the call: $18.5B of revenue for 2027, 39% above 2026.",
-    "url": "https://x.com/getalphacharts/status/2117737534105235737",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T21:55:48Z",
-    "note": "The 2027 target on the call, not the quarter, drove the outsized move."
-   },
-   {
-    "handle": "HunterDavisM",
-    "name": "Hunter Davis",
-    "text": "Arista Networks (ANET) reported Q3 revenue of $3.66 billion, up 58.5% year-over-year (the fastest growth since its IPO) and non-GAAP EPS of $1.20, easily topping forecasts...",
-    "url": "https://x.com/HunterDavisM/status/2117948620137738418",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-04T11:54:35Z",
-    "note": "Clean summary: fastest growth since the 2014 IPO, guide raised."
-   },
-   {
-    "handle": "Sam_Badawi",
-    "name": "Sam Badawi",
-    "text": "The Nasdaq 100 ETF $QQQ dumped from up +0.8% after hours to down -0.8%, even after strong earnings from $AMD and Arista Network $ANET. What changed was midterm election results starting to come in...",
-    "url": "https://x.com/Sam_Badawi/status/2117785358821937259",
-    "likes": 29,
-    "reposts": 5,
-    "ts": "2026-11-04T01:05:50Z",
-    "note": "Why the after-hours pop faded overnight: election results, not the prints."
-   }
-  ],
-  "SMCI": [
-   {
-    "handle": "t3live",
-    "name": "T3 Live",
-    "text": "The Democrats won control of Congress in last night's elections. Solar stocks are up while Elon Musk's babies $TSLA & $SPCX are down big. $SMCI & $ANET beat and delivered very strong guidance. Both are up sharply...",
-    "url": "https://x.com/t3live/status/2117957750026043550",
-    "likes": 2,
-    "reposts": 2,
-    "ts": "2026-11-04T12:30:52Z",
-    "note": "Premarket desk read: SMCI and ANET up on guidance, Musk names down on the election."
-   }
-  ],
-  "SHOP": [
-   {
-    "handle": "marketsday",
-    "name": "Markets Today",
-    "text": "Shopify declined more than 16% in premarket trading following its earnings. Palantir fell approximately 6% in premarket trading following its earnings.",
-    "url": "https://x.com/marketsday/status/2117600557317910983",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T12:51:30Z",
-    "note": "Big premarket drop on the print."
-   },
-   {
-    "handle": "FINANCIERNEWS",
-    "name": "Financier.news",
-    "text": "Shopify earnings highlights: adj. EPS $0.49, GAAP EPS $0.36. Q4 guide: revenue growth low-thirties percent, gross profit high-twenties percent, opex 29% to 30% of revenue.",
-    "url": "https://x.com/FINANCIERNEWS/status/2117605924445540434",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T13:12:50Z",
-    "note": "The guide numbers behind the move."
-   }
-  ],
-  "UBER": [
-   {
-    "handle": "AlgoTradeAlert",
-    "name": "AlgoTradeAlert.com",
-    "text": "$UBER just delivered double-digit booking growth and stronger adjusted profits. The catch: its Q4 adjusted earnings outlook came in below analyst expectations. $LYFT $DASH $TSLA",
-    "url": "https://x.com/AlgoTradeAlert/status/2117967790501966246",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-04T13:10:45Z",
-    "note": "Uber's soft Q4 guide is the read-through for DoorDash, which reports after the close today."
-   }
-  ],
-  "QCOM": [
-   {
-    "handle": "INVESTEDD",
-    "name": "INVESTEDD",
-    "text": "After the close: $QCOM (±9.9%), $ARM (±12.3%), $APP (±17.9%), $DASH (±7.0%).",
-    "url": "https://x.com/INVESTEDD/status/2117719407535538331",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T20:43:46Z",
-    "note": "Options-implied moves for tonight's prints, so you can tell later whether the reaction was outsized."
-   }
-  ],
-  "ARM": [
-   {
-    "handle": "INVESTEDD",
-    "name": "INVESTEDD",
-    "text": "After the close: $QCOM (±9.9%), $ARM (±12.3%), $APP (±17.9%), $DASH (±7.0%).",
-    "url": "https://x.com/INVESTEDD/status/2117719407535538331",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T20:43:46Z",
-    "note": "Options-implied moves for tonight's prints, so you can tell later whether the reaction was outsized."
-   }
-  ]
- },
- "filings": {
-  "0001140361-26-041111": [
-   {
-    "handle": "INVESTEDD",
-    "name": "INVESTEDD",
-    "text": "After the close: $QCOM (±9.9%), $ARM (±12.3%), $APP (±17.9%), $DASH (±7.0%).",
-    "url": "https://x.com/INVESTEDD/status/2117719407535538331",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T20:43:46Z",
-    "note": "Options-implied moves for tonight's prints, so you can tell later whether the reaction was outsized."
-   },
-   {
-    "handle": "AlgoTradeAlert",
-    "name": "AlgoTradeAlert.com",
-    "text": "$UBER just delivered double-digit booking growth and stronger adjusted profits. The catch: its Q4 adjusted earnings outlook came in below analyst expectations. $LYFT $DASH $TSLA",
-    "url": "https://x.com/AlgoTradeAlert/status/2117967790501966246",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-04T13:10:45Z",
-    "note": "Uber's soft Q4 guide is the read-through for DoorDash, which reports after the close today."
-   }
-  ],
-  "0001628280-26-067393": [
-   {
-    "handle": "wallstengine",
-    "name": "Wall St Engine",
-    "text": "Vertiv $VRT has completed its $1.45 billion acquisition of UtilityInnovation Group, with up to another $1.15 billion tied to future earnings targets.\n\nThe deal expands Vertiv's capabilities in microgrid controls, on-site power generation, and energy storage as AI data centers https://t.co/pLzQihrOQx",
-    "url": "https://x.com/wallstengine/status/2115031477469798729",
-    "likes": 182,
-    "reposts": 19,
-    "ts": "2026-10-27T10:42:54.000Z",
-    "note": "Vertiv closed UtilityInnovation Group for $1.45B plus up to $1.15B earnout."
-   },
-   {
-    "handle": "FollowTheFiling",
-    "name": "Follow The Filings",
-    "text": "* VERTIV COMPLETES ACQUISITION OF UTILITY INNOVATION FOR ABOUT $1.45 BILLION: 8-K\n$VRT",
-    "url": "https://x.com/FollowTheFiling/status/2115038924028678159",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-10-27T11:12:29.000Z",
-    "note": "The 8-K headline for the closing."
-   }
-  ],
-  "0001193125-26-442717": [
-   {
-    "handle": "Investor_x1",
-    "name": "InvestorX",
-    "text": "Would love your thoughts on how SpaceX and Tesla merger can AVOID what happened with the Marvell and Lumentum merger, where they BOTH crashed post acquisition.",
-    "url": "https://x.com/Investor_x1/status/2117661585736978443",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T16:54:00Z",
-    "note": "Retail is already using Marvell-Lumentum as the cautionary tale: both stocks fell on the announcement."
-   },
-   {
-    "handle": "CounterPointTR",
-    "name": "Counterpoint Research",
-    "text": "Marvell buys Lumentum to climb the AI laser wall: what the $115 billion deal means for the optics value chain.",
-    "url": "https://x.com/CounterPointTR/status/2117499775654482067",
-    "likes": 5,
-    "reposts": 2,
-    "ts": "2026-11-03T06:11:02Z",
-    "note": "Industry research firm on the optical interconnect value chain."
-   },
-   {
-    "handle": "tuccardesk",
-    "name": "Tüccar",
-    "text": "Marvell agreed to buy Lumentum at $1,132 a share. Lumentum closed Nov 2 at $684.40. The catch: Marvell pays in its own stock, and MRVL fell 26.68% in five sessions. China's regulator still has to sign off. Closing is due in 2028.",
-    "url": "https://x.com/tuccardesk/status/2117576620265357773",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T11:16:23Z",
-    "note": "The arb spread: why LITE trades far below the headline price."
-   },
-   {
-    "handle": "WeAreNoEqual",
-    "name": "TickerWhy",
-    "text": "Marvell is buying Lumentum (~$115B deal). So why did LITE drop 18.6% Monday? B. Riley downgraded Lumentum, TD Cowen cut Marvell's target in half. Marvell fell 12.7% too.",
-    "url": "https://x.com/WeAreNoEqual/status/2117606577553166584",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T13:15:25Z",
-    "note": "Street reaction: downgrades on both sides of the deal."
-   }
-  ],
-  "0001193125-26-442758": [
-   {
-    "handle": "Investor_x1",
-    "name": "InvestorX",
-    "text": "Would love your thoughts on how SpaceX and Tesla merger can AVOID what happened with the Marvell and Lumentum merger, where they BOTH crashed post acquisition.",
-    "url": "https://x.com/Investor_x1/status/2117661585736978443",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T16:54:00Z",
-    "note": "Retail is already using Marvell-Lumentum as the cautionary tale: both stocks fell on the announcement."
-   },
-   {
-    "handle": "tuccardesk",
-    "name": "Tüccar",
-    "text": "Marvell agreed to buy Lumentum at $1,132 a share. Lumentum closed Nov 2 at $684.40. The catch: Marvell pays in its own stock, and MRVL fell 26.68% in five sessions. China's regulator still has to sign off. Closing is due in 2028.",
-    "url": "https://x.com/tuccardesk/status/2117576620265357773",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-03T11:16:23Z",
-    "note": "The arb spread: why LITE trades far below the headline price."
-   },
-   {
-    "handle": "CounterPointTR",
-    "name": "Counterpoint Research",
-    "text": "Marvell buys Lumentum to climb the AI laser wall: what the $115 billion deal means for the optics value chain.",
-    "url": "https://x.com/CounterPointTR/status/2117499775654482067",
-    "likes": 5,
-    "reposts": 2,
-    "ts": "2026-11-03T06:11:02Z",
-    "note": "Industry research firm on the optical interconnect value chain."
-   }
-  ],
-  "0001437749-26-034438": [
-   {
-    "handle": "Stimothyphd",
-    "name": "Stimothy Phd",
-    "text": "Trump Media group just posted the S-4 document of their merger, they are merging with TAE Technologies.",
-    "url": "https://x.com/Stimothyphd/status/2117622352674742510",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-11-03T14:18:07Z",
-    "note": "Chatter on the amended S-4 for the Trump Media / TAE Technologies (fusion) merger."
-   }
-  ]
- }
+  "stories": {
+    "d67c8f23c462": [
+      {
+        "handle": "alphaspace",
+        "name": "AlphaSpace",
+        "text": "Marvell will acquire Lumentum in a deal valued at $115 billion. The transaction would be the largest merger between two publicly traded companies on record. Lumentum shareholders will get 4.5 shares of Marvell stock for every Lumentum share they own.",
+        "url": "https://x.com/alphaspace/status/2117385456601960634",
+        "likes": 10,
+        "reposts": 2,
+        "ts": "2026-11-02T22:36:46Z",
+        "note": "Deal size and 4.5 exchange ratio — the core terms bankers will model first."
+      },
+      {
+        "handle": "REXShares",
+        "name": "REX Shares",
+        "text": "MARVELL BETS BIG ON LIGHT WITH $115 BILLION LUMENTUM DEAL. $MRVL agreed to acquire $LITE in an all stock deal with an enterprise value of $115 billion, making it one of the largest tech transactions ever.",
+        "url": "https://x.com/REXShares/status/2118353989582327913",
+        "likes": 1,
+        "reposts": 0,
+        "ts": "2026-11-05T14:45:22Z",
+        "note": "Frames the deal as an optics bet to challenge Broadcom in AI connectivity."
+      },
+      {
+        "handle": "OptionKing666",
+        "name": "456X",
+        "text": "Lumentum ($LITE) guided Q2 revenue to $1.575-1.625B, representing 140% growth at the midpoint, even as Marvell ($MRVL) agreed to acquire the company for 4.5 Marvell common shares per Lumentum share. In Q1, Lumentum posted revenue of $1.26B and an operating margin of 42.3%.",
+        "url": "https://x.com/OptionKing666/status/2118007032343388235",
+        "likes": 4,
+        "reposts": 1,
+        "ts": "2026-11-04T15:46:41Z",
+        "note": "Why LITE holders care: monster guide vs stock-as-currency takeover risk."
+      },
+      {
+        "handle": "anadoluagency",
+        "name": "Anadolu English",
+        "text": "US chipmaker Marvell Technology has agreed to acquire optical components maker Lumentum in an all-stock deal valuing the company at $115B. The merger will combine Lumentum’s lasers and optical components with Marvell’s AI chips and networking technology.",
+        "url": "https://x.com/anadoluagency/status/2117361103261048893",
+        "likes": 0,
+        "reposts": 1,
+        "ts": "2026-11-02T21:00:00Z",
+        "note": "Clean strategic rationale: lasers + AI networking in one stack."
+      }
+    ],
+    "3fccf913600c": [
+      {
+        "handle": "CuriousPejjy",
+        "name": "Pejjy",
+        "text": "EXCLUSIVE: How $TSLA & $SPCX Merger Is CLOSER Than You Think with @TeslaBoomerMama — covers the Tesla letter, investor shift toward pro-merger, why merge ASAP, and what the Tesla & SpaceX committees mean.",
+        "url": "https://x.com/CuriousPejjy/status/2117400780747559074",
+        "likes": 65,
+        "reposts": 9,
+        "ts": "2026-11-02T23:37:40Z",
+        "note": "High-engagement rundown of special-committee process and investor politics."
+      },
+      {
+        "handle": "DeFiMidas",
+        "name": "Midas",
+        "text": "WARNING: $TSLA AND $SPCX MERGE WON'T HAPPEN? Everyone thinks Democrats sweeping House and Senate is bearish for a Tesla–SpaceX merge — but the thread argues the opposite: more political scrutiny could push consolidation.",
+        "url": "https://x.com/DeFiMidas/status/2118280977139007985",
+        "likes": 60,
+        "reposts": 10,
+        "ts": "2026-11-05T09:55:15Z",
+        "note": "Post-midterm angle: how a Dem Congress changes merger odds and optics."
+      },
+      {
+        "handle": "vanazadian",
+        "name": "van",
+        "text": "75% CHANCE TESLA AND SPACEX MERGE BEFORE 2028. This would be the most fascinating merger of our lifetime. Would you buy $TSLA if it included $SPCX???",
+        "url": "https://x.com/vanazadian/status/2117303322315043301",
+        "likes": 2,
+        "reposts": 1,
+        "ts": "2026-11-02T17:10:24Z",
+        "note": "Market-odds framing of a pre-2028 combination."
+      }
+    ],
+    "35d489695b45": [
+      {
+        "handle": "business",
+        "name": "Bloomberg",
+        "text": "OpenAI to Change How It Handles Data Center Efforts After Outcry",
+        "url": "https://x.com/business/status/2118348874423193790",
+        "likes": 12,
+        "reposts": 7,
+        "ts": "2026-11-05T14:25:03Z",
+        "note": "Funding story meets power politics: OpenAI reshapes data-center approach after election blowback."
+      },
+      {
+        "handle": "CNBC",
+        "name": "CNBC",
+        "text": "OpenAI pledges to pay for data center power after election highlights AI concerns",
+        "url": "https://x.com/CNBC/status/2118284561385758757",
+        "likes": 109,
+        "reposts": 26,
+        "ts": "2026-11-05T10:09:29Z",
+        "note": "Midterms put AI power costs on the table; OpenAI answers with a pay-for-power pledge."
+      },
+      {
+        "handle": "keepit3years",
+        "name": "zz哥（虾湖说）",
+        "text": "The AI arms race is accelerating. The money is starting to look stretched. Even OpenAI is lowering its price to secure funding. According to the Financial Times, Bloomberg and CNBC, OpenAI has cut its latest pre-IPO fundraising target from $30 billion to about $20 billion.",
+        "url": "https://x.com/keepit3years/status/2116978036147130807",
+        "likes": 3,
+        "reposts": 0,
+        "ts": "2026-11-01T19:37:50Z",
+        "note": "Round size cut $30B→~$20B — the key ECM/private-markets tell."
+      },
+      {
+        "handle": "trevornoren",
+        "name": "Trevor Noren",
+        "text": "The staggering circularity of the AI buildout and its dependence on two frontier labs that still lack a clear path to profitability: Anthropic has committed to pay as much as $895.4 billion for AI computing power and infrastructure through 2045, according to its IPO filing.",
+        "url": "https://x.com/trevornoren/status/2117733818446795120",
+        "likes": 14,
+        "reposts": 0,
+        "ts": "2026-11-03T21:41:02Z",
+        "note": "Peer read-across: Anthropic S-1 commit dollars show how stretched the AI infra stack is."
+      }
+    ],
+    "a35e6a4fdf36": [
+      {
+        "handle": "twinsight_x",
+        "name": "Trade With Insight",
+        "text": "$DDOG is down about 18% premarket and $NVO is up about 6%. Both reported this morning. Datadog beat on revenue and profit, with revenue up 35%, but its fourth-quarter revenue outlook only matched estimates.",
+        "url": "https://x.com/twinsight_x/status/2117968898838716872",
+        "likes": 4,
+        "reposts": 1,
+        "ts": "2026-11-04T13:15:10Z",
+        "note": "Classic beat-and-guide-flat selloff — Q4 growth deceleration is the tell."
+      },
+      {
+        "handle": "financial_index",
+        "name": "Financial Index",
+        "text": "DATADOG $DDOG Q3’26 EARNINGS HIGHLIGHTS — Revenue $1.20B (Est. $1.15B); Adj. EPS $0.81 (Est. $0.65); FCF $251M; $100K+ ARR customers ~4,860 (+20% YoY). Q4 Revenue guide $1.19B–$1.20B (Est. $1.20B).",
+        "url": "https://x.com/financial_index/status/2117952359326216369",
+        "likes": 7,
+        "reposts": 3,
+        "ts": "2026-11-04T12:09:26Z",
+        "note": "Clean scorecard: strong Q3, in-line Q4 that implies ~flat sequential growth."
+      },
+      {
+        "handle": "TheTranscript_",
+        "name": "The Transcript",
+        "text": "DataDog CEO: \"...we executed a strong Q3. We saw strength across our business, including across our product lines and across our diverse customer base\" — $DDOG: -13% today",
+        "url": "https://x.com/TheTranscript_/status/2117990712876601759",
+        "likes": 9,
+        "reposts": 5,
+        "ts": "2026-11-04T14:41:50Z",
+        "note": "CEO soundbite vs price action — useful for the earnings-call narrative."
+      },
+      {
+        "handle": "ElliottWaveSage",
+        "name": "ElliottWaveSage - Stock Charts, Trade Alerts, News",
+        "text": "Datadog ($DDOG) grew Q3 revenue 35% to $1.20B and generated $251M in free cash flow, but Q4 revenue guidance of $1.19B–$1.20B points to roughly 25% growth. Shares were down about 17% premarket as investors reset growth expectations.",
+        "url": "https://x.com/ElliottWaveSage/status/2117967968646619267",
+        "likes": 0,
+        "reposts": 0,
+        "ts": "2026-11-04T13:11:28Z",
+        "note": "Math behind the dump: 35% → ~25% implied growth."
+      }
+    ],
+    "74bef25e593d": [
+      {
+        "handle": "robot2trade1",
+        "name": "robot2trade",
+        "text": "$APP EARNINGS ALERT | Q3 2026 — AppLovin posted a double beat: EPS $4.30 vs $4.03 (+76% YoY); Revenue $2.185B vs $2.07B (+55% YoY, +14% QoQ); Adjusted EBITDA $1.84B. Guide is what’s moving the stock.",
+        "url": "https://x.com/robot2trade1/status/2118159056250499112",
+        "likes": 4,
+        "reposts": 3,
+        "ts": "2026-11-05T01:50:47Z",
+        "note": "Print + guide that sparked the ~20% pop — ad-tech AI winner of the tape."
+      },
+      {
+        "handle": "samsom32450",
+        "name": "samsom",
+        "text": "AppLovin just had one of the cleanest earnings reactions in an otherwise messy tech tape. Revenue hit a record 2.18 billion, up 55% year over year, and net income grew 72%. The stock jumped roughly 23% after hours. That stands in sharp contrast to Arm and Qualcomm.",
+        "url": "https://x.com/samsom32450/status/2118280533020926053",
+        "likes": 7,
+        "reposts": 0,
+        "ts": "2026-11-05T09:53:29Z",
+        "note": "Contrast trade: APP rip vs ARM/QCOM guidance sells."
+      },
+      {
+        "handle": "MinervaCap",
+        "name": "Minerva Capital",
+        "text": "AppLovin, Unity surge on earnings beats. Post-election day two is a clear rotation story. Democrats swept control of both the House and Senate, and Wednesday’s market reaction was a classic gridlock/relief rally: Dow +3.03%, S&P 500 +1.58%.",
+        "url": "https://x.com/MinervaCap/status/2118342663795876150",
+        "likes": 1,
+        "reposts": 0,
+        "ts": "2026-11-05T14:00:22Z",
+        "note": "Links APP strength to the post-midterm rotation tape."
+      },
+      {
+        "handle": "CNBC",
+        "name": "CNBC",
+        "text": "Stocks making the biggest moves after hours: Coherent, AppLovin, Expedia, Qualcomm and more",
+        "url": "https://x.com/CNBC/status/2118103468980175144",
+        "likes": 10,
+        "reposts": 2,
+        "ts": "2026-11-04T22:09:54Z",
+        "note": "AH movers list putting APP next to QCOM/COHR on the same print night."
+      }
+    ]
+  },
+  "tickers": {
+    "APP": [
+      {
+        "handle": "robot2trade1",
+        "name": "robot2trade",
+        "text": "$APP EARNINGS ALERT | Q3 2026 — double beat: EPS $4.30 vs $4.03; Revenue $2.185B vs $2.07B (+55% YoY). Guide is what’s moving the stock.",
+        "url": "https://x.com/robot2trade1/status/2118159056250499112",
+        "likes": 4,
+        "reposts": 3,
+        "ts": "2026-11-05T01:50:47Z",
+        "note": "Watchlist name: monster Q3 and guide drove today's ~17% rip."
+      },
+      {
+        "handle": "samsom32450",
+        "name": "samsom",
+        "text": "AppLovin just had one of the cleanest earnings reactions in an otherwise messy tech tape — revenue $2.18B (+55% YoY), stock ~+23% AH, sharp contrast to Arm and Qualcomm.",
+        "url": "https://x.com/samsom32450/status/2118280533020926053",
+        "likes": 7,
+        "reposts": 0,
+        "ts": "2026-11-05T09:53:29Z",
+        "note": "Relative-strength read vs semis that guided soft."
+      }
+    ],
+    "QCOM": [
+      {
+        "handle": "CNBC",
+        "name": "CNBC",
+        "text": "EARNINGS: Qualcomm delivered better-than-expected results but issued a weak earnings forecast.",
+        "url": "https://x.com/CNBC/status/2118095402687713558",
+        "likes": 12,
+        "reposts": 3,
+        "ts": "2026-11-04T21:37:50Z",
+        "note": "Beat-and-soft-guide — why QCOM is ~-9% today."
+      },
+      {
+        "handle": "CNBC",
+        "name": "CNBC",
+        "text": "Qualcomm issues disappointing earnings forecast as memory shortage weighs on smartphone sales",
+        "url": "https://x.com/CNBC/status/2118088957242081717",
+        "likes": 16,
+        "reposts": 2,
+        "ts": "2026-11-04T21:12:14Z",
+        "note": "Memory shortage into handsets is the guidance culprit."
+      },
+      {
+        "handle": "TheTranscript_",
+        "name": "The Transcript",
+        "text": "Qualcomm CEO: \"We are pleased to deliver fourth quarter non-GAAP revenues at the high end of our guidance, along with 36% year-over-year growth in combined QCT Automotive and IoT revenues\" — $QCOM: -6% AH",
+        "url": "https://x.com/TheTranscript_/status/2118090897577619840",
+        "likes": 15,
+        "reposts": 4,
+        "ts": "2026-11-04T21:19:56Z",
+        "note": "Auto/IoT growth couldn't offset soft phone guide in the AH reaction."
+      },
+      {
+        "handle": "business",
+        "name": "Bloomberg",
+        "text": "Qualcomm will supply hardware components for SpaceX’s planned nationwide terrestrial wireless network, the latest sign SpaceX is committed to challenging the biggest US mobile players.",
+        "url": "https://x.com/business/status/2118030545883959394",
+        "likes": 120,
+        "reposts": 26,
+        "ts": "2026-11-04T17:20:07Z",
+        "note": "Starlink Mobile supply deal — strategic offset to phone cyclicality."
+      },
+      {
+        "handle": "JoshTradeOption",
+        "name": "Josh",
+        "text": "$QCOM had a wild 24 hours. First the good news: Qualcomm signed a multi-year deal with SpaceX for Starlink Mobile (radio gear, baseband, software) — stock rose ~5.3% Wednesday — then earnings guide hit.",
+        "url": "https://x.com/JoshTradeOption/status/2118316146130579593",
+        "likes": 4,
+        "reposts": 0,
+        "ts": "2026-11-05T12:15:00Z",
+        "note": "Deal pop then guide dump — full two-day tape for the name."
+      }
+    ],
+    "DDOG": [
+      {
+        "handle": "twinsight_x",
+        "name": "Trade With Insight",
+        "text": "$DDOG down ~18% premarket despite beating revenue (+35%) and profit; Q4 revenue outlook only matched estimates.",
+        "url": "https://x.com/twinsight_x/status/2117968898838716872",
+        "likes": 4,
+        "reposts": 1,
+        "ts": "2026-11-04T13:15:10Z",
+        "note": "Still the software tell of the week: growth deceleration priced hard."
+      },
+      {
+        "handle": "financial_index",
+        "name": "Financial Index",
+        "text": "DATADOG $DDOG Q3’26: Rev $1.20B / Adj EPS $0.81 beats; Q4 Rev $1.19–$1.20B in-line.",
+        "url": "https://x.com/financial_index/status/2117952359326216369",
+        "likes": 7,
+        "reposts": 3,
+        "ts": "2026-11-04T12:09:26Z",
+        "note": "Scorecard for the -14% reaction day."
+      }
+    ],
+    "ARM": [
+      {
+        "handle": "paasainvest",
+        "name": "Paasa",
+        "text": "Arm beats earnings estimates, but shares aren't celebrating. Revenue $1.44B and adj. EPS $0.52 both beat; revenue guidance also beat — day's share move was -5.3%.",
+        "url": "https://x.com/paasainvest/status/2118203326995234888",
+        "likes": 0,
+        "reposts": 0,
+        "ts": "2026-11-05T04:46:42Z",
+        "note": "Beat-but-sell: royalty/guide mix still not enough for the multiple."
+      },
+      {
+        "handle": "Tickeron",
+        "name": "Tickeron",
+        "text": "Why Is Arm Holdings $ARM Stock Down -8.63% Today? Primary catalyst was a guidance and royalty outlook that extended the slide after fiscal Q2 results.",
+        "url": "https://x.com/Tickeron/status/2118356624783904895",
+        "likes": 0,
+        "reposts": 0,
+        "ts": "2026-11-05T14:55:51Z",
+        "note": "Follow-through sell after the print — watchlist semis under pressure."
+      }
+    ],
+    "MRVL": [
+      {
+        "handle": "alphaspace",
+        "name": "AlphaSpace",
+        "text": "Marvell will acquire Lumentum in a deal valued at $115 billion — largest public-to-public merger on record; LITE holders get 4.5 MRVL shares each.",
+        "url": "https://x.com/alphaspace/status/2117385456601960634",
+        "likes": 10,
+        "reposts": 2,
+        "ts": "2026-11-02T22:36:46Z",
+        "note": "All-stock AI optics megadeal — equity currency and dilution in focus."
+      },
+      {
+        "handle": "REXShares",
+        "name": "REX Shares",
+        "text": "MARVELL BETS BIG ON LIGHT WITH $115 BILLION LUMENTUM DEAL — all-stock EV $115B.",
+        "url": "https://x.com/REXShares/status/2118353989582327913",
+        "likes": 1,
+        "reposts": 0,
+        "ts": "2026-11-05T14:45:22Z",
+        "note": "Fresh commentary as MRVL/LITE both trade soft on deal risk."
+      }
+    ],
+    "LITE": [
+      {
+        "handle": "OptionKing666",
+        "name": "456X",
+        "text": "Lumentum ($LITE) guided Q2 revenue to $1.575-1.625B (~140% growth at midpoint) even as Marvell agreed to buy it for 4.5 MRVL shares per LITE share. Q1 rev $1.26B, op margin 42.3%.",
+        "url": "https://x.com/OptionKing666/status/2118007032343388235",
+        "likes": 4,
+        "reposts": 1,
+        "ts": "2026-11-04T15:46:41Z",
+        "note": "Standalone guide vs takeover valuation tied to MRVL stock."
+      },
+      {
+        "handle": "alphaspace",
+        "name": "AlphaSpace",
+        "text": "Marvell–Lumentum $115B deal; LITE shareholders get 4.5 MRVL shares per share.",
+        "url": "https://x.com/alphaspace/status/2117385456601960634",
+        "likes": 10,
+        "reposts": 2,
+        "ts": "2026-11-02T22:36:46Z",
+        "note": "Exchange ratio is the whole ballgame for LITE holders."
+      }
+    ],
+    "NET": [
+      {
+        "handle": "cfromhertz",
+        "name": "Christian Fromhertz 🇺🇸",
+        "text": "US Premarket Movers: AppLovin, Cava, Tesla, Veracyte, Zillow (Bloomberg) — broader AH/premarket tape as Cloudflare reports after the close today.",
+        "url": "https://x.com/cfromhertz/status/2118331268173590817",
+        "likes": 12,
+        "reposts": 3,
+        "ts": "2026-11-05T13:15:05Z",
+        "note": "Context for NET's AH print tonight: busy post-election earnings calendar."
+      }
+    ],
+    "ABNB": [
+      {
+        "handle": "cfromhertz",
+        "name": "Christian Fromhertz 🇺🇸",
+        "text": "US Premarket Movers list (Bloomberg) on a busy AH earnings day that also includes Airbnb.",
+        "url": "https://x.com/cfromhertz/status/2118331268173590817",
+        "likes": 12,
+        "reposts": 3,
+        "ts": "2026-11-05T13:15:05Z",
+        "note": "ABNB reports AH today — watch for travel/marketplace read-across."
+      }
+    ],
+    "AFRM": [
+      {
+        "handle": "cfromhertz",
+        "name": "Christian Fromhertz 🇺🇸",
+        "text": "US Premarket Movers (Bloomberg) on a busy AH earnings day that also includes Affirm.",
+        "url": "https://x.com/cfromhertz/status/2118331268173590817",
+        "likes": 12,
+        "reposts": 3,
+        "ts": "2026-11-05T13:15:05Z",
+        "note": "AFRM reports AH today with ABNB and NET."
+      }
+    ]
+  },
+  "filings": {
+    "0001193125-26-442717": [
+      {
+        "handle": "alphaspace",
+        "name": "AlphaSpace",
+        "text": "Marvell will acquire Lumentum in a deal valued at $115 billion. Lumentum shareholders get 4.5 Marvell shares per share.",
+        "url": "https://x.com/alphaspace/status/2117385456601960634",
+        "likes": 10,
+        "reposts": 2,
+        "ts": "2026-11-02T22:36:46Z",
+        "note": "Chatter on Marvell's deal 8-K: EV and exchange ratio."
+      },
+      {
+        "handle": "stock_duty",
+        "name": "StockDuty",
+        "text": "$MRVL (Marvell Technology) — 8-K: Marvell to acquire Lumentum in all-stock merger at 4.500 exchange ratio. Merger agreement dated November 1, 2026.",
+        "url": "https://x.com/stock_duty/status/2117275635311616003",
+        "likes": 0,
+        "reposts": 0,
+        "ts": "2026-11-02T15:20:23Z",
+        "note": "Filing-bot summary of the exact 8-K exchange ratio."
+      }
+    ],
+    "0001193125-26-442758": [
+      {
+        "handle": "OptionKing666",
+        "name": "456X",
+        "text": "Lumentum guided Q2 rev $1.575-1.625B even as Marvell agreed to acquire it for 4.5 MRVL shares per LITE share.",
+        "url": "https://x.com/OptionKing666/status/2118007032343388235",
+        "likes": 4,
+        "reposts": 1,
+        "ts": "2026-11-04T15:46:41Z",
+        "note": "LITE 8-K companion: ops momentum vs all-stock takeout."
+      },
+      {
+        "handle": "thepuresignal",
+        "name": "Pure Signal",
+        "text": "Marvell ($MRVL) agrees to acquire Lumentum ($LITE) in an all-stock transaction valued at about $115 billion enterprise value. Lumentum shareholders receive 4.5 Marvell shares (~$1,132 per share), a 23.9% premium to the Oct 28 close.",
+        "url": "https://x.com/thepuresignal/status/2117255152822608311",
+        "likes": 0,
+        "reposts": 0,
+        "ts": "2026-11-02T13:58:59Z",
+        "note": "Premium and implied price for LITE holders from the deal filing."
+      }
+    ]
+  }
 }
