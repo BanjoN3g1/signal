@@ -1,514 +1,618 @@
 {
-  "stories": {
-    "54b6c53660af": [
-      {
-        "handle": "TrendSpider",
-        "name": "TrendSpider",
-        "text": "CLOUDFLARE $NET EARNINGS GOD CANDLE 🟢\n\nQ3 Adj EPS: $0.38 vs $0.34 est ✅\nQ3 Sales: $782.5M vs $738.5M est ✅\n\n🟩 +18% in after-hours",
-        "url": "https://x.com/TrendSpider/status/2118453282846982202",
-        "likes": 246,
-        "reposts": 12,
-        "ts": "2026-11-05T21:19:56Z",
-        "note": "High-engagement print of the beat that sent NET +18% AH — the story’s binary valuation risk."
-      },
-      {
-        "handle": "TickerGrove",
-        "name": "TickerGrove",
-        "text": "☁️ $NET jumps 18% after hours on its fastest growth in nearly four years.\n\nQ3 revenue +39% to $782.5M vs $737.2M expected; adj. EPS $0.38 vs $0.34\nQ4 guide $845–$846M vs $796.2M expected\nFY revenue outlook raised to ~$2.96B",
-        "url": "https://x.com/TickerGrove/status/2118491618965864874",
-        "likes": 0,
-        "reposts": 0,
-        "ts": "2026-11-05T23:52:16Z",
-        "note": "Puts the 39% growth and raised FY outlook next to the after-hours spike."
-      },
-      {
-        "handle": "2OnFinance",
-        "name": "2 On Finance",
-        "text": "📊 Earnings After the Close | Nov 5\n\nAirbnb, Q3\n• Revenue: $4.87B, up 19%\n• EPS: $3.16\n• Q4 revenue outlook: $3.22B to $3.28B\n\nCloudflare, Q3\n• Revenue: $782.5M, up 39%\n• Adjusted EPS: $0.38\n• Q4 revenue outlook: $845M to $846M",
-        "url": "https://x.com/2OnFinance/status/2118486097420292495",
-        "likes": 2,
-        "reposts": 0,
-        "ts": "2026-11-05T23:30:19Z",
-        "note": "Clean side-by-side of NET and ABNB prints from the same night."
-      }
-    ],
-    "589c0967e665": [
-      {
-        "handle": "wallstengine",
-        "name": "Wall St Engine",
-        "text": "Deutsche Bank upgrades CrowdStrike $CRWD to Buy from Hold, raising its target to $300 from $240.\n\nBrad Zelnick says the market underestimates AI-driven cybersecurity demand.\n\nHe sees CrowdStrike's $565B 2034 market estimate as conservative, citing a “tsunami of cyber demand.”",
-        "url": "https://x.com/wallstengine/status/2117216680187482374",
-        "likes": 118,
-        "reposts": 15,
-        "ts": "2026-11-02T11:26:07Z",
-        "note": "Primary source for the DB ‘tsunami’ upgrade and $300 PT that drives this story."
-      },
-      {
-        "handle": "TipRanks",
-        "name": "TipRanks",
-        "text": "🔼CrowdStrike $CRWD upgraded to Buy from Hold at Deutsche Bank\n\nDeutsche Bank analyst Brad Zelnick upgraded CrowdStrike to Buy from Hold with a price target of $300, up from $240.\n\nThe market has still not appreciated the extent to which AI will expand the market for",
-        "url": "https://x.com/TipRanks/status/2117209639964045567",
-        "likes": 42,
-        "reposts": 5,
-        "ts": "2026-11-02T10:58:08Z",
-        "note": "Credible aggregator confirming Zelnick’s AI-expansion thesis."
-      },
-      {
-        "handle": "KyleReidhead",
-        "name": "Kyle Reidhead | Milk Road",
-        "text": "Deutsche Bank thinks the market still doesn't get what AI does to cybersecurity\n\nThey upgraded $CRWD to Buy with a $300 PT (20% upside)\n\nThe thesis is simple: AI makes the whole cyber market a lot bigger, and CrowdStrike is the leader",
-        "url": "https://x.com/KyleReidhead/status/2117278086958108950",
-        "likes": 12,
-        "reposts": 1,
-        "ts": "2026-11-02T15:30:07Z",
-        "note": "Plain-English read of why the upgrade matters for cyber TAM."
-      }
-    ],
-    "7e09262e1882": [
-      {
-        "handle": "SCHDETF",
-        "name": "SCHD STAN | Craig",
-        "text": "$QCOM Q4 Earnings Recap\n\nQualcomm, a top 15 holding in $SCHD reported earnings after the bell yesterday.\n\nShares are currently down around 9% 🔴 in premarket trading.\n\nQ4 Highlights:\n• Adjusted EPS: $2.17, beating estimates by $0.01\n• Revenue: $10.32B, down 8.4% YoY, beating",
-        "url": "https://x.com/SCHDETF/status/2118310171919167737",
-        "likes": 23,
-        "reposts": 1,
-        "ts": "2026-11-05T11:51:15Z",
-        "note": "Beat-and-fade reaction — stock down ~9% despite the EPS/revenue beat."
-      },
-      {
-        "handle": "MarcelLarsen_",
-        "name": "Marcel",
-        "text": "$QCOM QUALCOMM FISCAL Q4'26 EARNINGS HIGHLIGHTS\n\n🔹 Revenue: $10.32B (Est. $10.14B) 🟢; -8% YoY\n🔹 Adj. EPS: $2.17 (Est. $2.16) 🟢; -28% YoY\n🔹 GAAP EPS: $1.17\n🔹 QCT (chips): $9.02B; -8% YoY\n🔹 QTL (licensing): $1.30B; -7% YoY\n\nQCT by segment:\n🔹 Handsets: $5.14B; -26% YoY 🔴",
-        "url": "https://x.com/MarcelLarsen_/status/2118089316056354950",
-        "likes": 1,
-        "reposts": 0,
-        "ts": "2026-11-04T21:13:39Z",
-        "note": "Segment split shows the handset collapse behind the headline beat."
-      },
-      {
-        "handle": "TMA_MarketIntel",
-        "name": "Trademaster Academy",
-        "text": "QUALCOMM $QCOM Q4 2026 EARNINGS: AUTOMOTIVE SURGES 89%, BUT HANDSET REVENUE FALLS 26%\n\n📊 Q4 EARNINGS\n🟢 Revenue: $10.44B vs. $10.11B expected, -7% YoY\n🟢 Adjusted EPS: $2.17 vs. $2.16 expected, -28% YoY",
-        "url": "https://x.com/TMA_MarketIntel/status/2118087335594369410",
-        "likes": 0,
-        "reposts": 0,
-        "ts": "2026-11-04T21:05:47Z",
-        "note": "Auto +89% vs handset −26% — the diversification vs cyclicality trade-off."
-      }
-    ],
-    "d0702d927cda": [
-      {
-        "handle": "MonacoMacro",
-        "name": "Monaco Macro",
-        "text": "Meta Platforms $META sold $25B of stock at $625 on Oct 27. It closed at $621.03 on Nov 3.\n\nQ3 capex of $34.9B topped operating cash of $32.8B.\n\nThose buyers funded the gap and are already down 0.6%.",
-        "url": "https://x.com/MonacoMacro/status/2117749411589808349",
-        "likes": 0,
-        "reposts": 0,
-        "ts": "2026-11-03T22:43:00Z",
-        "note": "Capex > OCF and the $25B equity raise — why FCF and AI spend dominate the META tape."
-      },
-      {
-        "handle": "QuantAlphaXXX",
-        "name": "QuantAlpha",
-        "text": "S&P Global Ratings lowered Meta Platforms ($META) credit outlook to negative. The move highlights concerns over the company's massive artificial intelligence spending plans and potential cash flow strain.\n\nS&P noted Meta is unlikely to cut capital expenditures despite prior",
-        "url": "https://x.com/QuantAlphaXXX/status/2117244018727805311",
-        "likes": 2,
-        "reposts": 0,
-        "ts": "2026-11-02T13:14:45Z",
-        "note": "Credit-outlook cut ties the earnings miss narrative to AI capex risk."
-      },
-      {
-        "handle": "World_Data_A",
-        "name": "World Data Analysis",
-        "text": "Big tech’s AI spending dwarfs America’s biggest historical mega-projects\n\nIn just two years (2025–2026), the four largest tech companies are planning to spend more on AI infrastructure than the United States spent on the Manhattan Project, the Marshall Plan, and the Apollo",
-        "url": "https://x.com/World_Data_A/status/2116545479194362018",
-        "likes": 29,
-        "reposts": 4,
-        "ts": "2026-10-31T14:59:00Z",
-        "note": "Frames META’s raised capex inside the hyperscaler AI spend boom."
-      }
-    ],
-    "0f1d0699711e": [
-      {
-        "handle": "VladBastion",
-        "name": "Vlad Bastion",
-        "text": "A brutal week for AI semi/memory stocks. 7-day returns: \n\n🧩 Intel -37% $INTC\n🔗 Marvell -27% $MRVL\n💽 Sandisk -22% $SNDK\n🖥️ Dell -22% $DELL\n🗄️ Western Digital -18% $WDC\n💾 Micron -15% $MU\n🎮 AMD -14% $AMD\n🔬 Lam Research -13% $LRCX\n⚙️ Applied Materials -12% $AMAT\n🔍 KLA -11%",
-        "url": "https://x.com/VladBastion/status/2118290835657617855",
-        "likes": 25,
-        "reposts": 6,
-        "ts": "2026-11-05T10:34:25Z",
-        "note": "Puts MU’s post-earnings dump in the broader AI-semi rout."
-      },
-      {
-        "handle": "StockWorthyApp",
-        "name": "StockWorthy",
-        "text": "BIG 10 TECH STOCKS RANKED BY PEG RATIO! 🚀\nA lower PEG ratio can suggest a more attractive valuation relative to expected earnings growth.\n\nWhich BIG 10 stock has is the most undervalued today?\n\n🥇 $MU Micron — 0.04\n🥈 $AVGO Broadcom — 0.07\n🥉 $NVDA NVIDIA — 0.09\n4️⃣ $AMD Advanced",
-        "url": "https://x.com/StockWorthyApp/status/2117293762900627784",
-        "likes": 38,
-        "reposts": 8,
-        "ts": "2026-11-02T16:32:25Z",
-        "note": "Bull case on MU’s growth vs multiple after the monster quarter."
-      },
-      {
-        "handle": "VestigiaLabs",
-        "name": "Vestigia Labs",
-        "text": "Memory and storage equities retreated sharply in early November 2026, driven by soft guidance from Japan’s Kioxia, reported Chinese DRAM capacity advances, and market concerns over AI data center infrastructure hurdles.",
-        "url": "https://x.com/VestigiaLabs/status/2118038433671041039",
-        "likes": 2,
-        "reposts": 0,
-        "ts": "2026-11-04T17:51:28Z",
-        "note": "Explains why a strong MU print still sold off — supply and AI-infra concerns."
-      }
-    ],
-    "6495678567b7": [
-      {
-        "handle": "ren3927",
-        "name": "Golden Age | Elon Economy & Texas",
-        "text": "SpaceX now spends like a utility, not a rocket company.\n\nQ3 capex was $19.6 billion on $14.58 billion of revenue. Q4 guidance is $35 to $40 billion for AI compute, which management says pays back in under a year.\n\nThat is about 2.5 times Q3 revenue.",
-        "url": "https://x.com/ren3927/status/2118155336058281992",
-        "likes": 2,
-        "reposts": 0,
-        "ts": "2026-11-05T01:36:00Z",
-        "note": "Capex/revenue math from the first SpaceX earnings — AI compute is the spend."
-      },
-      {
-        "handle": "KGurrisi79348",
-        "name": "kettyGurrisi",
-        "text": "Is SpaceX spending too much, or just building faster than anyone thought?\n\nElon, today: \"Our capex efficiency is greatly underestimated\"\n\nThe facts (Q3 2026, SEC filing):\n• Revenue: $14.6B, up 161% in one year\n• Capex: $19.6B in one quarter, vs $6.9B a year earlier",
-        "url": "https://x.com/KGurrisi79348/status/2116875242521973074",
-        "likes": 0,
-        "reposts": 0,
-        "ts": "2026-11-01T12:49:22Z",
-        "note": "Pairs the revenue surge with Elon’s capex-efficiency pushback."
-      },
-      {
-        "handle": "gonta_southwood",
-        "name": "ゴン太 | $SPCX Watcher",
-        "text": "Elon: SpaceX's capex efficiency is \"greatly underestimated\"\n\nElon Musk replied on Sunday to a post citing Milk Road's Kyle Reidhead, who estimates SpaceX needs about $470B of capex over the next five quarters to hit its AI compute goals.",
-        "url": "https://x.com/gonta_southwood/status/2116862880964620549",
-        "likes": 2,
-        "reposts": 0,
-        "ts": "2026-11-01T12:00:14Z",
-        "note": "Musk’s reply to the $470B AI-compute capex estimate."
-      }
-    ]
-  },
-  "tickers": {
-    "NET": [
-      {
-        "handle": "TrendSpider",
-        "name": "TrendSpider",
-        "text": "CLOUDFLARE $NET EARNINGS GOD CANDLE 🟢\n\nQ3 Adj EPS: $0.38 vs $0.34 est ✅\nQ3 Sales: $782.5M vs $738.5M est ✅\n\n🟩 +18% in after-hours",
-        "url": "https://x.com/TrendSpider/status/2118453282846982202",
-        "likes": 246,
-        "reposts": 12,
-        "ts": "2026-11-05T21:19:56Z",
-        "note": "AH +18% on 39% revenue growth — today’s +10% session follow-through."
-      },
-      {
-        "handle": "PhillyTide",
-        "name": "Nick Wright",
-        "text": "Cloudflare just printed 39% revenue growth, the fastest in almost 4 years, and the stock is ripping higher while half of tech is still icing its bruises. Still shippin product while the timeline panics $NET #Earnings",
-        "url": "https://x.com/PhillyTide/status/2118715029344165931",
-        "likes": 0,
-        "reposts": 0,
-        "ts": "2026-11-06T14:40:01Z",
-        "note": "Friday tape: NET ripping while semis nurse the Thursday rout."
-      },
-      {
-        "handle": "mstrmkt",
-        "name": "Mister Market",
-        "text": "Good morning! ☕ Pre-market — Fri Nov 06 (9:00am ET)\n\n📉 Futures:\n🟢 S&P 500: ~7,402 (+0.26%) — as of 9:00am ET\n🟢 Nasdaq 100: ~27,179 (+1.60%)\n🟡 Dow: ~51,165 (-0.87%)\n\n🟢 Gainers:\n• NET — Cloudflare Inc.: +20.64% (~$294.98) — Q3",
-        "url": "https://x.com/mstrmkt/status/2118705656039371263",
-        "likes": 0,
-        "reposts": 0,
-        "ts": "2026-11-06T14:02:46Z",
-        "note": "Premarket leaderboard putting NET atop Friday’s gainers."
-      }
-    ],
-    "ABNB": [
-      {
-        "handle": "ElliottWaveSage",
-        "name": "ElliottWaveSage - Stock Charts, Trade Alerts, News",
-        "text": "Airbnb ($ABNB) raised its 2026 revenue-growth outlook to the high teens after Q3 revenue rose 19% to $4.87B. Shares gained about 12% premarket.\n\nThe company also authorized an additional $12B buyback. Faster bookings and operating leverage support growth, while the buyback can",
-        "url": "https://x.com/ElliottWaveSage/status/2118661303732457756",
-        "likes": 0,
-        "reposts": 0,
-        "ts": "2026-11-06T11:06:32Z",
-        "note": "Raised outlook + $12B buyback behind today’s ~9% jump."
-      },
-      {
-        "handle": "techprosv",
-        "name": "Alok",
-        "text": "AIRBNB $ABNB | Q3'26\n\nBeat on both lines, revenue came in above the top of the company guide and bookings growth accelerated hard\nNew $12B buyback announced, stock had closed down 3.5% at $170.13 in the regular session selloff before the print\n\nQ3'26\nRevenue $4.87B vs $4.75B est,",
-        "url": "https://x.com/techprosv/status/2118452501037089204",
-        "likes": 0,
-        "reposts": 0,
-        "ts": "2026-11-05T21:16:49Z",
-        "note": "Beat vs guide and bookings acceleration — why the AH reverse mattered."
-      },
-      {
-        "handle": "FlatWhite111",
-        "name": "澳白 Flat White（AI教父）",
-        "text": "Airbnb just authorized a $12B buyback, roughly an eighth of the company, to celebrate growth it partly paid for.\n\n$ABNB Q3 after the close Thursday. Revenue $4.87B, up 19% y/y vs ~$4.75B expected. EPS $3.16 vs $2.85. Nights and seats booked 155M, up 16%, after 10% in Q2.",
-        "url": "https://x.com/FlatWhite111/status/2118481518675063177",
-        "likes": 0,
-        "reposts": 0,
-        "ts": "2026-11-05T23:12:08Z",
-        "note": "Sizes the buyback (~1/8 of mkt) next to the bookings re-acceleration."
-      }
-    ],
-    "AMD": [
-      {
-        "handle": "VladBastion",
-        "name": "Vlad Bastion",
-        "text": "A brutal week for AI semi/memory stocks. 7-day returns: \n\n🧩 Intel -37% $INTC\n🔗 Marvell -27% $MRVL\n💽 Sandisk -22% $SNDK\n🖥️ Dell -22% $DELL\n🗄️ Western Digital -18% $WDC\n💾 Micron -15% $MU\n🎮 AMD -14% $AMD\n🔬 Lam Research -13% $LRCX\n⚙️ Applied Materials -12% $AMAT\n🔍 KLA -11%",
-        "url": "https://x.com/VladBastion/status/2118290835657617855",
-        "likes": 25,
-        "reposts": 6,
-        "ts": "2026-11-05T10:34:25Z",
-        "note": "AMD −14% on the week — context for today’s ~8% rebound."
-      },
-      {
-        "handle": "bizyuw",
-        "name": "Fin.Edu.Biz",
-        "text": "Fri premarket, US chip stocks/AI surge/rebound from brutal selloff post-Thu AI rout/heavy Asian losses: iShares Semiconductor ETF ~+5%,Nasdaq 100 futures +1.3%,Lam Research +9%,Micron +7.5%,Marvell +7%,AMD/Applied Materials +6%,CoreWeave +6.3%,South Korea's KOSPI close >6% down",
-        "url": "https://x.com/bizyuw/status/2118665528000840045",
-        "likes": 0,
-        "reposts": 0,
-        "ts": "2026-11-06T11:23:19Z",
-        "note": "Friday rebound tape with AMD among the leaders."
-      },
-      {
-        "handle": "StockFlashAI",
-        "name": "StockFlash // Qualitative Finance",
-        "text": "Pre-Market Brief\n\nCloudflare Jumps 15.3% After Hours as AMD Rebounds From Thursday’s Semiconductor Rout\n\nBullish earnings breadth persists into Friday, November 6: 23 of 30 overnight articles carry positive signals, representing 21 of 28 distinct tickers, although the six",
-        "url": "https://x.com/StockFlashAI/status/2118697723884978279",
-        "likes": 0,
-        "reposts": 0,
-        "ts": "2026-11-06T13:31:15Z",
-        "note": "Links AMD’s bounce to the same session as NET’s earnings spike."
-      }
-    ],
-    "LRCX": [
-      {
-        "handle": "VladBastion",
-        "name": "Vlad Bastion",
-        "text": "A brutal week for AI semi/memory stocks. 7-day returns: \n\n🧩 Intel -37% $INTC\n🔗 Marvell -27% $MRVL\n💽 Sandisk -22% $SNDK\n🖥️ Dell -22% $DELL\n🗄️ Western Digital -18% $WDC\n💾 Micron -15% $MU\n🎮 AMD -14% $AMD\n🔬 Lam Research -13% $LRCX\n⚙️ Applied Materials -12% $AMAT\n🔍 KLA -11%",
-        "url": "https://x.com/VladBastion/status/2118290835657617855",
-        "likes": 25,
-        "reposts": 6,
-        "ts": "2026-11-05T10:34:25Z",
-        "note": "LRCX −13% on the week before today’s ~9% bounce."
-      },
-      {
-        "handle": "bizyuw",
-        "name": "Fin.Edu.Biz",
-        "text": "Fri premarket, US chip stocks/AI surge/rebound from brutal selloff post-Thu AI rout/heavy Asian losses: iShares Semiconductor ETF ~+5%,Nasdaq 100 futures +1.3%,Lam Research +9%,Micron +7.5%,Marvell +7%,AMD/Applied Materials +6%,CoreWeave +6.3%,South Korea's KOSPI close >6% down",
-        "url": "https://x.com/bizyuw/status/2118665528000840045",
-        "likes": 0,
-        "reposts": 0,
-        "ts": "2026-11-06T11:23:19Z",
-        "note": "Premarket flag that Lam was leading the WFE rebound (~+9%)."
-      }
-    ],
-    "MU": [
-      {
-        "handle": "VladBastion",
-        "name": "Vlad Bastion",
-        "text": "A brutal week for AI semi/memory stocks. 7-day returns: \n\n🧩 Intel -37% $INTC\n🔗 Marvell -27% $MRVL\n💽 Sandisk -22% $SNDK\n🖥️ Dell -22% $DELL\n🗄️ Western Digital -18% $WDC\n💾 Micron -15% $MU\n🎮 AMD -14% $AMD\n🔬 Lam Research -13% $LRCX\n⚙️ Applied Materials -12% $AMAT\n🔍 KLA -11%",
-        "url": "https://x.com/VladBastion/status/2118290835657617855",
-        "likes": 25,
-        "reposts": 6,
-        "ts": "2026-11-05T10:34:25Z",
-        "note": "MU −15% week despite the strong print — monster quarter, weak tape."
-      },
-      {
-        "handle": "StockWorthyApp",
-        "name": "StockWorthy",
-        "text": "BIG 10 TECH STOCKS RANKED BY PEG RATIO! 🚀\nA lower PEG ratio can suggest a more attractive valuation relative to expected earnings growth.\n\nWhich BIG 10 stock has is the most undervalued today?\n\n🥇 $MU Micron — 0.04\n🥈 $AVGO Broadcom — 0.07\n🥉 $NVDA NVIDIA — 0.09\n4️⃣ $AMD Advanced",
-        "url": "https://x.com/StockWorthyApp/status/2117293762900627784",
-        "likes": 38,
-        "reposts": 8,
-        "ts": "2026-11-02T16:32:25Z",
-        "note": "PEG leaderboard still screens MU as the cheapest big-tech growth name."
-      }
-    ],
-    "QCOM": [
-      {
-        "handle": "SCHDETF",
-        "name": "SCHD STAN | Craig",
-        "text": "$QCOM Q4 Earnings Recap\n\nQualcomm, a top 15 holding in $SCHD reported earnings after the bell yesterday.\n\nShares are currently down around 9% 🔴 in premarket trading.\n\nQ4 Highlights:\n• Adjusted EPS: $2.17, beating estimates by $0.01\n• Revenue: $10.32B, down 8.4% YoY, beating",
-        "url": "https://x.com/SCHDETF/status/2118310171919167737",
-        "likes": 23,
-        "reposts": 1,
-        "ts": "2026-11-05T11:51:15Z",
-        "note": "Beat-and-fade: handset exposure still prices the guide."
-      },
-      {
-        "handle": "MarcelLarsen_",
-        "name": "Marcel",
-        "text": "$QCOM QUALCOMM FISCAL Q4'26 EARNINGS HIGHLIGHTS\n\n🔹 Revenue: $10.32B (Est. $10.14B) 🟢; -8% YoY\n🔹 Adj. EPS: $2.17 (Est. $2.16) 🟢; -28% YoY\n🔹 GAAP EPS: $1.17\n🔹 QCT (chips): $9.02B; -8% YoY\n🔹 QTL (licensing): $1.30B; -7% YoY\n\nQCT by segment:\n🔹 Handsets: $5.14B; -26% YoY 🔴",
-        "url": "https://x.com/MarcelLarsen_/status/2118089316056354950",
-        "likes": 1,
-        "reposts": 0,
-        "ts": "2026-11-04T21:13:39Z",
-        "note": "Handset −26% is the number the market cares about."
-      }
-    ],
-    "CRWD": [
-      {
-        "handle": "wallstengine",
-        "name": "Wall St Engine",
-        "text": "Deutsche Bank upgrades CrowdStrike $CRWD to Buy from Hold, raising its target to $300 from $240.\n\nBrad Zelnick says the market underestimates AI-driven cybersecurity demand.\n\nHe sees CrowdStrike's $565B 2034 market estimate as conservative, citing a “tsunami of cyber demand.”",
-        "url": "https://x.com/wallstengine/status/2117216680187482374",
-        "likes": 118,
-        "reposts": 15,
-        "ts": "2026-11-02T11:26:07Z",
-        "note": "DB Buy / $300 PT — AI expands the cyber TAM."
-      },
-      {
-        "handle": "amktparticipant",
-        "name": "Market Participant",
-        "text": "Shares of CrowdStrike are up this morning after an upgrade to BUY from HOLD at Deutsche Bank. The market is \"still not fully appreciating the extent to which AI will expand the market for cybersecurity,\" an analyst said in a note.\n\n$CRWD",
-        "url": "https://x.com/amktparticipant/status/2117285609115119862",
-        "likes": 15,
-        "reposts": 1,
-        "ts": "2026-11-02T16:00:01Z",
-        "note": "Same-day price reaction to the upgrade."
-      }
-    ],
-    "META": [
-      {
-        "handle": "MonacoMacro",
-        "name": "Monaco Macro",
-        "text": "Meta Platforms $META sold $25B of stock at $625 on Oct 27. It closed at $621.03 on Nov 3.\n\nQ3 capex of $34.9B topped operating cash of $32.8B.\n\nThose buyers funded the gap and are already down 0.6%.",
-        "url": "https://x.com/MonacoMacro/status/2117749411589808349",
-        "likes": 0,
-        "reposts": 0,
-        "ts": "2026-11-03T22:43:00Z",
-        "note": "Capex vs cash flow plus the equity raise — FCF stress in one post."
-      },
-      {
-        "handle": "QuantAlphaXXX",
-        "name": "QuantAlpha",
-        "text": "S&P Global Ratings lowered Meta Platforms ($META) credit outlook to negative. The move highlights concerns over the company's massive artificial intelligence spending plans and potential cash flow strain.",
-        "url": "https://x.com/QuantAlphaXXX/status/2117244018727805311",
-        "likes": 2,
-        "reposts": 0,
-        "ts": "2026-11-02T13:14:45Z",
-        "note": "Ratings agency flag on AI spend — credit side of the META story."
-      }
-    ],
-    "MRVL": [
-      {
-        "handle": "FinnStockinger",
-        "name": "Finn Stockinger",
-        "text": "Marvell didn’t need Lumentum to compete in optics. It needed Lumentum to compete with Broadcom.\n\n$MRVL already had custom silicon, SerDes, optical DSPs and silicon photonics. What $LITE brings is deeper control over the optical stack, from InP manufacturing and lasers to complete",
-        "url": "https://x.com/FinnStockinger/status/2117349947527877026",
-        "likes": 33,
-        "reposts": 1,
-        "ts": "2026-11-02T20:15:40Z",
-        "note": "Strategic rationale: MRVL buys optical stack depth to go after AVGO."
-      },
-      {
-        "handle": "REXShares",
-        "name": "REX Shares",
-        "text": "MARVELL BETS BIG ON LIGHT WITH $115 BILLION LUMENTUM DEAL\n\n$MRVL agreed to acquire $LITE in an all stock deal with an enterprise value of $115 billion, making it one of the largest tech transactions ever, behind only the SpaceX and xAI merger.",
-        "url": "https://x.com/REXShares/status/2118353989582327913",
-        "likes": 5,
-        "reposts": 0,
-        "ts": "2026-11-05T14:45:22Z",
-        "note": "Sizes the $115B EV all-stock deal in mega-deal context."
-      }
-    ],
-    "LITE": [
-      {
-        "handle": "OptionKing666",
-        "name": "456X",
-        "text": "Lumentum ($LITE) guided Q2 revenue to $1.575-1.625B, representing 140% growth at the midpoint, even as Marvell ($MRVL) agreed to acquire the company for 4.5 Marvell common shares per Lumentum share. In Q1, Lumentum posted revenue of $1.26B and an operating margin of 42.3%,",
-        "url": "https://x.com/OptionKing666/status/2118007032343388235",
-        "likes": 4,
-        "reposts": 1,
-        "ts": "2026-11-04T15:46:41Z",
-        "note": "Stand-alone optics guide next to the 4.5x exchange ratio."
-      },
-      {
-        "handle": "FinnStockinger",
-        "name": "Finn Stockinger",
-        "text": "Marvell didn’t need Lumentum to compete in optics. It needed Lumentum to compete with Broadcom.\n\n$MRVL already had custom silicon, SerDes, optical DSPs and silicon photonics. What $LITE brings is deeper control over the optical stack, from InP manufacturing and lasers to complete",
-        "url": "https://x.com/FinnStockinger/status/2117349947527877026",
-        "likes": 33,
-        "reposts": 1,
-        "ts": "2026-11-02T20:15:40Z",
-        "note": "Why LITE’s optical stack is the asset in the merger."
-      }
-    ]
-  },
-  "filings": {
-    "0001193125-26-442717": [
-      {
-        "handle": "FinnStockinger",
-        "name": "Finn Stockinger",
-        "text": "Marvell didn’t need Lumentum to compete in optics. It needed Lumentum to compete with Broadcom.\n\n$MRVL already had custom silicon, SerDes, optical DSPs and silicon photonics. What $LITE brings is deeper control over the optical stack, from InP manufacturing and lasers to complete",
-        "url": "https://x.com/FinnStockinger/status/2117349947527877026",
-        "likes": 33,
-        "reposts": 1,
-        "ts": "2026-11-02T20:15:40Z",
-        "note": "Best strategic take on the MRVL 8-K: competing with Broadcom, not just buying lasers."
-      },
-      {
-        "handle": "REXShares",
-        "name": "REX Shares",
-        "text": "MARVELL BETS BIG ON LIGHT WITH $115 BILLION LUMENTUM DEAL\n\n$MRVL agreed to acquire $LITE in an all stock deal with an enterprise value of $115 billion, making it one of the largest tech transactions ever, behind only the SpaceX and xAI merger. The deal brings the optical maker’s",
-        "url": "https://x.com/REXShares/status/2118353989582327913",
-        "likes": 5,
-        "reposts": 0,
-        "ts": "2026-11-05T14:45:22Z",
-        "note": "EV and structure matching the Marvell deal 8-K."
-      },
-      {
-        "handle": "FreyaResearch07",
-        "name": "Freya Research",
-        "text": "BREAKING: Marvell Announces All-Stock Acquisition of Lumentum at a $115 Billion Enterprise Value to Create an AI Connectivity Powerhouse.\n\nHere are the core deal details from the official release:\n\nDeal Size & Structure:\n• Marvell ($MRVL) will acquire Lumentum ($LITE) in an",
-        "url": "https://x.com/FreyaResearch07/status/2117232460597768527",
-        "likes": 5,
-        "reposts": 0,
-        "ts": "2026-11-02T12:28:49Z",
-        "note": "Deal-day breakdown keyed to the MRVL accession."
-      }
-    ],
-    "0001193125-26-442758": [
-      {
-        "handle": "OptionKing666",
-        "name": "456X",
-        "text": "Lumentum ($LITE) guided Q2 revenue to $1.575-1.625B, representing 140% growth at the midpoint, even as Marvell ($MRVL) agreed to acquire the company for 4.5 Marvell common shares per Lumentum share. In Q1, Lumentum posted revenue of $1.26B and an operating margin of 42.3%,",
-        "url": "https://x.com/OptionKing666/status/2118007032343388235",
-        "likes": 4,
-        "reposts": 1,
-        "ts": "2026-11-04T15:46:41Z",
-        "note": "LITE stand-alone guide + 4.5 exchange ratio from the Lumentum 8-K."
-      },
-      {
-        "handle": "ftr_investors",
-        "name": "The Future Investors",
-        "text": "$MRVL $LITE Marvell to acquire Lumentum in a $115B all-stock deal 🚨💰\n\nThe merger creates an AI connectivity leader, combining Marvell’s chip technology with Lumentum’s optical solutions\n\nKey figures 📊\n- $550B addressable market\n- $1B+ expected annual cost synergies\n- Expected",
-        "url": "https://x.com/ftr_investors/status/2117263364682383650",
-        "likes": 16,
-        "reposts": 2,
-        "ts": "2026-11-02T14:31:37Z",
-        "note": "Synergies and TAM figures cited around the LITE filing."
-      },
-      {
-        "handle": "Wakey017",
-        "name": "Alpha Hunter",
-        "text": "@cmsinvests Because $LITE isn't trading on earnings anymore. It's trading on the $MRVL acquisition. The deal gives Lumentum shareholders 4.5 Marvell shares for every LITE share, so when $MRVL gets hammered over the massive price tag and dilution concerns, the value of the offer drops too.",
-        "url": "https://x.com/Wakey017/status/2117346215906222097",
-        "likes": 0,
-        "reposts": 0,
-        "ts": "2026-11-02T20:00:50Z",
-        "note": "Why LITE now tracks MRVL — deal arb, not optics multiples."
-      }
-    ]
-  }
+ "stories": {
+  "8c3a2400bb84": [
+   {
+    "handle": "DeItaone",
+    "name": "*Walter Bloomberg",
+    "text": "$NVDA  - NVIDIA BOARD LAUNCHES ESPIONAGE PROBE INVOLVING CEO JENSEN HUANG\n\nNvidia IS launching an independent investigation into whether CEO Jensen Huang was targeted by a Chinese intelligence operation, Bloomberg reports.\n\nHuang admitted to an extramarital affair and apologized",
+    "url": "https://x.com/DeItaone/status/2119543155930312795",
+    "likes": 541,
+    "reposts": 75,
+    "ts": "2026-11-08T21:30:42Z",
+    "note": "Breaking wire: Nvidia's board opens an independent probe into whether Huang was targeted by Chinese intelligence."
+   },
+   {
+    "handle": "PolymarketIntel",
+    "name": "Polymarket Intel",
+    "text": "Jensen Huang remains Nvidia CEO as the board opens an independent investigation into whether he was the subject of a foreign intelligence operation.\n\nIn a staff memo, Huang admitted an affair with Alice Huang, a former executive at Megaspeed, a Singapore-based Nvidia customer.",
+    "url": "https://x.com/PolymarketIntel/status/2119532252132524433",
+    "likes": 39,
+    "reposts": 8,
+    "ts": "2026-11-08T20:47:22Z",
+    "note": "Key fact for holders: Huang stays CEO while the board investigation runs."
+   },
+   {
+    "handle": "axios",
+    "name": "Axios",
+    "text": "Nvidia investors rush to keep Jensen despite private disappointment https://t.co/PEnXJJEvpn",
+    "url": "https://x.com/axios/status/2119797660861247707",
+    "likes": 9,
+    "reposts": 5,
+    "ts": "2026-11-09T14:22:00Z",
+    "note": "Axios: big Nvidia investors are backing Huang publicly despite private disappointment."
+   },
+   {
+    "handle": "politico",
+    "name": "POLITICO",
+    "text": "Nvidia shares plummet after Huang investigation https://t.co/tO2gphyr1o",
+    "url": "https://x.com/politico/status/2119794610461401247",
+    "likes": 16,
+    "reposts": 12,
+    "ts": "2026-11-09T14:09:53Z",
+    "note": "Politico ties the premarket drop directly to the Huang investigation."
+   },
+   {
+    "handle": "VaibhavSisinty",
+    "name": "Vaibhav Sisinty",
+    "text": "Jensen Huang admitted he was unfaithful to his wife in a company-wide email to Nvidia.\n\nThe email also addresses the reports that Alice Huang, an executive at Singapore customer Megaspeed, was allegedly recruited by Chinese intelligence to spy on him.\n\nNvidia's board has opened https://t.co/OkWsat3xuk",
+    "url": "https://x.com/VaibhavSisinty/status/2119556079281664156",
+    "likes": 65,
+    "reposts": 4,
+    "ts": "2026-11-08T22:22:03Z",
+    "note": "Summary of Huang's company-wide email and the Megaspeed link driving the story."
+   }
+  ],
+  "3fccf913600c": [
+   {
+    "handle": "obrien",
+    "name": "Chris O'Brien",
+    "text": "@ReadFuturist The Tesla merger is inevitable. The funny thing: Because the cult keeps Tesla's stock so inflated, SpaceX can't just buy it cheap (like X and xAI). Tesla has a $1.4T market cap. SpaceX has a 1.8T market cap but would have to pay a premium. That's a big pill to swallow!",
+    "url": "https://x.com/obrien/status/2119431820479750480",
+    "likes": 28,
+    "reposts": 1,
+    "ts": "2026-11-08T14:08:17Z",
+    "note": "Deal-math angle: Tesla's $1.4T cap means SpaceX would have to pay a premium, unlike the X and xAI deals."
+   },
+   {
+    "handle": "ShortingIsFun",
+    "name": "Suspected Saboteur",
+    "text": "\"Tesla–SpaceX Union Would Test Texas Business Code Merger Process\"\n\n$SPCX $TSLA \n\nhttps://t.co/cDDDXD6Nzy",
+    "url": "https://x.com/ShortingIsFun/status/2119788877120508334",
+    "likes": 2,
+    "reposts": 0,
+    "ts": "2026-11-09T13:47:06Z",
+    "note": "Flags the Texas business-code merger process a Tesla-SpaceX combination would test."
+   },
+   {
+    "handle": "naumowf",
+    "name": "Franco Naumow.",
+    "text": "@DavidDTawil @SpaceX A longtime director leaving right as Musk pushes a SpaceX and Tesla merger is not noise, boards are where merger terms actually get decided. Who protects Tesla minority shareholders if this happens? Nobody on the bull side is answering that yet.",
+    "url": "https://x.com/naumowf/status/2119755188256846262",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-09T11:33:14Z",
+    "note": "Governance question: a SpaceX director exit right as merger talk heats up, and who protects Tesla minorities."
+   }
+  ],
+  "1c7b557b097f": [
+   {
+    "handle": "CScottGarliss",
+    "name": "BentPine Capital",
+    "text": "A successful Anthropic IPO would help support sentiment toward AI-exposed businesses...\n\nAnthropic to press ahead with IPO targeting $1.5tn valuation https://t.co/jFkkYGJplM via @ft",
+    "url": "https://x.com/CScottGarliss/status/2119548653321011665",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-08T21:52:32Z",
+    "note": "FT via a fund manager: Anthropic is pressing ahead at a $1.5T target, a sentiment test for AI names."
+   },
+   {
+    "handle": "VujuOnX",
+    "name": "Vuju",
+    "text": "Anthropic Moves Closer to IPO as Valuation Expectations Fall to $1.3 Trillion\n\nAnthropic is pushing ahead with its IPO plans after filing its S-1 in late October. Prediction markets now indicate an 87% chance of a public listing before year-end, while pre-IPO share prices suggest",
+    "url": "https://x.com/VujuOnX/status/2119220615534031107",
+    "likes": 4,
+    "reposts": 0,
+    "ts": "2026-11-08T00:09:02Z",
+    "note": "Notes valuation expectations sliding toward $1.3T and prediction-market odds of a 2026 listing."
+   },
+   {
+    "handle": "RaviRomo",
+    "name": "Ravi Romo",
+    "text": "Keep parroting the hedge fund leakers who hold sway on WSJ. The Hedgies want to make a 20 to 30% on flipping Anthropic's IPO after a \"dream low forced\" valuation.\n \nNo way Anthropic does an IPO below $1.3 Trillion when OpenAI - which has verifiable lower revenues, lower growth https://t.co/HXu4NQt0iv",
+    "url": "https://x.com/RaviRomo/status/2119246756533895275",
+    "likes": 34,
+    "reposts": 3,
+    "ts": "2026-11-08T01:52:55Z",
+    "note": "Contrarian view: argues the skepticism is hedge funds talking the price down to flip the IPO."
+   },
+   {
+    "handle": "JarsyInc",
+    "name": "Jarsy",
+    "text": "⚡Weekly Brief | Nov 02–08⚡\nThis week's Pre-IPO news: Anthropic IPO, OpenAI funding, defense tech M&A.\n\n• 🔴 OpenAI closed $11B, the first part of a round at a $1.25T valuation\n• 🔴 Revolut completed a secondary share sale at a $115B valuation\n• Anthropic's amended S-1 shows",
+    "url": "https://x.com/JarsyInc/status/2119595841719783456",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-09T01:00:03Z",
+    "note": "Weekly pre-IPO roundup putting Anthropic next to OpenAI's $1.25T round and Revolut's secondary."
+   }
+  ],
+  "c587875a146d": [
+   {
+    "handle": "MFT_Get_Funded",
+    "name": "Miami Futures Trader",
+    "text": "Alphabet Reveals $548 Million Stake in Qualcomm\n\n$GOOGL (Alphabet) took a new stake of nearly 3 million Qualcomm shares, valued at roughly $548 million as of September 30, a move that underscores confidence in Qualcomm’s data-center ambitions even as smartphone demand remains",
+    "url": "https://x.com/MFT_Get_Funded/status/2118800001610793277",
+    "likes": 5,
+    "reposts": 0,
+    "ts": "2026-11-06T20:17:40Z",
+    "note": "Most-shared take: the ~3M-share, $548M stake reads as a vote for Qualcomm's data-center push."
+   },
+   {
+    "handle": "ainatiakurdadze",
+    "name": "Natia Kurdadze - AI",
+    "text": "Alphabet takes a Qualcomm stake (Nov 7)\nGoogle's parent bought ~2.98M Qualcomm shares worth ~$548M,  about 0.5%. \n\nQualcomm stock rose 5%. \n\nNo AI chip deal has been confirmed, but Qualcomm's data-center pivot just got a big-name vote  KuCoin News (relaying Reuters). \n\nThis is a https://t.co/JXPqKEfBhW",
+    "url": "https://x.com/ainatiakurdadze/status/2119026455216607734",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-07T11:17:31Z",
+    "note": "Useful caveat: about 0.5% of Qualcomm, stock rose ~5%, but no AI chip deal is confirmed."
+   },
+   {
+    "handle": "BusinessTimes",
+    "name": "The Business Times",
+    "text": "Alphabet discloses US$548 million worth of Qualcomm stake\n\nhttps://t.co/ZWrJYxJacH",
+    "url": "https://x.com/BusinessTimes/status/2118878717254537633",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-07T01:30:27Z",
+    "note": "Straight news link from The Business Times."
+   }
+  ],
+  "e8881efcd3e2": [
+   {
+    "handle": "KreizJordy",
+    "name": "Jordy",
+    "text": "Everyone crying about the $MRVL $LITE acquisition likely underestimates Marvell and the experts at Lumentum who understand the technology, connectivity design/architecture, and the opportunity ahead.\n\nI have a feeling we’ll see people admit their lack in some Quarters from now.",
+    "url": "https://x.com/KreizJordy/status/2119132016616595610",
+    "likes": 44,
+    "reposts": 4,
+    "ts": "2026-11-07T18:16:58Z",
+    "note": "Bull case pushing back on the selloff: Lumentum's optics talent is the point of the deal."
+   },
+   {
+    "handle": "armaanzinvest",
+    "name": "The Market Matrix",
+    "text": "The worst performing stocks in the S&P the last month:\n\n1) $INTC Intel Corp (-55%)\n2. $MRVL Marvell Technology (-50%)\n3) $SNDK SanDisk (-50%)\n4) $STX Seagate Technology (-48%)\n5) $LITE Lumentum Holdings (-48%)\n\n2 of the 5 were part of an acquisition together.. \n\nIf I told this is https://t.co/ZmNNMQN4q9",
+    "url": "https://x.com/armaanzinvest/status/2119084501670531404",
+    "likes": 2,
+    "reposts": 1,
+    "ts": "2026-11-07T15:08:10Z",
+    "note": "Context: MRVL and LITE are both among the S&P's worst performers over the past month since the deal."
+   },
+   {
+    "handle": "NorelEitan",
+    "name": "Eitan Norel",
+    "text": "Four acquisitions in one week: Dropbox buying Tigris, Salesforce buying Cresta, Marvell buying Lumentum, Palo Alto in talks for Clutch Security. my read: the agent layer is getting built mostly by acquisition now, nobody has 18 months to build the plumbing in house.",
+    "url": "https://x.com/NorelEitan/status/2119330341836202301",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-08T07:25:03Z",
+    "note": "Puts the deal in a week of AI-infrastructure M&A (Dropbox, Salesforce, Palo Alto)."
+   }
+  ],
+  "5f2e2093f5cd": [
+   {
+    "handle": "Holland_Knight",
+    "name": "Holland & Knight",
+    "text": "We're pleased to have advised Rune Technologies, a defense technology platform focused on military logistics and sustainment operations, on its sale to @salesforce. The acquisition will expand Salesforce's Missionforce portfolio with capabilities designed to improve logistics, https://t.co/lziSaovnIn",
+    "url": "https://x.com/Holland_Knight/status/2118374318887338251",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-05T16:06:09Z",
+    "note": "Holland & Knight confirms it advised Rune on the sale; Rune expands Salesforce's Missionforce defense line."
+   },
+   {
+    "handle": "Valueinvest101",
+    "name": "Value Investing Hub",
+    "text": "Three years ago, Elliott Management's campaign against $CRM produced a specific win: Salesforce formally disbanded its M&A committee. No major deal followed through three fiscal years. Buybacks ran at a double-digit-billion pace. Margins expanded.\n\nMonday, Salesforce agreed to",
+    "url": "https://x.com/Valueinvest101/status/2118765998484422977",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-06T18:02:33Z",
+    "note": "Strategic context: Salesforce's first notable deal since Elliott pushed it to disband its M&A committee."
+   }
+  ]
+ },
+ "tickers": {
+  "NET": [
+   {
+    "handle": "TrendSpider",
+    "name": "TrendSpider",
+    "text": "CLOUDFLARE $NET EARNINGS GOD CANDLE 🟢\n\nQ3 Adj EPS: $0.38 vs $0.34 est ✅\nQ3 Sales: $782.5M vs $738.5M est ✅\n\n🟩 +18% in after-hours",
+    "url": "https://x.com/TrendSpider/status/2118453282846982202",
+    "likes": 246,
+    "reposts": 12,
+    "ts": "2026-11-05T21:19:56Z",
+    "note": "AH +18% on 39% revenue growth — today’s +10% session follow-through."
+   },
+   {
+    "handle": "PhillyTide",
+    "name": "Nick Wright",
+    "text": "Cloudflare just printed 39% revenue growth, the fastest in almost 4 years, and the stock is ripping higher while half of tech is still icing its bruises. Still shippin product while the timeline panics $NET #Earnings",
+    "url": "https://x.com/PhillyTide/status/2118715029344165931",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-06T14:40:01Z",
+    "note": "Friday tape: NET ripping while semis nurse the Thursday rout."
+   },
+   {
+    "handle": "mstrmkt",
+    "name": "Mister Market",
+    "text": "Good morning! ☕ Pre-market — Fri Nov 06 (9:00am ET)\n\n📉 Futures:\n🟢 S&P 500: ~7,402 (+0.26%) — as of 9:00am ET\n🟢 Nasdaq 100: ~27,179 (+1.60%)\n🟡 Dow: ~51,165 (-0.87%)\n\n🟢 Gainers:\n• NET — Cloudflare Inc.: +20.64% (~$294.98) — Q3",
+    "url": "https://x.com/mstrmkt/status/2118705656039371263",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-06T14:02:46Z",
+    "note": "Premarket leaderboard putting NET atop Friday’s gainers."
+   }
+  ],
+  "ABNB": [
+   {
+    "handle": "ElliottWaveSage",
+    "name": "ElliottWaveSage - Stock Charts, Trade Alerts, News",
+    "text": "Airbnb ($ABNB) raised its 2026 revenue-growth outlook to the high teens after Q3 revenue rose 19% to $4.87B. Shares gained about 12% premarket.\n\nThe company also authorized an additional $12B buyback. Faster bookings and operating leverage support growth, while the buyback can",
+    "url": "https://x.com/ElliottWaveSage/status/2118661303732457756",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-06T11:06:32Z",
+    "note": "Raised outlook + $12B buyback behind today’s ~9% jump."
+   },
+   {
+    "handle": "techprosv",
+    "name": "Alok",
+    "text": "AIRBNB $ABNB | Q3'26\n\nBeat on both lines, revenue came in above the top of the company guide and bookings growth accelerated hard\nNew $12B buyback announced, stock had closed down 3.5% at $170.13 in the regular session selloff before the print\n\nQ3'26\nRevenue $4.87B vs $4.75B est,",
+    "url": "https://x.com/techprosv/status/2118452501037089204",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-05T21:16:49Z",
+    "note": "Beat vs guide and bookings acceleration — why the AH reverse mattered."
+   },
+   {
+    "handle": "FlatWhite111",
+    "name": "澳白 Flat White（AI教父）",
+    "text": "Airbnb just authorized a $12B buyback, roughly an eighth of the company, to celebrate growth it partly paid for.\n\n$ABNB Q3 after the close Thursday. Revenue $4.87B, up 19% y/y vs ~$4.75B expected. EPS $3.16 vs $2.85. Nights and seats booked 155M, up 16%, after 10% in Q2.",
+    "url": "https://x.com/FlatWhite111/status/2118481518675063177",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-05T23:12:08Z",
+    "note": "Sizes the buyback (~1/8 of mkt) next to the bookings re-acceleration."
+   }
+  ],
+  "AMD": [
+   {
+    "handle": "VladBastion",
+    "name": "Vlad Bastion",
+    "text": "A brutal week for AI semi/memory stocks. 7-day returns: \n\n🧩 Intel -37% $INTC\n🔗 Marvell -27% $MRVL\n💽 Sandisk -22% $SNDK\n🖥️ Dell -22% $DELL\n🗄️ Western Digital -18% $WDC\n💾 Micron -15% $MU\n🎮 AMD -14% $AMD\n🔬 Lam Research -13% $LRCX\n⚙️ Applied Materials -12% $AMAT\n🔍 KLA -11%",
+    "url": "https://x.com/VladBastion/status/2118290835657617855",
+    "likes": 25,
+    "reposts": 6,
+    "ts": "2026-11-05T10:34:25Z",
+    "note": "AMD −14% on the week — context for today’s ~8% rebound."
+   },
+   {
+    "handle": "bizyuw",
+    "name": "Fin.Edu.Biz",
+    "text": "Fri premarket, US chip stocks/AI surge/rebound from brutal selloff post-Thu AI rout/heavy Asian losses: iShares Semiconductor ETF ~+5%,Nasdaq 100 futures +1.3%,Lam Research +9%,Micron +7.5%,Marvell +7%,AMD/Applied Materials +6%,CoreWeave +6.3%,South Korea's KOSPI close >6% down",
+    "url": "https://x.com/bizyuw/status/2118665528000840045",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-06T11:23:19Z",
+    "note": "Friday rebound tape with AMD among the leaders."
+   },
+   {
+    "handle": "StockFlashAI",
+    "name": "StockFlash // Qualitative Finance",
+    "text": "Pre-Market Brief\n\nCloudflare Jumps 15.3% After Hours as AMD Rebounds From Thursday’s Semiconductor Rout\n\nBullish earnings breadth persists into Friday, November 6: 23 of 30 overnight articles carry positive signals, representing 21 of 28 distinct tickers, although the six",
+    "url": "https://x.com/StockFlashAI/status/2118697723884978279",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-06T13:31:15Z",
+    "note": "Links AMD’s bounce to the same session as NET’s earnings spike."
+   }
+  ],
+  "LRCX": [
+   {
+    "handle": "VladBastion",
+    "name": "Vlad Bastion",
+    "text": "A brutal week for AI semi/memory stocks. 7-day returns: \n\n🧩 Intel -37% $INTC\n🔗 Marvell -27% $MRVL\n💽 Sandisk -22% $SNDK\n🖥️ Dell -22% $DELL\n🗄️ Western Digital -18% $WDC\n💾 Micron -15% $MU\n🎮 AMD -14% $AMD\n🔬 Lam Research -13% $LRCX\n⚙️ Applied Materials -12% $AMAT\n🔍 KLA -11%",
+    "url": "https://x.com/VladBastion/status/2118290835657617855",
+    "likes": 25,
+    "reposts": 6,
+    "ts": "2026-11-05T10:34:25Z",
+    "note": "LRCX −13% on the week before today’s ~9% bounce."
+   },
+   {
+    "handle": "bizyuw",
+    "name": "Fin.Edu.Biz",
+    "text": "Fri premarket, US chip stocks/AI surge/rebound from brutal selloff post-Thu AI rout/heavy Asian losses: iShares Semiconductor ETF ~+5%,Nasdaq 100 futures +1.3%,Lam Research +9%,Micron +7.5%,Marvell +7%,AMD/Applied Materials +6%,CoreWeave +6.3%,South Korea's KOSPI close >6% down",
+    "url": "https://x.com/bizyuw/status/2118665528000840045",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-06T11:23:19Z",
+    "note": "Premarket flag that Lam was leading the WFE rebound (~+9%)."
+   }
+  ],
+  "MU": [
+   {
+    "handle": "VladBastion",
+    "name": "Vlad Bastion",
+    "text": "A brutal week for AI semi/memory stocks. 7-day returns: \n\n🧩 Intel -37% $INTC\n🔗 Marvell -27% $MRVL\n💽 Sandisk -22% $SNDK\n🖥️ Dell -22% $DELL\n🗄️ Western Digital -18% $WDC\n💾 Micron -15% $MU\n🎮 AMD -14% $AMD\n🔬 Lam Research -13% $LRCX\n⚙️ Applied Materials -12% $AMAT\n🔍 KLA -11%",
+    "url": "https://x.com/VladBastion/status/2118290835657617855",
+    "likes": 25,
+    "reposts": 6,
+    "ts": "2026-11-05T10:34:25Z",
+    "note": "MU −15% week despite the strong print — monster quarter, weak tape."
+   },
+   {
+    "handle": "StockWorthyApp",
+    "name": "StockWorthy",
+    "text": "BIG 10 TECH STOCKS RANKED BY PEG RATIO! 🚀\nA lower PEG ratio can suggest a more attractive valuation relative to expected earnings growth.\n\nWhich BIG 10 stock has is the most undervalued today?\n\n🥇 $MU Micron — 0.04\n🥈 $AVGO Broadcom — 0.07\n🥉 $NVDA NVIDIA — 0.09\n4️⃣ $AMD Advanced",
+    "url": "https://x.com/StockWorthyApp/status/2117293762900627784",
+    "likes": 38,
+    "reposts": 8,
+    "ts": "2026-11-02T16:32:25Z",
+    "note": "PEG leaderboard still screens MU as the cheapest big-tech growth name."
+   }
+  ],
+  "QCOM": [
+   {
+    "handle": "SCHDETF",
+    "name": "SCHD STAN | Craig",
+    "text": "$QCOM Q4 Earnings Recap\n\nQualcomm, a top 15 holding in $SCHD reported earnings after the bell yesterday.\n\nShares are currently down around 9% 🔴 in premarket trading.\n\nQ4 Highlights:\n• Adjusted EPS: $2.17, beating estimates by $0.01\n• Revenue: $10.32B, down 8.4% YoY, beating",
+    "url": "https://x.com/SCHDETF/status/2118310171919167737",
+    "likes": 23,
+    "reposts": 1,
+    "ts": "2026-11-05T11:51:15Z",
+    "note": "Beat-and-fade: handset exposure still prices the guide."
+   },
+   {
+    "handle": "MarcelLarsen_",
+    "name": "Marcel",
+    "text": "$QCOM QUALCOMM FISCAL Q4'26 EARNINGS HIGHLIGHTS\n\n🔹 Revenue: $10.32B (Est. $10.14B) 🟢; -8% YoY\n🔹 Adj. EPS: $2.17 (Est. $2.16) 🟢; -28% YoY\n🔹 GAAP EPS: $1.17\n🔹 QCT (chips): $9.02B; -8% YoY\n🔹 QTL (licensing): $1.30B; -7% YoY\n\nQCT by segment:\n🔹 Handsets: $5.14B; -26% YoY 🔴",
+    "url": "https://x.com/MarcelLarsen_/status/2118089316056354950",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-04T21:13:39Z",
+    "note": "Handset −26% is the number the market cares about."
+   }
+  ],
+  "CRWD": [
+   {
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "Deutsche Bank upgrades CrowdStrike $CRWD to Buy from Hold, raising its target to $300 from $240.\n\nBrad Zelnick says the market underestimates AI-driven cybersecurity demand.\n\nHe sees CrowdStrike's $565B 2034 market estimate as conservative, citing a “tsunami of cyber demand.”",
+    "url": "https://x.com/wallstengine/status/2117216680187482374",
+    "likes": 118,
+    "reposts": 15,
+    "ts": "2026-11-02T11:26:07Z",
+    "note": "DB Buy / $300 PT — AI expands the cyber TAM."
+   },
+   {
+    "handle": "amktparticipant",
+    "name": "Market Participant",
+    "text": "Shares of CrowdStrike are up this morning after an upgrade to BUY from HOLD at Deutsche Bank. The market is \"still not fully appreciating the extent to which AI will expand the market for cybersecurity,\" an analyst said in a note.\n\n$CRWD",
+    "url": "https://x.com/amktparticipant/status/2117285609115119862",
+    "likes": 15,
+    "reposts": 1,
+    "ts": "2026-11-02T16:00:01Z",
+    "note": "Same-day price reaction to the upgrade."
+   }
+  ],
+  "META": [
+   {
+    "handle": "MonacoMacro",
+    "name": "Monaco Macro",
+    "text": "Meta Platforms $META sold $25B of stock at $625 on Oct 27. It closed at $621.03 on Nov 3.\n\nQ3 capex of $34.9B topped operating cash of $32.8B.\n\nThose buyers funded the gap and are already down 0.6%.",
+    "url": "https://x.com/MonacoMacro/status/2117749411589808349",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-03T22:43:00Z",
+    "note": "Capex vs cash flow plus the equity raise — FCF stress in one post."
+   },
+   {
+    "handle": "QuantAlphaXXX",
+    "name": "QuantAlpha",
+    "text": "S&P Global Ratings lowered Meta Platforms ($META) credit outlook to negative. The move highlights concerns over the company's massive artificial intelligence spending plans and potential cash flow strain.",
+    "url": "https://x.com/QuantAlphaXXX/status/2117244018727805311",
+    "likes": 2,
+    "reposts": 0,
+    "ts": "2026-11-02T13:14:45Z",
+    "note": "Ratings agency flag on AI spend — credit side of the META story."
+   }
+  ],
+  "MRVL": [
+   {
+    "handle": "KreizJordy",
+    "name": "Jordy",
+    "text": "Everyone crying about the $MRVL $LITE acquisition likely underestimates Marvell and the experts at Lumentum who understand the technology, connectivity design/architecture, and the opportunity ahead.\n\nI have a feeling we’ll see people admit their lack in some Quarters from now.",
+    "url": "https://x.com/KreizJordy/status/2119132016616595610",
+    "likes": 44,
+    "reposts": 4,
+    "ts": "2026-11-07T18:16:58Z",
+    "note": "Bull case pushing back on the selloff: Lumentum's optics talent is the point of the deal."
+   },
+   {
+    "handle": "armaanzinvest",
+    "name": "The Market Matrix",
+    "text": "The worst performing stocks in the S&P the last month:\n\n1) $INTC Intel Corp (-55%)\n2. $MRVL Marvell Technology (-50%)\n3) $SNDK SanDisk (-50%)\n4) $STX Seagate Technology (-48%)\n5) $LITE Lumentum Holdings (-48%)\n\n2 of the 5 were part of an acquisition together.. \n\nIf I told this is https://t.co/ZmNNMQN4q9",
+    "url": "https://x.com/armaanzinvest/status/2119084501670531404",
+    "likes": 2,
+    "reposts": 1,
+    "ts": "2026-11-07T15:08:10Z",
+    "note": "Context: MRVL and LITE are both among the S&P's worst performers over the past month since the deal."
+   },
+   {
+    "handle": "NorelEitan",
+    "name": "Eitan Norel",
+    "text": "Four acquisitions in one week: Dropbox buying Tigris, Salesforce buying Cresta, Marvell buying Lumentum, Palo Alto in talks for Clutch Security. my read: the agent layer is getting built mostly by acquisition now, nobody has 18 months to build the plumbing in house.",
+    "url": "https://x.com/NorelEitan/status/2119330341836202301",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-08T07:25:03Z",
+    "note": "Puts the deal in a week of AI-infrastructure M&A (Dropbox, Salesforce, Palo Alto)."
+   }
+  ],
+  "LITE": [
+   {
+    "handle": "KreizJordy",
+    "name": "Jordy",
+    "text": "Everyone crying about the $MRVL $LITE acquisition likely underestimates Marvell and the experts at Lumentum who understand the technology, connectivity design/architecture, and the opportunity ahead.\n\nI have a feeling we’ll see people admit their lack in some Quarters from now.",
+    "url": "https://x.com/KreizJordy/status/2119132016616595610",
+    "likes": 44,
+    "reposts": 4,
+    "ts": "2026-11-07T18:16:58Z",
+    "note": "Bull case pushing back on the selloff: Lumentum's optics talent is the point of the deal."
+   },
+   {
+    "handle": "armaanzinvest",
+    "name": "The Market Matrix",
+    "text": "The worst performing stocks in the S&P the last month:\n\n1) $INTC Intel Corp (-55%)\n2. $MRVL Marvell Technology (-50%)\n3) $SNDK SanDisk (-50%)\n4) $STX Seagate Technology (-48%)\n5) $LITE Lumentum Holdings (-48%)\n\n2 of the 5 were part of an acquisition together.. \n\nIf I told this is https://t.co/ZmNNMQN4q9",
+    "url": "https://x.com/armaanzinvest/status/2119084501670531404",
+    "likes": 2,
+    "reposts": 1,
+    "ts": "2026-11-07T15:08:10Z",
+    "note": "Context: MRVL and LITE are both among the S&P's worst performers over the past month since the deal."
+   }
+  ],
+  "NVDA": [
+   {
+    "handle": "DeItaone",
+    "name": "*Walter Bloomberg",
+    "text": "$NVDA  - NVIDIA BOARD LAUNCHES ESPIONAGE PROBE INVOLVING CEO JENSEN HUANG\n\nNvidia IS launching an independent investigation into whether CEO Jensen Huang was targeted by a Chinese intelligence operation, Bloomberg reports.\n\nHuang admitted to an extramarital affair and apologized",
+    "url": "https://x.com/DeItaone/status/2119543155930312795",
+    "likes": 541,
+    "reposts": 75,
+    "ts": "2026-11-08T21:30:42Z",
+    "note": "Breaking wire: Nvidia's board opens an independent probe into whether Huang was targeted by Chinese intelligence."
+   },
+   {
+    "handle": "PolymarketIntel",
+    "name": "Polymarket Intel",
+    "text": "Jensen Huang remains Nvidia CEO as the board opens an independent investigation into whether he was the subject of a foreign intelligence operation.\n\nIn a staff memo, Huang admitted an affair with Alice Huang, a former executive at Megaspeed, a Singapore-based Nvidia customer.",
+    "url": "https://x.com/PolymarketIntel/status/2119532252132524433",
+    "likes": 39,
+    "reposts": 8,
+    "ts": "2026-11-08T20:47:22Z",
+    "note": "Key fact for holders: Huang stays CEO while the board investigation runs."
+   },
+   {
+    "handle": "axios",
+    "name": "Axios",
+    "text": "Nvidia investors rush to keep Jensen despite private disappointment https://t.co/PEnXJJEvpn",
+    "url": "https://x.com/axios/status/2119797660861247707",
+    "likes": 9,
+    "reposts": 5,
+    "ts": "2026-11-09T14:22:00Z",
+    "note": "Axios: big Nvidia investors are backing Huang publicly despite private disappointment."
+   },
+   {
+    "handle": "politico",
+    "name": "POLITICO",
+    "text": "Nvidia shares plummet after Huang investigation https://t.co/tO2gphyr1o",
+    "url": "https://x.com/politico/status/2119794610461401247",
+    "likes": 16,
+    "reposts": 12,
+    "ts": "2026-11-09T14:09:53Z",
+    "note": "Politico ties the premarket drop directly to the Huang investigation."
+   }
+  ],
+  "TTD": [
+   {
+    "handle": "bespokeinvest",
+    "name": "Bespoke",
+    "text": "Constellation Energy $CEG, KKR $KKR, and Monday․com $MNDY are among tomorrow’s earnings reports before the open. \n\nHims & Hers Health $HIMS, Occidental Petroleum $OXY, The Trade Desk $TTD, and Take-Two $TTWO report after the close. https://t.co/DHxw8nVBCU",
+    "url": "https://x.com/bespokeinvest/status/2119558205164703859",
+    "likes": 11,
+    "reposts": 1,
+    "ts": "2026-11-08T22:30:30Z",
+    "note": "Bespoke: TTD reports after the close today, alongside Take-Two and Hims."
+   },
+   {
+    "handle": "QuantAlphaXXX",
+    "name": "QuantAlpha",
+    "text": "The Trade Desk sits at 14x forward earnings. It’s near a five-year low, but consensus earnings have been cut 37% since June. Meanwhile, AppLovin ($APP) grew revenue 55% by capturing mobile app spend TTD isn’t seeing.",
+    "url": "https://x.com/QuantAlphaXXX/status/2119471211176403034",
+    "likes": 5,
+    "reposts": 0,
+    "ts": "2026-11-08T16:44:49Z",
+    "note": "Setup: ~14x forward earnings after estimates were cut 37% since June, while AppLovin takes share."
+   },
+   {
+    "handle": "earnings_guy",
+    "name": "The Earnings Correspondent",
+    "text": "Expected numbers for $TTD (The Trade Desk) earnings today after close: https://t.co/t9ZCuOCghE",
+    "url": "https://x.com/earnings_guy/status/2119804713461760227",
+    "likes": 5,
+    "reposts": 0,
+    "ts": "2026-11-09T14:50:02Z",
+    "note": "Consensus numbers to compare against when TTD reports tonight."
+   }
+  ]
+ },
+ "filings": {
+  "0001193125-26-442717": [
+   {
+    "handle": "KreizJordy",
+    "name": "Jordy",
+    "text": "Everyone crying about the $MRVL $LITE acquisition likely underestimates Marvell and the experts at Lumentum who understand the technology, connectivity design/architecture, and the opportunity ahead.\n\nI have a feeling we’ll see people admit their lack in some Quarters from now.",
+    "url": "https://x.com/KreizJordy/status/2119132016616595610",
+    "likes": 44,
+    "reposts": 4,
+    "ts": "2026-11-07T18:16:58Z",
+    "note": "Bull case pushing back on the selloff: Lumentum's optics talent is the point of the deal."
+   },
+   {
+    "handle": "armaanzinvest",
+    "name": "The Market Matrix",
+    "text": "The worst performing stocks in the S&P the last month:\n\n1) $INTC Intel Corp (-55%)\n2. $MRVL Marvell Technology (-50%)\n3) $SNDK SanDisk (-50%)\n4) $STX Seagate Technology (-48%)\n5) $LITE Lumentum Holdings (-48%)\n\n2 of the 5 were part of an acquisition together.. \n\nIf I told this is https://t.co/ZmNNMQN4q9",
+    "url": "https://x.com/armaanzinvest/status/2119084501670531404",
+    "likes": 2,
+    "reposts": 1,
+    "ts": "2026-11-07T15:08:10Z",
+    "note": "Context: MRVL and LITE are both among the S&P's worst performers over the past month since the deal."
+   },
+   {
+    "handle": "NorelEitan",
+    "name": "Eitan Norel",
+    "text": "Four acquisitions in one week: Dropbox buying Tigris, Salesforce buying Cresta, Marvell buying Lumentum, Palo Alto in talks for Clutch Security. my read: the agent layer is getting built mostly by acquisition now, nobody has 18 months to build the plumbing in house.",
+    "url": "https://x.com/NorelEitan/status/2119330341836202301",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-08T07:25:03Z",
+    "note": "Puts the deal in a week of AI-infrastructure M&A (Dropbox, Salesforce, Palo Alto)."
+   }
+  ],
+  "0001193125-26-442758": [
+   {
+    "handle": "KreizJordy",
+    "name": "Jordy",
+    "text": "Everyone crying about the $MRVL $LITE acquisition likely underestimates Marvell and the experts at Lumentum who understand the technology, connectivity design/architecture, and the opportunity ahead.\n\nI have a feeling we’ll see people admit their lack in some Quarters from now.",
+    "url": "https://x.com/KreizJordy/status/2119132016616595610",
+    "likes": 44,
+    "reposts": 4,
+    "ts": "2026-11-07T18:16:58Z",
+    "note": "Bull case pushing back on the selloff: Lumentum's optics talent is the point of the deal."
+   },
+   {
+    "handle": "armaanzinvest",
+    "name": "The Market Matrix",
+    "text": "The worst performing stocks in the S&P the last month:\n\n1) $INTC Intel Corp (-55%)\n2. $MRVL Marvell Technology (-50%)\n3) $SNDK SanDisk (-50%)\n4) $STX Seagate Technology (-48%)\n5) $LITE Lumentum Holdings (-48%)\n\n2 of the 5 were part of an acquisition together.. \n\nIf I told this is https://t.co/ZmNNMQN4q9",
+    "url": "https://x.com/armaanzinvest/status/2119084501670531404",
+    "likes": 2,
+    "reposts": 1,
+    "ts": "2026-11-07T15:08:10Z",
+    "note": "Context: MRVL and LITE are both among the S&P's worst performers over the past month since the deal."
+   },
+   {
+    "handle": "NorelEitan",
+    "name": "Eitan Norel",
+    "text": "Four acquisitions in one week: Dropbox buying Tigris, Salesforce buying Cresta, Marvell buying Lumentum, Palo Alto in talks for Clutch Security. my read: the agent layer is getting built mostly by acquisition now, nobody has 18 months to build the plumbing in house.",
+    "url": "https://x.com/NorelEitan/status/2119330341836202301",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-08T07:25:03Z",
+    "note": "Puts the deal in a week of AI-infrastructure M&A (Dropbox, Salesforce, Palo Alto)."
+   }
+  ]
+ }
 }

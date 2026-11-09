@@ -1,409 +1,537 @@
 {
-  "updated": "2026-11-06T15:10:20Z",
-  "note": "Balanced curated accounts; leans describe the account, not each post. Midterms 2026 post-election window.",
-  "leans": {
-    "left": "Left / Democratic-leaning",
-    "right": "Right / Republican-leaning",
-    "center": "Nonpartisan news",
-    "analyst": "Election analysts & forecasters"
+ "updated": "2026-11-09T15:15:00Z",
+ "note": "Balanced curated accounts; leans describe the account, not each post. Midterms 2026 post-election window.",
+ "leans": {
+  "left": "Left / Democratic-leaning",
+  "right": "Right / Republican-leaning",
+  "center": "Nonpartisan news",
+  "analyst": "Election analysts & forecasters"
+ },
+ "accounts": [
+  {
+   "handle": "NateSilver538",
+   "name": "Nate Silver",
+   "lean": "analyst",
+   "role": "Silver Bulletin forecaster"
   },
-  "accounts": [
-    {
-      "handle": "NateSilver538",
-      "name": "Nate Silver",
-      "lean": "analyst",
-      "role": "Silver Bulletin forecaster"
-    },
-    {
-      "handle": "gelliottmorris",
-      "name": "G. Elliott Morris",
-      "lean": "analyst",
-      "role": "Strength In Numbers / FiftyPlusOne"
-    },
-    {
-      "handle": "Redistrict",
-      "name": "Dave Wasserman",
-      "lean": "analyst",
-      "role": "Cook Political Report"
-    },
-    {
-      "handle": "CookPolitical",
-      "name": "Cook Political Report",
-      "lean": "analyst",
-      "role": "Race ratings"
-    },
-    {
-      "handle": "kkondik",
-      "name": "Kyle Kondik",
-      "lean": "analyst",
-      "role": "Sabato's Crystal Ball"
-    },
-    {
-      "handle": "InsideElections",
-      "name": "Inside Elections",
-      "lean": "analyst",
-      "role": "Race ratings"
-    },
-    {
-      "handle": "SplitTicket_",
-      "name": "Split Ticket",
-      "lean": "analyst",
-      "role": "Forecast model"
-    },
-    {
-      "handle": "DecisionDeskHQ",
-      "name": "Decision Desk HQ",
-      "lean": "analyst",
-      "role": "Results & forecast"
-    },
-    {
-      "handle": "Nate_Cohn",
-      "name": "Nate Cohn",
-      "lean": "analyst",
-      "role": "NYT chief political analyst"
-    },
-    {
-      "handle": "SeanTrende",
-      "name": "Sean Trende",
-      "lean": "analyst",
-      "role": "RealClearPolitics analyst"
-    },
-    {
-      "handle": "jbouie",
-      "name": "Jamelle Bouie",
-      "lean": "left",
-      "role": "NYT columnist"
-    },
-    {
-      "handle": "ezraklein",
-      "name": "Ezra Klein",
-      "lean": "left",
-      "role": "NYT columnist"
-    },
-    {
-      "handle": "MattYglesias",
-      "name": "Matthew Yglesias",
-      "lean": "left",
-      "role": "Slow Boring, center-left"
-    },
-    {
-      "handle": "atrupar",
-      "name": "Aaron Rupar",
-      "lean": "left",
-      "role": "Public Notice"
-    },
-    {
-      "handle": "mehdirhasan",
-      "name": "Mehdi Hasan",
-      "lean": "left",
-      "role": "Zeteo"
-    },
-    {
-      "handle": "SimonWDC",
-      "name": "Simon Rosenberg",
-      "lean": "left",
-      "role": "Dem strategist"
-    },
-    {
-      "handle": "RichLowry",
-      "name": "Rich Lowry",
-      "lean": "right",
-      "role": "National Review"
-    },
-    {
-      "handle": "guypbenson",
-      "name": "Guy Benson",
-      "lean": "right",
-      "role": "Fox News"
-    },
-    {
-      "handle": "ByronYork",
-      "name": "Byron York",
-      "lean": "right",
-      "role": "Washington Examiner"
-    },
-    {
-      "handle": "EWErickson",
-      "name": "Erick Erickson",
-      "lean": "right",
-      "role": "Conservative commentator"
-    },
-    {
-      "handle": "KarlRove",
-      "name": "Karl Rove",
-      "lean": "right",
-      "role": "GOP strategist"
-    },
-    {
-      "handle": "MZHemingway",
-      "name": "Mollie Hemingway",
-      "lean": "right",
-      "role": "The Federalist"
-    },
-    {
-      "handle": "AP_Politics",
-      "name": "AP Politics",
-      "lean": "center",
-      "role": "Wire service"
-    },
-    {
-      "handle": "politico",
-      "name": "POLITICO",
-      "lean": "center",
-      "role": "Politics news"
-    },
-    {
-      "handle": "PunchbowlNews",
-      "name": "Punchbowl News",
-      "lean": "center",
-      "role": "Congress"
-    },
-    {
-      "handle": "axios",
-      "name": "Axios",
-      "lean": "center",
-      "role": "News"
-    },
-    {
-      "handle": "NBCPolitics",
-      "name": "NBC Politics",
-      "lean": "center",
-      "role": "News"
-    },
-    {
-      "handle": "CNNPolitics",
-      "name": "CNN Politics",
-      "lean": "center",
-      "role": "News"
-    }
-  ],
-  "posts": [
-    {
-      "handle": "DecisionDeskHQ",
-      "name": "Decision Desk HQ",
-      "lean": "analyst",
-      "role": "Results & forecast",
-      "text": "Last night was the largest blue wave in a generation.\n\nDemocrats have been projected as winner in 54 Senate seats, flipping seven states and with a lead in two others (Alaska and Mississippi).\n\nIn the House, Democrats have been projected in 249 seats - a net gain of 38 so far.",
-      "url": "https://x.com/DecisionDeskHQ/status/2118051109873025117",
-      "likes": 2231,
-      "reposts": 337,
-      "ts": "2026-11-04T18:41:50Z",
-      "race": "senate-control"
-    },
-    {
-      "handle": "DecisionDeskHQ",
-      "name": "Decision Desk HQ",
-      "lean": "analyst",
-      "role": "Results & forecast",
-      "text": "Decision Desk HQ projects Jon Ossoff wins the GA US Senate General Election\n\n#DecisionMade: 7:18 PM EST",
-      "url": "https://x.com/DecisionDeskHQ/status/2117773436718137533",
-      "likes": 16263,
-      "reposts": 2376,
-      "ts": "2026-11-04T00:18:28Z",
-      "race": "GA-sen"
-    },
-    {
-      "handle": "DecisionDeskHQ",
-      "name": "Decision Desk HQ",
-      "lean": "analyst",
-      "role": "Results & forecast",
-      "text": "DDHQ FORECAST UPDATE (11/3): FINAL UPDATE\n\nOur final forecast gives Democrats an 84% probability of winning the House, with a seat total of 241.\n\nIn the Senate, Democrats have a 64% probability of winning a majority of seats, with a projected total of 52 seats.",
-      "url": "https://x.com/DecisionDeskHQ/status/2117672806678741256",
-      "likes": 2030,
-      "reposts": 229,
-      "ts": "2026-11-03T17:38:36Z",
-      "race": "house-control"
-    },
-    {
-      "handle": "gelliottmorris",
-      "name": "G Elliott Morris",
-      "lean": "analyst",
-      "role": "Strength In Numbers / FiftyPlusOne",
-      "text": "FINAL forecast: Will it be a blue wave, or a blue tsunami? Democrats favored to win 240 House and 52-53 Senate seats on average. Polling error could be enough for Rs to hold the Senate, but House would need biggest miss in 25 years",
-      "url": "https://x.com/gelliottmorris/status/2117587917170221152",
-      "likes": 100,
-      "reposts": 22,
-      "ts": "2026-11-03T12:01:16Z",
-      "race": "senate-control"
-    },
-    {
-      "handle": "gelliottmorris",
-      "name": "G Elliott Morris",
-      "lean": "analyst",
-      "role": "Strength In Numbers / FiftyPlusOne",
-      "text": "Black voter turnout held at ~96% of 2024, the highest rate for any midterm in at least a decade, in the Deep South on Tues. If Scott Colom manages to win Mississippi's Senate seat, it wouldn't have been possible without sky-high engagement of Black voters",
-      "url": "https://x.com/gelliottmorris/status/2118681410923823491",
-      "likes": 376,
-      "reposts": 91,
-      "ts": "2026-11-06T12:26:26Z",
-      "race": "MS-sen"
-    },
-    {
-      "handle": "CookPolitical",
-      "name": "Cook Political Report",
-      "lean": "analyst",
-      "role": "Race ratings",
-      "text": "Democrats flipped at least seven Senate seats, including five that voted for Trump by double digits. In the House, Democrats are en route to their largest majority of the century.\n\nRead this post-election analysis from the CPR team:",
-      "url": "https://x.com/CookPolitical/status/2117968480318431717",
-      "likes": 193,
-      "reposts": 40,
-      "ts": "2026-11-04T13:13:30Z",
-      "race": "senate-control"
-    },
-    {
-      "handle": "NateSilver538",
-      "name": "Nate Silver",
-      "lean": "analyst",
-      "role": "Silver Bulletin forecaster",
-      "text": "Fully newsletter is here. I also get into the Q of *when* the results might be known. Typically, we'd expect 1-2 Senate races and 10-15 House races to be *uncalled* as of early Wednesday morning. Alaska and Maine are slow to count their votes.",
-      "url": "https://x.com/NateSilver538/status/2116907824735523054",
-      "likes": 329,
-      "reposts": 27,
-      "ts": "2026-11-01T14:58:50Z",
-      "race": "senate-control"
-    },
-    {
-      "handle": "atrupar",
-      "name": "Aaron Rupar",
-      "lean": "left",
-      "role": "Public Notice",
-      "text": "Jake Tapper laughs as Kaitlan Collins reads the White House statement absurdly absolving Trump of blame for tonight's blue wave",
-      "url": "https://x.com/atrupar/status/2117813674916135095",
-      "likes": 26977,
-      "reposts": 2775,
-      "ts": "2026-11-04T02:58:21Z",
-      "race": "house-control"
-    },
-    {
-      "handle": "mattyglesias",
-      "name": "Matthew Yglesias",
-      "lean": "left",
-      "role": "Slow Boring, center-left",
-      "text": "Even a very Republican-skewing judicial branch has been a meaningful check on Trump and flipping the senate — and only flipping the senate — stops Trump from stacking the judiciary with cultists who'll remove that check.",
-      "url": "https://x.com/mattyglesias/status/2117626941104865576",
-      "likes": 1488,
-      "reposts": 104,
-      "ts": "2026-11-03T14:36:21Z",
-      "race": "senate-control"
-    },
-    {
-      "handle": "CNNPolitics",
-      "name": "CNN Politics",
-      "lean": "left",
-      "role": "News",
-      "text": "Democratic state Rep. James Talarico will win the Senate race in Texas, CNN projects, delivering a stunning defeat to Republican state Attorney General Ken Paxton. Talarico is the first Democrat elected to represent Texas in the US Senate in 38 years.",
-      "url": "https://x.com/CNNPolitics/status/2117829642790793484",
-      "likes": 221,
-      "reposts": 52,
-      "ts": "2026-11-04T04:01:48Z",
-      "race": "TX-sen"
-    },
-    {
-      "handle": "CNNPolitics",
-      "name": "CNN Politics",
-      "lean": "left",
-      "role": "News",
-      "text": "Democrats are projected to oust at least 30 Republican incumbents in this year's midterms, surpassing 250 House seats on the party's way to its largest majority since the 2008 election.",
-      "url": "https://x.com/CNNPolitics/status/2118510424408658115",
-      "likes": 43,
-      "reposts": 10,
-      "ts": "2026-11-06T01:06:59Z",
-      "race": "house-control"
-    },
-    {
-      "handle": "EWErickson",
-      "name": "Erick Erickson",
-      "lean": "right",
-      "role": "Conservative commentator",
-      "text": "For the last two years, the Trump Administration has been governed by a simple mantra: “We can just do things.” On Tuesday, voters replied, “So can we,” and wiped out the GOP. This was not a blue wave. This was not a blue tsunami. This was the breakup of a winning coalition.",
-      "url": "https://x.com/EWErickson/status/2117966258251374620",
-      "likes": 4020,
-      "reposts": 646,
-      "ts": "2026-11-04T13:04:40Z",
-      "race": "house-control"
-    },
-    {
-      "handle": "ByronYork",
-      "name": "Byron York",
-      "lean": "right",
-      "role": "Washington Examiner",
-      "text": "Following a long-established pattern, midterm voters chose divided government. Now there will be new House and Senate Democratic majorities itching to pursue President Trump. (Two-word statement from one Dem chairman last night: \"Lawyer up.\") Will their new era be about",
-      "url": "https://x.com/ByronYork/status/2117951309626196450",
-      "likes": 554,
-      "reposts": 97,
-      "ts": "2026-11-04T12:05:16Z",
-      "race": "senate-control"
-    },
-    {
-      "handle": "EWErickson",
-      "name": "Erick Erickson",
-      "lean": "right",
-      "role": "Conservative commentator",
-      "text": "Were I a ranking Republican in the House or Senate, I’d start taking the Trump family corruption seriously and cooperate in grown up investigations.  90% of voters said corruption was a determining factor in their vote and over 60% pointed not to Somali fraud or highspeed rail,",
-      "url": "https://x.com/EWErickson/status/2118316281539498241",
-      "likes": 1504,
-      "reposts": 293,
-      "ts": "2026-11-05T12:15:32Z",
-      "race": "house-control"
-    },
-    {
-      "handle": "politico",
-      "name": "POLITICO",
-      "lean": "center",
-      "role": "Politics news",
-      "text": "Every part of the country is shifting toward Dems — a sign of the \"blue wave\" Republicans had long feared.\n\nDemocratic candidates’ gains in House and Senate races cut across both blue and red territory, along with traditional purple battlegrounds.",
-      "url": "https://x.com/politico/status/2117805450993250382",
-      "likes": 186,
-      "reposts": 55,
-      "ts": "2026-11-04T02:25:41Z",
-      "race": "house-control"
-    },
-    {
-      "handle": "politico",
-      "name": "POLITICO",
-      "lean": "center",
-      "role": "Politics news",
-      "text": "🚨Former Democratic Gov. Roy Cooper beat Republican Michael Whatley in North Carolina’s Senate race, becoming the first Democrat to win a Senate election in the state in nearly two decades.",
-      "url": "https://x.com/politico/status/2117790653400613118",
-      "likes": 77,
-      "reposts": 16,
-      "ts": "2026-11-04T01:26:53Z",
-      "race": "NC-sen"
-    },
-    {
-      "handle": "PunchbowlNews",
-      "name": "Punchbowl News",
-      "lean": "center",
-      "role": "Congress",
-      "text": "The House Democratic Caucus could surpass 260 seats, an absolutely staggering show of force for party leaders. Here are the Democrats who flipped solid Trump districts:",
-      "url": "https://x.com/PunchbowlNews/status/2118315642671747555",
-      "likes": 34,
-      "reposts": 11,
-      "ts": "2026-11-05T12:13:00Z",
-      "race": "house-control"
-    },
-    {
-      "handle": "PunchbowlNews",
-      "name": "Punchbowl News",
-      "lean": "center",
-      "role": "Congress",
-      "text": "Three House Republican chairs said Thursday that Nvidia CEO Jensen Huang needs to explain to Congress his relationship with an alleged Chinese spy.",
-      "url": "https://x.com/PunchbowlNews/status/2118485556896379072",
-      "likes": 4,
-      "reposts": 0,
-      "ts": "2026-11-05T23:28:10Z"
-    },
-    {
-      "handle": "CookPolitical",
-      "name": "Cook Political Report",
-      "lean": "analyst",
-      "role": "Race ratings",
-      "text": "\"In the end, this was really far more about persuasion and the disintegration of the Trump coalition than it was about differential turnout.\" -@Redistrict\n\nRead five midterm takeaways from the Cook Political Report team:",
-      "url": "https://x.com/CookPolitical/status/2118714228877951292",
-      "likes": 8,
-      "reposts": 3,
-      "ts": "2026-11-06T14:36:50Z",
-      "race": "house-control"
-    }
-  ]
+  {
+   "handle": "gelliottmorris",
+   "name": "G. Elliott Morris",
+   "lean": "analyst",
+   "role": "Strength In Numbers / FiftyPlusOne"
+  },
+  {
+   "handle": "Redistrict",
+   "name": "Dave Wasserman",
+   "lean": "analyst",
+   "role": "Cook Political Report"
+  },
+  {
+   "handle": "CookPolitical",
+   "name": "Cook Political Report",
+   "lean": "analyst",
+   "role": "Race ratings"
+  },
+  {
+   "handle": "kkondik",
+   "name": "Kyle Kondik",
+   "lean": "analyst",
+   "role": "Sabato's Crystal Ball"
+  },
+  {
+   "handle": "InsideElections",
+   "name": "Inside Elections",
+   "lean": "analyst",
+   "role": "Race ratings"
+  },
+  {
+   "handle": "SplitTicket_",
+   "name": "Split Ticket",
+   "lean": "analyst",
+   "role": "Forecast model"
+  },
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "lean": "analyst",
+   "role": "Results & forecast"
+  },
+  {
+   "handle": "Nate_Cohn",
+   "name": "Nate Cohn",
+   "lean": "analyst",
+   "role": "NYT chief political analyst"
+  },
+  {
+   "handle": "SeanTrende",
+   "name": "Sean Trende",
+   "lean": "analyst",
+   "role": "RealClearPolitics analyst"
+  },
+  {
+   "handle": "jbouie",
+   "name": "Jamelle Bouie",
+   "lean": "left",
+   "role": "NYT columnist"
+  },
+  {
+   "handle": "ezraklein",
+   "name": "Ezra Klein",
+   "lean": "left",
+   "role": "NYT columnist"
+  },
+  {
+   "handle": "MattYglesias",
+   "name": "Matthew Yglesias",
+   "lean": "left",
+   "role": "Slow Boring, center-left"
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "lean": "left",
+   "role": "Public Notice"
+  },
+  {
+   "handle": "mehdirhasan",
+   "name": "Mehdi Hasan",
+   "lean": "left",
+   "role": "Zeteo"
+  },
+  {
+   "handle": "SimonWDC",
+   "name": "Simon Rosenberg",
+   "lean": "left",
+   "role": "Dem strategist"
+  },
+  {
+   "handle": "RichLowry",
+   "name": "Rich Lowry",
+   "lean": "right",
+   "role": "National Review"
+  },
+  {
+   "handle": "guypbenson",
+   "name": "Guy Benson",
+   "lean": "right",
+   "role": "Fox News"
+  },
+  {
+   "handle": "ByronYork",
+   "name": "Byron York",
+   "lean": "right",
+   "role": "Washington Examiner"
+  },
+  {
+   "handle": "EWErickson",
+   "name": "Erick Erickson",
+   "lean": "right",
+   "role": "Conservative commentator"
+  },
+  {
+   "handle": "KarlRove",
+   "name": "Karl Rove",
+   "lean": "right",
+   "role": "GOP strategist"
+  },
+  {
+   "handle": "MZHemingway",
+   "name": "Mollie Hemingway",
+   "lean": "right",
+   "role": "The Federalist"
+  },
+  {
+   "handle": "AP_Politics",
+   "name": "AP Politics",
+   "lean": "center",
+   "role": "Wire service"
+  },
+  {
+   "handle": "politico",
+   "name": "POLITICO",
+   "lean": "center",
+   "role": "Politics news"
+  },
+  {
+   "handle": "PunchbowlNews",
+   "name": "Punchbowl News",
+   "lean": "center",
+   "role": "Congress"
+  },
+  {
+   "handle": "axios",
+   "name": "Axios",
+   "lean": "center",
+   "role": "News"
+  },
+  {
+   "handle": "NBCPolitics",
+   "name": "NBC Politics",
+   "lean": "center",
+   "role": "News"
+  },
+  {
+   "handle": "CNNPolitics",
+   "name": "CNN Politics",
+   "lean": "center",
+   "role": "News"
+  }
+ ],
+ "posts": [
+  {
+   "handle": "Redistrict",
+   "name": "Dave Wasserman",
+   "text": "With Dems all but certain to prevail in Mississippi and Alaska, we're most likely looking at a 56D-44R Senate and a ~260D-175R House, which would be Dems' largest House majority since 1992.",
+   "url": "https://x.com/Redistrict/status/2118807065607241968",
+   "likes": 20129,
+   "reposts": 2700,
+   "ts": "2026-11-06T20:45:44Z",
+   "lean": "analyst",
+   "role": "Cook Political Report",
+   "race": "senate-control"
+  },
+  {
+   "handle": "Redistrict",
+   "name": "Dave Wasserman",
+   "text": "New @CookPolitical: with more than 112 million votes counted in House races, Dems' national lead is up to 12.4%. https://t.co/wFFnXPyHfl https://t.co/1liR61Dy71",
+   "url": "https://x.com/Redistrict/status/2118813337769373774",
+   "likes": 1902,
+   "reposts": 219,
+   "ts": "2026-11-06T21:10:40Z",
+   "lean": "analyst",
+   "role": "Cook Political Report",
+   "race": "house-control"
+  },
+  {
+   "handle": "NateSilver538",
+   "name": "Nate Silver",
+   "text": "Should probably have held this for next week, but what the hell. I found myself sketching out some Senate scenarios on my train down to DC, so I figured I’d share some *very* early views about what the *2028* Senate map might look like under 3 scenarios: https://t.co/7nsva7nnL8",
+   "url": "https://x.com/NateSilver538/status/2118819152538530133",
+   "likes": 2816,
+   "reposts": 75,
+   "ts": "2026-11-06T21:33:46Z",
+   "lean": "analyst",
+   "role": "Silver Bulletin forecaster",
+   "race": "senate-control"
+  },
+  {
+   "handle": "SeanTrende",
+   "name": "Sean T at RCP",
+   "text": "A lot of people missed the dual nature of this piece: (a) there are reasons to be skeptical about a Dem win in excess of 8 points or so but (b) skepticism isn't rejection, and if it happens the GOP caucus will get flattened. As it turns out, the levees were destroyed. https://t.co/cuB78JBIDf https://t.co/tvwX1oC3dO",
+   "url": "https://x.com/SeanTrende/status/2118812201545056747",
+   "likes": 321,
+   "reposts": 29,
+   "ts": "2026-11-06T21:06:09Z",
+   "lean": "analyst",
+   "role": "RealClearPolitics analyst",
+   "race": "house-control"
+  },
+  {
+   "handle": "NateSilver538",
+   "name": "Nate Silver",
+   "text": "Yeah, there will be no pivot to the center. This is what you get when you have an 80-year-old president who doesn't really gaf about the future of the Republican Party. https://t.co/tK1Y3blK8W",
+   "url": "https://x.com/NateSilver538/status/2118803143807181152",
+   "likes": 18779,
+   "reposts": 1302,
+   "ts": "2026-11-06T20:30:09Z",
+   "lean": "analyst",
+   "role": "Silver Bulletin forecaster"
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "text": "Trump's audience is dead silent as he mourns losing the election https://t.co/z2rSICo10f",
+   "url": "https://x.com/atrupar/status/2118845401696534937",
+   "likes": 10277,
+   "reposts": 920,
+   "ts": "2026-11-06T23:18:04Z",
+   "lean": "left",
+   "role": "Public Notice"
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "text": "Trump for some reason is doing his usual stump speech to NASA even though he got crushed on Tuesday and will not be on the ballot again https://t.co/welzgvh1tW",
+   "url": "https://x.com/atrupar/status/2118844600102142340",
+   "likes": 1181,
+   "reposts": 171,
+   "ts": "2026-11-06T23:14:53Z",
+   "lean": "left",
+   "role": "Public Notice"
+  },
+  {
+   "handle": "guypbenson",
+   "name": "Guy Benson",
+   "text": "Fraud was not only not punished by Minnesota voters, it was rewarded https://t.co/1aYHe1Deyb",
+   "url": "https://x.com/guypbenson/status/2118787295650455944",
+   "likes": 7089,
+   "reposts": 1581,
+   "ts": "2026-11-06T19:27:11Z",
+   "lean": "right",
+   "role": "Fox News",
+   "race": "MN-sen"
+  },
+  {
+   "handle": "RichLowry",
+   "name": "Rich Lowry",
+   "text": "It takes some doing to get blown out in a national election when the labor market is absolutely cooking… https://t.co/QXNexKQqSv",
+   "url": "https://x.com/RichLowry/status/2118803440344113529",
+   "likes": 513,
+   "reposts": 60,
+   "ts": "2026-11-06T20:31:20Z",
+   "lean": "right",
+   "role": "National Review"
+  },
+  {
+   "handle": "EWErickson",
+   "name": "Erick Erickson",
+   "text": "The reason for the wipeout in Georgia is actually pretty simple. https://t.co/2L2jM0eqhY",
+   "url": "https://x.com/EWErickson/status/2118816921055346901",
+   "likes": 504,
+   "reposts": 50,
+   "ts": "2026-11-06T21:24:54Z",
+   "lean": "right",
+   "role": "Conservative commentator",
+   "race": "GA-sen"
+  },
+  {
+   "handle": "EWErickson",
+   "name": "Erick Erickson",
+   "text": "Also, how does the RNC Chairman still have a job today?",
+   "url": "https://x.com/EWErickson/status/2118773970673467824",
+   "likes": 613,
+   "reposts": 54,
+   "ts": "2026-11-06T18:34:14Z",
+   "lean": "right",
+   "role": "Conservative commentator"
+  },
+  {
+   "handle": "PunchbowlNews",
+   "name": "Punchbowl News",
+   "text": "COMMITTEE MOVES:\n\nSen. Elizabeth Warren (D-Mass.) intends to be the next chair of the Senate Banking Committee. \n\n@BrendanPedersen has a first readout of what her agenda will look like: https://t.co/ILA5vUXieh https://t.co/mkUnXjUHxN",
+   "url": "https://x.com/PunchbowlNews/status/2119777033043718588",
+   "likes": 25,
+   "reposts": 7,
+   "ts": "2026-11-09T13:00:02Z",
+   "lean": "center",
+   "role": "Congress",
+   "race": "senate-control"
+  },
+  {
+   "handle": "CNNPolitics",
+   "name": "CNN Politics",
+   "text": "As the Mississippi Senate race still remains too close to call, Democrat Scott Colom and GOP Sen. Cindy Hyde-Smith have taken completely different approaches towards the public. https://t.co/kWxvTnbTRa https://t.co/BjNVdoF4U2",
+   "url": "https://x.com/CNNPolitics/status/2119785082374246905",
+   "likes": 24,
+   "reposts": 9,
+   "ts": "2026-11-09T13:32:01Z",
+   "lean": "center",
+   "role": "News",
+   "race": "senate-control"
+  },
+  {
+   "handle": "politico",
+   "name": "POLITICO",
+   "text": "The Congressional Progressive Caucus welcomed its largest incoming class in a generation. \n\nWhile their priority list is long, there’s one looming question: Will they support Hakeem Jeffries?\n\n🎧 Playbook Pod: https://t.co/X2vbtsZk1f https://t.co/8F9XXDdXLu",
+   "url": "https://x.com/politico/status/2119784329824068033",
+   "likes": 8,
+   "reposts": 3,
+   "ts": "2026-11-09T13:29:02Z",
+   "lean": "center",
+   "role": "Politics news",
+   "race": "house-control"
+  },
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "lean": "analyst",
+   "role": "Results & forecast",
+   "text": "Last night was the largest blue wave in a generation.\n\nDemocrats have been projected as winner in 54 Senate seats, flipping seven states and with a lead in two others (Alaska and Mississippi).\n\nIn the House, Democrats have been projected in 249 seats - a net gain of 38 so far.",
+   "url": "https://x.com/DecisionDeskHQ/status/2118051109873025117",
+   "likes": 2231,
+   "reposts": 337,
+   "ts": "2026-11-04T18:41:50Z",
+   "race": "senate-control"
+  },
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "lean": "analyst",
+   "role": "Results & forecast",
+   "text": "Decision Desk HQ projects Jon Ossoff wins the GA US Senate General Election\n\n#DecisionMade: 7:18 PM EST",
+   "url": "https://x.com/DecisionDeskHQ/status/2117773436718137533",
+   "likes": 16263,
+   "reposts": 2376,
+   "ts": "2026-11-04T00:18:28Z",
+   "race": "GA-sen"
+  },
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "lean": "analyst",
+   "role": "Results & forecast",
+   "text": "DDHQ FORECAST UPDATE (11/3): FINAL UPDATE\n\nOur final forecast gives Democrats an 84% probability of winning the House, with a seat total of 241.\n\nIn the Senate, Democrats have a 64% probability of winning a majority of seats, with a projected total of 52 seats.",
+   "url": "https://x.com/DecisionDeskHQ/status/2117672806678741256",
+   "likes": 2030,
+   "reposts": 229,
+   "ts": "2026-11-03T17:38:36Z",
+   "race": "house-control"
+  },
+  {
+   "handle": "gelliottmorris",
+   "name": "G Elliott Morris",
+   "lean": "analyst",
+   "role": "Strength In Numbers / FiftyPlusOne",
+   "text": "FINAL forecast: Will it be a blue wave, or a blue tsunami? Democrats favored to win 240 House and 52-53 Senate seats on average. Polling error could be enough for Rs to hold the Senate, but House would need biggest miss in 25 years",
+   "url": "https://x.com/gelliottmorris/status/2117587917170221152",
+   "likes": 100,
+   "reposts": 22,
+   "ts": "2026-11-03T12:01:16Z",
+   "race": "senate-control"
+  },
+  {
+   "handle": "gelliottmorris",
+   "name": "G Elliott Morris",
+   "lean": "analyst",
+   "role": "Strength In Numbers / FiftyPlusOne",
+   "text": "Black voter turnout held at ~96% of 2024, the highest rate for any midterm in at least a decade, in the Deep South on Tues. If Scott Colom manages to win Mississippi's Senate seat, it wouldn't have been possible without sky-high engagement of Black voters",
+   "url": "https://x.com/gelliottmorris/status/2118681410923823491",
+   "likes": 376,
+   "reposts": 91,
+   "ts": "2026-11-06T12:26:26Z",
+   "race": "MS-sen"
+  },
+  {
+   "handle": "CookPolitical",
+   "name": "Cook Political Report",
+   "lean": "analyst",
+   "role": "Race ratings",
+   "text": "Democrats flipped at least seven Senate seats, including five that voted for Trump by double digits. In the House, Democrats are en route to their largest majority of the century.\n\nRead this post-election analysis from the CPR team:",
+   "url": "https://x.com/CookPolitical/status/2117968480318431717",
+   "likes": 193,
+   "reposts": 40,
+   "ts": "2026-11-04T13:13:30Z",
+   "race": "senate-control"
+  },
+  {
+   "handle": "NateSilver538",
+   "name": "Nate Silver",
+   "lean": "analyst",
+   "role": "Silver Bulletin forecaster",
+   "text": "Fully newsletter is here. I also get into the Q of *when* the results might be known. Typically, we'd expect 1-2 Senate races and 10-15 House races to be *uncalled* as of early Wednesday morning. Alaska and Maine are slow to count their votes.",
+   "url": "https://x.com/NateSilver538/status/2116907824735523054",
+   "likes": 329,
+   "reposts": 27,
+   "ts": "2026-11-01T14:58:50Z",
+   "race": "senate-control"
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "lean": "left",
+   "role": "Public Notice",
+   "text": "Jake Tapper laughs as Kaitlan Collins reads the White House statement absurdly absolving Trump of blame for tonight's blue wave",
+   "url": "https://x.com/atrupar/status/2117813674916135095",
+   "likes": 26977,
+   "reposts": 2775,
+   "ts": "2026-11-04T02:58:21Z",
+   "race": "house-control"
+  },
+  {
+   "handle": "mattyglesias",
+   "name": "Matthew Yglesias",
+   "lean": "left",
+   "role": "Slow Boring, center-left",
+   "text": "Even a very Republican-skewing judicial branch has been a meaningful check on Trump and flipping the senate — and only flipping the senate — stops Trump from stacking the judiciary with cultists who'll remove that check.",
+   "url": "https://x.com/mattyglesias/status/2117626941104865576",
+   "likes": 1488,
+   "reposts": 104,
+   "ts": "2026-11-03T14:36:21Z",
+   "race": "senate-control"
+  },
+  {
+   "handle": "CNNPolitics",
+   "name": "CNN Politics",
+   "lean": "left",
+   "role": "News",
+   "text": "Democratic state Rep. James Talarico will win the Senate race in Texas, CNN projects, delivering a stunning defeat to Republican state Attorney General Ken Paxton. Talarico is the first Democrat elected to represent Texas in the US Senate in 38 years.",
+   "url": "https://x.com/CNNPolitics/status/2117829642790793484",
+   "likes": 221,
+   "reposts": 52,
+   "ts": "2026-11-04T04:01:48Z",
+   "race": "TX-sen"
+  },
+  {
+   "handle": "CNNPolitics",
+   "name": "CNN Politics",
+   "lean": "left",
+   "role": "News",
+   "text": "Democrats are projected to oust at least 30 Republican incumbents in this year's midterms, surpassing 250 House seats on the party's way to its largest majority since the 2008 election.",
+   "url": "https://x.com/CNNPolitics/status/2118510424408658115",
+   "likes": 43,
+   "reposts": 10,
+   "ts": "2026-11-06T01:06:59Z",
+   "race": "house-control"
+  },
+  {
+   "handle": "EWErickson",
+   "name": "Erick Erickson",
+   "lean": "right",
+   "role": "Conservative commentator",
+   "text": "For the last two years, the Trump Administration has been governed by a simple mantra: “We can just do things.” On Tuesday, voters replied, “So can we,” and wiped out the GOP. This was not a blue wave. This was not a blue tsunami. This was the breakup of a winning coalition.",
+   "url": "https://x.com/EWErickson/status/2117966258251374620",
+   "likes": 4020,
+   "reposts": 646,
+   "ts": "2026-11-04T13:04:40Z",
+   "race": "house-control"
+  },
+  {
+   "handle": "ByronYork",
+   "name": "Byron York",
+   "lean": "right",
+   "role": "Washington Examiner",
+   "text": "Following a long-established pattern, midterm voters chose divided government. Now there will be new House and Senate Democratic majorities itching to pursue President Trump. (Two-word statement from one Dem chairman last night: \"Lawyer up.\") Will their new era be about",
+   "url": "https://x.com/ByronYork/status/2117951309626196450",
+   "likes": 554,
+   "reposts": 97,
+   "ts": "2026-11-04T12:05:16Z",
+   "race": "senate-control"
+  },
+  {
+   "handle": "EWErickson",
+   "name": "Erick Erickson",
+   "lean": "right",
+   "role": "Conservative commentator",
+   "text": "Were I a ranking Republican in the House or Senate, I’d start taking the Trump family corruption seriously and cooperate in grown up investigations.  90% of voters said corruption was a determining factor in their vote and over 60% pointed not to Somali fraud or highspeed rail,",
+   "url": "https://x.com/EWErickson/status/2118316281539498241",
+   "likes": 1504,
+   "reposts": 293,
+   "ts": "2026-11-05T12:15:32Z",
+   "race": "house-control"
+  },
+  {
+   "handle": "politico",
+   "name": "POLITICO",
+   "lean": "center",
+   "role": "Politics news",
+   "text": "Every part of the country is shifting toward Dems — a sign of the \"blue wave\" Republicans had long feared.\n\nDemocratic candidates’ gains in House and Senate races cut across both blue and red territory, along with traditional purple battlegrounds.",
+   "url": "https://x.com/politico/status/2117805450993250382",
+   "likes": 186,
+   "reposts": 55,
+   "ts": "2026-11-04T02:25:41Z",
+   "race": "house-control"
+  },
+  {
+   "handle": "politico",
+   "name": "POLITICO",
+   "lean": "center",
+   "role": "Politics news",
+   "text": "🚨Former Democratic Gov. Roy Cooper beat Republican Michael Whatley in North Carolina’s Senate race, becoming the first Democrat to win a Senate election in the state in nearly two decades.",
+   "url": "https://x.com/politico/status/2117790653400613118",
+   "likes": 77,
+   "reposts": 16,
+   "ts": "2026-11-04T01:26:53Z",
+   "race": "NC-sen"
+  }
+ ]
 }
