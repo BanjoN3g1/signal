@@ -1,215 +1,185 @@
 {
  "stories": {
-  "8c3a2400bb84": [
-   {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "$NVDA  - NVIDIA BOARD LAUNCHES ESPIONAGE PROBE INVOLVING CEO JENSEN HUANG\n\nNvidia IS launching an independent investigation into whether CEO Jensen Huang was targeted by a Chinese intelligence operation, Bloomberg reports.\n\nHuang admitted to an extramarital affair and apologized",
-    "url": "https://x.com/DeItaone/status/2119543155930312795",
-    "likes": 541,
-    "reposts": 75,
-    "ts": "2026-11-08T21:30:42Z",
-    "note": "Breaking wire: Nvidia's board opens an independent probe into whether Huang was targeted by Chinese intelligence."
-   },
-   {
-    "handle": "PolymarketIntel",
-    "name": "Polymarket Intel",
-    "text": "Jensen Huang remains Nvidia CEO as the board opens an independent investigation into whether he was the subject of a foreign intelligence operation.\n\nIn a staff memo, Huang admitted an affair with Alice Huang, a former executive at Megaspeed, a Singapore-based Nvidia customer.",
-    "url": "https://x.com/PolymarketIntel/status/2119532252132524433",
-    "likes": 39,
-    "reposts": 8,
-    "ts": "2026-11-08T20:47:22Z",
-    "note": "Key fact for holders: Huang stays CEO while the board investigation runs."
-   },
-   {
-    "handle": "axios",
-    "name": "Axios",
-    "text": "Nvidia investors rush to keep Jensen despite private disappointment https://t.co/PEnXJJEvpn",
-    "url": "https://x.com/axios/status/2119797660861247707",
-    "likes": 9,
-    "reposts": 5,
-    "ts": "2026-11-09T14:22:00Z",
-    "note": "Axios: big Nvidia investors are backing Huang publicly despite private disappointment."
-   },
-   {
-    "handle": "politico",
-    "name": "POLITICO",
-    "text": "Nvidia shares plummet after Huang investigation https://t.co/tO2gphyr1o",
-    "url": "https://x.com/politico/status/2119794610461401247",
-    "likes": 16,
-    "reposts": 12,
-    "ts": "2026-11-09T14:09:53Z",
-    "note": "Politico ties the premarket drop directly to the Huang investigation."
-   },
-   {
-    "handle": "VaibhavSisinty",
-    "name": "Vaibhav Sisinty",
-    "text": "Jensen Huang admitted he was unfaithful to his wife in a company-wide email to Nvidia.\n\nThe email also addresses the reports that Alice Huang, an executive at Singapore customer Megaspeed, was allegedly recruited by Chinese intelligence to spy on him.\n\nNvidia's board has opened https://t.co/OkWsat3xuk",
-    "url": "https://x.com/VaibhavSisinty/status/2119556079281664156",
-    "likes": 65,
-    "reposts": 4,
-    "ts": "2026-11-08T22:22:03Z",
-    "note": "Summary of Huang's company-wide email and the Megaspeed link driving the story."
-   }
-  ],
   "3fccf913600c": [
    {
-    "handle": "obrien",
-    "name": "Chris O'Brien",
-    "text": "@ReadFuturist The Tesla merger is inevitable. The funny thing: Because the cult keeps Tesla's stock so inflated, SpaceX can't just buy it cheap (like X and xAI). Tesla has a $1.4T market cap. SpaceX has a 1.8T market cap but would have to pay a premium. That's a big pill to swallow!",
-    "url": "https://x.com/obrien/status/2119431820479750480",
-    "likes": 28,
-    "reposts": 1,
-    "ts": "2026-11-08T14:08:17Z",
-    "note": "Deal-math angle: Tesla's $1.4T cap means SpaceX would have to pay a premium, unlike the X and xAI deals."
-   },
-   {
-    "handle": "ShortingIsFun",
-    "name": "Suspected Saboteur",
-    "text": "\"Tesla–SpaceX Union Would Test Texas Business Code Merger Process\"\n\n$SPCX $TSLA \n\nhttps://t.co/cDDDXD6Nzy",
-    "url": "https://x.com/ShortingIsFun/status/2119788877120508334",
-    "likes": 2,
-    "reposts": 0,
-    "ts": "2026-11-09T13:47:06Z",
-    "note": "Flags the Texas business-code merger process a Tesla-SpaceX combination would test."
-   },
-   {
-    "handle": "naumowf",
-    "name": "Franco Naumow.",
-    "text": "@DavidDTawil @SpaceX A longtime director leaving right as Musk pushes a SpaceX and Tesla merger is not noise, boards are where merger terms actually get decided. Who protects Tesla minority shareholders if this happens? Nobody on the bull side is answering that yet.",
-    "url": "https://x.com/naumowf/status/2119755188256846262",
+    "handle": "daltonskach",
+    "name": "Dalton Skach",
+    "text": "SpaceX lists three approvals on its side of a potential Tesla merger: special committee, board and controlling shareholder. Harrison's resignation filing assigns him no committee role. Who fills his seat, and what authority will they have?",
+    "url": "https://x.com/daltonskach/status/2119452973541839026",
     "likes": 0,
     "reposts": 0,
-    "ts": "2026-11-09T11:33:14Z",
-    "note": "Governance question: a SpaceX director exit right as merger talk heats up, and who protects Tesla minorities."
+    "ts": "2026-11-08T15:32:21Z",
+    "note": "Governance angle: the approval path a related-party Musk merger has to clear."
+   },
+   {
+    "handle": "ArcticDodger",
+    "name": "Lodger",
+    "text": "Attention Tesla investors: SpaceX board member Randy Glein is an excellent candidate for the special committee from the SpaceX side of the merger proposal.",
+    "url": "https://x.com/ArcticDodger/status/2119260002477310437",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-08T02:45:33Z",
+    "note": "Shows who's being floated for the independent committee."
    }
   ],
   "1c7b557b097f": [
    {
-    "handle": "CScottGarliss",
-    "name": "BentPine Capital",
-    "text": "A successful Anthropic IPO would help support sentiment toward AI-exposed businesses...\n\nAnthropic to press ahead with IPO targeting $1.5tn valuation https://t.co/jFkkYGJplM via @ft",
-    "url": "https://x.com/CScottGarliss/status/2119548653321011665",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-08T21:52:32Z",
-    "note": "FT via a fund manager: Anthropic is pressing ahead at a $1.5T target, a sentiment test for AI names."
-   },
-   {
-    "handle": "VujuOnX",
-    "name": "Vuju",
-    "text": "Anthropic Moves Closer to IPO as Valuation Expectations Fall to $1.3 Trillion\n\nAnthropic is pushing ahead with its IPO plans after filing its S-1 in late October. Prediction markets now indicate an 87% chance of a public listing before year-end, while pre-IPO share prices suggest",
-    "url": "https://x.com/VujuOnX/status/2119220615534031107",
-    "likes": 4,
-    "reposts": 0,
-    "ts": "2026-11-08T00:09:02Z",
-    "note": "Notes valuation expectations sliding toward $1.3T and prediction-market odds of a 2026 listing."
-   },
-   {
     "handle": "RaviRomo",
     "name": "Ravi Romo",
-    "text": "Keep parroting the hedge fund leakers who hold sway on WSJ. The Hedgies want to make a 20 to 30% on flipping Anthropic's IPO after a \"dream low forced\" valuation.\n \nNo way Anthropic does an IPO below $1.3 Trillion when OpenAI - which has verifiable lower revenues, lower growth https://t.co/HXu4NQt0iv",
+    "text": "Keep parroting the hedge fund leakers who hold sway on WSJ. The Hedgies want to make a 20 to 30% on flipping Anthropic's IPO after a \"dream low forced\" valuation. No way Anthropic does an IPO below $1.3 Trillion when OpenAI - which has verifiable lower revenues, lower growth...",
     "url": "https://x.com/RaviRomo/status/2119246756533895275",
     "likes": 34,
     "reposts": 3,
     "ts": "2026-11-08T01:52:55Z",
-    "note": "Contrarian view: argues the skepticism is hedge funds talking the price down to flip the IPO."
+    "note": "Bull pushback: argues the lower marks are buy-side positioning ahead of books."
    },
    {
-    "handle": "JarsyInc",
-    "name": "Jarsy",
-    "text": "⚡Weekly Brief | Nov 02–08⚡\nThis week's Pre-IPO news: Anthropic IPO, OpenAI funding, defense tech M&A.\n\n• 🔴 OpenAI closed $11B, the first part of a round at a $1.25T valuation\n• 🔴 Revolut completed a secondary share sale at a $115B valuation\n• Anthropic's amended S-1 shows",
-    "url": "https://x.com/JarsyInc/status/2119595841719783456",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-11-09T01:00:03Z",
-    "note": "Weekly pre-IPO roundup putting Anthropic next to OpenAI's $1.25T round and Revolut's secondary."
-   }
-  ],
-  "c587875a146d": [
-   {
-    "handle": "MFT_Get_Funded",
-    "name": "Miami Futures Trader",
-    "text": "Alphabet Reveals $548 Million Stake in Qualcomm\n\n$GOOGL (Alphabet) took a new stake of nearly 3 million Qualcomm shares, valued at roughly $548 million as of September 30, a move that underscores confidence in Qualcomm’s data-center ambitions even as smartphone demand remains",
-    "url": "https://x.com/MFT_Get_Funded/status/2118800001610793277",
-    "likes": 5,
-    "reposts": 0,
-    "ts": "2026-11-06T20:17:40Z",
-    "note": "Most-shared take: the ~3M-share, $548M stake reads as a vote for Qualcomm's data-center push."
-   },
-   {
-    "handle": "ainatiakurdadze",
-    "name": "Natia Kurdadze - AI",
-    "text": "Alphabet takes a Qualcomm stake (Nov 7)\nGoogle's parent bought ~2.98M Qualcomm shares worth ~$548M,  about 0.5%. \n\nQualcomm stock rose 5%. \n\nNo AI chip deal has been confirmed, but Qualcomm's data-center pivot just got a big-name vote  KuCoin News (relaying Reuters). \n\nThis is a https://t.co/JXPqKEfBhW",
-    "url": "https://x.com/ainatiakurdadze/status/2119026455216607734",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-07T11:17:31Z",
-    "note": "Useful caveat: about 0.5% of Qualcomm, stock rose ~5%, but no AI chip deal is confirmed."
-   },
-   {
-    "handle": "BusinessTimes",
-    "name": "The Business Times",
-    "text": "Alphabet discloses US$548 million worth of Qualcomm stake\n\nhttps://t.co/ZWrJYxJacH",
-    "url": "https://x.com/BusinessTimes/status/2118878717254537633",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-07T01:30:27Z",
-    "note": "Straight news link from The Business Times."
-   }
-  ],
-  "e8881efcd3e2": [
-   {
-    "handle": "KreizJordy",
-    "name": "Jordy",
-    "text": "Everyone crying about the $MRVL $LITE acquisition likely underestimates Marvell and the experts at Lumentum who understand the technology, connectivity design/architecture, and the opportunity ahead.\n\nI have a feeling we’ll see people admit their lack in some Quarters from now.",
-    "url": "https://x.com/KreizJordy/status/2119132016616595610",
-    "likes": 44,
+    "handle": "leeky_k_crypt",
+    "name": "AMk.Crypto",
+    "text": "Lighter says its Anthropic pre-IPO perp (a perpetual futures contract on a company that isn't public yet) will settle on the first Friday after Anthropic lists on Nasdaq.",
+    "url": "https://x.com/leeky_k_crypt/status/2119294341621657978",
+    "likes": 32,
     "reposts": 4,
-    "ts": "2026-11-07T18:16:58Z",
-    "note": "Bull case pushing back on the selloff: Lumentum's optics talent is the point of the deal."
+    "ts": "2026-11-08T05:02:00Z",
+    "note": "Pre-IPO derivatives are one of the price signals investors are watching."
    },
    {
-    "handle": "armaanzinvest",
-    "name": "The Market Matrix",
-    "text": "The worst performing stocks in the S&P the last month:\n\n1) $INTC Intel Corp (-55%)\n2. $MRVL Marvell Technology (-50%)\n3) $SNDK SanDisk (-50%)\n4) $STX Seagate Technology (-48%)\n5) $LITE Lumentum Holdings (-48%)\n\n2 of the 5 were part of an acquisition together.. \n\nIf I told this is https://t.co/ZmNNMQN4q9",
-    "url": "https://x.com/armaanzinvest/status/2119084501670531404",
-    "likes": 2,
-    "reposts": 1,
-    "ts": "2026-11-07T15:08:10Z",
-    "note": "Context: MRVL and LITE are both among the S&P's worst performers over the past month since the deal."
-   },
-   {
-    "handle": "NorelEitan",
-    "name": "Eitan Norel",
-    "text": "Four acquisitions in one week: Dropbox buying Tigris, Salesforce buying Cresta, Marvell buying Lumentum, Palo Alto in talks for Clutch Security. my read: the agent layer is getting built mostly by acquisition now, nobody has 18 months to build the plumbing in house.",
-    "url": "https://x.com/NorelEitan/status/2119330341836202301",
-    "likes": 1,
+    "handle": "VujuOnX",
+    "name": "Vuju",
+    "text": "Anthropic Moves Closer to IPO as Valuation Expectations Fall to $1.3 Trillion. Prediction markets now indicate an 87% chance of a public listing before year-end...",
+    "url": "https://x.com/VujuOnX/status/2119220615534031107",
+    "likes": 4,
     "reposts": 0,
-    "ts": "2026-11-08T07:25:03Z",
-    "note": "Puts the deal in a week of AI-infrastructure M&A (Dropbox, Salesforce, Palo Alto)."
+    "ts": "2026-11-08T00:09:02Z",
+    "note": "Summarizes where valuation talk and listing odds sit."
    }
   ],
-  "5f2e2093f5cd": [
+  "1a4c7aa917a9": [
    {
-    "handle": "Holland_Knight",
-    "name": "Holland & Knight",
-    "text": "We're pleased to have advised Rune Technologies, a defense technology platform focused on military logistics and sustainment operations, on its sale to @salesforce. The acquisition will expand Salesforce's Missionforce portfolio with capabilities designed to improve logistics, https://t.co/lziSaovnIn",
-    "url": "https://x.com/Holland_Knight/status/2118374318887338251",
+    "handle": "DeciferInt",
+    "name": "Decifer Intelligence",
+    "text": "Chip equipment ripped higher in a rare rally: Applied Materials AMAT +12.1%, Lam Research LRCX +10.7%, KLA KLAC +10.3% and Arista ANET +10.1%, each a bigger move than nearly all of their days in three years.",
+    "url": "https://x.com/DeciferInt/status/2119909404917293080",
     "likes": 0,
     "reposts": 0,
-    "ts": "2026-11-05T16:06:09Z",
-    "note": "Holland & Knight confirms it advised Rune on the sale; Rune expands Salesforce's Missionforce defense line."
+    "ts": "2026-11-09T21:46:02Z",
+    "note": "Puts Monday's WFE bounce in historical context."
    },
    {
-    "handle": "Valueinvest101",
-    "name": "Value Investing Hub",
-    "text": "Three years ago, Elliott Management's campaign against $CRM produced a specific win: Salesforce formally disbanded its M&A committee. No major deal followed through three fiscal years. Buybacks ran at a double-digit-billion pace. Margins expanded.\n\nMonday, Salesforce agreed to",
-    "url": "https://x.com/Valueinvest101/status/2118765998484422977",
-    "likes": 1,
+    "handle": "Empire_Monitor",
+    "name": "Empire Monitor",
+    "text": "BIS just extended the pause on its Affiliates Rule to Jan 10. Applied Materials alone estimated a $600M fiscal 2026 revenue hit from that rule. The stay is not a repeal...",
+    "url": "https://x.com/Empire_Monitor/status/2119460234041192763",
+    "likes": 0,
     "reposts": 0,
-    "ts": "2026-11-06T18:02:33Z",
-    "note": "Strategic context: Salesforce's first notable deal since Elliott pushed it to disband its M&A committee."
+    "ts": "2026-11-08T16:01:12Z",
+    "note": "China export-rule overhang that AMAT's guide on Thursday will address."
+   },
+   {
+    "handle": "RockFlowApp",
+    "name": "RockFlow",
+    "text": "CSCO and AMAT are the two I'm watching together. Cisco's AI networking orders and Applied Materials' chip equipment outlook should give us two reads on whether AI spending is slowing.",
+    "url": "https://x.com/RockFlowApp/status/2120085588200309166",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-10T09:26:08Z",
+    "note": "Frames Thursday's prints as the week's AI-capex test."
+   }
+  ],
+  "2c4253485cf5": [
+   {
+    "handle": "robot2trade1",
+    "name": "robot2trade",
+    "text": "At the open, NVDA is -5.47%, the only big red box on the map, while almost everything else is green. NVDA is a company story, not a market story.",
+    "url": "https://x.com/robot2trade1/status/2119805572681814186",
+    "likes": 3,
+    "reposts": 3,
+    "ts": "2026-11-09T14:53:27Z",
+    "note": "Monday's drop was Nvidia-specific, not sector-wide."
+   },
+   {
+    "handle": "CenterPointSec",
+    "name": "CenterPoint by Clear Street",
+    "text": "NVDA down 4% after reports that Nvidia's board launched an investigation into allegations involving CEO Jensen Huang and a possible foreign intelligence operation...",
+    "url": "https://x.com/CenterPointSec/status/2119952538686619814",
+    "likes": 3,
+    "reposts": 0,
+    "ts": "2026-11-10T00:37:26Z",
+    "note": "The catalyst: board probe tied to Huang, a week before earnings."
+   },
+   {
+    "handle": "DV_Memetics",
+    "name": "Deep Value Memetics",
+    "text": "Hot CPI reverses tech and hits semiconductor duration. October CPI rose 0.4% m/m versus 0.3% consensus; core rose 0.3% versus 0.2%.",
+    "url": "https://x.com/DV_Memetics/status/2120150136135311854",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-10T13:42:37Z",
+    "note": "Macro layer this morning: hotter CPI weighs on long-duration semis."
+   }
+  ],
+  "94bbfa3b8c6d": [
+   {
+    "handle": "DeItaone",
+    "name": "*Walter Bloomberg",
+    "text": "MSFT - MICROSOFT WARNS CHINESE COMPONENT BAN COULD HALT US AI DATA-CENTER EXPANSION. Microsoft is urging the Trump administration to abandon plans to ban Chinese optical transceivers...",
+    "url": "https://x.com/DeItaone/status/2120110806046040455",
+    "likes": 354,
+    "reposts": 67,
+    "ts": "2026-11-10T11:06:20Z",
+    "note": "Most-shared optical story today; a ban would reshape supply for LITE and COHR."
+   },
+   {
+    "handle": "carrioresearch",
+    "name": "Carrio",
+    "text": "The world's first co-packaged optics Ethernet switch is in full production. Lasers and external light sources: LITE and COHR. Both have multiyear NVIDIA agreements.",
+    "url": "https://x.com/carrioresearch/status/2119073514653434015",
+    "likes": 27,
+    "reposts": 1,
+    "ts": "2026-11-07T14:24:31Z",
+    "note": "Why Lumentum sits in the co-packaged optics value chain."
+   },
+   {
+    "handle": "Schulz_Research",
+    "name": "Schulz Duggan",
+    "text": "Co-packaged optics, or moving the light right up to the switch chip. A 1.6T plug-in optical module burns about 30 watts...",
+    "url": "https://x.com/Schulz_Research/status/2119521380278620202",
+    "likes": 17,
+    "reposts": 1,
+    "ts": "2026-11-08T20:04:10Z",
+    "note": "Clear explainer thread on the tech behind the optical trade."
+   }
+  ],
+  "a7d584158375": [
+   {
+    "handle": "Beth_KindigPes",
+    "name": "Beth Kindig",
+    "text": "Super Micro SMCI announced preliminary FQ1 revenue of $18.5-$19.5 billion, well above its original guidance for $14.5-15.5 billion and representing 279% YoY and 71% QoQ growth.",
+    "url": "https://x.com/Beth_KindigPes/status/2120065680808800445",
+    "likes": 1,
+    "reposts": 1,
+    "ts": "2026-11-10T08:07:01Z",
+    "note": "Credible tech analyst on the size of the revenue upside."
+   },
+   {
+    "handle": "AIStockSavvy",
+    "name": "Hardik Shah",
+    "text": "SMCI | Susquehanna maintains Negative on Super Micro Computer, raises PT to $18 from $15. Analyst sees higher estimates after Sep-Q earnings but maintains a Negative rating due to valuation.",
+    "url": "https://x.com/AIStockSavvy/status/2120120132303487164",
+    "likes": 4,
+    "reposts": 0,
+    "ts": "2026-11-10T11:43:24Z",
+    "note": "Sell-side bear case despite the beat."
+   },
+   {
+    "handle": "PrometeusCT",
+    "name": "Prometeus Consulting",
+    "text": "Super Micro: Revenue $19.95B (nearly 4x) and FY27 outlook raised to $72-82B. Margins down to 12.8%, and one customer made up 44% of sales.",
+    "url": "https://x.com/PrometeusCT/status/2119471199784997109",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-08T16:44:46Z",
+    "note": "Margin and customer-concentration risk in one line."
    }
   ]
  },
@@ -454,66 +424,46 @@
   ],
   "LITE": [
    {
-    "handle": "KreizJordy",
-    "name": "Jordy",
-    "text": "Everyone crying about the $MRVL $LITE acquisition likely underestimates Marvell and the experts at Lumentum who understand the technology, connectivity design/architecture, and the opportunity ahead.\n\nI have a feeling we’ll see people admit their lack in some Quarters from now.",
-    "url": "https://x.com/KreizJordy/status/2119132016616595610",
-    "likes": 44,
-    "reposts": 4,
-    "ts": "2026-11-07T18:16:58Z",
-    "note": "Bull case pushing back on the selloff: Lumentum's optics talent is the point of the deal."
+    "handle": "DeItaone",
+    "name": "*Walter Bloomberg",
+    "text": "MSFT - MICROSOFT WARNS CHINESE COMPONENT BAN COULD HALT US AI DATA-CENTER EXPANSION. Microsoft is urging the Trump administration to abandon plans to ban Chinese optical transceivers...",
+    "url": "https://x.com/DeItaone/status/2120110806046040455",
+    "likes": 354,
+    "reposts": 67,
+    "ts": "2026-11-10T11:06:20Z",
+    "note": "Most-shared optical story today; a ban would reshape supply for LITE and COHR."
    },
    {
-    "handle": "armaanzinvest",
-    "name": "The Market Matrix",
-    "text": "The worst performing stocks in the S&P the last month:\n\n1) $INTC Intel Corp (-55%)\n2. $MRVL Marvell Technology (-50%)\n3) $SNDK SanDisk (-50%)\n4) $STX Seagate Technology (-48%)\n5) $LITE Lumentum Holdings (-48%)\n\n2 of the 5 were part of an acquisition together.. \n\nIf I told this is https://t.co/ZmNNMQN4q9",
-    "url": "https://x.com/armaanzinvest/status/2119084501670531404",
-    "likes": 2,
+    "handle": "carrioresearch",
+    "name": "Carrio",
+    "text": "The world's first co-packaged optics Ethernet switch is in full production. Lasers and external light sources: LITE and COHR. Both have multiyear NVIDIA agreements.",
+    "url": "https://x.com/carrioresearch/status/2119073514653434015",
+    "likes": 27,
     "reposts": 1,
-    "ts": "2026-11-07T15:08:10Z",
-    "note": "Context: MRVL and LITE are both among the S&P's worst performers over the past month since the deal."
+    "ts": "2026-11-07T14:24:31Z",
+    "note": "Why Lumentum sits in the co-packaged optics value chain."
    }
   ],
   "NVDA": [
    {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "$NVDA  - NVIDIA BOARD LAUNCHES ESPIONAGE PROBE INVOLVING CEO JENSEN HUANG\n\nNvidia IS launching an independent investigation into whether CEO Jensen Huang was targeted by a Chinese intelligence operation, Bloomberg reports.\n\nHuang admitted to an extramarital affair and apologized",
-    "url": "https://x.com/DeItaone/status/2119543155930312795",
-    "likes": 541,
-    "reposts": 75,
-    "ts": "2026-11-08T21:30:42Z",
-    "note": "Breaking wire: Nvidia's board opens an independent probe into whether Huang was targeted by Chinese intelligence."
+    "handle": "robot2trade1",
+    "name": "robot2trade",
+    "text": "At the open, NVDA is -5.47%, the only big red box on the map, while almost everything else is green. NVDA is a company story, not a market story.",
+    "url": "https://x.com/robot2trade1/status/2119805572681814186",
+    "likes": 3,
+    "reposts": 3,
+    "ts": "2026-11-09T14:53:27Z",
+    "note": "Monday's drop was Nvidia-specific, not sector-wide."
    },
    {
-    "handle": "PolymarketIntel",
-    "name": "Polymarket Intel",
-    "text": "Jensen Huang remains Nvidia CEO as the board opens an independent investigation into whether he was the subject of a foreign intelligence operation.\n\nIn a staff memo, Huang admitted an affair with Alice Huang, a former executive at Megaspeed, a Singapore-based Nvidia customer.",
-    "url": "https://x.com/PolymarketIntel/status/2119532252132524433",
-    "likes": 39,
-    "reposts": 8,
-    "ts": "2026-11-08T20:47:22Z",
-    "note": "Key fact for holders: Huang stays CEO while the board investigation runs."
-   },
-   {
-    "handle": "axios",
-    "name": "Axios",
-    "text": "Nvidia investors rush to keep Jensen despite private disappointment https://t.co/PEnXJJEvpn",
-    "url": "https://x.com/axios/status/2119797660861247707",
-    "likes": 9,
-    "reposts": 5,
-    "ts": "2026-11-09T14:22:00Z",
-    "note": "Axios: big Nvidia investors are backing Huang publicly despite private disappointment."
-   },
-   {
-    "handle": "politico",
-    "name": "POLITICO",
-    "text": "Nvidia shares plummet after Huang investigation https://t.co/tO2gphyr1o",
-    "url": "https://x.com/politico/status/2119794610461401247",
-    "likes": 16,
-    "reposts": 12,
-    "ts": "2026-11-09T14:09:53Z",
-    "note": "Politico ties the premarket drop directly to the Huang investigation."
+    "handle": "CenterPointSec",
+    "name": "CenterPoint by Clear Street",
+    "text": "NVDA down 4% after reports that Nvidia's board launched an investigation into allegations involving CEO Jensen Huang and a possible foreign intelligence operation...",
+    "url": "https://x.com/CenterPointSec/status/2119952538686619814",
+    "likes": 3,
+    "reposts": 0,
+    "ts": "2026-11-10T00:37:26Z",
+    "note": "The catalyst: board probe tied to Huang, a week before earnings."
    }
   ],
   "TTD": [
@@ -546,6 +496,156 @@
     "reposts": 0,
     "ts": "2026-11-09T14:50:02Z",
     "note": "Consensus numbers to compare against when TTD reports tonight."
+   }
+  ],
+  "SE": [
+   {
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "SEA LIMITED SE Q3'26: Revenue $8.58B (Est. $8.05B), +43% YoY. EPS $0.78 (Est. $0.79). Adj. EBITDA $931.3M; Net Income $502.5M. Shopee GMV $39.7B, +23.3% YoY; Orders 4.5B, +25.5%.",
+    "url": "https://x.com/wallstengine/status/2120117360149328180",
+    "likes": 160,
+    "reposts": 22,
+    "ts": "2026-11-10T11:32:23Z",
+    "note": "Most-shared print summary: big revenue beat, slight EPS miss."
+   },
+   {
+    "handle": "ftr_investors",
+    "name": "The Future Investors",
+    "text": "Sea Limited Q3 2026: Revenue $8.58B vs $8.08B est. Shopee GMV $39.7B (+23.3% YoY). Monee revenue grew 63.9% YoY to $1.6B.",
+    "url": "https://x.com/ftr_investors/status/2120119700793237593",
+    "likes": 26,
+    "reposts": 5,
+    "ts": "2026-11-10T11:41:41Z",
+    "note": "Segment detail: Monee (fintech) is the fastest grower."
+   },
+   {
+    "handle": "marketsbriefing",
+    "name": "Finder Market Briefing",
+    "text": "SE: Beat on revenue with Shopee marketplace revenue up 50.6%. Credit loss provisions jumped 82%.",
+    "url": "https://x.com/marketsbriefing/status/2120160091965976715",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-10T14:22:11Z",
+    "note": "The credit-loss jump is the likely reason for the premarket drop."
+   },
+   {
+    "handle": "Trade_The_News",
+    "name": "TradeTheNews.com",
+    "text": "SE Q3 2026 earnings call: The acceleration in Shopee new-user growth seen in the second quarter continued into the third quarter.",
+    "url": "https://x.com/Trade_The_News/status/2120132932081783194",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-10T12:34:15Z",
+    "note": "Call commentary on user growth."
+   }
+  ],
+  "IFX": [
+   {
+    "handle": "1p_semicon",
+    "name": "1p_semicon",
+    "text": "Infineon has successfully processed 300-millimeter silicon carbide (SiC) wafers into functional power devices, the first company to do so in a full-scale semiconductor fab environment, utilizing existing Si manufacturing...",
+    "url": "https://x.com/1p_semicon/status/2119896937940033700",
+    "likes": 12,
+    "reposts": 2,
+    "ts": "2026-11-09T20:56:30Z",
+    "note": "Tech milestone that lowers SiC power-chip cost; IFX reports results today."
+   },
+   {
+    "handle": "MarketsWrapUp",
+    "name": "MarketsWrapUp",
+    "text": "The Week's Biggest Movers Across Europe: Infineon -12.0%, Siemens Energy -9.2%, ASML -8.8%...",
+    "url": "https://x.com/MarketsWrapUp/status/2119480806058168621",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-08T17:22:56Z",
+    "note": "Context for today's bounce: IFX fell 12% last week."
+   },
+   {
+    "handle": "firstnewsAI",
+    "name": "FirstNewsAI",
+    "text": "Infineon will spend about EUR1.1B in Villach, Austria, on the first high-volume 300mm plant for gallium nitride power chips. Uses include AI data centres. Brussels approved EUR319M of aid.",
+    "url": "https://x.com/firstnewsAI/status/2119491045238960145",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-08T18:03:38Z",
+    "note": "Capex and EU subsidy angle for AI data-center power."
+   }
+  ],
+  "AMAT": [
+   {
+    "handle": "DeciferInt",
+    "name": "Decifer Intelligence",
+    "text": "Chip equipment ripped higher in a rare rally: Applied Materials AMAT +12.1%, Lam Research LRCX +10.7%, KLA KLAC +10.3% and Arista ANET +10.1%, each a bigger move than nearly all of their days in three years.",
+    "url": "https://x.com/DeciferInt/status/2119909404917293080",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-09T21:46:02Z",
+    "note": "Puts Monday's WFE bounce in historical context."
+   },
+   {
+    "handle": "Empire_Monitor",
+    "name": "Empire Monitor",
+    "text": "BIS just extended the pause on its Affiliates Rule to Jan 10. Applied Materials alone estimated a $600M fiscal 2026 revenue hit from that rule. The stay is not a repeal...",
+    "url": "https://x.com/Empire_Monitor/status/2119460234041192763",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-08T16:01:12Z",
+    "note": "China export-rule overhang that AMAT's guide on Thursday will address."
+   }
+  ],
+  "SMCI": [
+   {
+    "handle": "Beth_KindigPes",
+    "name": "Beth Kindig",
+    "text": "Super Micro SMCI announced preliminary FQ1 revenue of $18.5-$19.5 billion, well above its original guidance for $14.5-15.5 billion and representing 279% YoY and 71% QoQ growth.",
+    "url": "https://x.com/Beth_KindigPes/status/2120065680808800445",
+    "likes": 1,
+    "reposts": 1,
+    "ts": "2026-11-10T08:07:01Z",
+    "note": "Credible tech analyst on the size of the revenue upside."
+   },
+   {
+    "handle": "AIStockSavvy",
+    "name": "Hardik Shah",
+    "text": "SMCI | Susquehanna maintains Negative on Super Micro Computer, raises PT to $18 from $15. Analyst sees higher estimates after Sep-Q earnings but maintains a Negative rating due to valuation.",
+    "url": "https://x.com/AIStockSavvy/status/2120120132303487164",
+    "likes": 4,
+    "reposts": 0,
+    "ts": "2026-11-10T11:43:24Z",
+    "note": "Sell-side bear case despite the beat."
+   }
+  ],
+  "COHR": [
+   {
+    "handle": "dolphinR123",
+    "name": "Longbridge Dolphin Research",
+    "text": "Coherent's market value has halved. Our deep dive on its module business: assembly earns thin margins; leaders earn theirs upstream (chip and DSP supply) and downstream (co-defining specs). Coherent is the most integrated, yet its margin trails.",
+    "url": "https://x.com/dolphinR123/status/2120158416840835143",
+    "likes": 4,
+    "reposts": 0,
+    "ts": "2026-11-10T14:15:31Z",
+    "note": "Why COHR trades at a discount to optical peers."
+   },
+   {
+    "handle": "skylabintel",
+    "name": "Skylab Intelligence",
+    "text": "Coherent disclosed a PhotonLink agreement valued at approximately US$20 billion over five years with an unnamed major AI data-center customer. Revenue is expected to begin ramping in early 2028.",
+    "url": "https://x.com/skylabintel/status/2119760227868569618",
+    "likes": 5,
+    "reposts": 0,
+    "ts": "2026-11-09T11:53:16Z",
+    "note": "The $20B contract behind the bull case."
+   },
+   {
+    "handle": "DeItaone",
+    "name": "*Walter Bloomberg",
+    "text": "MSFT - MICROSOFT WARNS CHINESE COMPONENT BAN COULD HALT US AI DATA-CENTER EXPANSION. Microsoft is urging the Trump administration to abandon plans to ban Chinese optical transceivers...",
+    "url": "https://x.com/DeItaone/status/2120110806046040455",
+    "likes": 354,
+    "reposts": 67,
+    "ts": "2026-11-10T11:06:20Z",
+    "note": "Most-shared optical story today; a ban would reshape supply for LITE and COHR."
    }
   ]
  },
@@ -584,34 +684,46 @@
   ],
   "0001193125-26-442758": [
    {
-    "handle": "KreizJordy",
-    "name": "Jordy",
-    "text": "Everyone crying about the $MRVL $LITE acquisition likely underestimates Marvell and the experts at Lumentum who understand the technology, connectivity design/architecture, and the opportunity ahead.\n\nI have a feeling we’ll see people admit their lack in some Quarters from now.",
-    "url": "https://x.com/KreizJordy/status/2119132016616595610",
-    "likes": 44,
-    "reposts": 4,
-    "ts": "2026-11-07T18:16:58Z",
-    "note": "Bull case pushing back on the selloff: Lumentum's optics talent is the point of the deal."
+    "handle": "DeItaone",
+    "name": "*Walter Bloomberg",
+    "text": "MSFT - MICROSOFT WARNS CHINESE COMPONENT BAN COULD HALT US AI DATA-CENTER EXPANSION. Microsoft is urging the Trump administration to abandon plans to ban Chinese optical transceivers...",
+    "url": "https://x.com/DeItaone/status/2120110806046040455",
+    "likes": 354,
+    "reposts": 67,
+    "ts": "2026-11-10T11:06:20Z",
+    "note": "Most-shared optical story today; a ban would reshape supply for LITE and COHR."
    },
    {
-    "handle": "armaanzinvest",
-    "name": "The Market Matrix",
-    "text": "The worst performing stocks in the S&P the last month:\n\n1) $INTC Intel Corp (-55%)\n2. $MRVL Marvell Technology (-50%)\n3) $SNDK SanDisk (-50%)\n4) $STX Seagate Technology (-48%)\n5) $LITE Lumentum Holdings (-48%)\n\n2 of the 5 were part of an acquisition together.. \n\nIf I told this is https://t.co/ZmNNMQN4q9",
-    "url": "https://x.com/armaanzinvest/status/2119084501670531404",
-    "likes": 2,
+    "handle": "carrioresearch",
+    "name": "Carrio",
+    "text": "The world's first co-packaged optics Ethernet switch is in full production. Lasers and external light sources: LITE and COHR. Both have multiyear NVIDIA agreements.",
+    "url": "https://x.com/carrioresearch/status/2119073514653434015",
+    "likes": 27,
     "reposts": 1,
-    "ts": "2026-11-07T15:08:10Z",
-    "note": "Context: MRVL and LITE are both among the S&P's worst performers over the past month since the deal."
+    "ts": "2026-11-07T14:24:31Z",
+    "note": "Why Lumentum sits in the co-packaged optics value chain."
+   }
+  ],
+  "0001437749-26-034438": [
+   {
+    "handle": "The_VetX",
+    "name": "VetTV X",
+    "text": "The SEC declared Trump Media's Form S-4 for its all-stock TAE merger effective Nov. 5. TMTG shareholders vote Dec. 14; the deal hasn't closed and still needs approvals.",
+    "url": "https://x.com/The_VetX/status/2118558457095684405",
+    "likes": 2,
+    "reposts": 0,
+    "ts": "2026-11-06T04:17:51Z",
+    "note": "Status: S-4 effective, vote Dec 14."
    },
    {
-    "handle": "NorelEitan",
-    "name": "Eitan Norel",
-    "text": "Four acquisitions in one week: Dropbox buying Tigris, Salesforce buying Cresta, Marvell buying Lumentum, Palo Alto in talks for Clutch Security. my read: the agent layer is getting built mostly by acquisition now, nobody has 18 months to build the plumbing in house.",
-    "url": "https://x.com/NorelEitan/status/2119330341836202301",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-11-08T07:25:03Z",
-    "note": "Puts the deal in a week of AI-infrastructure M&A (Dropbox, Salesforce, Palo Alto)."
+    "handle": "faststocknewss",
+    "name": "FSMN",
+    "text": "TRUMP MEDIA & TECHNOLOGY GROUP DJT AND TAE TECHNOLOGIES ANNOUNCE EFFECTIVENESS OF FORM S-4 FOR PROPOSED MERGER",
+    "url": "https://x.com/faststocknewss/status/2118451104640061532",
+    "likes": 39,
+    "reposts": 7,
+    "ts": "2026-11-05T21:11:16Z",
+    "note": "Most-shared post on the filing going effective."
    }
   ]
  }
