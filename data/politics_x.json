@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T15:04:25Z",
+ "updated": "2026-11-12T14:59:02Z",
  "note": "Balanced curated accounts; leans describe the account, not each post. Midterms 2026 post-election window.",
  "leans": {
   "left": "Left / Democratic-leaning",
@@ -179,6 +179,214 @@
  ],
  "posts": [
   {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "lean": "analyst",
+   "role": "Results & forecast",
+   "text": "Decision Desk HQ projects Scott Colom wins the MS US Senate General Election\n\n#DecisionMade: 6:28 PM EST\n\nFollow live results here: https://t.co/ae4mRticzD https://t.co/hAFYUmJsQt",
+   "url": "https://x.com/DecisionDeskHQ/status/2120660276571705452",
+   "likes": 5022,
+   "reposts": 597,
+   "ts": "2026-11-11T23:29:44.000Z",
+   "race": "senate-control"
+  },
+  {
+   "handle": "NateSilver538",
+   "name": "Nate Silver",
+   "lean": "analyst",
+   "role": "Silver Bulletin forecaster",
+   "text": "If Peltola holds on in Alaska, D-held Senate delegations will actually occupy more territory (in square miles) than R ones. About 34% D, 30% R, 36% split.\n\nBefore the election it was 63% R, 33% D, 4% split.",
+   "url": "https://x.com/NateSilver538/status/2120657518686883923",
+   "likes": 5019,
+   "reposts": 271,
+   "ts": "2026-11-11T23:18:47.000Z",
+   "race": "AK-sen"
+  },
+  {
+   "handle": "Redistrict",
+   "name": "Dave Wasserman",
+   "lean": "analyst",
+   "role": "Cook Political Report",
+   "text": "New @CookPolitical: with more than 116.7 million votes counted, Dems' lead in the national House vote is up to 13.6 points. https://t.co/wFFnXPyHfl https://t.co/s94usNH3ZG",
+   "url": "https://x.com/Redistrict/status/2120541471384498524",
+   "likes": 1773,
+   "reposts": 251,
+   "ts": "2026-11-11T15:37:39.000Z",
+   "race": "house-control"
+  },
+  {
+   "handle": "gelliottmorris",
+   "name": "G. Elliott Morris",
+   "lean": "analyst",
+   "role": "Strength In Numbers / FiftyPlusOne",
+   "text": "Republican campaign and right-leaning polling firms that looked super accurate from 2016-2024 just whiffed for 2026. Their house effects persisted, but because bias from nonresponse and LV filters changed, the firms tilted the wrong direction https://t.co/9WT4k8uBk9 https://t.co/11OaLVcoBv",
+   "url": "https://x.com/gelliottmorris/status/2120520482373922951",
+   "likes": 184,
+   "reposts": 29,
+   "ts": "2026-11-11T14:14:15.000Z"
+  },
+  {
+   "handle": "kkondik",
+   "name": "Kyle Kondik",
+   "lean": "analyst",
+   "role": "Sabato's Crystal Ball",
+   "text": "The failure of the NC map looks different from different perspectives. From a broader GOP party perspective, it's easy to say \"we'll get em next time\" on what is still a favorable map. For the individual members who lost, though, they may not get a next time.",
+   "url": "https://x.com/kkondik/status/2120559328000463135",
+   "likes": 430,
+   "reposts": 32,
+   "ts": "2026-11-11T16:48:36.000Z",
+   "race": "house-control"
+  },
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "lean": "analyst",
+   "role": "Results & forecast",
+   "text": "New vote drop in Alaska:\n\nSenate\nSullivan (R): 2,837\nPeltola (D): 2,563\nHeikes (R): 108\nSullivan Jr. (I): 74\n\nGovernor\nKreiss-Tomkins (D): 2,495\nWilson (R): 2,032\nBronson (R): 600\nTaylor (R): 395\n\nHouse\nBegich (R): 2,987\nHill (I): 2,057\nHafner (D): 441\nMcDermott (L): 109 https://t.co/iliOkXJf94",
+   "url": "https://x.com/DecisionDeskHQ/status/2120724104877686889",
+   "likes": 195,
+   "reposts": 32,
+   "ts": "2026-11-12T03:43:22.000Z",
+   "race": "AK-sen"
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "lean": "left",
+   "role": "Public Notice",
+   "text": "Colom: \"For months and months, I've been telling everybody everywhere I go, that we're going to win this election. But every time I said it, I pointed out that people were going to give me too much credit for it. Because it's not something that I did, y'all. It's something that https://t.co/qJURbzQMlr",
+   "url": "https://x.com/atrupar/status/2120718693747282304",
+   "likes": 2660,
+   "reposts": 336,
+   "ts": "2026-11-12T03:21:52.000Z",
+   "race": "senate-control"
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "lean": "left",
+   "role": "Public Notice",
+   "text": "Trump is losing his shit: \"I have asked Vice President Vance to focus his complete and total attention on the Massive Corruption and Crime taking place in Democrat run Cities and States throughout the U.S. The Blue States, such as Minnesota, California, Illinois, and many more, https://t.co/zfHM54b4Oi",
+   "url": "https://x.com/atrupar/status/2120866800313266514",
+   "likes": 2450,
+   "reposts": 430,
+   "ts": "2026-11-12T13:10:23.000Z"
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "lean": "left",
+   "role": "Public Notice",
+   "text": "all it took was losing an election for Mike Johnson to become a big stickler for \"targeting your foes is bad\" https://t.co/lnlxN02JSD",
+   "url": "https://x.com/atrupar/status/2120723910106714468",
+   "likes": 1987,
+   "reposts": 270,
+   "ts": "2026-11-12T03:42:35.000Z"
+  },
+  {
+   "handle": "mehdirhasan",
+   "name": "Mehdi Hasan",
+   "lean": "left",
+   "role": "Zeteo",
+   "text": "Keep your eye on @MelatKirosCO, a fantastic communicator and rising star in the Democratic Party. \n\nStrong words here: https://t.co/dzG3ZqwRRD",
+   "url": "https://x.com/mehdirhasan/status/2120748165964112350",
+   "likes": 3271,
+   "reposts": 416,
+   "ts": "2026-11-12T05:18:59.000Z"
+  },
+  {
+   "handle": "EWErickson",
+   "name": "Erick Erickson",
+   "lean": "right",
+   "role": "Conservative commentator",
+   "text": "Lutnick advocated the tariffs, scuttled a trade deal with Canada that sparked a pre-midterm trade war, and has been covering for a company funneling our technology to China while stalling presidential orders to curtail those transfers.",
+   "url": "https://x.com/EWErickson/status/2120668178821071158",
+   "likes": 2869,
+   "reposts": 498,
+   "ts": "2026-11-12T00:01:08.000Z"
+  },
+  {
+   "handle": "MZHemingway",
+   "name": "Mollie Hemingway",
+   "lean": "right",
+   "role": "The Federalist",
+   "text": "Senate GOP Must Follow Rules, Rehold Leadership Elections  https://t.co/zMixDoJwXK",
+   "url": "https://x.com/MZHemingway/status/2120739642597146968",
+   "likes": 2459,
+   "reposts": 588,
+   "ts": "2026-11-12T04:45:06.000Z",
+   "race": "senate-control"
+  },
+  {
+   "handle": "EWErickson",
+   "name": "Erick Erickson",
+   "lean": "right",
+   "role": "Conservative commentator",
+   "text": "Looking at the Senate map in 2028, the GOP is going to have to decide if it is more interested in winning primaries with purists or general elections with candidates who independent voters will vote for.  If the latter, they can claw back several Senate seats from the Dems.",
+   "url": "https://x.com/EWErickson/status/2120598963417948265",
+   "likes": 760,
+   "reposts": 73,
+   "ts": "2026-11-11T19:26:06.000Z",
+   "race": "senate-control"
+  },
+  {
+   "handle": "ByronYork",
+   "name": "Byron York",
+   "lean": "right",
+   "role": "Washington Examiner",
+   "text": "A new post from President Trump this morning. Message: Vice President Vance will not be negotiating with Iran. In fact, we don't need a deal with Iran. Seems to indicate that there won't be major combat operations, either and Trump will let the current economic pressure work. https://t.co/wlCOo3LrfW",
+   "url": "https://x.com/ByronYork/status/2120868664589406357",
+   "likes": 551,
+   "reposts": 98,
+   "ts": "2026-11-12T13:17:48.000Z"
+  },
+  {
+   "handle": "axios",
+   "name": "Axios",
+   "lean": "center",
+   "role": "News",
+   "text": "JUST IN: Democrat Scott Colom pulls off stunning Mississippi Senate upset https://t.co/VSmpyY1B4v",
+   "url": "https://x.com/axios/status/2120653996633235602",
+   "likes": 103,
+   "reposts": 15,
+   "ts": "2026-11-11T23:04:47.000Z",
+   "race": "senate-control"
+  },
+  {
+   "handle": "politico",
+   "name": "POLITICO",
+   "lean": "center",
+   "role": "Politics news",
+   "text": "BREAKING: The House is set to vote on a new effort to disgorge DOJ files related to the late sex offender Jeffrey Epstein after lawmakers completed a petition forcing the legislation to the floor.\nhttps://t.co/r3DHMYsWhB",
+   "url": "https://x.com/politico/status/2120588211118579950",
+   "likes": 808,
+   "reposts": 159,
+   "ts": "2026-11-11T18:43:22.000Z"
+  },
+  {
+   "handle": "axios",
+   "name": "Axios",
+   "lean": "center",
+   "role": "News",
+   "text": "NEW: Stephen Miller wants to use his new role as White House chief of staff to win back young and minority men who helped elect President Trump in 2024 but swung toward Democrats in the midterms. https://t.co/DIZPKXJiCz",
+   "url": "https://x.com/axios/status/2120511286219825548",
+   "likes": 644,
+   "reposts": 77,
+   "ts": "2026-11-11T13:37:42.000Z"
+  },
+  {
+   "handle": "CNNPolitics",
+   "name": "CNN Politics",
+   "lean": "center",
+   "role": "News",
+   "text": "Scott Colom cracked the Trump wall and won a Mississippi race that Democrats nearly overlooked. Here's how this political earthquake happened. https://t.co/P1n83Uw8UO",
+   "url": "https://x.com/CNNPolitics/status/2120696850848084135",
+   "likes": 42,
+   "reposts": 9,
+   "ts": "2026-11-12T01:55:04.000Z",
+   "race": "senate-control"
+  },
+  {
    "handle": "Redistrict",
    "name": "Dave Wasserman",
    "text": "New @CookPolitical: with more than 116 million votes counted, Dems' lead in the national House vote is up to 13.5 points. It's now the largest margin for either party since 1974. https://t.co/wFFnXPy9pN https://t.co/GsaqNI4Dk9",
@@ -215,18 +423,6 @@
    "note": "Cook analysis: backfiring GOP maps may cool mid-decade redistricting",
    "lean": "analyst",
    "role": "Cook Political Report"
-  },
-  {
-   "handle": "gelliottmorris",
-   "name": "G Elliott Morris",
-   "text": "Republican campaign and right-leaning polling firms that looked super accurate from 2016-2024 just whiffed for 2026. Their house effects persisted, but because bias from nonresponse and LV filters changed, the firms tilted the wrong direction https://t.co/9WT4k8uBk9 https://t.co/11OaLVcoBv",
-   "url": "https://x.com/gelliottmorris/status/2120520482373922951",
-   "likes": 38,
-   "reposts": 4,
-   "ts": "2026-11-11T14:14:15.000Z",
-   "note": "Post-mortem: GOP-leaning pollsters that were accurate 2016-24 missed in 2026",
-   "lean": "analyst",
-   "role": "Strength In Numbers / FiftyPlusOne"
   },
   {
    "handle": "DecisionDeskHQ",
@@ -353,18 +549,6 @@
    "role": "News"
   },
   {
-   "handle": "axios",
-   "name": "Axios",
-   "text": "NEW: Stephen Miller wants to use his new role as White House chief of staff to win back young and minority men who helped elect President Trump in 2024 but swung toward Democrats in the midterms. https://t.co/DIZPKXJiCz",
-   "url": "https://x.com/axios/status/2120511286219825548",
-   "likes": 42,
-   "reposts": 5,
-   "ts": "2026-11-11T13:37:42.000Z",
-   "note": "White House reset: Stephen Miller targets young and minority men who swung D",
-   "lean": "center",
-   "role": "News"
-  },
-  {
    "handle": "PunchbowlNews",
    "name": "Punchbowl News",
    "text": "NEWS:\n\nThe White House counsel warned Rep. Robert Garcia (D-Calif.), the incoming House Oversight chair, in a new letter that some of the new majority’s investigations could cross the line into criminal behavior.\n\n@JakeSherman has the details: https://t.co/Jvsnbf1s0H https://t.co/mgAeexDJYR",
@@ -422,121 +606,6 @@
    "reposts": 14,
    "ts": "2026-11-10T11:01:01Z",
    "race": "senate-control"
-  },
-  {
-   "handle": "atrupar",
-   "name": "Aaron Rupar",
-   "lean": "left",
-   "role": "Public Notice",
-   "text": "Even Hassett can't spin hotter than expected inflation data: \"It's a disappointing report ... things have accelerated over the last three months ... the trickle down from higher energy prices is definitely very palpable in the data\"",
-   "url": "https://x.com/atrupar/status/2120164224500432941",
-   "likes": 200,
-   "reposts": 57,
-   "ts": "2026-11-10T14:38:36Z"
-  },
-  {
-   "handle": "kkondik",
-   "name": "Kyle Kondik",
-   "lean": "analyst",
-   "role": "Sabato's Crystal Ball",
-   "text": "I thought if the Dems won the Senate, the Iran war would be the main reason why (because of its depressing effect on Trump's approval, particularly in states he won by double digits). But given the size of the drubbing maybe the Senate would've flipped anyway.",
-   "url": "https://x.com/kkondik/status/2119974855051472954",
-   "likes": 197,
-   "reposts": 13,
-   "ts": "2026-11-10T02:06:07Z",
-   "race": "senate-control"
-  },
-  {
-   "handle": "EWErickson",
-   "name": "Erick Erickson",
-   "lean": "right",
-   "role": "Conservative commentator",
-   "text": "We are one week removed from the election. Republicans contend a failed war in Iran was the reason for the loss. They have still fired no one. The RNC Chair remains as well.",
-   "url": "https://x.com/EWErickson/status/2120167483810414909",
-   "likes": 34,
-   "reposts": 5,
-   "ts": "2026-11-10T14:51:33Z"
-  },
-  {
-   "handle": "politico",
-   "name": "POLITICO",
-   "lean": "center",
-   "role": "Politics news",
-   "text": "House GOP leaders face their post-election reckoning",
-   "url": "https://x.com/politico/status/2120090810297311476",
-   "likes": 19,
-   "reposts": 6,
-   "ts": "2026-11-10T09:46:53Z",
-   "race": "house-control"
-  },
-  {
-   "handle": "DecisionDeskHQ",
-   "name": "Decision Desk HQ",
-   "lean": "analyst",
-   "role": "Results & forecast",
-   "text": "In California's 22nd House district, incumbent Republican David Valadao is trailing by a 36-point margin, one of the worst totals of any incumbent member of Congress in recent American history. This majority-Hispanic district would have backed Trump by two points in 2024.",
-   "url": "https://x.com/DecisionDeskHQ/status/2120159277641814389",
-   "likes": 78,
-   "reposts": 8,
-   "ts": "2026-11-10T14:18:57Z",
-   "race": "house-control"
-  },
-  {
-   "handle": "MattYglesias",
-   "name": "Matthew Yglesias",
-   "lean": "left",
-   "role": "Slow Boring, center-left",
-   "text": "Not questioning Hinojosa's political judgment, she obviously did great. I just think \"the optimal top state income tax rate is zero\" as a policy idea is a little disappointing on the merits.",
-   "url": "https://x.com/mattyglesias/status/2120163682403377428",
-   "likes": 56,
-   "reposts": 5,
-   "ts": "2026-11-10T14:36:27Z"
-  },
-  {
-   "handle": "ByronYork",
-   "name": "Byron York",
-   "lean": "right",
-   "role": "Washington Examiner",
-   "text": "Trump yields on immigration enforcement. For the first time since taking office in January 2025, Trump sent a strong message to some illegal immigrants that they will be allowed to stay in the US. That was a stunning change in direction on the administration's signature issue.",
-   "url": "https://x.com/ByronYork/status/2120008494463987953",
-   "likes": 54,
-   "reposts": 10,
-   "ts": "2026-11-10T04:19:47Z"
-  },
-  {
-   "handle": "PunchbowlNews",
-   "name": "Punchbowl News",
-   "lean": "center",
-   "role": "Congress",
-   "text": "For tech and artificial intelligence, the biggest institutional changes on the Hill next year may come from the House and Senate Judiciary Committees. Here's what to look for on panels with oversight of antitrust, intellectual property and more.",
-   "url": "https://x.com/PunchbowlNews/status/2119933957139509564",
-   "likes": 3,
-   "reposts": 4,
-   "ts": "2026-11-09T23:23:36Z"
-  },
-  {
-   "handle": "gelliottmorris",
-   "name": "G Elliott Morris",
-   "lean": "analyst",
-   "role": "Strength In Numbers / FiftyPlusOne",
-   "text": "Given the effect size of extra ads, Democrats arguably could have won back the Senate with a ~25-35% reduction in spending. (Don't tell the consultants)",
-   "url": "https://x.com/gelliottmorris/status/2119945430540656746",
-   "likes": 121,
-   "reposts": 3,
-   "ts": "2026-11-10T00:09:11Z",
-   "race": "senate-control"
-  },
-  {
-   "handle": "EWErickson",
-   "name": "Erick Erickson",
-   "lean": "right",
-   "role": "Conservative commentator",
-   "text": "65,386 Georgians showed up to vote in 2026 and refused to vote in the Senate race. 33,256 refused to vote in the gubernatorial race. Even had they all voted in each race, the Republicans would not have won.",
-   "url": "https://x.com/EWErickson/status/2120166785928319215",
-   "likes": 13,
-   "reposts": 1,
-   "ts": "2026-11-10T14:48:47Z",
-   "race": "GA-sen"
   }
  ]
 }

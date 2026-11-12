@@ -1,239 +1,381 @@
 {
  "stories": {
-  "3fccf913600c": [
-   {
-    "handle": "Maximilius31",
-    "name": "Max 🇨🇦 | Tesla • SpaceX • AI",
-    "text": "🔍 I read the Tesla & SpaceX filings so you don't have to. Merger status: still no deal 🤝❌\n\nWhat's CONFIRMED (10-Qs, Oct 22):\n• Both boards have special committees studying a combination\n• SpaceX: \"no determination\" yet. A deal needs its committee, board AND Elon's approval",
-    "url": "https://x.com/Maximilius31/status/2120526033677848805",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-11-11T14:36:18.000Z",
-    "note": "Reads the 10-Qs: both boards have special committees, but no deal or terms yet"
-   }
-  ],
-  "1c7b557b097f": [
-   {
-    "handle": "RaviRomo",
-    "name": "Ravi Romo",
-    "text": "Keep parroting the hedge fund leakers who hold sway on WSJ. The Hedgies want to make a 20 to 30% on flipping Anthropic's IPO after a \"dream low forced\" valuation. No way Anthropic does an IPO below $1.3 Trillion when OpenAI - which has verifiable lower revenues, lower growth...",
-    "url": "https://x.com/RaviRomo/status/2119246756533895275",
-    "likes": 34,
-    "reposts": 3,
-    "ts": "2026-11-08T01:52:55Z",
-    "note": "Bull pushback: argues the lower marks are buy-side positioning ahead of books."
-   },
-   {
-    "handle": "leeky_k_crypt",
-    "name": "AMk.Crypto",
-    "text": "Lighter says its Anthropic pre-IPO perp (a perpetual futures contract on a company that isn't public yet) will settle on the first Friday after Anthropic lists on Nasdaq.",
-    "url": "https://x.com/leeky_k_crypt/status/2119294341621657978",
-    "likes": 32,
-    "reposts": 4,
-    "ts": "2026-11-08T05:02:00Z",
-    "note": "Pre-IPO derivatives are one of the price signals investors are watching."
-   },
-   {
-    "handle": "VujuOnX",
-    "name": "Vuju",
-    "text": "Anthropic Moves Closer to IPO as Valuation Expectations Fall to $1.3 Trillion. Prediction markets now indicate an 87% chance of a public listing before year-end...",
-    "url": "https://x.com/VujuOnX/status/2119220615534031107",
-    "likes": 4,
-    "reposts": 0,
-    "ts": "2026-11-08T00:09:02Z",
-    "note": "Summarizes where valuation talk and listing odds sit."
-   }
-  ],
-  "1a4c7aa917a9": [
+  "7ee970694488": [
    {
     "handle": "DeItaone",
     "name": "*Walter Bloomberg",
-    "text": "CHIP STOCKS SURGE AS COREWEAVE EASES AI FEARS\n\nSemiconductors rally after CoreWeave's results:\n\n$MRVL: +8.5%\n$MU: +6.6%\n$INTC: +6.3%\n$AVGO: +6.2%\n$AMD: +3.2%\n$NVDA: +2.6%\n$QCOM: +2.6%\n$SOXX: +4.8%",
-    "url": "https://x.com/DeItaone/status/2120525754442076339",
-    "likes": 104,
-    "reposts": 10,
-    "ts": "2026-11-11T14:35:11.000Z",
-    "note": "Most-shared tape of the semis rebound: CoreWeave results eased AI-demand fears"
+    "text": "$NVDA  - BREAKING: NVIDIA CEO JENSEN HUANG RESIGNS EFFECTIVE IMMEDIATELY\n\nNvidia announces a major leadership shake-up:\n\n🔸 Jensen Huang resigns as CEO, president and board member, effective immediately.\n🔸 Colette Kress, Nvidia's CFO, appointed interim CEO.\n🔸 Harvey C. Jones",
+    "url": "https://x.com/DeItaone/status/2120876799252979752",
+    "likes": 2274,
+    "reposts": 516,
+    "ts": "2026-11-12T13:50:07.000Z",
+    "note": "Walter Bloomberg with the full announcement: Huang out as CEO, president and director, effective immediately"
    },
    {
-    "handle": "SedarZan52448",
-    "name": "Zan | Cross Asset",
-    "text": "CoreWeave just bought the AI trade a day \n\nThe real tests are still ahead \n\nThu: Nebius before the open, Cisco and Applied Materials after the close \n\nTue 17 Nov: Nvidia (EPS est. ~2.47, revenue ~$109B) \n\nAMAT matters most for chip equipment, ASML's neighbour in the supply chain https://t.co/0f7aC4wVNV",
-    "url": "https://x.com/SedarZan52448/status/2120495414151467455",
-    "likes": 2,
-    "reposts": 0,
-    "ts": "2026-11-11T12:34:38.000Z",
-    "note": "Frames AMAT Thursday as the real test for chip-equipment spending after the rebound"
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: Nvidia, $NVDA, has appointed Colette Kress, the company’s current CFO, as Interim CEO.\n\nJensen Huang’s 33-year career at Nvidia has officially come to an end.",
+    "url": "https://x.com/KobeissiLetter/status/2120878535497916576",
+    "likes": 3573,
+    "reposts": 343,
+    "ts": "2026-11-12T13:57:01.000Z",
+    "note": "Kobeissi: CFO Colette Kress named interim CEO, ending Huang's 33-year run"
    },
    {
-    "handle": "financespotnews",
-    "name": "Finance Spot",
-    "text": "$AMAT Applied Materials reports fiscal Q4 2026 earnings Thursday after close — Wall Street expects approximately $2.10 adjusted EPS and $6.67 billion revenue.\n\nApplied Materials closed Tuesday at approximately $229.99. The critical semiconductor capital equipment read continues https://t.co/cMCiSR2dMY",
-    "url": "https://x.com/financespotnews/status/2120466565678404087",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-11-11T10:40:00.000Z",
-    "note": "AMAT preview: consensus EPS/revenue going into Thursday after the close"
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: Nvidia stock, $NVDA, plunges over -10% after Jensen Huang officially resigns as CEO.\n\nThe stock has now erased -$750 billion in market cap since the scandal began. https://t.co/OrXFS3GQE3",
+    "url": "https://x.com/KobeissiLetter/status/2120877770247221444",
+    "likes": 2622,
+    "reposts": 461,
+    "ts": "2026-11-12T13:53:59.000Z",
+    "note": "The market verdict: stock down 10%+ premarket, about $750B erased since the scandal began"
+   },
+   {
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "JENSEN HUANG RESIGNS AS $NVDA CEO, EFFECTIVE IMMEDIATELY.\n\nCFO Colette Kress named interim CEO while retaining her CFO role. Harvey Jones appointed Nvidia's first-ever board chair.\n\nNvidia's board is launching a search for a permanent CEO, considering internal and external https://t.co/UYP13bSYfM",
+    "url": "https://x.com/wallstengine/status/2120877415203561897",
+    "likes": 421,
+    "reposts": 73,
+    "ts": "2026-11-12T13:52:34.000Z",
+    "note": "Wall St Engine adds the governance changes: Harvey Jones becomes first board chair, permanent CEO search starts"
+   },
+   {
+    "handle": "TheStalwart",
+    "name": "Joe Weisenthal",
+    "text": "*NVIDIA'S JENSEN HUANG RESIGNS AS CEO\n\n*NVIDIA NAMES KRESS INTERIM CEO, RETAINS CFO ROLE",
+    "url": "https://x.com/TheStalwart/status/2120876684165759278",
+    "likes": 905,
+    "reposts": 142,
+    "ts": "2026-11-12T13:49:40.000Z",
+    "note": "Joe Weisenthal (Bloomberg) flags the key detail that Kress keeps the CFO role"
+   },
+   {
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: Nvidia, $NVDA, is preparing to fire Jensen Huang, its founder and CEO, after allegations of a second affair have surfaced, per WSJ.\n\nThe board is preparing to meet as soon as today to determine his future.",
+    "url": "https://x.com/KobeissiLetter/status/2120645818587951491",
+    "likes": 13058,
+    "reposts": 1052,
+    "ts": "2026-11-11T22:32:17.000Z",
+    "note": "Context from last night: WSJ reported the board was preparing to remove him after a second alleged affair"
+   }
+  ],
+  "ad8e3b9dc741": [
+   {
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: Nvidia, $NVDA, has appointed Colette Kress, the company’s current CFO, as Interim CEO.\n\nJensen Huang’s 33-year career at Nvidia has officially come to an end.",
+    "url": "https://x.com/KobeissiLetter/status/2120878535497916576",
+    "likes": 3573,
+    "reposts": 343,
+    "ts": "2026-11-12T13:57:01.000Z",
+    "note": "Kobeissi: CFO Colette Kress named interim CEO, ending Huang's 33-year run"
+   },
+   {
+    "handle": "DeItaone",
+    "name": "*Walter Bloomberg",
+    "text": "$NVDA  - BREAKING: NVIDIA CEO JENSEN HUANG RESIGNS EFFECTIVE IMMEDIATELY\n\nNvidia announces a major leadership shake-up:\n\n🔸 Jensen Huang resigns as CEO, president and board member, effective immediately.\n🔸 Colette Kress, Nvidia's CFO, appointed interim CEO.\n🔸 Harvey C. Jones",
+    "url": "https://x.com/DeItaone/status/2120876799252979752",
+    "likes": 2274,
+    "reposts": 516,
+    "ts": "2026-11-12T13:50:07.000Z",
+    "note": "Walter Bloomberg with the full announcement: Huang out as CEO, president and director, effective immediately"
+   },
+   {
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: Nvidia stock, $NVDA, plunges over -10% after Jensen Huang officially resigns as CEO.\n\nThe stock has now erased -$750 billion in market cap since the scandal began. https://t.co/OrXFS3GQE3",
+    "url": "https://x.com/KobeissiLetter/status/2120877770247221444",
+    "likes": 2622,
+    "reposts": 461,
+    "ts": "2026-11-12T13:53:59.000Z",
+    "note": "The market verdict: stock down 10%+ premarket, about $750B erased since the scandal began"
+   },
+   {
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: US neocloud stocks collapse after Jensen Huang resigns as CEO of Nvidia:\n\n1. Nebius, $NBIS: -21%\n2. CoreWeave, $CRWV: -14%\n3. Roundhill Neocloud ETF, $NEO: -13%\n4. IREN, $IREN: -9%\n5. Cipher Digital, $CIFR: -9%\n6. Applied Digital, $APLD: -8%\n7. TeraWulf, $WULF: -7%\n8.",
+    "url": "https://x.com/KobeissiLetter/status/2120886129813553412",
+    "likes": 1524,
+    "reposts": 220,
+    "ts": "2026-11-12T14:27:12.000Z",
+    "note": "Contagion from the Huang exit: neocloud names like Nebius and CoreWeave drop double digits premarket"
    }
   ],
   "2c4253485cf5": [
    {
-    "handle": "HEMANTKUMA7fu",
-    "name": "HEMANT KUMAR",
-    "text": "~$430B wiped off $NVDA in 48 hrs (~$4.07T cap) as markets price in export & governance risk around the Alice Huang probe. Eyes now on Nov 17 Q3 earnings & Nov 18 House briefing. \n#NVIDIA #Semiconductors #Finance #Trading  #NVIDIA #NVDA #StockMarket #Investing #Markets #WallStreet",
-    "url": "https://x.com/HEMANTKUMA7fu/status/2120356440456245274",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-11-11T03:22:24.000Z",
-    "note": "Why NVDA sold off: ~$430B lost in 48h on export/governance worries before earnings"
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: Nvidia stock, $NVDA, plunges over -10% after Jensen Huang officially resigns as CEO.\n\nThe stock has now erased -$750 billion in market cap since the scandal began. https://t.co/OrXFS3GQE3",
+    "url": "https://x.com/KobeissiLetter/status/2120877770247221444",
+    "likes": 2622,
+    "reposts": 461,
+    "ts": "2026-11-12T13:53:59.000Z",
+    "note": "The market verdict: stock down 10%+ premarket, about $750B erased since the scandal began"
    },
    {
-    "handle": "bhanupippadi",
-    "name": "Bhanu P",
-    "text": "Nvidia now trades at ~12x forward earnings.\n\nThe S&P 500 is at ~18x. Walmart is at ~40x.\n\nNvidia grew revenue 106% last quarter.\n\nMy take: the market is pricing $NVDA like a cyclical at its peak. Nov 17 earnings will test that.\n\nBargain or value trap? https://t.co/4pHDAh9Tij",
-    "url": "https://x.com/bhanupippadi/status/2120517864851742844",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-11T14:03:50.000Z",
-    "note": "Valuation angle: market pricing NVDA like a peak-cycle stock ahead of Nov 17"
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: Nvidia, $NVDA, is now working with an \"outside firm\" to find a new CEO to replace Jensen Huang, per Bloomberg.\n\nThe company is also reportedly weighing naming a temporary CEO while searching for a replacement.",
+    "url": "https://x.com/KobeissiLetter/status/2120663608065704205",
+    "likes": 8221,
+    "reposts": 579,
+    "ts": "2026-11-11T23:42:58.000Z",
+    "note": "Bloomberg report that Nvidia hired an outside search firm, the step before the resignation"
    },
    {
-    "handle": "MarketCapOf",
-    "name": "MarketCapOf",
-    "text": "Nvidia ( $NVDA ) is heading into its November 17 Q3 earnings report with Wall Street still bullish, but expectations are far from uniform.\n\nWhile Bank of America and #Bernstein maintain ambitious price targets, #Citi , #WellsFargo and Mizuho have revised theirs lower. The ongoing",
-    "url": "https://x.com/MarketCapOf/status/2120422278051860512",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-11T07:44:01.000Z",
-    "note": "Street split into Nov 17: BofA/Bernstein bullish, others more cautious"
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: Nvidia, $NVDA, is preparing to fire Jensen Huang, its founder and CEO, after allegations of a second affair have surfaced, per WSJ.\n\nThe board is preparing to meet as soon as today to determine his future.",
+    "url": "https://x.com/KobeissiLetter/status/2120645818587951491",
+    "likes": 13058,
+    "reposts": 1052,
+    "ts": "2026-11-11T22:32:17.000Z",
+    "note": "Context from last night: WSJ reported the board was preparing to remove him after a second alleged affair"
+   },
+   {
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: US neocloud stocks collapse after Jensen Huang resigns as CEO of Nvidia:\n\n1. Nebius, $NBIS: -21%\n2. CoreWeave, $CRWV: -14%\n3. Roundhill Neocloud ETF, $NEO: -13%\n4. IREN, $IREN: -9%\n5. Cipher Digital, $CIFR: -9%\n6. Applied Digital, $APLD: -8%\n7. TeraWulf, $WULF: -7%\n8.",
+    "url": "https://x.com/KobeissiLetter/status/2120886129813553412",
+    "likes": 1524,
+    "reposts": 220,
+    "ts": "2026-11-12T14:27:12.000Z",
+    "note": "Contagion from the Huang exit: neocloud names like Nebius and CoreWeave drop double digits premarket"
    }
   ],
-  "94bbfa3b8c6d": [
+  "1c7b557b097f": [
    {
     "handle": "DeItaone",
     "name": "*Walter Bloomberg",
-    "text": "MSFT - MICROSOFT WARNS CHINESE COMPONENT BAN COULD HALT US AI DATA-CENTER EXPANSION. Microsoft is urging the Trump administration to abandon plans to ban Chinese optical transceivers...",
-    "url": "https://x.com/DeItaone/status/2120110806046040455",
-    "likes": 354,
-    "reposts": 67,
-    "ts": "2026-11-10T11:06:20Z",
-    "note": "Most-shared optical story today; a ban would reshape supply for LITE and COHR."
+    "text": "ANTHROPIC'S $90 BILLION IPO IS ALREADY MULTIPLE TIMES OVERSUBSCRIBED\n\nAnthropic ($ANT) has reportedly attracted several times more investor orders than shares available, according to Bloomberg, citing people familiar with the offering.\n\nThe Claude maker aims to raise up to $90.4B",
+    "url": "https://x.com/DeItaone/status/2120513798406582372",
+    "likes": 681,
+    "reposts": 92,
+    "ts": "2026-11-11T13:47:41.000Z",
+    "note": "Bloomberg via Walter Bloomberg: the roughly $90B IPO is already several times oversubscribed"
    },
    {
-    "handle": "carrioresearch",
-    "name": "Carrio",
-    "text": "The world's first co-packaged optics Ethernet switch is in full production. Lasers and external light sources: LITE and COHR. Both have multiyear NVIDIA agreements.",
-    "url": "https://x.com/carrioresearch/status/2119073514653434015",
-    "likes": 27,
-    "reposts": 1,
-    "ts": "2026-11-07T14:24:31Z",
-    "note": "Why Lumentum sits in the co-packaged optics value chain."
+    "handle": "unusual_whales",
+    "name": "unusual_whales",
+    "text": "BREAKING: Anthropic bankers prepare to increase IPO valuation to $1.5 trillion or more, per FT",
+    "url": "https://x.com/unusual_whales/status/2120331422850548202",
+    "likes": 1342,
+    "reposts": 66,
+    "ts": "2026-11-11T01:42:59.000Z",
+    "note": "FT report that bankers may lift the valuation to $1.5T or more, the number skeptics are pushing back on"
    },
    {
-    "handle": "Schulz_Research",
-    "name": "Schulz Duggan",
-    "text": "Co-packaged optics, or moving the light right up to the switch chip. A 1.6T plug-in optical module burns about 30 watts...",
-    "url": "https://x.com/Schulz_Research/status/2119521380278620202",
-    "likes": 17,
-    "reposts": 1,
-    "ts": "2026-11-08T20:04:10Z",
-    "note": "Clear explainer thread on the tech behind the optical trade."
+    "handle": "StockMKTNewz",
+    "name": "Evan",
+    "text": "HERE IS EVERYTHING YOU NEED TO KNOW ABOUT ANTHROPIC HEADING INTO THE IPO\n\nThe IPO:\n- Price range: $70 to $78 per share\n- 825M shares for sale\n- On top of the 825M shares Anthropic is selling $26B of stock to Google, Nvidia, AMD, Broadcom, Micron, Microsoft, and TSMC at the IPO https://t.co/8pBiy8KUYL",
+    "url": "https://x.com/StockMKTNewz/status/2120132357294268550",
+    "likes": 1315,
+    "reposts": 120,
+    "ts": "2026-11-10T12:31:58.000Z",
+    "note": "Handy one-post summary of the deal terms: $70-78 range, 825M shares, plus a $26B private placement"
+   },
+   {
+    "handle": "unusual_whales",
+    "name": "unusual_whales",
+    "text": "These companies are buying $26 billion of Anthropic $ANT stock at its IPO price:\n\nGoogle $GOOGL: $10B\nNvidia $NVDA: $10B\nAMD $AMD: $2.5B\nBroadcom $AVGO: $1B\nMicron $MU: $1B\nMicrosoft $MSFT: $1B\nTSMC $TSM: $500M\n\nThe private placement comes on top of the public offering and closes",
+    "url": "https://x.com/unusual_whales/status/2120196536252440820",
+    "likes": 1049,
+    "reposts": 103,
+    "ts": "2026-11-10T16:47:00.000Z",
+    "note": "Who is buying the $26B placement at the IPO price: Google, Nvidia, AMD, Broadcom, Micron, Microsoft, TSMC"
+   },
+   {
+    "handle": "unusual_whales",
+    "name": "unusual_whales",
+    "text": "BREAKING: Anthropic is targeting Nov. 19 or 20 to start trading on the Nasdaq under the ticker ANT, per the WSJ.\n\nThe company is expected to reveal its IPO valuation range in a filing early this week and has investor meetings lined up, as some major investors push for a valuation",
+    "url": "https://x.com/unusual_whales/status/2119921222385336366",
+    "likes": 1483,
+    "reposts": 118,
+    "ts": "2026-11-09T22:33:00.000Z",
+    "note": "Timing: WSJ says trading could start Nov. 19 or 20 on Nasdaq under ANT"
    }
   ],
-  "a7d584158375": [
+  "ceaa59b0fc65": [
    {
-    "handle": "Beth_KindigPes",
-    "name": "Beth Kindig",
-    "text": "Super Micro SMCI announced preliminary FQ1 revenue of $18.5-$19.5 billion, well above its original guidance for $14.5-15.5 billion and representing 279% YoY and 71% QoQ growth.",
-    "url": "https://x.com/Beth_KindigPes/status/2120065680808800445",
-    "likes": 1,
-    "reposts": 1,
-    "ts": "2026-11-10T08:07:01Z",
-    "note": "Credible tech analyst on the size of the revenue upside."
+    "handle": "unusual_whales",
+    "name": "unusual_whales",
+    "text": "BREAKING: Anthropic bankers prepare to increase IPO valuation to $1.5 trillion or more, per FT",
+    "url": "https://x.com/unusual_whales/status/2120331422850548202",
+    "likes": 1342,
+    "reposts": 66,
+    "ts": "2026-11-11T01:42:59.000Z",
+    "note": "FT report that bankers may lift the valuation to $1.5T or more, the number skeptics are pushing back on"
    },
    {
-    "handle": "AIStockSavvy",
-    "name": "Hardik Shah",
-    "text": "SMCI | Susquehanna maintains Negative on Super Micro Computer, raises PT to $18 from $15. Analyst sees higher estimates after Sep-Q earnings but maintains a Negative rating due to valuation.",
-    "url": "https://x.com/AIStockSavvy/status/2120120132303487164",
-    "likes": 4,
-    "reposts": 0,
-    "ts": "2026-11-10T11:43:24Z",
-    "note": "Sell-side bear case despite the beat."
+    "handle": "DeItaone",
+    "name": "*Walter Bloomberg",
+    "text": "ANTHROPIC'S $90 BILLION IPO IS ALREADY MULTIPLE TIMES OVERSUBSCRIBED\n\nAnthropic ($ANT) has reportedly attracted several times more investor orders than shares available, according to Bloomberg, citing people familiar with the offering.\n\nThe Claude maker aims to raise up to $90.4B",
+    "url": "https://x.com/DeItaone/status/2120513798406582372",
+    "likes": 681,
+    "reposts": 92,
+    "ts": "2026-11-11T13:47:41.000Z",
+    "note": "Bloomberg via Walter Bloomberg: the roughly $90B IPO is already several times oversubscribed"
    },
    {
-    "handle": "PrometeusCT",
-    "name": "Prometeus Consulting",
-    "text": "Super Micro: Revenue $19.95B (nearly 4x) and FY27 outlook raised to $72-82B. Margins down to 12.8%, and one customer made up 44% of sales.",
-    "url": "https://x.com/PrometeusCT/status/2119471199784997109",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-08T16:44:46Z",
-    "note": "Margin and customer-concentration risk in one line."
+    "handle": "unusual_whales",
+    "name": "unusual_whales",
+    "text": "These companies are buying $26 billion of Anthropic $ANT stock at its IPO price:\n\nGoogle $GOOGL: $10B\nNvidia $NVDA: $10B\nAMD $AMD: $2.5B\nBroadcom $AVGO: $1B\nMicron $MU: $1B\nMicrosoft $MSFT: $1B\nTSMC $TSM: $500M\n\nThe private placement comes on top of the public offering and closes",
+    "url": "https://x.com/unusual_whales/status/2120196536252440820",
+    "likes": 1049,
+    "reposts": 103,
+    "ts": "2026-11-10T16:47:00.000Z",
+    "note": "Who is buying the $26B placement at the IPO price: Google, Nvidia, AMD, Broadcom, Micron, Microsoft, TSMC"
+   },
+   {
+    "handle": "StockMKTNewz",
+    "name": "Evan",
+    "text": "HERE IS EVERYTHING YOU NEED TO KNOW ABOUT ANTHROPIC HEADING INTO THE IPO\n\nThe IPO:\n- Price range: $70 to $78 per share\n- 825M shares for sale\n- On top of the 825M shares Anthropic is selling $26B of stock to Google, Nvidia, AMD, Broadcom, Micron, Microsoft, and TSMC at the IPO https://t.co/8pBiy8KUYL",
+    "url": "https://x.com/StockMKTNewz/status/2120132357294268550",
+    "likes": 1315,
+    "reposts": 120,
+    "ts": "2026-11-10T12:31:58.000Z",
+    "note": "Handy one-post summary of the deal terms: $70-78 range, 825M shares, plus a $26B private placement"
    }
   ],
-  "d98dc4f84d53": [
+  "edee2fbfb83c": [
    {
     "handle": "DeItaone",
     "name": "*Walter Bloomberg",
     "text": "CHIP STOCKS SURGE AS COREWEAVE EASES AI FEARS\n\nSemiconductors rally after CoreWeave's results:\n\n$MRVL: +8.5%\n$MU: +6.6%\n$INTC: +6.3%\n$AVGO: +6.2%\n$AMD: +3.2%\n$NVDA: +2.6%\n$QCOM: +2.6%\n$SOXX: +4.8%",
     "url": "https://x.com/DeItaone/status/2120525754442076339",
-    "likes": 104,
-    "reposts": 10,
+    "likes": 425,
+    "reposts": 37,
     "ts": "2026-11-11T14:35:11.000Z",
-    "note": "Most-shared tape of the semis rebound: CoreWeave results eased AI-demand fears"
+    "note": "Yesterday's snapback: Marvell, Micron, Intel and Broadcom up 6-8% after CoreWeave's results"
    },
    {
-    "handle": "bhanupippadi",
-    "name": "Bhanu P",
-    "text": "Nvidia now trades at ~12x forward earnings.\n\nThe S&P 500 is at ~18x. Walmart is at ~40x.\n\nNvidia grew revenue 106% last quarter.\n\nMy take: the market is pricing $NVDA like a cyclical at its peak. Nov 17 earnings will test that.\n\nBargain or value trap? https://t.co/4pHDAh9Tij",
-    "url": "https://x.com/bhanupippadi/status/2120517864851742844",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-11T14:03:50.000Z",
-    "note": "Valuation angle: market pricing NVDA like a peak-cycle stock ahead of Nov 17"
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "CoreWeave $CRWV says it's \"largely sold out through 2027,\" and all 2028 capacity offered so far has also been sold.\n\nQualified demand is 10x available capacity through 2027, while 2028 demand is already several times supply.\n\nIt sees no material risk to its 2027 deliveries. https://t.co/nTBkQEKrWW",
+    "url": "https://x.com/wallstengine/status/2120288491817042281",
+    "likes": 563,
+    "reposts": 54,
+    "ts": "2026-11-10T22:52:24.000Z",
+    "note": "Why CoreWeave eased AI fears: capacity largely sold out through 2027, demand 10x supply"
    },
    {
-    "handle": "danishseth_02",
-    "name": "Danish Seth",
-    "text": "South Korea’s market jumped 4.39% in a day. Japan’s Nikkei climbed nearly 3%.\n\nWhat changed? Not the whole AI story overnight. Investor nerves simply eased and buyers came back. \n\nAfter the US midterm results, investors worried that tighter rules could slow AI data-centre",
-    "url": "https://x.com/danishseth_02/status/2120223063812010236",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-10T18:32:24.000Z",
-    "note": "Asia joined the rebound (KOSPI +4.4%) as AI-trade nerves eased"
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "CoreWeave $CRWV says pricing for its older Nvidia Ampere and Hopper GPUs rose 30% to 50% QoQ in Q3, above their original contract prices\n\nMore than 130,000 GPUs come off contract in 2027 and about 170,000 in 2028\n\nRenewing them at current prices would add nearly $10B of https://t.co/v5vu8TsUkk",
+    "url": "https://x.com/wallstengine/status/2120286449576841637",
+    "likes": 376,
+    "reposts": 41,
+    "ts": "2026-11-10T22:44:17.000Z",
+    "note": "A demand tell for Nvidia GPUs: older Ampere and Hopper rental prices rose 30-50% quarter over quarter"
+   },
+   {
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "COREWEAVE $CRWV Q3’26 EARNINGS HIGHLIGHTS\n\n🔹 Revenue: $3.66B (Est. $3.55B) 🟢; +168% YoY\n🔹 Adj. Operating Income: $379M (Est. $234M) 🟢\n🔹 Adj. EBITDA: $2.26B (Est. $2.04B) 🟢; +169% YoY\n🔹 Adj. Net Loss: -$529M (Est. -$677M) 🟢\n🔹 GAAP EPS: -$1.27\n\nRaises FY26 Guide:\n🔹 https://t.co/BX7yImQRo7",
+    "url": "https://x.com/wallstengine/status/2120262870088753517",
+    "likes": 616,
+    "reposts": 96,
+    "ts": "2026-11-10T21:10:35.000Z",
+    "note": "CoreWeave Q3 beat on revenue, EBITDA and operating income, the print that sparked the rally"
+   },
+   {
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: US neocloud stocks collapse after Jensen Huang resigns as CEO of Nvidia:\n\n1. Nebius, $NBIS: -21%\n2. CoreWeave, $CRWV: -14%\n3. Roundhill Neocloud ETF, $NEO: -13%\n4. IREN, $IREN: -9%\n5. Cipher Digital, $CIFR: -9%\n6. Applied Digital, $APLD: -8%\n7. TeraWulf, $WULF: -7%\n8.",
+    "url": "https://x.com/KobeissiLetter/status/2120886129813553412",
+    "likes": 1524,
+    "reposts": 220,
+    "ts": "2026-11-12T14:27:12.000Z",
+    "note": "Contagion from the Huang exit: neocloud names like Nebius and CoreWeave drop double digits premarket"
    }
   ],
-  "075e581d8f90": [
+  "d98dc4f84d53": [
    {
-    "handle": "LiveSquawk",
-    "name": "LiveSquawk",
-    "text": "Infineon Q4 2026 Earnings\n- Rev: €4.71B, Up 19% Y/Y\n- Propose FY2026 Div Increase To €0.38/Share\n- Sees Q127 Rev: About €4.6B At Ass. EUR/USD Exchange Rate Of 1.15\n- Sees FY27 Rev Growth: More Than 20% At About €20B\n- Sale Of NOR Flash And F-RAM Memory To Close In H2 2027",
-    "url": "https://x.com/LiveSquawk/status/2120044022991606009",
-    "likes": 8,
-    "reposts": 1,
-    "ts": "2026-11-10T06:40:58.000Z",
-    "note": "Headline numbers: Q4 rev +19% y/y, FY27 growth guided above 20%"
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: US neocloud stocks collapse after Jensen Huang resigns as CEO of Nvidia:\n\n1. Nebius, $NBIS: -21%\n2. CoreWeave, $CRWV: -14%\n3. Roundhill Neocloud ETF, $NEO: -13%\n4. IREN, $IREN: -9%\n5. Cipher Digital, $CIFR: -9%\n6. Applied Digital, $APLD: -8%\n7. TeraWulf, $WULF: -7%\n8.",
+    "url": "https://x.com/KobeissiLetter/status/2120886129813553412",
+    "likes": 1524,
+    "reposts": 220,
+    "ts": "2026-11-12T14:27:12.000Z",
+    "note": "Contagion from the Huang exit: neocloud names like Nebius and CoreWeave drop double digits premarket"
    },
    {
-    "handle": "S_NewsRoomCOM",
-    "name": "StockNewsRoom",
-    "text": "$IFX: Infineon +7.3% pre-market — the German chipmaker paired its earnings with a share buyback of up to €700 million, and the market decided the capital-return part was the interesting part. A buyback announcement is management's way of saying 'we don't have a better use for",
-    "url": "https://x.com/S_NewsRoomCOM/status/2120488746558636105",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-11T12:08:08.000Z",
-    "note": "Why IFX is up premarket: up-to-€700M buyback alongside results"
+    "handle": "DeItaone",
+    "name": "*Walter Bloomberg",
+    "text": "CHIP STOCKS SURGE AS COREWEAVE EASES AI FEARS\n\nSemiconductors rally after CoreWeave's results:\n\n$MRVL: +8.5%\n$MU: +6.6%\n$INTC: +6.3%\n$AVGO: +6.2%\n$AMD: +3.2%\n$NVDA: +2.6%\n$QCOM: +2.6%\n$SOXX: +4.8%",
+    "url": "https://x.com/DeItaone/status/2120525754442076339",
+    "likes": 425,
+    "reposts": 37,
+    "ts": "2026-11-11T14:35:11.000Z",
+    "note": "Yesterday's snapback: Marvell, Micron, Intel and Broadcom up 6-8% after CoreWeave's results"
    },
    {
-    "handle": "FNS_Stocks",
-    "name": "FNS - Financial News Systems",
-    "text": "$IFX Infineon issues outlook below expectations after earnings only come in line with consensus https://t.co/ZfnanlnpSO",
-    "url": "https://x.com/FNS_Stocks/status/2120041651108270385",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-10T06:31:32.000Z",
-    "note": "Bear read: outlook seen below expectations, EPS only in line"
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "CoreWeave $CRWV says pricing for its older Nvidia Ampere and Hopper GPUs rose 30% to 50% QoQ in Q3, above their original contract prices\n\nMore than 130,000 GPUs come off contract in 2027 and about 170,000 in 2028\n\nRenewing them at current prices would add nearly $10B of https://t.co/v5vu8TsUkk",
+    "url": "https://x.com/wallstengine/status/2120286449576841637",
+    "likes": 376,
+    "reposts": 41,
+    "ts": "2026-11-10T22:44:17.000Z",
+    "note": "A demand tell for Nvidia GPUs: older Ampere and Hopper rental prices rose 30-50% quarter over quarter"
+   },
+   {
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: Nvidia stock, $NVDA, plunges over -10% after Jensen Huang officially resigns as CEO.\n\nThe stock has now erased -$750 billion in market cap since the scandal began. https://t.co/OrXFS3GQE3",
+    "url": "https://x.com/KobeissiLetter/status/2120877770247221444",
+    "likes": 2622,
+    "reposts": 461,
+    "ts": "2026-11-12T13:53:59.000Z",
+    "note": "The market verdict: stock down 10%+ premarket, about $750B erased since the scandal began"
+   }
+  ],
+  "a7d584158375": [
+   {
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: US neocloud stocks collapse after Jensen Huang resigns as CEO of Nvidia:\n\n1. Nebius, $NBIS: -21%\n2. CoreWeave, $CRWV: -14%\n3. Roundhill Neocloud ETF, $NEO: -13%\n4. IREN, $IREN: -9%\n5. Cipher Digital, $CIFR: -9%\n6. Applied Digital, $APLD: -8%\n7. TeraWulf, $WULF: -7%\n8.",
+    "url": "https://x.com/KobeissiLetter/status/2120886129813553412",
+    "likes": 1524,
+    "reposts": 220,
+    "ts": "2026-11-12T14:27:12.000Z",
+    "note": "Contagion from the Huang exit: neocloud names like Nebius and CoreWeave drop double digits premarket"
+   },
+   {
+    "handle": "DeItaone",
+    "name": "*Walter Bloomberg",
+    "text": "CHIP STOCKS SURGE AS COREWEAVE EASES AI FEARS\n\nSemiconductors rally after CoreWeave's results:\n\n$MRVL: +8.5%\n$MU: +6.6%\n$INTC: +6.3%\n$AVGO: +6.2%\n$AMD: +3.2%\n$NVDA: +2.6%\n$QCOM: +2.6%\n$SOXX: +4.8%",
+    "url": "https://x.com/DeItaone/status/2120525754442076339",
+    "likes": 425,
+    "reposts": 37,
+    "ts": "2026-11-11T14:35:11.000Z",
+    "note": "Yesterday's snapback: Marvell, Micron, Intel and Broadcom up 6-8% after CoreWeave's results"
+   }
+  ],
+  "1c37c6641fa2": [
+   {
+    "handle": "DeItaone",
+    "name": "*Walter Bloomberg",
+    "text": "$NVDA  - BREAKING: NVIDIA CEO JENSEN HUANG RESIGNS EFFECTIVE IMMEDIATELY\n\nNvidia announces a major leadership shake-up:\n\n🔸 Jensen Huang resigns as CEO, president and board member, effective immediately.\n🔸 Colette Kress, Nvidia's CFO, appointed interim CEO.\n🔸 Harvey C. Jones",
+    "url": "https://x.com/DeItaone/status/2120876799252979752",
+    "likes": 2274,
+    "reposts": 516,
+    "ts": "2026-11-12T13:50:07.000Z",
+    "note": "Walter Bloomberg with the full announcement: Huang out as CEO, president and director, effective immediately"
+   },
+   {
+    "handle": "unusual_whales",
+    "name": "unusual_whales",
+    "text": "These companies are buying $26 billion of Anthropic $ANT stock at its IPO price:\n\nGoogle $GOOGL: $10B\nNvidia $NVDA: $10B\nAMD $AMD: $2.5B\nBroadcom $AVGO: $1B\nMicron $MU: $1B\nMicrosoft $MSFT: $1B\nTSMC $TSM: $500M\n\nThe private placement comes on top of the public offering and closes",
+    "url": "https://x.com/unusual_whales/status/2120196536252440820",
+    "likes": 1049,
+    "reposts": 103,
+    "ts": "2026-11-10T16:47:00.000Z",
+    "note": "Who is buying the $26B placement at the IPO price: Google, Nvidia, AMD, Broadcom, Micron, Microsoft, TSMC"
    }
   ]
  },
@@ -358,6 +500,26 @@
   ],
   "MU": [
    {
+    "handle": "DeItaone",
+    "name": "*Walter Bloomberg",
+    "text": "CHIP STOCKS SURGE AS COREWEAVE EASES AI FEARS\n\nSemiconductors rally after CoreWeave's results:\n\n$MRVL: +8.5%\n$MU: +6.6%\n$INTC: +6.3%\n$AVGO: +6.2%\n$AMD: +3.2%\n$NVDA: +2.6%\n$QCOM: +2.6%\n$SOXX: +4.8%",
+    "url": "https://x.com/DeItaone/status/2120525754442076339",
+    "likes": 425,
+    "reposts": 37,
+    "ts": "2026-11-11T14:35:11.000Z",
+    "note": "Yesterday's snapback: Marvell, Micron, Intel and Broadcom up 6-8% after CoreWeave's results"
+   },
+   {
+    "handle": "unusual_whales",
+    "name": "unusual_whales",
+    "text": "These companies are buying $26 billion of Anthropic $ANT stock at its IPO price:\n\nGoogle $GOOGL: $10B\nNvidia $NVDA: $10B\nAMD $AMD: $2.5B\nBroadcom $AVGO: $1B\nMicron $MU: $1B\nMicrosoft $MSFT: $1B\nTSMC $TSM: $500M\n\nThe private placement comes on top of the public offering and closes",
+    "url": "https://x.com/unusual_whales/status/2120196536252440820",
+    "likes": 1049,
+    "reposts": 103,
+    "ts": "2026-11-10T16:47:00.000Z",
+    "note": "Who is buying the $26B placement at the IPO price: Google, Nvidia, AMD, Broadcom, Micron, Microsoft, TSMC"
+   },
+   {
     "handle": "VladBastion",
     "name": "Vlad Bastion",
     "text": "A brutal week for AI semi/memory stocks. 7-day returns: \n\n🧩 Intel -37% $INTC\n🔗 Marvell -27% $MRVL\n💽 Sandisk -22% $SNDK\n🖥️ Dell -22% $DELL\n🗄️ Western Digital -18% $WDC\n💾 Micron -15% $MU\n🎮 AMD -14% $AMD\n🔬 Lam Research -13% $LRCX\n⚙️ Applied Materials -12% $AMAT\n🔍 KLA -11%",
@@ -446,6 +608,16 @@
   ],
   "MRVL": [
    {
+    "handle": "DeItaone",
+    "name": "*Walter Bloomberg",
+    "text": "CHIP STOCKS SURGE AS COREWEAVE EASES AI FEARS\n\nSemiconductors rally after CoreWeave's results:\n\n$MRVL: +8.5%\n$MU: +6.6%\n$INTC: +6.3%\n$AVGO: +6.2%\n$AMD: +3.2%\n$NVDA: +2.6%\n$QCOM: +2.6%\n$SOXX: +4.8%",
+    "url": "https://x.com/DeItaone/status/2120525754442076339",
+    "likes": 425,
+    "reposts": 37,
+    "ts": "2026-11-11T14:35:11.000Z",
+    "note": "Yesterday's snapback: Marvell, Micron, Intel and Broadcom up 6-8% after CoreWeave's results"
+   },
+   {
     "handle": "FuturumEquities",
     "name": "Futurum Equities",
     "text": "$MRVL is up 8.5% today as chip stocks rally after CoreWeave's results.\n\nOn Nov 10, @StockSavvyShay and @danielnewmanUV discussed how Marvell compares with Broadcom and the tradeoff between deal risk and concentration risk on the Futurum Equities Podcast. https://t.co/VqUk09QRpC",
@@ -530,44 +702,74 @@
   ],
   "NVDA": [
    {
-    "handle": "bhanupippadi",
-    "name": "Bhanu P",
-    "text": "Nvidia now trades at ~12x forward earnings.\n\nThe S&P 500 is at ~18x. Walmart is at ~40x.\n\nNvidia grew revenue 106% last quarter.\n\nMy take: the market is pricing $NVDA like a cyclical at its peak. Nov 17 earnings will test that.\n\nBargain or value trap? https://t.co/4pHDAh9Tij",
-    "url": "https://x.com/bhanupippadi/status/2120517864851742844",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-11T14:03:50.000Z",
-    "note": "Valuation angle: market pricing NVDA like a peak-cycle stock ahead of Nov 17"
-   },
-   {
-    "handle": "HEMANTKUMA7fu",
-    "name": "HEMANT KUMAR",
-    "text": "~$430B wiped off $NVDA in 48 hrs (~$4.07T cap) as markets price in export & governance risk around the Alice Huang probe. Eyes now on Nov 17 Q3 earnings & Nov 18 House briefing. \n#NVIDIA #Semiconductors #Finance #Trading  #NVIDIA #NVDA #StockMarket #Investing #Markets #WallStreet",
-    "url": "https://x.com/HEMANTKUMA7fu/status/2120356440456245274",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-11-11T03:22:24.000Z",
-    "note": "Why NVDA sold off: ~$430B lost in 48h on export/governance worries before earnings"
-   },
-   {
-    "handle": "MarketCapOf",
-    "name": "MarketCapOf",
-    "text": "Nvidia ( $NVDA ) is heading into its November 17 Q3 earnings report with Wall Street still bullish, but expectations are far from uniform.\n\nWhile Bank of America and #Bernstein maintain ambitious price targets, #Citi , #WellsFargo and Mizuho have revised theirs lower. The ongoing",
-    "url": "https://x.com/MarketCapOf/status/2120422278051860512",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-11T07:44:01.000Z",
-    "note": "Street split into Nov 17: BofA/Bernstein bullish, others more cautious"
-   },
-   {
     "handle": "DeItaone",
     "name": "*Walter Bloomberg",
-    "text": "CHIP STOCKS SURGE AS COREWEAVE EASES AI FEARS\n\nSemiconductors rally after CoreWeave's results:\n\n$MRVL: +8.5%\n$MU: +6.6%\n$INTC: +6.3%\n$AVGO: +6.2%\n$AMD: +3.2%\n$NVDA: +2.6%\n$QCOM: +2.6%\n$SOXX: +4.8%",
-    "url": "https://x.com/DeItaone/status/2120525754442076339",
-    "likes": 104,
-    "reposts": 10,
-    "ts": "2026-11-11T14:35:11.000Z",
-    "note": "Most-shared tape of the semis rebound: CoreWeave results eased AI-demand fears"
+    "text": "$NVDA  - BREAKING: NVIDIA CEO JENSEN HUANG RESIGNS EFFECTIVE IMMEDIATELY\n\nNvidia announces a major leadership shake-up:\n\n🔸 Jensen Huang resigns as CEO, president and board member, effective immediately.\n🔸 Colette Kress, Nvidia's CFO, appointed interim CEO.\n🔸 Harvey C. Jones",
+    "url": "https://x.com/DeItaone/status/2120876799252979752",
+    "likes": 2274,
+    "reposts": 516,
+    "ts": "2026-11-12T13:50:07.000Z",
+    "note": "Walter Bloomberg with the full announcement: Huang out as CEO, president and director, effective immediately"
+   },
+   {
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: Nvidia, $NVDA, has appointed Colette Kress, the company’s current CFO, as Interim CEO.\n\nJensen Huang’s 33-year career at Nvidia has officially come to an end.",
+    "url": "https://x.com/KobeissiLetter/status/2120878535497916576",
+    "likes": 3573,
+    "reposts": 343,
+    "ts": "2026-11-12T13:57:01.000Z",
+    "note": "Kobeissi: CFO Colette Kress named interim CEO, ending Huang's 33-year run"
+   },
+   {
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: Nvidia stock, $NVDA, plunges over -10% after Jensen Huang officially resigns as CEO.\n\nThe stock has now erased -$750 billion in market cap since the scandal began. https://t.co/OrXFS3GQE3",
+    "url": "https://x.com/KobeissiLetter/status/2120877770247221444",
+    "likes": 2622,
+    "reposts": 461,
+    "ts": "2026-11-12T13:53:59.000Z",
+    "note": "The market verdict: stock down 10%+ premarket, about $750B erased since the scandal began"
+   },
+   {
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "JENSEN HUANG RESIGNS AS $NVDA CEO, EFFECTIVE IMMEDIATELY.\n\nCFO Colette Kress named interim CEO while retaining her CFO role. Harvey Jones appointed Nvidia's first-ever board chair.\n\nNvidia's board is launching a search for a permanent CEO, considering internal and external https://t.co/UYP13bSYfM",
+    "url": "https://x.com/wallstengine/status/2120877415203561897",
+    "likes": 421,
+    "reposts": 73,
+    "ts": "2026-11-12T13:52:34.000Z",
+    "note": "Wall St Engine adds the governance changes: Harvey Jones becomes first board chair, permanent CEO search starts"
+   },
+   {
+    "handle": "TheStalwart",
+    "name": "Joe Weisenthal",
+    "text": "*NVIDIA'S JENSEN HUANG RESIGNS AS CEO\n\n*NVIDIA NAMES KRESS INTERIM CEO, RETAINS CFO ROLE",
+    "url": "https://x.com/TheStalwart/status/2120876684165759278",
+    "likes": 905,
+    "reposts": 142,
+    "ts": "2026-11-12T13:49:40.000Z",
+    "note": "Joe Weisenthal (Bloomberg) flags the key detail that Kress keeps the CFO role"
+   },
+   {
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: Nvidia, $NVDA, is preparing to fire Jensen Huang, its founder and CEO, after allegations of a second affair have surfaced, per WSJ.\n\nThe board is preparing to meet as soon as today to determine his future.",
+    "url": "https://x.com/KobeissiLetter/status/2120645818587951491",
+    "likes": 13058,
+    "reposts": 1052,
+    "ts": "2026-11-11T22:32:17.000Z",
+    "note": "Context from last night: WSJ reported the board was preparing to remove him after a second alleged affair"
+   },
+   {
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "CoreWeave $CRWV says pricing for its older Nvidia Ampere and Hopper GPUs rose 30% to 50% QoQ in Q3, above their original contract prices\n\nMore than 130,000 GPUs come off contract in 2027 and about 170,000 in 2028\n\nRenewing them at current prices would add nearly $10B of https://t.co/v5vu8TsUkk",
+    "url": "https://x.com/wallstengine/status/2120286449576841637",
+    "likes": 376,
+    "reposts": 41,
+    "ts": "2026-11-10T22:44:17.000Z",
+    "note": "A demand tell for Nvidia GPUs: older Ampere and Hopper rental prices rose 30-50% quarter over quarter"
    }
   ],
   "TTD": [
@@ -678,56 +880,36 @@
   ],
   "AMAT": [
    {
-    "handle": "SedarZan52448",
-    "name": "Zan | Cross Asset",
-    "text": "CoreWeave just bought the AI trade a day \n\nThe real tests are still ahead \n\nThu: Nebius before the open, Cisco and Applied Materials after the close \n\nTue 17 Nov: Nvidia (EPS est. ~2.47, revenue ~$109B) \n\nAMAT matters most for chip equipment, ASML's neighbour in the supply chain https://t.co/0f7aC4wVNV",
-    "url": "https://x.com/SedarZan52448/status/2120495414151467455",
+    "handle": "bespokeinvest",
+    "name": "Bespoke",
+    "text": "Applied Materials $AMAT and Cisco $CSCO headline tomorrow’s earnings after the close. \n\nNational Vision $EYE, Spectrum Brands $SPB, Wolverine $WWW, and YETI $YETI report before the open. https://t.co/qNQVFgyQQ9",
+    "url": "https://x.com/bespokeinvest/status/2120645368819970551",
+    "likes": 9,
+    "reposts": 1,
+    "ts": "2026-11-11T22:30:30.000Z",
+    "note": "Bespoke: AMAT and Cisco headline after the close today"
+   },
+   {
+    "handle": "HimmaAI",
+    "name": "Himma",
+    "text": "Applied Materials $AMAT reports after the close today. \n\nPrevious earnings &amp; beat/miss record 4/4 beats on both revenue and EPS: https://t.co/vuIy5jesQy",
+    "url": "https://x.com/HimmaAI/status/2120834079201587602",
     "likes": 2,
     "reposts": 0,
-    "ts": "2026-11-11T12:34:38.000Z",
-    "note": "Frames AMAT Thursday as the real test for chip-equipment spending after the rebound"
-   },
-   {
-    "handle": "financespotnews",
-    "name": "Finance Spot",
-    "text": "$AMAT Applied Materials reports fiscal Q4 2026 earnings Thursday after close — Wall Street expects approximately $2.10 adjusted EPS and $6.67 billion revenue.\n\nApplied Materials closed Tuesday at approximately $229.99. The critical semiconductor capital equipment read continues https://t.co/cMCiSR2dMY",
-    "url": "https://x.com/financespotnews/status/2120466565678404087",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-11-11T10:40:00.000Z",
-    "note": "AMAT preview: consensus EPS/revenue going into Thursday after the close"
-   },
-   {
-    "handle": "HBirdtrading",
-    "name": "Hummingbird | Options Education",
-    "text": "Applied Materials shares are in the spotlight Wednesday ahead of earnings Thursday, with DRAM demand and the fiscal 2027 outlook in focus. $AMAT",
-    "url": "https://x.com/HBirdtrading/status/2120530706346754518",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-11T14:54:52.000Z",
-    "note": "DRAM demand and the FY27 outlook are the swing factors for AMAT"
+    "ts": "2026-11-12T11:00:22.000Z",
+    "note": "AMAT has beaten on revenue and EPS four quarters running heading into tonight"
    }
   ],
   "SMCI": [
    {
-    "handle": "Beth_KindigPes",
-    "name": "Beth Kindig",
-    "text": "Super Micro SMCI announced preliminary FQ1 revenue of $18.5-$19.5 billion, well above its original guidance for $14.5-15.5 billion and representing 279% YoY and 71% QoQ growth.",
-    "url": "https://x.com/Beth_KindigPes/status/2120065680808800445",
-    "likes": 1,
-    "reposts": 1,
-    "ts": "2026-11-10T08:07:01Z",
-    "note": "Credible tech analyst on the size of the revenue upside."
-   },
-   {
-    "handle": "AIStockSavvy",
-    "name": "Hardik Shah",
-    "text": "SMCI | Susquehanna maintains Negative on Super Micro Computer, raises PT to $18 from $15. Analyst sees higher estimates after Sep-Q earnings but maintains a Negative rating due to valuation.",
-    "url": "https://x.com/AIStockSavvy/status/2120120132303487164",
-    "likes": 4,
-    "reposts": 0,
-    "ts": "2026-11-10T11:43:24Z",
-    "note": "Sell-side bear case despite the beat."
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: US neocloud stocks collapse after Jensen Huang resigns as CEO of Nvidia:\n\n1. Nebius, $NBIS: -21%\n2. CoreWeave, $CRWV: -14%\n3. Roundhill Neocloud ETF, $NEO: -13%\n4. IREN, $IREN: -9%\n5. Cipher Digital, $CIFR: -9%\n6. Applied Digital, $APLD: -8%\n7. TeraWulf, $WULF: -7%\n8.",
+    "url": "https://x.com/KobeissiLetter/status/2120886129813553412",
+    "likes": 1524,
+    "reposts": 220,
+    "ts": "2026-11-12T14:27:12.000Z",
+    "note": "Contagion from the Huang exit: neocloud names like Nebius and CoreWeave drop double digits premarket"
    }
   ],
   "COHR": [
