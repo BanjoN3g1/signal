@@ -200,6 +200,46 @@
   ],
   "ceaa59b0fc65": [
    {
+    "handle": "NaveraResearch",
+    "name": "Navera Research",
+    "text": "While we do not find the rumored $1.5tn valuation attractive in absolute terms, our Anthropic IPO primer sets out a relative preference over SpaceX ($SPCX) for the next 6-24 months. June trailing sales put Anthropic at 76.1 times revenue versus 87.6 times for $SPCX.",
+    "url": "https://x.com/NaveraResearch/status/2121241680783229132",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-13T14:00:02Z",
+    "note": "Valuation comp: about 76x trailing sales versus SpaceX at about 88x."
+   },
+   {
+    "handle": "AlertsAndNews",
+    "name": "AlertsAndNews",
+    "text": "Anthropic IPO Reportedly 6x Oversubscribed As Valuation Target Hits $1.4T. Anthropic is seeking $64.4B, these numbers come in below the $69.3B raise and roughly $1.5T valuation from earlier reports.",
+    "url": "https://x.com/AlertsAndNews/status/2121038158204965269",
+    "likes": 3,
+    "reposts": 1,
+    "ts": "2026-11-13T00:31:18Z",
+    "note": "Book is 6x covered even after the raise and valuation were trimmed."
+   },
+   {
+    "handle": "itsjenvu",
+    "name": "Jenvu",
+    "text": "Orders for Anthropic's IPO reached about six times the shares on offer, with 825 million shares priced at $70 to $78 and a $1.4 trillion valuation at the top, while pricing is set for November 18, via Bloomberg.",
+    "url": "https://x.com/itsjenvu/status/2121253201462612288",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-13T14:45:48Z",
+    "note": "Deal terms in one line: 825M shares, $70-78 range, pricing Nov 18."
+   },
+   {
+    "handle": "PropfirmExpress",
+    "name": "Prop Firm Express",
+    "text": "Anthropic pre-IPO value tops $1.8 trillion. Its pre-IPO perpetual rose over 8% yesterday. This implies a valuation above the potential $1.4T IPO target.",
+    "url": "https://x.com/PropfirmExpress/status/2120800099093958929",
+    "likes": 13,
+    "reposts": 9,
+    "ts": "2026-11-12T08:45:20Z",
+    "note": "Grey-market pricing sits well above the range, hinting at a first-day pop."
+   },
+   {
     "handle": "unusual_whales",
     "name": "unusual_whales",
     "text": "BREAKING: Anthropic bankers prepare to increase IPO valuation to $1.5 trillion or more, per FT",
@@ -240,59 +280,27 @@
     "note": "Handy one-post summary of the deal terms: $70-78 range, 825M shares, plus a $26B private placement"
    }
   ],
-  "edee2fbfb83c": [
-   {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "CHIP STOCKS SURGE AS COREWEAVE EASES AI FEARS\n\nSemiconductors rally after CoreWeave's results:\n\n$MRVL: +8.5%\n$MU: +6.6%\n$INTC: +6.3%\n$AVGO: +6.2%\n$AMD: +3.2%\n$NVDA: +2.6%\n$QCOM: +2.6%\n$SOXX: +4.8%",
-    "url": "https://x.com/DeItaone/status/2120525754442076339",
-    "likes": 425,
-    "reposts": 37,
-    "ts": "2026-11-11T14:35:11.000Z",
-    "note": "Yesterday's snapback: Marvell, Micron, Intel and Broadcom up 6-8% after CoreWeave's results"
-   },
-   {
-    "handle": "wallstengine",
-    "name": "Wall St Engine",
-    "text": "CoreWeave $CRWV says it's \"largely sold out through 2027,\" and all 2028 capacity offered so far has also been sold.\n\nQualified demand is 10x available capacity through 2027, while 2028 demand is already several times supply.\n\nIt sees no material risk to its 2027 deliveries. https://t.co/nTBkQEKrWW",
-    "url": "https://x.com/wallstengine/status/2120288491817042281",
-    "likes": 563,
-    "reposts": 54,
-    "ts": "2026-11-10T22:52:24.000Z",
-    "note": "Why CoreWeave eased AI fears: capacity largely sold out through 2027, demand 10x supply"
-   },
-   {
-    "handle": "wallstengine",
-    "name": "Wall St Engine",
-    "text": "CoreWeave $CRWV says pricing for its older Nvidia Ampere and Hopper GPUs rose 30% to 50% QoQ in Q3, above their original contract prices\n\nMore than 130,000 GPUs come off contract in 2027 and about 170,000 in 2028\n\nRenewing them at current prices would add nearly $10B of https://t.co/v5vu8TsUkk",
-    "url": "https://x.com/wallstengine/status/2120286449576841637",
-    "likes": 376,
-    "reposts": 41,
-    "ts": "2026-11-10T22:44:17.000Z",
-    "note": "A demand tell for Nvidia GPUs: older Ampere and Hopper rental prices rose 30-50% quarter over quarter"
-   },
-   {
-    "handle": "wallstengine",
-    "name": "Wall St Engine",
-    "text": "COREWEAVE $CRWV Q3’26 EARNINGS HIGHLIGHTS\n\n🔹 Revenue: $3.66B (Est. $3.55B) 🟢; +168% YoY\n🔹 Adj. Operating Income: $379M (Est. $234M) 🟢\n🔹 Adj. EBITDA: $2.26B (Est. $2.04B) 🟢; +169% YoY\n🔹 Adj. Net Loss: -$529M (Est. -$677M) 🟢\n🔹 GAAP EPS: -$1.27\n\nRaises FY26 Guide:\n🔹 https://t.co/BX7yImQRo7",
-    "url": "https://x.com/wallstengine/status/2120262870088753517",
-    "likes": 616,
-    "reposts": 96,
-    "ts": "2026-11-10T21:10:35.000Z",
-    "note": "CoreWeave Q3 beat on revenue, EBITDA and operating income, the print that sparked the rally"
-   },
-   {
-    "handle": "KobeissiLetter",
-    "name": "The Kobeissi Letter",
-    "text": "BREAKING: US neocloud stocks collapse after Jensen Huang resigns as CEO of Nvidia:\n\n1. Nebius, $NBIS: -21%\n2. CoreWeave, $CRWV: -14%\n3. Roundhill Neocloud ETF, $NEO: -13%\n4. IREN, $IREN: -9%\n5. Cipher Digital, $CIFR: -9%\n6. Applied Digital, $APLD: -8%\n7. TeraWulf, $WULF: -7%\n8.",
-    "url": "https://x.com/KobeissiLetter/status/2120886129813553412",
-    "likes": 1524,
-    "reposts": 220,
-    "ts": "2026-11-12T14:27:12.000Z",
-    "note": "Contagion from the Huang exit: neocloud names like Nebius and CoreWeave drop double digits premarket"
-   }
-  ],
   "d98dc4f84d53": [
+   {
+    "handle": "KevInvestingYT",
+    "name": "Kevin Maro",
+    "text": "Upcoming Liquidity Implosion: Nvidia's Crisis, CapEx Debt, Market Leverage, and Rising Interest Rates. Last Thursday, the market got its first warning. The Philadelphia Semiconductor Index fell 12.25%, its second-worst day on record, and $SOXX lost about 23% in a single week.",
+    "url": "https://x.com/KevInvestingYT/status/2121094756683968930",
+    "likes": 15,
+    "reposts": 0,
+    "ts": "2026-11-13T04:16:12Z",
+    "note": "Bear case tying the chip rout to AI capex debt and leverage; widely bookmarked."
+   },
+   {
+    "handle": "Ritholtz",
+    "name": "Barry Ritholtz",
+    "text": "AP and Reuters really got last week's sell-off totally wrong; this post refers to the biases that led to their errors, and a more likely discussion of what happened...",
+    "url": "https://x.com/Ritholtz/status/2121239012228710675",
+    "likes": 6,
+    "reposts": 0,
+    "ts": "2026-11-13T13:49:25Z",
+    "note": "Veteran asset manager argues the selloff was a quant-driven unwind, not the headline narrative."
+   },
    {
     "handle": "KobeissiLetter",
     "name": "The Kobeissi Letter",
@@ -377,6 +385,184 @@
     "ts": "2026-11-10T16:47:00.000Z",
     "note": "Who is buying the $26B placement at the IPO price: Google, Nvidia, AMD, Broadcom, Micron, Microsoft, TSMC"
    }
+  ],
+  "3541f3230711": [
+   {
+    "handle": "NateSilver538",
+    "name": "Nate Silver",
+    "text": "I think, because it happened on top of the midterms and the midterms were a huge story, people are still underindexing on how seismic the NVIDIA story is. Especially when you read the deeper reporting on it.",
+    "url": "https://x.com/NateSilver538/status/2120933049500057735",
+    "likes": 10434,
+    "reposts": 649,
+    "ts": "2026-11-12T17:33:38Z",
+    "note": "Most-engaged take on Nvidia: a top forecaster says markets are still underpricing the Huang exit."
+   },
+   {
+    "handle": "KevInvestingYT",
+    "name": "Kevin Maro",
+    "text": "Upcoming Liquidity Implosion: Nvidia's Crisis, CapEx Debt, Market Leverage, and Rising Interest Rates. Last Thursday, the market got its first warning. The Philadelphia Semiconductor Index fell 12.25%, its second-worst day on record, and $SOXX lost about 23% in a single week.",
+    "url": "https://x.com/KevInvestingYT/status/2121094756683968930",
+    "likes": 15,
+    "reposts": 0,
+    "ts": "2026-11-13T04:16:12Z",
+    "note": "Bear case tying the chip rout to AI capex debt and leverage; widely bookmarked."
+   },
+   {
+    "handle": "Tickeron",
+    "name": "Tickeron",
+    "text": "STOCK MARKET ROTATION: $AMD +5.9%, BROADCOM $AVGO +5.5%, WHILE $NVDA PLUNGES 4.4%! AI CHIP ROTATION: AMD & BROADCOM SURGE, NVIDIA SELLS OFF.",
+    "url": "https://x.com/Tickeron/status/2121016532474200123",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-12T23:05:22Z",
+    "note": "Money rotated within AI chips toward AMD and Broadcom rather than leaving the group."
+   },
+   {
+    "handle": "TheSimonLabs",
+    "name": "Simon Labs",
+    "text": "Nvidia fell as low as $148.80 today, down 14 percent, then closed at $166.19, down 4.3 percent. Thirty three years, one CEO, and no succession plan. Nvidia reports earnings on Tuesday, five days after Huang resigned.",
+    "url": "https://x.com/TheSimonLabs/status/2121061842948694251",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-13T02:05:25Z",
+    "note": "Clean recap of the intraday crash and recovery, plus the no-succession-plan problem into earnings."
+   },
+   {
+    "handle": "Ritholtz",
+    "name": "Barry Ritholtz",
+    "text": "AP and Reuters really got last week's sell-off totally wrong; this post refers to the biases that led to their errors, and a more likely discussion of what happened...",
+    "url": "https://x.com/Ritholtz/status/2121239012228710675",
+    "likes": 6,
+    "reposts": 0,
+    "ts": "2026-11-13T13:49:25Z",
+    "note": "Veteran asset manager argues the selloff was a quant-driven unwind, not the headline narrative."
+   }
+  ],
+  "fa886454de67": [
+   {
+    "handle": "TheCyberSecHub",
+    "name": "The Cyber Security Hub",
+    "text": "Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide: Microsoft is investigating a widespread outage affecting multiple Microsoft 365 services.",
+    "url": "https://x.com/TheCyberSecHub/status/2120973714796003458",
+    "likes": 90,
+    "reposts": 19,
+    "ts": "2026-11-12T20:15:14Z",
+    "note": "Most-shared post on the outage; Copilot was hit along with Outlook and Teams."
+   },
+   {
+    "handle": "realBruceSnyder",
+    "name": "Bruce Snyder",
+    "text": "BREAKING: Widespread Microsoft Outage Disrupts Outlook and Microsoft 365 Services. Microsoft has confirmed a major outage affecting Outlook email, Exchange Online, Microsoft Teams, SharePoint and other Microsoft 365 services.",
+    "url": "https://x.com/realBruceSnyder/status/2120974701224767620",
+    "likes": 49,
+    "reposts": 10,
+    "ts": "2026-11-12T20:19:09Z",
+    "note": "Confirms the scope: Exchange Online and SharePoint were down too."
+   },
+   {
+    "handle": "fuelmeupcc",
+    "name": "Fuelmeup",
+    "text": "Outlook reports on Downdetector peaked at 129,519 around 12:20 p.m. CT and have since fallen to about 44,000 as of 4:03 p.m. CT. Outlook, Teams and Copilot all took the hit, so it's a full Microsoft 365 outage.",
+    "url": "https://x.com/fuelmeupcc/status/2121010342348407032",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-12T22:40:46Z",
+    "note": "Gives the size and timeline: about 130K reports at the peak."
+   },
+   {
+    "handle": "Newstro",
+    "name": "Newstro",
+    "text": "Microsoft 365 Cloud Outage Knocks Out Outlook, Teams, and Copilot Worldwide. Microsoft traces disruption to automated server health-check failures and reboots.",
+    "url": "https://x.com/Newstro/status/2120995934335009139",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-12T21:43:31Z",
+    "note": "The stated cause: automated health checks rebooting servers, which matters for the reliability debate."
+   }
+  ],
+  "34073d60797d": [
+   {
+    "handle": "CryptoNews_op",
+    "name": "Farhad | Crypto News",
+    "text": "Anthropic just took Claude into the office, and straight at Microsoft and Google. On November 10, Anthropic launched Claude Sheets and Claude Whiteboards in beta, made Claude Data generally available, and previewed Claude Meetings.",
+    "url": "https://x.com/CryptoNews_op/status/2121022036088586336",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-12T23:27:14Z",
+    "note": "Best rundown of the full product list and the target: Office and Workspace."
+   },
+   {
+    "handle": "shwetabjaj",
+    "name": "Shweta Bajaj",
+    "text": "Anthropic is starting to roll out Claude Meetings in beta for Team and Enterprise users. The idea is bigger than transcription. Claude can join the video call and help create documents, whiteboards, and other working artifacts while the team is still discussing them.",
+    "url": "https://x.com/shwetabjaj/status/2121046544741011625",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-13T01:04:38Z",
+    "note": "Explains why Meetings is a step past note-takers like Copilot recaps."
+   },
+   {
+    "handle": "bkambariya09",
+    "name": "Bharat kambariya",
+    "text": "Anthropic is now releasing whatever feature that is attracting eyeballs. Here's another before their IPO, Claude Meetings that can build docs, whiteboards and artifacts from your meeting video call.",
+    "url": "https://x.com/bkambariya09/status/2121079981694722486",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-13T03:17:30Z",
+    "note": "Skeptic's read: a launch blitz timed into the IPO roadshow."
+   },
+   {
+    "handle": "untanglingweb3",
+    "name": "Untangling Web3",
+    "text": "Also this week: Anthropic launched a video call assistant, a data dashboard and Claude Sheets to take on Microsoft, and the US let Nvidia sell chips to an empty office in China, per The Verge.",
+    "url": "https://x.com/untanglingweb3/status/2121166490921562489",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-13T09:01:15Z",
+    "note": "Puts the launch next to the week's other AI headlines."
+   }
+  ],
+  "d5cd2755f894": [
+   {
+    "handle": "GBAFReview",
+    "name": "Global Banking & Finance Review",
+    "text": "Nscale expects a 14-fold revenue surge in its amended IPO filing, putting revenue growth and its public offering in focus.",
+    "url": "https://x.com/GBAFReview/status/2121025897830510636",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-12T23:42:35Z",
+    "note": "The amended S-1 headline: 14x revenue growth projected despite wider losses."
+   },
+   {
+    "handle": "PoseidonCurrent",
+    "name": "The Current Account",
+    "text": "$MSFT has been the main culprit pulling out of leases, which has hurt Nscale the most, especially considering their customer concentration with MSFT. They've recently pulled out of >$130Bn in commitments, with the biggest being the LOI they had for Nscale's West Virginia site.",
+    "url": "https://x.com/PoseidonCurrent/status/2120501614150582717",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-11T12:59:16Z",
+    "note": "Key diligence risk: customer concentration in Microsoft as it pulls back leases."
+   },
+   {
+    "handle": "S1Journal_EN",
+    "name": "Ken Sobajima | I read S-1 filings",
+    "text": "I went to the financial statement notes in Nscale's Sept. 18 S-1. Its $1.65B deal for Anyscale, to be paid in Nscale equity, lists completion of the IPO as one of the closing conditions.",
+    "url": "https://x.com/S1Journal_EN/status/2120325903364632784",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-11T01:21:03Z",
+    "note": "Filing detail: the $1.65B Anyscale acquisition only closes if the IPO happens."
+   },
+   {
+    "handle": "moneycontrolcom",
+    "name": "Moneycontrol",
+    "text": "Nvidia-backed AI cloud firm Nscale considers delaying $35 billion listing, report says. Anthropic's IPO is seen as a key test of Wall Street's faith in the AI boom it helped ignite.",
+    "url": "https://x.com/moneycontrolcom/status/2120327650015158485",
+    "likes": 4,
+    "reposts": 0,
+    "ts": "2026-11-11T01:28:00Z",
+    "note": "Context: Nscale may wait for Anthropic to test the window."
+   }
   ]
  },
  "tickers": {
@@ -445,6 +631,16 @@
    }
   ],
   "AMD": [
+   {
+    "handle": "Tickeron",
+    "name": "Tickeron",
+    "text": "STOCK MARKET ROTATION: $AMD +5.9%, BROADCOM $AVGO +5.5%, WHILE $NVDA PLUNGES 4.4%! AI CHIP ROTATION: AMD & BROADCOM SURGE, NVIDIA SELLS OFF.",
+    "url": "https://x.com/Tickeron/status/2121016532474200123",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-12T23:05:22Z",
+    "note": "Money rotated within AI chips toward AMD and Broadcom rather than leaving the group."
+   },
    {
     "handle": "VladBastion",
     "name": "Vlad Bastion",
@@ -702,74 +898,54 @@
   ],
   "NVDA": [
    {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "$NVDA  - BREAKING: NVIDIA CEO JENSEN HUANG RESIGNS EFFECTIVE IMMEDIATELY\n\nNvidia announces a major leadership shake-up:\n\n🔸 Jensen Huang resigns as CEO, president and board member, effective immediately.\n🔸 Colette Kress, Nvidia's CFO, appointed interim CEO.\n🔸 Harvey C. Jones",
-    "url": "https://x.com/DeItaone/status/2120876799252979752",
-    "likes": 2274,
-    "reposts": 516,
-    "ts": "2026-11-12T13:50:07.000Z",
-    "note": "Walter Bloomberg with the full announcement: Huang out as CEO, president and director, effective immediately"
+    "handle": "NateSilver538",
+    "name": "Nate Silver",
+    "text": "I think, because it happened on top of the midterms and the midterms were a huge story, people are still underindexing on how seismic the NVIDIA story is. Especially when you read the deeper reporting on it.",
+    "url": "https://x.com/NateSilver538/status/2120933049500057735",
+    "likes": 10434,
+    "reposts": 649,
+    "ts": "2026-11-12T17:33:38Z",
+    "note": "Most-engaged take on Nvidia: a top forecaster says markets are still underpricing the Huang exit."
    },
    {
-    "handle": "KobeissiLetter",
-    "name": "The Kobeissi Letter",
-    "text": "BREAKING: Nvidia, $NVDA, has appointed Colette Kress, the company’s current CFO, as Interim CEO.\n\nJensen Huang’s 33-year career at Nvidia has officially come to an end.",
-    "url": "https://x.com/KobeissiLetter/status/2120878535497916576",
-    "likes": 3573,
-    "reposts": 343,
-    "ts": "2026-11-12T13:57:01.000Z",
-    "note": "Kobeissi: CFO Colette Kress named interim CEO, ending Huang's 33-year run"
+    "handle": "TheSimonLabs",
+    "name": "Simon Labs",
+    "text": "Nvidia fell as low as $148.80 today, down 14 percent, then closed at $166.19, down 4.3 percent. Thirty three years, one CEO, and no succession plan. Nvidia reports earnings on Tuesday, five days after Huang resigned.",
+    "url": "https://x.com/TheSimonLabs/status/2121061842948694251",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-13T02:05:25Z",
+    "note": "Clean recap of the intraday crash and recovery, plus the no-succession-plan problem into earnings."
    },
    {
-    "handle": "KobeissiLetter",
-    "name": "The Kobeissi Letter",
-    "text": "BREAKING: Nvidia stock, $NVDA, plunges over -10% after Jensen Huang officially resigns as CEO.\n\nThe stock has now erased -$750 billion in market cap since the scandal began. https://t.co/OrXFS3GQE3",
-    "url": "https://x.com/KobeissiLetter/status/2120877770247221444",
-    "likes": 2622,
-    "reposts": 461,
-    "ts": "2026-11-12T13:53:59.000Z",
-    "note": "The market verdict: stock down 10%+ premarket, about $750B erased since the scandal began"
+    "handle": "Hyeon_Backsu",
+    "name": "Hyeoooon",
+    "text": "Jensen Huang stepped down as Nvidia CEO, and the Nov 17 earnings date didn't move. Huang resigned as CEO and from the board, effective immediately (Nvidia press release, SEC 8-K). CFO Colette Kress becomes interim CEO while staying CFO.",
+    "url": "https://x.com/Hyeon_Backsu/status/2121046711410036932",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-13T01:05:17Z",
+    "note": "Sourced facts: 8-K filed, Kress is interim CEO and still CFO, earnings Nov 17."
    },
    {
-    "handle": "wallstengine",
-    "name": "Wall St Engine",
-    "text": "JENSEN HUANG RESIGNS AS $NVDA CEO, EFFECTIVE IMMEDIATELY.\n\nCFO Colette Kress named interim CEO while retaining her CFO role. Harvey Jones appointed Nvidia's first-ever board chair.\n\nNvidia's board is launching a search for a permanent CEO, considering internal and external https://t.co/UYP13bSYfM",
-    "url": "https://x.com/wallstengine/status/2120877415203561897",
-    "likes": 421,
-    "reposts": 73,
-    "ts": "2026-11-12T13:52:34.000Z",
-    "note": "Wall St Engine adds the governance changes: Harvey Jones becomes first board chair, permanent CEO search starts"
+    "handle": "atrupar",
+    "name": "Aaron Rupar",
+    "text": "Coons: \"Jensen Huang gave I think $26m to the Trump administration that's publicly known. If the Trump administration was in bed with Nvidia, and the CEO was in bed with a Chinese spy, and that has real consequences for our national security, I think that's something well worth...\"",
+    "url": "https://x.com/atrupar/status/2121238953864929691",
+    "likes": 1088,
+    "reposts": 283,
+    "ts": "2026-11-13T13:49:11Z",
+    "note": "The Washington angle: senators pushing a probe, a policy overhang on export rules."
    },
    {
-    "handle": "TheStalwart",
-    "name": "Joe Weisenthal",
-    "text": "*NVIDIA'S JENSEN HUANG RESIGNS AS CEO\n\n*NVIDIA NAMES KRESS INTERIM CEO, RETAINS CFO ROLE",
-    "url": "https://x.com/TheStalwart/status/2120876684165759278",
-    "likes": 905,
-    "reposts": 142,
-    "ts": "2026-11-12T13:49:40.000Z",
-    "note": "Joe Weisenthal (Bloomberg) flags the key detail that Kress keeps the CFO role"
-   },
-   {
-    "handle": "KobeissiLetter",
-    "name": "The Kobeissi Letter",
-    "text": "BREAKING: Nvidia, $NVDA, is preparing to fire Jensen Huang, its founder and CEO, after allegations of a second affair have surfaced, per WSJ.\n\nThe board is preparing to meet as soon as today to determine his future.",
-    "url": "https://x.com/KobeissiLetter/status/2120645818587951491",
-    "likes": 13058,
-    "reposts": 1052,
-    "ts": "2026-11-11T22:32:17.000Z",
-    "note": "Context from last night: WSJ reported the board was preparing to remove him after a second alleged affair"
-   },
-   {
-    "handle": "wallstengine",
-    "name": "Wall St Engine",
-    "text": "CoreWeave $CRWV says pricing for its older Nvidia Ampere and Hopper GPUs rose 30% to 50% QoQ in Q3, above their original contract prices\n\nMore than 130,000 GPUs come off contract in 2027 and about 170,000 in 2028\n\nRenewing them at current prices would add nearly $10B of https://t.co/v5vu8TsUkk",
-    "url": "https://x.com/wallstengine/status/2120286449576841637",
-    "likes": 376,
-    "reposts": 41,
-    "ts": "2026-11-10T22:44:17.000Z",
-    "note": "A demand tell for Nvidia GPUs: older Ampere and Hopper rental prices rose 30-50% quarter over quarter"
+    "handle": "CNNPolitics",
+    "name": "CNN Politics",
+    "text": "Treasury Secretary Scott Bessent points finger at Commerce Department in Nvidia scandal as Trump advisers discuss possible ouster of Howard Lutnick",
+    "url": "https://x.com/CNNPolitics/status/2121251396062151141",
+    "likes": 4,
+    "reposts": 0,
+    "ts": "2026-11-13T14:38:38Z",
+    "note": "Fallout now reaching the cabinet, which could reshape chip export policy."
    }
   ],
   "TTD": [
@@ -880,6 +1056,16 @@
   ],
   "AMAT": [
    {
+    "handle": "BreakingPocket",
+    "name": "Breaking Pocket",
+    "text": "Applied Materials posts record revenue of $10.41B, up 53%, and guides the next quarter higher still. Applied Materials, the largest maker of chipmaking equipment, reported record fiscal fourth-quarter results after Thursday's close.",
+    "url": "https://x.com/BreakingPocket/status/2121006116469383383",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-12T22:23:59Z",
+    "note": "AMAT beat and raised: record $10.4B quarter, guide higher."
+   },
+   {
     "handle": "bespokeinvest",
     "name": "Bespoke",
     "text": "Applied Materials $AMAT and Cisco $CSCO headline tomorrow’s earnings after the close. \n\nNational Vision $EYE, Spectrum Brands $SPB, Wolverine $WWW, and YETI $YETI report before the open. https://t.co/qNQVFgyQQ9",
@@ -952,6 +1138,72 @@
     "reposts": 67,
     "ts": "2026-11-10T11:06:20.000Z",
     "note": "Big optics catalyst: Microsoft lobbying against a ban on Chinese optical transceivers"
+   }
+  ],
+  "PANW": [
+   {
+    "handle": "epictrades1",
+    "name": "The Inner Circle Trading Group",
+    "text": "$PANW KeyBanc analyst Eric Heath upgraded Palo Alto Networks to Overweight from Sector Weight with a $380 price target. The firm expects security budgets to accelerate through 2027.",
+    "url": "https://x.com/epictrades1/status/2121215781631647987",
+    "likes": 14,
+    "reposts": 2,
+    "ts": "2026-11-13T12:17:07Z",
+    "note": "Why PANW is up: KeyBanc upgrade on accelerating 2027 security budgets."
+   },
+   {
+    "handle": "AIStockSavvy",
+    "name": "Hardik Shah",
+    "text": "$PANW | KeyBanc upgrades Palo Alto Networks from Sector Weight to Overweight, PT $380. Analyst sees PANW benefiting from accelerating security budgets, consolidation, strong AI security products, and peer out-execution.",
+    "url": "https://x.com/AIStockSavvy/status/2121219818011386242",
+    "likes": 6,
+    "reposts": 0,
+    "ts": "2026-11-13T12:33:09Z",
+    "note": "The thesis: platform consolidation plus AI security."
+   },
+   {
+    "handle": "Briefingcom",
+    "name": "Briefing.com",
+    "text": "$PANW: Palo Alto Networks upgraded to Overweight from Sector Weight at KeyBanc, tgt $380",
+    "url": "https://x.com/Briefingcom/status/2121232678427250793",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-13T13:24:15Z",
+    "note": "Wire confirmation of the upgrade."
+   }
+  ],
+  "AVGO": [
+   {
+    "handle": "Tickeron",
+    "name": "Tickeron",
+    "text": "STOCK MARKET ROTATION: $AMD +5.9%, BROADCOM $AVGO +5.5%, WHILE $NVDA PLUNGES 4.4%! AI CHIP ROTATION: AMD & BROADCOM SURGE, NVIDIA SELLS OFF.",
+    "url": "https://x.com/Tickeron/status/2121016532474200123",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-12T23:05:22Z",
+    "note": "Money rotated within AI chips toward AMD and Broadcom rather than leaving the group."
+   }
+  ],
+  "MSFT": [
+   {
+    "handle": "TheCyberSecHub",
+    "name": "The Cyber Security Hub",
+    "text": "Massive Microsoft 365 outage disrupts Outlook, Teams, Copilot worldwide: Microsoft is investigating a widespread outage affecting multiple Microsoft 365 services.",
+    "url": "https://x.com/TheCyberSecHub/status/2120973714796003458",
+    "likes": 90,
+    "reposts": 19,
+    "ts": "2026-11-12T20:15:14Z",
+    "note": "Most-shared post on the outage; Copilot was hit along with Outlook and Teams."
+   },
+   {
+    "handle": "PoseidonCurrent",
+    "name": "The Current Account",
+    "text": "$MSFT has been the main culprit pulling out of leases, which has hurt Nscale the most, especially considering their customer concentration with MSFT. They've recently pulled out of >$130Bn in commitments, with the biggest being the LOI they had for Nscale's West Virginia site.",
+    "url": "https://x.com/PoseidonCurrent/status/2120501614150582717",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-11T12:59:16Z",
+    "note": "Key diligence risk: customer concentration in Microsoft as it pulls back leases."
    }
   ]
  },
