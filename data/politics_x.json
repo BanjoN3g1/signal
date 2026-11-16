@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T15:00:00Z",
+ "updated": "2026-11-16T15:15:00Z",
  "note": "Balanced curated accounts; leans describe the account, not each post. Midterms 2026 post-election window.",
  "leans": {
   "left": "Left / Democratic-leaning",
@@ -178,6 +178,164 @@
   }
  ],
  "posts": [
+  {
+   "handle": "Redistrict",
+   "name": "Dave Wasserman",
+   "lean": "analyst",
+   "role": "Cook Political Report",
+   "text": "New @CookPolitical: with 118.2 million votes counted, Dems' lead in the national House vote is up to 13.9 points. https://t.co/wFFnXPy9pN https://t.co/sOeZ9Tyozf",
+   "url": "https://x.com/Redistrict/status/2121471755722064244",
+   "likes": 1986,
+   "reposts": 269,
+   "ts": "2026-11-14T05:14:16Z",
+   "race": "house-control"
+  },
+  {
+   "handle": "NateSilver538",
+   "name": "Nate Silver",
+   "lean": "analyst",
+   "role": "Silver Bulletin forecaster",
+   "text": "The other thing about that Duffy/Mullin presser yesterday is it didn't seem to exist in this reality where Democrats will soon have 56 Senators and ~260 Reps. Nobody wants to hear random praise of Trump. And Dems have subpoena power if the public isn't getting clear answers.",
+   "url": "https://x.com/NateSilver538/status/2121655394405658790",
+   "likes": 7978,
+   "reposts": 465,
+   "ts": "2026-11-14T17:23:59Z",
+   "race": "senate-control"
+  },
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "lean": "analyst",
+   "role": "Results & forecast",
+   "text": "New vote drop from Alaska:\n\nSenate:\nPeltola (D): 2,373\nSullivan (R): 1,596\nHeikes (R): 117\nSullivan Jr. (I): 92\n\nHouse\nHill (I): 1,705\nBegich (R): 1,655\nHafner (D): 618\nMcDermott (L): 155\n\nPeltola now leads by 11,189 votes. https://t.co/RcRBgK2D4y",
+   "url": "https://x.com/DecisionDeskHQ/status/2121770002621911402",
+   "likes": 516,
+   "reposts": 66,
+   "ts": "2026-11-15T00:59:23Z",
+   "race": "AK-sen"
+  },
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "lean": "analyst",
+   "role": "Results & forecast",
+   "text": "Decision Desk HQ projects Jonathan Kreiss-Tomkins wins the AK Governor General Election\n\n#DecisionMade: 11:57 PM EST\n\nFollow live results here: https://t.co/KJcAjsGona https://t.co/nTIWJzBQpF",
+   "url": "https://x.com/DecisionDeskHQ/status/2121467647430897967",
+   "likes": 1718,
+   "reposts": 204,
+   "ts": "2026-11-14T04:57:56Z"
+  },
+  {
+   "handle": "gelliottmorris",
+   "name": "G Elliott Morris",
+   "lean": "analyst",
+   "role": "Strength In Numbers / FiftyPlusOne",
+   "text": "New: The 2026 election was not all about turnout. On several issues, Dems held their biggest leads since 2007!\nThis matters because it shows the limits of the \"popularist\" approach to electoral strategy. It also gives the Ds a policy roadmap for 2027\nhttps://t.co/AhWXiU25xN",
+   "url": "https://x.com/gelliottmorris/status/2122047460872733029",
+   "likes": 31,
+   "reposts": 10,
+   "ts": "2026-11-15T19:21:55Z"
+  },
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "lean": "analyst",
+   "role": "Results & forecast",
+   "text": "Kansas House District 123, in Garden City, should have been an easy Republican hold. Democrats flipped it by 2 points.\n\n@ChazNuttycombe of @StateNavigate tells @geoffreyvs how new and shifting Latino voters in southwest Kansas changed the map. https://t.co/QFUcwHCIAh",
+   "url": "https://x.com/DecisionDeskHQ/status/2122042546213757437",
+   "likes": 81,
+   "reposts": 21,
+   "ts": "2026-11-15T19:02:23Z"
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "lean": "left",
+   "role": "Public Notice",
+   "text": "Q: What responsibility do you take for the ground stop on Friday given that you're the president?\n\nTRUMP: I don't take any responsibility https://t.co/YBwqYEc73s",
+   "url": "https://x.com/atrupar/status/2122341061695557692",
+   "likes": 301,
+   "reposts": 115,
+   "ts": "2026-11-16T14:48:34Z"
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "lean": "left",
+   "role": "Public Notice",
+   "text": "Q: Did you trust US intelligence that Jensen Huang was having an affair with a Chinese spy?\n\nTRUMP: I don't know that she's a Chinese spy. I told Stephen A Smith that\n\nQ: Sources told us that Marco Rubio told you she was\n\nTRUMP: I haven't heard that. I don't know she's a spy. https://t.co/cGpUdEoOZ4",
+   "url": "https://x.com/atrupar/status/2122338497021301228",
+   "likes": 231,
+   "reposts": 72,
+   "ts": "2026-11-16T14:38:23Z"
+  },
+  {
+   "handle": "ByronYork",
+   "name": "Byron York",
+   "lean": "right",
+   "role": "Washington Examiner",
+   "text": "In the 2026 exit polls, when given a choice of six issues and asked which one was the most important facing the country, the second-largest group, 33%, said \"the state of democracy.\" Of that group, 80% voted Democrat. https://t.co/r6LizW3iRk https://t.co/U3Vp6bALep",
+   "url": "https://x.com/ByronYork/status/2122011790338928984",
+   "likes": 911,
+   "reposts": 183,
+   "ts": "2026-11-15T17:00:10Z"
+  },
+  {
+   "handle": "ByronYork",
+   "name": "Byron York",
+   "lean": "right",
+   "role": "Washington Examiner",
+   "text": "After all the dire warnings, all it took was for Democrats to win an election. From NYT: \"The November election became not just a referendum on President Trump, but also a crucial test of American democracy. In the end, the country passed.\" https://t.co/EobVAF6gtS",
+   "url": "https://x.com/ByronYork/status/2121932386510533104",
+   "likes": 652,
+   "reposts": 119,
+   "ts": "2026-11-15T11:44:39Z"
+  },
+  {
+   "handle": "guypbenson",
+   "name": "Guy Benson",
+   "lean": "right",
+   "role": "Fox News",
+   "text": "Democracy (noun) • when the approved tribe wins elections https://t.co/1V83mQ6mfR",
+   "url": "https://x.com/guypbenson/status/2122015466390450324",
+   "likes": 750,
+   "reposts": 103,
+   "ts": "2026-11-15T17:14:46Z"
+  },
+  {
+   "handle": "politico",
+   "name": "POLITICO",
+   "lean": "center",
+   "role": "Politics news",
+   "text": "A Senate Democratic leadership showdown is brewing as Sen. Chris Van Hollen challenges Sen. Chuck Schumer for majority leader. \n\nVan Hollen tells Playbook why he thinks Democrats shouldn’t rush to a vote.\n\n🎧 Playbook Pod: https://t.co/eID8I4lvOO https://t.co/DExrIweOak",
+   "url": "https://x.com/politico/status/2122323288051376572",
+   "likes": 39,
+   "reposts": 13,
+   "ts": "2026-11-16T13:37:57Z",
+   "race": "senate-control"
+  },
+  {
+   "handle": "politico",
+   "name": "POLITICO",
+   "lean": "center",
+   "role": "Politics news",
+   "text": "House Democrats want Trump out of office. They don’t know if impeachment is the answer. https://t.co/Ew0EsehmAi",
+   "url": "https://x.com/politico/status/2122316432163701011",
+   "likes": 12,
+   "reposts": 7,
+   "ts": "2026-11-16T13:10:42Z"
+  },
+  {
+   "handle": "axios",
+   "name": "Axios",
+   "lean": "center",
+   "role": "News",
+   "text": "MAGA figures hope Jensen Huang's spy scandal finally breaks Trump's embrace of Big Tech https://t.co/iAVEMzeHKz",
+   "url": "https://x.com/axios/status/2122269709739413909",
+   "likes": 23,
+   "reposts": 6,
+   "ts": "2026-11-16T10:05:03Z"
+  },
   {
    "handle": "Redistrict",
    "name": "Dave Wasserman",
@@ -534,114 +692,6 @@
    "reposts": 73,
    "ts": "2026-11-11T19:26:06.000Z",
    "race": "senate-control"
-  },
-  {
-   "handle": "ByronYork",
-   "name": "Byron York",
-   "lean": "right",
-   "role": "Washington Examiner",
-   "text": "A new post from President Trump this morning. Message: Vice President Vance will not be negotiating with Iran. In fact, we don't need a deal with Iran. Seems to indicate that there won't be major combat operations, either and Trump will let the current economic pressure work. https://t.co/wlCOo3LrfW",
-   "url": "https://x.com/ByronYork/status/2120868664589406357",
-   "likes": 551,
-   "reposts": 98,
-   "ts": "2026-11-12T13:17:48.000Z"
-  },
-  {
-   "handle": "axios",
-   "name": "Axios",
-   "lean": "center",
-   "role": "News",
-   "text": "JUST IN: Democrat Scott Colom pulls off stunning Mississippi Senate upset https://t.co/VSmpyY1B4v",
-   "url": "https://x.com/axios/status/2120653996633235602",
-   "likes": 103,
-   "reposts": 15,
-   "ts": "2026-11-11T23:04:47.000Z",
-   "race": "senate-control"
-  },
-  {
-   "handle": "politico",
-   "name": "POLITICO",
-   "lean": "center",
-   "role": "Politics news",
-   "text": "BREAKING: The House is set to vote on a new effort to disgorge DOJ files related to the late sex offender Jeffrey Epstein after lawmakers completed a petition forcing the legislation to the floor.\nhttps://t.co/r3DHMYsWhB",
-   "url": "https://x.com/politico/status/2120588211118579950",
-   "likes": 808,
-   "reposts": 159,
-   "ts": "2026-11-11T18:43:22.000Z"
-  },
-  {
-   "handle": "axios",
-   "name": "Axios",
-   "lean": "center",
-   "role": "News",
-   "text": "NEW: Stephen Miller wants to use his new role as White House chief of staff to win back young and minority men who helped elect President Trump in 2024 but swung toward Democrats in the midterms. https://t.co/DIZPKXJiCz",
-   "url": "https://x.com/axios/status/2120511286219825548",
-   "likes": 644,
-   "reposts": 77,
-   "ts": "2026-11-11T13:37:42.000Z"
-  },
-  {
-   "handle": "CNNPolitics",
-   "name": "CNN Politics",
-   "lean": "center",
-   "role": "News",
-   "text": "Scott Colom cracked the Trump wall and won a Mississippi race that Democrats nearly overlooked. Here's how this political earthquake happened. https://t.co/P1n83Uw8UO",
-   "url": "https://x.com/CNNPolitics/status/2120696850848084135",
-   "likes": 42,
-   "reposts": 9,
-   "ts": "2026-11-12T01:55:04.000Z",
-   "race": "senate-control"
-  },
-  {
-   "handle": "Redistrict",
-   "name": "Dave Wasserman",
-   "text": "New @CookPolitical: with more than 116 million votes counted, Dems' lead in the national House vote is up to 13.5 points. It's now the largest margin for either party since 1974. https://t.co/wFFnXPy9pN https://t.co/GsaqNI4Dk9",
-   "url": "https://x.com/Redistrict/status/2120308455110041694",
-   "likes": 3468,
-   "reposts": 683,
-   "ts": "2026-11-11T00:11:43.000Z",
-   "note": "Cook: Dems lead national House vote by 13.5, biggest margin since 1974",
-   "lean": "analyst",
-   "role": "Cook Political Report",
-   "race": "house-control"
-  },
-  {
-   "handle": "Redistrict",
-   "name": "Dave Wasserman",
-   "text": "More bad news for Republicans out of NC, where Dems have seized leads over Reps. Greg Murphy (R) #NC03 and Virginia Foxx (R) #NC05 as provisional ballots have been tallied. Fits longstanding pattern, and same dynamic benefitting Dems in MS & elsewhere.",
-   "url": "https://x.com/Redistrict/status/2120317483064131797",
-   "likes": 3995,
-   "reposts": 374,
-   "ts": "2026-11-11T00:47:36.000Z",
-   "note": "Provisional ballots flipping NC House seats toward Dems",
-   "lean": "analyst",
-   "role": "Cook Political Report",
-   "race": "house-control"
-  },
-  {
-   "handle": "Redistrict",
-   "name": "Dave Wasserman",
-   "text": "New @CookPolitical: Last week’s blue tsunami may have pumped the brakes on mid-decade redistricting wars, especially after several GOP maps backfired (or nearly backfired). Full analysis by @ercovey: https://t.co/hqqwCWPQAq",
-   "url": "https://x.com/Redistrict/status/2120315531341255028",
-   "likes": 405,
-   "reposts": 63,
-   "ts": "2026-11-11T00:39:50.000Z",
-   "note": "Cook analysis: backfiring GOP maps may cool mid-decade redistricting",
-   "lean": "analyst",
-   "role": "Cook Political Report"
-  },
-  {
-   "handle": "DecisionDeskHQ",
-   "name": "Decision Desk HQ",
-   "text": "New vote drop in Alaska:\nGovernor \nKreiss-Tomkins (D): 12,689 (52.8%) \nWilson (R): 6,698 (27.9%) \nBronson (R): 3,102 (12.9%) \nTaylor (R): 1,541 (6.4%)\n\nSenate \nPeltola (D): 12,597 (51.8%) \nSullivan (R): 10,871 (44.7%) \nHeikes (R): 452 (1.9%)\nSullivan Jr. (I): 376 (1.5%)\n\nHouse https://t.co/FbHToAYU7P",
-   "url": "https://x.com/DecisionDeskHQ/status/2120372790683476022",
-   "likes": 178,
-   "reposts": 31,
-   "ts": "2026-11-11T04:27:22.000Z",
-   "note": "Latest Alaska vote drop: Peltola leads Sullivan",
-   "lean": "analyst",
-   "role": "Results & forecast",
-   "race": "AK-sen"
   }
  ]
 }
