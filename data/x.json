@@ -1,117 +1,55 @@
 {
  "stories": {
-  "ad8e3b9dc741": [
-   {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "$NVDA  - JENSEN HUANG TRANSFERRED OVER $10 BILLION IN NVIDIA STOCK TO FAMILY TRUST BEFORE DOWNFALL\n\nFormer Nvidia CEO Jensen Huang and his wife transferred nearly 60 million shares, worth over $10.5 billion, into an irrevocable family trust in March, according to SEC filings",
-    "url": "https://x.com/DeItaone/status/2122411464694604166",
-    "likes": 3052,
-    "reposts": 408,
-    "ts": "2026-11-16T19:28:20.000Z",
-    "note": "Most-shared new detail: Huang moved $10B+ of NVDA stock to a family trust before resigning."
-   },
-   {
-    "handle": "StockMKTNewz",
-    "name": "Evan",
-    "text": "Jensen Huang has now removed Nvidia CEO from his bio on X 😥 https://t.co/EfrdwP3hvK",
-    "url": "https://x.com/StockMKTNewz/status/2122536438550180324",
-    "likes": 3942,
-    "reposts": 172,
-    "ts": "2026-11-17T03:44:56.000Z",
-    "note": "Viral signal Huang's exit is final for now, hours before NVDA reports."
-   },
-   {
-    "handle": "wallstengine",
-    "name": "Wall St Engine",
-    "text": "Nvidia employees are considering a demonstration at its Santa Clara campus to support Jensen Huang's return, per WSJ.\n\nSenior Nvidia director Nader Khalil sent a letter to Nvidia's board and Huang's 60 direct reports that top talent is considering leaving. https://t.co/4ZANmsYo33",
-    "url": "https://x.com/wallstengine/status/2122618691515032057",
-    "likes": 885,
-    "reposts": 69,
-    "ts": "2026-11-17T09:11:47.000Z",
-    "note": "WSJ: employees weigh a rally for Huang's return; culture/retention risk for the new leadership."
-   },
-   {
-    "handle": "unusual_whales",
-    "name": "unusual_whales",
-    "text": "In the end, the biggest risk to Nvidia was Jensen Huang himself, per Business Insider.\n\nHuang co-founded Nvidia in 1993 and spent 33 years building it into the world’s most valuable company and the backbone of the AI boom. He ran it his own way: about 60 executives reported",
-    "url": "https://x.com/unusual_whales/status/2122510282564210919",
-    "likes": 933,
-    "reposts": 60,
-    "ts": "2026-11-17T02:01:00.000Z",
-    "note": "Business Insider framing: key-person risk was the real NVDA risk."
-   },
-   {
-    "handle": "NTDNews",
-    "name": "NTD News",
-    "text": "Trump Says He May Confront Xi About Spying and Jensen Huang\n\nThe president said he is open to Huang returning to Nvidia.\n\nSee more: https://t.co/MEv9LCmOLh",
-    "url": "https://x.com/NTDNews/status/2122494970661609821",
-    "likes": 2,
-    "reposts": 2,
-    "ts": "2026-11-17T01:00:09.000Z",
-    "note": "Trump says he may raise the spying case with Xi and is open to Huang returning; policy overhang."
-   }
-  ],
   "ceaa59b0fc65": [
-   {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "*ANTHROPIC IS SAID TO GUIDE IPO PRICE TO TOP OF RANGE OR ABOVE",
-    "url": "https://x.com/DeItaone/status/2122690780926238965",
-    "likes": 310,
-    "reposts": 26,
-    "ts": "2026-11-17T13:58:14.000Z",
-    "note": "Book is strong: Anthropic said to guide to the top of the $70-78 range or above."
-   },
    {
     "handle": "DeItaone",
     "name": "*Walter Bloomberg",
     "text": "ANTHROPIC SAID TO DRAW MULTIPLE $10 BILLION OR MORE IPO ORDERS",
     "url": "https://x.com/DeItaone/status/2122702652702105695",
-    "likes": 153,
-    "reposts": 17,
+    "likes": 415,
+    "reposts": 39,
     "ts": "2026-11-17T14:45:24.000Z",
-    "note": "Multiple $10B+ orders signal heavy institutional demand for the ECM print."
-   },
-   {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "$ANT - NEW STREET INITIATES ANTHROPIC AT BUY WITH $105 PRICE TARGET\n\nNew Street Research analyst Pierre Ferragu initiated coverage of Anthropic with a Buy rating and $105 price target, calling its upcoming IPO a generational investment opportunity.\n\nThe firm expects AI adoption",
-    "url": "https://x.com/DeItaone/status/2122671447382397085",
-    "likes": 305,
-    "reposts": 31,
-    "ts": "2026-11-17T12:41:25.000Z",
-    "note": "First sell-side initiation: New Street Buy, $105 PT, well above the range."
-   },
-   {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "ANTHROPIC: NO CHANGES TO IPO PRICING OF $70 TO $78 PER SHARE",
-    "url": "https://x.com/DeItaone/status/2122661018727751781",
-    "likes": 761,
-    "reposts": 60,
-    "ts": "2026-11-17T11:59:58.000Z",
-    "note": "Range held at $70-78 despite the AI-hardware selloff."
+    "note": "Book color: multiple $10B+ orders signals deep institutional demand"
    },
    {
     "handle": "wallstengine",
     "name": "Wall St Engine",
-    "text": "Ming-Chi Kuo says OpenAI and Anthropic orders extend Google’s TPU shipment visibility through 2029:\n\n2027: 8M-9M\n2028: 14M-15M\n2029: 16M-18M\n\nHe estimates ~12M units for OpenAI and ~14M for Anthropic across 2028-29, even as many expect AI capex to peak in 2028. https://t.co/CM3C8jjqVf",
-    "url": "https://x.com/wallstengine/status/2122142977367953798",
-    "likes": 339,
-    "reposts": 46,
-    "ts": "2026-11-16T01:41:27.000Z",
-    "note": "Kuo: OpenAI/Anthropic TPU orders extend Google's visibility through 2029, a read-across for GOOGL/AVGO."
+    "text": "ANTHROPIC EXPECTS TO PRICE ITS IPO ABOVE $80 PER SHARE: WSJ\n\nThe Claude maker originally targeted $70-$78 per share, but its advisers are now discussing a valuation of $1.5 trillion to $1.6 trillion, up from roughly $1.33 trillion at the initial range.\n\nHedge funds have placed https://t.co/2R6dgdCcJz",
+    "url": "https://x.com/wallstengine/status/2122738024593412537",
+    "likes": 251,
+    "reposts": 26,
+    "ts": "2026-11-17T17:05:58.000Z",
+    "note": "WSJ: pricing may move above the $70-78 range, $1.5-1.6T valuation talk"
    },
    {
-    "handle": "eva_ados",
-    "name": "Eva Ados",
-    "text": "“We haven’t liked $ANT’s valuation so far. It’s a great technology, but the valuation does not make sense.”\n\nThus far in 2026, the Anthropic IPO has been a disappointment. In the summer, Anthropic was floating a valuation of $2 trillion. The proposed IPO midpoint now implies a https://t.co/uCjX1RSsiX",
-    "url": "https://x.com/eva_ados/status/2122706548996690106",
-    "likes": 5,
-    "reposts": 3,
-    "ts": "2026-11-17T15:00:53.000Z",
-    "note": "Bear view on valuation, for balance."
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "Who will own Anthropic after its IPO:\n\n- Venture and other investors: 33.7%\n- Amazon: 14.7%\n- Google: 13.7%\n- 7 co-founders: 13%, plus 61.3% of the vote\n- Anthropic's public benefit fund: 6.5%\n- IPO buyers: 6.3%\n- Employees and others: about 4%\n- Nvidia, AMD, Broadcom, Micron, https://t.co/pulDQAXYTH",
+    "url": "https://x.com/wallstengine/status/2122790824975241324",
+    "likes": 907,
+    "reposts": 100,
+    "ts": "2026-11-17T20:35:46.000Z",
+    "note": "Cap table post-IPO: Amazon and Google stakes plus founder super-voting control"
+   },
+   {
+    "handle": "unusual_whales",
+    "name": "unusual_whales",
+    "text": "Michael Burry says Anthropic is 'betting its entire existence' on optimism, and he has no plans to own the stock",
+    "url": "https://x.com/unusual_whales/status/2122705568884515253",
+    "likes": 2498,
+    "reposts": 119,
+    "ts": "2026-11-17T14:57:00.000Z",
+    "note": "High-profile skeptic view on Anthropic's valuation"
+   },
+   {
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "Today's Key Events (All EST) — 11/18/2026\n\nPre-market: Lowe's, TJX, Target earnings\nEvening: Anthropic IPO pricing (expected)\n08:30: US Housing Starts &amp; Building Permits\n10:00: US Pending Home Sales\n13:35: Fed's Barr\n14:00: FOMC Meeting Minutes\n14:30: Fed's Williams\n16:15: Fed's",
+    "url": "https://x.com/wallstengine/status/2122982890632085641",
+    "likes": 47,
+    "reposts": 10,
+    "ts": "2026-11-18T09:18:58.000Z",
+    "note": "Today's calendar: Anthropic pricing expected tonight, PANW after the close"
    }
   ],
   "1c37c6641fa2": [
@@ -190,34 +128,44 @@
   ],
   "38c9a2c33fe2": [
    {
-    "handle": "coinbureau",
-    "name": "Coin Bureau",
-    "text": "🚨Would $NVDA bring Jensen Huang back?\n\nJensen Huang is discussing a COMEBACK as \"Nvidia CEO\" with allies, who are lobbying the board and seeking White House support, the FT reports.\n\nHe resigned on November 12 following reports of affairs with a subordinate and a woman suspected https://t.co/2JHDB3XZzZ",
-    "url": "https://x.com/coinbureau/status/2122053810264887712",
-    "likes": 146,
-    "reposts": 18,
-    "ts": "2026-11-15T19:47:08Z",
-    "note": "Comeback talk: allies lobbying the board, per FT. Matters for Ives-style 'Huang premium' valuation math."
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: Nvidia's, $NVDA, Board of Directors announces it does not intend to reinstate Jensen Huang as CEO of the company.\n\nThe board also says they will not be accepting any questions regarding Jensen Huang on their earnings call.",
+    "url": "https://x.com/KobeissiLetter/status/2122813215172166133",
+    "likes": 11392,
+    "reposts": 838,
+    "ts": "2026-11-17T22:04:45.000Z",
+    "note": "Board's stance on Huang, the core of the CEO saga (11K+ likes)"
    },
    {
-    "handle": "Tesla_Optimus_K",
-    "name": "Tesla_Optimus",
-    "text": "Suspected China spy linked to Nvidia's ex-boss left in 2025, Megaspeed says\n\nMegaspeed says Alice Huang, the suspected Chinese spy tied to former Nvidia boss Jensen Huang, left in 2025. Jensen already resigned after alleged affairs with Huang and an employee. Megaspeed is https://t.co/qvB6Nj5M5R",
-    "url": "https://x.com/Tesla_Optimus_K/status/2122212912056217974",
-    "likes": 3,
-    "reposts": 0,
-    "ts": "2026-11-16T06:19:21Z",
-    "note": "Megaspeed says Alice Huang, the suspected spy tied to Huang, left in 2025; the company is pushing back on the narrative."
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: \"A faction\" of Nvidia, $NVDA, board members is pushing for Jensen Huang to return as CEO, despite the board publicly stating that it is not considering his return, per Semafor.\n\nJensen Huang has reportedly met with numerous tech executives and spoken with at least one",
+    "url": "https://x.com/KobeissiLetter/status/2122923179572072706",
+    "likes": 9785,
+    "reposts": 606,
+    "ts": "2026-11-18T05:21:42.000Z",
+    "note": "Semafor: board split on bringing Huang back"
    },
    {
-    "handle": "axios",
-    "name": "Axios",
-    "text": "MAGA figures hope Jensen Huang's spy scandal finally breaks Trump's embrace of Big Tech https://t.co/iAVEMzeHKz",
-    "url": "https://x.com/axios/status/2122269709739413909",
-    "likes": 23,
-    "reposts": 6,
-    "ts": "2026-11-16T10:05:03Z",
-    "note": "Political angle: MAGA figures hope the scandal breaks Trump's embrace of Big Tech, a policy risk for AI names."
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: The US Securities and Exchange Commission (SEC) has opened an investigation into Nvidia, $NVDA, amid the Jensen Huang situation, per WSJ.\n\nThe focus of the investigation includes whether the company’s disclosures misled investors.\n\nThe Justice Department is also now",
+    "url": "https://x.com/KobeissiLetter/status/2122797688773050654",
+    "likes": 3390,
+    "reposts": 414,
+    "ts": "2026-11-17T21:03:03.000Z",
+    "note": "WSJ: SEC probe adds a regulatory overhang"
+   },
+   {
+    "handle": "PolymarketMoney",
+    "name": "Polymarket Money",
+    "text": "BREAKING: Nvidia's board confirms it will consider internal and external candidates to replace Jensen Huang as CEO.\n\n43% chance the next CEO is an internal pick.\n\n🔗 https://t.co/LWAMWF9QKB https://t.co/FsKAyP8Ogv",
+    "url": "https://x.com/PolymarketMoney/status/2122822253385482516",
+    "likes": 34,
+    "reposts": 3,
+    "ts": "2026-11-17T22:40:39.000Z",
+    "note": "Prediction market read on who succeeds Huang"
    }
   ],
   "b7d691bd0cad": [
@@ -292,6 +240,124 @@
     "reposts": 1,
     "ts": "2026-11-17T08:22:35.000Z",
     "note": "Chip curbs are weighing on European tech today."
+   }
+  ],
+  "daa416d67fbd": [
+   {
+    "handle": "saastr",
+    "name": "SaaStr.ai",
+    "text": "SaaStr AI B2B Index: -3.89% today\n0 of 25 up. A broad B2B selloff.\nvs QQQ -1.15% / WCLD -2.93% / SMH -1.49%\nTop loser: Salesforce (CRM) -8.21%, its worst day since May 2024\nBest holdout: DigitalOcean (DOCN) -0.25%\nYTD: SaaStr +1.82% vs WCLD +13.62% vs QQQ +6.94%\n\nWhy: Salesforce",
+    "url": "https://x.com/saastr/status/2122808839699403063",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-17T21:47:21.000Z",
+    "note": "Software selloff breadth: 0 of 25 B2B names up, CRM -8% worst since May"
+   },
+   {
+    "handle": "zerohedge",
+    "name": "zerohedge",
+    "text": "*SALESFORCE IS SETTING AI BUDGETS FOR EMPLOYEES: INSIDER",
+    "url": "https://x.com/zerohedge/status/2122771287550701604",
+    "likes": 438,
+    "reposts": 19,
+    "ts": "2026-11-17T19:18:08.000Z",
+    "note": "Salesforce rationing AI spend internally, a read on AI cost pressure"
+   },
+   {
+    "handle": "unusual_whales",
+    "name": "unusual_whales",
+    "text": "Michael Burry says Anthropic is 'betting its entire existence' on optimism, and he has no plans to own the stock",
+    "url": "https://x.com/unusual_whales/status/2122705568884515253",
+    "likes": 2498,
+    "reposts": 119,
+    "ts": "2026-11-17T14:57:00.000Z",
+    "note": "High-profile skeptic view on Anthropic's valuation"
+   }
+  ],
+  "daaf9187c005": [
+   {
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "Palo Alto Networks $PANW CEO Nikesh Arora on AI-driven cyberattacks:\n\nFinding viable attack paths used to take trial and error. Now AI can run simulations across vulnerabilities and identify ways in.\n\n“AI is making it easy for hackers to attack multiple customers.” https://t.co/GqNZwoBkFA",
+    "url": "https://x.com/wallstengine/status/2122844467468140953",
+    "likes": 119,
+    "reposts": 15,
+    "ts": "2026-11-18T00:08:56.000Z",
+    "note": "PANW CEO on AI-driven attacks, the bull case into tonight's print"
+   },
+   {
+    "handle": "XTexchange",
+    "name": "XT Exchange 🔥",
+    "text": "🛡️ Cybersecurity Earnings Countdown!\n\nPalo Alto Networks reports Q1 FY2027 results after the Nov 18 US close.\n\nWebcast: 21:30 UTC.\n\nWhat matters more for $PANW—AI security demand or future guidance? 👀\n\nExplore XT TradFi markets:\nhttps://t.co/gFR5gbYajD\n\n#PANW #XTexchange https://t.co/2qkDzK57eg",
+    "url": "https://x.com/XTexchange/status/2122983784056549393",
+    "likes": 40,
+    "reposts": 0,
+    "ts": "2026-11-18T09:22:31.000Z",
+    "note": "What the Street is watching for PANW's Q1 FY27 (AI security vs. platformization)"
+   },
+   {
+    "handle": "CNBCMorningCall",
+    "name": "Morning Call",
+    "text": "CNBC’s @KenzieSigalos reports on widespread tech disruptions fueling cybersecurity concerns ahead of Palo Alto Networks’ $PANW earnings. Investors are weighing rising AI-driven threats, corporate security spending and the company’s premium valuation. \n\n#Cybersecurity #AI #Stocks",
+    "url": "https://x.com/CNBCMorningCall/status/2123055025224065503",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-18T14:05:37.000Z",
+    "note": "CNBC framing: recent outages lift cyber demand questions into earnings"
+   }
+  ],
+  "f1bf11476893": [
+   {
+    "handle": "DeItaone",
+    "name": "*Walter Bloomberg",
+    "text": "$NVDA - AMD AND GOOGLE CHIP AWAY AT NVIDIA AS HUANG EXIT SHAKES CUSTOMERS: INFORMATION",
+    "url": "https://x.com/DeItaone/status/2122692008477114433",
+    "likes": 700,
+    "reposts": 47,
+    "ts": "2026-11-17T14:03:07.000Z",
+    "note": "The Information: Google TPUs and AMD gaining as Huang exit unsettles customers"
+   },
+   {
+    "handle": "charliebilello",
+    "name": "Charlie Bilello",
+    "text": "TTM Net Income...\nGoogle $GOOGL: $236 Billion\nNvidia $NVDA: $226 Billion\nMicrosoft $MSFT: $143 Billion\nAmazon $AMZN: $135 Billion\nApple $AAPL: $132 Billion\nMicron $MU: $85 billion\nBerkshire Hathaway $BRK.B: $77 Billion\n$META: $75 Billion\nRussell 2000 (Combined) $IWM: $13 Billion",
+    "url": "https://x.com/charliebilello/status/2122830361294209498",
+    "likes": 319,
+    "reposts": 43,
+    "ts": "2026-11-17T23:12:53.000Z",
+    "note": "Alphabet now tops all US companies in trailing net income"
+   },
+   {
+    "handle": "charliebilello",
+    "name": "Charlie Bilello",
+    "text": "Q3 Revenue Growth, YoY % Change...\nAnthropic $ANT: +1,127%\nSpaceX $SPCX: +161%\nNvidia $NVDA: +103%\nPalantir $PLTR: +96%\n$AMD: +45%\n$META: +26%\nGoogle $GOOGL: +25%\nMicrosoft $MSFT: +19%\nS&amp;P 500 $SPY: +14%\nAmazon $AMZN: +12%\nNetflix $NFLX: +12%\nApple $AAPL: +12%\nTesla $TSLA: +0%",
+    "url": "https://x.com/charliebilello/status/2122818740509405357",
+    "likes": 376,
+    "reposts": 43,
+    "ts": "2026-11-17T22:26:42.000Z",
+    "note": "Growth league table: Anthropic, NVDA, Alphabet side by side"
+   }
+  ],
+  "9463e42b8874": [
+   {
+    "handle": "AGTPinsights",
+    "name": "AGTP",
+    "text": "Isomorphic Labs just closed a $5 billion Series C today. Here's what you need to know.\n\nThe round is co-led by Greenoaks and Sequoia Capital, and the company says it was oversubscribed. Andreessen Horowitz joins as a new investor. Alphabet, Isomorphic's parent company, and GV https://t.co/TvIQA9oQTB https://t.co/DmpajrEwNQ",
+    "url": "https://x.com/AGTPinsights/status/2122677397438816344",
+    "likes": 4,
+    "reposts": 0,
+    "ts": "2026-11-17T13:05:03.000Z",
+    "note": "Round details: Greenoaks and Sequoia co-led, timing and use of funds"
+   },
+   {
+    "handle": "brianmcc",
+    "name": "Brian McCullough",
+    "text": "Why Isomorphic Raised $5B in Six Months\n\nAlphabet’s Isomorphic Labs has raised $5 billion in a round led by Sequoia and Greenoaks, just six months after its $2.1 billion raise, at a reported valuation of roughly $50 billion. https://t.co/IFHhdyWnop",
+    "url": "https://x.com/brianmcc/status/2122736517558813029",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-17T16:59:58.000Z",
+    "note": "Why Alphabet's drug-design lab raised $5B within six months"
    }
   ]
  },
@@ -608,64 +674,54 @@
   ],
   "NVDA": [
    {
-    "handle": "XTexchange",
-    "name": "XT Exchange 🔥",
-    "text": "📊 Three days. Six earnings reports. Two spending stories.\n\n🖥️ NVIDIA: Revenue guidance stands at $108B ±2%, with results due Tuesday.\n☁️ Alibaba: AI cloud and computing revenue grew 45% in its June quarter. Results arrive Thursday.\n🛒 More to Watch: Home Depot, Disney, Walmart https://t.co/aAAK1Eon1g",
-    "url": "https://x.com/XTexchange/status/2122586479042163072",
-    "likes": 68,
-    "reposts": 0,
-    "ts": "2026-11-17T07:03:47.000Z",
-    "note": "Setup for tonight: guidance of $108B ±2%, results after the close."
+    "handle": "growthrapidly",
+    "name": "Joel",
+    "text": "$NVDA CRUSHED Q3 EARNINGS! 🔥🚀\n\n• Revenue: $115.844B vs. Est. $109.080B\n• Adj. EPS: $2.68 vs. Est. $2.48\n• Revenue Beat: +6.20%\n• EPS Beat: +8.06%\n• Revenue Growth YoY: +103.21%\n• EPS Growth YoY: +106.15%\n\nAdditional Highlights:\n• Q4 Revenue Guidance: $126.1B–$133.9B vs. https://t.co/Flb38ka0ck",
+    "url": "https://x.com/growthrapidly/status/2122803004793315700",
+    "likes": 40,
+    "reposts": 1,
+    "ts": "2026-11-17T21:24:10.000Z",
+    "note": "Quick scorecard of NVDA's Q3 beat vs. consensus"
    },
    {
-    "handle": "Jim_Edwards",
-    "name": "Jim Edwards",
-    "text": "Nvidia interim CEO Kress will need to deliver pristine Q3 numbers tonight (and face off internally against Jensen Huang’s daughter Madison) https://t.co/EYGrXlLRzf",
-    "url": "https://x.com/Jim_Edwards/status/2122647653909705196",
-    "likes": 0,
-    "reposts": 1,
-    "ts": "2026-11-17T11:06:52.000Z",
-    "note": "Interim CEO Kress's first call, and it needs a clean beat."
+    "handle": "unusual_whales",
+    "name": "unusual_whales",
+    "text": "BREAKING: Nvidia, $NVDA, has stopped shipping US-approved AI chips to China, per Reuters",
+    "url": "https://x.com/unusual_whales/status/2123000008807162114",
+    "likes": 1110,
+    "reposts": 69,
+    "ts": "2026-11-18T10:27:00.000Z",
+    "note": "Reuters: China shipments halted, a guidance and export-curb risk"
+   },
+   {
+    "handle": "zerohedge",
+    "name": "zerohedge",
+    "text": "Premarket movers:\n\nMag 7 stocks are mostly higher: (Nvidia (NVDA) +3%, Alphabet (GOOGL) +1%, Tesla (TSLA) +0.9%, Amazon (AMZN) +0.5%, Microsoft (MSFT) unchanged, Meta Platforms (META) -0.1%, Apple (AAPL) -0.2%)\n\nAI infrastructure stocks including Broadcom (AVGO), CoreWeave (CRWV)",
+    "url": "https://x.com/zerohedge/status/2123040882056212823",
+    "likes": 127,
+    "reposts": 13,
+    "ts": "2026-11-18T13:09:25.000Z",
+    "note": "NVDA up ~3% premarket after the print"
    },
    {
     "handle": "KobeissiLetter",
     "name": "The Kobeissi Letter",
-    "text": "BREAKING: Nasdaq 100 futures extend losses to -1.7% in premarket trading as Nvidia, $NVDA, falls more than -5%.\n\nNvidia has now erased nearly -$2 trillion in market cap since its peak on October 6th. https://t.co/Hw099VWHrN",
-    "url": "https://x.com/KobeissiLetter/status/2122306811886006632",
-    "likes": 4259,
-    "reposts": 457,
-    "ts": "2026-11-16T12:32:29.000Z",
-    "note": "NVDA has erased nearly $2T from its October peak."
+    "text": "BREAKING: Nvidia's, $NVDA, Board of Directors announces it does not intend to reinstate Jensen Huang as CEO of the company.\n\nThe board also says they will not be accepting any questions regarding Jensen Huang on their earnings call.",
+    "url": "https://x.com/KobeissiLetter/status/2122813215172166133",
+    "likes": 11392,
+    "reposts": 838,
+    "ts": "2026-11-17T22:04:45.000Z",
+    "note": "Board's stance on Huang, the core of the CEO saga (11K+ likes)"
    },
    {
-    "handle": "InvestiBrew",
-    "name": "Gabriel Osorio-Mazzilli",
-    "text": "A stock at 300x earnings can be cheap\n\nA stock at 13.5x can be expensive\n\nThat’s why “NVIDIA’s lowest forward P/E since COVID” isn’t enough to make me buy the dip\n\nThe denominator matters\n\nIf the earnings hold up, the selloff could create an opportunity\n\nIf those estimates fall, https://t.co/ZcrJ9DlAXD",
-    "url": "https://x.com/InvestiBrew/status/2122291597526127023",
-    "likes": 8,
-    "reposts": 0,
-    "ts": "2026-11-16T11:32:01.000Z",
-    "note": "Valuation debate: a low forward P/E isn't enough by itself."
-   },
-   {
-    "handle": "wallstengine",
-    "name": "Wall St Engine",
-    "text": "$NVDA EXPANDS VERA CPU PLATFORM, CLAIMS UP TO 2.4X BETTER PERFORMANCE PER WATT THAN X86\n\nVera CPU racks are expected to be available from Dell, HPE, Lenovo and Supermicro starting in early 2027.\n\nVera is Nvidia's first fully custom data center CPU, built on $ARM architecture with https://t.co/2drJ8b6YM2",
-    "url": "https://x.com/wallstengine/status/2122363323706704144",
-    "likes": 416,
-    "reposts": 41,
-    "ts": "2026-11-16T16:17:02.000Z",
-    "note": "Product news: Vera CPU racks claim 2.4x perf/watt vs x86."
-   },
-   {
-    "handle": "Tickeron",
-    "name": "Tickeron",
-    "text": "AI CHIP TRACKER: CEREBRAS -9%, NAVITAS -8%, VICOR -8% AS NVIDIA SITS AT A 52-WEEK LOW\n\nThe chip selloff spread well past the big names this morning. Cerebras, Navitas, Vicor, Silicon Motion and Semtech all fell 7% to 9% ahead of Nvidia's report, and Nvidia itself is about 30% https://t.co/C7V72DCATB",
-    "url": "https://x.com/Tickeron/status/2122532683251159452",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-17T03:30:01.000Z",
-    "note": "The selloff spread to smaller AI chip names as NVDA hit a 52-week low."
+    "handle": "KobeissiLetter",
+    "name": "The Kobeissi Letter",
+    "text": "BREAKING: The US Securities and Exchange Commission (SEC) has opened an investigation into Nvidia, $NVDA, amid the Jensen Huang situation, per WSJ.\n\nThe focus of the investigation includes whether the company’s disclosures misled investors.\n\nThe Justice Department is also now",
+    "url": "https://x.com/KobeissiLetter/status/2122797688773050654",
+    "likes": 3390,
+    "reposts": 414,
+    "ts": "2026-11-17T21:03:03.000Z",
+    "note": "WSJ: SEC probe adds a regulatory overhang"
    }
   ],
   "TTD": [
@@ -862,14 +918,34 @@
   ],
   "PANW": [
    {
-    "handle": "Schulz_Research",
-    "name": "Schulz Duggan",
-    "text": "$NVDA $PANW $BIDU $BABA $POET $POWL $KEYS\n\nOur week-ahead calendar brings together earnings from Nvidia, Palo Alto Networks, Baidu, Tencent, Alibaba, POET, Powell and Keysight, alongside Microsoft Ignite, SC26, FOMC minutes and APEC.\n\nEach event includes a brief note on what to https://t.co/cxm2o9RZs4",
-    "url": "https://x.com/Schulz_Research/status/2122332173323714793",
-    "likes": 3,
-    "reposts": 1,
-    "ts": "2026-11-16T14:13:15.000Z",
-    "note": "PANW reports Wednesday after NVDA, in a busy earnings week."
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "Palo Alto Networks $PANW CEO Nikesh Arora on AI-driven cyberattacks:\n\nFinding viable attack paths used to take trial and error. Now AI can run simulations across vulnerabilities and identify ways in.\n\n“AI is making it easy for hackers to attack multiple customers.” https://t.co/GqNZwoBkFA",
+    "url": "https://x.com/wallstengine/status/2122844467468140953",
+    "likes": 119,
+    "reposts": 15,
+    "ts": "2026-11-18T00:08:56.000Z",
+    "note": "PANW CEO on AI-driven attacks, the bull case into tonight's print"
+   },
+   {
+    "handle": "XTexchange",
+    "name": "XT Exchange 🔥",
+    "text": "🛡️ Cybersecurity Earnings Countdown!\n\nPalo Alto Networks reports Q1 FY2027 results after the Nov 18 US close.\n\nWebcast: 21:30 UTC.\n\nWhat matters more for $PANW—AI security demand or future guidance? 👀\n\nExplore XT TradFi markets:\nhttps://t.co/gFR5gbYajD\n\n#PANW #XTexchange https://t.co/2qkDzK57eg",
+    "url": "https://x.com/XTexchange/status/2122983784056549393",
+    "likes": 40,
+    "reposts": 0,
+    "ts": "2026-11-18T09:22:31.000Z",
+    "note": "What the Street is watching for PANW's Q1 FY27 (AI security vs. platformization)"
+   },
+   {
+    "handle": "CNBCMorningCall",
+    "name": "Morning Call",
+    "text": "CNBC’s @KenzieSigalos reports on widespread tech disruptions fueling cybersecurity concerns ahead of Palo Alto Networks’ $PANW earnings. Investors are weighing rising AI-driven threats, corporate security spending and the company’s premium valuation. \n\n#Cybersecurity #AI #Stocks",
+    "url": "https://x.com/CNBCMorningCall/status/2123055025224065503",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-18T14:05:37.000Z",
+    "note": "CNBC framing: recent outages lift cyber demand questions into earnings"
    }
   ],
   "AVGO": [
@@ -940,14 +1016,24 @@
   ],
   "GOOGL": [
    {
-    "handle": "wallstengine",
-    "name": "Wall St Engine",
-    "text": "Ming-Chi Kuo says OpenAI and Anthropic orders extend Google’s TPU shipment visibility through 2029:\n\n2027: 8M-9M\n2028: 14M-15M\n2029: 16M-18M\n\nHe estimates ~12M units for OpenAI and ~14M for Anthropic across 2028-29, even as many expect AI capex to peak in 2028. https://t.co/CM3C8jjqVf",
-    "url": "https://x.com/wallstengine/status/2122142977367953798",
-    "likes": 339,
-    "reposts": 46,
-    "ts": "2026-11-16T01:41:27.000Z",
-    "note": "TPU shipment visibility through 2029 on OpenAI/Anthropic orders."
+    "handle": "DeItaone",
+    "name": "*Walter Bloomberg",
+    "text": "$NVDA - AMD AND GOOGLE CHIP AWAY AT NVIDIA AS HUANG EXIT SHAKES CUSTOMERS: INFORMATION",
+    "url": "https://x.com/DeItaone/status/2122692008477114433",
+    "likes": 700,
+    "reposts": 47,
+    "ts": "2026-11-17T14:03:07.000Z",
+    "note": "The Information: Google TPUs and AMD gaining as Huang exit unsettles customers"
+   },
+   {
+    "handle": "charliebilello",
+    "name": "Charlie Bilello",
+    "text": "TTM Net Income...\nGoogle $GOOGL: $236 Billion\nNvidia $NVDA: $226 Billion\nMicrosoft $MSFT: $143 Billion\nAmazon $AMZN: $135 Billion\nApple $AAPL: $132 Billion\nMicron $MU: $85 billion\nBerkshire Hathaway $BRK.B: $77 Billion\n$META: $75 Billion\nRussell 2000 (Combined) $IWM: $13 Billion",
+    "url": "https://x.com/charliebilello/status/2122830361294209498",
+    "likes": 319,
+    "reposts": 43,
+    "ts": "2026-11-17T23:12:53.000Z",
+    "note": "Alphabet now tops all US companies in trailing net income"
    }
   ],
   "ASML": [
@@ -960,6 +1046,28 @@
     "reposts": 0,
     "ts": "2026-11-17T13:28:15.000Z",
     "note": "European semis fall on the new US curbs."
+   }
+  ],
+  "CRM": [
+   {
+    "handle": "saastr",
+    "name": "SaaStr.ai",
+    "text": "SaaStr AI B2B Index: -3.89% today\n0 of 25 up. A broad B2B selloff.\nvs QQQ -1.15% / WCLD -2.93% / SMH -1.49%\nTop loser: Salesforce (CRM) -8.21%, its worst day since May 2024\nBest holdout: DigitalOcean (DOCN) -0.25%\nYTD: SaaStr +1.82% vs WCLD +13.62% vs QQQ +6.94%\n\nWhy: Salesforce",
+    "url": "https://x.com/saastr/status/2122808839699403063",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-17T21:47:21.000Z",
+    "note": "Software selloff breadth: 0 of 25 B2B names up, CRM -8% worst since May"
+   },
+   {
+    "handle": "zerohedge",
+    "name": "zerohedge",
+    "text": "*SALESFORCE IS SETTING AI BUDGETS FOR EMPLOYEES: INSIDER",
+    "url": "https://x.com/zerohedge/status/2122771287550701604",
+    "likes": 438,
+    "reposts": 19,
+    "ts": "2026-11-17T19:18:08.000Z",
+    "note": "Salesforce rationing AI spend internally, a read on AI cost pressure"
    }
   ]
  },

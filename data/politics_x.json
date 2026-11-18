@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T15:08:44Z",
+ "updated": "2026-11-18T15:00:14Z",
  "note": "Balanced curated accounts; leans describe the account, not each post. Midterms 2026 post-election window.",
  "leans": {
   "left": "Left / Democratic-leaning",
@@ -179,6 +179,121 @@
  ],
  "posts": [
   {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "text": "Decision Desk HQ projects Mary Peltola wins the AK US Senate General Election\n\n#DecisionMade: 10:13 PM EST\n\nFollow live results here: https://t.co/I0LaJG41uB https://t.co/9v1xHFvGu4",
+   "url": "https://x.com/DecisionDeskHQ/status/2122891343764521465",
+   "likes": 6354,
+   "reposts": 938,
+   "ts": "2026-11-18T03:15:12.000Z",
+   "lean": "analyst",
+   "race": "AK-sen",
+   "role": "Results & forecast"
+  },
+  {
+   "handle": "Redistrict",
+   "name": "Dave Wasserman",
+   "text": "New @CookPolitical: with 118.6 million votes counted, Dems' lead in the national House vote is up to 14.0 points. https://t.co/wFFnXPy9pN https://t.co/5oFUZZC9l7",
+   "url": "https://x.com/Redistrict/status/2122736916210565539",
+   "likes": 4199,
+   "reposts": 790,
+   "ts": "2026-11-17T17:01:34.000Z",
+   "lean": "analyst",
+   "race": "house-control",
+   "role": "Cook Political Report"
+  },
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "text": "BALANCE OF POWER UPDATE: Only a handful of races remain unprojected.\n\nHouse (9 remaining)\nDemocrats - 256\nRepublicans - 170\n\nSenate (1 remaining)\nDemocrats - 55\nRepublicans - 44\n\nGovernor:\nDemocrats - 30\nRepublicans - 20\n\nFind the midterm election results on Votes: https://t.co/vrGNIwuuBB",
+   "url": "https://x.com/DecisionDeskHQ/status/2122711580534055295",
+   "likes": 490,
+   "reposts": 74,
+   "ts": "2026-11-17T15:20:53.000Z",
+   "lean": "analyst",
+   "race": "senate-control",
+   "role": "Results & forecast"
+  },
+  {
+   "handle": "NateSilver538",
+   "name": "Nate Silver",
+   "text": "The one state where Democrats didn’t have a great night on Nov. 3 was Florida. But they did have a pretty good night once you dig under the hood. Here’s Eli on a night of near-misses and where it stands in the pecking order.\nhttps://t.co/eXjAygyzmu",
+   "url": "https://x.com/NateSilver538/status/2122799063636869212",
+   "likes": 595,
+   "reposts": 43,
+   "ts": "2026-11-17T21:08:31.000Z",
+   "lean": "analyst",
+   "role": "Silver Bulletin forecaster"
+  },
+  {
+   "handle": "politico",
+   "name": "POLITICO",
+   "text": "‘A savagely brutal map’: Senate GOP braces for 2028 https://t.co/k92FKUvYKC",
+   "url": "https://x.com/politico/status/2123023709065597113",
+   "likes": 262,
+   "reposts": 47,
+   "ts": "2026-11-18T12:01:10.000Z",
+   "lean": "center",
+   "race": "senate-control",
+   "role": "Politics news"
+  },
+  {
+   "handle": "axios",
+   "name": "Axios",
+   "text": "Jeffries nears historic speakership as power shifts in Congress https://t.co/K6mZVISudQ",
+   "url": "https://x.com/axios/status/2123048580831215963",
+   "likes": 21,
+   "reposts": 4,
+   "ts": "2026-11-18T13:40:00.000Z",
+   "lean": "center",
+   "race": "house-control",
+   "role": "News"
+  },
+  {
+   "handle": "CNNPolitics",
+   "name": "CNN Politics",
+   "text": "Democrats are putting top officials in the Trump administration on notice as their aggressive investigative agenda takes shape ahead of the new year.\n\nKey House lawmakers are launching probes and telling members of the Trump administration to preserve critical documents as they",
+   "url": "https://x.com/CNNPolitics/status/2123030987974103127",
+   "likes": 25,
+   "reposts": 10,
+   "ts": "2026-11-18T12:30:06.000Z",
+   "lean": "center",
+   "role": "News"
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "text": "Ron Johnson: \"At this point, there's really no way to fix Social Security. It's a Ponzi scheme. You can't fix it, you just shut it down and hope that you can recovery some of your money.\" https://t.co/H64L1gnCvr",
+   "url": "https://x.com/atrupar/status/2123045444188069974",
+   "likes": 671,
+   "reposts": 280,
+   "ts": "2026-11-18T13:27:32.000Z",
+   "lean": "left",
+   "role": "Public Notice"
+  },
+  {
+   "handle": "ByronYork",
+   "name": "Byron York",
+   "text": "What does a Democratic scaremonger do after his party wins a smashing victory? He pronounces a \"constitutional crisis.\" And on a related topic: What happened to the end of democracy? https://t.co/8OvUo7srxL https://t.co/jcwNV0sbVU",
+   "url": "https://x.com/ByronYork/status/2123026365096042692",
+   "likes": 429,
+   "reposts": 80,
+   "ts": "2026-11-18T12:11:44.000Z",
+   "lean": "right",
+   "role": "Washington Examiner"
+  },
+  {
+   "handle": "MZHemingway",
+   "name": "Mollie",
+   "text": "Confirming Trump Nominees Like Elliot Gaiser Is Thune’s Top Job Right Now, And He’s Failing It https://t.co/adr205ko7Y",
+   "url": "https://x.com/MZHemingway/status/2122840514345201889",
+   "likes": 2147,
+   "reposts": 536,
+   "ts": "2026-11-17T23:53:13.000Z",
+   "lean": "right",
+   "role": "The Federalist"
+  },
+  {
    "handle": "NateSilver538",
    "name": "Nate Silver",
    "lean": "analyst",
@@ -335,18 +450,6 @@
    "role": "Congress"
   },
   {
-   "handle": "Redistrict",
-   "name": "Dave Wasserman",
-   "lean": "analyst",
-   "role": "Cook Political Report",
-   "text": "New @CookPolitical: with 118.2 million votes counted, Dems' lead in the national House vote is up to 13.9 points. https://t.co/wFFnXPy9pN https://t.co/sOeZ9Tyozf",
-   "url": "https://x.com/Redistrict/status/2121471755722064244",
-   "likes": 1986,
-   "reposts": 269,
-   "ts": "2026-11-14T05:14:16Z",
-   "race": "house-control"
-  },
-  {
    "handle": "NateSilver538",
    "name": "Nate Silver",
    "lean": "analyst",
@@ -369,17 +472,6 @@
    "reposts": 66,
    "ts": "2026-11-15T00:59:23Z",
    "race": "AK-sen"
-  },
-  {
-   "handle": "DecisionDeskHQ",
-   "name": "Decision Desk HQ",
-   "lean": "analyst",
-   "role": "Results & forecast",
-   "text": "Decision Desk HQ projects Jonathan Kreiss-Tomkins wins the AK Governor General Election\n\n#DecisionMade: 11:57 PM EST\n\nFollow live results here: https://t.co/KJcAjsGona https://t.co/nTIWJzBQpF",
-   "url": "https://x.com/DecisionDeskHQ/status/2121467647430897967",
-   "likes": 1718,
-   "reposts": 204,
-   "ts": "2026-11-14T04:57:56Z"
   },
   {
    "handle": "gelliottmorris",
