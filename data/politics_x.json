@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T15:00:14Z",
+ "updated": "2026-11-19T15:07:10Z",
  "note": "Balanced curated accounts; leans describe the account, not each post. Midterms 2026 post-election window.",
  "leans": {
   "left": "Left / Democratic-leaning",
@@ -178,6 +178,210 @@
   }
  ],
  "posts": [
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "lean": "analyst",
+   "role": "Results & forecast",
+   "text": "Democrat Mary Peltola, the projected winner in Alaska's Senate election, is above the threshold for ranked-choice voting.\n\nNearly 96% of the vote is accounted for between Peltola and Republican Dan Sullivan.\n\nFind this election and more on Votes: https://t.co/I0LaJG41uB https://t.co/w4eCvsrb0R",
+   "url": "https://x.com/DecisionDeskHQ/status/2123096907681509404",
+   "likes": 277,
+   "reposts": 33,
+   "ts": "2026-11-18T16:52:02.000Z",
+   "race": "AK-sen"
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "lean": "left",
+   "role": "Public Notice",
+   "text": "Trump on Democrats: \"I respect them. They won. Politics is a nasty game, and they won. I think I can do in many ways better now.\" https://t.co/OY0tCnFLUa",
+   "url": "https://x.com/atrupar/status/2123217572338319829",
+   "likes": 1734,
+   "reposts": 248,
+   "ts": "2026-11-19T00:51:31.000Z"
+  },
+  {
+   "handle": "EWErickson",
+   "name": "Erick Erickson",
+   "lean": "right",
+   "role": "Conservative commentator",
+   "text": "It's interesting to me that after 48 hours of people complaining that the Administration was not reassuring the public about all the computer issues, it was neither the President nor Vice President who came out to reassure everyone, but the Secretary of State while overseas. https://t.co/YQyZIi8xWg",
+   "url": "https://x.com/EWErickson/status/2123115265345171656",
+   "likes": 988,
+   "reposts": 114,
+   "ts": "2026-11-18T18:04:59.000Z"
+  },
+  {
+   "handle": "CNNPolitics",
+   "name": "CNN Politics",
+   "lean": "center",
+   "role": "News",
+   "text": "The groundswell of support for Marco Rubio comes as donors, lawmakers and operatives – alarmed by the party's midterm wipeout – begin to plot for a post-Trump era that now appears more uncertain than ever. And many Republicans are increasingly warming to Rubio as a potential https://t.co/Q5ag4ChphQ",
+   "url": "https://x.com/CNNPolitics/status/2123370960430440561",
+   "likes": 55,
+   "reposts": 15,
+   "ts": "2026-11-19T11:01:01.000Z"
+  },
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "lean": "analyst",
+   "role": "Results & forecast",
+   "text": "In Nevada, Democrat Aaron Ford, the projected winner, leads Republican Joe Lombardo by a margin of over seven percentage points.\n\nAlmost every county in the state trended left from 2024. https://t.co/amVtRBwVYh",
+   "url": "https://x.com/DecisionDeskHQ/status/2123135108433715433",
+   "likes": 79,
+   "reposts": 10,
+   "ts": "2026-11-18T19:23:50.000Z",
+   "race": "NV-gov"
+  },
+  {
+   "handle": "MattYglesias",
+   "name": "Matthew Yglesias",
+   "lean": "left",
+   "role": "Slow Boring, center-left",
+   "text": "The left’s plan to gain power is for republicans to win more elections https://t.co/qUwnkzxK5C",
+   "url": "https://x.com/mattyglesias/status/2123139323008541053",
+   "likes": 2994,
+   "reposts": 273,
+   "ts": "2026-11-18T19:40:35.000Z"
+  },
+  {
+   "handle": "MZHemingway",
+   "name": "Mollie",
+   "lean": "right",
+   "role": "The Federalist",
+   "text": "Rutgers Was Chilling Conservative Speech Long Before Mikie Sherrill Tried To Censor Bovino https://t.co/eLz0yKJjW5",
+   "url": "https://x.com/MZHemingway/status/2123180123134566860",
+   "likes": 417,
+   "reposts": 74,
+   "ts": "2026-11-18T22:22:42.000Z"
+  },
+  {
+   "handle": "politico",
+   "name": "POLITICO",
+   "lean": "center",
+   "role": "Politics news",
+   "text": "The Republican trifecta is sputtering in its final days https://t.co/w7zyhznWCI",
+   "url": "https://x.com/politico/status/2123400329706316009",
+   "likes": 15,
+   "reposts": 1,
+   "ts": "2026-11-19T12:57:44.000Z",
+   "race": "senate-control"
+  },
+  {
+   "handle": "gelliottmorris",
+   "name": "G Elliott Morris",
+   "lean": "analyst",
+   "role": "Strength In Numbers / FiftyPlusOne",
+   "text": "New poll: Trump approval at low of 31%; Americans split on impeachment, favor bills to reduce costs and corruption and roll back POTUS's mass deportations program.\n\nPartial Strength In Numbers/ @verasight_data release here. More on 2028 coming next wk\nhttps://t.co/z9rnK4wfya",
+   "url": "https://x.com/gelliottmorris/status/2123100061458395424",
+   "likes": 106,
+   "reposts": 18,
+   "ts": "2026-11-18T17:04:34.000Z"
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "lean": "left",
+   "role": "Public Notice",
+   "text": "OMG -- Trump judicial nominee James P Sullivan (a Texas Supreme Court justice!) reveals he doesn't know what the 22nd amendment says, but then after Chris Coons explains it to him, he refuses to say it'd be illegal for Trump to serve an illegal third term 🤦 https://t.co/YwkDcVa70C",
+   "url": "https://x.com/atrupar/status/2123119253234806811",
+   "likes": 12770,
+   "reposts": 3063,
+   "ts": "2026-11-18T18:20:50.000Z"
+  },
+  {
+   "handle": "EWErickson",
+   "name": "Erick Erickson",
+   "lean": "right",
+   "role": "Conservative commentator",
+   "text": "It's interesting that Rubio had to be the grown up in the room explaining the outages, etc.",
+   "url": "https://x.com/EWErickson/status/2123078763910967421",
+   "likes": 277,
+   "reposts": 18,
+   "ts": "2026-11-18T15:39:56.000Z"
+  },
+  {
+   "handle": "PunchbowlNews",
+   "name": "Punchbowl News",
+   "lean": "center",
+   "role": "Congress",
+   "text": "Sens. Jerry Moran (R-Kan.) and Lisa Murkowski (R-Alaska) are racing for the top GOP appropriator spot in the next Congress, presenting a unique predicament for Senate Majority Leader John Thune.\n\n@AndrewDesiderio, @sn_handler &amp; @LauraEWeiss16 have more: https://t.co/DB8i3rjz6L https://t.co/rqOfQ18WvW",
+   "url": "https://x.com/PunchbowlNews/status/2123393353186242684",
+   "likes": 14,
+   "reposts": 7,
+   "ts": "2026-11-19T12:30:00.000Z"
+  },
+  {
+   "handle": "NateSilver538",
+   "name": "Nate Silver",
+   "lean": "analyst",
+   "role": "Silver Bulletin forecaster",
+   "text": "Doesn't make a lot of sense. It's not an easy race. Vance underperformed in his one Senate win and Brown is an overperformer. And we'll see but 2028 could be another blue or blue-ish year. https://t.co/OGwCmjMnUT",
+   "url": "https://x.com/NateSilver538/status/2123085181468975555",
+   "likes": 1565,
+   "reposts": 60,
+   "ts": "2026-11-18T16:05:26.000Z"
+  },
+  {
+   "handle": "mehdirhasan",
+   "name": "Mehdi Hasan",
+   "lean": "left",
+   "role": "Zeteo",
+   "text": "Not sure how anyone with a brain can disagree with either of these two new Democratic senators. \n\nWell said @JulianaStratton and @peggyflanagan https://t.co/mMOORGwl1R",
+   "url": "https://x.com/mehdirhasan/status/2123420471127642153",
+   "likes": 349,
+   "reposts": 50,
+   "ts": "2026-11-19T14:17:46.000Z",
+   "race": "senate-control"
+  },
+  {
+   "handle": "axios",
+   "name": "Axios",
+   "lean": "center",
+   "role": "News",
+   "text": "House Dems prepare for broad Trump family probe https://t.co/q1uRbjmS8M",
+   "url": "https://x.com/axios/status/2123014612723380275",
+   "likes": 47,
+   "reposts": 10,
+   "ts": "2026-11-18T11:25:02.000Z",
+   "race": "house-control"
+  },
+  {
+   "handle": "CookPolitical",
+   "name": "Cook Political Report",
+   "lean": "analyst",
+   "role": "Race ratings",
+   "text": "The Cook Political Report's Battleground Issue Tracker, powered by @AdImpact_Pol, tracked the top issues in the most competitive House and Senate races. https://t.co/yG3vOR6A0O",
+   "url": "https://x.com/CookPolitical/status/2123133714523644070",
+   "likes": 40,
+   "reposts": 12,
+   "ts": "2026-11-18T19:18:18.000Z"
+  },
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "lean": "analyst",
+   "role": "Results & forecast",
+   "text": "Decision Desk HQ projects Nick Begich wins the AK US House At-Large General Election\n\n#DecisionMade: 9:25 PM EST\n\nFollow live results here: https://t.co/e8V632YVmc https://t.co/CPULvnsDDh",
+   "url": "https://x.com/DecisionDeskHQ/status/2123241423021486397",
+   "likes": 275,
+   "reposts": 42,
+   "ts": "2026-11-19T02:26:17.000Z",
+   "race": "house-control"
+  },
+  {
+   "handle": "politico",
+   "name": "POLITICO",
+   "lean": "center",
+   "role": "Politics news",
+   "text": "Buttigieg allies launch effort to back another presidential run https://t.co/327RCcp0DD",
+   "url": "https://x.com/politico/status/2123370908333101379",
+   "likes": 220,
+   "reposts": 31,
+   "ts": "2026-11-19T11:00:49.000Z"
+  },
   {
    "handle": "DecisionDeskHQ",
    "name": "Decision Desk HQ",
@@ -426,163 +630,6 @@
    "reposts": 1,
    "ts": "2026-11-17T14:23:11.000Z",
    "role": "Politics news"
-  },
-  {
-   "handle": "politico",
-   "name": "POLITICO",
-   "lean": "center",
-   "text": "Fed's Cook won't appear at White House hearing to consider her firing without changes https://t.co/g8wvBBDuV4",
-   "url": "https://x.com/politico/status/2122701746476654866",
-   "likes": 4,
-   "reposts": 2,
-   "ts": "2026-11-17T14:41:48.000Z",
-   "role": "Politics news"
-  },
-  {
-   "handle": "PunchbowlNews",
-   "name": "Punchbowl News",
-   "lean": "center",
-   "text": "Out now! A Punchbowl News Lame Duck special edition newsletter: \n\n- Congress braces for a jam-packed lame duck\n- Top funding issues to watch\n- The Lame Duck Power Matrix\n- NDAA end game looms\n- Dems face big permitting test\n\nRead it here: https://t.co/NTsfpBLbn3 https://t.co/sqcuWbW5do",
-   "url": "https://x.com/PunchbowlNews/status/2122706344926974263",
-   "likes": 0,
-   "reposts": 1,
-   "ts": "2026-11-17T15:00:05.000Z",
-   "role": "Congress"
-  },
-  {
-   "handle": "NateSilver538",
-   "name": "Nate Silver",
-   "lean": "analyst",
-   "role": "Silver Bulletin forecaster",
-   "text": "The other thing about that Duffy/Mullin presser yesterday is it didn't seem to exist in this reality where Democrats will soon have 56 Senators and ~260 Reps. Nobody wants to hear random praise of Trump. And Dems have subpoena power if the public isn't getting clear answers.",
-   "url": "https://x.com/NateSilver538/status/2121655394405658790",
-   "likes": 7978,
-   "reposts": 465,
-   "ts": "2026-11-14T17:23:59Z",
-   "race": "senate-control"
-  },
-  {
-   "handle": "DecisionDeskHQ",
-   "name": "Decision Desk HQ",
-   "lean": "analyst",
-   "role": "Results & forecast",
-   "text": "New vote drop from Alaska:\n\nSenate:\nPeltola (D): 2,373\nSullivan (R): 1,596\nHeikes (R): 117\nSullivan Jr. (I): 92\n\nHouse\nHill (I): 1,705\nBegich (R): 1,655\nHafner (D): 618\nMcDermott (L): 155\n\nPeltola now leads by 11,189 votes. https://t.co/RcRBgK2D4y",
-   "url": "https://x.com/DecisionDeskHQ/status/2121770002621911402",
-   "likes": 516,
-   "reposts": 66,
-   "ts": "2026-11-15T00:59:23Z",
-   "race": "AK-sen"
-  },
-  {
-   "handle": "gelliottmorris",
-   "name": "G Elliott Morris",
-   "lean": "analyst",
-   "role": "Strength In Numbers / FiftyPlusOne",
-   "text": "New: The 2026 election was not all about turnout. On several issues, Dems held their biggest leads since 2007!\nThis matters because it shows the limits of the \"popularist\" approach to electoral strategy. It also gives the Ds a policy roadmap for 2027\nhttps://t.co/AhWXiU25xN",
-   "url": "https://x.com/gelliottmorris/status/2122047460872733029",
-   "likes": 31,
-   "reposts": 10,
-   "ts": "2026-11-15T19:21:55Z"
-  },
-  {
-   "handle": "DecisionDeskHQ",
-   "name": "Decision Desk HQ",
-   "lean": "analyst",
-   "role": "Results & forecast",
-   "text": "Kansas House District 123, in Garden City, should have been an easy Republican hold. Democrats flipped it by 2 points.\n\n@ChazNuttycombe of @StateNavigate tells @geoffreyvs how new and shifting Latino voters in southwest Kansas changed the map. https://t.co/QFUcwHCIAh",
-   "url": "https://x.com/DecisionDeskHQ/status/2122042546213757437",
-   "likes": 81,
-   "reposts": 21,
-   "ts": "2026-11-15T19:02:23Z"
-  },
-  {
-   "handle": "atrupar",
-   "name": "Aaron Rupar",
-   "lean": "left",
-   "role": "Public Notice",
-   "text": "Q: What responsibility do you take for the ground stop on Friday given that you're the president?\n\nTRUMP: I don't take any responsibility https://t.co/YBwqYEc73s",
-   "url": "https://x.com/atrupar/status/2122341061695557692",
-   "likes": 301,
-   "reposts": 115,
-   "ts": "2026-11-16T14:48:34Z"
-  },
-  {
-   "handle": "atrupar",
-   "name": "Aaron Rupar",
-   "lean": "left",
-   "role": "Public Notice",
-   "text": "Q: Did you trust US intelligence that Jensen Huang was having an affair with a Chinese spy?\n\nTRUMP: I don't know that she's a Chinese spy. I told Stephen A Smith that\n\nQ: Sources told us that Marco Rubio told you she was\n\nTRUMP: I haven't heard that. I don't know she's a spy. https://t.co/cGpUdEoOZ4",
-   "url": "https://x.com/atrupar/status/2122338497021301228",
-   "likes": 231,
-   "reposts": 72,
-   "ts": "2026-11-16T14:38:23Z"
-  },
-  {
-   "handle": "ByronYork",
-   "name": "Byron York",
-   "lean": "right",
-   "role": "Washington Examiner",
-   "text": "In the 2026 exit polls, when given a choice of six issues and asked which one was the most important facing the country, the second-largest group, 33%, said \"the state of democracy.\" Of that group, 80% voted Democrat. https://t.co/r6LizW3iRk https://t.co/U3Vp6bALep",
-   "url": "https://x.com/ByronYork/status/2122011790338928984",
-   "likes": 911,
-   "reposts": 183,
-   "ts": "2026-11-15T17:00:10Z"
-  },
-  {
-   "handle": "ByronYork",
-   "name": "Byron York",
-   "lean": "right",
-   "role": "Washington Examiner",
-   "text": "After all the dire warnings, all it took was for Democrats to win an election. From NYT: \"The November election became not just a referendum on President Trump, but also a crucial test of American democracy. In the end, the country passed.\" https://t.co/EobVAF6gtS",
-   "url": "https://x.com/ByronYork/status/2121932386510533104",
-   "likes": 652,
-   "reposts": 119,
-   "ts": "2026-11-15T11:44:39Z"
-  },
-  {
-   "handle": "guypbenson",
-   "name": "Guy Benson",
-   "lean": "right",
-   "role": "Fox News",
-   "text": "Democracy (noun) • when the approved tribe wins elections https://t.co/1V83mQ6mfR",
-   "url": "https://x.com/guypbenson/status/2122015466390450324",
-   "likes": 750,
-   "reposts": 103,
-   "ts": "2026-11-15T17:14:46Z"
-  },
-  {
-   "handle": "politico",
-   "name": "POLITICO",
-   "lean": "center",
-   "role": "Politics news",
-   "text": "A Senate Democratic leadership showdown is brewing as Sen. Chris Van Hollen challenges Sen. Chuck Schumer for majority leader. \n\nVan Hollen tells Playbook why he thinks Democrats shouldn’t rush to a vote.\n\n🎧 Playbook Pod: https://t.co/eID8I4lvOO https://t.co/DExrIweOak",
-   "url": "https://x.com/politico/status/2122323288051376572",
-   "likes": 39,
-   "reposts": 13,
-   "ts": "2026-11-16T13:37:57Z",
-   "race": "senate-control"
-  },
-  {
-   "handle": "politico",
-   "name": "POLITICO",
-   "lean": "center",
-   "role": "Politics news",
-   "text": "House Democrats want Trump out of office. They don’t know if impeachment is the answer. https://t.co/Ew0EsehmAi",
-   "url": "https://x.com/politico/status/2122316432163701011",
-   "likes": 12,
-   "reposts": 7,
-   "ts": "2026-11-16T13:10:42Z"
-  },
-  {
-   "handle": "axios",
-   "name": "Axios",
-   "lean": "center",
-   "role": "News",
-   "text": "MAGA figures hope Jensen Huang's spy scandal finally breaks Trump's embrace of Big Tech https://t.co/iAVEMzeHKz",
-   "url": "https://x.com/axios/status/2122269709739413909",
-   "likes": 23,
-   "reposts": 6,
-   "ts": "2026-11-16T10:05:03Z"
   }
  ]
 }
