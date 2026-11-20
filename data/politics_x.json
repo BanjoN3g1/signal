@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T15:07:10Z",
+ "updated": "2026-11-20T15:04:33Z",
  "note": "Balanced curated accounts; leans describe the account, not each post. Midterms 2026 post-election window.",
  "leans": {
   "left": "Left / Democratic-leaning",
@@ -178,6 +178,176 @@
   }
  ],
  "posts": [
+  {
+   "handle": "kkondik",
+   "name": "Kyle Kondik",
+   "text": "starting next year, only one state that Trump won by less than 18 points is going to have two Republican senators - Florida",
+   "url": "https://x.com/kkondik/status/2123500739435590119",
+   "likes": 544,
+   "reposts": 61,
+   "ts": "2026-11-19T19:36:43.000Z",
+   "lean": "analyst",
+   "role": "Sabato's Crystal Ball",
+   "race": "senate-control"
+  },
+  {
+   "handle": "gelliottmorris",
+   "name": "G Elliott Morris",
+   "text": "The 2028 POTUS ballot is D+15 in our new Strength In Numbers/Verasight poll. This is notable given all the talk about turnout fx in 2026 that will (people speculate) fade by 28. A lot of the 2024 Trump voters who didn't show up preferred D to R candidates\nhttps://t.co/ds5hupRjCX",
+   "url": "https://x.com/gelliottmorris/status/2123425498302693487",
+   "likes": 202,
+   "reposts": 40,
+   "ts": "2026-11-19T14:37:44.000Z",
+   "lean": "analyst",
+   "role": "Strength In Numbers / FiftyPlusOne"
+  },
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "text": "Democrat Rob Sand's margin in Iowa's Governor race is larger than Barack Obama's 2008 win, but the coalition is quite different. \n\nCompared to 2008, Sand ran ahead of Obama in the state's urban areas, but worse in most rural counties. https://t.co/xKeOh2cdWF",
+   "url": "https://x.com/DecisionDeskHQ/status/2123513052922618178",
+   "likes": 633,
+   "reposts": 47,
+   "ts": "2026-11-19T20:25:39.000Z",
+   "lean": "analyst",
+   "role": "Results & forecast",
+   "race": "IA-gov"
+  },
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "text": "Nick Begich (R) won re-election in Alaska's At-Large House seat, beating  Bill Hill (I) by over 7,600 votes after RCV.\n\nEric Hafner (D), a federal prisoner, received nearly 8% of first-round votes. Many of his voters exhausted their ballots. https://t.co/NqbVzuM9Jz",
+   "url": "https://x.com/DecisionDeskHQ/status/2123490025522577850",
+   "likes": 118,
+   "reposts": 10,
+   "ts": "2026-11-19T18:54:09.000Z",
+   "lean": "analyst",
+   "role": "Results & forecast"
+  },
+  {
+   "handle": "SeanTrende",
+   "name": "Sean T at RCP",
+   "text": "This. The Trump presidency should have put an abrupt end to any desire to centralize election administration in this country, for example. I can remember saying in the 90s \"don't imagine Bill Clinton running this, imagine Pat Buchanan doing it\" and man I feel ok about tha tone. https://t.co/qEA39pzzKr",
+   "url": "https://x.com/SeanTrende/status/2123424359276519567",
+   "likes": 260,
+   "reposts": 32,
+   "ts": "2026-11-19T14:33:13.000Z",
+   "lean": "analyst",
+   "role": "RealClearPolitics analyst"
+  },
+  {
+   "handle": "NateSilver538",
+   "name": "Nate Silver",
+   "text": "Stephen Miller the most obvious \"anonymous\" source since Jared and Ivanka. https://t.co/9LukWCkGpP",
+   "url": "https://x.com/NateSilver538/status/2123609753104298372",
+   "likes": 2865,
+   "reposts": 101,
+   "ts": "2026-11-20T02:49:54.000Z",
+   "lean": "analyst",
+   "role": "Silver Bulletin forecaster"
+  },
+  {
+   "handle": "mattyglesias",
+   "name": "Matthew Yglesias",
+   "text": "We’re going to be a country that builds things again thanks to the work of @MartinHeinrich, @SenWhitehouse, and many many many staffers on both sides of the aisle who made BAAJA happen in the senate — an important bill on its own terms that lays the groundwork for more to come.",
+   "url": "https://x.com/mattyglesias/status/2123621805319401626",
+   "likes": 859,
+   "reposts": 80,
+   "ts": "2026-11-20T03:37:48.000Z",
+   "lean": "left",
+   "role": "Slow Boring, center-left"
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "text": "Wow. Trump sat on his ass for 15 hours straight. #hero https://t.co/XvpwMLBGjc",
+   "url": "https://x.com/atrupar/status/2123609422450831726",
+   "likes": 2997,
+   "reposts": 176,
+   "ts": "2026-11-20T02:48:35.000Z",
+   "lean": "left",
+   "role": "Public Notice"
+  },
+  {
+   "handle": "guypbenson",
+   "name": "Guy Benson",
+   "text": "“If Abdul can win in Michigan, anybody can win, anywhere.” -AOC \n\nAnd away we go… https://t.co/bnHIMsefhi",
+   "url": "https://x.com/guypbenson/status/2123558080374002125",
+   "likes": 1239,
+   "reposts": 193,
+   "ts": "2026-11-19T23:24:34.000Z",
+   "lean": "right",
+   "role": "Fox News",
+   "race": "MI-sen"
+  },
+  {
+   "handle": "ByronYork",
+   "name": "Byron York",
+   "text": "Gas $4.30 a month ago, $3.72 today. Diesel $6.32 a month ago, $5.93 today. From AAA: https://t.co/rHG50SBKW2 https://t.co/6u2UysgeKO",
+   "url": "https://x.com/ByronYork/status/2123528091498852681",
+   "likes": 205,
+   "reposts": 66,
+   "ts": "2026-11-19T21:25:24.000Z",
+   "lean": "right",
+   "role": "Washington Examiner"
+  },
+  {
+   "handle": "EWErickson",
+   "name": "Erick Erickson",
+   "text": "I think @JohnCornyn should reconsider his judicial hold on Elliot Gaiser, who is a thoroughly competent convictional conservative who would be an excellent judge.",
+   "url": "https://x.com/EWErickson/status/2123504724632613267",
+   "likes": 372,
+   "reposts": 41,
+   "ts": "2026-11-19T19:52:33.000Z",
+   "lean": "right",
+   "role": "Conservative commentator"
+  },
+  {
+   "handle": "politico",
+   "name": "POLITICO",
+   "text": "Dems crash Elon Musk’s Texas honeymoon https://t.co/PSxJlMav2t",
+   "url": "https://x.com/politico/status/2123747567087325341",
+   "likes": 308,
+   "reposts": 42,
+   "ts": "2026-11-20T11:57:31.000Z",
+   "lean": "center",
+   "role": "Politics news"
+  },
+  {
+   "handle": "CNNPolitics",
+   "name": "CNN Politics",
+   "text": "Democrats and the White House are already in a showdown over alleged document destruction – and the party hasn't even taken control of Congress yet. https://t.co/LGcHv9JIEv https://t.co/NTnO45IgTy",
+   "url": "https://x.com/CNNPolitics/status/2123770867804946689",
+   "likes": 18,
+   "reposts": 10,
+   "ts": "2026-11-20T13:30:07.000Z",
+   "lean": "center",
+   "role": "News",
+   "race": "house-control"
+  },
+  {
+   "handle": "PunchbowlNews",
+   "name": "Punchbowl News",
+   "text": "RECONCILIATION IMPASSE:\n\nThe Trump admin is laying the blame for the all-but-certain collapse of a $350 billion Pentagon plus-up at Senate Majority Leader John Thune’s feet.\n\n@briana_reilly, @AnthonyAdragna &amp; @LauraEWeiss16 have more: https://t.co/fVDlW5YT4S https://t.co/g5PdrW3TLi",
+   "url": "https://x.com/PunchbowlNews/status/2123751963859075471",
+   "likes": 12,
+   "reposts": 8,
+   "ts": "2026-11-20T12:15:00.000Z",
+   "lean": "center",
+   "role": "Congress"
+  },
+  {
+   "handle": "politico",
+   "name": "POLITICO",
+   "text": "\"Why are we required to be Democrats and Republicans?\" Gov.-elect @RobSandIA asked.\n\nSand, who appointed an independent and a Republican to his transition team, said he would like \"some representation for independents\" in Iowa. https://t.co/ncITbEbD1A",
+   "url": "https://x.com/politico/status/2123782163728392643",
+   "likes": 13,
+   "reposts": 2,
+   "ts": "2026-11-20T14:15:00.000Z",
+   "lean": "center",
+   "role": "Politics news",
+   "race": "IA-gov"
+  },
   {
    "handle": "DecisionDeskHQ",
    "name": "Decision Desk HQ",
@@ -463,173 +633,6 @@
    "ts": "2026-11-18T12:30:06.000Z",
    "lean": "center",
    "role": "News"
-  },
-  {
-   "handle": "atrupar",
-   "name": "Aaron Rupar",
-   "text": "Ron Johnson: \"At this point, there's really no way to fix Social Security. It's a Ponzi scheme. You can't fix it, you just shut it down and hope that you can recovery some of your money.\" https://t.co/H64L1gnCvr",
-   "url": "https://x.com/atrupar/status/2123045444188069974",
-   "likes": 671,
-   "reposts": 280,
-   "ts": "2026-11-18T13:27:32.000Z",
-   "lean": "left",
-   "role": "Public Notice"
-  },
-  {
-   "handle": "ByronYork",
-   "name": "Byron York",
-   "text": "What does a Democratic scaremonger do after his party wins a smashing victory? He pronounces a \"constitutional crisis.\" And on a related topic: What happened to the end of democracy? https://t.co/8OvUo7srxL https://t.co/jcwNV0sbVU",
-   "url": "https://x.com/ByronYork/status/2123026365096042692",
-   "likes": 429,
-   "reposts": 80,
-   "ts": "2026-11-18T12:11:44.000Z",
-   "lean": "right",
-   "role": "Washington Examiner"
-  },
-  {
-   "handle": "MZHemingway",
-   "name": "Mollie",
-   "text": "Confirming Trump Nominees Like Elliot Gaiser Is Thune’s Top Job Right Now, And He’s Failing It https://t.co/adr205ko7Y",
-   "url": "https://x.com/MZHemingway/status/2122840514345201889",
-   "likes": 2147,
-   "reposts": 536,
-   "ts": "2026-11-17T23:53:13.000Z",
-   "lean": "right",
-   "role": "The Federalist"
-  },
-  {
-   "handle": "NateSilver538",
-   "name": "Nate Silver",
-   "lean": "analyst",
-   "text": "Medium-confidence prediction: we're about one major AI disruption to the banking system or aviation etc system away from the Overton window shifting very rapidly. Not a high-confidence prediction because I don't think the people in the White House know what they're doing.",
-   "url": "https://x.com/NateSilver538/status/2122530723961713067",
-   "likes": 10752,
-   "reposts": 643,
-   "ts": "2026-11-17T03:22:13.000Z",
-   "role": "Silver Bulletin forecaster"
-  },
-  {
-   "handle": "DecisionDeskHQ",
-   "name": "Decision Desk HQ",
-   "lean": "analyst",
-   "text": "New vote drop in Alaska:\n\nSenate:\nPeltola (D): 1,001\nSullivan (R): 738\nSullivan Jr. (I): 32\nHeikes (R): 25\n\nHouse:\nBegich (R): 746\nHill (I): 668\nHafner (D): 293\nMcDermott (L): 46\n\nFind full results on Votes: https://t.co/I0LaJG41uB https://t.co/PaSS8O7bOw",
-   "url": "https://x.com/DecisionDeskHQ/status/2122523768933245385",
-   "likes": 202,
-   "reposts": 19,
-   "ts": "2026-11-17T02:54:35.000Z",
-   "race": "AK-sen",
-   "role": "Results & forecast"
-  },
-  {
-   "handle": "gelliottmorris",
-   "name": "G Elliott Morris",
-   "lean": "analyst",
-   "text": "Among 2024 Trump voters, disapproval of the president's handling of immigration/deportations predicted voting for Democrats in the midterms more than views on prices did, and their views on his corruption scandals predicted 2026 vote about as well. \n\nhttps://t.co/btSavy4hG1 https://t.co/Ij8DjeNIiT",
-   "url": "https://x.com/gelliottmorris/status/2122663108552397089",
-   "likes": 42,
-   "reposts": 19,
-   "ts": "2026-11-17T12:08:16.000Z",
-   "race": "house-control",
-   "role": "Strength In Numbers / FiftyPlusOne"
-  },
-  {
-   "handle": "atrupar",
-   "name": "Aaron Rupar",
-   "lean": "left",
-   "text": "Trump says the \"Russia-Iran\" war is costing 25,000 lives a month 🥴 https://t.co/MREN1YMfKN",
-   "url": "https://x.com/atrupar/status/2122680660527653169",
-   "likes": 623,
-   "reposts": 161,
-   "ts": "2026-11-17T13:18:01.000Z",
-   "role": "Public Notice"
-  },
-  {
-   "handle": "atrupar",
-   "name": "Aaron Rupar",
-   "lean": "left",
-   "text": "Markwayne Mullin: \"I can tell you with complete certainty that we are not under attack. There's no cyber threat that's taking place. The homeland is very secure.\" https://t.co/PWeStHdwa9",
-   "url": "https://x.com/atrupar/status/2122704260072628478",
-   "likes": 53,
-   "reposts": 16,
-   "ts": "2026-11-17T14:51:48.000Z",
-   "role": "Public Notice"
-  },
-  {
-   "handle": "MattYglesias",
-   "name": "Matthew Yglesias",
-   "lean": "left",
-   "text": "I think this really underrates the strongly personalist nature of both MAGA but also the Long Bernie Insurgency. https://t.co/ndovPpYKgQ",
-   "url": "https://x.com/mattyglesias/status/2122684921340952597",
-   "likes": 107,
-   "reposts": 3,
-   "ts": "2026-11-17T13:34:57.000Z",
-   "role": "Slow Boring, center-left"
-  },
-  {
-   "handle": "RichLowry",
-   "name": "Rich Lowry",
-   "lean": "right",
-   "text": "“The old Republican establishment could be out of touch, unimaginative, and too comfortable with revolving-door practices that enriched former officeholders and staffers, among other failings.\n\nBeginning in 2016, Donald Trump burned this establishment to the ground and created a",
-   "url": "https://x.com/RichLowry/status/2122523393454928023",
-   "likes": 137,
-   "reposts": 31,
-   "ts": "2026-11-17T02:53:06.000Z",
-   "role": "National Review"
-  },
-  {
-   "handle": "ByronYork",
-   "name": "Byron York",
-   "lean": "right",
-   "text": "Exactly! I believe as a candidate Sherrill said many times that as governor she would be \"laser focused on driving down costs.\" https://t.co/zZ3Ro4Lz0R",
-   "url": "https://x.com/ByronYork/status/2122538817815294463",
-   "likes": 518,
-   "reposts": 63,
-   "ts": "2026-11-17T03:54:23.000Z",
-   "role": "Washington Examiner"
-  },
-  {
-   "handle": "EWErickson",
-   "name": "Erick Erickson",
-   "lean": "right",
-   "text": "Several friends of mine who are deep in the tech industry share a common theory on a lot of the outages happening right now with the banks, United Airlines, etc.\n\nThey’re all rushing updates to stop AI bots that work on behalf of consumers. They push out the changes and then,",
-   "url": "https://x.com/EWErickson/status/2122520165900235182",
-   "likes": 1243,
-   "reposts": 110,
-   "ts": "2026-11-17T02:40:16.000Z",
-   "role": "Conservative commentator"
-  },
-  {
-   "handle": "MZHemingway",
-   "name": "Mollie",
-   "lean": "right",
-   "text": "Year of Alito. AEI has honored Justice Alito with its Irving Kristol Award. He is speaking now. https://t.co/nlxmQWAj6l",
-   "url": "https://x.com/MZHemingway/status/2122490262878560381",
-   "likes": 673,
-   "reposts": 50,
-   "ts": "2026-11-17T00:41:27.000Z",
-   "role": "The Federalist"
-  },
-  {
-   "handle": "politico",
-   "name": "POLITICO",
-   "lean": "center",
-   "text": "Capitol agenda: No quick exit from Dem leader brawl https://t.co/eNsd5ZhBoJ",
-   "url": "https://x.com/politico/status/2122676668498166048",
-   "likes": 12,
-   "reposts": 4,
-   "ts": "2026-11-17T13:02:09.000Z",
-   "role": "Politics news"
-  },
-  {
-   "handle": "politico",
-   "name": "POLITICO",
-   "lean": "center",
-   "text": "The Commerce Department, led by Howard Lutnick, finds itself at odds over U.S. AI chip exports to China. \n\nWhat does this mean for Trump’s China trip? \n\n🎧 Playbook Pod: https://t.co/Wcc7lTzJhK https://t.co/2VzPJFjBgJ",
-   "url": "https://x.com/politico/status/2122697057664471173",
-   "likes": 7,
-   "reposts": 1,
-   "ts": "2026-11-17T14:23:11.000Z",
-   "role": "Politics news"
   }
  ]
 }

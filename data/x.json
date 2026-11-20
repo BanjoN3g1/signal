@@ -9,7 +9,7 @@
     "likes": 5613,
     "reposts": 449,
     "ts": "2026-11-18T21:37:59.000Z",
-    "note": "The print: $83, above the $70\u201378 range, ~$68B raised; the biggest pricing of the year."
+    "note": "The print: $83, above the $70–78 range, ~$68B raised; the biggest pricing of the year."
    },
    {
     "handle": "KobeissiLetter",
@@ -19,12 +19,12 @@
     "likes": 3558,
     "reposts": 263,
     "ts": "2026-11-18T15:27:37.000Z",
-    "note": "Order book ~$500B (\u2248$400B institutional): why the range kept getting raised."
+    "note": "Order book ~$500B (≈$400B institutional): why the range kept getting raised."
    },
    {
     "handle": "DeItaone",
     "name": "*Walter Bloomberg",
-    "text": "$ANT  - WALL STREET TURNS BULLISH ON ANTHROPIC WITH PRICE TARGETS UP TO $155\n\nFour Wall Street firms initiated bullish coverage following Anthropic's $83-per-share IPO pricing, projecting substantial upside.\n\n\ud83d\udd38 Citizens: Market Outperform \u2014 $125 (+51%)\n\ud83d\udd38 Wolfe Research:",
+    "text": "$ANT  - WALL STREET TURNS BULLISH ON ANTHROPIC WITH PRICE TARGETS UP TO $155\n\nFour Wall Street firms initiated bullish coverage following Anthropic's $83-per-share IPO pricing, projecting substantial upside.\n\n🔸 Citizens: Market Outperform — $125 (+51%)\n🔸 Wolfe Research:",
     "url": "https://x.com/DeItaone/status/2123379714890842539",
     "likes": 498,
     "reposts": 68,
@@ -46,7 +46,7 @@
    {
     "handle": "DeItaone",
     "name": "*Walter Bloomberg",
-    "text": "$NVDA  - BREAKING: NVIDIA CEO JENSEN HUANG RESIGNS EFFECTIVE IMMEDIATELY\n\nNvidia announces a major leadership shake-up:\n\n\ud83d\udd38 Jensen Huang resigns as CEO, president and board member, effective immediately.\n\ud83d\udd38 Colette Kress, Nvidia's CFO, appointed interim CEO.\n\ud83d\udd38 Harvey C. Jones",
+    "text": "$NVDA  - BREAKING: NVIDIA CEO JENSEN HUANG RESIGNS EFFECTIVE IMMEDIATELY\n\nNvidia announces a major leadership shake-up:\n\n🔸 Jensen Huang resigns as CEO, president and board member, effective immediately.\n🔸 Colette Kress, Nvidia's CFO, appointed interim CEO.\n🔸 Harvey C. Jones",
     "url": "https://x.com/DeItaone/status/2120876799252979752",
     "likes": 2274,
     "reposts": 516,
@@ -67,7 +67,7 @@
   "fa886454de67": [
    {
     "handle": "Jannat188219",
-    "name": "Janu \ud83e\udee7",
+    "name": "Janu 🫧",
     "text": "On 12 November, a global Microsoft outage took down Outlook, Teams and Copilot.\n\nThe next day, Claude users could not log in.\n\nWhen one company runs your AI, its outage is your outage. I keep thinking about how normal that has become. \n\nThere is no second door.\n\nThat is what I https://t.co/u4tgMksJRr",
     "url": "https://x.com/Jannat188219/status/2123354564535386366",
     "likes": 127,
@@ -78,7 +78,7 @@
    {
     "handle": "YusufGemz",
     "name": "Yusuf",
-    "text": "The recent Microsoft outage was a good reminder of something we don\u2019t talk about enough, how dependent we\u2019ve become on a handful of companies for everyday AI and productivity tools.\n\nOn November 12, Microsoft experienced a global outage that disrupted Outlook, Teams and Copilot. https://t.co/0Q2SvoyQwg",
+    "text": "The recent Microsoft outage was a good reminder of something we don’t talk about enough, how dependent we’ve become on a handful of companies for everyday AI and productivity tools.\n\nOn November 12, Microsoft experienced a global outage that disrupted Outlook, Teams and Copilot. https://t.co/0Q2SvoyQwg",
     "url": "https://x.com/YusufGemz/status/2123095695943164177",
     "likes": 87,
     "reposts": 1,
@@ -88,7 +88,7 @@
    {
     "handle": "unusual_whales",
     "name": "unusual_whales",
-    "text": "Consumers are panic-buying at Costco, snapping up generators and other emergency supplies after a string of major tech outages, according to Mizuho Securities.\n\nMizuho analyst David Bellinger cited \u201cincreased emergency prep sales at Costco,\u201d with 21 of Costco\u2019s 26 high-priced",
+    "text": "Consumers are panic-buying at Costco, snapping up generators and other emergency supplies after a string of major tech outages, according to Mizuho Securities.\n\nMizuho analyst David Bellinger cited “increased emergency prep sales at Costco,” with 21 of Costco’s 26 high-priced",
     "url": "https://x.com/unusual_whales/status/2123173904785236153",
     "likes": 2252,
     "reposts": 215,
@@ -97,6 +97,26 @@
    }
   ],
   "38c9a2c33fe2": [
+   {
+    "handle": "JosephKahn",
+    "name": "Joseph Kahn",
+    "text": "Jensen Huang had tight relationships with Asian companies that provided the components to Nvidia chips on favorable terms. Every Asian CEO blackout drinks with Jensen in social clubs with high priced hostesses. Nvidia board ain't ready for this culture.",
+    "url": "https://x.com/JosephKahn/status/2123568978903929224",
+    "likes": 368,
+    "reposts": 24,
+    "ts": "2026-11-20T00:07:53.000Z",
+    "note": "Former NYT editor on why Huang's supplier relationships in Asia matter for Nvidia's cost and supply"
+   },
+   {
+    "handle": "Sam_Badawi",
+    "name": "Sam Badawi",
+    "text": "Anduril founder Palmer Luckey said China wants Jensen Huang out, which is why he wants him back at Nvidia $NVDA.\n\nHe says 600,000 H200 GPUs are sitting in a port because China will not issue import permits.\n\nIn his view, Huang was on the side of Chinese AI companies, not the https://t.co/tehnf6c6mf",
+    "url": "https://x.com/Sam_Badawi/status/2123744557674221777",
+    "likes": 63,
+    "reposts": 11,
+    "ts": "2026-11-20T11:45:34.000Z",
+    "note": "Luckey's China angle: 600K H200s reportedly stuck at port; geopolitics behind the CEO fight"
+   },
    {
     "handle": "KobeissiLetter",
     "name": "The Kobeissi Letter",
@@ -120,7 +140,7 @@
    {
     "handle": "amitisinvesting",
     "name": "amit",
-    "text": "Elon on Jensen Huang: \n\n\u201cJensen is a friend of mine. There is no one that can replace him. He\u2019s managing a supply chain. He has long term relationships built over decades. His team loves him, they are there because of him and turned down offers to leave because of Jensen. You https://t.co/4gDEwKJEC8",
+    "text": "Elon on Jensen Huang: \n\n“Jensen is a friend of mine. There is no one that can replace him. He’s managing a supply chain. He has long term relationships built over decades. His team loves him, they are there because of him and turned down offers to leave because of Jensen. You https://t.co/4gDEwKJEC8",
     "url": "https://x.com/amitisinvesting/status/2123186757298520332",
     "likes": 7689,
     "reposts": 695,
@@ -140,7 +160,7 @@
    {
     "handle": "unusual_whales",
     "name": "unusual_whales",
-    "text": "Nvidia $NVDA is moving up pay raises and stock grants to hold on to employees after Jensen Huang\u2019s exit, per WIRED.\n\nAt her first all-hands meeting as interim CEO on Wednesday, Colette Kress told staff they\u2019ll get raises and additional equity in December, months earlier than",
+    "text": "Nvidia $NVDA is moving up pay raises and stock grants to hold on to employees after Jensen Huang’s exit, per WIRED.\n\nAt her first all-hands meeting as interim CEO on Wednesday, Colette Kress told staff they’ll get raises and additional equity in December, months earlier than",
     "url": "https://x.com/unusual_whales/status/2123153520635297814",
     "likes": 2098,
     "reposts": 154,
@@ -162,12 +182,12 @@
    {
     "handle": "OptionKing666",
     "name": "456X",
-    "text": "Infineon accelerated its Dresden fab expansion toward a \u20ac2bn annual revenue run-rate by the end of FY27, marking the fastest manufacturing ramp in company history. In 4QFY26, Automotive revenue rose 8.1% QoQ to \u20ac2.089bn, beating consensus estimates of \u20ac2.062bn by \u20ac27mn. https://t.co/eWZDiLWZYE",
+    "text": "Infineon accelerated its Dresden fab expansion toward a €2bn annual revenue run-rate by the end of FY27, marking the fastest manufacturing ramp in company history. In 4QFY26, Automotive revenue rose 8.1% QoQ to €2.089bn, beating consensus estimates of €2.062bn by €27mn. https://t.co/eWZDiLWZYE",
     "url": "https://x.com/OptionKing666/status/2122298755185889572",
     "likes": 1,
     "reposts": 0,
     "ts": "2026-11-16T12:00:28.000Z",
-    "note": "Dresden ramp toward a \u20ac2bn run-rate by end-FY27, the fastest in IFX history."
+    "note": "Dresden ramp toward a €2bn run-rate by end-FY27, the fastest in IFX history."
    },
    {
     "handle": "OptionKing666",
@@ -204,7 +224,7 @@
    {
     "handle": "carlquintanilla",
     "name": "Carl Quintanilla",
-    "text": "FEDWATCH calls it the \u201cPatchpocalypse\u201d.\n\n\u201c.. Since Anthropic\u2019s Mythos arrived in April, AI bug-hunters pushed new software vulnerabilities to a record 17,481 in October ..\n\n.. a flood of AI-found bugs means a flood of patches, and every patch is a chance for something to break.\u201d https://t.co/t35rh4ALXV",
+    "text": "FEDWATCH calls it the “Patchpocalypse”.\n\n“.. Since Anthropic’s Mythos arrived in April, AI bug-hunters pushed new software vulnerabilities to a record 17,481 in October ..\n\n.. a flood of AI-found bugs means a flood of patches, and every patch is a chance for something to break.” https://t.co/t35rh4ALXV",
     "url": "https://x.com/carlquintanilla/status/2123029233190744080",
     "likes": 251,
     "reposts": 84,
@@ -214,7 +234,7 @@
    {
     "handle": "unusual_whales",
     "name": "unusual_whales",
-    "text": "BREAKING: A cybersecurity firm used AI to uncover a critical security flaw in Java, one of the world\u2019s most widely used programming languages.\n\nThe bug, dubbed \u201cJava4Shell,\u201d was found by start-up Calif in OpenJDK, the core software that runs Java programs. Researcher Quang Luong",
+    "text": "BREAKING: A cybersecurity firm used AI to uncover a critical security flaw in Java, one of the world’s most widely used programming languages.\n\nThe bug, dubbed “Java4Shell,” was found by start-up Calif in OpenJDK, the core software that runs Java programs. Researcher Quang Luong",
     "url": "https://x.com/unusual_whales/status/2123003784062251189",
     "likes": 4557,
     "reposts": 457,
@@ -224,7 +244,7 @@
    {
     "handle": "unusual_whales",
     "name": "unusual_whales",
-    "text": "Anthropic would need about $602 billion in annual revenue to earn a 20% return on its roughly $1 trillion in compute commitments, per FT\n\nThe math: a 20% return on $1 trillion is $200 billion in after-tax profit. At a 17% tax rate, that\u2019s about $241 billion before tax, and at a",
+    "text": "Anthropic would need about $602 billion in annual revenue to earn a 20% return on its roughly $1 trillion in compute commitments, per FT\n\nThe math: a 20% return on $1 trillion is $200 billion in after-tax profit. At a 17% tax rate, that’s about $241 billion before tax, and at a",
     "url": "https://x.com/unusual_whales/status/2123400146113499362",
     "likes": 2596,
     "reposts": 303,
@@ -266,7 +286,7 @@
    {
     "handle": "WOLF_Financial",
     "name": "WOLF",
-    "text": "HERE'S WHAT THE \ud83c\uddfa\ud83c\uddf8 STOCK MARKET LOOKED LIKE TODAY\n\nUp:\n\u2022 Palo Alto Networks $PANW +10.6%\n\u2022 TJX $TJX +8.1%\n\u2022 CrowdStrike $CRWD +8.0%\n\u2022 Fortinet $FTNT +5.9%\n\u2022 AMD $AMD +5.3%\n\u2022 Disney $DIS +4.6%\n\u2022 Royal Caribbean $RCL +4.3%\n\u2022 Arista Networks $ANET +4.0%\n\nDown:\n\u2022 Humana $HUM https://t.co/Bm5BQzmm70",
+    "text": "HERE'S WHAT THE 🇺🇸 STOCK MARKET LOOKED LIKE TODAY\n\nUp:\n• Palo Alto Networks $PANW +10.6%\n• TJX $TJX +8.1%\n• CrowdStrike $CRWD +8.0%\n• Fortinet $FTNT +5.9%\n• AMD $AMD +5.3%\n• Disney $DIS +4.6%\n• Royal Caribbean $RCL +4.3%\n• Arista Networks $ANET +4.0%\n\nDown:\n• Humana $HUM https://t.co/Bm5BQzmm70",
     "url": "https://x.com/WOLF_Financial/status/2123166710106931283",
     "likes": 30,
     "reposts": 5,
@@ -288,6 +308,26 @@
   ],
   "c7181b60313a": [
    {
+    "handle": "zerohedge",
+    "name": "zerohedge",
+    "text": "*ANTHROPIC PRICES IPO AT $83 PER SHARE, ABOVE RANGE\n\n*ANTHROPIC UPSIZED IPO TO 980M SHARES\n\n*ANTHROPIC: 956M SHARES SOLD BY ANTHROPIC, 23.6M BY HOLDERS",
+    "url": "https://x.com/zerohedge/status/2123197348440351092",
+    "likes": 678,
+    "reposts": 42,
+    "ts": "2026-11-18T23:31:09.000Z",
+    "note": "Headline tape: priced above range and upsized, the print the whole tape is reacting to"
+   },
+   {
+    "handle": "MarioNawfal",
+    "name": "Mario Nawfal",
+    "text": "🤖🇺🇸 Anthropic sets IPO price at $83 as AI giant prepares for WALL STREET DEBUT\n\nThe business behind Claude priced its shares above its initial $70–$78 range. The IPO reportedly values Anthropic at around $1.5 TRILLION.\n\nShares begin trading tomorrow on Nasdaq under the ticker https://t.co/VktaesAa7P",
+    "url": "https://x.com/MarioNawfal/status/2123193177024930210",
+    "likes": 96,
+    "reposts": 16,
+    "ts": "2026-11-18T23:14:35.000Z",
+    "note": "Widely shared recap of the pricing vs the $70-78 range"
+   },
+   {
     "handle": "KobeissiLetter",
     "name": "The Kobeissi Letter",
     "text": "BREAKING: Anthropic, $ANT, has priced its IPO at $83 per share, above its marketed range of $70 to $78, per Bloomberg.\n\nThe company is now expected to raise at least $68 billion through its IPO, plus another $26 billion in a private placement.\n\nThis brings the total offering to",
@@ -295,7 +335,7 @@
     "likes": 5613,
     "reposts": 449,
     "ts": "2026-11-18T21:37:59.000Z",
-    "note": "The print: $83, above the $70\u201378 range, ~$68B raised; the biggest pricing of the year."
+    "note": "The print: $83, above the $70–78 range, ~$68B raised; the biggest pricing of the year."
    },
    {
     "handle": "DeItaone",
@@ -322,7 +362,7 @@
    {
     "handle": "unusual_whales",
     "name": "unusual_whales",
-    "text": "Anthropic would need about $602 billion in annual revenue to earn a 20% return on its roughly $1 trillion in compute commitments, per FT\n\nThe math: a 20% return on $1 trillion is $200 billion in after-tax profit. At a 17% tax rate, that\u2019s about $241 billion before tax, and at a",
+    "text": "Anthropic would need about $602 billion in annual revenue to earn a 20% return on its roughly $1 trillion in compute commitments, per FT\n\nThe math: a 20% return on $1 trillion is $200 billion in after-tax profit. At a 17% tax rate, that’s about $241 billion before tax, and at a",
     "url": "https://x.com/unusual_whales/status/2123400146113499362",
     "likes": 2596,
     "reposts": 303,
@@ -337,7 +377,127 @@
     "likes": 3558,
     "reposts": 263,
     "ts": "2026-11-18T15:27:37.000Z",
-    "note": "Order book ~$500B (\u2248$400B institutional): why the range kept getting raised."
+    "note": "Order book ~$500B (≈$400B institutional): why the range kept getting raised."
+   }
+  ],
+  "17f246d956c4": [
+   {
+    "handle": "axios",
+    "name": "Axios",
+    "text": "Anthropic is public, now comes the hard part https://t.co/Xb3mTYb4nH",
+    "url": "https://x.com/axios/status/2123753488790221261",
+    "likes": 17,
+    "reposts": 4,
+    "ts": "2026-11-20T12:21:03.000Z",
+    "note": "Axios on the post-IPO test: growth vs compute spend"
+   },
+   {
+    "handle": "zerohedge",
+    "name": "zerohedge",
+    "text": "*ANTHROPIC PRICES IPO AT $83 PER SHARE, ABOVE RANGE\n\n*ANTHROPIC UPSIZED IPO TO 980M SHARES\n\n*ANTHROPIC: 956M SHARES SOLD BY ANTHROPIC, 23.6M BY HOLDERS",
+    "url": "https://x.com/zerohedge/status/2123197348440351092",
+    "likes": 678,
+    "reposts": 42,
+    "ts": "2026-11-18T23:31:09.000Z",
+    "note": "Headline tape: priced above range and upsized, the print the whole tape is reacting to"
+   },
+   {
+    "handle": "MarioNawfal",
+    "name": "Mario Nawfal",
+    "text": "🤖🇺🇸 Anthropic sets IPO price at $83 as AI giant prepares for WALL STREET DEBUT\n\nThe business behind Claude priced its shares above its initial $70–$78 range. The IPO reportedly values Anthropic at around $1.5 TRILLION.\n\nShares begin trading tomorrow on Nasdaq under the ticker https://t.co/VktaesAa7P",
+    "url": "https://x.com/MarioNawfal/status/2123193177024930210",
+    "likes": 96,
+    "reposts": 16,
+    "ts": "2026-11-18T23:14:35.000Z",
+    "note": "Widely shared recap of the pricing vs the $70-78 range"
+   }
+  ],
+  "eb58dfce5a6b": [
+   {
+    "handle": "JosephKahn",
+    "name": "Joseph Kahn",
+    "text": "Jensen Huang had tight relationships with Asian companies that provided the components to Nvidia chips on favorable terms. Every Asian CEO blackout drinks with Jensen in social clubs with high priced hostesses. Nvidia board ain't ready for this culture.",
+    "url": "https://x.com/JosephKahn/status/2123568978903929224",
+    "likes": 368,
+    "reposts": 24,
+    "ts": "2026-11-20T00:07:53.000Z",
+    "note": "Former NYT editor on why Huang's supplier relationships in Asia matter for Nvidia's cost and supply"
+   },
+   {
+    "handle": "Sam_Badawi",
+    "name": "Sam Badawi",
+    "text": "Anduril founder Palmer Luckey said China wants Jensen Huang out, which is why he wants him back at Nvidia $NVDA.\n\nHe says 600,000 H200 GPUs are sitting in a port because China will not issue import permits.\n\nIn his view, Huang was on the side of Chinese AI companies, not the https://t.co/tehnf6c6mf",
+    "url": "https://x.com/Sam_Badawi/status/2123744557674221777",
+    "likes": 63,
+    "reposts": 11,
+    "ts": "2026-11-20T11:45:34.000Z",
+    "note": "Luckey's China angle: 600K H200s reportedly stuck at port; geopolitics behind the CEO fight"
+   }
+  ],
+  "dad1750753c6": [
+   {
+    "handle": "The_WallStWiz",
+    "name": "Wizard of Wall St.",
+    "text": "AMD crashed -13% in 30 minutes after Hunterbrook Media accuses the company of illegally selling chips to China \n\nHunterbrook Capital also disclosed a short position in AMD\n\nShit should be illegal",
+    "url": "https://x.com/The_WallStWiz/status/2123620821092405551",
+    "likes": 102,
+    "reposts": 5,
+    "ts": "2026-11-20T03:33:53.000Z",
+    "note": "Why AMD fell: Hunterbrook China-sales allegation plus a disclosed short"
+   },
+   {
+    "handle": "Tickertalk1",
+    "name": "Chris and the Markets",
+    "text": "$AMD $489.19 -40.95 (-7.72%)\n\nJensen Huang is out as CEO and this news about Hunterbrook Media reported that $AMD firmware has continued to appear in software updates from IEIT Systems, a Chinese server maker the U.S. blacklisted in March 2025. (read between the lines)\n\nCome one https://t.co/SJx2Mw1qGP",
+    "url": "https://x.com/Tickertalk1/status/2123612931577573420",
+    "likes": 51,
+    "reposts": 3,
+    "ts": "2026-11-20T03:02:32.000Z",
+    "note": "Firmware detail behind the short report"
+   }
+  ],
+  "a566f1d619ba": [
+   {
+    "handle": "Sam_Badawi",
+    "name": "Sam Badawi",
+    "text": "Micron $MU says 75% of its 2027 memory supply is already sold out.\n\nCEO Sanjay Mehrotra expects 2027 to be even stronger than a record 2026, with supply tighter in 2027 and 2028.\n\nStacked 3D DRAM could start reaching the market in 2028 and 2029, CTO Scott DeBoer said. https://t.co/NrOe1aNM1J",
+    "url": "https://x.com/Sam_Badawi/status/2123716814903595202",
+    "likes": 135,
+    "reposts": 13,
+    "ts": "2026-11-20T09:55:20.000Z",
+    "note": "Micron says 75% of 2027 supply is sold out, pushing back on the memory-cycle-top worry"
+   },
+   {
+    "handle": "trendforce",
+    "name": "TrendForce",
+    "text": "📈 Beyond shedding more light on its 3D DRAM roadmap, #Micron is pushing back against fears of a memory price reversal. With 75% of its 2027 supply already sold out, the chipmaker sees even tighter market conditions ahead—and a stronger 2027 than its record 2026. https://t.co/xjN2SFiEwm",
+    "url": "https://x.com/trendforce/status/2123588166859079849",
+    "likes": 50,
+    "reposts": 10,
+    "ts": "2026-11-20T01:24:07.000Z",
+    "note": "TrendForce (memory research firm) on Micron's 3D DRAM roadmap and pricing"
+   },
+   {
+    "handle": "Market_Mind_",
+    "name": "The Market Mind",
+    "text": "Since the launch of ChatGPT 3.5 on November 30, 2022, the combined market capitalization of semiconductor companies has increased 5.4x.\n\nI analyzed 20 semiconductor and Al infrastructure companies that have benefited significantly from Al adoption.\n\nDespite a substantial https://t.co/Bkg8a4JAXu",
+    "url": "https://x.com/Market_Mind_/status/2123473865326428367",
+    "likes": 47,
+    "reposts": 11,
+    "ts": "2026-11-19T17:49:56.000Z",
+    "note": "Context: semis market cap up 5.4x since ChatGPT launched"
+   }
+  ],
+  "9aa235463c0f": [
+   {
+    "handle": "AIStockSavvy",
+    "name": "Hardik Shah",
+    "text": "📢 𝗝𝗨𝗦𝗧 𝗜𝗡: LUMENTUM CEO DEFENDS MARVELL DEAL AS BOTH STOCKS FALL 𝗠𝗢𝗥𝗘 𝗧𝗛𝗔𝗡 𝟰𝟬% - CNBC - $MRVL $LITE \n\nMarvell shares have fallen 𝟰𝟱% and Lumentum shares 𝟰𝟮% since the Oct. 28 close, just before the first report of a potential deal.\n\nLumentum CEO Michael",
+    "url": "https://x.com/AIStockSavvy/status/2123569664563237216",
+    "likes": 29,
+    "reposts": 4,
+    "ts": "2026-11-20T00:10:36.000Z",
+    "note": "Both stocks down 40%+ since the deal; the CEO is defending the strategic logic"
    }
   ]
  },
@@ -346,12 +506,12 @@
    {
     "handle": "TrendSpider",
     "name": "TrendSpider",
-    "text": "CLOUDFLARE $NET EARNINGS GOD CANDLE \ud83d\udfe2\n\nQ3 Adj EPS: $0.38 vs $0.34 est \u2705\nQ3 Sales: $782.5M vs $738.5M est \u2705\n\n\ud83d\udfe9 +18% in after-hours",
+    "text": "CLOUDFLARE $NET EARNINGS GOD CANDLE 🟢\n\nQ3 Adj EPS: $0.38 vs $0.34 est ✅\nQ3 Sales: $782.5M vs $738.5M est ✅\n\n🟩 +18% in after-hours",
     "url": "https://x.com/TrendSpider/status/2118453282846982202",
     "likes": 246,
     "reposts": 12,
     "ts": "2026-11-05T21:19:56Z",
-    "note": "AH +18% on 39% revenue growth \u2014 today\u2019s +10% session follow-through."
+    "note": "AH +18% on 39% revenue growth — today’s +10% session follow-through."
    },
    {
     "handle": "PhillyTide",
@@ -366,12 +526,12 @@
    {
     "handle": "mstrmkt",
     "name": "Mister Market",
-    "text": "Good morning! \u2615 Pre-market \u2014 Fri Nov 06 (9:00am ET)\n\n\ud83d\udcc9 Futures:\n\ud83d\udfe2 S&P 500: ~7,402 (+0.26%) \u2014 as of 9:00am ET\n\ud83d\udfe2 Nasdaq 100: ~27,179 (+1.60%)\n\ud83d\udfe1 Dow: ~51,165 (-0.87%)\n\n\ud83d\udfe2 Gainers:\n\u2022 NET \u2014 Cloudflare Inc.: +20.64% (~$294.98) \u2014 Q3",
+    "text": "Good morning! ☕ Pre-market — Fri Nov 06 (9:00am ET)\n\n📉 Futures:\n🟢 S&P 500: ~7,402 (+0.26%) — as of 9:00am ET\n🟢 Nasdaq 100: ~27,179 (+1.60%)\n🟡 Dow: ~51,165 (-0.87%)\n\n🟢 Gainers:\n• NET — Cloudflare Inc.: +20.64% (~$294.98) — Q3",
     "url": "https://x.com/mstrmkt/status/2118705656039371263",
     "likes": 0,
     "reposts": 0,
     "ts": "2026-11-06T14:02:46Z",
-    "note": "Premarket leaderboard putting NET atop Friday\u2019s gainers."
+    "note": "Premarket leaderboard putting NET atop Friday’s gainers."
    }
   ],
   "ABNB": [
@@ -383,7 +543,7 @@
     "likes": 0,
     "reposts": 0,
     "ts": "2026-11-06T11:06:32Z",
-    "note": "Raised outlook + $12B buyback behind today\u2019s ~9% jump."
+    "note": "Raised outlook + $12B buyback behind today’s ~9% jump."
    },
    {
     "handle": "techprosv",
@@ -393,11 +553,11 @@
     "likes": 0,
     "reposts": 0,
     "ts": "2026-11-05T21:16:49Z",
-    "note": "Beat vs guide and bookings acceleration \u2014 why the AH reverse mattered."
+    "note": "Beat vs guide and bookings acceleration — why the AH reverse mattered."
    },
    {
     "handle": "FlatWhite111",
-    "name": "\u6fb3\u767d Flat White\uff08AI\u6559\u7236\uff09",
+    "name": "澳白 Flat White（AI教父）",
     "text": "Airbnb just authorized a $12B buyback, roughly an eighth of the company, to celebrate growth it partly paid for.\n\n$ABNB Q3 after the close Thursday. Revenue $4.87B, up 19% y/y vs ~$4.75B expected. EPS $3.16 vs $2.85. Nights and seats booked 155M, up 16%, after 10% in Q2.",
     "url": "https://x.com/FlatWhite111/status/2118481518675063177",
     "likes": 0,
@@ -408,9 +568,29 @@
   ],
   "AMD": [
    {
+    "handle": "The_WallStWiz",
+    "name": "Wizard of Wall St.",
+    "text": "AMD crashed -13% in 30 minutes after Hunterbrook Media accuses the company of illegally selling chips to China \n\nHunterbrook Capital also disclosed a short position in AMD\n\nShit should be illegal",
+    "url": "https://x.com/The_WallStWiz/status/2123620821092405551",
+    "likes": 102,
+    "reposts": 5,
+    "ts": "2026-11-20T03:33:53.000Z",
+    "note": "Why AMD fell: Hunterbrook China-sales allegation plus a disclosed short"
+   },
+   {
+    "handle": "Tickertalk1",
+    "name": "Chris and the Markets",
+    "text": "$AMD $489.19 -40.95 (-7.72%)\n\nJensen Huang is out as CEO and this news about Hunterbrook Media reported that $AMD firmware has continued to appear in software updates from IEIT Systems, a Chinese server maker the U.S. blacklisted in March 2025. (read between the lines)\n\nCome one https://t.co/SJx2Mw1qGP",
+    "url": "https://x.com/Tickertalk1/status/2123612931577573420",
+    "likes": 51,
+    "reposts": 3,
+    "ts": "2026-11-20T03:02:32.000Z",
+    "note": "Firmware detail behind the short report"
+   },
+   {
     "handle": "FluxCharts",
     "name": "Flux Charts",
-    "text": "$AMD is trading around $520.36 after recovering from its sharp November selloff.\n\nA Grade C fair value gap around $460\u2013$495 represents an area of potential demand to monitor.\n\nHolding above this zone could support another recovery attempt, while losing it would expose the stock https://t.co/Yo6B8c8qgJ",
+    "text": "$AMD is trading around $520.36 after recovering from its sharp November selloff.\n\nA Grade C fair value gap around $460–$495 represents an area of potential demand to monitor.\n\nHolding above this zone could support another recovery attempt, while losing it would expose the stock https://t.co/Yo6B8c8qgJ",
     "url": "https://x.com/FluxCharts/status/2122374142469300720",
     "likes": 77,
     "reposts": 5,
@@ -422,12 +602,12 @@
    {
     "handle": "VladBastion",
     "name": "Vlad Bastion",
-    "text": "A brutal week for AI semi/memory stocks. 7-day returns: \n\n\ud83e\udde9 Intel -37% $INTC\n\ud83d\udd17 Marvell -27% $MRVL\n\ud83d\udcbd Sandisk -22% $SNDK\n\ud83d\udda5\ufe0f Dell -22% $DELL\n\ud83d\uddc4\ufe0f Western Digital -18% $WDC\n\ud83d\udcbe Micron -15% $MU\n\ud83c\udfae AMD -14% $AMD\n\ud83d\udd2c Lam Research -13% $LRCX\n\u2699\ufe0f Applied Materials -12% $AMAT\n\ud83d\udd0d KLA -11%",
+    "text": "A brutal week for AI semi/memory stocks. 7-day returns: \n\n🧩 Intel -37% $INTC\n🔗 Marvell -27% $MRVL\n💽 Sandisk -22% $SNDK\n🖥️ Dell -22% $DELL\n🗄️ Western Digital -18% $WDC\n💾 Micron -15% $MU\n🎮 AMD -14% $AMD\n🔬 Lam Research -13% $LRCX\n⚙️ Applied Materials -12% $AMAT\n🔍 KLA -11%",
     "url": "https://x.com/VladBastion/status/2118290835657617855",
     "likes": 25,
     "reposts": 6,
     "ts": "2026-11-05T10:34:25Z",
-    "note": "LRCX \u221213% on the week before today\u2019s ~9% bounce."
+    "note": "LRCX −13% on the week before today’s ~9% bounce."
    },
    {
     "handle": "bizyuw",
@@ -441,6 +621,36 @@
    }
   ],
   "MU": [
+   {
+    "handle": "Sam_Badawi",
+    "name": "Sam Badawi",
+    "text": "Micron $MU says 75% of its 2027 memory supply is already sold out.\n\nCEO Sanjay Mehrotra expects 2027 to be even stronger than a record 2026, with supply tighter in 2027 and 2028.\n\nStacked 3D DRAM could start reaching the market in 2028 and 2029, CTO Scott DeBoer said. https://t.co/NrOe1aNM1J",
+    "url": "https://x.com/Sam_Badawi/status/2123716814903595202",
+    "likes": 135,
+    "reposts": 13,
+    "ts": "2026-11-20T09:55:20.000Z",
+    "note": "Micron says 75% of 2027 supply is sold out, pushing back on the memory-cycle-top worry"
+   },
+   {
+    "handle": "trendforce",
+    "name": "TrendForce",
+    "text": "📈 Beyond shedding more light on its 3D DRAM roadmap, #Micron is pushing back against fears of a memory price reversal. With 75% of its 2027 supply already sold out, the chipmaker sees even tighter market conditions ahead—and a stronger 2027 than its record 2026. https://t.co/xjN2SFiEwm",
+    "url": "https://x.com/trendforce/status/2123588166859079849",
+    "likes": 50,
+    "reposts": 10,
+    "ts": "2026-11-20T01:24:07.000Z",
+    "note": "TrendForce (memory research firm) on Micron's 3D DRAM roadmap and pricing"
+   },
+   {
+    "handle": "Market_Mind_",
+    "name": "The Market Mind",
+    "text": "Since the launch of ChatGPT 3.5 on November 30, 2022, the combined market capitalization of semiconductor companies has increased 5.4x.\n\nI analyzed 20 semiconductor and Al infrastructure companies that have benefited significantly from Al adoption.\n\nDespite a substantial https://t.co/Bkg8a4JAXu",
+    "url": "https://x.com/Market_Mind_/status/2123473865326428367",
+    "likes": 47,
+    "reposts": 11,
+    "ts": "2026-11-19T17:49:56.000Z",
+    "note": "Context: semis market cap up 5.4x since ChatGPT launched"
+   },
    {
     "handle": "DeItaone",
     "name": "*Walter Bloomberg",
@@ -464,17 +674,17 @@
    {
     "handle": "VladBastion",
     "name": "Vlad Bastion",
-    "text": "A brutal week for AI semi/memory stocks. 7-day returns: \n\n\ud83e\udde9 Intel -37% $INTC\n\ud83d\udd17 Marvell -27% $MRVL\n\ud83d\udcbd Sandisk -22% $SNDK\n\ud83d\udda5\ufe0f Dell -22% $DELL\n\ud83d\uddc4\ufe0f Western Digital -18% $WDC\n\ud83d\udcbe Micron -15% $MU\n\ud83c\udfae AMD -14% $AMD\n\ud83d\udd2c Lam Research -13% $LRCX\n\u2699\ufe0f Applied Materials -12% $AMAT\n\ud83d\udd0d KLA -11%",
+    "text": "A brutal week for AI semi/memory stocks. 7-day returns: \n\n🧩 Intel -37% $INTC\n🔗 Marvell -27% $MRVL\n💽 Sandisk -22% $SNDK\n🖥️ Dell -22% $DELL\n🗄️ Western Digital -18% $WDC\n💾 Micron -15% $MU\n🎮 AMD -14% $AMD\n🔬 Lam Research -13% $LRCX\n⚙️ Applied Materials -12% $AMAT\n🔍 KLA -11%",
     "url": "https://x.com/VladBastion/status/2118290835657617855",
     "likes": 25,
     "reposts": 6,
     "ts": "2026-11-05T10:34:25Z",
-    "note": "MU \u221215% week despite the strong print \u2014 monster quarter, weak tape."
+    "note": "MU −15% week despite the strong print — monster quarter, weak tape."
    },
    {
     "handle": "StockWorthyApp",
     "name": "StockWorthy",
-    "text": "BIG 10 TECH STOCKS RANKED BY PEG RATIO! \ud83d\ude80\nA lower PEG ratio can suggest a more attractive valuation relative to expected earnings growth.\n\nWhich BIG 10 stock has is the most undervalued today?\n\n\ud83e\udd47 $MU Micron \u2014 0.04\n\ud83e\udd48 $AVGO Broadcom \u2014 0.07\n\ud83e\udd49 $NVDA NVIDIA \u2014 0.09\n4\ufe0f\u20e3 $AMD Advanced",
+    "text": "BIG 10 TECH STOCKS RANKED BY PEG RATIO! 🚀\nA lower PEG ratio can suggest a more attractive valuation relative to expected earnings growth.\n\nWhich BIG 10 stock has is the most undervalued today?\n\n🥇 $MU Micron — 0.04\n🥈 $AVGO Broadcom — 0.07\n🥉 $NVDA NVIDIA — 0.09\n4️⃣ $AMD Advanced",
     "url": "https://x.com/StockWorthyApp/status/2117293762900627784",
     "likes": 38,
     "reposts": 8,
@@ -486,7 +696,7 @@
    {
     "handle": "SCHDETF",
     "name": "SCHD STAN | Craig",
-    "text": "$QCOM Q4 Earnings Recap\n\nQualcomm, a top 15 holding in $SCHD reported earnings after the bell yesterday.\n\nShares are currently down around 9% \ud83d\udd34 in premarket trading.\n\nQ4 Highlights:\n\u2022 Adjusted EPS: $2.17, beating estimates by $0.01\n\u2022 Revenue: $10.32B, down 8.4% YoY, beating",
+    "text": "$QCOM Q4 Earnings Recap\n\nQualcomm, a top 15 holding in $SCHD reported earnings after the bell yesterday.\n\nShares are currently down around 9% 🔴 in premarket trading.\n\nQ4 Highlights:\n• Adjusted EPS: $2.17, beating estimates by $0.01\n• Revenue: $10.32B, down 8.4% YoY, beating",
     "url": "https://x.com/SCHDETF/status/2118310171919167737",
     "likes": 23,
     "reposts": 1,
@@ -496,19 +706,19 @@
    {
     "handle": "MarcelLarsen_",
     "name": "Marcel",
-    "text": "$QCOM QUALCOMM FISCAL Q4'26 EARNINGS HIGHLIGHTS\n\n\ud83d\udd39 Revenue: $10.32B (Est. $10.14B) \ud83d\udfe2; -8% YoY\n\ud83d\udd39 Adj. EPS: $2.17 (Est. $2.16) \ud83d\udfe2; -28% YoY\n\ud83d\udd39 GAAP EPS: $1.17\n\ud83d\udd39 QCT (chips): $9.02B; -8% YoY\n\ud83d\udd39 QTL (licensing): $1.30B; -7% YoY\n\nQCT by segment:\n\ud83d\udd39 Handsets: $5.14B; -26% YoY \ud83d\udd34",
+    "text": "$QCOM QUALCOMM FISCAL Q4'26 EARNINGS HIGHLIGHTS\n\n🔹 Revenue: $10.32B (Est. $10.14B) 🟢; -8% YoY\n🔹 Adj. EPS: $2.17 (Est. $2.16) 🟢; -28% YoY\n🔹 GAAP EPS: $1.17\n🔹 QCT (chips): $9.02B; -8% YoY\n🔹 QTL (licensing): $1.30B; -7% YoY\n\nQCT by segment:\n🔹 Handsets: $5.14B; -26% YoY 🔴",
     "url": "https://x.com/MarcelLarsen_/status/2118089316056354950",
     "likes": 1,
     "reposts": 0,
     "ts": "2026-11-04T21:13:39Z",
-    "note": "Handset \u221226% is the number the market cares about."
+    "note": "Handset −26% is the number the market cares about."
    }
   ],
   "CRWD": [
    {
     "handle": "WOLF_Financial",
     "name": "WOLF",
-    "text": "HERE'S WHAT THE \ud83c\uddfa\ud83c\uddf8 STOCK MARKET LOOKED LIKE TODAY\n\nUp:\n\u2022 Palo Alto Networks $PANW +10.6%\n\u2022 TJX $TJX +8.1%\n\u2022 CrowdStrike $CRWD +8.0%\n\u2022 Fortinet $FTNT +5.9%\n\u2022 AMD $AMD +5.3%\n\u2022 Disney $DIS +4.6%\n\u2022 Royal Caribbean $RCL +4.3%\n\u2022 Arista Networks $ANET +4.0%\n\nDown:\n\u2022 Humana $HUM https://t.co/Bm5BQzmm70",
+    "text": "HERE'S WHAT THE 🇺🇸 STOCK MARKET LOOKED LIKE TODAY\n\nUp:\n• Palo Alto Networks $PANW +10.6%\n• TJX $TJX +8.1%\n• CrowdStrike $CRWD +8.0%\n• Fortinet $FTNT +5.9%\n• AMD $AMD +5.3%\n• Disney $DIS +4.6%\n• Royal Caribbean $RCL +4.3%\n• Arista Networks $ANET +4.0%\n\nDown:\n• Humana $HUM https://t.co/Bm5BQzmm70",
     "url": "https://x.com/WOLF_Financial/status/2123166710106931283",
     "likes": 30,
     "reposts": 5,
@@ -525,7 +735,7 @@
     "likes": 0,
     "reposts": 0,
     "ts": "2026-11-03T22:43:00Z",
-    "note": "Capex vs cash flow plus the equity raise \u2014 FCF stress in one post."
+    "note": "Capex vs cash flow plus the equity raise — FCF stress in one post."
    },
    {
     "handle": "QuantAlphaXXX",
@@ -535,10 +745,20 @@
     "likes": 2,
     "reposts": 0,
     "ts": "2026-11-02T13:14:45Z",
-    "note": "Ratings agency flag on AI spend \u2014 credit side of the META story."
+    "note": "Ratings agency flag on AI spend — credit side of the META story."
    }
   ],
   "MRVL": [
+   {
+    "handle": "AIStockSavvy",
+    "name": "Hardik Shah",
+    "text": "📢 𝗝𝗨𝗦𝗧 𝗜𝗡: LUMENTUM CEO DEFENDS MARVELL DEAL AS BOTH STOCKS FALL 𝗠𝗢𝗥𝗘 𝗧𝗛𝗔𝗡 𝟰𝟬% - CNBC - $MRVL $LITE \n\nMarvell shares have fallen 𝟰𝟱% and Lumentum shares 𝟰𝟮% since the Oct. 28 close, just before the first report of a potential deal.\n\nLumentum CEO Michael",
+    "url": "https://x.com/AIStockSavvy/status/2123569664563237216",
+    "likes": 29,
+    "reposts": 4,
+    "ts": "2026-11-20T00:10:36.000Z",
+    "note": "Both stocks down 40%+ since the deal; the CEO is defending the strategic logic"
+   },
    {
     "handle": "KeithTradeSmith",
     "name": "Keith Kaplan",
@@ -582,7 +802,7 @@
    {
     "handle": "techdealfiles",
     "name": "Tech Deal Files",
-    "text": "@MarvellTech @Lumentum The clause I\u2019d watch: Marvell could owe Lumentum $3.2B if the deal ends under certain regulatory conditions. The $115B headline tells you the deal\u2019s size. The breakup fee tells you who takes the risk if approvals fall through.",
+    "text": "@MarvellTech @Lumentum The clause I’d watch: Marvell could owe Lumentum $3.2B if the deal ends under certain regulatory conditions. The $115B headline tells you the deal’s size. The breakup fee tells you who takes the risk if approvals fall through.",
     "url": "https://x.com/techdealfiles/status/2119515665564639585",
     "likes": 0,
     "reposts": 0,
@@ -601,6 +821,16 @@
    }
   ],
   "LITE": [
+   {
+    "handle": "AIStockSavvy",
+    "name": "Hardik Shah",
+    "text": "📢 𝗝𝗨𝗦𝗧 𝗜𝗡: LUMENTUM CEO DEFENDS MARVELL DEAL AS BOTH STOCKS FALL 𝗠𝗢𝗥𝗘 𝗧𝗛𝗔𝗡 𝟰𝟬% - CNBC - $MRVL $LITE \n\nMarvell shares have fallen 𝟰𝟱% and Lumentum shares 𝟰𝟮% since the Oct. 28 close, just before the first report of a potential deal.\n\nLumentum CEO Michael",
+    "url": "https://x.com/AIStockSavvy/status/2123569664563237216",
+    "likes": 29,
+    "reposts": 4,
+    "ts": "2026-11-20T00:10:36.000Z",
+    "note": "Both stocks down 40%+ since the deal; the CEO is defending the strategic logic"
+   },
    {
     "handle": "Alpha_Fox11",
     "name": "The Fox",
@@ -644,6 +874,26 @@
   ],
   "NVDA": [
    {
+    "handle": "JosephKahn",
+    "name": "Joseph Kahn",
+    "text": "Jensen Huang had tight relationships with Asian companies that provided the components to Nvidia chips on favorable terms. Every Asian CEO blackout drinks with Jensen in social clubs with high priced hostesses. Nvidia board ain't ready for this culture.",
+    "url": "https://x.com/JosephKahn/status/2123568978903929224",
+    "likes": 368,
+    "reposts": 24,
+    "ts": "2026-11-20T00:07:53.000Z",
+    "note": "Former NYT editor on why Huang's supplier relationships in Asia matter for Nvidia's cost and supply"
+   },
+   {
+    "handle": "Sam_Badawi",
+    "name": "Sam Badawi",
+    "text": "Anduril founder Palmer Luckey said China wants Jensen Huang out, which is why he wants him back at Nvidia $NVDA.\n\nHe says 600,000 H200 GPUs are sitting in a port because China will not issue import permits.\n\nIn his view, Huang was on the side of Chinese AI companies, not the https://t.co/tehnf6c6mf",
+    "url": "https://x.com/Sam_Badawi/status/2123744557674221777",
+    "likes": 63,
+    "reposts": 11,
+    "ts": "2026-11-20T11:45:34.000Z",
+    "note": "Luckey's China angle: 600K H200s reportedly stuck at port; geopolitics behind the CEO fight"
+   },
+   {
     "handle": "KobeissiLetter",
     "name": "The Kobeissi Letter",
     "text": "BREAKING: The petition to reinstate Jensen Huang as CEO of Nvidia, $NVDA, has reached over 200,000 signatures.\n\nThe petition has been signed by more than 104,000 shareholders and 11,800 current and former Nvidia employees.\n\n~24% of all employees currently working at Nvidia have",
@@ -666,7 +916,7 @@
    {
     "handle": "unusual_whales",
     "name": "unusual_whales",
-    "text": "Renaissance Technologies sold almost all of its Nvidia stake before the stock\u2019s recent plunge.\n\nThe quant fund founded by the late Jim Simons cut its Nvidia holdings by more than 99% in the third quarter, from about 7.09 million shares to just 23,170, per its latest 13F filing.",
+    "text": "Renaissance Technologies sold almost all of its Nvidia stake before the stock’s recent plunge.\n\nThe quant fund founded by the late Jim Simons cut its Nvidia holdings by more than 99% in the third quarter, from about 7.09 million shares to just 23,170, per its latest 13F filing.",
     "url": "https://x.com/unusual_whales/status/2123098156434964928",
     "likes": 2095,
     "reposts": 144,
@@ -678,7 +928,7 @@
    {
     "handle": "bespokeinvest",
     "name": "Bespoke",
-    "text": "Constellation Energy $CEG, KKR $KKR, and Monday\u2024com $MNDY are among tomorrow\u2019s earnings reports before the open. \n\nHims & Hers Health $HIMS, Occidental Petroleum $OXY, The Trade Desk $TTD, and Take-Two $TTWO report after the close. https://t.co/DHxw8nVBCU",
+    "text": "Constellation Energy $CEG, KKR $KKR, and Monday․com $MNDY are among tomorrow’s earnings reports before the open. \n\nHims & Hers Health $HIMS, Occidental Petroleum $OXY, The Trade Desk $TTD, and Take-Two $TTWO report after the close. https://t.co/DHxw8nVBCU",
     "url": "https://x.com/bespokeinvest/status/2119558205164703859",
     "likes": 11,
     "reposts": 1,
@@ -688,7 +938,7 @@
    {
     "handle": "QuantAlphaXXX",
     "name": "QuantAlpha",
-    "text": "The Trade Desk sits at 14x forward earnings. It\u2019s near a five-year low, but consensus earnings have been cut 37% since June. Meanwhile, AppLovin ($APP) grew revenue 55% by capturing mobile app spend TTD isn\u2019t seeing.",
+    "text": "The Trade Desk sits at 14x forward earnings. It’s near a five-year low, but consensus earnings have been cut 37% since June. Meanwhile, AppLovin ($APP) grew revenue 55% by capturing mobile app spend TTD isn’t seeing.",
     "url": "https://x.com/QuantAlphaXXX/status/2119471211176403034",
     "likes": 5,
     "reposts": 0,
@@ -752,12 +1002,12 @@
    {
     "handle": "OptionKing666",
     "name": "456X",
-    "text": "Infineon accelerated its Dresden fab expansion toward a \u20ac2bn annual revenue run-rate by the end of FY27, marking the fastest manufacturing ramp in company history. In 4QFY26, Automotive revenue rose 8.1% QoQ to \u20ac2.089bn, beating consensus estimates of \u20ac2.062bn by \u20ac27mn. https://t.co/eWZDiLWZYE",
+    "text": "Infineon accelerated its Dresden fab expansion toward a €2bn annual revenue run-rate by the end of FY27, marking the fastest manufacturing ramp in company history. In 4QFY26, Automotive revenue rose 8.1% QoQ to €2.089bn, beating consensus estimates of €2.062bn by €27mn. https://t.co/eWZDiLWZYE",
     "url": "https://x.com/OptionKing666/status/2122298755185889572",
     "likes": 1,
     "reposts": 0,
     "ts": "2026-11-16T12:00:28.000Z",
-    "note": "Dresden fab ramp toward a \u20ac2bn run-rate."
+    "note": "Dresden fab ramp toward a €2bn run-rate."
    },
    {
     "handle": "skylabintel",
@@ -784,7 +1034,7 @@
    {
     "handle": "bespokeinvest",
     "name": "Bespoke",
-    "text": "Applied Materials $AMAT and Cisco $CSCO headline tomorrow\u2019s earnings after the close. \n\nNational Vision $EYE, Spectrum Brands $SPB, Wolverine $WWW, and YETI $YETI report before the open. https://t.co/qNQVFgyQQ9",
+    "text": "Applied Materials $AMAT and Cisco $CSCO headline tomorrow’s earnings after the close. \n\nNational Vision $EYE, Spectrum Brands $SPB, Wolverine $WWW, and YETI $YETI report before the open. https://t.co/qNQVFgyQQ9",
     "url": "https://x.com/bespokeinvest/status/2120645368819970551",
     "likes": 9,
     "reposts": 1,
@@ -806,7 +1056,7 @@
    {
     "handle": "kshaughnessy2",
     "name": "kristen shaughnessy",
-    "text": "$NVDA $SMCI \nSingapore held Nvidia-linked exec\u2019s passport for 8 months while U.S. sat on its hands\n - CBS News \n\nCBS reports Singapore held Alice Huang\u2019s passport for eight months while investigating possible Nvidia chip exports to China via Supermicro servers. \n\nSources tell CBS https://t.co/FlpSXobWfz",
+    "text": "$NVDA $SMCI \nSingapore held Nvidia-linked exec’s passport for 8 months while U.S. sat on its hands\n - CBS News \n\nCBS reports Singapore held Alice Huang’s passport for eight months while investigating possible Nvidia chip exports to China via Supermicro servers. \n\nSources tell CBS https://t.co/FlpSXobWfz",
     "url": "https://x.com/kshaughnessy2/status/2121931011571265563",
     "likes": 43,
     "reposts": 20,
@@ -848,7 +1098,7 @@
    {
     "handle": "StragglerLiu",
     "name": "Straggler Liu | AI & Semis",
-    "text": "OCS Is Already Shipping. Scale-Up Is the Harder Test.\n\nOptical circuit switching is no longer just a Google architecture story.\n\nCoherent ($COHR) confirmed that its 320\u00d7320 OCS systems are shipping. It is expanding production at two sites, with customer engagement extending",
+    "text": "OCS Is Already Shipping. Scale-Up Is the Harder Test.\n\nOptical circuit switching is no longer just a Google architecture story.\n\nCoherent ($COHR) confirmed that its 320×320 OCS systems are shipping. It is expanding production at two sites, with customer engagement extending",
     "url": "https://x.com/StragglerLiu/status/2120508681070497799",
     "likes": 1,
     "reposts": 0,
@@ -900,7 +1150,7 @@
    {
     "handle": "WOLF_Financial",
     "name": "WOLF",
-    "text": "HERE'S WHAT THE \ud83c\uddfa\ud83c\uddf8 STOCK MARKET LOOKED LIKE TODAY\n\nUp:\n\u2022 Palo Alto Networks $PANW +10.6%\n\u2022 TJX $TJX +8.1%\n\u2022 CrowdStrike $CRWD +8.0%\n\u2022 Fortinet $FTNT +5.9%\n\u2022 AMD $AMD +5.3%\n\u2022 Disney $DIS +4.6%\n\u2022 Royal Caribbean $RCL +4.3%\n\u2022 Arista Networks $ANET +4.0%\n\nDown:\n\u2022 Humana $HUM https://t.co/Bm5BQzmm70",
+    "text": "HERE'S WHAT THE 🇺🇸 STOCK MARKET LOOKED LIKE TODAY\n\nUp:\n• Palo Alto Networks $PANW +10.6%\n• TJX $TJX +8.1%\n• CrowdStrike $CRWD +8.0%\n• Fortinet $FTNT +5.9%\n• AMD $AMD +5.3%\n• Disney $DIS +4.6%\n• Royal Caribbean $RCL +4.3%\n• Arista Networks $ANET +4.0%\n\nDown:\n• Humana $HUM https://t.co/Bm5BQzmm70",
     "url": "https://x.com/WOLF_Financial/status/2123166710106931283",
     "likes": 30,
     "reposts": 5,
@@ -911,7 +1161,7 @@
   "AVGO": [
    {
     "handle": "pequityresearch",
-    "name": "P Equity Research \ud83d\udcf0",
+    "name": "P Equity Research 📰",
     "text": "\"Strong new orders from OpenAI and Anthropic have extended Google TPU shipment visibility to 2029\"\n\n$GOOGL $AVGO https://t.co/sszy83oBgK https://t.co/1N5yOY6l9H",
     "url": "https://x.com/pequityresearch/status/2122155695651098775",
     "likes": 222,
@@ -922,7 +1172,7 @@
    {
     "handle": "neilsethinew",
     "name": "Neil Sethi NEW account",
-    "text": "Many have argued that Jensen Huang\u2019s troubles are Nvidia\u2019s rivals\u2019 gain. This week\u2019s price action roughly bears that out, at least until today.\n\nCumulative change in market value since the November 6 close, Nvidia vs. AMD + Broadcom + Marvell combined:\n\n\u25aa\ufe0f Monday: Nvidia \u2212$192B, https://t.co/7QYgxSKhtr",
+    "text": "Many have argued that Jensen Huang’s troubles are Nvidia’s rivals’ gain. This week’s price action roughly bears that out, at least until today.\n\nCumulative change in market value since the November 6 close, Nvidia vs. AMD + Broadcom + Marvell combined:\n\n▪️ Monday: Nvidia −$192B, https://t.co/7QYgxSKhtr",
     "url": "https://x.com/neilsethinew/status/2121331879273988204",
     "likes": 5,
     "reposts": 1,
@@ -943,7 +1193,7 @@
   "MSFT": [
    {
     "handle": "Jannat188219",
-    "name": "Janu \ud83e\udee7",
+    "name": "Janu 🫧",
     "text": "On 12 November, a global Microsoft outage took down Outlook, Teams and Copilot.\n\nThe next day, Claude users could not log in.\n\nWhen one company runs your AI, its outage is your outage. I keep thinking about how normal that has become. \n\nThere is no second door.\n\nThat is what I https://t.co/u4tgMksJRr",
     "url": "https://x.com/Jannat188219/status/2123354564535386366",
     "likes": 127,
@@ -954,7 +1204,7 @@
    {
     "handle": "YusufGemz",
     "name": "Yusuf",
-    "text": "The recent Microsoft outage was a good reminder of something we don\u2019t talk about enough, how dependent we\u2019ve become on a handful of companies for everyday AI and productivity tools.\n\nOn November 12, Microsoft experienced a global outage that disrupted Outlook, Teams and Copilot. https://t.co/0Q2SvoyQwg",
+    "text": "The recent Microsoft outage was a good reminder of something we don’t talk about enough, how dependent we’ve become on a handful of companies for everyday AI and productivity tools.\n\nOn November 12, Microsoft experienced a global outage that disrupted Outlook, Teams and Copilot. https://t.co/0Q2SvoyQwg",
     "url": "https://x.com/YusufGemz/status/2123095695943164177",
     "likes": 87,
     "reposts": 1,
@@ -966,7 +1216,7 @@
    {
     "handle": "StockMKTNewz",
     "name": "Evan",
-    "text": "Intel $INTC posted this today:\n\n\u201cWe're expanding our collaboration with Microsoft to help support continued innovation across Azure.\u201d https://t.co/Cff8FMKMjq",
+    "text": "Intel $INTC posted this today:\n\n“We're expanding our collaboration with Microsoft to help support continued innovation across Azure.” https://t.co/Cff8FMKMjq",
     "url": "https://x.com/StockMKTNewz/status/2123115093198008824",
     "likes": 165,
     "reposts": 17,
@@ -1024,7 +1274,7 @@
    {
     "handle": "Stocksalute",
     "name": "Niels - Stocksalute",
-    "text": "Happy Thursday, y\u2019all! \u2600\ufe0f\n\n\u2022 $QQQ: +1.8%\n\u2022 $ANT: Anthropic IPO\n\u2022 $TTWO: GTA VI is out\n\u2022 $PANW: +9% after earnings\n\n\ud83d\udc40 Earnings Action:\n$INTU Intuit \ud83d\udcbb\n$WMT Walmart \ud83d\uded2\n$BABA Alibaba \ud83d\udecd\ufe0f\n$PDD Pinduoduo \ud83d\udedc\n\nCheers from the Netherlands! \u270c\ufe0f\u2615\ufe0f https://t.co/JpAKpKhlG7",
+    "text": "Happy Thursday, y’all! ☀️\n\n• $QQQ: +1.8%\n• $ANT: Anthropic IPO\n• $TTWO: GTA VI is out\n• $PANW: +9% after earnings\n\n👀 Earnings Action:\n$INTU Intuit 💻\n$WMT Walmart 🛒\n$BABA Alibaba 🛍️\n$PDD Pinduoduo 🛜\n\nCheers from the Netherlands! ✌️☕️ https://t.co/JpAKpKhlG7",
     "url": "https://x.com/Stocksalute/status/2123316343323631673",
     "likes": 24,
     "reposts": 1,
@@ -1038,7 +1288,7 @@
    {
     "handle": "FintechInsider_",
     "name": "Fintech Insider",
-    "text": "Marvell Technology\u2019s $115B Lumentum Deal Accelerates AI Cloud Infrastructure and Fintech Data Demands www.\u200bcrowdfundinsider.\u200bcom/2026/11/321091-marvell-technologys-115b-lumentum-deal-accelerates-ai-cloud-infrastructure-and-fintech-data-demands/ https://t.co/HWaNJ43MvU",
+    "text": "Marvell Technology’s $115B Lumentum Deal Accelerates AI Cloud Infrastructure and Fintech Data Demands www.​crowdfundinsider.​com/2026/11/321091-marvell-technologys-115b-lumentum-deal-accelerates-ai-cloud-infrastructure-and-fintech-data-demands/ https://t.co/HWaNJ43MvU",
     "url": "https://x.com/FintechInsider_/status/2119083522078155212",
     "likes": 0,
     "reposts": 0,
@@ -1048,7 +1298,7 @@
    {
     "handle": "techdealfiles",
     "name": "Tech Deal Files",
-    "text": "@MarvellTech @Lumentum The clause I\u2019d watch: Marvell could owe Lumentum $3.2B if the deal ends under certain regulatory conditions. The $115B headline tells you the deal\u2019s size. The breakup fee tells you who takes the risk if approvals fall through.",
+    "text": "@MarvellTech @Lumentum The clause I’d watch: Marvell could owe Lumentum $3.2B if the deal ends under certain regulatory conditions. The $115B headline tells you the deal’s size. The breakup fee tells you who takes the risk if approvals fall through.",
     "url": "https://x.com/techdealfiles/status/2119515665564639585",
     "likes": 0,
     "reposts": 0,
@@ -1080,7 +1330,7 @@
    {
     "handle": "FintechInsider_",
     "name": "Fintech Insider",
-    "text": "Marvell Technology\u2019s $115B Lumentum Deal Accelerates AI Cloud Infrastructure and Fintech Data Demands www.\u200bcrowdfundinsider.\u200bcom/2026/11/321091-marvell-technologys-115b-lumentum-deal-accelerates-ai-cloud-infrastructure-and-fintech-data-demands/ https://t.co/HWaNJ43MvU",
+    "text": "Marvell Technology’s $115B Lumentum Deal Accelerates AI Cloud Infrastructure and Fintech Data Demands www.​crowdfundinsider.​com/2026/11/321091-marvell-technologys-115b-lumentum-deal-accelerates-ai-cloud-infrastructure-and-fintech-data-demands/ https://t.co/HWaNJ43MvU",
     "url": "https://x.com/FintechInsider_/status/2119083522078155212",
     "likes": 0,
     "reposts": 0,
@@ -1090,7 +1340,7 @@
    {
     "handle": "techdealfiles",
     "name": "Tech Deal Files",
-    "text": "@MarvellTech @Lumentum The clause I\u2019d watch: Marvell could owe Lumentum $3.2B if the deal ends under certain regulatory conditions. The $115B headline tells you the deal\u2019s size. The breakup fee tells you who takes the risk if approvals fall through.",
+    "text": "@MarvellTech @Lumentum The clause I’d watch: Marvell could owe Lumentum $3.2B if the deal ends under certain regulatory conditions. The $115B headline tells you the deal’s size. The breakup fee tells you who takes the risk if approvals fall through.",
     "url": "https://x.com/techdealfiles/status/2119515665564639585",
     "likes": 0,
     "reposts": 0,
@@ -1132,7 +1382,7 @@
    {
     "handle": "EmmanuelInvest",
     "name": "Emmanuel | Big Tech, AI & Semis Investor",
-    "text": "TRUMP MEDIA $DJT \u2014 $410M IN NET INCOME, BUT JUST $3M IN REVENUE. THE BIGGER STORY IS THE BALANCE SHEET AND FUSION MERGER.\nI've gone through Trump Media's Q3\u201926 earnings call, and what caught my attention wasn't the reported profit. It was how much of the company's financial https://t.co/upvdROu9dL",
+    "text": "TRUMP MEDIA $DJT — $410M IN NET INCOME, BUT JUST $3M IN REVENUE. THE BIGGER STORY IS THE BALANCE SHEET AND FUSION MERGER.\nI've gone through Trump Media's Q3’26 earnings call, and what caught my attention wasn't the reported profit. It was how much of the company's financial https://t.co/upvdROu9dL",
     "url": "https://x.com/EmmanuelInvest/status/2119936838668329104",
     "likes": 4,
     "reposts": 0,
@@ -1142,7 +1392,7 @@
    {
     "handle": "fnohacked",
     "name": "FnoHacked | Futures and Options",
-    "text": "3/3\n\n\ud83c\uddfa\ud83c\uddf8 $DJT: PROFIT BOMBSHELL with a catch! Trump Media posted $409.7M in Q3 net income, but gains on crypto holdings and securities drove much of it. \n\nRevenue was just $3M. Its planned $6B fusion merger adds another twist. Headline profit \u2260 operating strength.",
+    "text": "3/3\n\n🇺🇸 $DJT: PROFIT BOMBSHELL with a catch! Trump Media posted $409.7M in Q3 net income, but gains on crypto holdings and securities drove much of it. \n\nRevenue was just $3M. Its planned $6B fusion merger adds another twist. Headline profit ≠ operating strength.",
     "url": "https://x.com/fnohacked/status/2120000103922733147",
     "likes": 0,
     "reposts": 0,
