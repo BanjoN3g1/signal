@@ -214,24 +214,34 @@
   ],
   "dad1750753c6": [
    {
-    "handle": "saastr",
-    "name": "SaaStr.ai",
-    "text": "This Week in AI (2/2):\n6️⃣ AMD completes World Labs acquisition, Fei-Fei Li joins as chief scientist\n\n7️⃣ Isomorphic Labs raises $5B Series C for AI drug design\n\n8️⃣ Microsoft unveils six in-house MAI models, including MAI Code 2 in GitHub Copilot\n\n9️⃣ California sues OpenAI over",
-    "url": "https://x.com/saastr/status/2124357084972032147",
-    "likes": 5,
-    "reposts": 0,
-    "ts": "2026-11-22T04:19:32.000Z",
-    "note": "SaaStr's weekly AI roundup: AMD closed World Labs and Fei-Fei Li joins as chief scientist."
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "$AMD REGISTERS 336.9M SHARES FOR POTENTIAL RESALE, WORTH ~$152B AT TODAY'S PRICE\n\n160M shares for OpenAI, from its Oct 2025 warrant\n160M shares for Meta, from its Feb 2026 warrant\n\nThe rest go to sellers of Taalas and World Labs, which AMD acquired",
+    "url": "https://x.com/wallstengine/status/2124977739614875724",
+    "likes": 452,
+    "reposts": 44,
+    "ts": "2026-11-23T21:25:47.000Z",
+    "note": "AMD registered 336.9M shares (~$152B) for resale, mostly OpenAI and Meta warrant shares. Big dilution-overhang chatter."
    },
    {
-    "handle": "badd_ug",
-    "name": "BADD🤗",
-    "text": "Inference efficiency is the new M&amp;A prize: Just months after AMD bought World Labs for $8.2B, Amazon is targeting Decart for ~$7.5B—not for another chatbot, but for proprietary neural-network optimization and real-time edge inference that cuts compute overhead in production. https://t.co/diofnM6hCz",
-    "url": "https://x.com/badd_ug/status/2124531026596593752",
-    "likes": 1,
+    "handle": "josenajarro",
+    "name": "Jose Najarro Stocks",
+    "text": "Advanced Micro Devices $AMD just registered up to 336.9 million shares for resale, and the headline number looks a lot scarier than it is.\n\nPer the S-3 filed today, 320 million of those shares come from the OpenAI and Meta warrants, 160 million each at a $0.01 exercise price. https://t.co/h7vKPdTdtP",
+    "url": "https://x.com/josenajarro/status/2124998504166654318",
+    "likes": 66,
+    "reposts": 3,
+    "ts": "2026-11-23T22:48:18.000Z",
+    "note": "Why the S-3 headline looks scarier than it is: most of the shares come from existing warrants."
+   },
+   {
+    "handle": "firstadopter",
+    "name": "tae kim",
+    "text": "The AMD registration covers only the World Labs shares. People really need to try an LLM before tweeting. https://t.co/1AwcCPa9EB",
+    "url": "https://x.com/firstadopter/status/2125001720849936386",
+    "likes": 21,
     "reposts": 0,
-    "ts": "2026-11-22T15:50:43.000Z",
-    "note": "Frames it as part of a wave of inference-efficiency M&A."
+    "ts": "2026-11-23T23:01:05.000Z",
+    "note": "Pushback: one credible voice says the registration ties to the World Labs deal shares. Read the S-3 itself before trusting either take."
    }
   ],
   "5547e26ee37f": [
@@ -258,78 +268,198 @@
   ],
   "3256ddf5b9bc": [
    {
-    "handle": "EconomicTimes",
-    "name": "Economic Times",
-    "text": "TSMC tightens China AI chip curbs as new US rules close manufacturing loophole, sources say https://t.co/RFWuKBmiqw",
-    "url": "https://x.com/EconomicTimes/status/2124055263242047580",
-    "likes": 2,
-    "reposts": 1,
-    "ts": "2026-11-21T08:20:12.000Z",
-    "note": "Economic Times: TSMC tightens China AI-chip handling as new US rules close a manufacturing loophole."
-   },
-   {
     "handle": "QQ_Timmy",
     "name": "駿HaYaO",
-    "text": "《StatementDog》 — 581. [Taiwan & US Stock ATM] New US Curbs on China Weigh on Semiconductor Demand, With Diverging Impacts on GPUs and AI ASICs\n@statementdog\n\nThe US is tightening its AI export controls on China again. This time it goes beyond chips: overseas compute rentals, transshipment through Southeast Asia, and chip orders placed through front IC design firms are all being shut down at once. \n\nWith China's hidden \"shadow demand\" taken out of the market, who gets hurt first? This episode walks through data centers and branded servers up to GPUs, ASICs, memory, TSMC and equipment. It explains why NVIDIA takes the biggest hit while ASICs could benefit over the medium to long term. \n\nSupply should still fall short of demand in 2027, but 2028 demand and the wave of new capacity coming online are becoming something the market has to start worrying about.\n\nhttps://t.co/PcFhhDErkU",
+    "text": "《StatementDog》 — 581. [Taiwan &amp; US Stock ATM] New US Curbs on China Weigh on Semiconductor Demand, With Diverging Impacts on GPUs and AI ASICs\n@statementdog\n\nThe US is tightening its AI export controls on China again. This time it goes beyond chips: overseas compute rentals,",
     "url": "https://x.com/QQ_Timmy/status/2124829680075522312",
-    "likes": 4,
+    "likes": 6,
     "reposts": 0,
     "ts": "2026-11-23T11:37:27.000Z",
-    "note": "Taiwan research desk: new curbs hit GPU and other chip demand differently."
+    "note": "StatementDog breakdown: the new China curbs hit GPUs and custom AI ASICs differently, which matters for TSMC's mix."
+   },
+   {
+    "handle": "mattyglesias",
+    "name": "Matthew Yglesias",
+    "text": "If Trump is going to give up on competing with China can we at least go back to free trade so we can buy cheaper stuff?",
+    "url": "https://x.com/mattyglesias/status/2125043201950277944",
+    "likes": 1229,
+    "reposts": 96,
+    "ts": "2026-11-24T01:45:55.000Z",
+    "note": "Read on policy: if Washington is easing on China, the trade logic behind the curbs falls apart."
+   },
+   {
+    "handle": "EWErickson",
+    "name": "Erick Erickson",
+    "text": "When did America First involve defending a CEO whose behaviors compromised national security and then doubling down on giving chips to China.  This isn't very super intelligent.",
+    "url": "https://x.com/EWErickson/status/2125223954998784461",
+    "likes": 439,
+    "reposts": 64,
+    "ts": "2026-11-24T13:44:10.000Z",
+    "note": "Right-flank criticism that the Huang episode is also a fight over sending chips to China."
+   }
+  ],
+  "9779681faa41": [
+   {
+    "handle": "burrytracker",
+    "name": "Michael Burry Stock Tracker ♟",
+    "text": "Semiconductors are ripping today:\n\n• NVIDIA $NVDA +33%\n• Super Micro $SMCI +19%\n• Marvell $MRVL +18%\n• Micron $MU +16%\n• Taiwan Semi $TSM +16%\n• Arm $ARM +15%\n• Monolithic Power $MPWR +15%\n• Intel $INTC +14%\n• Lam Research $LRCX +14%\n• Applied Materials $AMAT +13%\n•",
+    "url": "https://x.com/burrytracker/status/2124881733891822056",
+    "likes": 504,
+    "reposts": 55,
+    "ts": "2026-11-23T15:04:18.000Z",
+    "note": "The scale of Monday's chip rip after Huang's return: NVDA +33%, MRVL, MU, TSM, ARM all double digits."
+   },
+   {
+    "handle": "coinbureau",
+    "name": "Coin Bureau",
+    "text": "🚨TODAY: U.S. stocks surge at market open, adding an estimated $3,000,000,000,000 in market value.\n\nNvidia surged more than 30% after reinstating Jensen Huang as CEO, president and board director.\n\nNvidia alone added about $950 BILLION, nearly double the $495 billion it lost https://t.co/3O8dHk5uQN",
+    "url": "https://x.com/coinbureau/status/2124879490824478846",
+    "likes": 321,
+    "reposts": 53,
+    "ts": "2026-11-23T14:55:23.000Z",
+    "note": "~$3T of US market value added at the open as Nvidia jumped 30%+ on Huang's reinstatement."
+   },
+   {
+    "handle": "SemiconductorsX",
+    "name": "Semiconductor Insider",
+    "text": "Korean memory stocks are bouncing hard after Jensen Huang’s return.\n\nSamsung Electronics jumped about 7% and SK Hynix rose over 8% in early trading. The move follows a sharp rebound in the US overnight, where NVIDIA soared more than 31% after the board brought Huang back as CEO.",
+    "url": "https://x.com/SemiconductorsX/status/2125025327793819741",
+    "likes": 16,
+    "reposts": 2,
+    "ts": "2026-11-24T00:34:53.000Z",
+    "note": "Spillover to Asia: Samsung +7%, SK Hynix +8% as the memory trade rebounds with Huang back."
+   },
+   {
+    "handle": "politico",
+    "name": "POLITICO",
+    "text": "Jensen Huang is getting his old job back, but a unanimous vote from Nvidia’s board won’t spare him from scrutiny on Capitol Hill.\n\nOur @wsteaks talked to Elizabeth Warren, who told him that Nvidia and Jensen Huang both need to be held accountable. \n\n🎧 Playbook Pod: https://t.co/mcoRXtGJkr",
+    "url": "https://x.com/politico/status/2125228893837652365",
+    "likes": 14,
+    "reposts": 7,
+    "ts": "2026-11-24T14:03:47.000Z",
+    "note": "The board vote doesn't end it: Warren and Congress plan to keep scrutinizing Huang."
+   }
+  ],
+  "618fa9d1b5a6": [
+   {
+    "handle": "EWErickson",
+    "name": "Erick Erickson",
+    "text": "We were told if we didn’t vote GOP, we’d get socialism.  Now the President is dictating corporate hires and taking equity control of companies. https://t.co/aBbBKqzhOC",
+    "url": "https://x.com/EWErickson/status/2125010805015908407",
+    "likes": 2392,
+    "reposts": 442,
+    "ts": "2026-11-23T23:37:11.000Z",
+    "note": "A conservative voice objects to the White House steering Nvidia's CEO pick and taking equity stakes."
+   },
+   {
+    "handle": "mattyglesias",
+    "name": "Matthew Yglesias",
+    "text": "The industry has convinced Trump that the AI stock boom is keeping the economy aloft, when the lesson he should actually be learning is that everyone hates this AI-centric economy with data center investment crowding out other consumption to build a future people rightly fear.",
+    "url": "https://x.com/mattyglesias/status/2125045214368952321",
+    "likes": 943,
+    "reposts": 88,
+    "ts": "2026-11-24T01:53:55.000Z",
+    "note": "Left-of-center read: Trump believes the AI stock boom props up the economy, but voters dislike the AI-centric economy."
+   },
+   {
+    "handle": "axios",
+    "name": "Axios",
+    "text": "It's still Trump's stock market https://t.co/FshKT2btZW",
+    "url": "https://x.com/axios/status/2125205300303065551",
+    "likes": 11,
+    "reposts": 2,
+    "ts": "2026-11-24T12:30:02.000Z",
+    "note": "Axios on how much the rally now rides on Trump's moves."
+   }
+  ],
+  "488a7bab7dc8": [
+   {
+    "handle": "semivision_tw",
+    "name": "SemiVision 🇹🇼 👁️👁️",
+    "text": "From Cavium, Avera, and Inphi to Celestial AI, Polariton, and Lumentum: How Marvell Is Building an Integrated Technology Platform Spanning Custom ASICs, High-Speed Networking, Memory Connectivity, and Optical Infrastructure \n\nhttps://t.co/ZGitf700Tz",
+    "url": "https://x.com/semivision_tw/status/2125035461240353222",
+    "likes": 6,
+    "reposts": 0,
+    "ts": "2026-11-24T01:15:09.000Z",
+    "note": "Strategic rationale: how Lumentum fits Marvell's run of deals (Inphi, Celestial AI) toward one full AI connectivity platform."
+   },
+   {
+    "handle": "JonErlichman",
+    "name": "Jon Erlichman",
+    "text": "Stocks today:\n\nNvidia +32%\nAstera Labs +23%\nCoreWeave +22%\nDell +22%\nBloom Energy +20%\nNebius +19%\nMicron +19%\nMarvell +19%\nLumentum +18%\nHewlett Packard +18%\nArm +16%\nMonolithic Power +17%\nIntel +16%\nWestern Digital +15%\nApplied Mat +15%\nTesla +12%\nSandisk +12%\nPalantir: +12%",
+    "url": "https://x.com/JonErlichman/status/2124972865057406984",
+    "likes": 55,
+    "reposts": 14,
+    "ts": "2026-11-23T21:06:25.000Z",
+    "note": "MRVL +19% and LITE +18% on Monday's AI rebound, in context with the rest of the AI complex."
+   },
+   {
+    "handle": "InterceptorNews",
+    "name": "INTERCEPTOR",
+    "text": "🔴 Micron is downgraded and Marvell’s price target is cut as chip stocks retreat amid fragile US-China trade ties and ongoing tech restrictions.\n\nMicron $MU downgraded by BNP Paribas, with its price target slashed from $1,700 to $775 over memory oversupply risks and weaker HBM",
+    "url": "https://x.com/InterceptorNews/status/2125241758208418148",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-24T14:54:54.000Z",
+    "note": "Tuesday's pullback: Marvell's price target cut and Micron downgraded as US-China chip tensions weigh."
+   }
+  ],
+  "438fb86eaa81": [
+   {
+    "handle": "JOBhakdi",
+    "name": "Jo Bhakdi",
+    "text": "MERGER UPDATE: \n\nFT reports that SpaceX and Tesla are hammering out an all-stock merger and both companies want it done before year-end.\n\nAn insider says the two sides aren't close yet, though with the teams working around the clock, hitting that deadline is still feasible. https://t.co/D0glPFGcpd",
+    "url": "https://x.com/JOBhakdi/status/2125194936391737694",
+    "likes": 601,
+    "reposts": 39,
+    "ts": "2026-11-24T11:48:51.000Z",
+    "note": "Citing the FT: SpaceX and Tesla are working on an all-stock merger, both sides aiming for year-end."
+   }
+  ],
+  "075e581d8f90": [
+   {
+    "handle": "fourweekmba",
+    "name": "Gennaro",
+    "text": "Infineon ended last week 48.4% below its 2026 high. ASML is 32.1% off, Siemens Energy 36.9%, Schneider 27.2%, SAP 14.9% (our math). Their Oct-Nov guidance still points to growth. https://t.co/M85u67WcDG",
+    "url": "https://x.com/fourweekmba/status/2124724354424475854",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-23T04:38:56.000Z",
+    "note": "Context for Infineon's record quarter: the stock ended last week 48% off its 2026 high even though guidance held up."
    }
   ]
  },
  "tickers": {
   "NVDA": [
    {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "TAIWAN'S TAIEX FUTURES JUMP LAST UP 9.4% AFTER JENSEN HUANG REINSTATED AS NVIDIA CEO\n\nKOSPI 200 FUTURES SURGE 8% AFTER JENSEN HUANG REINSTATED AS NVIDIA CEO",
-    "url": "https://x.com/DeItaone/status/2124876382626865488",
-    "likes": 233,
-    "reposts": 25,
-    "ts": "2026-11-23T14:43:02.000Z",
-    "note": "Fast-markets wire: Huang's reinstatement is moving Asian futures (Taiex +9%, Kospi +8%), a read on how much of the AI trade keys off Nvidia."
+    "handle": "burrytracker",
+    "name": "Michael Burry Stock Tracker ♟",
+    "text": "Semiconductors are ripping today:\n\n• NVIDIA $NVDA +33%\n• Super Micro $SMCI +19%\n• Marvell $MRVL +18%\n• Micron $MU +16%\n• Taiwan Semi $TSM +16%\n• Arm $ARM +15%\n• Monolithic Power $MPWR +15%\n• Intel $INTC +14%\n• Lam Research $LRCX +14%\n• Applied Materials $AMAT +13%\n•",
+    "url": "https://x.com/burrytracker/status/2124881733891822056",
+    "likes": 504,
+    "reposts": 55,
+    "ts": "2026-11-23T15:04:18.000Z",
+    "note": "NVDA +33% intraday Monday on Huang's return led the whole semis complex."
    },
    {
-    "handle": "SpacBobby",
-    "name": "SpacBobby",
-    "text": "$NVDA  - *NVIDIA REACHED HUANG DECISION WITH SENIOR US GOVERNMENT INPUT\n\n*NVIDIA SHARES SURGE 27% AFTER JENSEN HUANG REINSTATED AS CEO\n\nWe are so back!! https://t.co/bXuqRUABwf https://t.co/fXoFWlS68r",
-    "url": "https://x.com/SpacBobby/status/2124865675193933994",
-    "likes": 13,
-    "reposts": 3,
-    "ts": "2026-11-23T14:00:29.000Z",
-    "note": "Headline flow: board decision reportedly made with US government input; premarket NVDA surge."
-   },
-   {
-    "handle": "ETNOWlive",
-    "name": "ET NOW",
-    "text": "#BREAKING | Jensen Huang Back As Nvidia CEO: Nvidia To Continue Jensen Huang Investigation After Reinstatement \n\nColette Kress To Continue As CFO\n\nMeanwhile, Nvidia Shares Surge 24% After Jensen Huang Reinstated As CEO\n\n@nvidia @JensenHuang https://t.co/wfdDUwOYel https://t.co/0Og9h37Dhu",
-    "url": "https://x.com/ETNOWlive/status/2124868927507628219",
-    "likes": 5,
+    "handle": "allday_stocks",
+    "name": "alldaystocks",
+    "text": "🔔 CLOSING BELL | Monday, November 23, 2026\nWall Street Stages Historic Rally • Nasdaq 100 +6.9% • Nvidia +31.5% After Huang's Return • Semiconductor Index +14% • S&amp;P 500 +4.7% • AI Stocks Soar • VIX -26%\n⠀\n🔎 Market Overview\nWall Street kicked off the week with an",
+    "url": "https://x.com/allday_stocks/status/2124988932156727496",
+    "likes": 1,
     "reposts": 0,
-    "ts": "2026-11-23T14:13:25.000Z",
-    "note": "Detail that matters: the internal investigation continues and Kress stays CFO, so governance overhang isn't fully gone."
+    "ts": "2026-11-23T22:10:16.000Z",
+    "note": "Closing tally: NVDA +31.5%, SOX +14%, Nasdaq 100 +6.9% in a historic one-day rally."
    },
    {
-    "handle": "atrupar",
-    "name": "Aaron Rupar",
-    "text": "Trump congratulates Americans (?) for Jensen Huang being restored as Nvidia CEO despite a spy scandal we are far from getting to the bottom of: \"Congratulations to Jensen, the NVIDIA Board, to the People of the United States — and, indeed, the World! Thank you for your attention to this matter.\"",
-    "url": "https://x.com/atrupar/status/2124869039927308571",
-    "likes": 1341,
-    "reposts": 229,
-    "ts": "2026-11-23T14:13:51.000Z",
-    "note": "Political angle: Trump publicly congratulating the reinstatement; highest-engagement post on the story."
-   },
-   {
-    "handle": "MTLabResearch",
-    "name": "MT | Research Notes",
-    "text": "Nvidia lost about $2.7 trillion in 45 days, more than the whole crypto market is worth!\n\nSince its Oct 6 record, the stock is down nearly half, to $125.53 on Nov 20. In the middle of it, Nvidia posted the biggest quarter in its history. Investors stopped asking how much it sells and started asking who is in charge and what is in the books.\n\n> Oct 6: a record high near $243, a market value of about $5.7 trillion.\n\n> Oct 22 to Nov 5: the first fear was who pays for AI. Shares fell about 4% on Oct 22 and again on Oct 30, then 9% on Nov 5. Analysts pointed at Nvidia backing customers who buy its chips (circular financing).\n\n> Nov 12: CEO Jensen Huang resigned after a board probe into reports about his private life. The stock opened about 13% lower. CFO Colette Kress became interim CEO.\n\n> Nov 17: sales of $115.8 billion, up 103%, and a $130 billion forecast. The same day, the Wall Street Journal reported an SEC probe into whether Nvidia's disclosures misled investors.\n\n> Nov 18: the stock fell 2.9% after the chairman said Huang will not return and no successor was named.\n\n> Nov 20: Reuters reported SEC staff are examining potential accounting issues. Shares fell 14%, a record one-week loss of about $900 billion and the worst week since 2008. Open questions: Singapore, which booked about $104 billion of 2025 sales (Financial Times), and customers paying slower. An investigation is not an accusation.\n\nWhat 45 days of Nvidia candles showed?\n- Record numbers do not stop a sale once the question changes\n- Fear stacked on fear, each headline hitting a stock already down\n- A probe is a question, and the price trades it before any answer\n\nGreat numbers, shaky trust, which one moves the price more?\n\nExperience, not financial advice.",
-    "url": "https://x.com/MTLabResearch/status/2124183253670318286",
+    "handle": "politico",
+    "name": "POLITICO",
+    "text": "Jensen Huang is getting his old job back, but a unanimous vote from Nvidia’s board won’t spare him from scrutiny on Capitol Hill.\n\nOur @wsteaks talked to Elizabeth Warren, who told him that Nvidia and Jensen Huang both need to be held accountable. \n\n🎧 Playbook Pod: https://t.co/mcoRXtGJkr",
+    "url": "https://x.com/politico/status/2125228893837652365",
     "likes": 14,
-    "reposts": 2,
-    "ts": "2026-11-21T16:48:47.000Z",
-    "note": "Context on the drawdown: ~$2.7T of market cap lost in 45 days before today's rebound."
+    "reposts": 7,
+    "ts": "2026-11-24T14:03:47.000Z",
+    "note": "Policy overhang stays: Congress vows to keep scrutinizing Huang."
    }
   ],
   "CRWD": [
@@ -408,24 +538,24 @@
   ],
   "AMD": [
    {
-    "handle": "saastr",
-    "name": "SaaStr.ai",
-    "text": "This Week in AI (2/2):\n6️⃣ AMD completes World Labs acquisition, Fei-Fei Li joins as chief scientist\n\n7️⃣ Isomorphic Labs raises $5B Series C for AI drug design\n\n8️⃣ Microsoft unveils six in-house MAI models, including MAI Code 2 in GitHub Copilot\n\n9️⃣ California sues OpenAI over",
-    "url": "https://x.com/saastr/status/2124357084972032147",
-    "likes": 5,
-    "reposts": 0,
-    "ts": "2026-11-22T04:19:32.000Z",
-    "note": "SaaStr's weekly AI roundup: AMD closed World Labs and Fei-Fei Li joins as chief scientist."
+    "handle": "wallstengine",
+    "name": "Wall St Engine",
+    "text": "$AMD REGISTERS 336.9M SHARES FOR POTENTIAL RESALE, WORTH ~$152B AT TODAY'S PRICE\n\n160M shares for OpenAI, from its Oct 2025 warrant\n160M shares for Meta, from its Feb 2026 warrant\n\nThe rest go to sellers of Taalas and World Labs, which AMD acquired",
+    "url": "https://x.com/wallstengine/status/2124977739614875724",
+    "likes": 452,
+    "reposts": 44,
+    "ts": "2026-11-23T21:25:47.000Z",
+    "note": "S-3 resale registration for 336.9M shares (OpenAI and Meta warrants). Watch for overhang talk."
    },
    {
-    "handle": "badd_ug",
-    "name": "BADD🤗",
-    "text": "Inference efficiency is the new M&amp;A prize: Just months after AMD bought World Labs for $8.2B, Amazon is targeting Decart for ~$7.5B—not for another chatbot, but for proprietary neural-network optimization and real-time edge inference that cuts compute overhead in production. https://t.co/diofnM6hCz",
-    "url": "https://x.com/badd_ug/status/2124531026596593752",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-11-22T15:50:43.000Z",
-    "note": "Frames it as part of a wave of inference-efficiency M&A."
+    "handle": "josenajarro",
+    "name": "Jose Najarro Stocks",
+    "text": "Advanced Micro Devices $AMD just registered up to 336.9 million shares for resale, and the headline number looks a lot scarier than it is.\n\nPer the S-3 filed today, 320 million of those shares come from the OpenAI and Meta warrants, 160 million each at a $0.01 exercise price. https://t.co/h7vKPdTdtP",
+    "url": "https://x.com/josenajarro/status/2124998504166654318",
+    "likes": 66,
+    "reposts": 3,
+    "ts": "2026-11-23T22:48:18.000Z",
+    "note": "A calmer read of the S-3: mostly existing warrant shares, not new dilution."
    }
   ],
   "ARM": [
@@ -481,17 +611,17 @@
     "likes": 2,
     "reposts": 0,
     "ts": "2026-11-23T11:00:04.000Z",
-    "note": "Benzinga preview: can Workday's print (Tue after the close) calm the 'SaaSpocalypse' worries?"
+    "note": "Reports tonight after the close. The question is whether results ease worries that AI is eating SaaS seats."
    },
    {
-    "handle": "MorningBrew",
-    "name": "Morning Brew ☕️",
-    "text": "The week ahead...\n\nMonday:\n• Earnings: Zoom, Hewlett Packard Enterprise\n\nTuesday:\n• Earnings: Dell Technologies, Medtronic, Workday, Dollar Tree, Best Buy\n\nWednesday:\n• PCE inflation data\n• Second estimate of US Q3 GDP growth\n• 'Hexed,' 'Focker In-Law,' and 'Hershey' in",
-    "url": "https://x.com/MorningBrew/status/2124689721745883427",
-    "likes": 85,
-    "reposts": 5,
-    "ts": "2026-11-23T02:21:19.000Z",
-    "note": "Morning Brew week ahead: Workday reports Tuesday in a short Thanksgiving week."
+    "handle": "EdwardCoronaUSA",
+    "name": "Edward Corona - The Options Oracle",
+    "text": "Thanksgiving week market:\n\nMon: relief rally\nTue: Dell, Workday, Analog Devices earnings\nWed: PCE, GDP, claims and durable goods all at once\nThu: closed\nFri: half day, three people trading\n\nPick your spot. You don't have to play every hand. https://t.co/9cHeTXLhca",
+    "url": "https://x.com/EdwardCoronaUSA/status/2124901914030538781",
+    "likes": 4,
+    "reposts": 0,
+    "ts": "2026-11-23T16:24:29.000Z",
+    "note": "Calendar: Workday, Dell and ADI tonight, then a heavy macro day Wednesday (PCE, GDP)."
    }
   ],
   "SOXX": [
@@ -525,49 +655,83 @@
     "ts": "2026-11-23T00:49:45.000Z",
     "note": "Why Friday hurt: SEC accounting-probe report hit NVDA, chips fell ~10.7% in a day."
    }
+  ],
+  "MRVL": [
+   {
+    "handle": "InterceptorNews",
+    "name": "INTERCEPTOR",
+    "text": "🔴 Micron is downgraded and Marvell’s price target is cut as chip stocks retreat amid fragile US-China trade ties and ongoing tech restrictions.\n\nMicron $MU downgraded by BNP Paribas, with its price target slashed from $1,700 to $775 over memory oversupply risks and weaker HBM",
+    "url": "https://x.com/InterceptorNews/status/2125241758208418148",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-24T14:54:54.000Z",
+    "note": "Price target cut Tuesday as chips cool after Monday's rip."
+   },
+   {
+    "handle": "semivision_tw",
+    "name": "SemiVision 🇹🇼 👁️👁️",
+    "text": "From Cavium, Avera, and Inphi to Celestial AI, Polariton, and Lumentum: How Marvell Is Building an Integrated Technology Platform Spanning Custom ASICs, High-Speed Networking, Memory Connectivity, and Optical Infrastructure \n\nhttps://t.co/ZGitf700Tz",
+    "url": "https://x.com/semivision_tw/status/2125035461240353222",
+    "likes": 6,
+    "reposts": 0,
+    "ts": "2026-11-24T01:15:09.000Z",
+    "note": "Deal-history thread putting the $115B Lumentum buy in context."
+   }
+  ],
+  "MU": [
+   {
+    "handle": "InterceptorNews",
+    "name": "INTERCEPTOR",
+    "text": "🔴 Micron is downgraded and Marvell’s price target is cut as chip stocks retreat amid fragile US-China trade ties and ongoing tech restrictions.\n\nMicron $MU downgraded by BNP Paribas, with its price target slashed from $1,700 to $775 over memory oversupply risks and weaker HBM",
+    "url": "https://x.com/InterceptorNews/status/2125241758208418148",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-24T14:54:54.000Z",
+    "note": "Downgraded Tuesday after Monday's +19% move."
+   },
+   {
+    "handle": "SemiconductorsX",
+    "name": "Semiconductor Insider",
+    "text": "Korean memory stocks are bouncing hard after Jensen Huang’s return.\n\nSamsung Electronics jumped about 7% and SK Hynix rose over 8% in early trading. The move follows a sharp rebound in the US overnight, where NVIDIA soared more than 31% after the board brought Huang back as CEO.",
+    "url": "https://x.com/SemiconductorsX/status/2125025327793819741",
+    "likes": 16,
+    "reposts": 2,
+    "ts": "2026-11-24T00:34:53.000Z",
+    "note": "Memory peers Samsung and SK Hynix rallied 7-8% too, a read-through for MU."
+   }
   ]
  },
  "filings": {
   "0001104659-26-130785": [
    {
-    "handle": "AGTPinsights",
-    "name": "AGTP",
-    "text": "CrowdStrike just agreed to buy Zscaler for $43.9B. Here's what you need to know.\n\nThe rumor from Friday is now official. CrowdStrike $CRWD announced Monday that it will acquire Zscaler $ZS in an all-stock deal, with no cash involved. The announcement came alongside CrowdStrike's quarterly results.\n\nThis is the largest cybersecurity acquisition in history. It tops Google's $32B purchase of Wiz.\n\nZscaler holders get 1.135 CrowdStrike shares for each Zscaler share. That works out to about $260.41 per share, a 34% premium to Friday's close.\n\nThe pitch is network security. The deal brings Zscaler's network security and Zero Trust tech into CrowdStrike's Falcon platform. CrowdStrike says it adds over $185B to its addressable market. It also opens cross-selling to roughly 8,000 Zscaler customers.\n\nThe deal still needs Zscaler shareholder approval and regulatory approval. It is expected to close in the second half of CrowdStrike's fiscal 2028.\n\nShares fell on the news. CrowdStrike was at $229.44, down 5.76%. Zscaler was at $194.82, down 5.29%. Some investors have criticized paying with CrowdStrike's richly valued stock, while others call it a smart use of expensive equity to buy a fast-growing rival.\n\nCrowdStrike also reported Q3 fiscal 2027 results.\n\nKey numbers:\n- Deal value: $43.9B, all stock\n- Exchange ratio: 1.135 CRWD shares per ZS share\n- Implied price: $260.41, a 34% premium\n- Combined annual recurring revenue: over $10B\n- Added addressable market: over $185B\n- Q3 revenue: $1.58B vs $1.53B expected, up 28% YoY\n- Q3 adjusted EPS: $0.34 vs $0.31 expected\n- Ending ARR: $6.26B, up 27%\n- Net new ARR: $419.2M, up 58%\n- FY27 revenue guide raised to $6.078B-$6.084B, vs $6B expected\n\nCrowdStrike has gone from talks to a signed deal, with closing set for the second half of fiscal 2028.",
-    "url": "https://x.com/AGTPinsights/status/2124839555165524098",
+    "handle": "JonErlichman",
+    "name": "Jon Erlichman",
+    "text": "Price paid to acquire these companies:\n\nZscaler: $43.9 billion (CrowdStrike)\nXilinx: $35 billion (AMD)\nRed Hat: $34 billion (IBM)\nSplunk: $28 billion (Cisco)\nSlack: $27.7 billion (Salesforce)\nLinkedIn: $26.2 billion (Microsoft)\nFigma: $20 billion (Adobe)\nNuance: $19.7 billion",
+    "url": "https://x.com/JonErlichman/status/2124935124219568223",
+    "likes": 167,
+    "reposts": 35,
+    "ts": "2026-11-23T18:36:27.000Z",
+    "note": "Comps: the $43.9B Zscaler deal ranks above Xilinx, Red Hat and Splunk among the largest tech acquisitions."
+   },
+   {
+    "handle": "Tesla_Optimus_K",
+    "name": "Tesla_Optimus",
+    "text": "CrowdStrike is buying Zscaler for $43.9 billion — all stock\n\nZscaler holders get 1.135 CrowdStrike shares, about a 34% premium to Friday's close. CrowdStrike also beat: $1.58 billion revenue, 34 cents adjusted EPS. The stock still dropped in a 5–11% range Monday. Zscaler jumped https://t.co/F0ebm5RoRm",
+    "url": "https://x.com/Tesla_Optimus_K/status/2125141016097550802",
     "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-24T08:14:36.000Z",
+    "note": "Terms: 1.135 CRWD shares per ZS share (~34% premium), all stock, announced with a CRWD beat."
+   },
+   {
+    "handle": "ronjonbSaaS",
+    "name": "FinXKing",
+    "text": "✅ Good luck to CrowdStrike buying Zscaler.\n\n✅ Who’s the winner? Zscaler walking away with $44 billion. Did Jay Chaudhry saw this coming from OpenAI?\n\nWell time will tell how CrowdStrike fares in the next two years.\n\n$CRWD $ZS https://t.co/HAeKFSdyxL",
+    "url": "https://x.com/ronjonbSaaS/status/2125059325630824876",
+    "likes": 15,
     "reposts": 1,
-    "ts": "2026-11-23T12:16:42.000Z",
-    "note": "Explainer: rumor became a definitive $43.9B all-stock deal, announced with CrowdStrike's Q3 print."
-   },
-   {
-    "handle": "ethaniel86",
-    "name": "ξth.c",
-    "text": "A fixed exchange ratio means Zscaler holders are paid in CrowdStrike stock, not dollars.\n\nSo the $43.9B moves every time $CRWD moves.\n\nMonday premarket (CNBC): Zscaler up 13%+, CrowdStrike down 8%+. At that move, roughly $3.5B of the headline is gone before the open.",
-    "url": "https://x.com/ethaniel86/status/2124865409794933152",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-23T13:59:26.000Z",
-    "note": "Deal mechanics: a fixed 1.135 exchange ratio means the deal value floats with CRWD's stock."
-   },
-   {
-    "handle": "BroadwakeAI",
-    "name": "BroadwakeAI",
-    "text": "@CrowdStrike @zscaler Only Zscaler shareholders vote. The 8-K lists no CrowdStrike holder vote: the exchange ratio auto-shrinks if new shares would reach 20% of CrowdStrike's stock, the Nasdaq line that forces one. Founder Jay Chaudhry and related holders pledged ~34% of Zscaler. https://t.co/XGUxubXAX0",
-    "url": "https://x.com/BroadwakeAI/status/2124855212292677976",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-23T13:18:55.000Z",
-    "note": "Banker detail from the 8-K: only Zscaler holders vote; no CrowdStrike shareholder vote listed."
-   },
-   {
-    "handle": "Sam_Badawi",
-    "name": "Sam Badawi",
-    "text": "CrowdStrike $CRWD buying Zscaler $ZS is probably not the best deal in the world.\n\nBloomberg reports talks on a combined $265B cybersecurity giant, though that is market value, not a price.\n\nI expect it to be all stock, which will definitely not be good for CrowdStrike https://t.co/5fackHJpjd",
-    "url": "https://x.com/Sam_Badawi/status/2124449291494101289",
-    "likes": 56,
-    "reposts": 6,
-    "ts": "2026-11-22T10:25:56.000Z",
-    "note": "Skeptic take from a widely followed account: questions whether this is a good deal for CRWD holders."
+    "ts": "2026-11-24T02:49:59.000Z",
+    "note": "SaaS investor's take: Zscaler holders are the clear winners. Raises AI-competition questions about the rationale."
    }
   ],
   "0001140361-26-045152": [
