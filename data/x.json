@@ -1,119 +1,35 @@
 {
  "stories": {
-  "945670cf35c6": [
-   {
-    "handle": "DeItaone",
-    "name": "*Walter Bloomberg",
-    "text": "TAIWAN'S TAIEX FUTURES JUMP LAST UP 9.4% AFTER JENSEN HUANG REINSTATED AS NVIDIA CEO\n\nKOSPI 200 FUTURES SURGE 8% AFTER JENSEN HUANG REINSTATED AS NVIDIA CEO",
-    "url": "https://x.com/DeItaone/status/2124876382626865488",
-    "likes": 233,
-    "reposts": 25,
-    "ts": "2026-11-23T14:43:02.000Z",
-    "note": "Fast-markets wire: Huang's reinstatement is moving Asian futures (Taiex +9%, Kospi +8%), a read on how much of the AI trade keys off Nvidia."
-   },
-   {
-    "handle": "SpacBobby",
-    "name": "SpacBobby",
-    "text": "$NVDA  - *NVIDIA REACHED HUANG DECISION WITH SENIOR US GOVERNMENT INPUT\n\n*NVIDIA SHARES SURGE 27% AFTER JENSEN HUANG REINSTATED AS CEO\n\nWe are so back!! https://t.co/bXuqRUABwf https://t.co/fXoFWlS68r",
-    "url": "https://x.com/SpacBobby/status/2124865675193933994",
-    "likes": 13,
-    "reposts": 3,
-    "ts": "2026-11-23T14:00:29.000Z",
-    "note": "Headline flow: board decision reportedly made with US government input; premarket NVDA surge."
-   },
-   {
-    "handle": "ETNOWlive",
-    "name": "ET NOW",
-    "text": "#BREAKING | Jensen Huang Back As Nvidia CEO: Nvidia To Continue Jensen Huang Investigation After Reinstatement \n\nColette Kress To Continue As CFO\n\nMeanwhile, Nvidia Shares Surge 24% After Jensen Huang Reinstated As CEO\n\n@nvidia @JensenHuang https://t.co/wfdDUwOYel https://t.co/0Og9h37Dhu",
-    "url": "https://x.com/ETNOWlive/status/2124868927507628219",
-    "likes": 5,
-    "reposts": 0,
-    "ts": "2026-11-23T14:13:25.000Z",
-    "note": "Detail that matters: the internal investigation continues and Kress stays CFO, so governance overhang isn't fully gone."
-   },
-   {
-    "handle": "atrupar",
-    "name": "Aaron Rupar",
-    "text": "Trump congratulates Americans (?) for Jensen Huang being restored as Nvidia CEO despite a spy scandal we are far from getting to the bottom of: \"Congratulations to Jensen, the NVIDIA Board, to the People of the United States — and, indeed, the World! Thank you for your attention to this matter.\"",
-    "url": "https://x.com/atrupar/status/2124869039927308571",
-    "likes": 1341,
-    "reposts": 229,
-    "ts": "2026-11-23T14:13:51.000Z",
-    "note": "Political angle: Trump publicly congratulating the reinstatement; highest-engagement post on the story."
-   },
-   {
-    "handle": "MTLabResearch",
-    "name": "MT | Research Notes",
-    "text": "Nvidia lost about $2.7 trillion in 45 days, more than the whole crypto market is worth!\n\nSince its Oct 6 record, the stock is down nearly half, to $125.53 on Nov 20. In the middle of it, Nvidia posted the biggest quarter in its history. Investors stopped asking how much it sells and started asking who is in charge and what is in the books.\n\n> Oct 6: a record high near $243, a market value of about $5.7 trillion.\n\n> Oct 22 to Nov 5: the first fear was who pays for AI. Shares fell about 4% on Oct 22 and again on Oct 30, then 9% on Nov 5. Analysts pointed at Nvidia backing customers who buy its chips (circular financing).\n\n> Nov 12: CEO Jensen Huang resigned after a board probe into reports about his private life. The stock opened about 13% lower. CFO Colette Kress became interim CEO.\n\n> Nov 17: sales of $115.8 billion, up 103%, and a $130 billion forecast. The same day, the Wall Street Journal reported an SEC probe into whether Nvidia's disclosures misled investors.\n\n> Nov 18: the stock fell 2.9% after the chairman said Huang will not return and no successor was named.\n\n> Nov 20: Reuters reported SEC staff are examining potential accounting issues. Shares fell 14%, a record one-week loss of about $900 billion and the worst week since 2008. Open questions: Singapore, which booked about $104 billion of 2025 sales (Financial Times), and customers paying slower. An investigation is not an accusation.\n\nWhat 45 days of Nvidia candles showed?\n- Record numbers do not stop a sale once the question changes\n- Fear stacked on fear, each headline hitting a stock already down\n- A probe is a question, and the price trades it before any answer\n\nGreat numbers, shaky trust, which one moves the price more?\n\nExperience, not financial advice.",
-    "url": "https://x.com/MTLabResearch/status/2124183253670318286",
-    "likes": 14,
-    "reposts": 2,
-    "ts": "2026-11-21T16:48:47.000Z",
-    "note": "Context on the drawdown: ~$2.7T of market cap lost in 45 days before today's rebound."
-   }
-  ],
   "cde4186237cc": [
    {
     "handle": "singularity7x",
     "name": "Juan Leon",
     "text": "1/ Two cybersecurity giants made differing bets on the AI era, five days apart.\n\nNov 18: Palo Alto Networks agreed to buy AI-model startup Applied Compute for $4.5B.\n\nNov 23: CrowdStrike agreed to buy cloud network-security leader Zscaler for $43.9B. \n\nSame goal (own the security",
     "url": "https://x.com/singularity7x/status/2125284563245207944",
-    "likes": 72,
+    "likes": 84,
     "reposts": 11,
-    "ts": "2026-11-24T17:45:00Z",
-    "note": "Thread contrasting PANW buying AI-model talent (Applied Compute) with CRWD buying Zscaler five days later."
+    "ts": "2026-11-24T17:45:00.000Z",
+    "note": "Thread contrasting PANW's $4.5B AI-model bet with CrowdStrike's $43.9B Zscaler deal five days later"
    },
    {
-    "handle": "ZacharyDeWitt",
-    "name": "Zach DeWitt",
-    "text": "🤯 @victoralazarte might have had the best 2-year run in recent venture history\n\nThree investments while at Benchmark:\n\n- Mercor, now valued at $20B - Decart, $7.5B (acq by Amazon) - Applied Compute, $4.5B (acq by Palo Alto)\n\nThere mega hits is serious skill",
-    "url": "https://x.com/ZacharyDeWitt/status/2125242567549939905",
-    "likes": 424,
-    "reposts": 13,
-    "ts": "2026-11-24T14:58:07Z",
-    "note": "Viral VC angle: Benchmark's Lazarte backed Mercor, Decart and Applied Compute, three big outcomes in two years."
+    "handle": "IvanaSpear",
+    "name": "IvanaSPEAR",
+    "text": "AI agents are driving massive cybersecurity consolidation.\n\n1️⃣ Palo Alto Networks saw it early with its $25B offer for CyberArk in July 2025.\n\nPalo Alto started in network security. Over time it expanded into cloud, endpoint and SIEM. But it lacked identity.\n \nCyberArk filled https://t.co/JGLmYf0MSR",
+    "url": "https://x.com/IvanaSpear/status/2125645648196202661",
+    "likes": 74,
+    "reposts": 6,
+    "ts": "2026-11-25T17:39:49.000Z",
+    "note": "Puts Applied Compute in PANW's acquisition path since the CyberArk offer; cyber consolidation driven by AI agents"
    },
    {
-    "handle": "zaryanbliss",
-    "name": "ZaryanBliss",
-    "text": "AI companies are becoming cybersecurity companies\n\nWhy is a cybersecurity company spending billions to acquire AI technology?\n\nPalo Alto Networks has agreed to acquire Applied Compute in a deal valued at approximately $4.5 billion, according to The Wall Street Journal.\n\nApplied",
-    "url": "https://x.com/zaryanbliss/status/2125318545781530819",
-    "likes": 2,
+    "handle": "YvesMulkers",
+    "name": "Yves Mulkers",
+    "text": "CrowdStrike will pay $43.9B in stock for Zscaler. Five days earlier, Palo Alto paid $4.5B for Applied Compute, which tunes and runs open-weight models.\n\nThe daily read on AI and data: https://t.co/mlNsW4VCKx\npowered by https://t.co/HsERepHleV https://t.co/hHsX40L3OL",
+    "url": "https://x.com/YvesMulkers/status/2125560431238402074",
+    "likes": 0,
     "reposts": 1,
-    "ts": "2026-11-24T20:00:02Z",
-    "note": "The strategic logic: why a security vendor pays $4.5B for model-customization tech."
-   }
-  ],
-  "dad1750753c6": [
-   {
-    "handle": "wallstengine",
-    "name": "Wall St Engine",
-    "text": "$AMD REGISTERS 336.9M SHARES FOR POTENTIAL RESALE, WORTH ~$152B AT TODAY'S PRICE\n\n160M shares for OpenAI, from its Oct 2025 warrant\n160M shares for Meta, from its Feb 2026 warrant\n\nThe rest go to sellers of Taalas and World Labs, which AMD acquired",
-    "url": "https://x.com/wallstengine/status/2124977739614875724",
-    "likes": 452,
-    "reposts": 44,
-    "ts": "2026-11-23T21:25:47.000Z",
-    "note": "AMD registered 336.9M shares (~$152B) for resale, mostly OpenAI and Meta warrant shares. Big dilution-overhang chatter."
-   },
-   {
-    "handle": "josenajarro",
-    "name": "Jose Najarro Stocks",
-    "text": "Advanced Micro Devices $AMD just registered up to 336.9 million shares for resale, and the headline number looks a lot scarier than it is.\n\nPer the S-3 filed today, 320 million of those shares come from the OpenAI and Meta warrants, 160 million each at a $0.01 exercise price. https://t.co/h7vKPdTdtP",
-    "url": "https://x.com/josenajarro/status/2124998504166654318",
-    "likes": 66,
-    "reposts": 3,
-    "ts": "2026-11-23T22:48:18.000Z",
-    "note": "Why the S-3 headline looks scarier than it is: most of the shares come from existing warrants."
-   },
-   {
-    "handle": "firstadopter",
-    "name": "tae kim",
-    "text": "The AMD registration covers only the World Labs shares. People really need to try an LLM before tweeting. https://t.co/1AwcCPa9EB",
-    "url": "https://x.com/firstadopter/status/2125001720849936386",
-    "likes": 21,
-    "reposts": 0,
-    "ts": "2026-11-23T23:01:05.000Z",
-    "note": "Pushback: one credible voice says the registration ties to the World Labs deal shares. Read the S-3 itself before trusting either take."
+    "ts": "2026-11-25T12:01:12.000Z",
+    "note": "Quick framing of both cyber deals side by side"
    }
   ],
   "3256ddf5b9bc": [
@@ -150,66 +66,66 @@
   ],
   "9779681faa41": [
    {
-    "handle": "BlakeMillardCFA",
-    "name": "Blake Millard, CFA",
-    "text": "The stunning rally from Jensen and $NVDA that kicked off this 🦃 week already feels like a distant memory.\n🔹Another bruising day for Tech/AI trade, QQQs down another -5%\n🔹How fragile is AI sentiment? Well, Anthropic’s market cap slipped under $1T and the busted $ANT is below",
-    "url": "https://x.com/BlakeMillardCFA/status/2125602025689731354",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-25T14:46:29Z",
-    "note": "The rally that kicked off the week has fully faded; asks how fragile AI sentiment is."
+    "handle": "maddenifico",
+    "name": "Bill Madden",
+    "text": "Welcome to Soviet-Style State Capitalism: Trump's Pentagon Threatened to Crush Nvidia's Profits Unless They Reinstated Their CEO\n\nIn an obscenely anti-capitalist and borderline communist move, Pentagon leaders in the fascist, authoritarian Trump regime actually discussed using https://t.co/sUhOMjK801",
+    "url": "https://x.com/maddenifico/status/2125753906852442197",
+    "likes": 2626,
+    "reposts": 1497,
+    "ts": "2026-11-26T00:50:00.000Z",
+    "note": "Most-shared take (2.6k likes): frames the reported Pentagon pressure to reinstate Huang as state capitalism; opinion, strongly partisan"
    },
    {
-    "handle": "zerohedge",
-    "name": "zerohedge",
-    "text": "Premarket movers\n\nMag 7 stocks are all lower led by Nvidia: (Nvidia (NVDA) -5%, Amazon (AMZN) -3%, Alphabet (GOOGL) -3%, Tesla (TSLA) -2.5%, Microsoft (MSFT) -3%, Meta Platforms (META) -2%, Apple (AAPL) -0.9%)\n\nChipmakers, cloud computing providers and other AI infrastructure",
-    "url": "https://x.com/zerohedge/status/2125576171836314038",
-    "likes": 128,
-    "reposts": 20,
-    "ts": "2026-11-25T13:03:45Z",
-    "note": "Nvidia leads Mag 7 losses premarket, unwinding the reinstatement pop."
+    "handle": "maddenifico",
+    "name": "Bill Madden",
+    "text": "Welcome to Soviet-Style State Capitalism: Trump's Pentagon Threatened to Crush Nvidia's Profits Unless They Reinstated Their CEO\n\nIn an obscenely anti-capitalist and borderline communist move, Pentagon leaders in the fascist, authoritarian Trump regime actually discussed using https://t.co/SyAh8WsCUT",
+    "url": "https://x.com/maddenifico/status/2125748321360748689",
+    "likes": 17,
+    "reposts": 12,
+    "ts": "2026-11-26T00:27:48.000Z",
+    "note": "Market scorecard: NVDA down ~9.5% since the Monday reinstatement, so the comeback didn't stop the selloff"
+   },
+   {
+    "handle": "YellowObjectRU",
+    "name": "Travis Bickle FREEDOM",
+    "text": "Jimmy Kimmel Live!: Trump pardoned turkeys, Rudy Giuliani was given the Presidential Medal of Freedom, Trump urged the board of Nvidia to reinstate their CEO Jensen Huang, Nvidia stock shot way up after Huang went back to work &amp; Trump made $15 M off of it.\nhttps://t.co/KFKQYd9t4N https://t.co/6CsGOsWMIJ https://t.co/O3CQS135I4",
+    "url": "https://x.com/YellowObjectRU/status/2125745572984549413",
+    "likes": 3,
+    "reposts": 1,
+    "ts": "2026-11-26T00:16:53.000Z",
+    "note": "Notes NVDA closed ~5% below its pre-resignation level on reinstatement day"
    }
   ],
   "618fa9d1b5a6": [
    {
-    "handle": "atrupar",
-    "name": "Aaron Rupar",
-    "text": "New in PN: The extremely sordid resurrection of Jensen Huang\n\n\"It’s a national security scandal. It’s a corruption scandal. It’s a political scandal. It’s an economic scandal. It’s also the inevitable result of how President Trump has approached his time in office, and it’s as",
-    "url": "https://x.com/atrupar/status/2125601754846757085",
-    "likes": 115,
-    "reposts": 39,
-    "ts": "2026-11-25T14:45:24Z",
-    "note": "Left-leaning take: calls Huang's return a national-security and corruption scandal."
+    "handle": "TimesNow",
+    "name": "TIMES NOW",
+    "text": "Trump's Secret Push to Bring Jensen Huang Back?\n\nReports on how Huang was reinstated as Nvidia CEO:\n\n➤ 'Trump and Vance led secret push to reinstate Huang'\n\n➤ 'Trump &amp; Vance held repeated talks with the Nvidia CEO'\n\n@akankshaswarups &amp; @bhandivya with more details. https://t.co/w4RDM051Kq",
+    "url": "https://x.com/TimesNow/status/2125780372839453067",
+    "likes": 3,
+    "reposts": 2,
+    "ts": "2026-11-26T02:35:10.000Z",
+    "note": "Reports that Trump and Vance led the push to bring Huang back"
    },
    {
-    "handle": "NTDNews",
-    "name": "NTD News",
-    "text": "Why did Trump back Jensen Huang's return to Nvidia? He says the U.S. economy needs his leadership. Nvidia's chips power the American AI boom, and the company invests in OpenAI, Anthropic, Meta and others.\n\nIs Nvidia too big to sideline? Reply below.\n\n#Nvidia #AI #USEconomy",
-    "url": "https://x.com/NTDNews/status/2125605445918396721",
-    "likes": 1,
-    "reposts": 0,
-    "ts": "2026-11-25T15:00:04Z",
-    "note": "Trump's stated reason for backing Huang: the US economy needs his leadership."
+    "handle": "maddenifico",
+    "name": "Bill Madden",
+    "text": "Welcome to Soviet-Style State Capitalism: Trump's Pentagon Threatened to Crush Nvidia's Profits Unless They Reinstated Their CEO\n\nIn an obscenely anti-capitalist and borderline communist move, Pentagon leaders in the fascist, authoritarian Trump regime actually discussed using https://t.co/sUhOMjK801",
+    "url": "https://x.com/maddenifico/status/2125753906852442197",
+    "likes": 2626,
+    "reposts": 1497,
+    "ts": "2026-11-26T00:50:00.000Z",
+    "note": "Most-shared take (2.6k likes): frames the reported Pentagon pressure to reinstate Huang as state capitalism; opinion, strongly partisan"
    },
    {
-    "handle": "cb_doge",
-    "name": "DogeDesigner",
-    "text": "BREAKING: Elon Musk played a key role in the push for Jensen Huang’s return as NVIDIA CEO, speaking with President Trump before Jensen’s comeback.\n\nMusk also relayed information about Jensen’s importance to NVIDIA and the company’s importance to the U.S. economy. Trump later",
-    "url": "https://x.com/cb_doge/status/2125605032691392708",
-    "likes": 27,
-    "reposts": 3,
-    "ts": "2026-11-25T14:58:26Z",
-    "note": "Unverified claim that Musk lobbied Trump for Huang's return. Treat as chatter."
-   },
-   {
-    "handle": "BlakeMillardCFA",
-    "name": "Blake Millard, CFA",
-    "text": "The stunning rally from Jensen and $NVDA that kicked off this 🦃 week already feels like a distant memory.\n🔹Another bruising day for Tech/AI trade, QQQs down another -5%\n🔹How fragile is AI sentiment? Well, Anthropic’s market cap slipped under $1T and the busted $ANT is below",
-    "url": "https://x.com/BlakeMillardCFA/status/2125602025689731354",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-25T14:46:29Z",
-    "note": "CFA's read: the Huang relief rally already feels like a distant memory as QQQ slides."
+    "handle": "maddenifico",
+    "name": "Bill Madden",
+    "text": "Welcome to Soviet-Style State Capitalism: Trump's Pentagon Threatened to Crush Nvidia's Profits Unless They Reinstated Their CEO\n\nIn an obscenely anti-capitalist and borderline communist move, Pentagon leaders in the fascist, authoritarian Trump regime actually discussed using https://t.co/SyAh8WsCUT",
+    "url": "https://x.com/maddenifico/status/2125748321360748689",
+    "likes": 17,
+    "reposts": 12,
+    "ts": "2026-11-26T00:27:48.000Z",
+    "note": "Market scorecard: NVDA down ~9.5% since the Monday reinstatement, so the comeback didn't stop the selloff"
    }
   ],
   "438fb86eaa81": [
@@ -258,56 +174,34 @@
   ],
   "8fafc06ac9b7": [
    {
-    "handle": "ItsElanaGold",
-    "name": "Elana",
-    "text": "WOW... crazy week in tech.\n\nHere's what's happened over the past week:\n\n- Anthropic's record $93.5B IPO dips below its $83 offer price by day four\n- CrowdStrike agrees to buy Zscaler for $43.9B\n- Amazon reportedly buys Decart's AI tech and core team for $7.5B\n- Palo Alto Networks",
-    "url": "https://x.com/ItsElanaGold/status/2125272652525052125",
-    "likes": 16,
-    "reposts": 2,
-    "ts": "2026-11-24T16:57:40Z",
-    "note": "A week of mega-deals in one thread: ANT below issue, CRWD-ZS $43.9B, Amazon-Decart and more."
-   }
-  ],
-  "e5224a1d6d01": [
-   {
-    "handle": "TechCrunch",
-    "name": "TechCrunch",
-    "text": "Amazon and Meta are discussing a potential deal that would end a two-month-long blockade of Muse.",
-    "url": "https://x.com/TechCrunch/status/2125593622368125118",
-    "likes": 11,
-    "reposts": 2,
-    "ts": "2026-11-25T14:13:05Z",
-    "note": "TechCrunch confirms talks to end Amazon's two-month blockade of Muse."
+    "handle": "theironvale",
+    "name": "Iron Vale",
+    "text": "Filings show Dario and Daniela Amodei each sold about $280M of Anthropic stock in the IPO at $83 a share. All seven co-founders sold identical stakes, $1.96B in total.\n\nShares now trade under $83. The founders got the IPO price. Buyers didn't. https://t.co/8kGj6xLLuY",
+    "url": "https://x.com/theironvale/status/2125759189855453440",
+    "likes": 1,
+    "reposts": 0,
+    "ts": "2026-11-26T01:11:00.000Z",
+    "note": "Cites filings: each of the seven co-founders sold ~$280M in the IPO at $83, about $1.96B in total"
    },
    {
-    "handle": "TradedVC",
-    "name": "Traded: Venture Capital",
-    "text": "JUST IN: @amazon $AMZN and @Meta are in talks to let Meta's Muse AI agent shop on Amazon again.\n\nAmazon blocked Muse in September.\n\nA big sticking point: Muse could skip Amazon's ads, now a $68.6B business.",
-    "url": "https://x.com/TradedVC/status/2125589441691423056",
+    "handle": "The_Tradesman1",
+    "name": "THE TRADESMAN 📈",
+    "text": "📉 ANTHROPIC FALLS BELOW ITS IPO PRICE IN JUST 4 DAYS\n\nAnthropic stock fell 6.5% on Tuesday to close at $81.91, below the $83 price it sold shares at in its record IPO last week.\n\nAt one point during the day it traded under $77. It is now down about 30% from its first-day high of $115.10.\n\nIt took SpaceX 21 trading days to fall below its IPO price. Anthropic did it in 4.",
+    "url": "https://x.com/The_Tradesman1/status/2125882837027164373",
     "likes": 0,
     "reposts": 0,
-    "ts": "2026-11-25T13:56:29Z",
-    "note": "The real sticking point: Muse could skip Amazon's ads, now a $68.6B business."
+    "ts": "2026-11-26T09:22:19.000Z",
+    "note": "Anthropic closed at $81.91 on Tuesday, below its $83 IPO price after four sessions"
    },
    {
-    "handle": "josenajarro",
-    "name": "Jose Najarro Stocks",
-    "text": "Meta $META and Amazon are reportedly negotiating to end Amazon's blockade of Muse, the AI agent Amazon cut off from its store in September, per a Fortune exclusive.\n\nPer Fortune, the companies have talked multiple times, and the two sticking points are search results and",
-    "url": "https://x.com/josenajarro/status/2125579280071446554",
-    "likes": 16,
-    "reposts": 0,
-    "ts": "2026-11-25T13:16:06Z",
-    "note": "Background via Fortune's exclusive: how the blockade started in September."
-   },
-   {
-    "handle": "bullishchart",
-    "name": "Bullish Chart",
-    "text": "Salesforce $CRM survey: 31% of shoppers have tried a personal AI agent, but only 19% of those used one at checkout, roughly 6% of those polled.\n\nAmazon $AMZN blocked Meta's Muse agent in September to protect its nearly $70 billion ad business.",
-    "url": "https://x.com/bullishchart/status/2125604023373828392",
+    "handle": "FastCompany",
+    "name": "Fast Company",
+    "text": "Anthropic stock has already dipped below its IPO price in premarket: Will the AI trade fizzle again today? https://t.co/APW4s6SN2T",
+    "url": "https://x.com/FastCompany/status/2125773546173378680",
     "likes": 0,
     "reposts": 0,
-    "ts": "2026-11-25T14:54:25Z",
-    "note": "Salesforce survey: only ~6% of shoppers have used an AI agent at checkout, so it's early days."
+    "ts": "2026-11-26T02:08:03.000Z",
+    "note": "Fast Company on the stock slipping below its offer price and what it means for the AI trade"
    }
   ],
   "f4d680f603f8": [
@@ -351,113 +245,125 @@
     "ts": "2026-11-25T14:48:20Z",
     "note": "Bernstein raises its target to $239, so the Street isn't capitulating."
    }
+  ],
+  "3415dae055f1": [
+   {
+    "handle": "NewsWire_US",
+    "name": "NewsWire",
+    "text": "Court Documents Reveal Commerce Department Lawyer Warned Intel CFO That Rejecting Trump Administration Demand for Government Stake “Will Have Consequences”",
+    "url": "https://x.com/NewsWire_US/status/2125632813969858614",
+    "likes": 495,
+    "reposts": 66,
+    "ts": "2026-11-25T16:48:49.000Z",
+    "note": "Most-shared version (~500 likes): Commerce lawyer told Intel's CFO that rejecting the stake 'will have consequences'"
+   },
+   {
+    "handle": "FaytuksNetwork",
+    "name": "Faytuks Network",
+    "text": "A Commerce Department lawyer warned Intel's CFO in August 2025 that rejecting the Trump administration's demand for a government stake in the company \"will have consequences,\" according to court documents\n\nHe told Intel not to make the \"mistake of thinking that this is a",
+    "url": "https://x.com/FaytuksNetwork/status/2125631728509165908",
+    "likes": 108,
+    "reposts": 24,
+    "ts": "2026-11-25T16:44:31.000Z",
+    "note": "Same court-document detail; relevant to government-equity precedent for chip deals"
+   },
+   {
+    "handle": "Techmeme",
+    "name": "Techmeme",
+    "text": "US court documents detail a Commerce Department pressure campaign on Intel to acquire a 10% equity stake in 2025, warning rejection would carry \"consequences\" (@noahshachtman / Wired)\n\n(Visit Techmeme dot com for the link and full context!)",
+    "url": "https://x.com/Techmeme/status/2125556624857432329",
+    "likes": 11,
+    "reposts": 8,
+    "ts": "2026-11-25T11:46:04.000Z",
+    "note": "Techmeme's summary, with a link to the original reporting"
+   },
+   {
+    "handle": "CultFinance_",
+    "name": "Finance Culture",
+    "text": "🚨 Trump administration told Intel \"this is not a negotiation\" before taking a 10% stake, newly unsealed court documents allege\n\n- The documents, from an Intel shareholder lawsuit and reported by Wired, describe an August 2025 conversation between a Commerce Department lawyer and https://t.co/IE0sB3D9Z2",
+    "url": "https://x.com/CultFinance_/status/2125956490460832143",
+    "likes": 2,
+    "reposts": 0,
+    "ts": "2026-11-26T14:15:00.000Z",
+    "note": "Adds the 'this is not a negotiation' quote from the unsealed shareholder-suit documents"
+   }
   ]
  },
  "tickers": {
   "NVDA": [
    {
-    "handle": "zerohedge",
-    "name": "zerohedge",
-    "text": "Premarket movers\n\nMag 7 stocks are all lower led by Nvidia: (Nvidia (NVDA) -5%, Amazon (AMZN) -3%, Alphabet (GOOGL) -3%, Tesla (TSLA) -2.5%, Microsoft (MSFT) -3%, Meta Platforms (META) -2%, Apple (AAPL) -0.9%)\n\nChipmakers, cloud computing providers and other AI infrastructure",
-    "url": "https://x.com/zerohedge/status/2125576171836314038",
-    "likes": 128,
-    "reposts": 20,
-    "ts": "2026-11-25T13:03:45Z",
-    "note": "Premarket: Nvidia -5%, leading every Mag 7 name lower."
+    "handle": "maddenifico",
+    "name": "Bill Madden",
+    "text": "Welcome to Soviet-Style State Capitalism: Trump's Pentagon Threatened to Crush Nvidia's Profits Unless They Reinstated Their CEO\n\nIn an obscenely anti-capitalist and borderline communist move, Pentagon leaders in the fascist, authoritarian Trump regime actually discussed using https://t.co/SyAh8WsCUT",
+    "url": "https://x.com/maddenifico/status/2125748321360748689",
+    "likes": 17,
+    "reposts": 12,
+    "ts": "2026-11-26T00:27:48.000Z",
+    "note": "Market scorecard: NVDA down ~9.5% since the Monday reinstatement, so the comeback didn't stop the selloff"
    },
    {
-    "handle": "ChrisDungeon",
-    "name": "Christopher Dungeon",
-    "text": "Ugly open 👀😮‍💨\n\nHere's what's hitting the market this morning:\n\nNasdaq down ~4%, S&P 500 down ~2.6%, Dow down ~850 points. VIX above 30.\n\nWhat's driving it?\n\n1. The AI trade is cracking again. Investors worry the debt-funded data center buildout won't pay off, so even good news",
-    "url": "https://x.com/ChrisDungeon/status/2125604441948553483",
-    "likes": 5,
-    "reposts": 0,
-    "ts": "2026-11-25T14:56:05Z",
-    "note": "Why the tape is so ugly: AI trade cracking plus tariffs and a hot PCE print."
-   },
-   {
-    "handle": "BlakeMillardCFA",
-    "name": "Blake Millard, CFA",
-    "text": "The stunning rally from Jensen and $NVDA that kicked off this 🦃 week already feels like a distant memory.\n🔹Another bruising day for Tech/AI trade, QQQs down another -5%\n🔹How fragile is AI sentiment? Well, Anthropic’s market cap slipped under $1T and the busted $ANT is below",
-    "url": "https://x.com/BlakeMillardCFA/status/2125602025689731354",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-25T14:46:29Z",
-    "note": "The Huang-reinstatement rally has fully reversed."
+    "handle": "maddenifico",
+    "name": "Bill Madden",
+    "text": "Welcome to Soviet-Style State Capitalism: Trump's Pentagon Threatened to Crush Nvidia's Profits Unless They Reinstated Their CEO\n\nIn an obscenely anti-capitalist and borderline communist move, Pentagon leaders in the fascist, authoritarian Trump regime actually discussed using https://t.co/sUhOMjK801",
+    "url": "https://x.com/maddenifico/status/2125753906852442197",
+    "likes": 2626,
+    "reposts": 1497,
+    "ts": "2026-11-26T00:50:00.000Z",
+    "note": "Most-shared take (2.6k likes): frames the reported Pentagon pressure to reinstate Huang as state capitalism; opinion, strongly partisan"
    }
   ],
   "CRWD": [
    {
-    "handle": "AGTPinsights",
-    "name": "AGTP",
-    "text": "CrowdStrike just agreed to buy Zscaler for $43.9B. Here's what you need to know.\n\nThe rumor from Friday is now official. CrowdStrike $CRWD announced Monday that it will acquire Zscaler $ZS in an all-stock deal, with no cash involved. The announcement came alongside CrowdStrike's quarterly results.\n\nThis is the largest cybersecurity acquisition in history. It tops Google's $32B purchase of Wiz.\n\nZscaler holders get 1.135 CrowdStrike shares for each Zscaler share. That works out to about $260.41 per share, a 34% premium to Friday's close.\n\nThe pitch is network security. The deal brings Zscaler's network security and Zero Trust tech into CrowdStrike's Falcon platform. CrowdStrike says it adds over $185B to its addressable market. It also opens cross-selling to roughly 8,000 Zscaler customers.\n\nThe deal still needs Zscaler shareholder approval and regulatory approval. It is expected to close in the second half of CrowdStrike's fiscal 2028.\n\nShares fell on the news. CrowdStrike was at $229.44, down 5.76%. Zscaler was at $194.82, down 5.29%. Some investors have criticized paying with CrowdStrike's richly valued stock, while others call it a smart use of expensive equity to buy a fast-growing rival.\n\nCrowdStrike also reported Q3 fiscal 2027 results.\n\nKey numbers:\n- Deal value: $43.9B, all stock\n- Exchange ratio: 1.135 CRWD shares per ZS share\n- Implied price: $260.41, a 34% premium\n- Combined annual recurring revenue: over $10B\n- Added addressable market: over $185B\n- Q3 revenue: $1.58B vs $1.53B expected, up 28% YoY\n- Q3 adjusted EPS: $0.34 vs $0.31 expected\n- Ending ARR: $6.26B, up 27%\n- Net new ARR: $419.2M, up 58%\n- FY27 revenue guide raised to $6.078B-$6.084B, vs $6B expected\n\nCrowdStrike has gone from talks to a signed deal, with closing set for the second half of fiscal 2028.",
-    "url": "https://x.com/AGTPinsights/status/2124839555165524098",
+    "handle": "theexploitnews",
+    "name": "The Exploit",
+    "text": "With $44B Zscaler Deal, CrowdStrike Can Finally Deliver a Blue Screen Over the Network\n\nhttps://t.co/PGQQw3zOya",
+    "url": "https://x.com/theexploitnews/status/2125901713760780300",
     "likes": 1,
     "reposts": 1,
-    "ts": "2026-11-23T12:16:42.000Z",
-    "note": "Explainer: rumor became a definitive $43.9B all-stock deal, announced with CrowdStrike's Q3 print."
+    "ts": "2026-11-26T10:37:20.000Z",
+    "note": "Deal terms: all-stock, ~$43.9B, a 34% premium, with $500M cost-savings and $1B revenue-synergy targets"
    },
    {
-    "handle": "ethaniel86",
-    "name": "ξth.c",
-    "text": "A fixed exchange ratio means Zscaler holders are paid in CrowdStrike stock, not dollars.\n\nSo the $43.9B moves every time $CRWD moves.\n\nMonday premarket (CNBC): Zscaler up 13%+, CrowdStrike down 8%+. At that move, roughly $3.5B of the headline is gone before the open.",
-    "url": "https://x.com/ethaniel86/status/2124865409794933152",
-    "likes": 0,
+    "handle": "NaFaUpSpo",
+    "name": "NAMMA Facts Updates & Sports",
+    "text": "🚨#Cybersecurity mega-deal! \n\n#CrowdStrike is set to acquire #Zscaler in an all-stock deal valued at $43.9 billion, marking its biggest acquisition yet. The deal is expected to close in H2 FY2028, subject to customary approvals\n\n#MergersAndAcquisitions #GlobalBusiness #Technology https://t.co/3YZVI4FCxS",
+    "url": "https://x.com/NaFaUpSpo/status/2125785362328940794",
+    "likes": 6,
     "reposts": 0,
-    "ts": "2026-11-23T13:59:26.000Z",
-    "note": "Deal mechanics: a fixed 1.135 exchange ratio means the deal value floats with CRWD's stock."
+    "ts": "2026-11-26T02:55:00.000Z",
+    "note": "CrowdStrike targets $500M in annual savings and gives no headcount target"
    },
    {
-    "handle": "BroadwakeAI",
-    "name": "BroadwakeAI",
-    "text": "@CrowdStrike @zscaler Only Zscaler shareholders vote. The 8-K lists no CrowdStrike holder vote: the exchange ratio auto-shrinks if new shares would reach 20% of CrowdStrike's stock, the Nasdaq line that forces one. Founder Jay Chaudhry and related holders pledged ~34% of Zscaler. https://t.co/XGUxubXAX0",
-    "url": "https://x.com/BroadwakeAI/status/2124855212292677976",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-23T13:18:55.000Z",
-    "note": "Banker detail from the 8-K: only Zscaler holders vote; no CrowdStrike shareholder vote listed."
-   },
-   {
-    "handle": "Sam_Badawi",
-    "name": "Sam Badawi",
-    "text": "CrowdStrike $CRWD buying Zscaler $ZS is probably not the best deal in the world.\n\nBloomberg reports talks on a combined $265B cybersecurity giant, though that is market value, not a price.\n\nI expect it to be all stock, which will definitely not be good for CrowdStrike https://t.co/5fackHJpjd",
-    "url": "https://x.com/Sam_Badawi/status/2124449291494101289",
-    "likes": 56,
-    "reposts": 6,
-    "ts": "2026-11-22T10:25:56.000Z",
-    "note": "Skeptic take from a widely followed account: questions whether this is a good deal for CRWD holders."
+    "handle": "sarbjeetjohal",
+    "name": "Sarbjeet Johal",
+    "text": "When platforms consolidate, customers win! @CrowdStrike + @Zscaler $43.9B deal is the biggest ever cybersecurity M&amp;A deal! \n\nBTW, Cybersecurity M&amp;A has hit unprecedented scale, and as I said earlier in the week, M&amp;A in Cybersecurity will start happening at Agentic AI pace.\n\nTop https://t.co/sHxIreq7OZ",
+    "url": "https://x.com/sarbjeetjohal/status/2125854428528103501",
+    "likes": 3,
+    "reposts": 2,
+    "ts": "2026-11-26T07:29:26.000Z",
+    "note": "Calls it the largest cybersecurity M&A deal ever"
    }
   ],
   "PANW": [
    {
-    "handle": "fourweekmba",
-    "name": "Gennaro",
-    "text": "Applied Compute, the AI startup Palo Alto Networks is buying for $4.5B in stock, thanked its first customers in a note on X: Mercor, Cognition and DoorDash. Its founders say the seed round came \"when Applied Compute was three people and an idea.\" https://t.co/454PGQJxEO",
-    "url": "https://x.com/fourweekmba/status/2124131408696226252",
-    "likes": 1,
-    "reposts": 1,
-    "ts": "2026-11-21T13:22:46.000Z",
-    "note": "Overview: $4.5B all-stock deal for a private open-weight-model customization startup."
+    "handle": "singularity7x",
+    "name": "Juan Leon",
+    "text": "1/ Two cybersecurity giants made differing bets on the AI era, five days apart.\n\nNov 18: Palo Alto Networks agreed to buy AI-model startup Applied Compute for $4.5B.\n\nNov 23: CrowdStrike agreed to buy cloud network-security leader Zscaler for $43.9B. \n\nSame goal (own the security",
+    "url": "https://x.com/singularity7x/status/2125284563245207944",
+    "likes": 84,
+    "reposts": 11,
+    "ts": "2026-11-24T17:45:00.000Z",
+    "note": "Thread contrasting PANW's $4.5B AI-model bet with CrowdStrike's $43.9B Zscaler deal five days later"
    },
    {
-    "handle": "GFNIND",
-    "name": "GFN",
-    "text": "Palo Alto Networks agrees to acquire Applied Compute for $4.5 billion. Palo Alto Networks",
-    "url": "https://x.com/GFNIND/status/2124205778156634165",
-    "likes": 2,
-    "reposts": 0,
-    "ts": "2026-11-21T18:18:18.000Z",
-    "note": "Note on Applied Compute's early customers, per its own post."
-   },
-   {
-    "handle": "ScrooogeUncle",
-    "name": "Invest with Uncle Scrooge",
-    "text": "Palantir should start using its FCF to buy startups and strengthen its MOAT. Now’s the time ! \n\nPalo Alto Networks recently buying Applied Compute is a signal \n\n$PLTR $PANW",
-    "url": "https://x.com/ScrooogeUncle/status/2124060572434268261",
-    "likes": 16,
-    "reposts": 0,
-    "ts": "2026-11-21T08:41:18.000Z",
-    "note": "Buyer-side read: security vendors are using stock to buy AI capability."
+    "handle": "IvanaSpear",
+    "name": "IvanaSPEAR",
+    "text": "AI agents are driving massive cybersecurity consolidation.\n\n1️⃣ Palo Alto Networks saw it early with its $25B offer for CyberArk in July 2025.\n\nPalo Alto started in network security. Over time it expanded into cloud, endpoint and SIEM. But it lacked identity.\n \nCyberArk filled https://t.co/JGLmYf0MSR",
+    "url": "https://x.com/IvanaSpear/status/2125645648196202661",
+    "likes": 74,
+    "reposts": 6,
+    "ts": "2026-11-25T17:39:49.000Z",
+    "note": "Puts Applied Compute in PANW's acquisition path since the CyberArk offer; cyber consolidation driven by AI agents"
    }
   ],
   "AMD": [
@@ -614,60 +520,136 @@
   ],
   "MU": [
    {
-    "handle": "InterceptorNews",
-    "name": "INTERCEPTOR",
-    "text": "🔴 Micron is downgraded and Marvell’s price target is cut as chip stocks retreat amid fragile US-China trade ties and ongoing tech restrictions.\n\nMicron $MU downgraded by BNP Paribas, with its price target slashed from $1,700 to $775 over memory oversupply risks and weaker HBM",
-    "url": "https://x.com/InterceptorNews/status/2125241758208418148",
-    "likes": 0,
-    "reposts": 0,
-    "ts": "2026-11-24T14:54:54.000Z",
-    "note": "Downgraded Tuesday after Monday's +19% move."
+    "handle": "QualCompounders",
+    "name": "Quality Compounders",
+    "text": "DAVID TEPPER JUST MADE MICRON HIS #1 STOCK 👀\n\nThe billionaire who called the 2009 bottom just filed his Q3 13F.\n\n$7.56B across 24 positions. And he heavy into memory.\n\n🧵Here is his top 10 holdings 👇\n\n1/ $MU — Micron\n🔹 ADDED: 975K → 1.25M shares — now $1.33B, 17.6% of the https://t.co/WX0fYpLQGI",
+    "url": "https://x.com/QualCompounders/status/2125258141508018612",
+    "likes": 1083,
+    "reposts": 87,
+    "ts": "2026-11-24T16:00:00.000Z",
+    "note": "Most-shared MU post (1k+ likes): Tepper's Q3 13F made Micron his top holding, a big memory bet"
    },
    {
-    "handle": "SemiconductorsX",
-    "name": "Semiconductor Insider",
-    "text": "Korean memory stocks are bouncing hard after Jensen Huang’s return.\n\nSamsung Electronics jumped about 7% and SK Hynix rose over 8% in early trading. The move follows a sharp rebound in the US overnight, where NVIDIA soared more than 31% after the board brought Huang back as CEO.",
-    "url": "https://x.com/SemiconductorsX/status/2125025327793819741",
-    "likes": 16,
+    "handle": "OwenCarter0el",
+    "name": "OwenCarter",
+    "text": "🚨 $MU IS DOWN AGAIN. BUT I'M STILL NOT READY TO TURN BEARISH.\n\nMicron closed at $601.25, down 4.57%. The market is worried about weaker DRAM pricing, Chinese order cuts and a possible future supply glut.\n\nThose risks are real. I'm not ignoring them.\n\nBut here's what keeps me https://t.co/QR0Lo4Y5Tq",
+    "url": "https://x.com/OwenCarter0el/status/2125821471226568837",
+    "likes": 17,
     "reposts": 2,
-    "ts": "2026-11-24T00:34:53.000Z",
-    "note": "Memory peers Samsung and SK Hynix rallied 7-8% too, a read-through for MU."
+    "ts": "2026-11-26T05:18:29.000Z",
+    "note": "MU closed at $601.25 (-4.57%) on worries about weaker DRAM pricing and Chinese order cuts"
+   },
+   {
+    "handle": "StockTickerZone",
+    "name": "Stock Ticker ZONE",
+    "text": "$MU This Analyst Just Downgraded Micron Stock. Here's Why. - Yahoo Finance #stocks #news https://t.co/IK41cMc5CM",
+    "url": "https://x.com/StockTickerZone/status/2125950432816050615",
+    "likes": 0,
+    "reposts": 0,
+    "ts": "2026-11-26T13:50:56.000Z",
+    "note": "Points to a fresh analyst downgrade of Micron"
+   }
+  ],
+  "INTC": [
+   {
+    "handle": "NewsWire_US",
+    "name": "NewsWire",
+    "text": "Court Documents Reveal Commerce Department Lawyer Warned Intel CFO That Rejecting Trump Administration Demand for Government Stake “Will Have Consequences”",
+    "url": "https://x.com/NewsWire_US/status/2125632813969858614",
+    "likes": 495,
+    "reposts": 66,
+    "ts": "2026-11-25T16:48:49.000Z",
+    "note": "Most-shared version (~500 likes): Commerce lawyer told Intel's CFO that rejecting the stake 'will have consequences'"
+   },
+   {
+    "handle": "Techmeme",
+    "name": "Techmeme",
+    "text": "US court documents detail a Commerce Department pressure campaign on Intel to acquire a 10% equity stake in 2025, warning rejection would carry \"consequences\" (@noahshachtman / Wired)\n\n(Visit Techmeme dot com for the link and full context!)",
+    "url": "https://x.com/Techmeme/status/2125556624857432329",
+    "likes": 11,
+    "reposts": 8,
+    "ts": "2026-11-25T11:46:04.000Z",
+    "note": "Techmeme's summary, with a link to the original reporting"
+   }
+  ],
+  "ZS": [
+   {
+    "handle": "theexploitnews",
+    "name": "The Exploit",
+    "text": "With $44B Zscaler Deal, CrowdStrike Can Finally Deliver a Blue Screen Over the Network\n\nhttps://t.co/PGQQw3zOya",
+    "url": "https://x.com/theexploitnews/status/2125901713760780300",
+    "likes": 1,
+    "reposts": 1,
+    "ts": "2026-11-26T10:37:20.000Z",
+    "note": "Zscaler holders get a 34% premium in CRWD stock (~$43.9B)"
+   }
+  ],
+  "DASH": [
+   {
+    "handle": "AAF",
+    "name": "American Action Forum",
+    "text": "DoorDash and Instacart say their $17 billion merger will help small businesses compete. An ongoing FTC study of personalized pricing, however, raises questions about effects on customer prices, gig-worker pay, and competition. #CompetitionPolicy\nhttps://t.co/yg3Z05XrDE",
+    "url": "https://x.com/AAF/status/2125333643803726235",
+    "likes": 2,
+    "reposts": 1,
+    "ts": "2026-11-24T21:00:02.000Z",
+    "note": "Antitrust angle on the $17B Instacart merger: the FTC's personalized-pricing study"
    }
   ]
  },
  "filings": {
   "0001104659-26-130785": [
    {
-    "handle": "singularity7x",
-    "name": "Juan Leon",
-    "text": "1/ Two cybersecurity giants made differing bets on the AI era, five days apart.\n\nNov 18: Palo Alto Networks agreed to buy AI-model startup Applied Compute for $4.5B.\n\nNov 23: CrowdStrike agreed to buy cloud network-security leader Zscaler for $43.9B. \n\nSame goal (own the security",
-    "url": "https://x.com/singularity7x/status/2125284563245207944",
-    "likes": 72,
-    "reposts": 11,
-    "ts": "2026-11-24T17:45:00Z",
-    "note": "Puts CrowdStrike's Zscaler deal next to Palo Alto's AI bet: two different paths to AI-era security."
+    "handle": "theexploitnews",
+    "name": "The Exploit",
+    "text": "With $44B Zscaler Deal, CrowdStrike Can Finally Deliver a Blue Screen Over the Network\n\nhttps://t.co/PGQQw3zOya",
+    "url": "https://x.com/theexploitnews/status/2125901713760780300",
+    "likes": 1,
+    "reposts": 1,
+    "ts": "2026-11-26T10:37:20.000Z",
+    "note": "Deal terms: all-stock, ~$43.9B, a 34% premium, with $500M cost-savings and $1B revenue-synergy targets"
+   },
+   {
+    "handle": "NaFaUpSpo",
+    "name": "NAMMA Facts Updates & Sports",
+    "text": "🚨#Cybersecurity mega-deal! \n\n#CrowdStrike is set to acquire #Zscaler in an all-stock deal valued at $43.9 billion, marking its biggest acquisition yet. The deal is expected to close in H2 FY2028, subject to customary approvals\n\n#MergersAndAcquisitions #GlobalBusiness #Technology https://t.co/3YZVI4FCxS",
+    "url": "https://x.com/NaFaUpSpo/status/2125785362328940794",
+    "likes": 6,
+    "reposts": 0,
+    "ts": "2026-11-26T02:55:00.000Z",
+    "note": "CrowdStrike targets $500M in annual savings and gives no headcount target"
+   },
+   {
+    "handle": "sarbjeetjohal",
+    "name": "Sarbjeet Johal",
+    "text": "When platforms consolidate, customers win! @CrowdStrike + @Zscaler $43.9B deal is the biggest ever cybersecurity M&amp;A deal! \n\nBTW, Cybersecurity M&amp;A has hit unprecedented scale, and as I said earlier in the week, M&amp;A in Cybersecurity will start happening at Agentic AI pace.\n\nTop https://t.co/sHxIreq7OZ",
+    "url": "https://x.com/sarbjeetjohal/status/2125854428528103501",
+    "likes": 3,
+    "reposts": 2,
+    "ts": "2026-11-26T07:29:26.000Z",
+    "note": "Calls it the largest cybersecurity M&A deal ever"
    }
   ],
   "0001140361-26-045152": [
    {
-    "handle": "WorldInMotionHQ",
-    "name": "World in Motion",
-    "text": "NEWS: DoorDash lines up funding for planned $17 billion Instacart acquisition",
-    "url": "https://x.com/WorldInMotionHQ/status/2124841874611445955",
-    "likes": 5,
-    "reposts": 0,
-    "ts": "2026-11-23T12:25:55.000Z",
-    "note": "DoorDash lines up financing for its planned ~$17B Instacart deal (term loan plus a bigger revolver)."
+    "handle": "AAF",
+    "name": "American Action Forum",
+    "text": "DoorDash and Instacart say their $17 billion merger will help small businesses compete. An ongoing FTC study of personalized pricing, however, raises questions about effects on customer prices, gig-worker pay, and competition. #CompetitionPolicy\nhttps://t.co/yg3Z05XrDE",
+    "url": "https://x.com/AAF/status/2125333643803726235",
+    "likes": 2,
+    "reposts": 1,
+    "ts": "2026-11-24T21:00:02.000Z",
+    "note": "Context for the financing: the $17B Instacart deal and the FTC pricing questions it faces"
    },
    {
-    "handle": "LoriAllens1",
-    "name": "Lori Allen",
-    "text": "JUST IN: DoorDash secures financing for its planned $17 billion purchase of Instacart",
-    "url": "https://x.com/LoriAllens1/status/2124857386120675621",
+    "handle": "HekateMagik",
+    "name": "lilithhecatex",
+    "text": "Listen, I went to a supermarket today for the first time in years. And I'm just saying.. the prices are ridiculous, the economy is terrible.. but if you're in here shopping for Thanksgiving, no none wants to put up with your miserable ass. Instacart or DoorDash your shit.",
+    "url": "https://x.com/HekateMagik/status/2125259635297034591",
     "likes": 1,
-    "reposts": 1,
-    "ts": "2026-11-23T13:27:33.000Z",
-    "note": "Same news, second source."
+    "reposts": 0,
+    "ts": "2026-11-24T16:05:57.000Z",
+    "note": "Instacart's CCO on what the pending DoorDash acquisition means for grocers"
    }
   ]
  }

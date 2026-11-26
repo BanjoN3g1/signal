@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T15:02:47Z",
+ "updated": "2026-11-26T15:00:20Z",
  "note": "Balanced curated accounts; leans describe the account, not each post. Midterms 2026 post-election window.",
  "leans": {
   "left": "Left / Democratic-leaning",
@@ -181,37 +181,139 @@
   {
    "handle": "NateSilver538",
    "name": "Nate Silver",
-   "text": "Trump approval still sinking even after a bit of a dead-count bounce around the midterms and declining gas prices. Now 35.9 percent. Maybe worth a little newsletter on this soon.",
+   "lean": "analyst",
+   "text": "Trump approval still sinking even after a bit of a dead-count bounce around the midterms and declining gas prices. Now 35.9 percent. Maybe worth a little newsletter on this soon. https://t.co/bxtK2kJmqr",
    "url": "https://x.com/NateSilver538/status/2125424599449952615",
-   "likes": 1589,
-   "reposts": 146,
-   "ts": "2026-11-25T03:01:27Z",
-   "lean": "analyst",
-   "role": "Silver Bulletin forecaster"
-  },
-  {
-   "handle": "NateSilver538",
-   "name": "Nate Silver",
-   "text": "I mean, Marist landing on basically the exact right Maine results but then using their \"likely voter adjustment\" to end up with exceptionally inaccurate results is a lot worse than the Selzer miss in 2024; at least she had some guts.",
-   "url": "https://x.com/NateSilver538/status/2125441563455103027",
-   "likes": 1746,
-   "reposts": 54,
-   "ts": "2026-11-25T04:08:52Z",
-   "lean": "analyst",
-   "race": "ME-sen",
+   "likes": 2008,
+   "reposts": 177,
+   "ts": "2026-11-25T03:01:27.000Z",
    "role": "Silver Bulletin forecaster"
   },
   {
    "handle": "DecisionDeskHQ",
    "name": "Decision Desk HQ",
-   "text": "In Virginia's 1st District, Democrat Shannon Taylor narrowly unseated longtime Republican Rep. Rob Wittman. \n\nTaylor won by securing large margins in the Richmond suburbs and the Virginia Peninsula and reducing Wittman's margins in the district's rural areas.",
-   "url": "https://x.com/DecisionDeskHQ/status/2125299964611838163",
-   "likes": 308,
-   "reposts": 36,
-   "ts": "2026-11-24T18:46:12Z",
    "lean": "analyst",
+   "text": "In an upset, Democrat Don Leonard defeated Republican incumbent Mike Carey in the 15th district.\n\nLeonard leads this Trump+10 seat by a margin of over seven percentage points. https://t.co/N2IWJKcdqq",
+   "url": "https://x.com/DecisionDeskHQ/status/2125626711622484325",
+   "likes": 342,
+   "reposts": 35,
+   "ts": "2026-11-25T16:24:34.000Z",
    "race": "house-control",
    "role": "Results & forecast"
+  },
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "lean": "analyst",
+   "text": "In Virginia's 1st District, Democrat Shannon Taylor narrowly unseated longtime Republican Rep. Rob Wittman. \n\nTaylor won by securing large margins in the Richmond suburbs and the Virginia Peninsula and reducing Wittman's margins in the district's rural areas. https://t.co/MejSf0axcf",
+   "url": "https://x.com/DecisionDeskHQ/status/2125299964611838163",
+   "likes": 324,
+   "reposts": 36,
+   "ts": "2026-11-24T18:46:12.000Z",
+   "race": "house-control",
+   "role": "Results & forecast"
+  },
+  {
+   "handle": "NateSilver538",
+   "name": "Nate Silver",
+   "lean": "analyst",
+   "text": "I mean, Marist landing on basically the exact right Maine results but then using their \"likely voter adjustment\" to end up with exceptionally inaccurate results is a lot worse than the Selzer miss in 2024; at least she had some guts. https://t.co/OLRLmG8YPi",
+   "url": "https://x.com/NateSilver538/status/2125441563455103027",
+   "likes": 2306,
+   "reposts": 79,
+   "ts": "2026-11-25T04:08:52.000Z",
+   "race": "ME-sen",
+   "role": "Silver Bulletin forecaster"
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "lean": "left",
+   "text": "Trump lashes out at Rob Sand and blames Obama for something happening a decade after he left office. Nutso stuff. https://t.co/IGoNkWsiUa",
+   "url": "https://x.com/atrupar/status/2125688555393700275",
+   "likes": 3461,
+   "reposts": 487,
+   "ts": "2026-11-25T20:30:19.000Z",
+   "race": "IA-gov",
+   "role": "Public Notice"
+  },
+  {
+   "handle": "mehdirhasan",
+   "name": "Mehdi Hasan",
+   "lean": "left",
+   "text": "He spent *half a billion* dollars on the Republican Party in the midterms but wants some kind of credit for giving half a million dollars to help the homeless in Austin. https://t.co/sElKkACIIa",
+   "url": "https://x.com/mehdirhasan/status/2125703245641511300",
+   "likes": 3372,
+   "reposts": 344,
+   "ts": "2026-11-25T21:28:42.000Z",
+   "role": "Zeteo"
+  },
+  {
+   "handle": "mehdirhasan",
+   "name": "Mehdi Hasan",
+   "lean": "left",
+   "text": "Imagine if President Bernie Sanders had said this to a big US company. \n\nRepublicans would be screaming ‘Communist!’ and filing articles of impeachment. \n\nAnyways, the precedent has been set… https://t.co/QR5et3coWC",
+   "url": "https://x.com/mehdirhasan/status/2125691733187194988",
+   "likes": 1179,
+   "reposts": 207,
+   "ts": "2026-11-25T20:42:57.000Z",
+   "role": "Zeteo"
+  },
+  {
+   "handle": "EWErickson",
+   "name": "Erick Erickson",
+   "lean": "right",
+   "text": "The President's post-midterm strategy appears to be doubling down on everything voters just rejected and giving the voters the middle finger.  https://t.co/iOoWnQDmYQ",
+   "url": "https://x.com/EWErickson/status/2125357543442858002",
+   "likes": 415,
+   "reposts": 67,
+   "ts": "2026-11-24T22:35:00.000Z",
+   "role": "Conservative commentator"
+  },
+  {
+   "handle": "ByronYork",
+   "name": "Byron York",
+   "lean": "right",
+   "text": "More funny business in Alaska. A weird story, plus a new statement: https://t.co/3QifhIiW7i https://t.co/HB8LXWx836",
+   "url": "https://x.com/ByronYork/status/2125729991166161406",
+   "likes": 415,
+   "reposts": 166,
+   "ts": "2026-11-25T23:14:58.000Z",
+   "race": "AK-sen",
+   "role": "Washington Examiner"
+  },
+  {
+   "handle": "politico",
+   "name": "POLITICO",
+   "lean": "center",
+   "text": "‘Not a close case:’ Judge blocks review of ABC’s broadcast licenses https://t.co/Qob4r7Mwgb",
+   "url": "https://x.com/politico/status/2125757081978311095",
+   "likes": 445,
+   "reposts": 77,
+   "ts": "2026-11-26T01:02:37.000Z",
+   "role": "Politics news"
+  },
+  {
+   "handle": "CNNPolitics",
+   "name": "CNN Politics",
+   "lean": "center",
+   "text": "Russian President Vladimir Putin has \"shown restraint\" by not using nuclear weapons in the conflict with Ukraine, White House envoy Jared Kushner has said, while describing the Russian leader as a \"grand man of politics.\" \n\nIn a wide-ranging interview with Politico, Kushner – who https://t.co/yULcOkS3i7",
+   "url": "https://x.com/CNNPolitics/status/2125933092820938754",
+   "likes": 38,
+   "reposts": 13,
+   "ts": "2026-11-26T12:42:01.000Z",
+   "role": "News"
+  },
+  {
+   "handle": "axios",
+   "name": "Axios",
+   "lean": "center",
+   "text": "Musk makes $18 billion SpaceX stock pledge for every kid in America https://t.co/UfdzvuT8Vt",
+   "url": "https://x.com/axios/status/2125828199003074658",
+   "likes": 76,
+   "reposts": 7,
+   "ts": "2026-11-26T05:45:13.000Z",
+   "role": "News"
   },
   {
    "handle": "Redistrict",
@@ -280,17 +382,6 @@
    "ts": "2026-11-25T11:27:36Z",
    "lean": "left",
    "role": "Slow Boring, center-left"
-  },
-  {
-   "handle": "EWErickson",
-   "name": "Erick Erickson",
-   "text": "The President's post-midterm strategy appears to be doubling down on everything voters just rejected and giving the voters the middle finger.",
-   "url": "https://x.com/EWErickson/status/2125357543442858002",
-   "likes": 313,
-   "reposts": 50,
-   "ts": "2026-11-24T22:35:00Z",
-   "lean": "right",
-   "role": "Conservative commentator"
   },
   {
    "handle": "EWErickson",
@@ -539,63 +630,6 @@
    "likes": 14,
    "reposts": 7,
    "ts": "2026-11-24T14:03:47.000Z"
-  },
-  {
-   "handle": "axios",
-   "name": "Axios",
-   "lean": "center",
-   "role": "News",
-   "text": "Scoop: Anthropic and OpenAI employees fear unreleased AI models are too unsafe to release https://t.co/ZfcngbmPKk",
-   "url": "https://x.com/axios/status/2125182771400163338",
-   "likes": 273,
-   "reposts": 90,
-   "ts": "2026-11-24T11:00:31.000Z"
-  },
-  {
-   "handle": "axios",
-   "name": "Axios",
-   "lean": "center",
-   "role": "News",
-   "text": "It's still Trump's stock market https://t.co/FshKT2btZW",
-   "url": "https://x.com/axios/status/2125205300303065551",
-   "likes": 11,
-   "reposts": 2,
-   "ts": "2026-11-24T12:30:02.000Z"
-  },
-  {
-   "handle": "mattyglesias",
-   "name": "Matthew Yglesias",
-   "lean": "left",
-   "role": "Slow Boring, center-left",
-   "text": "If the senate operated by majority vote literally nobody would say “it would be better to raise it to 60 votes except for nominations and also for one giant bill per year dealing with fiscal issues but also other stuff if you bend the rules enough.” \n\nIt’s absurd on its face.",
-   "url": "https://x.com/mattyglesias/status/2124855042826293744",
-   "likes": 587,
-   "reposts": 38,
-   "ts": "2026-11-23T13:18:14.000Z",
-   "race": "senate-control"
-  },
-  {
-   "handle": "mattyglesias",
-   "name": "Matthew Yglesias",
-   "lean": "left",
-   "role": "Slow Boring, center-left",
-   "text": "Some leftists' pathological hatred of \"establishment\" democrats leads them to dangerously underestimate how bad Trump and the MAGA movement really are. \n\nFighting against Trump's lawlessness and corruption remain very important!\n\nhttps://t.co/LdFCC20lP7 https://t.co/myeujTjGjp",
-   "url": "https://x.com/mattyglesias/status/2124825193977721234",
-   "likes": 336,
-   "reposts": 35,
-   "ts": "2026-11-23T11:19:38.000Z"
-  },
-  {
-   "handle": "mehdirhasan",
-   "name": "Mehdi Hasan",
-   "lean": "left",
-   "role": "Zeteo",
-   "text": "\"These 7 Progressives Flipped Red Seats – and Deserve Your Attention\"\n\nHere are seven progressive wins you may have missed – and why they matter.\nhttps://t.co/BLHWRhFLwm",
-   "url": "https://x.com/mehdirhasan/status/2124708603818860580",
-   "likes": 461,
-   "reposts": 85,
-   "ts": "2026-11-23T03:36:20.000Z",
-   "race": "house-control"
   }
  ]
 }
