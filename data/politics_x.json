@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T15:00:20Z",
+ "updated": "2026-11-27T15:00:37Z",
  "note": "Balanced curated accounts; leans describe the account, not each post. Midterms 2026 post-election window.",
  "leans": {
   "left": "Left / Democratic-leaning",
@@ -175,9 +175,148 @@
    "name": "CNN Politics",
    "lean": "center",
    "role": "News"
+  },
+  {
+   "handle": "WSJopinion",
+   "name": "WSJ Opinion",
+   "lean": "right",
+   "role": "Opinion"
   }
  ],
  "posts": [
+  {
+   "handle": "NateSilver538",
+   "name": "Nate Silver",
+   "text": "OK, as promised, newsletter tonight about Trump's approval ratings. While they track gas prices reasonably well, it's interesting that they've declined lately, even as gas prices have declined. https://t.co/hd7SPS1A5W",
+   "url": "https://x.com/NateSilver538/status/2125736389920575577",
+   "likes": 929,
+   "reposts": 87,
+   "ts": "2026-11-25T23:40:24.000Z",
+   "lean": "analyst",
+   "role": "Forecaster"
+  },
+  {
+   "handle": "gelliottmorris",
+   "name": "G Elliott Morris",
+   "text": "Democrats won so big in 2026 bc (a) they had high turnout everywhere and (b) they won a lot of defectors over from Trump/Rs.\n\nIf you apply the same vote-switching rates to 2028, then Dems are favored in the Electoral College and could get 58 Senate seats.\n\nhttps://t.co/gA2kXMo3CY https://t.co/Bh3eUxM2Lf",
+   "url": "https://x.com/gelliottmorris/status/2126281959315841462",
+   "likes": 103,
+   "reposts": 20,
+   "ts": "2026-11-27T11:48:18.000Z",
+   "lean": "analyst",
+   "role": "Data journalist"
+  },
+  {
+   "handle": "DecisionDeskHQ",
+   "name": "Decision Desk HQ",
+   "text": "Happy Thanksgiving from Decision Desk HQ.  \n\nThis year, we’ve covered 98,451 races in all 50 states and DC, from the U.S. Senate down to local races - and there’s still over 100 left before the year ends.  \n\nThank you for following us through every one of them.",
+   "url": "https://x.com/DecisionDeskHQ/status/2125816827800646025",
+   "likes": 230,
+   "reposts": 13,
+   "ts": "2026-11-26T05:00:02.000Z",
+   "lean": "analyst",
+   "role": "Race calls"
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "text": "lol — asked what information he has that makes him confident Jensen Huang is not a national security threat, Trump says “the information that I have” https://t.co/uMid0vUTNV",
+   "url": "https://x.com/atrupar/status/2126104181689741415",
+   "likes": 590,
+   "reposts": 106,
+   "ts": "2026-11-27T00:01:52.000Z",
+   "lean": "left",
+   "role": "Journalist"
+  },
+  {
+   "handle": "atrupar",
+   "name": "Aaron Rupar",
+   "text": "Trump suggests that Melania went to Ukraine to negotiate a ceasefire with Russia (of all the things that didn’t happen this didn’t happen the most) https://t.co/fFN58tuEr1",
+   "url": "https://x.com/atrupar/status/2126102356374749247",
+   "likes": 4393,
+   "reposts": 788,
+   "ts": "2026-11-26T23:54:37.000Z",
+   "lean": "left",
+   "role": "Journalist"
+  },
+  {
+   "handle": "mehdirhasan",
+   "name": "Mehdi Hasan",
+   "text": "Hi Jason, can we tax him more then if money doesn’t matter? Is there a reason the billionaires spent millions to block the wealth tax in California? If they’re not motivated by money, then why the opposition? https://t.co/NHhg7WWWTW",
+   "url": "https://x.com/mehdirhasan/status/2126147795019272663",
+   "likes": 1640,
+   "reposts": 137,
+   "ts": "2026-11-27T02:55:10.000Z",
+   "lean": "left",
+   "role": "Commentator"
+  },
+  {
+   "handle": "ByronYork",
+   "name": "Byron York",
+   "text": "More funny business in Alaska. A weird story, plus a new statement: https://t.co/3QifhIiW7i https://t.co/HB8LXWx836",
+   "url": "https://x.com/ByronYork/status/2125729991166161406",
+   "likes": 568,
+   "reposts": 212,
+   "ts": "2026-11-25T23:14:58.000Z",
+   "lean": "right",
+   "role": "Columnist",
+   "race": "AK-sen"
+  },
+  {
+   "handle": "WSJopinion",
+   "name": "WSJ Opinion",
+   "text": "America is past peak Trump. Your move, GOP. Republicans can win back disaffected Trump voters if they put forward new faces and sensible policies, writes @KarlRove\nhttps://t.co/yJw0lsNSuS",
+   "url": "https://x.com/WSJopinion/status/2125771563945378219",
+   "likes": 36,
+   "reposts": 7,
+   "ts": "2026-11-26T02:00:10.000Z",
+   "lean": "right",
+   "role": "Opinion"
+  },
+  {
+   "handle": "WSJopinion",
+   "name": "WSJ Opinion",
+   "text": "On the latest episode of the Potomac Watch podcast, Joe Sternberg says the more debates the Democrats hold for 2028, the more they will be tested on their views on issues. @katebachwsj https://t.co/TSCzCD65TQ https://t.co/6MKILMDGLP",
+   "url": "https://x.com/WSJopinion/status/2125952862605697028",
+   "likes": 3,
+   "reposts": 1,
+   "ts": "2026-11-26T14:00:35.000Z",
+   "lean": "right",
+   "role": "Opinion"
+  },
+  {
+   "handle": "axios",
+   "name": "Axios",
+   "text": "🇺🇸 NEW: Maryland Gov. @iamwesmoore tells @mikeallen that he’s focused on telling Maryland’s story on the national stage, rather than plotting a presidential bid.\n\n“I think we got a story to tell,” he says. https://t.co/AZKxzBWJri",
+   "url": "https://x.com/axios/status/2125967821087576275",
+   "likes": 438,
+   "reposts": 80,
+   "ts": "2026-11-26T15:00:01.000Z",
+   "lean": "center",
+   "role": "News"
+  },
+  {
+   "handle": "politico",
+   "name": "POLITICO",
+   "text": "Elizabeth Warren is at the peak of her power https://t.co/7nmMChbcQU",
+   "url": "https://x.com/politico/status/2126285667592253474",
+   "likes": 181,
+   "reposts": 20,
+   "ts": "2026-11-27T12:03:02.000Z",
+   "lean": "center",
+   "role": "News"
+  },
+  {
+   "handle": "axios",
+   "name": "Axios",
+   "text": "Vance and Rubio learn the price of loyalty to Trump https://t.co/0QPt7MUG9J",
+   "url": "https://x.com/axios/status/2126287437311730046",
+   "likes": 81,
+   "reposts": 12,
+   "ts": "2026-11-27T12:10:04.000Z",
+   "lean": "center",
+   "role": "News"
+  },
   {
    "handle": "NateSilver538",
    "name": "Nate Silver",
@@ -269,18 +408,6 @@
    "reposts": 67,
    "ts": "2026-11-24T22:35:00.000Z",
    "role": "Conservative commentator"
-  },
-  {
-   "handle": "ByronYork",
-   "name": "Byron York",
-   "lean": "right",
-   "text": "More funny business in Alaska. A weird story, plus a new statement: https://t.co/3QifhIiW7i https://t.co/HB8LXWx836",
-   "url": "https://x.com/ByronYork/status/2125729991166161406",
-   "likes": 415,
-   "reposts": 166,
-   "ts": "2026-11-25T23:14:58.000Z",
-   "race": "AK-sen",
-   "role": "Washington Examiner"
   },
   {
    "handle": "politico",
@@ -508,128 +635,6 @@
    "reposts": 28,
    "ts": "2026-11-23T19:30:38.000Z",
    "race": "house-control"
-  },
-  {
-   "handle": "gelliottmorris",
-   "name": "G. Elliott Morris",
-   "lean": "analyst",
-   "role": "Strength In Numbers / FiftyPlusOne",
-   "text": "Of the 63 House members with a top-20% “WAR” score in 2024, only 31 stayed in the top 20% in 2026 &amp; 13 had a negative score.\n\nDems increasingly use this Moneyball stat to raise funds and make prescriptions about campaigns. But the data don’t back them up\n\nhttps://t.co/RnShjRTmi6",
-   "url": "https://x.com/gelliottmorris/status/2125198975976239163",
-   "likes": 136,
-   "reposts": 23,
-   "ts": "2026-11-24T12:04:54.000Z"
-  },
-  {
-   "handle": "atrupar",
-   "name": "Aaron Rupar",
-   "lean": "left",
-   "role": "Public Notice",
-   "text": "Coons: \"[We need to] pass sweeping ethics legislation that prohibits and prevents the president, VP, members of his family from self-enrichment like this ... the average American thinks this is all just corrupt as hell\" https://t.co/cQFlK2Hzcz",
-   "url": "https://x.com/atrupar/status/2125222528964517923",
-   "likes": 754,
-   "reposts": 183,
-   "ts": "2026-11-24T13:38:30.000Z"
-  },
-  {
-   "handle": "MattYglesias",
-   "name": "Matthew Yglesias",
-   "lean": "left",
-   "role": "Slow Boring, center-left",
-   "text": "If Trump is going to give up on competing with China can we at least go back to free trade so we can buy cheaper stuff?",
-   "url": "https://x.com/mattyglesias/status/2125043201950277944",
-   "likes": 1229,
-   "reposts": 96,
-   "ts": "2026-11-24T01:45:55.000Z"
-  },
-  {
-   "handle": "MattYglesias",
-   "name": "Matthew Yglesias",
-   "lean": "left",
-   "role": "Slow Boring, center-left",
-   "text": "The industry has convinced Trump that the AI stock boom is keeping the economy aloft, when the lesson he should actually be learning is that everyone hates this AI-centric economy with data center investment crowding out other consumption to build a future people rightly fear.",
-   "url": "https://x.com/mattyglesias/status/2125045214368952321",
-   "likes": 943,
-   "reposts": 88,
-   "ts": "2026-11-24T01:53:55.000Z"
-  },
-  {
-   "handle": "mehdirhasan",
-   "name": "Mehdi Hasan",
-   "lean": "left",
-   "role": "Zeteo",
-   "text": "The most conflicted, corrupt president in modern American history, if not ever. https://t.co/Kqba4DErYV",
-   "url": "https://x.com/mehdirhasan/status/2125045392815395256",
-   "likes": 2298,
-   "reposts": 361,
-   "ts": "2026-11-24T01:54:37.000Z"
-  },
-  {
-   "handle": "EWErickson",
-   "name": "Erick Erickson",
-   "lean": "right",
-   "role": "Conservative commentator",
-   "text": "We were told if we didn’t vote GOP, we’d get socialism.  Now the President is dictating corporate hires and taking equity control of companies. https://t.co/aBbBKqzhOC",
-   "url": "https://x.com/EWErickson/status/2125010805015908407",
-   "likes": 2392,
-   "reposts": 442,
-   "ts": "2026-11-23T23:37:11.000Z"
-  },
-  {
-   "handle": "EWErickson",
-   "name": "Erick Erickson",
-   "lean": "right",
-   "role": "Conservative commentator",
-   "text": "The problem here is that many of those who will cheer this on or think it is no big deal also believed the GOP wasn't going to lose the House in the midterms or the Texas senate race and probably thought 2020 was stolen. The President continuing to cater to that segment of the https://t.co/a00iOvUeHL",
-   "url": "https://x.com/EWErickson/status/2124933722944254115",
-   "likes": 634,
-   "reposts": 79,
-   "ts": "2026-11-23T18:30:53.000Z",
-   "race": "TX-sen"
-  },
-  {
-   "handle": "EWErickson",
-   "name": "Erick Erickson",
-   "lean": "right",
-   "role": "Conservative commentator",
-   "text": "When did America First involve defending a CEO whose behaviors compromised national security and then doubling down on giving chips to China.  This isn't very super intelligent.",
-   "url": "https://x.com/EWErickson/status/2125223954998784461",
-   "likes": 439,
-   "reposts": 64,
-   "ts": "2026-11-24T13:44:10.000Z"
-  },
-  {
-   "handle": "EWErickson",
-   "name": "Erick Erickson",
-   "lean": "right",
-   "role": "Conservative commentator",
-   "text": "If our economy will head to recession unless a single man can keep banging employees and spies, our economy is not stable. https://t.co/otQlT7YvZt",
-   "url": "https://x.com/EWErickson/status/2124987977285968210",
-   "likes": 2392,
-   "reposts": 263,
-   "ts": "2026-11-23T22:06:28.000Z"
-  },
-  {
-   "handle": "politico",
-   "name": "POLITICO",
-   "lean": "center",
-   "role": "Politics news",
-   "text": "‘Unilaterally disarming’: Dems fret over DNC’s super PAC pledge https://t.co/irjASyV2Od",
-   "url": "https://x.com/politico/status/2125211205576933701",
-   "likes": 15,
-   "reposts": 2,
-   "ts": "2026-11-24T12:53:30.000Z"
-  },
-  {
-   "handle": "politico",
-   "name": "POLITICO",
-   "lean": "center",
-   "role": "Politics news",
-   "text": "Jensen Huang is getting his old job back, but a unanimous vote from Nvidia’s board won’t spare him from scrutiny on Capitol Hill.\n\nOur @wsteaks talked to Elizabeth Warren, who told him that Nvidia and Jensen Huang both need to be held accountable. \n\n🎧 Playbook Pod: https://t.co/mcoRXtGJkr",
-   "url": "https://x.com/politico/status/2125228893837652365",
-   "likes": 14,
-   "reposts": 7,
-   "ts": "2026-11-24T14:03:47.000Z"
   }
  ]
 }
